@@ -7,6 +7,10 @@ release time.
 ## [Unreleased]
 
 ### Added
+- Onboarding: first-run flow with the level explainer, location, health
+  consent and reminder time, landing on the populated environment screen;
+  explainer reachable from Settings; device integration test for the 60 s
+  target (15).
 - Health sync: per-type consent for sleep, resting heart rate, HRV, steps
   and menstrual flow with plain-language reasons, Health Connect history
   permission, sleep pre-fill on the check-in with a source icon, period

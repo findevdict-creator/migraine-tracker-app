@@ -19,3 +19,4 @@ feature PR adds its row.
 | 12 | Gauge moves with the sensor; attack export shows both pressures; station fallback on a phone without a barometer | [ ] | [ ] | |
 | 13 | Factors card shows local sunrise and sunset; About the data links open the browser | [ ] | [ ] | |
 | 14 | Health prompts per type, history prompt (Android), sleep pre-filled with icon, headache written back | [ ] | [ ] | iOS needs the HealthKit capability in Xcode |
+| 15 | Fresh install flow, location prompt, populated environment screen under 60 s (`integration_test/onboarding_flow_test.dart`) | [ ] | [ ] | |

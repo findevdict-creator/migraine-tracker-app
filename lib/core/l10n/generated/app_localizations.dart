@@ -1677,6 +1677,150 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'From Health Connect'**
   String get checkinSourceHealthConnect;
+
+  /// No description provided for @onboardingSkip.
+  ///
+  /// In en, this message translates to:
+  /// **'Skip'**
+  String get onboardingSkip;
+
+  /// No description provided for @onboardingNext.
+  ///
+  /// In en, this message translates to:
+  /// **'Next'**
+  String get onboardingNext;
+
+  /// No description provided for @onboardingFinish.
+  ///
+  /// In en, this message translates to:
+  /// **'Finish'**
+  String get onboardingFinish;
+
+  /// No description provided for @onboardingStep.
+  ///
+  /// In en, this message translates to:
+  /// **'Step {step} of {total}'**
+  String onboardingStep(int step, int total);
+
+  /// No description provided for @onboardingWelcomeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome'**
+  String get onboardingWelcomeTitle;
+
+  /// No description provided for @onboardingLocationTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Your area\'s weather'**
+  String get onboardingLocationTitle;
+
+  /// No description provided for @onboardingLocationBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Air pressure changes are one of the most common things people notice before an attack. Allow an approximate location, or pick a city, to see them.'**
+  String get onboardingLocationBody;
+
+  /// No description provided for @onboardingLocationNone.
+  ///
+  /// In en, this message translates to:
+  /// **'No location yet. You can also set this later from the environment screen.'**
+  String get onboardingLocationNone;
+
+  /// No description provided for @onboardingHealthTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Health data'**
+  String get onboardingHealthTitle;
+
+  /// No description provided for @onboardingHealthBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Optional. Each type has its own switch and its own reason. You can change any of them later in Settings.'**
+  String get onboardingHealthBody;
+
+  /// No description provided for @onboardingHealthUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'No health app is available on this device. You can skip this step.'**
+  String get onboardingHealthUnavailable;
+
+  /// No description provided for @onboardingReminderTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Daily check-in'**
+  String get onboardingReminderTitle;
+
+  /// No description provided for @onboardingReminderBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Three taps a day, about ten seconds. Pick a time for the reminder.'**
+  String get onboardingReminderBody;
+
+  /// No description provided for @onboardingReminderNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Reminders start once notifications are set up. You can change the time any day from the check-in.'**
+  String get onboardingReminderNote;
+
+  /// No description provided for @explainerTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'What the level means'**
+  String get explainerTitle;
+
+  /// No description provided for @explainerIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'Each day the app shows a level built from your own history and today\'s conditions.'**
+  String get explainerIntro;
+
+  /// No description provided for @explainerDoesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'What it does'**
+  String get explainerDoesTitle;
+
+  /// No description provided for @explainerDoes1.
+  ///
+  /// In en, this message translates to:
+  /// **'Shows how today\'s weather, sleep, stress and routine compare with the days before your past attacks.'**
+  String get explainerDoes1;
+
+  /// No description provided for @explainerDoes2.
+  ///
+  /// In en, this message translates to:
+  /// **'Learns from your own log, so it gets more specific the more you record.'**
+  String get explainerDoes2;
+
+  /// No description provided for @explainerDoes3.
+  ///
+  /// In en, this message translates to:
+  /// **'Helps you decide whether today is a day to go easier on yourself.'**
+  String get explainerDoes3;
+
+  /// No description provided for @explainerDoesNotTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'What it does not do'**
+  String get explainerDoesNotTitle;
+
+  /// No description provided for @explainerDoesNot1.
+  ///
+  /// In en, this message translates to:
+  /// **'It is not a forecast of an attack. A high level is a pattern, not a certainty, and a low level is not a promise.'**
+  String get explainerDoesNot1;
+
+  /// No description provided for @explainerDoesNot2.
+  ///
+  /// In en, this message translates to:
+  /// **'It is not a medical opinion and does not replace your clinician.'**
+  String get explainerDoesNot2;
+
+  /// No description provided for @explainerDoesNot3.
+  ///
+  /// In en, this message translates to:
+  /// **'It never sends your log anywhere. The level is computed on this phone.'**
+  String get explainerDoesNot3;
 }
 
 class _AppLocalizationsDelegate

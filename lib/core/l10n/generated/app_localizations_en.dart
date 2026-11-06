@@ -932,4 +932,91 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get checkinSourceHealthConnect => 'From Health Connect';
+
+  @override
+  String get onboardingSkip => 'Skip';
+
+  @override
+  String get onboardingNext => 'Next';
+
+  @override
+  String get onboardingFinish => 'Finish';
+
+  @override
+  String onboardingStep(int step, int total) {
+    return 'Step $step of $total';
+  }
+
+  @override
+  String get onboardingWelcomeTitle => 'Welcome';
+
+  @override
+  String get onboardingLocationTitle => 'Your area\'s weather';
+
+  @override
+  String get onboardingLocationBody =>
+      'Air pressure changes are one of the most common things people notice before an attack. Allow an approximate location, or pick a city, to see them.';
+
+  @override
+  String get onboardingLocationNone =>
+      'No location yet. You can also set this later from the environment screen.';
+
+  @override
+  String get onboardingHealthTitle => 'Health data';
+
+  @override
+  String get onboardingHealthBody =>
+      'Optional. Each type has its own switch and its own reason. You can change any of them later in Settings.';
+
+  @override
+  String get onboardingHealthUnavailable =>
+      'No health app is available on this device. You can skip this step.';
+
+  @override
+  String get onboardingReminderTitle => 'Daily check-in';
+
+  @override
+  String get onboardingReminderBody =>
+      'Three taps a day, about ten seconds. Pick a time for the reminder.';
+
+  @override
+  String get onboardingReminderNote =>
+      'Reminders start once notifications are set up. You can change the time any day from the check-in.';
+
+  @override
+  String get explainerTitle => 'What the level means';
+
+  @override
+  String get explainerIntro =>
+      'Each day the app shows a level built from your own history and today\'s conditions.';
+
+  @override
+  String get explainerDoesTitle => 'What it does';
+
+  @override
+  String get explainerDoes1 =>
+      'Shows how today\'s weather, sleep, stress and routine compare with the days before your past attacks.';
+
+  @override
+  String get explainerDoes2 =>
+      'Learns from your own log, so it gets more specific the more you record.';
+
+  @override
+  String get explainerDoes3 =>
+      'Helps you decide whether today is a day to go easier on yourself.';
+
+  @override
+  String get explainerDoesNotTitle => 'What it does not do';
+
+  @override
+  String get explainerDoesNot1 =>
+      'It is not a forecast of an attack. A high level is a pattern, not a certainty, and a low level is not a promise.';
+
+  @override
+  String get explainerDoesNot2 =>
+      'It is not a medical opinion and does not replace your clinician.';
+
+  @override
+  String get explainerDoesNot3 =>
+      'It never sends your log anywhere. The level is computed on this phone.';
 }
