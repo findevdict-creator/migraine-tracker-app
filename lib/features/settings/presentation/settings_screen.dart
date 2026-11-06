@@ -58,6 +58,13 @@ class SettingsScreen extends ConsumerWidget {
             ),
           SectionHeader(title: l10n.settingsSectionData),
           ListTile(
+            key: const ValueKey('settings-report'),
+            leading: const Icon(Icons.description_outlined),
+            title: Text(l10n.reportTitle),
+            subtitle: Text(l10n.settingsReportHint),
+            onTap: () => context.push(AppRoutes.report),
+          ),
+          ListTile(
             key: const ValueKey('settings-export-json'),
             leading: const Icon(Icons.data_object),
             title: Text(l10n.settingsExportJson),

@@ -15,6 +15,7 @@ import 'package:migraine_tracker/features/notifications/presentation/notificatio
 import 'package:migraine_tracker/features/onboarding/application/onboarding_state.dart';
 import 'package:migraine_tracker/features/onboarding/presentation/level_explainer.dart';
 import 'package:migraine_tracker/features/onboarding/presentation/onboarding_screen.dart';
+import 'package:migraine_tracker/features/report/presentation/report_screen.dart';
 import 'package:migraine_tracker/features/risk/presentation/risk_screen.dart';
 import 'package:migraine_tracker/features/settings/presentation/settings_screen.dart';
 import 'package:migraine_tracker/features/weather/presentation/about_data_screen.dart';
@@ -39,6 +40,7 @@ abstract final class AppRoutes {
   static const String explainer = '/explainer';
   static const String risk = '/risk';
   static const String insights = '/insights';
+  static const String report = '/report';
   static const String notifications = '/notifications';
   static const String insightsMethod = '/insights/method';
   static String checkin(String date) => '/checkin/$date';
@@ -115,6 +117,11 @@ final routerProvider = Provider<GoRouter>((ref) {
         path: AppRoutes.notifications,
         name: 'notifications',
         builder: (context, state) => const NotificationSettingsScreen(),
+      ),
+      GoRoute(
+        path: AppRoutes.report,
+        name: 'report',
+        builder: (context, state) => const ReportScreen(),
       ),
       GoRoute(
         path: AppRoutes.insights,

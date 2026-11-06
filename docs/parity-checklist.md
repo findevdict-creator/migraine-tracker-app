@@ -27,3 +27,4 @@ feature PR adds its row.
 | 20 | Insights lists match the drivers seen over the past weeks | [ ] | [ ] | |
 | 21 | Attack-over notification carries End attack; every type can be turned off | [ ] | [ ] | |
 | 22 | A test wake-up push refreshes the forecast with the app closed | [ ] | [ ] | |
+| 23 | Share PDF opens the share sheet with a readable PDF; spreadsheets open with one row per attack and per day | [ ] | [ ] | |
