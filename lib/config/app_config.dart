@@ -75,6 +75,10 @@ class AppIdentity {
   static const String termsUrl = 'https://migrainetracker.app/terms';
   static const String websiteUrl = 'https://migrainetracker.app';
 
+  /// Page behind the "talk to your clinician" notes (medication overuse).
+  static const String clinicianGuidanceUrl =
+      'https://migrainetracker.app/talk-to-your-clinician';
+
   /// One-line wellness disclaimer shown under the risk level and in reports.
   static const String wellnessDisclaimer =
       'General wellness information, not medical advice. '

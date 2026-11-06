@@ -651,6 +651,138 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Three taps, about 10 seconds'**
   String get checkinCardTodo;
+
+  /// No description provided for @medicationTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Medication'**
+  String get medicationTitle;
+
+  /// No description provided for @medicationAdd.
+  ///
+  /// In en, this message translates to:
+  /// **'Add medication'**
+  String get medicationAdd;
+
+  /// No description provided for @medicationAddTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Log a dose'**
+  String get medicationAddTitle;
+
+  /// No description provided for @medicationName.
+  ///
+  /// In en, this message translates to:
+  /// **'Medication'**
+  String get medicationName;
+
+  /// No description provided for @medicationDose.
+  ///
+  /// In en, this message translates to:
+  /// **'Dose'**
+  String get medicationDose;
+
+  /// No description provided for @medicationDoseHint.
+  ///
+  /// In en, this message translates to:
+  /// **'e.g. 400 mg'**
+  String get medicationDoseHint;
+
+  /// No description provided for @medicationKindAcute.
+  ///
+  /// In en, this message translates to:
+  /// **'Acute'**
+  String get medicationKindAcute;
+
+  /// No description provided for @medicationKindPreventive.
+  ///
+  /// In en, this message translates to:
+  /// **'Preventive'**
+  String get medicationKindPreventive;
+
+  /// No description provided for @medicationTakenAt.
+  ///
+  /// In en, this message translates to:
+  /// **'Taken at {time}'**
+  String medicationTakenAt(String time);
+
+  /// No description provided for @medicationLog.
+  ///
+  /// In en, this message translates to:
+  /// **'Log'**
+  String get medicationLog;
+
+  /// No description provided for @medicationDelete.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete'**
+  String get medicationDelete;
+
+  /// No description provided for @medicationThisMonth.
+  ///
+  /// In en, this message translates to:
+  /// **'This month'**
+  String get medicationThisMonth;
+
+  /// No description provided for @medicationEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No doses logged this month.'**
+  String get medicationEmpty;
+
+  /// No description provided for @medicationReliefQuestion.
+  ///
+  /// In en, this message translates to:
+  /// **'Relief after 2 h?'**
+  String get medicationReliefQuestion;
+
+  /// No description provided for @medicationReliefNone.
+  ///
+  /// In en, this message translates to:
+  /// **'None'**
+  String get medicationReliefNone;
+
+  /// No description provided for @medicationReliefPartial.
+  ///
+  /// In en, this message translates to:
+  /// **'Some'**
+  String get medicationReliefPartial;
+
+  /// No description provided for @medicationReliefFull.
+  ///
+  /// In en, this message translates to:
+  /// **'Full'**
+  String get medicationReliefFull;
+
+  /// No description provided for @medicationAcuteDays.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =0{No acute-medication days this month} =1{1 acute-medication day this month} other{{count} acute-medication days this month}}'**
+  String medicationAcuteDays(int count);
+
+  /// No description provided for @medicationAcuteDaysHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Days with at least one acute dose, counted per calendar month.'**
+  String get medicationAcuteDaysHint;
+
+  /// No description provided for @medicationOveruseFirstNote.
+  ///
+  /// In en, this message translates to:
+  /// **'You have reached {days} acute-medication days this month. Many clinicians suggest keeping this number low; it may be worth a conversation.'**
+  String medicationOveruseFirstNote(int days);
+
+  /// No description provided for @medicationOveruseSecondNote.
+  ///
+  /// In en, this message translates to:
+  /// **'You have reached {days} acute-medication days this month. Please consider talking to your clinician about this pattern.'**
+  String medicationOveruseSecondNote(int days);
+
+  /// No description provided for @medicationTalkToClinician.
+  ///
+  /// In en, this message translates to:
+  /// **'Talk to your clinician'**
+  String get medicationTalkToClinician;
 }
 
 class _AppLocalizationsDelegate

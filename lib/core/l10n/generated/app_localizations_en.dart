@@ -299,4 +299,86 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get checkinCardTodo => 'Three taps, about 10 seconds';
+
+  @override
+  String get medicationTitle => 'Medication';
+
+  @override
+  String get medicationAdd => 'Add medication';
+
+  @override
+  String get medicationAddTitle => 'Log a dose';
+
+  @override
+  String get medicationName => 'Medication';
+
+  @override
+  String get medicationDose => 'Dose';
+
+  @override
+  String get medicationDoseHint => 'e.g. 400 mg';
+
+  @override
+  String get medicationKindAcute => 'Acute';
+
+  @override
+  String get medicationKindPreventive => 'Preventive';
+
+  @override
+  String medicationTakenAt(String time) {
+    return 'Taken at $time';
+  }
+
+  @override
+  String get medicationLog => 'Log';
+
+  @override
+  String get medicationDelete => 'Delete';
+
+  @override
+  String get medicationThisMonth => 'This month';
+
+  @override
+  String get medicationEmpty => 'No doses logged this month.';
+
+  @override
+  String get medicationReliefQuestion => 'Relief after 2 h?';
+
+  @override
+  String get medicationReliefNone => 'None';
+
+  @override
+  String get medicationReliefPartial => 'Some';
+
+  @override
+  String get medicationReliefFull => 'Full';
+
+  @override
+  String medicationAcuteDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count acute-medication days this month',
+      one: '1 acute-medication day this month',
+      zero: 'No acute-medication days this month',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get medicationAcuteDaysHint =>
+      'Days with at least one acute dose, counted per calendar month.';
+
+  @override
+  String medicationOveruseFirstNote(int days) {
+    return 'You have reached $days acute-medication days this month. Many clinicians suggest keeping this number low; it may be worth a conversation.';
+  }
+
+  @override
+  String medicationOveruseSecondNote(int days) {
+    return 'You have reached $days acute-medication days this month. Please consider talking to your clinician about this pattern.';
+  }
+
+  @override
+  String get medicationTalkToClinician => 'Talk to your clinician';
 }

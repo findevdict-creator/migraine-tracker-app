@@ -21,6 +21,12 @@ class HomeScreen extends ConsumerWidget {
       appBar: AppBar(
         title: Text(config.displayName),
         actions: [
+          IconButton(
+            key: const ValueKey('home-medications'),
+            icon: const Icon(Icons.medication_outlined),
+            tooltip: l10n.medicationTitle,
+            onPressed: () => context.push(AppRoutes.medications),
+          ),
           if (config.showDevTools)
             IconButton(
               icon: const Icon(Icons.palette_outlined),

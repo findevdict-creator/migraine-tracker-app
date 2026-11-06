@@ -7,6 +7,9 @@ release time.
 ## [Unreleased]
 
 ### Added
+- Medication log: acute and preventive doses with suggestions, dose, time
+  and relief at 2 h, inside an attack and standalone, acute-day counter per
+  month with the gentle notes at 10 and 15 days (07).
 - Daily check-in: three-tap screen, optional second row, 7-day back-fill
   strip, per-field source column, reminder time setting, home card (06).
 - Attack log: one-tap start, attack screen in the attack theme, head map,
