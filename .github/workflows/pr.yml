@@ -142,6 +142,26 @@ jobs:
       - run: flutter pub get
       - run: flutter build ios --debug --no-codesign -t lib/main_dev.dart --dart-define-from-file=env/dev.json
 
+  watchos:
+    name: watchOS app
+    runs-on: macos-latest
+    needs: flutter
+    steps:
+      - uses: actions/checkout@v4
+      - name: Protocol tests (decode the Dart package's fixtures)
+        run: swift test --package-path ios/RiskWatch/WatchProtocolKit
+      - name: Install XcodeGen
+        run: brew install xcodegen
+      - name: Generate the watch project
+        run: xcodegen generate --spec ios/RiskWatch/project.yml
+      - name: Build for the watchOS simulator
+        run: >
+          xcodebuild build
+          -project ios/RiskWatch/RiskWatch.xcodeproj
+          -scheme RiskWatch
+          -destination 'generic/platform=watchOS Simulator'
+          CODE_SIGNING_ALLOWED=NO
+
   functions:
     name: Cloud Functions lint, types, tests
     runs-on: ubuntu-latest

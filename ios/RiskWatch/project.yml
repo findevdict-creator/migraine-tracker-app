@@ -1,0 +1,58 @@
+# XcodeGen spec for the Apple Watch app (phase 28). CI generates
+# RiskWatch.xcodeproj from this file and builds it for the watchOS
+# simulator. To ship, add the same two targets to ios/Runner.xcodeproj
+# (docs/phases/28-watchos.md, "Adding the watch app to Runner").
+name: RiskWatch
+options:
+  bundleIdPrefix: app.migrainetracker
+  deploymentTarget:
+    watchOS: "10.0"
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    MARKETING_VERSION: "0.1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    DEVELOPMENT_LANGUAGE: en
+packages:
+  WatchProtocolKit:
+    path: WatchProtocolKit
+targets:
+  RiskWatch:
+    type: application
+    platform: watchOS
+    sources:
+      - path: App
+        excludes:
+          - Info.plist
+          - RiskWatch.entitlements
+    dependencies:
+      - package: WatchProtocolKit
+      - target: RiskComplication
+    settings:
+      base:
+        # Mirrors AppIdentity.iosBundleId with the watch suffix.
+        PRODUCT_BUNDLE_IDENTIFIER: app.migrainetracker.migraineTracker.watchkitapp
+        INFOPLIST_FILE: App/Info.plist
+        CODE_SIGN_ENTITLEMENTS: App/RiskWatch.entitlements
+        TARGETED_DEVICE_FAMILY: "4"
+        SKIP_INSTALL: "YES"
+    scheme: {}
+  RiskComplication:
+    type: app-extension
+    platform: watchOS
+    sources:
+      - path: Complication
+        excludes:
+          - Info.plist
+          - RiskComplication.entitlements
+    dependencies:
+      - package: WatchProtocolKit
+      - sdk: WidgetKit.framework
+      - sdk: SwiftUI.framework
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: app.migrainetracker.migraineTracker.watchkitapp.complication
+        INFOPLIST_FILE: Complication/Info.plist
+        CODE_SIGN_ENTITLEMENTS: Complication/RiskComplication.entitlements
+        TARGETED_DEVICE_FAMILY: "4"
+        SKIP_INSTALL: "YES"
