@@ -494,4 +494,144 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get settingsSupport => 'Support';
+
+  @override
+  String get environmentTitle => 'Environment';
+
+  @override
+  String get environmentCardTitle => 'Pressure';
+
+  @override
+  String get environmentCardEmpty =>
+      'No weather saved yet. Tap to set your location.';
+
+  @override
+  String environmentCardSummary(String hpa, String trend) {
+    return '$hpa hPa, $trend';
+  }
+
+  @override
+  String get envPressureSection => 'Air pressure';
+
+  @override
+  String envPressureNow(String hpa) {
+    return '$hpa hPa';
+  }
+
+  @override
+  String get envPressureUnknown => 'No reading for this hour';
+
+  @override
+  String get envDelta3h => '3 h';
+
+  @override
+  String get envDelta6h => '6 h';
+
+  @override
+  String get envDelta12h => '12 h';
+
+  @override
+  String get envDelta24h => '24 h';
+
+  @override
+  String envDeltaValue(String value) {
+    return '$value hPa';
+  }
+
+  @override
+  String get envDeltaUnknown => '–';
+
+  @override
+  String get envChartTitle => 'Last 48 hours and next 24';
+
+  @override
+  String get envUpdatedNever => 'Not updated yet';
+
+  @override
+  String get envUpdatedJustNow => 'Updated just now';
+
+  @override
+  String envUpdatedMinutes(int n) {
+    return 'Updated $n min ago';
+  }
+
+  @override
+  String envUpdatedHours(int n) {
+    return 'Updated $n h ago';
+  }
+
+  @override
+  String envUpdatedDays(int n) {
+    return 'Updated $n d ago';
+  }
+
+  @override
+  String get envStale =>
+      'This forecast is a few hours old. It refreshes when you are back online.';
+
+  @override
+  String get envOffline =>
+      'Could not reach the weather service. Showing what is saved on this device.';
+
+  @override
+  String get envNoData =>
+      'No weather saved yet. Allow location or choose a city to see the pressure trend.';
+
+  @override
+  String get envRefresh => 'Refresh';
+
+  @override
+  String get envLocationSection => 'Location';
+
+  @override
+  String get envLocationGps => 'Using your approximate location';
+
+  @override
+  String envLocationManual(String city) {
+    return 'Using $city';
+  }
+
+  @override
+  String get envLocationLast => 'Using the last known area';
+
+  @override
+  String get envLocationNone => 'No location set';
+
+  @override
+  String get envUseMyLocation => 'Use my location';
+
+  @override
+  String get envChooseCity => 'Choose a city';
+
+  @override
+  String get envCitySearchTitle => 'Choose a city';
+
+  @override
+  String get envCitySearchHint => 'City name';
+
+  @override
+  String get envCityNoResults => 'No places found';
+
+  @override
+  String get envCitySearchFailed =>
+      'Could not search right now. Check your connection and try again.';
+
+  @override
+  String get envPrivacyNote =>
+      'Your location is rounded to about 10 km before it leaves this device.';
+
+  @override
+  String get envAttribution => 'Weather data by Open-Meteo';
+
+  @override
+  String get envTrendRising => 'rising';
+
+  @override
+  String get envTrendFalling => 'falling';
+
+  @override
+  String get envTrendSteady => 'steady';
+
+  @override
+  String get envTrendUnknown => 'no trend yet';
 }

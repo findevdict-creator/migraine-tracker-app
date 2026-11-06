@@ -13,4 +13,14 @@ abstract final class SettingsKeys {
 
   /// Period start dates as a JSON list of `yyyy-MM-dd`, oldest first.
   static const String cyclePeriodStarts = 'cycle.periodStarts';
+
+  /// `gps` or `manual`. Where the weather cell comes from.
+  static const String locationMode = 'location.mode';
+
+  /// Typed-city fallback: `{name, lat, lon}` already rounded to a cell.
+  static const String manualLocation = 'location.manual';
+
+  /// The last cell weather was fetched for, so the app can show cached
+  /// data before location is available.
+  static const String weatherLastCell = 'weather.lastCell';
 }

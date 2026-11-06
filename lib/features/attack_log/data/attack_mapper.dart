@@ -26,6 +26,7 @@ abstract final class AttackMapper {
     pressureSensorHpa: row.pressureSensorHpa,
     pressureStationHpa: row.pressureStationHpa,
     finishLater: row.finishLater,
+    weather: row.weather?.cast<String, Object?>(),
   );
 
   static AttacksCompanion toCompanion(
@@ -50,6 +51,7 @@ abstract final class AttackMapper {
     pressureSensorHpa: Value(attack.pressureSensorHpa),
     pressureStationHpa: Value(attack.pressureStationHpa),
     finishLater: Value(attack.finishLater),
+    weather: Value(attack.weather),
     createdAt: Value(createdAt ?? now),
     updatedAt: Value(now),
   );

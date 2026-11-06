@@ -9,6 +9,7 @@ import 'package:migraine_tracker/features/dev_tools/presentation/theme_gallery_s
 import 'package:migraine_tracker/features/home/presentation/home_screen.dart';
 import 'package:migraine_tracker/features/medication/presentation/medication_log_screen.dart';
 import 'package:migraine_tracker/features/settings/presentation/settings_screen.dart';
+import 'package:migraine_tracker/features/weather/presentation/environment_screen.dart';
 
 /// Route paths. Features register their routes here so deep links, widgets
 /// and notifications share one table.
@@ -21,6 +22,7 @@ abstract final class AppRoutes {
   static const String medications = '/medications';
   static const String cycle = '/cycle';
   static const String settings = '/settings';
+  static const String environment = '/environment';
   static String checkin(String date) => '/checkin/$date';
 }
 
@@ -57,6 +59,11 @@ final routerProvider = Provider<GoRouter>((ref) {
         path: AppRoutes.settings,
         name: 'settings',
         builder: (context, state) => const SettingsScreen(),
+      ),
+      GoRoute(
+        path: AppRoutes.environment,
+        name: 'environment',
+        builder: (context, state) => const EnvironmentScreen(),
       ),
       if (AppFeatureFlags.cycleTrackingAvailable)
         GoRoute(

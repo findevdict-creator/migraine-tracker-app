@@ -7,6 +7,8 @@ import 'package:migraine_tracker/config/app_config.dart';
 import 'package:migraine_tracker/core/l10n/l10n.dart';
 import 'package:migraine_tracker/features/attack_log/presentation/start_attack_button.dart';
 import 'package:migraine_tracker/features/checkin/presentation/checkin_card.dart';
+import 'package:migraine_tracker/features/weather/application/weather_sync.dart';
+import 'package:migraine_tracker/features/weather/presentation/environment_card.dart';
 
 /// Home screen. Carries the one-tap start-attack button; the risk card and
 /// load meter arrive in their own phases.
@@ -17,6 +19,8 @@ class HomeScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final config = ref.watch(appConfigProvider);
     final l10n = context.l10n;
+    // Foreground refresh on open; returns early while the cache is fresh.
+    ref.watch(weatherRefreshProvider);
     return Scaffold(
       appBar: AppBar(
         title: Text(config.displayName),
@@ -55,6 +59,8 @@ class HomeScreen extends ConsumerWidget {
             const StartAttackButton(),
             const SizedBox(height: AppThemeTokens.space4),
             const CheckinCard(),
+            const SizedBox(height: AppThemeTokens.space4),
+            const EnvironmentCard(),
             const SizedBox(height: AppThemeTokens.space5),
             Expanded(
               child: Center(

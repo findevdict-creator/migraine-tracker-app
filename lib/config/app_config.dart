@@ -167,6 +167,11 @@ class AppEndpoints {
       'https://air-quality-api.open-meteo.com/v1/air-quality';
   static const String openMeteoAttributionUrl = 'https://open-meteo.com/';
 
+  /// Free geocoding for the typed-city fallback. Only the typed name leaves
+  /// the device; the result is rounded to a cell like any location.
+  static const String openMeteoGeocoding =
+      'https://geocoding-api.open-meteo.com/v1/search';
+
   /// Cloud Function names, one per server job.
   static const String weatherCacheFunction = 'weatherCache';
   static const String pushWakeupFunction = 'pushWakeup';
@@ -255,6 +260,12 @@ class AppThresholds {
   /// Location rounding before any network call, in degrees.
   static const double locationRoundingDegrees = 0.1;
 
+  /// Unpinned weather hours older than this are pruned.
+  static const int weatherRetentionDays = 14;
+
+  /// Cached weather older than this is shown with an "outdated" note.
+  static const Duration weatherStaleAfter = Duration(hours: 6);
+
   /// Days a check-in can be back-filled.
   static const int checkinBackfillDays = 7;
 
@@ -288,6 +299,19 @@ class AppThresholds {
   /// Attack-mode flow targets from the requirements doc.
   static const Duration attackLogTarget = Duration(seconds: 30);
   static const Duration checkinTarget = Duration(seconds: 10);
+}
+
+// ---------------------------------------------------------------------------
+// Background tasks
+// ---------------------------------------------------------------------------
+
+/// Names of scheduled background jobs. The iOS identifiers must also be
+/// listed in `ios/Runner/Info.plist` under BGTaskSchedulerPermittedIdentifiers.
+class AppBackgroundTasks {
+  const AppBackgroundTasks._();
+
+  /// Daily weather refresh (workmanager / BGTaskScheduler).
+  static const String weatherRefresh = 'app.migrainetracker.weatherRefresh';
 }
 
 // ---------------------------------------------------------------------------

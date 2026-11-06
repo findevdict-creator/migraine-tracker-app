@@ -58,6 +58,7 @@ class CheckinEntity {
     this.values = const {},
     this.sources = const {},
     this.cycleDay,
+    this.weather,
   });
 
   /// `yyyy-MM-dd`, local calendar date.
@@ -67,6 +68,9 @@ class CheckinEntity {
 
   /// Set by cycle tracking (phase 08); never typed here.
   final int? cycleDay;
+
+  /// Weather snapshot attached on the first save of the day (phase 11).
+  final Map<String, Object?>? weather;
 
   int? operator [](CheckinField field) => values[field];
 
@@ -97,16 +101,21 @@ class CheckinEntity {
       values: nextValues,
       sources: nextSources,
       cycleDay: cycleDay,
+      weather: weather,
     );
   }
 
-  CheckinEntity copyWith({int? cycleDay, bool clearCycleDay = false}) =>
-      CheckinEntity(
-        date: date,
-        values: values,
-        sources: sources,
-        cycleDay: clearCycleDay ? null : (cycleDay ?? this.cycleDay),
-      );
+  CheckinEntity copyWith({
+    int? cycleDay,
+    bool clearCycleDay = false,
+    Map<String, Object?>? weather,
+  }) => CheckinEntity(
+    date: date,
+    values: values,
+    sources: sources,
+    cycleDay: clearCycleDay ? null : (cycleDay ?? this.cycleDay),
+    weather: weather ?? this.weather,
+  );
 
   @override
   bool operator ==(Object other) =>
@@ -114,7 +123,8 @@ class CheckinEntity {
       other.date == date &&
       mapEquals(other.values, values) &&
       mapEquals(other.sources, sources) &&
-      other.cycleDay == cycleDay;
+      other.cycleDay == cycleDay &&
+      mapEquals(other.weather, weather);
 
   @override
   int get hashCode => Object.hash(date, values.length, cycleDay);

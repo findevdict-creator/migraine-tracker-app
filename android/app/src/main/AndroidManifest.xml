@@ -1,4 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Weather feed (phase 11): network for the cache function and coarse
+         while-using location, rounded to a 0.1 degree cell before any call.
+         No fine or background location is ever requested. -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <application
         android:label="@string/app_name"
         android:name="${applicationName}"

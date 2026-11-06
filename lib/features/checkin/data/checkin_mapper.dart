@@ -30,6 +30,7 @@ abstract final class CheckinMapper {
       values: values,
       sources: sources,
       cycleDay: row.cycleDay,
+      weather: row.weather?.cast<String, Object?>(),
     );
   }
 
@@ -48,6 +49,7 @@ abstract final class CheckinMapper {
     lightExposure: Value(c[CheckinField.lightExposure]),
     screenExposure: Value(c[CheckinField.screenExposure]),
     cycleDay: Value(c.cycleDay),
+    weather: Value(c.weather),
     sources: Value({
       for (final e in c.sources.entries) e.key.name: e.value.code,
     }),

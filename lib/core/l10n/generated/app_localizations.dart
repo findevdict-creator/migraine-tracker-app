@@ -975,6 +975,246 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Support'**
   String get settingsSupport;
+
+  /// No description provided for @environmentTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Environment'**
+  String get environmentTitle;
+
+  /// No description provided for @environmentCardTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Pressure'**
+  String get environmentCardTitle;
+
+  /// No description provided for @environmentCardEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No weather saved yet. Tap to set your location.'**
+  String get environmentCardEmpty;
+
+  /// No description provided for @environmentCardSummary.
+  ///
+  /// In en, this message translates to:
+  /// **'{hpa} hPa, {trend}'**
+  String environmentCardSummary(String hpa, String trend);
+
+  /// No description provided for @envPressureSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Air pressure'**
+  String get envPressureSection;
+
+  /// No description provided for @envPressureNow.
+  ///
+  /// In en, this message translates to:
+  /// **'{hpa} hPa'**
+  String envPressureNow(String hpa);
+
+  /// No description provided for @envPressureUnknown.
+  ///
+  /// In en, this message translates to:
+  /// **'No reading for this hour'**
+  String get envPressureUnknown;
+
+  /// No description provided for @envDelta3h.
+  ///
+  /// In en, this message translates to:
+  /// **'3 h'**
+  String get envDelta3h;
+
+  /// No description provided for @envDelta6h.
+  ///
+  /// In en, this message translates to:
+  /// **'6 h'**
+  String get envDelta6h;
+
+  /// No description provided for @envDelta12h.
+  ///
+  /// In en, this message translates to:
+  /// **'12 h'**
+  String get envDelta12h;
+
+  /// No description provided for @envDelta24h.
+  ///
+  /// In en, this message translates to:
+  /// **'24 h'**
+  String get envDelta24h;
+
+  /// No description provided for @envDeltaValue.
+  ///
+  /// In en, this message translates to:
+  /// **'{value} hPa'**
+  String envDeltaValue(String value);
+
+  /// No description provided for @envDeltaUnknown.
+  ///
+  /// In en, this message translates to:
+  /// **'–'**
+  String get envDeltaUnknown;
+
+  /// No description provided for @envChartTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Last 48 hours and next 24'**
+  String get envChartTitle;
+
+  /// No description provided for @envUpdatedNever.
+  ///
+  /// In en, this message translates to:
+  /// **'Not updated yet'**
+  String get envUpdatedNever;
+
+  /// No description provided for @envUpdatedJustNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Updated just now'**
+  String get envUpdatedJustNow;
+
+  /// No description provided for @envUpdatedMinutes.
+  ///
+  /// In en, this message translates to:
+  /// **'Updated {n} min ago'**
+  String envUpdatedMinutes(int n);
+
+  /// No description provided for @envUpdatedHours.
+  ///
+  /// In en, this message translates to:
+  /// **'Updated {n} h ago'**
+  String envUpdatedHours(int n);
+
+  /// No description provided for @envUpdatedDays.
+  ///
+  /// In en, this message translates to:
+  /// **'Updated {n} d ago'**
+  String envUpdatedDays(int n);
+
+  /// No description provided for @envStale.
+  ///
+  /// In en, this message translates to:
+  /// **'This forecast is a few hours old. It refreshes when you are back online.'**
+  String get envStale;
+
+  /// No description provided for @envOffline.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not reach the weather service. Showing what is saved on this device.'**
+  String get envOffline;
+
+  /// No description provided for @envNoData.
+  ///
+  /// In en, this message translates to:
+  /// **'No weather saved yet. Allow location or choose a city to see the pressure trend.'**
+  String get envNoData;
+
+  /// No description provided for @envRefresh.
+  ///
+  /// In en, this message translates to:
+  /// **'Refresh'**
+  String get envRefresh;
+
+  /// No description provided for @envLocationSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Location'**
+  String get envLocationSection;
+
+  /// No description provided for @envLocationGps.
+  ///
+  /// In en, this message translates to:
+  /// **'Using your approximate location'**
+  String get envLocationGps;
+
+  /// No description provided for @envLocationManual.
+  ///
+  /// In en, this message translates to:
+  /// **'Using {city}'**
+  String envLocationManual(String city);
+
+  /// No description provided for @envLocationLast.
+  ///
+  /// In en, this message translates to:
+  /// **'Using the last known area'**
+  String get envLocationLast;
+
+  /// No description provided for @envLocationNone.
+  ///
+  /// In en, this message translates to:
+  /// **'No location set'**
+  String get envLocationNone;
+
+  /// No description provided for @envUseMyLocation.
+  ///
+  /// In en, this message translates to:
+  /// **'Use my location'**
+  String get envUseMyLocation;
+
+  /// No description provided for @envChooseCity.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose a city'**
+  String get envChooseCity;
+
+  /// No description provided for @envCitySearchTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose a city'**
+  String get envCitySearchTitle;
+
+  /// No description provided for @envCitySearchHint.
+  ///
+  /// In en, this message translates to:
+  /// **'City name'**
+  String get envCitySearchHint;
+
+  /// No description provided for @envCityNoResults.
+  ///
+  /// In en, this message translates to:
+  /// **'No places found'**
+  String get envCityNoResults;
+
+  /// No description provided for @envCitySearchFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not search right now. Check your connection and try again.'**
+  String get envCitySearchFailed;
+
+  /// No description provided for @envPrivacyNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Your location is rounded to about 10 km before it leaves this device.'**
+  String get envPrivacyNote;
+
+  /// No description provided for @envAttribution.
+  ///
+  /// In en, this message translates to:
+  /// **'Weather data by Open-Meteo'**
+  String get envAttribution;
+
+  /// No description provided for @envTrendRising.
+  ///
+  /// In en, this message translates to:
+  /// **'rising'**
+  String get envTrendRising;
+
+  /// No description provided for @envTrendFalling.
+  ///
+  /// In en, this message translates to:
+  /// **'falling'**
+  String get envTrendFalling;
+
+  /// No description provided for @envTrendSteady.
+  ///
+  /// In en, this message translates to:
+  /// **'steady'**
+  String get envTrendSteady;
+
+  /// No description provided for @envTrendUnknown.
+  ///
+  /// In en, this message translates to:
+  /// **'no trend yet'**
+  String get envTrendUnknown;
 }
 
 class _AppLocalizationsDelegate
