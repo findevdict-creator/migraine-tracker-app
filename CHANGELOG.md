@@ -7,6 +7,9 @@ release time.
 ## [Unreleased]
 
 ### Added
+- Weather cache function: per-cell Open-Meteo forecast and air-quality
+  cache in Firestore with a 3 h freshness window, 48 h TTL and a compact
+  sub-5 KB payload; unit, load and emulator tests (10).
 - Export and delete: JSON and CSV export of every table through the share
   sheet, re-importable JSON, delete everything with confirmation, settings
   screen skeleton (09).
