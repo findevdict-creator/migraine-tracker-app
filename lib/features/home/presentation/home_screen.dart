@@ -13,6 +13,7 @@ import 'package:migraine_tracker/features/home_widget/application/home_widget_sy
 import 'package:migraine_tracker/features/notifications/application/notification_scheduler.dart';
 import 'package:migraine_tracker/features/risk/application/risk_engine.dart';
 import 'package:migraine_tracker/features/risk/presentation/risk_card.dart';
+import 'package:migraine_tracker/features/routines/presentation/routine_suggestion_card.dart';
 import 'package:migraine_tracker/features/weather/application/weather_sync.dart';
 import 'package:migraine_tracker/features/weather/presentation/environment_card.dart';
 
@@ -75,6 +76,8 @@ class HomeScreen extends ConsumerWidget {
           const SizedBox(height: AppThemeTokens.space4),
           const RiskCard(),
           const SizedBox(height: AppThemeTokens.space4),
+          // Shows only on days with a suggestion; carries its own spacing.
+          const RoutineSuggestionCard(),
           const CheckinCard(),
           const SizedBox(height: AppThemeTokens.space4),
           const EnvironmentCard(),

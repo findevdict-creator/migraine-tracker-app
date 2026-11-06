@@ -55,4 +55,8 @@ abstract final class SettingsKeys {
 
   /// Ids of watch commands already applied (phase 27), oldest first.
   static const String watchLedger = 'watch.ledger';
+
+  /// Routine suggestions dismissed for one day (phase 29):
+  /// `{"date": "yyyy-MM-dd", "codes": [...]}`.
+  static const String routinesDismissed = 'routines.dismissed';
 }

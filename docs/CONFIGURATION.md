@@ -13,12 +13,12 @@ production build, and the few native files that mirror a value.
 | `AppEndpoints` | Open-Meteo URLs, Cloud Function names | a function is renamed or a provider changes |
 | `AppFeatureFlags` | dev tools, emulator use, crash-reporting availability, per-feature availability | hiding a feature, enabling dev screens |
 | `AppIdentity.clinicianGuidanceUrl` | page behind the medication-overuse notes | M publishes or changes it |
-| `AppThresholds` | overuse notes (10, 15 days), learning threshold (10 attacks), refresh cadences, forecast window, location rounding, weather retention and stale age, barometer sampling, calibration and gauge range, factor bands (AQI, UV, pollen), health import window and sleep bands, back-fill days, risk learning (attack window, shrinkage, threshold percentiles, history and forecast days, confidence bands, insight lift cut-offs), notification times (risk-rising evening and morning hours, default attack length, medication reminder), dedupe retention and lead time, push token refresh window, default report period, questionnaire reminder interval and hour, chart length, voice listen length, pause and on-device-only switch, widget refresh period and steady-pressure band | product decisions |
+| `AppThresholds` | overuse notes (10, 15 days), learning threshold (10 attacks), refresh cadences, forecast window, location rounding, weather retention and stale age, barometer sampling, calibration and gauge range, factor bands (AQI, UV, pollen), health import window and sleep bands, back-fill days, risk learning (attack window, shrinkage, threshold percentiles, history and forecast days, confidence bands, insight lift cut-offs), notification times (risk-rising evening and morning hours, default attack length, medication reminder), dedupe retention and lead time, push token refresh window, default report period, questionnaire reminder interval and hour, chart length, voice listen length, pause and on-device-only switch, widget refresh period and steady-pressure band, routine suggestion trigger and count, paced breathing timing | product decisions |
 | `AppDataSources` | every outside data source shown on "About the data": name, coverage, licence, link | a source is added or replaced |
 | `AppBackgroundTasks` | identifiers of background jobs (weather refresh), the push wake-up message type | mirrored in `ios/Runner/Info.plist` and `AppDelegate.swift`; the message type must match `config.push.wakeupType` in the functions |
 | `AppNotificationChannels` | notification channel ids (alerts, reminders, attack), the iOS category and end-attack action ids, the Android small icon | renaming a channel (Android keeps the old one until reinstall), swapping the icon |
 | `AppThemeTokens` | seed colour, risk colours, load meter factor palette, attack theme palette, semantic colours, font family, spacing, radii, tap targets, text scale ceiling, animation durations | design changes |
-| `AppAssets` | logo, logo mark, launcher icon, head map, routine illustrations | replacing artwork (keep the paths, swap the files) |
+| `AppAssets` | logo, logo mark, launcher icon, head map, routine illustrations (`assets/routines/<code>.svg`) | replacing artwork (keep the paths, swap the files) |
 | `AppHomeWidgets` | Android widget provider class, iOS widget kind and app group, the start-attack link, the keys the widget reads | renaming the native widget or the app group (mirrored natively, see below) |
 | `AppWatch` (= `WatchConfig` in `packages/watch_protocol/lib/src/watch_config.dart`) | tile freshness, resend interval, tile channel, the keys the watch stores and the tile reads; the on/off switch is `AppFeatureFlags.watchAvailable` | watch behaviour. The values live in the shared package because the Wear OS app cannot import the phone's config; `app_config.dart` re-exports them |
 | `AppLocales` | supported locales, fallback | adding a language |
@@ -99,7 +99,11 @@ commercial key (used only by the cache function), RevenueCat keys.
     ("Adding the watch app to Runner"), so it ships inside the iPhone
     app. CI builds the watch app on its own from `ios/RiskWatch/project.yml`
     until then.
-11. Repository settings on GitHub: protect `main` (require PR, require the
+11. Self-care routines (phase 29): have a clinician review the routine
+    wording in `docs/content/routines-review.md` before the first public
+    release, and replace the placeholder illustrations in
+    `assets/routines/` (keep the file names).
+12. Repository settings on GitHub: protect `main` (require PR, require the
    `pr` workflow jobs, require conversation resolution, block force pushes
    and deletions, merge commits only, delete head branches on merge).
 

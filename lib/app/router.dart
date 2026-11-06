@@ -19,6 +19,8 @@ import 'package:migraine_tracker/features/questionnaires/presentation/questionna
 import 'package:migraine_tracker/features/questionnaires/presentation/questionnaires_screen.dart';
 import 'package:migraine_tracker/features/report/presentation/report_screen.dart';
 import 'package:migraine_tracker/features/risk/presentation/risk_screen.dart';
+import 'package:migraine_tracker/features/routines/presentation/routine_screen.dart';
+import 'package:migraine_tracker/features/routines/presentation/routines_screen.dart';
 import 'package:migraine_tracker/features/settings/presentation/settings_screen.dart';
 import 'package:migraine_tracker/features/weather/presentation/about_data_screen.dart';
 import 'package:migraine_tracker/features/weather/presentation/environment_screen.dart';
@@ -47,6 +49,9 @@ abstract final class AppRoutes {
   static const String questionnairePattern = '/questionnaires/:kind';
   static String questionnaire(String kind) => '/questionnaires/$kind';
   static const String notifications = '/notifications';
+  static const String routines = '/routines';
+  static const String routinePattern = '/routines/:code';
+  static String routine(String code) => '/routines/$code';
   static const String insightsMethod = '/insights/method';
   static String checkin(String date) => '/checkin/$date';
 }
@@ -122,6 +127,19 @@ final routerProvider = Provider<GoRouter>((ref) {
         path: AppRoutes.notifications,
         name: 'notifications',
         builder: (context, state) => const NotificationSettingsScreen(),
+      ),
+      GoRoute(
+        path: AppRoutes.routines,
+        name: 'routines',
+        builder: (context, state) => const RoutinesScreen(),
+        routes: [
+          GoRoute(
+            path: ':code',
+            name: 'routine',
+            builder: (context, state) =>
+                RoutineScreen(code: state.pathParameters['code']!),
+          ),
+        ],
       ),
       GoRoute(
         path: AppRoutes.questionnaires,
