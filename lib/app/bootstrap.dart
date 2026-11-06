@@ -2,6 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:migraine_tracker/app/app.dart';
 import 'package:migraine_tracker/config/app_config.dart';
+import 'package:migraine_tracker/core/firebase/firebase_bootstrap.dart';
 
 /// Provides the resolved [AppConfig] to the whole widget tree.
 ///
@@ -15,9 +16,13 @@ final appConfigProvider = Provider<AppConfig>(
 Future<void> bootstrap(AppFlavor flavor) async {
   WidgetsFlutterBinding.ensureInitialized();
   final config = AppConfig(flavor: flavor);
+  final firebase = await initializeFirebase(config);
   runApp(
     ProviderScope(
-      overrides: [appConfigProvider.overrideWithValue(config)],
+      overrides: [
+        appConfigProvider.overrideWithValue(config),
+        firebaseStatusProvider.overrideWithValue(firebase),
+      ],
       child: const MigraineTrackerApp(),
     ),
   );

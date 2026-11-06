@@ -59,6 +59,17 @@ commercial key (used only by the cache function), RevenueCat keys.
    `pr` workflow jobs, require conversation resolution, block force pushes
    and deletions, merge commits only, delete head branches on merge).
 
+## Server-side configuration
+
+`functions/src/config.ts` is the single configuration file for the Cloud
+Functions: region, cache freshness and TTL, cell size, Open-Meteo URLs and
+secret names, share-link lifetimes, purge deadline, collection and storage
+names. Values shared with the app (region, function names, cell size) must
+match `lib/config/app_config.dart`.
+
+Secrets for functions live in Secret Manager (`firebase functions:secrets:set
+OPEN_METEO_API_KEY`), never in the repo.
+
 ## Native mirrors of config values
 
 These cannot be read from Dart at build time, so they mirror `AppIdentity`:

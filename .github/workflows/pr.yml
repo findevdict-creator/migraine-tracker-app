@@ -122,10 +122,26 @@ jobs:
           node-version: "22"
           cache: npm
           cache-dependency-path: functions/package-lock.json
+      - uses: actions/setup-java@v4
+        if: steps.check.outputs.run == 'true'
+        with:
+          distribution: temurin
+          java-version: "21"
+      - name: Cache Firebase emulators
+        if: steps.check.outputs.run == 'true'
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/firebase/emulators
+          key: firebase-emulators-${{ runner.os }}
       - if: steps.check.outputs.run == 'true'
         working-directory: functions
         run: |
           npm ci
           npm run lint
+          npm run format
           npm run typecheck
           npm test
+      - name: Security rules tests (Firestore and Storage emulators)
+        if: steps.check.outputs.run == 'true'
+        working-directory: functions
+        run: npx -y firebase-tools@15 emulators:exec --only firestore,storage --project migraine-tracker-rules-test "npx jest --config jest.rules.config.js"

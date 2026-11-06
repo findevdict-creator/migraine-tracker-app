@@ -1,0 +1,42 @@
+{
+  "name": "migraine-tracker-functions",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Cloud Functions for Migraine Tracker: weather cache, push wake-up, share links, account purge, audit counts.",
+  "main": "lib/index.js",
+  "engines": {
+    "node": "22"
+  },
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src test",
+    "format": "prettier --check \"src/**/*.ts\" \"test/**/*.ts\"",
+    "format:write": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "test": "jest --coverage",
+    "test:rules": "npx -y firebase-tools@15 emulators:exec --only firestore,storage --project migraine-tracker-rules-test \"npx jest --config jest.rules.config.js\"",
+    "serve": "npm run build && firebase emulators:start --only functions,firestore,storage",
+    "deploy:staging": "firebase deploy --only functions,firestore:rules,storage --project staging",
+    "deploy:prod": "firebase deploy --only functions,firestore:rules,storage --project prod"
+  },
+  "dependencies": {
+    "firebase-admin": "^13.0.0",
+    "firebase-functions": "^6.3.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.20.0",
+    "@firebase/rules-unit-testing": "^6.0.0",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.13.0",
+    "eslint": "^9.20.0",
+    "eslint-config-prettier": "^10.0.0",
+    "eslint-plugin-import": "^2.31.0",
+    "firebase": "^13.2.0",
+    "firebase-functions-test": "^3.4.0",
+    "jest": "^29.7.0",
+    "prettier": "^3.5.0",
+    "ts-jest": "^29.2.5",
+    "typescript": "^5.7.0",
+    "typescript-eslint": "^8.24.0"
+  }
+}

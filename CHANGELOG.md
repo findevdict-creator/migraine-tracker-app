@@ -7,6 +7,9 @@ release time.
 ## [Unreleased]
 
 ### Added
+- Firebase setup: options from the central config per flavor, App Check,
+  opt-in Crashlytics, emulator suite, security rules with emulator tests,
+  TypeScript Cloud Functions project with lint, Jest and CI (04).
 - Design system: light, dark and attack themes from the config tokens,
   semantic colours, type scale with 200% clamp, reduce-motion helpers, core
   widgets, theme gallery and golden tests (03).

@@ -28,9 +28,10 @@ feat(attack-log): add head map tap targets
 fix(weather-feed): show forecast age when offline (11)
 ```
 
-Types: `feat fix refactor test docs chore build ci perf`. Subject under 72
-characters, imperative mood. Enforced by `tool/check_commit_msg.sh` in the
-commit-msg hook and in CI.
+Types: `feat fix refactor test docs chore build ci perf`. Subject ideally
+under 72 characters (hard limit 100, the commitlint default), imperative
+mood. Enforced by `tool/check_commit_msg.sh` in the commit-msg hook and in
+CI.
 
 ## Local setup
 

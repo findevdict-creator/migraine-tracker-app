@@ -1,0 +1,53 @@
+rules_version = '2';
+
+// Deny by default. Every collection is opened explicitly and tested in
+// functions/test/rules.test.ts. The phone holds the user's data; the server
+// only sees the five small collections below.
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Weather cache: readable by any App Check-verified client, written only
+    // by the cache function (Admin SDK bypasses rules).
+    match /weather_cells/{cell} {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    // Account metadata: the owner only.
+    match /users/{uid} {
+      function isOwner() {
+        return request.auth != null && request.auth.uid == uid;
+      }
+      function allowedKeys() {
+        return request.resource.data.keys().hasOnly(['createdAt', 'backupPath', 'subscription']);
+      }
+      allow read, delete: if isOwner();
+      allow create, update: if isOwner() && allowedKeys();
+    }
+
+    // Report snapshots are read through the share-link function by token,
+    // never directly.
+    match /share_snapshots/{token} {
+      allow read, write: if false;
+    }
+
+    // Opt-in audit counts: create only, by a signed-in user, counts only.
+    match /audit_counts/{doc} {
+      allow create: if request.auth != null
+        && request.resource.data.uid == request.auth.uid
+        && request.resource.data.keys().hasOnly([
+          'uid', 'month', 'attacks', 'highDays', 'hits', 'misses', 'falseAlarms', 'createdAt'
+        ])
+        && request.resource.data.attacks is int
+        && request.resource.data.highDays is int
+        && request.resource.data.hits is int
+        && request.resource.data.misses is int
+        && request.resource.data.falseAlarms is int;
+      allow read, update, delete: if false;
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
