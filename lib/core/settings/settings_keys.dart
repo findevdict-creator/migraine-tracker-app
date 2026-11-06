@@ -38,4 +38,14 @@ abstract final class SettingsKeys {
   /// learning run finished (ISO 8601).
   static const String riskThresholds = 'risk.thresholds';
   static const String riskLastLearnedAt = 'risk.lastLearnedAt';
+
+  /// Notifications: one switch per type (`notifications.<type>`), the
+  /// pressure-drop threshold, the preventive reminder time and the
+  /// delivered event keys (`{key: scheduledAtIso}`).
+  static String notificationType(String type) => 'notifications.$type';
+  static const String notificationPressureThreshold =
+      'notifications.pressureThresholdHpa';
+  static const String notificationMedicationTime =
+      'notifications.medicationTime';
+  static const String notificationSentKeys = 'notifications.sentKeys';
 }

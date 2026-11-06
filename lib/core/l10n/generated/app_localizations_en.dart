@@ -1229,4 +1229,135 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get settingsInsightsHint =>
       'Which factors attacks followed in your log';
+
+  @override
+  String get notificationsTitle => 'Notifications';
+
+  @override
+  String get settingsNotificationsHint =>
+      'Level alerts, pressure drops, reminders';
+
+  @override
+  String get notificationsIntro =>
+      'Everything is scheduled on this phone from the saved forecast and your log. Switch off any type you do not want.';
+
+  @override
+  String get notificationsPermissionDenied =>
+      'Notifications are off for this app in the system settings.';
+
+  @override
+  String get notifTypeRiskRising => 'Level rising';
+
+  @override
+  String get notifTypeRiskRisingHint =>
+      'The evening before and the morning of a higher day';
+
+  @override
+  String get notifTypePressureDrop => 'Pressure drop';
+
+  @override
+  String notifTypePressureDropHint(String hpa) {
+    return 'When the forecast shows a fall of $hpa hPa or more in 24 hours';
+  }
+
+  @override
+  String get notifTypeAttackOver => 'Is your attack over?';
+
+  @override
+  String get notifTypeAttackOverHint =>
+      'At your typical attack length, with an End button';
+
+  @override
+  String get notifTypeCheckin => 'Check-in reminder';
+
+  @override
+  String get notifTypeCheckinHint => 'At the time set under Daily';
+
+  @override
+  String get notifTypeMedication => 'Preventive reminder';
+
+  @override
+  String get notifTypeMedicationHint => 'A daily nudge for a preventive dose';
+
+  @override
+  String notifPressureThreshold(String hpa) {
+    return 'Pressure drop threshold: $hpa hPa in 24 h';
+  }
+
+  @override
+  String get notifMedicationTime => 'Preventive reminder time';
+
+  @override
+  String notifRiskEveningTitle(String level) {
+    return 'Tomorrow\'s level: $level';
+  }
+
+  @override
+  String notifRiskEveningBody(String level, String driver) {
+    return 'Your level for tomorrow is $level. Top of the list: $driver.';
+  }
+
+  @override
+  String notifRiskMorningTitle(String level) {
+    return 'Today\'s level: $level';
+  }
+
+  @override
+  String notifRiskMorningBody(String level, String driver) {
+    return 'Your level today is $level. Top of the list: $driver.';
+  }
+
+  @override
+  String get notifPressureTitle => 'Air pressure is dropping';
+
+  @override
+  String notifPressureBody(String hpa, String time) {
+    return 'A fall of $hpa hPa is expected by $time.';
+  }
+
+  @override
+  String get notifAttackOverTitle => 'Is your attack over?';
+
+  @override
+  String notifAttackOverBody(String duration) {
+    return 'It started $duration ago. End it here when it has passed.';
+  }
+
+  @override
+  String get notifEndAttackAction => 'End attack';
+
+  @override
+  String get notifCheckinTitle => 'Three taps for today';
+
+  @override
+  String get notifCheckinBody =>
+      'Sleep, stress and neck tension. Fifteen seconds.';
+
+  @override
+  String get notifMedicationTitle => 'Preventive dose';
+
+  @override
+  String get notifMedicationBody =>
+      'Time for today\'s preventive medication, if you take one.';
+
+  @override
+  String get notifChannelAlerts => 'Alerts';
+
+  @override
+  String get notifChannelAlertsDescription =>
+      'Level and pressure alerts from the saved forecast';
+
+  @override
+  String get notifChannelReminders => 'Reminders';
+
+  @override
+  String get notifChannelRemindersDescription =>
+      'Check-in and preventive dose reminders';
+
+  @override
+  String get notifChannelAttack => 'Attack';
+
+  @override
+  String get notifChannelAttackDescription =>
+      'Questions about a running attack';
 }

@@ -2175,6 +2175,216 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Which factors attacks followed in your log'**
   String get settingsInsightsHint;
+
+  /// No description provided for @notificationsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Notifications'**
+  String get notificationsTitle;
+
+  /// No description provided for @settingsNotificationsHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Level alerts, pressure drops, reminders'**
+  String get settingsNotificationsHint;
+
+  /// No description provided for @notificationsIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'Everything is scheduled on this phone from the saved forecast and your log. Switch off any type you do not want.'**
+  String get notificationsIntro;
+
+  /// No description provided for @notificationsPermissionDenied.
+  ///
+  /// In en, this message translates to:
+  /// **'Notifications are off for this app in the system settings.'**
+  String get notificationsPermissionDenied;
+
+  /// No description provided for @notifTypeRiskRising.
+  ///
+  /// In en, this message translates to:
+  /// **'Level rising'**
+  String get notifTypeRiskRising;
+
+  /// No description provided for @notifTypeRiskRisingHint.
+  ///
+  /// In en, this message translates to:
+  /// **'The evening before and the morning of a higher day'**
+  String get notifTypeRiskRisingHint;
+
+  /// No description provided for @notifTypePressureDrop.
+  ///
+  /// In en, this message translates to:
+  /// **'Pressure drop'**
+  String get notifTypePressureDrop;
+
+  /// No description provided for @notifTypePressureDropHint.
+  ///
+  /// In en, this message translates to:
+  /// **'When the forecast shows a fall of {hpa} hPa or more in 24 hours'**
+  String notifTypePressureDropHint(String hpa);
+
+  /// No description provided for @notifTypeAttackOver.
+  ///
+  /// In en, this message translates to:
+  /// **'Is your attack over?'**
+  String get notifTypeAttackOver;
+
+  /// No description provided for @notifTypeAttackOverHint.
+  ///
+  /// In en, this message translates to:
+  /// **'At your typical attack length, with an End button'**
+  String get notifTypeAttackOverHint;
+
+  /// No description provided for @notifTypeCheckin.
+  ///
+  /// In en, this message translates to:
+  /// **'Check-in reminder'**
+  String get notifTypeCheckin;
+
+  /// No description provided for @notifTypeCheckinHint.
+  ///
+  /// In en, this message translates to:
+  /// **'At the time set under Daily'**
+  String get notifTypeCheckinHint;
+
+  /// No description provided for @notifTypeMedication.
+  ///
+  /// In en, this message translates to:
+  /// **'Preventive reminder'**
+  String get notifTypeMedication;
+
+  /// No description provided for @notifTypeMedicationHint.
+  ///
+  /// In en, this message translates to:
+  /// **'A daily nudge for a preventive dose'**
+  String get notifTypeMedicationHint;
+
+  /// No description provided for @notifPressureThreshold.
+  ///
+  /// In en, this message translates to:
+  /// **'Pressure drop threshold: {hpa} hPa in 24 h'**
+  String notifPressureThreshold(String hpa);
+
+  /// No description provided for @notifMedicationTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Preventive reminder time'**
+  String get notifMedicationTime;
+
+  /// No description provided for @notifRiskEveningTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Tomorrow\'s level: {level}'**
+  String notifRiskEveningTitle(String level);
+
+  /// No description provided for @notifRiskEveningBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Your level for tomorrow is {level}. Top of the list: {driver}.'**
+  String notifRiskEveningBody(String level, String driver);
+
+  /// No description provided for @notifRiskMorningTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Today\'s level: {level}'**
+  String notifRiskMorningTitle(String level);
+
+  /// No description provided for @notifRiskMorningBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Your level today is {level}. Top of the list: {driver}.'**
+  String notifRiskMorningBody(String level, String driver);
+
+  /// No description provided for @notifPressureTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Air pressure is dropping'**
+  String get notifPressureTitle;
+
+  /// No description provided for @notifPressureBody.
+  ///
+  /// In en, this message translates to:
+  /// **'A fall of {hpa} hPa is expected by {time}.'**
+  String notifPressureBody(String hpa, String time);
+
+  /// No description provided for @notifAttackOverTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Is your attack over?'**
+  String get notifAttackOverTitle;
+
+  /// No description provided for @notifAttackOverBody.
+  ///
+  /// In en, this message translates to:
+  /// **'It started {duration} ago. End it here when it has passed.'**
+  String notifAttackOverBody(String duration);
+
+  /// No description provided for @notifEndAttackAction.
+  ///
+  /// In en, this message translates to:
+  /// **'End attack'**
+  String get notifEndAttackAction;
+
+  /// No description provided for @notifCheckinTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Three taps for today'**
+  String get notifCheckinTitle;
+
+  /// No description provided for @notifCheckinBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Sleep, stress and neck tension. Fifteen seconds.'**
+  String get notifCheckinBody;
+
+  /// No description provided for @notifMedicationTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Preventive dose'**
+  String get notifMedicationTitle;
+
+  /// No description provided for @notifMedicationBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Time for today\'s preventive medication, if you take one.'**
+  String get notifMedicationBody;
+
+  /// No description provided for @notifChannelAlerts.
+  ///
+  /// In en, this message translates to:
+  /// **'Alerts'**
+  String get notifChannelAlerts;
+
+  /// No description provided for @notifChannelAlertsDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Level and pressure alerts from the saved forecast'**
+  String get notifChannelAlertsDescription;
+
+  /// No description provided for @notifChannelReminders.
+  ///
+  /// In en, this message translates to:
+  /// **'Reminders'**
+  String get notifChannelReminders;
+
+  /// No description provided for @notifChannelRemindersDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Check-in and preventive dose reminders'**
+  String get notifChannelRemindersDescription;
+
+  /// No description provided for @notifChannelAttack.
+  ///
+  /// In en, this message translates to:
+  /// **'Attack'**
+  String get notifChannelAttack;
+
+  /// No description provided for @notifChannelAttackDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Questions about a running attack'**
+  String get notifChannelAttackDescription;
 }
 
 class _AppLocalizationsDelegate

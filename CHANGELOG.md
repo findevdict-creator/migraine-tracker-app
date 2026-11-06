@@ -7,6 +7,9 @@ release time.
 ## [Unreleased]
 
 ### Added
+- Notifications: risk rising, pressure drop, "is your attack over?" with
+  an end-attack action, check-in and medication reminders, each with its
+  own switch, planned on the phone and deduplicated by event key (21).
 - Insights: every factor sorted into more-attacks-followed, fewer,
   no clear effect and not enough data, with sample sizes and ratios,
   plus a method page (20).

@@ -316,6 +316,23 @@ class AppThresholds {
   static const int riskHistoryDays = 730;
   static const int riskForecastDays = 3;
 
+  /// Local notifications (FR-14). A rising level is announced the evening
+  /// before at [riskRisingEveningHour] and the morning of at
+  /// [riskRisingMorningHour] (local hours). "Is your attack over?" fires
+  /// at the person's typical attack duration, [defaultAttackDuration]
+  /// until [attacksBeforeDurationEstimate] attacks exist. Delivered event
+  /// keys are kept for [notificationDedupeRetention] so the same event is
+  /// never announced twice.
+  static const int riskRisingEveningHour = 20;
+  static const int riskRisingMorningHour = 8;
+  static const Duration defaultAttackDuration = Duration(hours: 4);
+  static const Duration notificationDedupeRetention = Duration(days: 7);
+  static const Duration notificationLeadTime = Duration(minutes: 1);
+  static const TimeOfDay defaultMedicationReminder = TimeOfDay(
+    hour: 21,
+    minute: 0,
+  );
+
   /// Mean weight confidence below which the card says "low", and from
   /// which it says "high"; "medium" between.
   static const List<double> riskConfidenceBands = [0.3, 0.7];
@@ -434,6 +451,25 @@ class AppBackgroundTasks {
 
   /// Daily weather refresh (workmanager / BGTaskScheduler).
   static const String weatherRefresh = 'app.migrainetracker.weatherRefresh';
+}
+
+/// Local notification channels (Android) and categories (iOS). The ids
+/// are stored by the OS; renaming one creates a new channel.
+class AppNotificationChannels {
+  const AppNotificationChannels._();
+
+  static const String alerts = 'alerts';
+  static const String reminders = 'reminders';
+  static const String attack = 'attack';
+
+  /// iOS category carrying the "End attack" action.
+  static const String attackCategory = 'attack';
+
+  /// Action identifier shared by Android and iOS.
+  static const String endAttackAction = 'end-attack';
+
+  /// Android small icon resource.
+  static const String androidIcon = '@mipmap/ic_launcher';
 }
 
 // ---------------------------------------------------------------------------

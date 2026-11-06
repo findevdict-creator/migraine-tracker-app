@@ -14,6 +14,11 @@ import workmanager_apple
       withIdentifier: "app.migrainetracker.weatherRefresh",
       frequency: NSNumber(value: 24 * 60 * 60)
     )
+    // Local notifications (phase 21): show them in the foreground too and
+    // route action presses to the plugin.
+    if #available(iOS 10.0, *) {
+      UNUserNotificationCenter.current().delegate = self as UNUserNotificationCenterDelegate
+    }
     return super.application(application, didFinishLaunchingWithOptions: launchOptions)
   }
 

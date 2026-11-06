@@ -25,3 +25,4 @@ feature PR adds its row.
 | 18 | Risk card shows the level in airplane mode; badge flips at ten attacks | [ ] | [ ] | |
 | 19 | Meter segments tappable on the card; marks move after learning | [ ] | [ ] | |
 | 20 | Insights lists match the drivers seen over the past weeks | [ ] | [ ] | |
+| 21 | Attack-over notification carries End attack; every type can be turned off | [ ] | [ ] | |
