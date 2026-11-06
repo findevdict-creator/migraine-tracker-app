@@ -8,6 +8,7 @@ import 'package:migraine_tracker/core/theme/app_theme.dart';
 import 'package:migraine_tracker/core/widgets/widgets.dart';
 import 'package:migraine_tracker/features/attack_log/domain/attack_entity.dart';
 import 'package:migraine_tracker/features/attack_log/presentation/attack_log_controller.dart';
+import 'package:migraine_tracker/features/attack_log/presentation/duration_estimate_card.dart';
 import 'package:migraine_tracker/features/attack_log/presentation/head_map.dart';
 import 'package:migraine_tracker/features/medication/presentation/medication_log_screen.dart';
 import 'package:migraine_tracker/features/voice/presentation/voice_log_sheet.dart';
@@ -101,6 +102,7 @@ class _AttackFormState extends ConsumerState<_AttackForm> {
         padding: const EdgeInsets.all(AppThemeTokens.space4),
         children: [
           Text(l10n.attackStartedAt(time), style: context.textStyles.bodyLarge),
+          if (attack.isRunning) DurationEstimateCard(attackId: attack.id),
           const SizedBox(height: AppThemeTokens.space5),
           SectionHeader(title: l10n.attackIntensity),
           AppIntensitySlider(

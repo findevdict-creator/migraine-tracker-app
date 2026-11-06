@@ -8,6 +8,8 @@ release time.
 
 ### Added
 
+- Attack duration estimate: while an attack runs, a card shows how long similar attacks usually last as a range, with how many past attacks it is based on, after five completed attacks (31).
+
 - Experiments: try one change for two weeks with a daily "did you stick with it" question, then compare attacks per week, intensity and duration with the two weeks before, with sample sizes and a plain caveat (30).
 
 - Self-care routines: stretches, paced breathing with a guided timer, low light, water, caffeine and sleep, suggested on home on high days and after high neck-tension or stress check-ins, with "Not today" (29).

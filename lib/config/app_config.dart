@@ -500,6 +500,15 @@ class AppThresholds {
   static const int experimentWindowDays = 14;
   static const int experimentMinAttacks = 3;
 
+  /// Attack duration estimate (FR-5): the fewest completed attacks before
+  /// it shows, and the fewest in a matching group before that group is
+  /// used. Intensities within [durationIntensityBand] count as similar.
+  static const int durationEstimateMinAttacks = 5;
+  static const int durationIntensityBand = 2;
+
+  /// Below this the range is rounded to half hours, above to whole hours.
+  static const Duration durationFineStepBelow = Duration(hours: 3);
+
   /// Share link lifetimes offered to the user.
   static const List<int> shareLinkDays = [7, 30];
 

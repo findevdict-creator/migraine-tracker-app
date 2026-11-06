@@ -262,6 +262,42 @@ abstract class AppLocalizations {
   /// **'Pain intensity'**
   String get attackIntensity;
 
+  /// No description provided for @durationEstimateTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'How long attacks like this usually last'**
+  String get durationEstimateTitle;
+
+  /// No description provided for @durationEstimateRange.
+  ///
+  /// In en, this message translates to:
+  /// **'Typically {low} to {high} h'**
+  String durationEstimateRange(String low, String high);
+
+  /// No description provided for @durationEstimateSameMedication.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, other{Based on {count} past attacks of similar intensity with the same medication}}'**
+  String durationEstimateSameMedication(int count);
+
+  /// No description provided for @durationEstimateNoMedication.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, other{Based on {count} past attacks of similar intensity without medication}}'**
+  String durationEstimateNoMedication(int count);
+
+  /// No description provided for @durationEstimateSimilar.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, other{Based on {count} past attacks of similar intensity}}'**
+  String durationEstimateSimilar(int count);
+
+  /// No description provided for @durationEstimateAll.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, other{Based on {count} of your past attacks}}'**
+  String durationEstimateAll(int count);
+
   /// No description provided for @attackIntensityLow.
   ///
   /// In en, this message translates to:

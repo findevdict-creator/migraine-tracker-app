@@ -35,3 +35,4 @@ feature PR adds its row.
 | 28 | Watch start, intensity and end show on the iPhone at the watch times; taps made with the iPhone away arrive once when it is back; complication shows today's level | n/a | [ ] | watchOS only; needs the Runner targets (CONFIGURATION item 10) |
 | 29 | Routine card appears on a high day and after a neck-tension check-in; "Not today" hides it until tomorrow; breathing timer runs and respects reduce motion | [ ] | [ ] | Content needs clinician review before release |
 | 30 | Pick a change, answer the daily question, see the comparison with sample sizes and caveat; stop and finish keep the result in the past list | [ ] | [ ] | |
+| 31 | Running attack shows "Typically X to Y h" with the sample size after five finished attacks; nothing before; updates with intensity and medication | [ ] | [ ] | |

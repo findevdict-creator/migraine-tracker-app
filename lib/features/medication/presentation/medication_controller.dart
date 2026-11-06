@@ -37,6 +37,11 @@ attackMedicationsProvider = StreamProvider.family(
       ref.watch(medicationRepositoryProvider).watchForAttack(attackId),
 );
 
+/// Every dose ever logged, for the attack duration estimate.
+final allMedicationsProvider = StreamProvider<List<MedicationEntity>>(
+  (ref) => ref.watch(medicationRepositoryProvider).watchAll(),
+);
+
 /// Recently used names for the suggestion list.
 final recentMedicationNamesProvider = FutureProvider<List<String>>(
   (ref) => ref.watch(medicationRepositoryProvider).recentNames(),
