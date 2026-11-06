@@ -91,6 +91,13 @@ class SettingsScreen extends ConsumerWidget {
             subtitle: const Text(AppIdentity.wellnessDisclaimer),
           ),
           ListTile(
+            key: const ValueKey('settings-insights'),
+            leading: const Icon(Icons.insights_outlined),
+            title: Text(l10n.insightsTitle),
+            subtitle: Text(l10n.settingsInsightsHint),
+            onTap: () => context.push(AppRoutes.insights),
+          ),
+          ListTile(
             key: const ValueKey('settings-explainer'),
             leading: const Icon(Icons.help_outline),
             title: Text(l10n.explainerTitle),

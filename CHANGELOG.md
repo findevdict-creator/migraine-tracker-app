@@ -7,6 +7,9 @@ release time.
 ## [Unreleased]
 
 ### Added
+- Insights: every factor sorted into more-attacks-followed, fewer,
+  no clear effect and not enough data, with sample sizes and ratios,
+  plus a method page (20).
 - Load meter: stacked 0 to 100 bar with one named, tappable segment per
   factor and Moderate/High marks that follow the learned thresholds, on
   the home card and the risk screen, with goldens (19).

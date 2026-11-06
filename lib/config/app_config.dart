@@ -323,6 +323,13 @@ class AppThresholds {
   /// Exposures below which a factor is "not enough data".
   static const int minExposuresForInsight = 5;
 
+  /// Insight buckets (FR-11) from the ratio of the learned weight to the
+  /// population weight: a trigger at or above [insightTriggerLift], a
+  /// protector at or below [insightProtectorLift], no clear effect
+  /// between.
+  static const double insightTriggerLift = 1.25;
+  static const double insightProtectorLift = 0.8;
+
   /// Attacks before the accuracy self-audit page appears.
   static const int attacksBeforeSelfAudit = 10;
 

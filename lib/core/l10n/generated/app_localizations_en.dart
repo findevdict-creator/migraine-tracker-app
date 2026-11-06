@@ -1155,4 +1155,78 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get loadMeterEmpty => 'No load yet';
+
+  @override
+  String get insightsTitle => 'Your factors';
+
+  @override
+  String get insightsIntro =>
+      'How often an attack followed each factor in your own log, compared with your usual rate.';
+
+  @override
+  String get insightsTriggers => 'More attacks followed';
+
+  @override
+  String get insightsProtectors => 'Fewer attacks followed';
+
+  @override
+  String get insightsNeutral => 'No clear effect';
+
+  @override
+  String get insightsNotEnough => 'Not enough data yet';
+
+  @override
+  String get insightsEmptyBucket => 'Nothing here yet.';
+
+  @override
+  String insightsSample(int days, int attacks) {
+    return '$days exposure days, $attacks followed by an attack';
+  }
+
+  @override
+  String insightsLift(String ratio) {
+    return '$ratio× your usual rate';
+  }
+
+  @override
+  String insightsNeedMore(int days, int needed) {
+    return '$days of $needed exposure days logged';
+  }
+
+  @override
+  String get insightsNoRunYet => 'Log and end an attack to start counting.';
+
+  @override
+  String get insightsMethodLink => 'How this is counted';
+
+  @override
+  String get insightsMethodTitle => 'How this is counted';
+
+  @override
+  String get insightsMethod1 =>
+      'An exposure day is a day where a factor was present in your log or in the weather, for example a sleep answer of 1 or a pressure drop of more than 2 hPa.';
+
+  @override
+  String get insightsMethod2 =>
+      'An attack counts as following a day when it started on that day or the next, the 24 to 48 hours the model looks at.';
+
+  @override
+  String get insightsMethod3 =>
+      'The ratio compares how often attacks followed that factor\'s days with how often they followed any day in your log. 1.5× means one and a half times your usual rate; 0.5× means half.';
+
+  @override
+  String insightsMethod4(int needed) {
+    return 'A factor needs $needed exposure days before it is sorted. Until then it sits under \"Not enough data yet\". Fewer attacks following a factor is as useful to know as more, so both lists get the same place.';
+  }
+
+  @override
+  String get insightsMethod5 =>
+      'None of this is a cause. A factor can sit in a list because of something it travels with, such as weekends or a medication change. Use the lists to decide what to try, not what to blame.';
+
+  @override
+  String get riskInsightsLink => 'Your factors';
+
+  @override
+  String get settingsInsightsHint =>
+      'Which factors attacks followed in your log';
 }

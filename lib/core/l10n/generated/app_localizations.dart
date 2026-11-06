@@ -2055,6 +2055,126 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'No load yet'**
   String get loadMeterEmpty;
+
+  /// No description provided for @insightsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Your factors'**
+  String get insightsTitle;
+
+  /// No description provided for @insightsIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'How often an attack followed each factor in your own log, compared with your usual rate.'**
+  String get insightsIntro;
+
+  /// No description provided for @insightsTriggers.
+  ///
+  /// In en, this message translates to:
+  /// **'More attacks followed'**
+  String get insightsTriggers;
+
+  /// No description provided for @insightsProtectors.
+  ///
+  /// In en, this message translates to:
+  /// **'Fewer attacks followed'**
+  String get insightsProtectors;
+
+  /// No description provided for @insightsNeutral.
+  ///
+  /// In en, this message translates to:
+  /// **'No clear effect'**
+  String get insightsNeutral;
+
+  /// No description provided for @insightsNotEnough.
+  ///
+  /// In en, this message translates to:
+  /// **'Not enough data yet'**
+  String get insightsNotEnough;
+
+  /// No description provided for @insightsEmptyBucket.
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing here yet.'**
+  String get insightsEmptyBucket;
+
+  /// No description provided for @insightsSample.
+  ///
+  /// In en, this message translates to:
+  /// **'{days} exposure days, {attacks} followed by an attack'**
+  String insightsSample(int days, int attacks);
+
+  /// No description provided for @insightsLift.
+  ///
+  /// In en, this message translates to:
+  /// **'{ratio}× your usual rate'**
+  String insightsLift(String ratio);
+
+  /// No description provided for @insightsNeedMore.
+  ///
+  /// In en, this message translates to:
+  /// **'{days} of {needed} exposure days logged'**
+  String insightsNeedMore(int days, int needed);
+
+  /// No description provided for @insightsNoRunYet.
+  ///
+  /// In en, this message translates to:
+  /// **'Log and end an attack to start counting.'**
+  String get insightsNoRunYet;
+
+  /// No description provided for @insightsMethodLink.
+  ///
+  /// In en, this message translates to:
+  /// **'How this is counted'**
+  String get insightsMethodLink;
+
+  /// No description provided for @insightsMethodTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'How this is counted'**
+  String get insightsMethodTitle;
+
+  /// No description provided for @insightsMethod1.
+  ///
+  /// In en, this message translates to:
+  /// **'An exposure day is a day where a factor was present in your log or in the weather, for example a sleep answer of 1 or a pressure drop of more than 2 hPa.'**
+  String get insightsMethod1;
+
+  /// No description provided for @insightsMethod2.
+  ///
+  /// In en, this message translates to:
+  /// **'An attack counts as following a day when it started on that day or the next, the 24 to 48 hours the model looks at.'**
+  String get insightsMethod2;
+
+  /// No description provided for @insightsMethod3.
+  ///
+  /// In en, this message translates to:
+  /// **'The ratio compares how often attacks followed that factor\'s days with how often they followed any day in your log. 1.5× means one and a half times your usual rate; 0.5× means half.'**
+  String get insightsMethod3;
+
+  /// No description provided for @insightsMethod4.
+  ///
+  /// In en, this message translates to:
+  /// **'A factor needs {needed} exposure days before it is sorted. Until then it sits under \"Not enough data yet\". Fewer attacks following a factor is as useful to know as more, so both lists get the same place.'**
+  String insightsMethod4(int needed);
+
+  /// No description provided for @insightsMethod5.
+  ///
+  /// In en, this message translates to:
+  /// **'None of this is a cause. A factor can sit in a list because of something it travels with, such as weekends or a medication change. Use the lists to decide what to try, not what to blame.'**
+  String get insightsMethod5;
+
+  /// No description provided for @riskInsightsLink.
+  ///
+  /// In en, this message translates to:
+  /// **'Your factors'**
+  String get riskInsightsLink;
+
+  /// No description provided for @settingsInsightsHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Which factors attacks followed in your log'**
+  String get settingsInsightsHint;
 }
 
 class _AppLocalizationsDelegate
