@@ -219,6 +219,222 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'A card with a badge'**
   String get devSampleCard;
+
+  /// Home screen one-tap button.
+  ///
+  /// In en, this message translates to:
+  /// **'Start attack'**
+  String get attackStart;
+
+  /// Home button when an attack is running.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue attack'**
+  String get attackContinue;
+
+  /// No description provided for @attackTitleRunning.
+  ///
+  /// In en, this message translates to:
+  /// **'Attack in progress'**
+  String get attackTitleRunning;
+
+  /// No description provided for @attackTitleEnded.
+  ///
+  /// In en, this message translates to:
+  /// **'Attack'**
+  String get attackTitleEnded;
+
+  /// No description provided for @attackStartedAt.
+  ///
+  /// In en, this message translates to:
+  /// **'Started at {time}'**
+  String attackStartedAt(String time);
+
+  /// No description provided for @attackNotFound.
+  ///
+  /// In en, this message translates to:
+  /// **'This attack no longer exists.'**
+  String get attackNotFound;
+
+  /// No description provided for @attackIntensity.
+  ///
+  /// In en, this message translates to:
+  /// **'Pain intensity'**
+  String get attackIntensity;
+
+  /// No description provided for @attackIntensityLow.
+  ///
+  /// In en, this message translates to:
+  /// **'No pain'**
+  String get attackIntensityLow;
+
+  /// No description provided for @attackIntensityHigh.
+  ///
+  /// In en, this message translates to:
+  /// **'Worst'**
+  String get attackIntensityHigh;
+
+  /// No description provided for @attackWhereItHurts.
+  ///
+  /// In en, this message translates to:
+  /// **'Where it hurts'**
+  String get attackWhereItHurts;
+
+  /// No description provided for @attackSymptoms.
+  ///
+  /// In en, this message translates to:
+  /// **'Symptoms'**
+  String get attackSymptoms;
+
+  /// No description provided for @attackPhases.
+  ///
+  /// In en, this message translates to:
+  /// **'Phases'**
+  String get attackPhases;
+
+  /// No description provided for @attackNotes.
+  ///
+  /// In en, this message translates to:
+  /// **'Notes'**
+  String get attackNotes;
+
+  /// No description provided for @attackNotesHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Anything else worth remembering'**
+  String get attackNotesHint;
+
+  /// No description provided for @attackEnd.
+  ///
+  /// In en, this message translates to:
+  /// **'End attack'**
+  String get attackEnd;
+
+  /// No description provided for @attackDone.
+  ///
+  /// In en, this message translates to:
+  /// **'Done'**
+  String get attackDone;
+
+  /// No description provided for @attackFinishLater.
+  ///
+  /// In en, this message translates to:
+  /// **'Finish later'**
+  String get attackFinishLater;
+
+  /// No description provided for @symptomAura.
+  ///
+  /// In en, this message translates to:
+  /// **'Aura'**
+  String get symptomAura;
+
+  /// No description provided for @symptomNeckTension.
+  ///
+  /// In en, this message translates to:
+  /// **'Neck tension'**
+  String get symptomNeckTension;
+
+  /// No description provided for @symptomLightSensitivity.
+  ///
+  /// In en, this message translates to:
+  /// **'Light'**
+  String get symptomLightSensitivity;
+
+  /// No description provided for @symptomSoundSensitivity.
+  ///
+  /// In en, this message translates to:
+  /// **'Sound'**
+  String get symptomSoundSensitivity;
+
+  /// No description provided for @symptomSmellSensitivity.
+  ///
+  /// In en, this message translates to:
+  /// **'Smell'**
+  String get symptomSmellSensitivity;
+
+  /// No description provided for @symptomNausea.
+  ///
+  /// In en, this message translates to:
+  /// **'Nausea'**
+  String get symptomNausea;
+
+  /// No description provided for @phaseProdrome.
+  ///
+  /// In en, this message translates to:
+  /// **'Prodrome'**
+  String get phaseProdrome;
+
+  /// No description provided for @phaseAura.
+  ///
+  /// In en, this message translates to:
+  /// **'Aura'**
+  String get phaseAura;
+
+  /// No description provided for @phaseAttack.
+  ///
+  /// In en, this message translates to:
+  /// **'Attack'**
+  String get phaseAttack;
+
+  /// No description provided for @phasePostdrome.
+  ///
+  /// In en, this message translates to:
+  /// **'Postdrome'**
+  String get phasePostdrome;
+
+  /// No description provided for @headForehead.
+  ///
+  /// In en, this message translates to:
+  /// **'Forehead'**
+  String get headForehead;
+
+  /// No description provided for @headLeftTemple.
+  ///
+  /// In en, this message translates to:
+  /// **'Left temple'**
+  String get headLeftTemple;
+
+  /// No description provided for @headRightTemple.
+  ///
+  /// In en, this message translates to:
+  /// **'Right temple'**
+  String get headRightTemple;
+
+  /// No description provided for @headBehindEyes.
+  ///
+  /// In en, this message translates to:
+  /// **'Behind the eyes'**
+  String get headBehindEyes;
+
+  /// No description provided for @headLeftSide.
+  ///
+  /// In en, this message translates to:
+  /// **'Left side'**
+  String get headLeftSide;
+
+  /// No description provided for @headRightSide.
+  ///
+  /// In en, this message translates to:
+  /// **'Right side'**
+  String get headRightSide;
+
+  /// No description provided for @headTopOfHead.
+  ///
+  /// In en, this message translates to:
+  /// **'Top of head'**
+  String get headTopOfHead;
+
+  /// No description provided for @headBackOfHead.
+  ///
+  /// In en, this message translates to:
+  /// **'Back of head'**
+  String get headBackOfHead;
+
+  /// No description provided for @headNeck.
+  ///
+  /// In en, this message translates to:
+  /// **'Neck'**
+  String get headNeck;
 }
 
 class _AppLocalizationsDelegate

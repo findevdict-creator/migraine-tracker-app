@@ -7,6 +7,9 @@ release time.
 ## [Unreleased]
 
 ### Added
+- Attack log: one-tap start, attack screen in the attack theme, head map,
+  symptom chips with per-tap times, phases on one record, end and finish
+  later, every edit persisted at once (05).
 - Firebase setup: options from the central config per flavor, App Check,
   opt-in Crashlytics, emulator suite, security rules with emulator tests,
   TypeScript Cloud Functions project with lint, Jest and CI (04).
