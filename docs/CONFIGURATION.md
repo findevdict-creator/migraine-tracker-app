@@ -8,7 +8,7 @@ production build, and the few native files that mirror a value.
 
 | Section | Controls | Change when |
 | ------- | -------- | ----------- |
-| `AppIdentity` | product name, per-flavor display names, bundle id, deep-link scheme, support email, privacy and terms URLs, wellness disclaimer | rebranding, new domain |
+| `AppIdentity` | product name, per-flavor display names, bundle id (and the iOS bundle id, which has no underscores), deep-link scheme, support email, privacy and terms URLs, wellness disclaimer | rebranding, new domain |
 | `AppEnv` | Firebase options, functions region and base URL, emulator host, RevenueCat keys (all from `env/*.json`) | never edited directly; fill the env files |
 | `AppEndpoints` | Open-Meteo URLs, Cloud Function names | a function is renamed or a provider changes |
 | `AppFeatureFlags` | dev tools, emulator use, crash-reporting availability, per-feature availability | hiding a feature, enabling dev screens |
@@ -87,7 +87,7 @@ commercial key (used only by the cache function), RevenueCat keys.
    `CODE_SIGN_ENTITLEMENTS` to `ios/RiskWidget/RiskWidget.entitlements`.
    On the Runner target set `CODE_SIGN_ENTITLEMENTS` to
    `Runner/Runner.entitlements`. Enable the App Groups capability on both
-   targets with `group.app.migrainetracker.migraine_tracker` (register
+   targets with `group.app.migrainetracker.migraineTracker` (register
    the group in the Apple Developer portal first). Android needs nothing.
 9. Repository settings on GitHub: protect `main` (require PR, require the
    `pr` workflow jobs, require conversation resolution, block force pushes

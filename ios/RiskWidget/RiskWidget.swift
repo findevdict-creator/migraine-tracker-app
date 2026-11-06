@@ -12,7 +12,7 @@ import WidgetKit
 // - start link: AppHomeWidgets.startAttackUri
 // - refresh: AppThresholds.widgetRefresh (30 minutes)
 
-private let appGroup = "group.app.migrainetracker.migraine_tracker"
+private let appGroup = "group.app.migrainetracker.migraineTracker"
 private let startAttackURL = URL(string: "migrainetracker://widget/start-attack?homeWidget")!
 private let refreshMinutes = 30
 
