@@ -9,6 +9,7 @@ import 'package:migraine_tracker/core/theme/app_colors.dart';
 import 'package:migraine_tracker/features/attack_log/presentation/start_attack_button.dart';
 import 'package:migraine_tracker/features/barometer/application/barometer_sampler.dart';
 import 'package:migraine_tracker/features/checkin/presentation/checkin_card.dart';
+import 'package:migraine_tracker/features/home_widget/application/home_widget_sync.dart';
 import 'package:migraine_tracker/features/notifications/application/notification_scheduler.dart';
 import 'package:migraine_tracker/features/risk/application/risk_engine.dart';
 import 'package:migraine_tracker/features/risk/presentation/risk_card.dart';
@@ -31,6 +32,8 @@ class HomeScreen extends ConsumerWidget {
       // the local notifications from the result.
       ..watch(riskRefreshProvider)
       ..watch(notificationRefreshProvider)
+      // Pushes the level and pressure trend to the home-screen widgets.
+      ..watch(homeWidgetRefreshProvider)
       // Keeps the barometer sampler running while the app is open.
       ..watch(liveReadingProvider);
     return Scaffold(

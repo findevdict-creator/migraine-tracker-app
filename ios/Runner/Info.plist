@@ -30,6 +30,18 @@
 	<string>Sleep, resting heart rate, heart rate variability, steps and menstrual flow are read only for the types you switch on, to fill in your check-in and show them next to your attacks. They stay on this phone.</string>
 	<key>NSHealthUpdateUsageDescription</key>
 	<string>If you choose, each ended attack is saved to Apple Health as a headache event with its start, end and severity.</string>
+	<!-- Deep links (AppIdentity.deepLinkScheme); the home widget's start button uses them. -->
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>app.migrainetracker.migraine_tracker</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>migrainetracker</string>
+			</array>
+		</dict>
+	</array>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>The microphone is used only while you hold the voice button on the attack screen, so you can say how the attack feels instead of typing.</string>
 	<key>NSSpeechRecognitionUsageDescription</key>

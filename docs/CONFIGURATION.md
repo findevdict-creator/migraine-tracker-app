@@ -13,12 +13,13 @@ production build, and the few native files that mirror a value.
 | `AppEndpoints` | Open-Meteo URLs, Cloud Function names | a function is renamed or a provider changes |
 | `AppFeatureFlags` | dev tools, emulator use, crash-reporting availability, per-feature availability | hiding a feature, enabling dev screens |
 | `AppIdentity.clinicianGuidanceUrl` | page behind the medication-overuse notes | M publishes or changes it |
-| `AppThresholds` | overuse notes (10, 15 days), learning threshold (10 attacks), refresh cadences, forecast window, location rounding, weather retention and stale age, barometer sampling, calibration and gauge range, factor bands (AQI, UV, pollen), health import window and sleep bands, back-fill days, risk learning (attack window, shrinkage, threshold percentiles, history and forecast days, confidence bands, insight lift cut-offs), notification times (risk-rising evening and morning hours, default attack length, medication reminder), dedupe retention and lead time, push token refresh window, default report period, questionnaire reminder interval and hour, chart length, voice listen length, pause and on-device-only switch | product decisions |
+| `AppThresholds` | overuse notes (10, 15 days), learning threshold (10 attacks), refresh cadences, forecast window, location rounding, weather retention and stale age, barometer sampling, calibration and gauge range, factor bands (AQI, UV, pollen), health import window and sleep bands, back-fill days, risk learning (attack window, shrinkage, threshold percentiles, history and forecast days, confidence bands, insight lift cut-offs), notification times (risk-rising evening and morning hours, default attack length, medication reminder), dedupe retention and lead time, push token refresh window, default report period, questionnaire reminder interval and hour, chart length, voice listen length, pause and on-device-only switch, widget refresh period and steady-pressure band | product decisions |
 | `AppDataSources` | every outside data source shown on "About the data": name, coverage, licence, link | a source is added or replaced |
 | `AppBackgroundTasks` | identifiers of background jobs (weather refresh), the push wake-up message type | mirrored in `ios/Runner/Info.plist` and `AppDelegate.swift`; the message type must match `config.push.wakeupType` in the functions |
 | `AppNotificationChannels` | notification channel ids (alerts, reminders, attack), the iOS category and end-attack action ids, the Android small icon | renaming a channel (Android keeps the old one until reinstall), swapping the icon |
 | `AppThemeTokens` | seed colour, risk colours, load meter factor palette, attack theme palette, semantic colours, font family, spacing, radii, tap targets, text scale ceiling, animation durations | design changes |
 | `AppAssets` | logo, logo mark, launcher icon, head map, routine illustrations | replacing artwork (keep the paths, swap the files) |
+| `AppHomeWidgets` | Android widget provider class, iOS widget kind and app group, the start-attack link, the keys the widget reads | renaming the native widget or the app group (mirrored natively, see below) |
 | `AppLocales` | supported locales, fallback | adding a language |
 
 ## The risk model
@@ -79,7 +80,16 @@ commercial key (used only by the cache function), RevenueCat keys.
 7. Questionnaires (phase 24): confirm the HIT-6 licence with
    QualityMetric before a commercial release; MIDAS needs attribution
    only.
-8. Repository settings on GitHub: protect `main` (require PR, require the
+8. Home-screen widget on iOS (phase 26): in Xcode add a Widget
+   Extension target named `RiskWidget` (deployment target iOS 15), delete
+   the generated Swift files and add `ios/RiskWidget/RiskWidget.swift`,
+   set its Info.plist to `ios/RiskWidget/Info.plist` and its
+   `CODE_SIGN_ENTITLEMENTS` to `ios/RiskWidget/RiskWidget.entitlements`.
+   On the Runner target set `CODE_SIGN_ENTITLEMENTS` to
+   `Runner/Runner.entitlements`. Enable the App Groups capability on both
+   targets with `group.app.migrainetracker.migraine_tracker` (register
+   the group in the Apple Developer portal first). Android needs nothing.
+9. Repository settings on GitHub: protect `main` (require PR, require the
    `pr` workflow jobs, require conversation resolution, block force pushes
    and deletions, merge commits only, delete head branches on merge).
 
@@ -107,4 +117,6 @@ These cannot be read from Dart at build time, so they mirror `AppIdentity`:
 | Health purpose texts | reasons shown on the Health data screen (ARB) | `ios/Runner/Info.plist` (`NSHealthShareUsageDescription`, `NSHealthUpdateUsageDescription`), `AndroidManifest.xml` health permissions, `docs/store/play-health-declaration.md` |
 | Microphone and speech purpose texts | voice logging (phase 25) | `ios/Runner/Info.plist` (`NSMicrophoneUsageDescription`, `NSSpeechRecognitionUsageDescription`), `AndroidManifest.xml` (`RECORD_AUDIO`, `RecognitionService` query) |
 | Location purpose text | wording in `AppIdentity` privacy copy | `ios/Runner/Info.plist` (`NSLocationWhenInUseUsageDescription`), `AndroidManifest.xml` (`ACCESS_COARSE_LOCATION`) |
+| Home-screen widget | `AppHomeWidgets` (provider, kind, app group, keys, start link), `AppThresholds.widgetRefresh`, `AppThemeTokens` risk colours | `android/app/src/main/kotlin/.../RiskWidgetProvider.kt` (keys, start link), `res/xml/risk_widget_info.xml` (`updatePeriodMillis`), `res/values/widget.xml` and `values-night/widget.xml` (colours, fallback strings), `AndroidManifest.xml` (receiver, `LAUNCH` intent filter); `ios/RiskWidget/RiskWidget.swift` (kind, app group, keys, colours, start link, 30-minute timeline), `ios/RiskWidget/RiskWidget.entitlements` and `ios/Runner/Runner.entitlements` (app group) |
+| Deep-link scheme | `AppIdentity.deepLinkScheme` | `ios/Runner/Info.plist` (`CFBundleURLTypes`), `AndroidManifest.xml` widget intent filter |
 | Launcher icon | `AppAssets.launcherIcon` | `android/app/src/main/res/mipmap-*`, `ios/Runner/Assets.xcassets/AppIcon.appiconset` (generated with `flutter_launcher_icons` in the release-prep phase) |

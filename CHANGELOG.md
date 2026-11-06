@@ -8,6 +8,8 @@ release time.
 
 ### Added
 
+- Home-screen widgets on Android and iOS: today's level, the top factor, the pressure trend and a one-tap start-attack button that opens the attack (or the running one) in the app (26).
+
 - Voice log: on-device speech on the attack screen fills intensity, symptoms, head locations and the person's own medications, shown on a confirmation form before anything is saved (25).
 
 - Questionnaires: MIDAS and HIT-6 with the published scoring and bands, a score-history chart, a three-month reminder and an optional section in the doctor report (24).

@@ -8,6 +8,7 @@ import 'package:migraine_tracker/features/attack_log/data/attack_repository_impl
 import 'package:migraine_tracker/features/attack_log/domain/attack_entity.dart';
 import 'package:migraine_tracker/features/attack_log/domain/attack_repository.dart';
 import 'package:migraine_tracker/features/health/application/health_sync.dart';
+import 'package:migraine_tracker/features/home_widget/application/home_widget_sync.dart';
 import 'package:migraine_tracker/features/notifications/application/notification_scheduler.dart';
 import 'package:migraine_tracker/features/risk/application/risk_engine.dart';
 import 'package:migraine_tracker/features/weather/application/weather_snapshot.dart';
@@ -31,7 +32,10 @@ final attackStarterProvider = Provider<AttackStarter>(
     weather: ref.watch(weatherSnapshotProvider),
     clock: ref.watch(clockProvider),
     newId: ref.watch(idGeneratorProvider),
-    afterStart: () => ref.read(notificationSchedulerProvider).reschedule(),
+    afterStart: () async {
+      await ref.read(notificationSchedulerProvider).reschedule();
+      await ref.read(homeWidgetSyncProvider).publishQuietly();
+    },
   ),
 );
 
@@ -187,6 +191,9 @@ class AttackEditor extends AsyncNotifier<AttackEntity> {
       await ref.read(healthSyncProvider).exportAttack(ended);
       // Every finished attack re-tunes the weights (FR-9).
       await relearnQuietly(ref);
+      // The widget's button goes back from "Open attack" to "Start". Not
+      // awaited: the screen returns home without waiting on the widget.
+      unawaited(ref.read(homeWidgetSyncProvider).publishQuietly());
     }
   }
 

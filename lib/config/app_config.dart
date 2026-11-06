@@ -468,6 +468,10 @@ class AppThresholds {
   static const Duration voicePauseFor = Duration(seconds: 3);
   static const bool voiceOnDeviceOnly = true;
 
+  /// Home widget pressure trend: a 24 h change within this many hPa
+  /// either way reads as steady.
+  static const double widgetPressureSteadyHpa = 2;
+
   /// Points of score history drawn on the questionnaire chart.
   static const int questionnaireChartPoints = 8;
 
@@ -497,6 +501,41 @@ class AppBackgroundTasks {
   /// `data.type` of the silent push the wake-up function sends; must match
   /// `config.push.wakeupType` in `functions/src/config.ts`.
   static const String pushWakeupType = 'wakeup';
+}
+
+/// Home-screen widgets (phase 26). Every value here is mirrored in native
+/// code; see docs/CONFIGURATION.md, "Native mirrors".
+class AppHomeWidgets {
+  const AppHomeWidgets._();
+
+  /// Android `AppWidgetProvider` class name (in the app package).
+  static const String androidProvider = 'RiskWidgetProvider';
+
+  /// iOS WidgetKit `kind`.
+  static const String iosKind = 'RiskWidget';
+
+  /// iOS App Group shared by the app and the widget extension.
+  static const String iosAppGroup = 'group.${AppIdentity.bundleId}';
+
+  /// Deep link the widget's start button opens. The `homeWidget` query
+  /// marks it as a widget launch for the plugin on iOS.
+  static const String startAttackHost = 'widget';
+  static const String startAttackPath = '/start-attack';
+  static Uri get startAttackUri => Uri(
+    scheme: AppIdentity.deepLinkScheme,
+    host: startAttackHost,
+    path: startAttackPath,
+    query: 'homeWidget',
+  );
+
+  /// Keys of the strings the app writes and the native widgets read.
+  static const String keyLevel = 'level';
+  static const String keyLevelLabel = 'levelLabel';
+  static const String keyHeadline = 'headline';
+  static const String keyPressure = 'pressure';
+  static const String keyUpdated = 'updated';
+  static const String keyStartLabel = 'startLabel';
+  static const String keyRunning = 'running';
 }
 
 /// Local notification channels (Android) and categories (iOS). The ids
