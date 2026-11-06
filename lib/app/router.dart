@@ -1,8 +1,10 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:migraine_tracker/app/bootstrap.dart';
+import 'package:migraine_tracker/config/app_config.dart';
 import 'package:migraine_tracker/features/attack_log/presentation/attack_screen.dart';
 import 'package:migraine_tracker/features/checkin/presentation/checkin_screen.dart';
+import 'package:migraine_tracker/features/cycle/presentation/cycle_screen.dart';
 import 'package:migraine_tracker/features/dev_tools/presentation/theme_gallery_screen.dart';
 import 'package:migraine_tracker/features/home/presentation/home_screen.dart';
 import 'package:migraine_tracker/features/medication/presentation/medication_log_screen.dart';
@@ -16,6 +18,7 @@ abstract final class AppRoutes {
   static String attack(String id) => '/attack/$id';
   static const String checkinPattern = '/checkin/:date';
   static const String medications = '/medications';
+  static const String cycle = '/cycle';
   static String checkin(String date) => '/checkin/$date';
 }
 
@@ -48,6 +51,12 @@ final routerProvider = Provider<GoRouter>((ref) {
         name: 'medications',
         builder: (context, state) => const MedicationLogScreen(),
       ),
+      if (AppFeatureFlags.cycleTrackingAvailable)
+        GoRoute(
+          path: AppRoutes.cycle,
+          name: 'cycle',
+          builder: (context, state) => const CycleScreen(),
+        ),
       if (config.showDevTools)
         GoRoute(
           path: AppRoutes.devThemeGallery,

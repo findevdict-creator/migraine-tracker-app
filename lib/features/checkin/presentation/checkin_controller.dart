@@ -8,6 +8,7 @@ import 'package:migraine_tracker/core/util/clock.dart';
 import 'package:migraine_tracker/features/checkin/data/checkin_repository_impl.dart';
 import 'package:migraine_tracker/features/checkin/domain/checkin_entity.dart';
 import 'package:migraine_tracker/features/checkin/domain/checkin_repository.dart';
+import 'package:migraine_tracker/features/cycle/presentation/cycle_controller.dart';
 
 /// Today's date key, from the injectable clock.
 final todayKeyProvider = Provider<String>(
@@ -61,7 +62,10 @@ class CheckinEditor extends AsyncNotifier<CheckinEntity> {
   Future<void> setValue(CheckinField field, int? value) async {
     final current = state.value;
     if (current == null) return;
-    final next = current.withValue(field, value, CheckinSource.typed);
+    final cycleDay = await ref.read(cycleLogProvider).cycleDayFor(date);
+    final next = current
+        .withValue(field, value, CheckinSource.typed)
+        .copyWith(cycleDay: cycleDay, clearCycleDay: cycleDay == null);
     state = AsyncData(next);
     await _repository.save(next);
   }

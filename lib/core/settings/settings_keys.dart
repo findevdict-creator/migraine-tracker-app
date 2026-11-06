@@ -7,6 +7,10 @@ abstract final class SettingsKeys {
   /// Whether the check-in reminder is on.
   static const String checkinReminderEnabled = 'checkin.reminderEnabled';
 
-  /// Whether cycle tracking is enabled (phase 08).
+  /// Whether cycle tracking is enabled. Off by default; nothing
+  /// cycle-related is shown until the user turns it on.
   static const String cycleTrackingEnabled = 'cycle.enabled';
+
+  /// Period start dates as a JSON list of `yyyy-MM-dd`, oldest first.
+  static const String cyclePeriodStarts = 'cycle.periodStarts';
 }

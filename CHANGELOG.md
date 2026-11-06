@@ -7,6 +7,8 @@ release time.
 ## [Unreleased]
 
 ### Added
+- Cycle tracking: opt-in toggle, period start logging, derived cycle day
+  and phase stored per check-in day (08).
 - Medication log: acute and preventive doses with suggestions, dose, time
   and relief at 2 h, inside an attack and standalone, acute-day counter per
   month with the gentle notes at 10 and 15 days (07).

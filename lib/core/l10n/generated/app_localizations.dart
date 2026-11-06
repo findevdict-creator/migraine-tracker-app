@@ -783,6 +783,90 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Talk to your clinician'**
   String get medicationTalkToClinician;
+
+  /// No description provided for @cycleTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Cycle'**
+  String get cycleTitle;
+
+  /// No description provided for @cycleToggleTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Track my cycle'**
+  String get cycleToggleTitle;
+
+  /// No description provided for @cycleToggleSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Off by default. When on, cycle day is kept with each check-in and used as a factor.'**
+  String get cycleToggleSubtitle;
+
+  /// No description provided for @cycleNoData.
+  ///
+  /// In en, this message translates to:
+  /// **'Log a period start to see your cycle day.'**
+  String get cycleNoData;
+
+  /// No description provided for @cycleDayAndPhase.
+  ///
+  /// In en, this message translates to:
+  /// **'Cycle day {day} · {phase}'**
+  String cycleDayAndPhase(int day, String phase);
+
+  /// No description provided for @cycleLength.
+  ///
+  /// In en, this message translates to:
+  /// **'Based on a {days}-day cycle'**
+  String cycleLength(int days);
+
+  /// No description provided for @cyclePeriodStarts.
+  ///
+  /// In en, this message translates to:
+  /// **'Period starts'**
+  String get cyclePeriodStarts;
+
+  /// No description provided for @cycleNoStarts.
+  ///
+  /// In en, this message translates to:
+  /// **'None logged yet.'**
+  String get cycleNoStarts;
+
+  /// No description provided for @cycleRemoveStart.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove'**
+  String get cycleRemoveStart;
+
+  /// No description provided for @cyclePeriodStartedToday.
+  ///
+  /// In en, this message translates to:
+  /// **'Period started this day'**
+  String get cyclePeriodStartedToday;
+
+  /// No description provided for @cyclePhaseMenstrual.
+  ///
+  /// In en, this message translates to:
+  /// **'Menstrual'**
+  String get cyclePhaseMenstrual;
+
+  /// No description provided for @cyclePhaseFollicular.
+  ///
+  /// In en, this message translates to:
+  /// **'Follicular'**
+  String get cyclePhaseFollicular;
+
+  /// No description provided for @cyclePhaseOvulation.
+  ///
+  /// In en, this message translates to:
+  /// **'Around ovulation'**
+  String get cyclePhaseOvulation;
+
+  /// No description provided for @cyclePhaseLuteal.
+  ///
+  /// In en, this message translates to:
+  /// **'Luteal'**
+  String get cyclePhaseLuteal;
 }
 
 class _AppLocalizationsDelegate

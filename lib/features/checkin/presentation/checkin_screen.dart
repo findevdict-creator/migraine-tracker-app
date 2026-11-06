@@ -9,6 +9,7 @@ import 'package:migraine_tracker/core/util/clock.dart';
 import 'package:migraine_tracker/core/widgets/widgets.dart';
 import 'package:migraine_tracker/features/checkin/domain/checkin_entity.dart';
 import 'package:migraine_tracker/features/checkin/presentation/checkin_controller.dart';
+import 'package:migraine_tracker/features/cycle/presentation/cycle_screen.dart';
 
 /// Daily check-in: three mandatory taps, an optional second row, and a
 /// date strip for back-filling the last week.
@@ -79,6 +80,7 @@ class _CheckinBodyState extends ConsumerState<_CheckinBody> {
             value: checkin[field],
             onTap: (v) => editor.toggleValue(field, v),
           ),
+        CheckinCycleRow(date: checkin.date),
         const SizedBox(height: AppThemeTokens.space4),
         if (!_showOptional)
           AppButton(
