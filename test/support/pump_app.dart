@@ -39,12 +39,25 @@ extension PumpApp on WidgetTester {
   /// Scrolls the first scrollable until the widget with [key] is built and
   /// visible. Screens are lazy lists, so far-down fields do not exist until
   /// scrolled to.
+  ///
+  /// Scrolls down first, then up, so a key above the viewport is found too.
   Future<void> scrollToKey(String key) async {
-    await scrollUntilVisible(
-      find.byKey(ValueKey(key)),
-      200,
-      scrollable: find.byType(Scrollable).first,
-    );
+    final finder = find.byKey(ValueKey(key));
+    try {
+      await scrollUntilVisible(
+        finder,
+        200,
+        scrollable: find.byType(Scrollable).first,
+      );
+      // scrollUntilVisible reports "not found" as a StateError.
+      // ignore: avoid_catching_errors
+    } on StateError {
+      await scrollUntilVisible(
+        finder,
+        -200,
+        scrollable: find.byType(Scrollable).first,
+      );
+    }
     await pumpAndSettle();
   }
 

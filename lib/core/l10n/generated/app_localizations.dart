@@ -1293,6 +1293,210 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Each attack you start records the sensor reading and the station value of that hour.'**
   String get barometerStampNote;
+
+  /// No description provided for @envFactorsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Today\'s factors'**
+  String get envFactorsTitle;
+
+  /// No description provided for @envFactorsEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No daily factors for this area yet.'**
+  String get envFactorsEmpty;
+
+  /// No description provided for @factorBandLow.
+  ///
+  /// In en, this message translates to:
+  /// **'low'**
+  String get factorBandLow;
+
+  /// No description provided for @factorBandModerate.
+  ///
+  /// In en, this message translates to:
+  /// **'moderate'**
+  String get factorBandModerate;
+
+  /// No description provided for @factorBandHigh.
+  ///
+  /// In en, this message translates to:
+  /// **'high'**
+  String get factorBandHigh;
+
+  /// No description provided for @factorBandVeryHigh.
+  ///
+  /// In en, this message translates to:
+  /// **'very high'**
+  String get factorBandVeryHigh;
+
+  /// No description provided for @factorValueWithBand.
+  ///
+  /// In en, this message translates to:
+  /// **'{value} ({band})'**
+  String factorValueWithBand(String value, String band);
+
+  /// No description provided for @factorAqiUs.
+  ///
+  /// In en, this message translates to:
+  /// **'Air quality (US AQI)'**
+  String get factorAqiUs;
+
+  /// No description provided for @factorAqiEu.
+  ///
+  /// In en, this message translates to:
+  /// **'Air quality (European AQI)'**
+  String get factorAqiEu;
+
+  /// No description provided for @factorParticulates.
+  ///
+  /// In en, this message translates to:
+  /// **'Particulates PM2.5 / PM10'**
+  String get factorParticulates;
+
+  /// No description provided for @factorParticulatesValue.
+  ///
+  /// In en, this message translates to:
+  /// **'{pm25} / {pm10} µg/m³'**
+  String factorParticulatesValue(String pm25, String pm10);
+
+  /// No description provided for @factorOzone.
+  ///
+  /// In en, this message translates to:
+  /// **'Ozone'**
+  String get factorOzone;
+
+  /// No description provided for @factorMicrograms.
+  ///
+  /// In en, this message translates to:
+  /// **'{value} µg/m³'**
+  String factorMicrograms(String value);
+
+  /// No description provided for @factorPollen.
+  ///
+  /// In en, this message translates to:
+  /// **'Pollen (Europe only)'**
+  String get factorPollen;
+
+  /// No description provided for @factorPollenType.
+  ///
+  /// In en, this message translates to:
+  /// **'{type} {band}'**
+  String factorPollenType(String type, String band);
+
+  /// No description provided for @pollenAlder.
+  ///
+  /// In en, this message translates to:
+  /// **'alder'**
+  String get pollenAlder;
+
+  /// No description provided for @pollenBirch.
+  ///
+  /// In en, this message translates to:
+  /// **'birch'**
+  String get pollenBirch;
+
+  /// No description provided for @pollenGrass.
+  ///
+  /// In en, this message translates to:
+  /// **'grass'**
+  String get pollenGrass;
+
+  /// No description provided for @pollenMugwort.
+  ///
+  /// In en, this message translates to:
+  /// **'mugwort'**
+  String get pollenMugwort;
+
+  /// No description provided for @pollenOlive.
+  ///
+  /// In en, this message translates to:
+  /// **'olive'**
+  String get pollenOlive;
+
+  /// No description provided for @pollenRagweed.
+  ///
+  /// In en, this message translates to:
+  /// **'ragweed'**
+  String get pollenRagweed;
+
+  /// No description provided for @factorUvMax.
+  ///
+  /// In en, this message translates to:
+  /// **'UV index, daily max'**
+  String get factorUvMax;
+
+  /// No description provided for @factorDaylight.
+  ///
+  /// In en, this message translates to:
+  /// **'Daylight'**
+  String get factorDaylight;
+
+  /// No description provided for @factorDaylightValue.
+  ///
+  /// In en, this message translates to:
+  /// **'{hours} h {minutes} min'**
+  String factorDaylightValue(int hours, int minutes);
+
+  /// No description provided for @factorSun.
+  ///
+  /// In en, this message translates to:
+  /// **'Sunrise and sunset'**
+  String get factorSun;
+
+  /// No description provided for @factorSunValue.
+  ///
+  /// In en, this message translates to:
+  /// **'{sunrise} to {sunset}'**
+  String factorSunValue(String sunrise, String sunset);
+
+  /// No description provided for @aboutDataTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'About the data'**
+  String get aboutDataTitle;
+
+  /// No description provided for @aboutDataIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'Where the numbers in this app come from, and what each one can and cannot tell you.'**
+  String get aboutDataIntro;
+
+  /// No description provided for @aboutDataSources.
+  ///
+  /// In en, this message translates to:
+  /// **'Sources'**
+  String get aboutDataSources;
+
+  /// No description provided for @aboutDataLicence.
+  ///
+  /// In en, this message translates to:
+  /// **'{coverage}. Licence: {licence}.'**
+  String aboutDataLicence(String coverage, String licence);
+
+  /// No description provided for @aboutDataPrivacy.
+  ///
+  /// In en, this message translates to:
+  /// **'What leaves your phone'**
+  String get aboutDataPrivacy;
+
+  /// No description provided for @aboutDataPrivacyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Only a location rounded to about 10 km, so the weather service can answer for your area. Your attacks, check-ins, medication and health data stay on this device unless you choose to back up or share them.'**
+  String get aboutDataPrivacyBody;
+
+  /// No description provided for @aboutDataLimits.
+  ///
+  /// In en, this message translates to:
+  /// **'Limits'**
+  String get aboutDataLimits;
+
+  /// No description provided for @aboutDataLimitsBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Forecasts are model estimates for a grid cell, not a measurement at your door. Pollen is only available in Europe. Air quality may be missing in some regions. Where a factor has no data for your area it is simply not shown.'**
+  String get aboutDataLimitsBody;
 }
 
 class _AppLocalizationsDelegate

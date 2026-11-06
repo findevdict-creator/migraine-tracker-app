@@ -7,6 +7,10 @@ release time.
 ## [Unreleased]
 
 ### Added
+- Environment factors: daily air quality, particulates, ozone, pollen
+  (Europe only), UV, daylight and sun times on the environment screen,
+  hidden where the region has no data; "About the data" screen listing
+  every source from the central config (13).
 - Barometer: live sensor gauge, 24 h on-device trend, calibration offset
   against the station series, sensor and station pressure stamped at
   attack start, "from nearest station" fallback; schema version 2 (12).

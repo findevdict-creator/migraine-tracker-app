@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import 'package:migraine_tracker/app/bootstrap.dart';
+import 'package:migraine_tracker/app/router.dart';
 import 'package:migraine_tracker/config/app_config.dart';
 import 'package:migraine_tracker/core/l10n/l10n.dart';
 import 'package:migraine_tracker/core/theme/app_colors.dart';
@@ -79,6 +81,12 @@ class SettingsScreen extends ConsumerWidget {
             leading: const Icon(Icons.info_outline),
             title: Text(config.displayName),
             subtitle: const Text(AppIdentity.wellnessDisclaimer),
+          ),
+          ListTile(
+            key: const ValueKey('settings-about-data'),
+            leading: const Icon(Icons.dataset_outlined),
+            title: Text(l10n.aboutDataTitle),
+            onTap: () => context.push(AppRoutes.aboutData),
           ),
           ListTile(
             key: const ValueKey('settings-privacy'),

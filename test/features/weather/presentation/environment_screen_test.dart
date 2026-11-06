@@ -62,6 +62,12 @@ void main() {
   String textOf(WidgetTester tester, String key) =>
       tester.widget<Text>(find.byKey(ValueKey(key))).data!;
 
+  /// The location row sits below the lazy factors card.
+  Future<String> locationText(WidgetTester tester) async {
+    await tester.scrollToKey('env-location');
+    return textOf(tester, 'env-location');
+  }
+
   testWidgets('home card and screen are populated on first open', (
     tester,
   ) async {
@@ -86,7 +92,7 @@ void main() {
     expect(find.byType(PressureChart), findsOneWidget);
     expect(find.byKey(const ValueKey('env-stale')), findsNothing);
     expect(find.byKey(const ValueKey('env-offline')), findsNothing);
-    expect(textOf(tester, 'env-location'), 'Using your approximate location');
+    expect(await locationText(tester), 'Using your approximate location');
     await tester.scrollToKey('env-attribution');
     expect(find.byKey(const ValueKey('env-attribution')), findsOneWidget);
 
@@ -122,7 +128,7 @@ void main() {
     await openEnvironment(tester);
     expect(source.calls, isEmpty);
     expect(find.byKey(const ValueKey('env-empty')), findsOneWidget);
-    expect(textOf(tester, 'env-location'), 'No location set');
+    expect(await locationText(tester), 'No location set');
   });
 
   testWidgets('a typed city becomes the manual location', (tester) async {
@@ -139,17 +145,15 @@ void main() {
     await tester.tap(find.byKey(const ValueKey('city-result-0')));
     await tester.pumpAndSettle();
 
-    expect(
-      textOf(tester, 'env-location'),
-      'Using Paris, Île-de-France, France',
-    );
+    expect(await locationText(tester), 'Using Paris, Île-de-France, France');
     expect(source.calls.last, (48.9, 2.4));
+    await tester.scrollToKey('env-pressure-now');
     expect(textOf(tester, 'env-pressure-now'), '1037.0 hPa');
 
     await tester.scrollToKey('env-use-gps');
     await tester.tap(find.byKey(const ValueKey('env-use-gps')));
     await tester.pumpAndSettle();
-    expect(textOf(tester, 'env-location'), 'Using your approximate location');
+    expect(await locationText(tester), 'Using your approximate location');
   });
 
   testWidgets('a failed city search says so', (tester) async {

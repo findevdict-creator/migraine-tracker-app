@@ -10,6 +10,7 @@ import 'package:migraine_tracker/features/weather/application/weather_sync.dart'
 import 'package:migraine_tracker/features/weather/domain/location_cell.dart';
 import 'package:migraine_tracker/features/weather/presentation/city_search_sheet.dart';
 import 'package:migraine_tracker/features/weather/presentation/environment_controller.dart';
+import 'package:migraine_tracker/features/weather/presentation/environment_factors.dart';
 import 'package:migraine_tracker/features/weather/presentation/pressure_chart.dart';
 import 'package:migraine_tracker/features/weather/presentation/weather_text.dart';
 
@@ -61,6 +62,8 @@ class EnvironmentScreen extends ConsumerWidget {
             )
           else
             _PressureCard(view: view, offline: refreshError != null),
+          const SizedBox(height: AppThemeTokens.space4),
+          const EnvironmentFactorsCard(),
           const SizedBox(height: AppThemeTokens.space2),
           TextButton.icon(
             key: const ValueKey('env-barometer'),
@@ -109,11 +112,10 @@ class EnvironmentScreen extends ConsumerWidget {
             ),
           ),
           const SizedBox(height: AppThemeTokens.space4),
-          Text(
-            l10n.envAttribution,
+          TextButton(
             key: const ValueKey('env-attribution'),
-            style: context.textStyles.bodySmall,
-            textAlign: TextAlign.center,
+            onPressed: () => context.push(AppRoutes.aboutData),
+            child: Text(l10n.envAttribution),
           ),
         ],
       ),
