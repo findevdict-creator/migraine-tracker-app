@@ -3,10 +3,12 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:migraine_tracker/app/bootstrap.dart';
 import 'package:migraine_tracker/app/router.dart';
+import 'package:migraine_tracker/config/app_config.dart';
 import 'package:migraine_tracker/core/l10n/l10n.dart';
+import 'package:migraine_tracker/features/attack_log/presentation/start_attack_button.dart';
 
-/// Home screen. Empty in the scaffold phase; the risk card, load meter and
-/// start-attack button arrive in their own phases.
+/// Home screen. Carries the one-tap start-attack button; the risk card and
+/// load meter arrive in their own phases.
 class HomeScreen extends ConsumerWidget {
   const new({super.key});
 
@@ -26,8 +28,19 @@ class HomeScreen extends ConsumerWidget {
             ),
         ],
       ),
-      body: Center(
-        child: Text(l10n.homeEmptyState, textAlign: TextAlign.center),
+      body: Padding(
+        padding: const EdgeInsets.all(AppThemeTokens.space4),
+        child: Column(
+          children: [
+            const StartAttackButton(),
+            const SizedBox(height: AppThemeTokens.space5),
+            Expanded(
+              child: Center(
+                child: Text(l10n.homeEmptyState, textAlign: TextAlign.center),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -73,4 +73,114 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get devSampleCard => 'A card with a badge';
+
+  @override
+  String get attackStart => 'Start attack';
+
+  @override
+  String get attackContinue => 'Continue attack';
+
+  @override
+  String get attackTitleRunning => 'Attack in progress';
+
+  @override
+  String get attackTitleEnded => 'Attack';
+
+  @override
+  String attackStartedAt(String time) {
+    return 'Started at $time';
+  }
+
+  @override
+  String get attackNotFound => 'This attack no longer exists.';
+
+  @override
+  String get attackIntensity => 'Pain intensity';
+
+  @override
+  String get attackIntensityLow => 'No pain';
+
+  @override
+  String get attackIntensityHigh => 'Worst';
+
+  @override
+  String get attackWhereItHurts => 'Where it hurts';
+
+  @override
+  String get attackSymptoms => 'Symptoms';
+
+  @override
+  String get attackPhases => 'Phases';
+
+  @override
+  String get attackNotes => 'Notes';
+
+  @override
+  String get attackNotesHint => 'Anything else worth remembering';
+
+  @override
+  String get attackEnd => 'End attack';
+
+  @override
+  String get attackDone => 'Done';
+
+  @override
+  String get attackFinishLater => 'Finish later';
+
+  @override
+  String get symptomAura => 'Aura';
+
+  @override
+  String get symptomNeckTension => 'Neck tension';
+
+  @override
+  String get symptomLightSensitivity => 'Light';
+
+  @override
+  String get symptomSoundSensitivity => 'Sound';
+
+  @override
+  String get symptomSmellSensitivity => 'Smell';
+
+  @override
+  String get symptomNausea => 'Nausea';
+
+  @override
+  String get phaseProdrome => 'Prodrome';
+
+  @override
+  String get phaseAura => 'Aura';
+
+  @override
+  String get phaseAttack => 'Attack';
+
+  @override
+  String get phasePostdrome => 'Postdrome';
+
+  @override
+  String get headForehead => 'Forehead';
+
+  @override
+  String get headLeftTemple => 'Left temple';
+
+  @override
+  String get headRightTemple => 'Right temple';
+
+  @override
+  String get headBehindEyes => 'Behind the eyes';
+
+  @override
+  String get headLeftSide => 'Left side';
+
+  @override
+  String get headRightSide => 'Right side';
+
+  @override
+  String get headTopOfHead => 'Top of head';
+
+  @override
+  String get headBackOfHead => 'Back of head';
+
+  @override
+  String get headNeck => 'Neck';
 }

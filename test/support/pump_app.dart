@@ -6,21 +6,25 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:migraine_tracker/app/app.dart';
 import 'package:migraine_tracker/app/bootstrap.dart';
 import 'package:migraine_tracker/config/app_config.dart';
+import 'package:migraine_tracker/core/db/app_database.dart';
+import 'package:migraine_tracker/core/db/database_provider.dart';
 import 'package:migraine_tracker/core/l10n/l10n.dart';
+
+import 'test_database.dart';
 
 /// Test helpers shared by widget tests.
 extension PumpApp on WidgetTester {
   /// Pumps the whole app (router, theme, localizations) for a flavor.
+  ///
+  /// Uses a fresh in-memory database unless [database] is given.
   Future<void> pumpApp({
     AppFlavor flavor = AppFlavor.dev,
     List<Override> overrides = const [],
+    AppDatabase? database,
   }) async {
     await pumpWidget(
-      ProviderScope(
-        overrides: [
-          appConfigProvider.overrideWithValue(AppConfig(flavor: flavor)),
-          ...overrides,
-        ],
+      UncontrolledProviderScope(
+        container: _container(flavor, database, overrides),
         child: const MigraineTrackerApp(),
       ),
     );
@@ -34,13 +38,11 @@ extension PumpApp on WidgetTester {
     AppFlavor flavor = AppFlavor.dev,
     List<Override> overrides = const [],
     ThemeData? theme,
+    AppDatabase? database,
   }) async {
     await pumpWidget(
-      ProviderScope(
-        overrides: [
-          appConfigProvider.overrideWithValue(AppConfig(flavor: flavor)),
-          ...overrides,
-        ],
+      UncontrolledProviderScope(
+        container: _container(flavor, database, overrides),
         child: MaterialApp(
           theme: theme,
           supportedLocales: AppLocales.supported,
@@ -57,3 +59,30 @@ extension PumpApp on WidgetTester {
     await pumpAndSettle();
   }
 }
+
+/// A container that outlives the widget tree. Disposing it in the test's
+/// tear-down (outside the fake-async zone) keeps drift's deferred
+/// stream-close timers from tripping the pending-timer check.
+ProviderContainer _container(
+  AppFlavor flavor,
+  AppDatabase? database,
+  List<Override> overrides,
+) {
+  final container = ProviderContainer(
+    overrides: [
+      appConfigProvider.overrideWithValue(AppConfig(flavor: flavor)),
+      _databaseOverride(database),
+      ...overrides,
+    ],
+  );
+  addTearDown(container.dispose);
+  return container;
+}
+
+Override _databaseOverride(AppDatabase? database) => database != null
+    ? appDatabaseProvider.overrideWithValue(database)
+    : appDatabaseProvider.overrideWith((ref) {
+        final db = newTestDatabase();
+        ref.onDispose(db.close);
+        return db;
+      });
