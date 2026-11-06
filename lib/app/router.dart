@@ -2,6 +2,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:migraine_tracker/app/bootstrap.dart';
 import 'package:migraine_tracker/features/attack_log/presentation/attack_screen.dart';
+import 'package:migraine_tracker/features/checkin/presentation/checkin_screen.dart';
 import 'package:migraine_tracker/features/dev_tools/presentation/theme_gallery_screen.dart';
 import 'package:migraine_tracker/features/home/presentation/home_screen.dart';
 
@@ -12,6 +13,8 @@ abstract final class AppRoutes {
   static const String devThemeGallery = '/dev/theme';
   static const String attackPattern = '/attack/:id';
   static String attack(String id) => '/attack/$id';
+  static const String checkinPattern = '/checkin/:date';
+  static String checkin(String date) => '/checkin/$date';
 }
 
 /// The app router. Kept in a provider so features can read it for navigation
@@ -31,6 +34,12 @@ final routerProvider = Provider<GoRouter>((ref) {
         name: 'attack',
         builder: (context, state) =>
             AttackScreen(attackId: state.pathParameters['id']!),
+      ),
+      GoRoute(
+        path: AppRoutes.checkinPattern,
+        name: 'checkin',
+        builder: (context, state) =>
+            CheckinScreen(date: state.pathParameters['date']!),
       ),
       if (config.showDevTools)
         GoRoute(

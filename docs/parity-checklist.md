@@ -10,3 +10,4 @@ feature PR adds its row.
 | 03 | Attack theme and 200% text scale on the theme gallery | [ ] | [ ] | |
 | 04 | Dev build talks to the Firebase emulator; App Check debug provider | [ ] | [ ] | |
 | 05 | Start, fill and end an attack; finish later and continue; head map taps | [ ] | [ ] | VoiceOver / TalkBack read region names |
+| 06 | Three-tap check-in, back-fill strip, reminder time picker | [ ] | [ ] | |

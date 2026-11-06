@@ -183,4 +183,120 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get headNeck => 'Neck';
+
+  @override
+  String get checkinTitle => 'Daily check-in';
+
+  @override
+  String get checkinLoadError => 'Could not load this day.';
+
+  @override
+  String get checkinIntro => 'Three taps. How was it?';
+
+  @override
+  String get checkinComplete => 'Done for this day. Tap a number to change it.';
+
+  @override
+  String get checkinAddMore => 'Add more (optional)';
+
+  @override
+  String get checkinOptionalTitle => 'Optional';
+
+  @override
+  String get checkinDone => 'Done';
+
+  @override
+  String get checkinToday => 'Today';
+
+  @override
+  String get checkinSleepQuality => 'Sleep quality';
+
+  @override
+  String get checkinStress => 'Stress';
+
+  @override
+  String get checkinNeckTension => 'Neck tension';
+
+  @override
+  String get checkinCaffeine => 'Caffeine';
+
+  @override
+  String get checkinHydration => 'Hydration';
+
+  @override
+  String get checkinAlcohol => 'Alcohol';
+
+  @override
+  String get checkinLightExposure => 'Bright light';
+
+  @override
+  String get checkinScreenExposure => 'Screen time';
+
+  @override
+  String get checkinSleepLow => 'Poor';
+
+  @override
+  String get checkinSleepHigh => 'Great';
+
+  @override
+  String get checkinStressLow => 'Calm';
+
+  @override
+  String get checkinStressHigh => 'Very stressed';
+
+  @override
+  String get checkinNeckLow => 'Relaxed';
+
+  @override
+  String get checkinNeckHigh => 'Very tight';
+
+  @override
+  String get checkinHydrationLow => 'Little';
+
+  @override
+  String get checkinHydrationHigh => 'Plenty';
+
+  @override
+  String get checkinExposureLow => 'Little';
+
+  @override
+  String get checkinExposureHigh => 'A lot';
+
+  @override
+  String get checkinNone => 'None';
+
+  @override
+  String checkinCupsOrMore(int count) {
+    return '$count+ cups';
+  }
+
+  @override
+  String checkinDrinksOrMore(int count) {
+    return '$count+ drinks';
+  }
+
+  @override
+  String checkinValueSemantics(String field, int value, int max) {
+    return '$field, $value of $max';
+  }
+
+  @override
+  String get checkinReminderTooltip => 'Reminder time';
+
+  @override
+  String checkinReminderAt(String time) {
+    return 'Reminder at $time';
+  }
+
+  @override
+  String get checkinReminderPickerTitle => 'Daily check-in reminder';
+
+  @override
+  String get checkinCardTitle => 'Daily check-in';
+
+  @override
+  String get checkinCardDone => 'Done for today';
+
+  @override
+  String get checkinCardTodo => 'Three taps, about 10 seconds';
 }

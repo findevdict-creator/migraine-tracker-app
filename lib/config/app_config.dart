@@ -254,6 +254,12 @@ class AppThresholds {
   /// Days a check-in can be back-filled.
   static const int checkinBackfillDays = 7;
 
+  /// Default daily check-in reminder time (local), until the user changes it.
+  static const TimeOfDay defaultCheckinReminder = TimeOfDay(
+    hour: 20,
+    minute: 0,
+  );
+
   /// Widget refresh cadence.
   static const Duration widgetRefresh = Duration(minutes: 30);
 
