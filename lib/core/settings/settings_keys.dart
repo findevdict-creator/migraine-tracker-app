@@ -29,4 +29,8 @@ abstract final class SettingsKeys {
   static const String healthConsent = 'health.consent';
   static const String healthWriteHeadaches = 'health.writeHeadaches';
   static const String healthLastImport = 'health.lastImport';
+
+  /// Onboarding (phase 15): set once the first-run flow finished or was
+  /// skipped, so it never shows again.
+  static const String onboardingCompleted = 'onboarding.completed';
 }

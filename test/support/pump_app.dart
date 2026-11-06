@@ -11,6 +11,7 @@ import 'package:migraine_tracker/core/db/database_provider.dart';
 import 'package:migraine_tracker/core/l10n/l10n.dart';
 import 'package:migraine_tracker/features/barometer/data/barometer_sources.dart';
 import 'package:migraine_tracker/features/barometer/domain/barometer_source.dart';
+import 'package:migraine_tracker/features/onboarding/application/onboarding_state.dart';
 
 import 'test_database.dart';
 
@@ -21,15 +22,24 @@ extension PumpApp on WidgetTester {
   /// Uses a fresh in-memory database unless [database] is given, and no
   /// barometer unless [barometer] is given (the platform sensor has no
   /// implementation under test).
+  ///
+  /// Onboarding counts as done unless [onboarded] is false.
   Future<void> pumpApp({
     AppFlavor flavor = AppFlavor.dev,
     List<Override> overrides = const [],
     AppDatabase? database,
     BarometerSource barometer = const NoBarometer(),
+    bool onboarded = true,
   }) async {
     await pumpWidget(
       UncontrolledProviderScope(
-        container: _container(flavor, database, barometer, overrides),
+        container: _container(
+          flavor,
+          database,
+          barometer,
+          overrides,
+          onboarded: onboarded,
+        ),
         child: const MigraineTrackerApp(),
       ),
     );
@@ -98,13 +108,16 @@ ProviderContainer _container(
   AppFlavor flavor,
   AppDatabase? database,
   BarometerSource barometer,
-  List<Override> overrides,
-) {
+  List<Override> overrides, {
+  bool onboarded = true,
+}) {
   final container = ProviderContainer(
     overrides: [
       appConfigProvider.overrideWithValue(AppConfig(flavor: flavor)),
       _databaseOverride(database),
       barometerSourceProvider.overrideWithValue(barometer),
+      if (onboarded)
+        onboardingStateProvider.overrideWith(_SeededOnboarding.new),
       ...overrides,
     ],
   );
@@ -119,3 +132,9 @@ Override _databaseOverride(AppDatabase? database) => database != null
         ref.onDispose(db.close);
         return db;
       });
+
+/// Onboarding already completed, without touching the database.
+class _SeededOnboarding extends OnboardingState {
+  @override
+  bool? build() => true;
+}
