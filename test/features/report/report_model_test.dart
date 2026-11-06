@@ -4,6 +4,7 @@ import 'package:migraine_tracker/features/checkin/domain/checkin_entity.dart';
 import 'package:migraine_tracker/features/insights/domain/factor_insight.dart';
 import 'package:migraine_tracker/features/medication/domain/acute_day_counter.dart';
 import 'package:migraine_tracker/features/medication/domain/medication_entity.dart';
+import 'package:migraine_tracker/features/questionnaires/domain/questionnaire.dart';
 import 'package:migraine_tracker/features/report/domain/report_model.dart';
 
 import 'support/report_fixtures.dart';
@@ -221,6 +222,29 @@ void main() {
       );
       expect(s.symptoms, {Symptom.values.first: 1});
       expect(s.locations, {HeadLocation.values.first: 1});
+    });
+
+    test('questionnaires are limited to the range, oldest first', () {
+      final range = ReportRange.lastDays(90, today: today);
+      QuestionnaireResponse hit6(String id, DateTime at) =>
+          QuestionnaireResponse.scored(
+            id: id,
+            kind: QuestionnaireKind.hit6,
+            completedAt: at,
+            answers: {for (final i in Hit6.items) i: 10},
+          );
+      final s = ReportBuilder.build(
+        ReportInputs(
+          range: range,
+          generatedAt: today,
+          questionnaires: [
+            hit6('late', today),
+            hit6('early', range.from.add(const Duration(hours: 1))),
+            hit6('before', range.from.subtract(const Duration(days: 1))),
+          ],
+        ),
+      );
+      expect(s.questionnaires.map((q) => q.id), ['early', 'late']);
     });
 
     test('a year of fixture data builds consistently', () {

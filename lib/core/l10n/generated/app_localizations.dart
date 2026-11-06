@@ -2870,6 +2870,407 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{hours} h'**
   String reportHoursShort(String hours);
+
+  /// No description provided for @notifTypeQuestionnaire.
+  ///
+  /// In en, this message translates to:
+  /// **'Three-month questionnaires'**
+  String get notifTypeQuestionnaire;
+
+  /// No description provided for @notifTypeQuestionnaireHint.
+  ///
+  /// In en, this message translates to:
+  /// **'MIDAS and HIT-6, three months after the last round'**
+  String get notifTypeQuestionnaireHint;
+
+  /// No description provided for @notifQuestionnaireTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Three months since your last questionnaires'**
+  String get notifQuestionnaireTitle;
+
+  /// No description provided for @notifQuestionnaireBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Fill in MIDAS and HIT-6 again to see how the last quarter compares.'**
+  String get notifQuestionnaireBody;
+
+  /// No description provided for @questionnairesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Questionnaires'**
+  String get questionnairesTitle;
+
+  /// No description provided for @settingsQuestionnairesHint.
+  ///
+  /// In en, this message translates to:
+  /// **'MIDAS and HIT-6, scored and charted'**
+  String get settingsQuestionnairesHint;
+
+  /// No description provided for @questionnairesIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'Two short, validated questionnaires about the last three months. Repeat them every quarter and the scores are charted here and can go into the doctor report.'**
+  String get questionnairesIntro;
+
+  /// No description provided for @questionnaireMidasTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'MIDAS'**
+  String get questionnaireMidasTitle;
+
+  /// No description provided for @questionnaireMidasSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Migraine Disability Assessment: five day counts over the last three months'**
+  String get questionnaireMidasSubtitle;
+
+  /// No description provided for @questionnaireHit6Title.
+  ///
+  /// In en, this message translates to:
+  /// **'HIT-6'**
+  String get questionnaireHit6Title;
+
+  /// No description provided for @questionnaireHit6Subtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Headache Impact Test: six questions on how headaches affect your life'**
+  String get questionnaireHit6Subtitle;
+
+  /// No description provided for @questionnaireNeverDone.
+  ///
+  /// In en, this message translates to:
+  /// **'Not filled in yet'**
+  String get questionnaireNeverDone;
+
+  /// No description provided for @questionnaireLatest.
+  ///
+  /// In en, this message translates to:
+  /// **'Last score {score} on {date}'**
+  String questionnaireLatest(int score, String date);
+
+  /// No description provided for @questionnaireDueNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Due now'**
+  String get questionnaireDueNow;
+
+  /// No description provided for @questionnaireDueOn.
+  ///
+  /// In en, this message translates to:
+  /// **'Next round {date}'**
+  String questionnaireDueOn(String date);
+
+  /// No description provided for @questionnaireStart.
+  ///
+  /// In en, this message translates to:
+  /// **'Fill in'**
+  String get questionnaireStart;
+
+  /// No description provided for @questionnaireRepeat.
+  ///
+  /// In en, this message translates to:
+  /// **'Fill in again'**
+  String get questionnaireRepeat;
+
+  /// No description provided for @questionnaireHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'Score history'**
+  String get questionnaireHistory;
+
+  /// No description provided for @questionnaireChartLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} scores from {first} to {last}, latest {latest}'**
+  String questionnaireChartLabel(
+    int count,
+    String first,
+    String last,
+    int latest,
+  );
+
+  /// No description provided for @questionnaireAbout.
+  ///
+  /// In en, this message translates to:
+  /// **'About the scores'**
+  String get questionnaireAbout;
+
+  /// No description provided for @questionnaireAboutBody.
+  ///
+  /// In en, this message translates to:
+  /// **'MIDAS adds up five day counts: 0 to 5 is grade I (little or no disability), 6 to 10 grade II (mild), 11 to 20 grade III (moderate), 21 and over grade IV (severe). HIT-6 gives 6, 8, 10, 11 or 13 points per answer, 36 to 78 in all: up to 49 is little or no impact, 50 to 55 some impact, 56 to 59 substantial impact, 60 and over severe impact. The bands are the published ones; the scores are for you and your clinician to discuss.'**
+  String get questionnaireAboutBody;
+
+  /// No description provided for @questionnaireMidasIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'Think about the last three months. Count days; a day counts once per question.'**
+  String get questionnaireMidasIntro;
+
+  /// No description provided for @questionnaireMidasQ1.
+  ///
+  /// In en, this message translates to:
+  /// **'On how many days did you miss work or school because of your headaches?'**
+  String get questionnaireMidasQ1;
+
+  /// No description provided for @questionnaireMidasQ2.
+  ///
+  /// In en, this message translates to:
+  /// **'On how many days was your productivity at work or school reduced by half or more because of your headaches? (Do not count days you missed.)'**
+  String get questionnaireMidasQ2;
+
+  /// No description provided for @questionnaireMidasQ3.
+  ///
+  /// In en, this message translates to:
+  /// **'On how many days did you not do household work because of your headaches?'**
+  String get questionnaireMidasQ3;
+
+  /// No description provided for @questionnaireMidasQ4.
+  ///
+  /// In en, this message translates to:
+  /// **'On how many days was your productivity in household work reduced by half or more because of your headaches? (Do not count days you did none.)'**
+  String get questionnaireMidasQ4;
+
+  /// No description provided for @questionnaireMidasQ5.
+  ///
+  /// In en, this message translates to:
+  /// **'On how many days did you miss family, social or leisure activities because of your headaches?'**
+  String get questionnaireMidasQ5;
+
+  /// No description provided for @questionnaireMidasA.
+  ///
+  /// In en, this message translates to:
+  /// **'On how many days did you have a headache? (If a headache lasted more than one day, count each day.)'**
+  String get questionnaireMidasA;
+
+  /// No description provided for @questionnaireMidasB.
+  ///
+  /// In en, this message translates to:
+  /// **'On a scale of 0 to 10, on average how painful were these headaches? (0 = no pain, 10 = pain as bad as it can be)'**
+  String get questionnaireMidasB;
+
+  /// No description provided for @questionnaireMidasUnscored.
+  ///
+  /// In en, this message translates to:
+  /// **'Not part of the score'**
+  String get questionnaireMidasUnscored;
+
+  /// No description provided for @questionnaireDaysField.
+  ///
+  /// In en, this message translates to:
+  /// **'Days (0 to 90)'**
+  String get questionnaireDaysField;
+
+  /// No description provided for @questionnairePainField.
+  ///
+  /// In en, this message translates to:
+  /// **'Pain (0 to 10)'**
+  String get questionnairePainField;
+
+  /// No description provided for @questionnaireDaysError.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a number from 0 to {max}'**
+  String questionnaireDaysError(int max);
+
+  /// No description provided for @questionnaireHit6Intro.
+  ///
+  /// In en, this message translates to:
+  /// **'Think about the last four weeks and pick the answer that fits best for each question.'**
+  String get questionnaireHit6Intro;
+
+  /// No description provided for @questionnaireHit6Q1.
+  ///
+  /// In en, this message translates to:
+  /// **'When you have headaches, how often is the pain severe?'**
+  String get questionnaireHit6Q1;
+
+  /// No description provided for @questionnaireHit6Q2.
+  ///
+  /// In en, this message translates to:
+  /// **'How often do headaches limit your ability to do usual daily activities, including household work, work, school or social activities?'**
+  String get questionnaireHit6Q2;
+
+  /// No description provided for @questionnaireHit6Q3.
+  ///
+  /// In en, this message translates to:
+  /// **'When you have a headache, how often do you wish you could lie down?'**
+  String get questionnaireHit6Q3;
+
+  /// No description provided for @questionnaireHit6Q4.
+  ///
+  /// In en, this message translates to:
+  /// **'In the past four weeks, how often have you felt too tired to do work or daily activities because of your headaches?'**
+  String get questionnaireHit6Q4;
+
+  /// No description provided for @questionnaireHit6Q5.
+  ///
+  /// In en, this message translates to:
+  /// **'In the past four weeks, how often have you felt fed up or irritated because of your headaches?'**
+  String get questionnaireHit6Q5;
+
+  /// No description provided for @questionnaireHit6Q6.
+  ///
+  /// In en, this message translates to:
+  /// **'In the past four weeks, how often did headaches limit your ability to concentrate on work or daily activities?'**
+  String get questionnaireHit6Q6;
+
+  /// No description provided for @questionnaireOptionNever.
+  ///
+  /// In en, this message translates to:
+  /// **'Never'**
+  String get questionnaireOptionNever;
+
+  /// No description provided for @questionnaireOptionRarely.
+  ///
+  /// In en, this message translates to:
+  /// **'Rarely'**
+  String get questionnaireOptionRarely;
+
+  /// No description provided for @questionnaireOptionSometimes.
+  ///
+  /// In en, this message translates to:
+  /// **'Sometimes'**
+  String get questionnaireOptionSometimes;
+
+  /// No description provided for @questionnaireOptionVeryOften.
+  ///
+  /// In en, this message translates to:
+  /// **'Very often'**
+  String get questionnaireOptionVeryOften;
+
+  /// No description provided for @questionnaireOptionAlways.
+  ///
+  /// In en, this message translates to:
+  /// **'Always'**
+  String get questionnaireOptionAlways;
+
+  /// No description provided for @questionnaireSave.
+  ///
+  /// In en, this message translates to:
+  /// **'Save and score'**
+  String get questionnaireSave;
+
+  /// No description provided for @questionnaireIncomplete.
+  ///
+  /// In en, this message translates to:
+  /// **'Answer every scored question to save.'**
+  String get questionnaireIncomplete;
+
+  /// No description provided for @questionnaireResultTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Your score: {score}'**
+  String questionnaireResultTitle(int score);
+
+  /// No description provided for @questionnaireResultDone.
+  ///
+  /// In en, this message translates to:
+  /// **'Done'**
+  String get questionnaireResultDone;
+
+  /// No description provided for @questionnaireResultDisclaimer.
+  ///
+  /// In en, this message translates to:
+  /// **'A score describes the last three months as you remember them. It is a starting point for a conversation with your clinician, not a medical assessment.'**
+  String get questionnaireResultDisclaimer;
+
+  /// No description provided for @questionnaireMidasBandMinimal.
+  ///
+  /// In en, this message translates to:
+  /// **'Grade I: little or no disability'**
+  String get questionnaireMidasBandMinimal;
+
+  /// No description provided for @questionnaireMidasBandMild.
+  ///
+  /// In en, this message translates to:
+  /// **'Grade II: mild disability'**
+  String get questionnaireMidasBandMild;
+
+  /// No description provided for @questionnaireMidasBandModerate.
+  ///
+  /// In en, this message translates to:
+  /// **'Grade III: moderate disability'**
+  String get questionnaireMidasBandModerate;
+
+  /// No description provided for @questionnaireMidasBandSevere.
+  ///
+  /// In en, this message translates to:
+  /// **'Grade IV: severe disability'**
+  String get questionnaireMidasBandSevere;
+
+  /// No description provided for @questionnaireHit6BandMinimal.
+  ///
+  /// In en, this message translates to:
+  /// **'Little or no impact'**
+  String get questionnaireHit6BandMinimal;
+
+  /// No description provided for @questionnaireHit6BandMild.
+  ///
+  /// In en, this message translates to:
+  /// **'Some impact'**
+  String get questionnaireHit6BandMild;
+
+  /// No description provided for @questionnaireHit6BandModerate.
+  ///
+  /// In en, this message translates to:
+  /// **'Substantial impact'**
+  String get questionnaireHit6BandModerate;
+
+  /// No description provided for @questionnaireHit6BandSevere.
+  ///
+  /// In en, this message translates to:
+  /// **'Severe impact'**
+  String get questionnaireHit6BandSevere;
+
+  /// No description provided for @reportIncludeQuestionnaires.
+  ///
+  /// In en, this message translates to:
+  /// **'Include questionnaire scores'**
+  String get reportIncludeQuestionnaires;
+
+  /// No description provided for @reportIncludeQuestionnairesHint.
+  ///
+  /// In en, this message translates to:
+  /// **'MIDAS and HIT-6 rounds completed in the period'**
+  String get reportIncludeQuestionnairesHint;
+
+  /// No description provided for @reportSectionQuestionnaires.
+  ///
+  /// In en, this message translates to:
+  /// **'Questionnaires'**
+  String get reportSectionQuestionnaires;
+
+  /// No description provided for @reportQuestionnairesNone.
+  ///
+  /// In en, this message translates to:
+  /// **'No questionnaires completed in this period.'**
+  String get reportQuestionnairesNone;
+
+  /// No description provided for @reportColDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Date'**
+  String get reportColDate;
+
+  /// No description provided for @reportColQuestionnaire.
+  ///
+  /// In en, this message translates to:
+  /// **'Questionnaire'**
+  String get reportColQuestionnaire;
+
+  /// No description provided for @reportColScore.
+  ///
+  /// In en, this message translates to:
+  /// **'Score'**
+  String get reportColScore;
+
+  /// No description provided for @reportColBand.
+  ///
+  /// In en, this message translates to:
+  /// **'Band'**
+  String get reportColBand;
 }
 
 class _AppLocalizationsDelegate

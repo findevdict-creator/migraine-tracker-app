@@ -6,6 +6,7 @@ import 'package:migraine_tracker/features/checkin/domain/checkin_entity.dart';
 import 'package:migraine_tracker/features/insights/domain/factor_insight.dart';
 import 'package:migraine_tracker/features/medication/domain/acute_day_counter.dart';
 import 'package:migraine_tracker/features/medication/domain/medication_entity.dart';
+import 'package:migraine_tracker/features/questionnaires/domain/questionnaire.dart';
 import 'package:risk_model/risk_model.dart';
 
 /// Inclusive range of local calendar days.
@@ -67,6 +68,7 @@ class ReportInputs {
     this.medications = const [],
     this.checkins = const [],
     this.weights,
+    this.questionnaires = const [],
   });
 
   final ReportRange range;
@@ -75,6 +77,10 @@ class ReportInputs {
   final List<MedicationEntity> medications;
   final List<CheckinEntity> checkins;
   final WeightTable? weights;
+
+  /// Completed MIDAS and HIT-6 rounds; empty when the person left them
+  /// out of the report.
+  final List<QuestionnaireResponse> questionnaires;
 }
 
 /// One calendar month of the range.
@@ -229,6 +235,7 @@ class ReportSummary {
     required this.symptoms,
     required this.locations,
     required this.checkinDays,
+    required this.questionnaires,
   });
 
   final ReportInputs inputs;
@@ -250,6 +257,9 @@ class ReportSummary {
   final Map<Symptom, int> symptoms;
   final Map<HeadLocation, int> locations;
   final int checkinDays;
+
+  /// Rounds completed in the range, oldest first.
+  final List<QuestionnaireResponse> questionnaires;
 
   ReportRange get range => inputs.range;
 
@@ -367,6 +377,11 @@ abstract final class ReportBuilder {
       symptoms: symptoms,
       locations: locations,
       checkinDays: checkins.length,
+      questionnaires:
+          inputs.questionnaires
+              .where((q) => range.contains(q.completedAt))
+              .toList()
+            ..sort((a, b) => a.completedAt.compareTo(b.completedAt)),
     );
   }
 

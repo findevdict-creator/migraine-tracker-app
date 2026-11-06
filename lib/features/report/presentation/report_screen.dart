@@ -27,6 +27,7 @@ class _ReportScreenState extends ConsumerState<ReportScreen> {
   int? _preset = AppThresholds.defaultReportDays;
   Future<ReportSummary>? _summary;
   bool _busy = false;
+  bool _includeQuestionnaires = true;
 
   @override
   void initState() {
@@ -74,7 +75,13 @@ class _ReportScreenState extends ConsumerState<ReportScreen> {
     try {
       files = await ref
           .read(reportServiceProvider)
-          .write(_range, format: format, l10n: l10n, locale: locale);
+          .write(
+            _range,
+            format: format,
+            l10n: l10n,
+            locale: locale,
+            includeQuestionnaires: _includeQuestionnaires,
+          );
     } on Exception catch (e) {
       debugPrint('report failed: $e');
       messenger.showSnackBar(SnackBar(content: Text(l10n.reportFailed)));
@@ -173,6 +180,15 @@ class _ReportScreenState extends ConsumerState<ReportScreen> {
             ),
           ),
           const SizedBox(height: AppThemeTokens.space4),
+          SwitchListTile(
+            key: const ValueKey('report-include-questionnaires'),
+            contentPadding: EdgeInsets.zero,
+            title: Text(l10n.reportIncludeQuestionnaires),
+            subtitle: Text(l10n.reportIncludeQuestionnairesHint),
+            value: _includeQuestionnaires,
+            onChanged: (v) => setState(() => _includeQuestionnaires = v),
+          ),
+          const SizedBox(height: AppThemeTokens.space2),
           AppButton(
             key: const ValueKey('report-share-pdf'),
             label: l10n.reportSharePdf,

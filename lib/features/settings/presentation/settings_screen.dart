@@ -58,6 +58,13 @@ class SettingsScreen extends ConsumerWidget {
             ),
           SectionHeader(title: l10n.settingsSectionData),
           ListTile(
+            key: const ValueKey('settings-questionnaires'),
+            leading: const Icon(Icons.checklist_outlined),
+            title: Text(l10n.questionnairesTitle),
+            subtitle: Text(l10n.settingsQuestionnairesHint),
+            onTap: () => context.push(AppRoutes.questionnaires),
+          ),
+          ListTile(
             key: const ValueKey('settings-report'),
             leading: const Icon(Icons.description_outlined),
             title: Text(l10n.reportTitle),

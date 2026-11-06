@@ -9,6 +9,7 @@ import 'package:migraine_tracker/features/attack_log/presentation/head_map.dart'
 import 'package:migraine_tracker/features/insights/domain/factor_insight.dart';
 import 'package:migraine_tracker/features/medication/domain/acute_day_counter.dart';
 import 'package:migraine_tracker/features/medication/domain/medication_entity.dart';
+import 'package:migraine_tracker/features/questionnaires/presentation/questionnaire_controller.dart';
 import 'package:migraine_tracker/features/report/domain/report_model.dart';
 import 'package:migraine_tracker/features/risk/presentation/risk_text.dart';
 import 'package:pdf/pdf.dart';
@@ -35,7 +36,10 @@ class ReportPdf {
     PdfColor.fromInt(0xFFEF4444),
   ];
 
-  Future<Uint8List> build(ReportSummary report) async {
+  Future<Uint8List> build(
+    ReportSummary report, {
+    bool includeQuestionnaires = true,
+  }) async {
     final doc =
         pw.Document(
           title: l10n.reportPdfTitle(AppIdentity.name),
@@ -94,6 +98,10 @@ class ReportPdf {
               _weather(report),
               _section(l10n.reportSectionSymptoms),
               _symptoms(report),
+              if (includeQuestionnaires) ...[
+                _section(l10n.reportSectionQuestionnaires),
+                _questionnaires(report),
+              ],
               pw.SizedBox(height: 16),
               pw.Text(
                 l10n.reportPdfDisclaimer,
@@ -437,6 +445,29 @@ class ReportPdf {
         pw.Text(l10n.reportWeatherDays(w.daysAfterFall, w.daysWithData)),
         if (lift != null)
           pw.Text(l10n.reportWeatherLift(_num(lift, decimals: 2))),
+      ],
+    );
+  }
+
+  pw.Widget _questionnaires(ReportSummary r) {
+    if (r.questionnaires.isEmpty) {
+      return pw.Text(l10n.reportQuestionnairesNone);
+    }
+    return _table(
+      [
+        l10n.reportColDate,
+        l10n.reportColQuestionnaire,
+        l10n.reportColScore,
+        l10n.reportColBand,
+      ],
+      [
+        for (final q in r.questionnaires)
+          [
+            _date(q.completedAt),
+            questionnaireTitle(l10n, q.kind),
+            '${q.score}',
+            bandLabel(l10n, q.kind, q.band),
+          ],
       ],
     );
   }

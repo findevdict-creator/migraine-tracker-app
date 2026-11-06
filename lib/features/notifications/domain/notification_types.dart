@@ -27,6 +27,11 @@ enum NotificationType {
     code: 'medication',
     channel: AppNotificationChannels.reminders,
     defaultOn: false,
+  ),
+  questionnaire(
+    code: 'questionnaire',
+    channel: AppNotificationChannels.reminders,
+    defaultOn: true,
   );
 
   NotificationType({

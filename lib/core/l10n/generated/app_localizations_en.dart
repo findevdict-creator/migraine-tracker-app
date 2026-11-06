@@ -1674,4 +1674,244 @@ class AppLocalizationsEn extends AppLocalizations {
   String reportHoursShort(String hours) {
     return '$hours h';
   }
+
+  @override
+  String get notifTypeQuestionnaire => 'Three-month questionnaires';
+
+  @override
+  String get notifTypeQuestionnaireHint =>
+      'MIDAS and HIT-6, three months after the last round';
+
+  @override
+  String get notifQuestionnaireTitle =>
+      'Three months since your last questionnaires';
+
+  @override
+  String get notifQuestionnaireBody =>
+      'Fill in MIDAS and HIT-6 again to see how the last quarter compares.';
+
+  @override
+  String get questionnairesTitle => 'Questionnaires';
+
+  @override
+  String get settingsQuestionnairesHint =>
+      'MIDAS and HIT-6, scored and charted';
+
+  @override
+  String get questionnairesIntro =>
+      'Two short, validated questionnaires about the last three months. Repeat them every quarter and the scores are charted here and can go into the doctor report.';
+
+  @override
+  String get questionnaireMidasTitle => 'MIDAS';
+
+  @override
+  String get questionnaireMidasSubtitle =>
+      'Migraine Disability Assessment: five day counts over the last three months';
+
+  @override
+  String get questionnaireHit6Title => 'HIT-6';
+
+  @override
+  String get questionnaireHit6Subtitle =>
+      'Headache Impact Test: six questions on how headaches affect your life';
+
+  @override
+  String get questionnaireNeverDone => 'Not filled in yet';
+
+  @override
+  String questionnaireLatest(int score, String date) {
+    return 'Last score $score on $date';
+  }
+
+  @override
+  String get questionnaireDueNow => 'Due now';
+
+  @override
+  String questionnaireDueOn(String date) {
+    return 'Next round $date';
+  }
+
+  @override
+  String get questionnaireStart => 'Fill in';
+
+  @override
+  String get questionnaireRepeat => 'Fill in again';
+
+  @override
+  String get questionnaireHistory => 'Score history';
+
+  @override
+  String questionnaireChartLabel(
+    int count,
+    String first,
+    String last,
+    int latest,
+  ) {
+    return '$count scores from $first to $last, latest $latest';
+  }
+
+  @override
+  String get questionnaireAbout => 'About the scores';
+
+  @override
+  String get questionnaireAboutBody =>
+      'MIDAS adds up five day counts: 0 to 5 is grade I (little or no disability), 6 to 10 grade II (mild), 11 to 20 grade III (moderate), 21 and over grade IV (severe). HIT-6 gives 6, 8, 10, 11 or 13 points per answer, 36 to 78 in all: up to 49 is little or no impact, 50 to 55 some impact, 56 to 59 substantial impact, 60 and over severe impact. The bands are the published ones; the scores are for you and your clinician to discuss.';
+
+  @override
+  String get questionnaireMidasIntro =>
+      'Think about the last three months. Count days; a day counts once per question.';
+
+  @override
+  String get questionnaireMidasQ1 =>
+      'On how many days did you miss work or school because of your headaches?';
+
+  @override
+  String get questionnaireMidasQ2 =>
+      'On how many days was your productivity at work or school reduced by half or more because of your headaches? (Do not count days you missed.)';
+
+  @override
+  String get questionnaireMidasQ3 =>
+      'On how many days did you not do household work because of your headaches?';
+
+  @override
+  String get questionnaireMidasQ4 =>
+      'On how many days was your productivity in household work reduced by half or more because of your headaches? (Do not count days you did none.)';
+
+  @override
+  String get questionnaireMidasQ5 =>
+      'On how many days did you miss family, social or leisure activities because of your headaches?';
+
+  @override
+  String get questionnaireMidasA =>
+      'On how many days did you have a headache? (If a headache lasted more than one day, count each day.)';
+
+  @override
+  String get questionnaireMidasB =>
+      'On a scale of 0 to 10, on average how painful were these headaches? (0 = no pain, 10 = pain as bad as it can be)';
+
+  @override
+  String get questionnaireMidasUnscored => 'Not part of the score';
+
+  @override
+  String get questionnaireDaysField => 'Days (0 to 90)';
+
+  @override
+  String get questionnairePainField => 'Pain (0 to 10)';
+
+  @override
+  String questionnaireDaysError(int max) {
+    return 'Enter a number from 0 to $max';
+  }
+
+  @override
+  String get questionnaireHit6Intro =>
+      'Think about the last four weeks and pick the answer that fits best for each question.';
+
+  @override
+  String get questionnaireHit6Q1 =>
+      'When you have headaches, how often is the pain severe?';
+
+  @override
+  String get questionnaireHit6Q2 =>
+      'How often do headaches limit your ability to do usual daily activities, including household work, work, school or social activities?';
+
+  @override
+  String get questionnaireHit6Q3 =>
+      'When you have a headache, how often do you wish you could lie down?';
+
+  @override
+  String get questionnaireHit6Q4 =>
+      'In the past four weeks, how often have you felt too tired to do work or daily activities because of your headaches?';
+
+  @override
+  String get questionnaireHit6Q5 =>
+      'In the past four weeks, how often have you felt fed up or irritated because of your headaches?';
+
+  @override
+  String get questionnaireHit6Q6 =>
+      'In the past four weeks, how often did headaches limit your ability to concentrate on work or daily activities?';
+
+  @override
+  String get questionnaireOptionNever => 'Never';
+
+  @override
+  String get questionnaireOptionRarely => 'Rarely';
+
+  @override
+  String get questionnaireOptionSometimes => 'Sometimes';
+
+  @override
+  String get questionnaireOptionVeryOften => 'Very often';
+
+  @override
+  String get questionnaireOptionAlways => 'Always';
+
+  @override
+  String get questionnaireSave => 'Save and score';
+
+  @override
+  String get questionnaireIncomplete => 'Answer every scored question to save.';
+
+  @override
+  String questionnaireResultTitle(int score) {
+    return 'Your score: $score';
+  }
+
+  @override
+  String get questionnaireResultDone => 'Done';
+
+  @override
+  String get questionnaireResultDisclaimer =>
+      'A score describes the last three months as you remember them. It is a starting point for a conversation with your clinician, not a medical assessment.';
+
+  @override
+  String get questionnaireMidasBandMinimal =>
+      'Grade I: little or no disability';
+
+  @override
+  String get questionnaireMidasBandMild => 'Grade II: mild disability';
+
+  @override
+  String get questionnaireMidasBandModerate => 'Grade III: moderate disability';
+
+  @override
+  String get questionnaireMidasBandSevere => 'Grade IV: severe disability';
+
+  @override
+  String get questionnaireHit6BandMinimal => 'Little or no impact';
+
+  @override
+  String get questionnaireHit6BandMild => 'Some impact';
+
+  @override
+  String get questionnaireHit6BandModerate => 'Substantial impact';
+
+  @override
+  String get questionnaireHit6BandSevere => 'Severe impact';
+
+  @override
+  String get reportIncludeQuestionnaires => 'Include questionnaire scores';
+
+  @override
+  String get reportIncludeQuestionnairesHint =>
+      'MIDAS and HIT-6 rounds completed in the period';
+
+  @override
+  String get reportSectionQuestionnaires => 'Questionnaires';
+
+  @override
+  String get reportQuestionnairesNone =>
+      'No questionnaires completed in this period.';
+
+  @override
+  String get reportColDate => 'Date';
+
+  @override
+  String get reportColQuestionnaire => 'Questionnaire';
+
+  @override
+  String get reportColScore => 'Score';
+
+  @override
+  String get reportColBand => 'Band';
 }

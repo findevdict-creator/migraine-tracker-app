@@ -61,6 +61,7 @@ void main() {
 
   /// File writes use real I/O, which fake-async pumps never flush.
   Future<void> tapAndWait(WidgetTester tester, String key) async {
+    await tester.scrollToKey(key);
     await tester.runAsync(() async {
       await tester.tap(find.byKey(ValueKey(key)));
       await Future<void>.delayed(const Duration(milliseconds: 300));

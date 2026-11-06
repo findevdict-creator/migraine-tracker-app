@@ -10,6 +10,7 @@ import 'package:migraine_tracker/features/attack_log/domain/attack_entity.dart';
 import 'package:migraine_tracker/features/checkin/data/checkin_repository_impl.dart';
 import 'package:migraine_tracker/features/export/presentation/share_files.dart';
 import 'package:migraine_tracker/features/medication/data/medication_repository_impl.dart';
+import 'package:migraine_tracker/features/questionnaires/data/questionnaire_repository_impl.dart';
 import 'package:migraine_tracker/features/report/application/report_service.dart';
 import 'package:migraine_tracker/features/report/domain/report_model.dart';
 import 'package:migraine_tracker/features/report/presentation/report_screen.dart';
@@ -30,10 +31,12 @@ class _SyncWriteService extends ReportService {
         medications: DriftMedicationRepository(db, clock: clock),
         checkins: DriftCheckinRepository(db, clock: clock),
         risk: DriftRiskRepository(db),
+        questionnaires: DriftQuestionnaireRepository(db),
       );
 
   final Directory dir;
   final formats = <ReportFormat>[];
+  final included = <bool>[];
 
   @override
   Future<List<File>> write(
@@ -42,8 +45,10 @@ class _SyncWriteService extends ReportService {
     required AppLocalizations l10n,
     String? locale,
     Directory? directory,
+    bool includeQuestionnaires = true,
   }) async {
     formats.add(format);
+    included.add(includeQuestionnaires);
     final stem = '${range.from.dateKey}-${range.to.dateKey}';
     return [
       if (format != ReportFormat.csv)
@@ -169,8 +174,16 @@ void main() {
     expect(shared.single.length, 3);
     expect(shared.single.first.path, endsWith('.pdf'));
 
+    expect(service.included, [true, true]);
+
     shared.clear();
+    await tester.scrollToKey('report-include-questionnaires');
+    await tester.tap(
+      find.byKey(const ValueKey('report-include-questionnaires')),
+    );
+    await tester.pumpAndSettle();
     await share(tester, 'report-share-pdf');
+    expect(service.included.last, isFalse);
     expect(service.formats.last, ReportFormat.pdf);
     expect(shared.single.single.path, endsWith('.pdf'));
   });

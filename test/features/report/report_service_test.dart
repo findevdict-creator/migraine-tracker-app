@@ -8,6 +8,7 @@ import 'package:migraine_tracker/core/l10n/l10n.dart';
 import 'package:migraine_tracker/features/attack_log/data/attack_repository_impl.dart';
 import 'package:migraine_tracker/features/checkin/data/checkin_repository_impl.dart';
 import 'package:migraine_tracker/features/medication/data/medication_repository_impl.dart';
+import 'package:migraine_tracker/features/questionnaires/data/questionnaire_repository_impl.dart';
 import 'package:migraine_tracker/features/report/application/report_service.dart';
 import 'package:migraine_tracker/features/report/domain/report_model.dart';
 import 'package:migraine_tracker/features/risk/data/risk_repository_impl.dart';
@@ -47,6 +48,7 @@ void main() {
       medications: medications,
       checkins: checkins,
       risk: risk,
+      questionnaires: DriftQuestionnaireRepository(db),
       clock: () => today,
     );
   });

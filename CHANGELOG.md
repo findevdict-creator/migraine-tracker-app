@@ -8,6 +8,8 @@ release time.
 
 ### Added
 
+- Questionnaires: MIDAS and HIT-6 with the published scoring and bands, a score-history chart, a three-month reminder and an optional section in the doctor report (24).
+
 - Doctor report: on-device PDF and two CSV files for a chosen period (attack calendar, monthly counts, duration, factors with sample sizes, medication days, pressure correlation, symptoms), shared through the OS share sheet from Settings > Doctor report (23).
 - Push wake-up: a scheduled silent push refreshes the forecast and
   re-plans the local alerts between opens; tokens registered without an
