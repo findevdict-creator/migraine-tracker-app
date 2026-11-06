@@ -1,0 +1,18 @@
+rules_version = '2';
+
+// Encrypted backup blobs: one folder per account, owner only, size-capped.
+// The server never has the key, so the content is opaque.
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /backups/{uid}/{file} {
+      allow read, delete: if request.auth != null && request.auth.uid == uid;
+      allow write: if request.auth != null
+        && request.auth.uid == uid
+        && request.resource.size < 50 * 1024 * 1024
+        && request.resource.contentType == 'application/octet-stream';
+    }
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}

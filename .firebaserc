@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "migraine-tracker-dev",
+    "dev": "migraine-tracker-dev",
+    "staging": "migraine-tracker-staging",
+    "prod": "migraine-tracker-prod"
+  }
+}
