@@ -1,0 +1,7650 @@
+{
+  "name": "stressed",
+  "about": "High stress and poor sleep most days, cycle tracked.",
+  "days": [
+    {
+      "date": "2026-01-05",
+      "pressureDelta24h": -0.8,
+      "humidity": 38.6,
+      "temperatureSwing": 0.6,
+      "aqiUs": 116.4,
+      "pollenMax": 48.9,
+      "uvMax": 9.2,
+      "lightExposure": 3,
+      "screenExposure": 4,
+      "sleepQuality": 1,
+      "stress": 4,
+      "neckTension": 4,
+      "caffeine": 2,
+      "alcohol": 2,
+      "hydration": 4,
+      "cycleDay": 1,
+      "cycleLength": 28
+    },
+    {
+      "date": "2026-01-06",
+      "pressureDelta24h": 2.7,
+      "humidity": 38.1,
+      "temperatureSwing": 3.8,
+      "aqiUs": 149.1,
+      "pollenMax": 119.3,
+      "uvMax": 1.7,
+      "lightExposure": 2,
+      "screenExposure": 3,
+      "sleepQuality": 1,
+      "stress": 4,
+      "neckTension": 5,
+      "caffeine": 4,
+      "alcohol": 0,
+      "hydration": 3,
+      "cycleDay": 2,
+      "cycleLength": 28
+    },
+    {
+      "date": "2026-01-07",
+      "pressureDelta24h": -0.7,
+      "humidity": 63.8,
+      "temperatureSwing": 8.0,
+      "aqiUs": 13.1,
+      "pollenMax": 129.6,
+      "uvMax": 1.0,
+      "lightExposure": 4,
+      "screenExposure": 5,
+      "sleepQuality": 1,
+      "stress": 5,
+      "neckTension": 4,
+      "caffeine": 3,
+      "alcohol": 0,
+      "hydration": 3,
+      "cycleDay": 3,
+      "cycleLength": 28
+    },
+    {
+      "date": "2026-01-08",
+      "pressureDelta24h": -0.9,
+      "humidity": 36.4,
+      "temperatureSwing": 2.8,
+      "aqiUs": 92.1,
+      "pollenMax": 122.8,
+      "uvMax": 9.0,
+      "lightExposure": 2,
+      "screenExposure": 3,
+      "sleepQuality": 1,
+      "sleepMinutes": 516,
+      "stress": 5,
+      "neckTension": 4,
+      "caffeine": 4,
+      "alcohol": 0,
+      "hydration": 4,
+      "cycleDay": 4,
+      "cycleLength": 28
+    },
+    {
+      "date": "2026-01-09",
+      "pressureDelta24h": -2.1,
+      "humidity": 62.3,
+      "temperatureSwing": 3.8,
+      "aqiUs": 92.5,
+      "pollenMax": 4.0,
+      "uvMax": 6.8,
+      "lightExposure": 4,
+      "screenExposure": 4,
+      "sleepQuality": 1,
+      "sleepMinutes": 324,
+      "stress": 4,
+      "neckTension": 4,
+      "caffeine": 0,
+      "alcohol": 0,
+      "hydration": 4,
+      "cycleDay": 5,
+      "cycleLength": 28
+    },
+    {
+      "date": "2026-01-10",
+      "pressureDelta24h": -2.1,
+      "humidity": 77.6,
+      "temperatureSwing": 7.0,
+      "aqiUs": 162.7,
+      "pollenMax": 10.6,
+      "uvMax": 7.9,
+      "lightExposure": 3,
+      "screenExposure": 5,
+      "sleepQuality": 2,
+      "stress": 5,
+      "neckTension": 4,
+      "caffeine": 5,
+      "alcohol": 0,
+      "hydration": 4,
+      "cycleDay": 6,
+      "cycleLength": 28
+    },
+    {
+      "date": "2026-01-11",
+      "pressureDelta24h": 0.2,
+      "humidity": 49.3,
+      "temperatureSwing": 3.5,
+      "aqiUs": 159.9,
+      "pollenMax": 129.6,
+      "uvMax": 1.7,
+      "lightExposure": 3,
+      "screenExposure": 3,
+      "sleepQuality": 2,
+      "stress": 4,
+      "neckTension": 3,
+      "caffeine": 2,
+      "alcohol": 0,
+      "hydration": 2,
+      "cycleDay": 7,
+      "cycleLength": 28
+    },
+    {
+      "date": "2026-01-12",
+      "pressureDelta24h": -1.1,
+      "humidity": 77.2,
+      "temperatureSwing": 8.5,
+      "aqiUs": 111.1,
+      "pollenMax": 81.1,
+      "uvMax": 4.9,
+      "lightExposure": 2,
+      "screenExposure": 4,
+      "sleepQuality": 1,
+      "stress": 5,
+      "neckTension": 4,
+      "caffeine": 5,
+      "alcohol": 0,
+      "hydration": 2,
+      "cycleDay": 8,
+      "cycleLength": 28
+    },
+    {
+      "date": "2026-01-13",
+      "pressureDelta24h": -2.2,
+      "humidity": 43.0,
+      "temperatureSwing": 2.8,
+      "aqiUs": 108.5,
+      "pollenMax": 84.3,
+      "uvMax": 6.3,
+      "lightExposure": 4,
+      "screenExposure": 4,
+      "sleepQuality": 1,
+      "stress": 4,
+      "neckTension": 5,
+      "caffeine": 5,
+      "alcohol": 0,
+      "hydration": 4,
+      "cycleDay": 9,
+      "cycleLength": 28
+    },
+    {
+      "date": "2026-01-14",
+      "pressureDelta24h": 2.9,
+      "humidity": 84.2,
+      "temperatureSwing": 8.5,
+      "aqiUs": 63.1,
+      "pollenMax": 13.4,
+      "uvMax": 9.0,
+      "lightExposure": 2,
+      "screenExposure": 5,
+      "sleepQuality": 1,
+      "sleepMinutes": 442,
+      "stress": 5,
+      "neckTension": 3,
+      "caffeine": 5,
+      "alcohol": 2,
+      "hydration": 3,
+      "cycleDay": 10,
+      "cycleLength": 28
+    },
+    {
+      "date": "2026-01-15",
+      "pressureDelta24h": -0.7,
+      "humidity": 78.4,
+      "temperatureSwing": 5.2,
+      "aqiUs": 19.3,
+      "pollenMax": 113.9,
+      "uvMax": 4.5,
+      "lightExposure": 2,
+      "screenExposure": 5,
+      "sleepQuality": 1,
+      "stress": 4,
+      "neckTension": 3,
+      "caffeine": 0,
+      "alcohol": 0,
+      "hydration": 3,
+      "cycleDay": 11,
+      "cycleLength": 28
+    },
+    {
+      "date": "2026-01-16",
+      "pressureDelta24h": 3.0,
+      "humidity": 41.5,
+      "temperatureSwing": 0.8,
+      "aqiUs": 79.1,
+      "pollenMax": 5.9,
+      "uvMax": 7.1,
+      "lightExposure": 4,
+      "screenExposure": 3,
+      "sleepQuality": 2,
+      "stress": 5,
+      "neckTension": 3,
+      "caffeine": 4,
+      "alcohol": 0,
+      "hydration": 2,
+      "cycleDay": 12,
+      "cycleLength": 28
+    },
+    {
+      "date": "2026-01-17",
+      "pressureDelta24h": 0.0,
+      "humidity": 40.4,
+      "temperatureSwing": 3.0,
+      "aqiUs": 27.9,
+      "pollenMax": 24.7,
+      "uvMax": 4.4,
+      "lightExposure": 2,
+      "screenExposure": 5,
+      "sleepQuality": 1,
+      "stress": 5,
+      "neckTension": 4,
+      "caffeine": 2,
+      "alcohol": 0,
+      "hydration": 2,
+      "cycleDay": 13,
+      "cycleLength": 28
+    },
+    {
+      "date": "2026-01-18",
+      "pressureDelta24h": -0.8,
+      "humidity": 50.4,
+      "temperatureSwing": 4.0,
+      "aqiUs": 55.6,
+      "pollenMax": 66.6,
+      "uvMax": 3.7,
+      "lightExposure": 3,
+      "screenExposure": 3,
+      "sleepQuality": 2,
+      "stress": 5,
+      "neckTension": 5,
+      "caffeine": 3,
+      "alcohol": 0,
+      "hydration": 4,
+      "cycleDay": 14,
+      "cycleLength": 28
+    },
+    {
+      "date": "2026-01-19",
+      "pressureDelta24h": 2.1,
+      "humidity": 64.1,
+      "temperatureSwing": 1.0,
+      "aqiUs": 99.4,
+      "pollenMax": 97.8,
+      "uvMax": 3.0,
+      "lightExposure": 2,
+      "screenExposure": 4,
+      "sleepQuality": 1,
+      "sleepMinutes": 348,
+      "stress": 5,
+      "neckTension": 4,
+      "caffeine": 5,
+      "alcohol": 0,
+      "hydration": 4,
+      "cycleDay": 15,
+      "cycleLength": 28
+    },
+    {
+      "date": "2026-01-20",
+      "pressureDelta24h": 2.3,
+      "humidity": 60.1,
+      "temperatureSwing": 1.7,
+      "aqiUs": 92.7,
+      "pollenMax": 79.8,
+      "uvMax": 9.3,
+      "lightExposure": 4,
+      "screenExposure": 4,
+      "sleepQuality": 1,
+      "sleepMinutes": 296,
+      "stress": 5,
+      "neckTension": 3,
+      "caffeine": 0,
+      "alcohol": 0,
+      "hydration": 4,
+      "cycleDay": 16,
+      "cycleLength": 28
+    },
+    {
+      "date": "2026-01-21",
+      "pressureDelta24h": -2.2,
+      "humidity": 94.7,
+      "temperatureSwing": 6.3,
+      "aqiUs": 45.3,
+      "pollenMax": 18.5,
+      "uvMax": 2.9,
+      "lightExposure": 2,
+      "screenExposure": 5,
+      "sleepQuality": 2,
+      "stress": 4,
+      "neckTension": 3,
+      "caffeine": 2,
+      "alcohol": 0,
+      "hydration": 2,
+      "cycleDay": 17,
+      "cycleLength": 28
+    },
+    {
+      "date": "2026-01-22",
+      "pressureDelta24h": 1.2,
+      "humidity": 73.4,
+      "temperatureSwing": 8.8,
+      "aqiUs": 26.0,
+      "pollenMax": 54.9,
+      "uvMax": 9.2,
+      "lightExposure": 3,
+      "screenExposure": 4,
+      "sleepQuality": 2,
+      "sleepMinutes": 447,
+      "stress": 5,
+      "neckTension": 5,
+      "caffeine": 5,
+      "alcohol": 0,
+      "hydration": 2,
+      "cycleDay": 18,
+      "cycleLength": 28
+    },
+    {
+      "date": "2026-01-23",
+      "pressureDelta24h": -0.7,
+      "humidity": 53.1,
+      "temperatureSwing": 2.7,
+      "aqiUs": 161.3,
+      "pollenMax": 44.0,
+      "uvMax": 3.2,
+      "lightExposure": 2,
+      "screenExposure": 3,
+      "sleepQuality": 1,
+      "stress": 5,
+      "neckTension": 5,
+      "caffeine": 5,
+      "alcohol": 0,
+      "hydration": 4,
+      "cycleDay": 19,
+      "cycleLength": 28
+    },
+    {
+      "date": "2026-01-24",
+      "pressureDelta24h": -0.9,
+      "humidity": 87.0,
+      "temperatureSwing": 2.9,
+      "aqiUs": 78.8,
+      "pollenMax": 46.6,
+      "uvMax": 8.5,
+      "lightExposure": 2,
+      "screenExposure": 5,
+      "sleepQuality": 2,
+      "stress": 5,
+      "neckTension": 3,
+      "caffeine": 0,
+      "alcohol": 0,
+      "hydration": 2,
+      "cycleDay": 20,
+      "cycleLength": 28
+    },
+    {
+      "date": "2026-01-25",
+      "pressureDelta24h": 2.1,
+      "humidity": 45.8,
+      "temperatureSwing": 2.9,
+      "aqiUs": 162.1,
+      "pollenMax": 0.1,
+      "uvMax": 9.3,
+      "lightExposure": 3,
+      "screenExposure": 4,
+      "sleepQuality": 1,
+      "sleepMinutes": 300,
+      "stress": 5,
+      "neckTension": 3,
+      "caffeine": 5,
+      "alcohol": 0,
+      "hydration": 4,
+      "cycleDay": 21,
+      "cycleLength": 28
+    },
+    {
+      "date": "2026-01-26",
+      "pressureDelta24h": 1.1,
+      "humidity": 59.4,
+      "temperatureSwing": 8.4,
+      "aqiUs": 15.6,
+      "pollenMax": 57.2,
+      "uvMax": 5.7,
+      "lightExposure": 2,
+      "screenExposure": 3,
+      "sleepQuality": 1,
+      "sleepMinutes": 379,
+      "stress": 4,
+      "neckTension": 5,
+      "caffeine": 4,
+      "alcohol": 0,
+      "hydration": 4,
+      "cycleDay": 22,
+      "cycleLength": 28
+    },
+    {
+      "date": "2026-01-27",
+      "pressureDelta24h": 2.3,
+      "humidity": 68.2,
+      "temperatureSwing": 4.6,
+      "aqiUs": 49.2,
+      "pollenMax": 21.7,
+      "uvMax": 0.4,
+      "lightExposure": 3,
+      "screenExposure": 5,
+      "sleepQuality": 2,
+      "sleepMinutes": 328,
+      "stress": 5,
+      "neckTension": 3,
+      "caffeine": 1,
+      "alcohol": 0,
+      "hydration": 4,
+      "cycleDay": 23,
+      "cycleLength": 28
+    },
+    {
+      "date": "2026-01-28",
+      "pressureDelta24h": -1.6,
+      "humidity": 52.1,
+      "temperatureSwing": 5.5,
+      "aqiUs": 77.5,
+      "pollenMax": 9.3,
+      "uvMax": 9.8,
+      "lightExposure": 2,
+      "screenExposure": 4,
+      "sleepQuality": 2,
+      "sleepMinutes": 517,
+      "stress": 5,
+      "neckTension": 3,
+      "caffeine": 1,
+      "alcohol": 0,
+      "hydration": 4,
+      "cycleDay": 24,
+      "cycleLength": 28
+    },
+    {
+      "date": "2026-01-29",
+      "pressureDelta24h": -0.9,
+      "humidity": 76.5,
+      "temperatureSwing": 3.8,
+      "aqiUs": 67.1,
+      "pollenMax": 102.9,
+      "uvMax": 6.4,
+      "lightExposure": 3,
+      "screenExposure": 5,
+      "sleepQuality": 1,
+      "stress": 4,
+      "neckTension": 5,
+      "caffeine": 1,
+      "alcohol": 0,
+      "hydration": 4,
+      "cycleDay": 25,
+      "cycleLength": 28
+    },
+    {
+      "date": "2026-01-30",
+      "pressureDelta24h": 0.4,
+      "humidity": 64.0,
+      "temperatureSwing": 3.3,
+      "aqiUs": 97.4,
+      "pollenMax": 105.6,
+      "uvMax": 5.7,
+      "lightExposure": 2,
+      "screenExposure": 4,
+      "sleepQuality": 2,
+      "sleepMinutes": 398,
+      "stress": 4,
+      "neckTension": 3,
+      "caffeine": 4,
+      "alcohol": 2,
+      "hydration": 4,
+      "cycleDay": 26,
+      "cycleLength": 28
+    },
+    {
+      "date": "2026-01-31",
+      "pressureDelta24h": -1.1,
+      "humidity": 47.7,
+      "temperatureSwing": 7.8,
+      "aqiUs": 33.3,
+      "pollenMax": 59.9,
+      "uvMax": 6.5,
+      "lightExposure": 3,
+      "screenExposure": 3,
+      "sleepQuality": 1,
+      "stress": 5,
+      "neckTension": 5,
+      "caffeine": 3,
+      "alcohol": 0,
+      "hydration": 4,
+      "cycleDay": 27,
+      "cycleLength": 28
+    },
+    {
+      "date": "2026-02-01",
+      "pressureDelta24h": 2.8,
+      "humidity": 41.1,
+      "temperatureSwing": 3.8,
+      "aqiUs": 168.8,
+      "pollenMax": 96.5,
+      "uvMax": 0.2,
+      "lightExposure": 2,
+      "screenExposure": 3,
+      "sleepQuality": 1,
+      "sleepMinutes": 287,
+      "stress": 5,
+      "neckTension": 5,
+      "caffeine": 2,
+      "alcohol": 0,
+      "hydration": 2,
+      "cycleDay": 28,
+      "cycleLength": 28
+    },
+    {
+      "date": "2026-02-02",
+      "pressureDelta24h": 2.4,
+      "humidity": 87.6,
+      "temperatureSwing": 4.1,
+      "aqiUs": 98.3,
+      "pollenMax": 79.0,
+      "uvMax": 7.1,
+      "lightExposure": 2,
+      "screenExposure": 3,
+      "sleepQuality": 1,
+      "stress": 5,
+      "neckTension": 4,
+      "caffeine": 3,
+      "alcohol": 2,
+      "hydration": 3,
+      "cycleDay": 1,
+      "cycleLength": 28
+    },
+    {
+      "date": "2026-02-03",
+      "pressureDelta24h": 1.2,
+      "humidity": 88.6,
+      "temperatureSwing": 3.6,
+      "aqiUs": 144.6,
+      "pollenMax": 18.7,
+      "uvMax": 0.7,
+      "lightExposure": 2,
+      "screenExposure": 4,
+      "sleepQuality": 1,
+      "stress": 4,
+      "neckTension": 5,
+      "caffeine": 3,
+      "alcohol": 0,
+      "hydration": 2,
+      "cycleDay": 2,
+      "cycleLength": 28
+    },
+    {
+      "date": "2026-02-04",
+      "pressureDelta24h": 2.6,
+      "humidity": 60.7,
+      "temperatureSwing": 2.9,
+      "aqiUs": 71.5,
+      "pollenMax": 117.5,
+      "uvMax": 0.6,
+      "lightExposure": 4,
+      "screenExposure": 3,
+      "sleepQuality": 1,
+      "stress": 5,
+      "neckTension": 3,
+      "caffeine": 5,
+      "alcohol": 0,
+      "hydration": 2,
+      "cycleDay": 3,
+      "cycleLength": 28
+    },
+    {
+      "date": "2026-02-05",
+      "pressureDelta24h": -2.6,
+      "humidity": 42.3,
+      "temperatureSwing": 2.6,
+      "aqiUs": 88.1,
+      "pollenMax": 67.8,
+      "uvMax": 4.3,
+      "lightExposure": 2,
+      "screenExposure": 4,
+      "sleepQuality": 1,
+      "sleepMinutes": 312,
+      "stress": 5,
+      "neckTension": 3,
+      "caffeine": 3,
+      "alcohol": 0,
+      "hydration": 4,
+      "cycleDay": 4,
+      "cycleLength": 28
+    },
+    {
+      "date": "2026-02-06",
+      "pressureDelta24h": 1.2,
+      "humidity": 89.0,
+      "temperatureSwing": 3.8,
+      "aqiUs": 19.6,
+      "pollenMax": 1.4,
+      "uvMax": 6.8,
+      "lightExposure": 4,
+      "screenExposure": 3,
+      "sleepQuality": 1,
+      "sleepMinutes": 376,
+      "stress": 5,
+      "neckTension": 4,
+      "caffeine": 3,
+      "alcohol": 0,
+      "hydration": 3,
+      "cycleDay": 5,
+      "cycleLength": 28
+    },
+    {
+      "date": "2026-02-07",
+      "pressureDelta24h": 0.2,
+      "humidity": 51.5,
+      "temperatureSwing": 0.3,
+      "aqiUs": 87.1,
+      "pollenMax": 99.6,
+      "uvMax": 1.7,
+      "lightExposure": 2,
+      "screenExposure": 4,
+      "sleepQuality": 1,
+      "stress": 5,
+      "neckTension": 5,
+      "caffeine": 1,
+      "alcohol": 3,
+      "hydration": 4,
+      "cycleDay": 6,
+      "cycleLength": 28
+    },
+    {
+      "date": "2026-02-08",
+      "pressureDelta24h": -1.9,
+      "humidity": 93.5,
+      "temperatureSwing": 8.2,
+      "aqiUs": 15.8,
+      "pollenMax": 98.1,
+      "uvMax": 1.4,
+      "lightExposure": 4,
+      "screenExposure": 4,
+      "sleepQuality": 1,
+      "stress": 4,
+      "neckTension": 4,
+      "caffeine": 5,
+      "alcohol": 5,
+      "hydration": 3,
+      "cycleDay": 7,
+      "cycleLength": 28
+    },
+    {
+      "date": "2026-02-09",
+      "pressureDelta24h": 0.7,
+      "humidity": 92.4,
+      "temperatureSwing": 1.7,
+      "aqiUs": 54.0,
+      "pollenMax": 27.4,
+      "uvMax": 3.4,
+      "lightExposure": 4,
+      "screenExposure": 5,
+      "sleepQuality": 1,
+      "sleepMinutes": 419,
+      "stress": 5,
+      "neckTension": 3,
+      "caffeine": 4,
+      "alcohol": 0,
+      "hydration": 4,
+      "cycleDay": 8,
+      "cycleLength": 28
+    },
+    {
+      "date": "2026-02-10",
+      "pressureDelta24h": -0.7,
+      "humidity": 74.9,
+      "temperatureSwing": 8.7,
+      "aqiUs": 76.2,
+      "pollenMax": 37.5,
+      "uvMax": 2.4,
+      "lightExposure": 3,
+      "screenExposure": 5,
+      "sleepQuality": 1,
+      "stress": 5,
+      "neckTension": 3,
+      "caffeine": 4,
+      "alcohol": 0,
+      "hydration": 4,
+      "cycleDay": 9,
+      "cycleLength": 28
+    },
+    {
+      "date": "2026-02-11",
+      "pressureDelta24h": 1.7,
+      "humidity": 64.0,
+      "temperatureSwing": 8.2,
+      "aqiUs": 40.9,
+      "pollenMax": 45.9,
+      "uvMax": 0.1,
+      "lightExposure": 2,
+      "screenExposure": 5,
+      "sleepQuality": 2,
+      "stress": 5,
+      "neckTension": 5,
+      "caffeine": 1,
+      "alcohol": 0,
+      "hydration": 3,
+      "cycleDay": 10,
+      "cycleLength": 28
+    },
+    {
+      "date": "2026-02-12",
+      "pressureDelta24h": 0.2,
+      "humidity": 77.5,
+      "temperatureSwing": 3.7,
+      "aqiUs": 160.9,
+      "pollenMax": 120.6,
+      "uvMax": 3.6,
+      "lightExposure": 2,
+      "screenExposure": 3,
+      "sleepQuality": 1,
+      "stress": 5,
+      "neckTension": 3,
+      "caffeine": 2,
+      "alcohol": 0,
+      "hydration": 3,
+      "cycleDay": 11,
+      "cycleLength": 28
+    },
+    {
+      "date": "2026-02-13",
+      "pressureDelta24h": -1.7,
+      "humidity": 50.0,
+      "temperatureSwing": 8.6,
+      "aqiUs": 136.3,
+      "pollenMax": 101.7,
+      "uvMax": 0.5,
+      "lightExposure": 3,
+      "screenExposure": 3,
+      "sleepQuality": 2,
+      "stress": 4,
+      "neckTension": 4,
+      "caffeine": 3,
+      "alcohol": 0,
+      "hydration": 3,
+      "cycleDay": 12,
+      "cycleLength": 28
+    },
+    {
+      "date": "2026-02-14",
+      "pressureDelta24h": 1.7,
+      "humidity": 66.1,
+      "temperatureSwing": 7.2,
+      "aqiUs": 80.4,
+      "pollenMax": 59.5,
+      "uvMax": 6.5,
+      "lightExposure": 2,
+      "screenExposure": 5,
+      "sleepQuality": 2,
+      "stress": 4,
+      "neckTension": 5,
+      "caffeine": 3,
+      "alcohol": 0,
+      "hydration": 3,
+      "cycleDay": 13,
+      "cycleLength": 28
+    },
+    {
+      "date": "2026-02-15",
+      "pressureDelta24h": -2.3,
+      "humidity": 68.7,
+      "temperatureSwing": 7.0,
+      "aqiUs": 152.9,
+      "pollenMax": 73.0,
+      "uvMax": 5.1,
+      "lightExposure": 2,
+      "screenExposure": 5,
+      "sleepQuality": 1,
+      "stress": 5,
+      "neckTension": 5,
+      "caffeine": 3,
+      "alcohol": 5,
+      "hydration": 2,
+      "cycleDay": 14,
+      "cycleLength": 28
+    },
+    {
+      "date": "2026-02-16",
+      "pressureDelta24h": -0.5,
+      "humidity": 44.2,
+      "temperatureSwing": 2.4,
+      "aqiUs": 83.8,
+      "pollenMax": 51.3,
+      "uvMax": 2.5,
+      "lightExposure": 4,
+      "screenExposure": 4,
+      "sleepQuality": 1,
+      "sleepMinutes": 520,
+      "stress": 4,
+      "neckTension": 4,
+      "caffeine": 2,
+      "alcohol": 0,
+      "hydration": 2,
+      "cycleDay": 15,
+      "cycleLength": 28
+    },
+    {
+      "date": "2026-02-17",
+      "pressureDelta24h": 1.8,
+      "humidity": 92.1,
+      "temperatureSwing": 4.9,
+      "aqiUs": 147.4,
+      "pollenMax": 35.3,
+      "uvMax": 4.5,
+      "lightExposure": 2,
+      "screenExposure": 5,
+      "sleepQuality": 2,
+      "stress": 5,
+      "neckTension": 5,
+      "caffeine": 3,
+      "alcohol": 1,
+      "hydration": 4,
+      "cycleDay": 16,
+      "cycleLength": 28
+    },
+    {
+      "date": "2026-02-18",
+      "pressureDelta24h": -0.1,
+      "humidity": 56.7,
+      "temperatureSwing": 7.5,
+      "aqiUs": 24.4,
+      "pollenMax": 23.9,
+      "uvMax": 7.5,
+      "lightExposure": 4,
+      "screenExposure": 5,
+      "sleepQuality": 1,
+      "sleepMinutes": 367,
+      "stress": 4,
+      "neckTension": 3,
+      "caffeine": 0,
+      "alcohol": 0,
+      "hydration": 2,
+      "cycleDay": 17,
+      "cycleLength": 28
+    },
+    {
+      "date": "2026-02-19",
+      "pressureDelta24h": -2.2,
+      "humidity": 60.9,
+      "temperatureSwing": 6.7,
+      "aqiUs": 80.1,
+      "pollenMax": 67.4,
+      "uvMax": 8.6,
+      "lightExposure": 4,
+      "screenExposure": 3,
+      "sleepQuality": 1,
+      "stress": 5,
+      "neckTension": 3,
+      "caffeine": 2,
+      "alcohol": 0,
+      "hydration": 2,
+      "cycleDay": 18,
+      "cycleLength": 28
+    },
+    {
+      "date": "2026-02-20",
+      "pressureDelta24h": -0.4,
+      "humidity": 35.6,
+      "temperatureSwing": 3.4,
+      "aqiUs": 137.9,
+      "pollenMax": 82.1,
+      "uvMax": 1.2,
+      "lightExposure": 2,
+      "screenExposure": 4,
+      "sleepQuality": 1,
+      "sleepMinutes": 254,
+      "stress": 5,
+      "neckTension": 4,
+      "caffeine": 5,
+      "alcohol": 0,
+      "hydration": 3,
+      "cycleDay": 19,
+      "cycleLength": 28
+    },
+    {
+      "date": "2026-02-21",
+      "pressureDelta24h": 1.8,
+      "humidity": 54.4,
+      "temperatureSwing": 6.4,
+      "aqiUs": 49.0,
+      "pollenMax": 73.0,
+      "uvMax": 9.6,
+      "lightExposure": 3,
+      "screenExposure": 5,
+      "sleepQuality": 2,
+      "sleepMinutes": 491,
+      "stress": 5,
+      "neckTension": 3,
+      "caffeine": 2,
+      "alcohol": 0,
+      "hydration": 2,
+      "cycleDay": 20,
+      "cycleLength": 28
+    },
+    {
+      "date": "2026-02-22",
+      "pressureDelta24h": 2.8,
+      "humidity": 84.7,
+      "temperatureSwing": 3.6,
+      "aqiUs": 143.0,
+      "pollenMax": 49.5,
+      "uvMax": 7.7,
+      "lightExposure": 3,
+      "screenExposure": 3,
+      "sleepQuality": 1,
+      "stress": 5,
+      "neckTension": 4,
+      "caffeine": 5,
+      "alcohol": 0,
+      "hydration": 2,
+      "cycleDay": 21,
+      "cycleLength": 28
+    },
+    {
+      "date": "2026-02-23",
+      "pressureDelta24h": -1.5,
+      "humidity": 57.3,
+      "temperatureSwing": 1.2,
+      "aqiUs": 128.4,
+      "pollenMax": 114.9,
+      "uvMax": 9.4,
+      "lightExposure": 4,
+      "screenExposure": 3,
+      "sleepQuality": 1,
+      "sleepMinutes": 332,
+      "stress": 4,
+      "neckTension": 5,
+      "caffeine": 1,
+      "alcohol": 0,
+      "hydration": 3,
+      "cycleDay": 22,
+      "cycleLength": 28
+    },
+    {
+      "date": "2026-02-24",
+      "pressureDelta24h": -3.0,
+      "humidity": 80.9,
+      "temperatureSwing": 2.7,
+      "aqiUs": 85.6,
+      "pollenMax": 84.7,
+      "uvMax": 6.2,
+      "lightExposure": 3,
+      "screenExposure": 4,
+      "sleepQuality": 2,
+      "stress": 5,
+      "neckTension": 4,
+      "caffeine": 5,
+      "alcohol": 2,
+      "hydration": 2,
+      "cycleDay": 23,
+      "cycleLength": 28
+    },
+    {
+      "date": "2026-02-25",
+      "pressureDelta24h": -2.1,
+      "humidity": 47.1,
+      "temperatureSwing": 5.4,
+      "aqiUs": 143.4,
+      "pollenMax": 1.9,
+      "uvMax": 7.2,
+      "lightExposure": 3,
+      "screenExposure": 5,
+      "sleepQuality": 1,
+      "stress": 5,
+      "neckTension": 5,
+      "caffeine": 0,
+      "alcohol": 0,
+      "hydration": 3,
+      "cycleDay": 24,
+      "cycleLength": 28
+    },
+    {
+      "date": "2026-02-26",
+      "pressureDelta24h": 0.8,
+      "humidity": 92.4,
+      "temperatureSwing": 3.8,
+      "aqiUs": 31.3,
+      "pollenMax": 37.2,
+      "uvMax": 4.4,
+      "lightExposure": 2,
+      "screenExposure": 3,
+      "sleepQuality": 2,
+      "stress": 5,
+      "neckTension": 3,
+      "caffeine": 2,
+      "alcohol": 0,
+      "hydration": 3,
+      "cycleDay": 25,
+      "cycleLength": 28
+    },
+    {
+      "date": "2026-02-27",
+      "pressureDelta24h": -1.6,
+      "humidity": 53.3,
+      "temperatureSwing": 7.8,
+      "aqiUs": 49.5,
+      "pollenMax": 96.3,
+      "uvMax": 7.9,
+      "lightExposure": 4,
+      "screenExposure": 4,
+      "sleepQuality": 1,
+      "stress": 4,
+      "neckTension": 5,
+      "caffeine": 4,
+      "alcohol": 3,
+      "hydration": 2,
+      "cycleDay": 26,
+      "cycleLength": 28
+    },
+    {
+      "date": "2026-02-28",
+      "pressureDelta24h": -2.5,
+      "humidity": 60.9,
+      "temperatureSwing": 2.6,
+      "aqiUs": 19.3,
+      "pollenMax": 13.7,
+      "uvMax": 5.4,
+      "lightExposure": 2,
+      "screenExposure": 4,
+      "sleepQuality": 1,
+      "sleepMinutes": 528,
+      "stress": 4,
+      "neckTension": 4,
+      "caffeine": 5,
+      "alcohol": 0,
+      "hydration": 2,
+      "cycleDay": 27,
+      "cycleLength": 28
+    },
+    {
+      "date": "2026-03-01",
+      "pressureDelta24h": 0.0,
+      "humidity": 48.8,
+      "temperatureSwing": 3.6,
+      "aqiUs": 74.0,
+      "pollenMax": 90.6,
+      "uvMax": 4.2,
+      "lightExposure": 4,
+      "screenExposure": 5,
+      "sleepQuality": 1,
+      "stress": 5,
+      "neckTension": 5,
+      "caffeine": 2,
+      "alcohol": 0,
+      "hydration": 2,
+      "cycleDay": 28,
+      "cycleLength": 28
+    },
+    {
+      "date": "2026-03-02",
+      "pressureDelta24h": 2.8,
+      "humidity": 62.4,
+      "temperatureSwing": 4.7,
+      "aqiUs": 96.0,
+      "pollenMax": 93.5,
+      "uvMax": 2.8,
+      "lightExposure": 3,
+      "screenExposure": 3,
+      "sleepQuality": 1,
+      "stress": 5,
+      "neckTension": 4,
+      "caffeine": 1,
+      "alcohol": 0,
+      "hydration": 3,
+      "cycleDay": 1,
+      "cycleLength": 28
+    },
+    {
+      "date": "2026-03-03",
+      "pressureDelta24h": 2.7,
+      "humidity": 72.1,
+      "temperatureSwing": 9.0,
+      "aqiUs": 43.7,
+      "pollenMax": 60.9,
+      "uvMax": 2.0,
+      "lightExposure": 2,
+      "screenExposure": 4,
+      "sleepQuality": 1,
+      "stress": 4,
+      "neckTension": 5,
+      "caffeine": 5,
+      "alcohol": 0,
+      "hydration": 4,
+      "cycleDay": 2,
+      "cycleLength": 28
+    },
+    {
+      "date": "2026-03-04",
+      "pressureDelta24h": 0.7,
+      "humidity": 48.1,
+      "temperatureSwing": 6.7,
+      "aqiUs": 54.9,
+      "pollenMax": 127.1,
+      "uvMax": 8.5,
+      "lightExposure": 2,
+      "screenExposure": 5,
+      "sleepQuality": 1,
+      "stress": 5,
+      "neckTension": 4,
+      "caffeine": 3,
+      "alcohol": 0,
+      "hydration": 2,
+      "cycleDay": 3,
+      "cycleLength": 28
+    },
+    {
+      "date": "2026-03-05",
+      "pressureDelta24h": -2.8,
+      "humidity": 75.4,
+      "temperatureSwing": 3.6,
+      "aqiUs": 151.2,
+      "pollenMax": 47.7,
+      "uvMax": 4.7,
+      "lightExposure": 3,
+      "screenExposure": 4,
+      "sleepQuality": 1,
+      "stress": 5,
+      "neckTension": 3,
+      "caffeine": 2,
+      "alcohol": 5,
+      "hydration": 2,
+      "cycleDay": 4,
+      "cycleLength": 28
+    }
+  ],
+  "expected": [
+    {
+      "date": "2026-01-05",
+      "load": 90.8,
+      "level": "high",
+      "contributions": [
+        {
+          "factor": "poor_sleep",
+          "exposure": 1.0,
+          "weight": 0.5,
+          "confidence": 0.0,
+          "points": 50.0
+        },
+        {
+          "factor": "cycle_phase",
+          "exposure": 1.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 40.0
+        },
+        {
+          "factor": "bright_light",
+          "exposure": 1.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 25.0
+        },
+        {
+          "factor": "stress",
+          "exposure": 0.5,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 22.5
+        },
+        {
+          "factor": "neck_tension",
+          "exposure": 0.5,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "air_quality",
+          "exposure": 0.664,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 13.3
+        },
+        {
+          "factor": "screen_time",
+          "exposure": 0.5,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 10.0
+        },
+        {
+          "factor": "alcohol",
+          "exposure": 0.25,
+          "weight": 0.35,
+          "confidence": 0.0,
+          "points": 8.8
+        },
+        {
+          "factor": "pollen",
+          "exposure": 0.361,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 7.2
+        },
+        {
+          "factor": "pressure_drop",
+          "exposure": 0.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "humidity",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "temperature_swing",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "caffeine",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "dehydration",
+          "exposure": 0.0,
+          "weight": 0.3,
+          "confidence": 0.0,
+          "points": 0.0
+        }
+      ],
+      "confidence": 0.0,
+      "coverage": 1.0,
+      "version": "1.0.0"
+    },
+    {
+      "date": "2026-01-06",
+      "load": 92.5,
+      "level": "high",
+      "contributions": [
+        {
+          "factor": "poor_sleep",
+          "exposure": 1.0,
+          "weight": 0.5,
+          "confidence": 0.0,
+          "points": 50.0
+        },
+        {
+          "factor": "neck_tension",
+          "exposure": 1.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 40.0
+        },
+        {
+          "factor": "cycle_phase",
+          "exposure": 1.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 40.0
+        },
+        {
+          "factor": "stress",
+          "exposure": 0.5,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 22.5
+        },
+        {
+          "factor": "pollen",
+          "exposure": 1.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "air_quality",
+          "exposure": 0.991,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 19.8
+        },
+        {
+          "factor": "caffeine",
+          "exposure": 0.5,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 12.5
+        },
+        {
+          "factor": "temperature_swing",
+          "exposure": 0.16,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 4.0
+        },
+        {
+          "factor": "pressure_drop",
+          "exposure": 0.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "humidity",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "bright_light",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "screen_time",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "alcohol",
+          "exposure": 0.0,
+          "weight": 0.35,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "dehydration",
+          "exposure": 0.0,
+          "weight": 0.3,
+          "confidence": 0.0,
+          "points": 0.0
+        }
+      ],
+      "confidence": 0.0,
+      "coverage": 1.0,
+      "version": "1.0.0"
+    },
+    {
+      "date": "2026-01-07",
+      "load": 92.6,
+      "level": "high",
+      "contributions": [
+        {
+          "factor": "poor_sleep",
+          "exposure": 1.0,
+          "weight": 0.5,
+          "confidence": 0.0,
+          "points": 50.0
+        },
+        {
+          "factor": "stress",
+          "exposure": 1.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 45.0
+        },
+        {
+          "factor": "temperature_swing",
+          "exposure": 1.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 25.0
+        },
+        {
+          "factor": "pollen",
+          "exposure": 1.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "screen_time",
+          "exposure": 1.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "neck_tension",
+          "exposure": 0.5,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "cycle_phase",
+          "exposure": 0.5,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "bright_light",
+          "exposure": 0.5,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 12.5
+        },
+        {
+          "factor": "pressure_drop",
+          "exposure": 0.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "humidity",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "air_quality",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "caffeine",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "alcohol",
+          "exposure": 0.0,
+          "weight": 0.35,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "dehydration",
+          "exposure": 0.0,
+          "weight": 0.3,
+          "confidence": 0.0,
+          "points": 0.0
+        }
+      ],
+      "confidence": 0.0,
+      "coverage": 1.0,
+      "version": "1.0.0"
+    },
+    {
+      "date": "2026-01-08",
+      "load": 89.4,
+      "level": "high",
+      "contributions": [
+        {
+          "factor": "poor_sleep",
+          "exposure": 1.0,
+          "weight": 0.5,
+          "confidence": 0.0,
+          "points": 50.0
+        },
+        {
+          "factor": "stress",
+          "exposure": 1.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 45.0
+        },
+        {
+          "factor": "bright_light",
+          "exposure": 1.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 25.0
+        },
+        {
+          "factor": "pollen",
+          "exposure": 1.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "neck_tension",
+          "exposure": 0.5,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "caffeine",
+          "exposure": 0.5,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 12.5
+        },
+        {
+          "factor": "air_quality",
+          "exposure": 0.421,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 8.4
+        },
+        {
+          "factor": "pressure_drop",
+          "exposure": 0.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "humidity",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "temperature_swing",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "screen_time",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "alcohol",
+          "exposure": 0.0,
+          "weight": 0.35,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "dehydration",
+          "exposure": 0.0,
+          "weight": 0.3,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "cycle_phase",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        }
+      ],
+      "confidence": 0.0,
+      "coverage": 1.0,
+      "version": "1.0.0"
+    },
+    {
+      "date": "2026-01-09",
+      "load": 80.4,
+      "level": "high",
+      "contributions": [
+        {
+          "factor": "poor_sleep",
+          "exposure": 1.0,
+          "weight": 0.5,
+          "confidence": 0.0,
+          "points": 50.0
+        },
+        {
+          "factor": "stress",
+          "exposure": 0.5,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 22.5
+        },
+        {
+          "factor": "neck_tension",
+          "exposure": 0.5,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "bright_light",
+          "exposure": 0.76,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 19.0
+        },
+        {
+          "factor": "screen_time",
+          "exposure": 0.5,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 10.0
+        },
+        {
+          "factor": "air_quality",
+          "exposure": 0.425,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 8.5
+        },
+        {
+          "factor": "temperature_swing",
+          "exposure": 0.16,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 4.0
+        },
+        {
+          "factor": "pressure_drop",
+          "exposure": 0.025,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 1.1
+        },
+        {
+          "factor": "humidity",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "pollen",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "caffeine",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "alcohol",
+          "exposure": 0.0,
+          "weight": 0.35,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "dehydration",
+          "exposure": 0.0,
+          "weight": 0.3,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "cycle_phase",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        }
+      ],
+      "confidence": 0.0,
+      "coverage": 1.0,
+      "version": "1.0.0"
+    },
+    {
+      "date": "2026-01-10",
+      "load": 91.7,
+      "level": "high",
+      "contributions": [
+        {
+          "factor": "stress",
+          "exposure": 1.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 45.0
+        },
+        {
+          "factor": "poor_sleep",
+          "exposure": 0.5,
+          "weight": 0.5,
+          "confidence": 0.0,
+          "points": 25.0
+        },
+        {
+          "factor": "caffeine",
+          "exposure": 1.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 25.0
+        },
+        {
+          "factor": "bright_light",
+          "exposure": 0.98,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 24.5
+        },
+        {
+          "factor": "temperature_swing",
+          "exposure": 0.8,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "air_quality",
+          "exposure": 1.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "screen_time",
+          "exposure": 1.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "neck_tension",
+          "exposure": 0.5,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "humidity",
+          "exposure": 0.63,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 12.6
+        },
+        {
+          "factor": "pressure_drop",
+          "exposure": 0.025,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 1.1
+        },
+        {
+          "factor": "pollen",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "alcohol",
+          "exposure": 0.0,
+          "weight": 0.35,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "dehydration",
+          "exposure": 0.0,
+          "weight": 0.3,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "cycle_phase",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        }
+      ],
+      "confidence": 0.0,
+      "coverage": 1.0,
+      "version": "1.0.0"
+    },
+    {
+      "date": "2026-01-11",
+      "load": 69.2,
+      "level": "high",
+      "contributions": [
+        {
+          "factor": "poor_sleep",
+          "exposure": 0.5,
+          "weight": 0.5,
+          "confidence": 0.0,
+          "points": 25.0
+        },
+        {
+          "factor": "stress",
+          "exposure": 0.5,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 22.5
+        },
+        {
+          "factor": "air_quality",
+          "exposure": 1.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "pollen",
+          "exposure": 1.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "dehydration",
+          "exposure": 0.5,
+          "weight": 0.3,
+          "confidence": 0.0,
+          "points": 15.0
+        },
+        {
+          "factor": "temperature_swing",
+          "exposure": 0.1,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 2.5
+        },
+        {
+          "factor": "pressure_drop",
+          "exposure": 0.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "humidity",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "bright_light",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "screen_time",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "neck_tension",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "caffeine",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "alcohol",
+          "exposure": 0.0,
+          "weight": 0.35,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "cycle_phase",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        }
+      ],
+      "confidence": 0.0,
+      "coverage": 1.0,
+      "version": "1.0.0"
+    },
+    {
+      "date": "2026-01-12",
+      "load": 94.4,
+      "level": "high",
+      "contributions": [
+        {
+          "factor": "poor_sleep",
+          "exposure": 1.0,
+          "weight": 0.5,
+          "confidence": 0.0,
+          "points": 50.0
+        },
+        {
+          "factor": "stress",
+          "exposure": 1.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 45.0
+        },
+        {
+          "factor": "temperature_swing",
+          "exposure": 1.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 25.0
+        },
+        {
+          "factor": "caffeine",
+          "exposure": 1.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 25.0
+        },
+        {
+          "factor": "neck_tension",
+          "exposure": 0.5,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "pollen",
+          "exposure": 0.764,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 15.3
+        },
+        {
+          "factor": "dehydration",
+          "exposure": 0.5,
+          "weight": 0.3,
+          "confidence": 0.0,
+          "points": 15.0
+        },
+        {
+          "factor": "humidity",
+          "exposure": 0.61,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 12.2
+        },
+        {
+          "factor": "air_quality",
+          "exposure": 0.611,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 12.2
+        },
+        {
+          "factor": "screen_time",
+          "exposure": 0.5,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 10.0
+        },
+        {
+          "factor": "bright_light",
+          "exposure": 0.38,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 9.5
+        },
+        {
+          "factor": "pressure_drop",
+          "exposure": 0.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "alcohol",
+          "exposure": 0.0,
+          "weight": 0.35,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "cycle_phase",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        }
+      ],
+      "confidence": 0.0,
+      "coverage": 1.0,
+      "version": "1.0.0"
+    },
+    {
+      "date": "2026-01-13",
+      "load": 90.5,
+      "level": "high",
+      "contributions": [
+        {
+          "factor": "poor_sleep",
+          "exposure": 1.0,
+          "weight": 0.5,
+          "confidence": 0.0,
+          "points": 50.0
+        },
+        {
+          "factor": "neck_tension",
+          "exposure": 1.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 40.0
+        },
+        {
+          "factor": "caffeine",
+          "exposure": 1.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 25.0
+        },
+        {
+          "factor": "stress",
+          "exposure": 0.5,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 22.5
+        },
+        {
+          "factor": "bright_light",
+          "exposure": 0.66,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 16.5
+        },
+        {
+          "factor": "pollen",
+          "exposure": 0.804,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 16.1
+        },
+        {
+          "factor": "air_quality",
+          "exposure": 0.585,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 11.7
+        },
+        {
+          "factor": "screen_time",
+          "exposure": 0.5,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 10.0
+        },
+        {
+          "factor": "pressure_drop",
+          "exposure": 0.05,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 2.3
+        },
+        {
+          "factor": "humidity",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "temperature_swing",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "alcohol",
+          "exposure": 0.0,
+          "weight": 0.35,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "dehydration",
+          "exposure": 0.0,
+          "weight": 0.3,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "cycle_phase",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        }
+      ],
+      "confidence": 0.0,
+      "coverage": 1.0,
+      "version": "1.0.0"
+    },
+    {
+      "date": "2026-01-14",
+      "load": 93.3,
+      "level": "high",
+      "contributions": [
+        {
+          "factor": "poor_sleep",
+          "exposure": 1.0,
+          "weight": 0.5,
+          "confidence": 0.0,
+          "points": 50.0
+        },
+        {
+          "factor": "stress",
+          "exposure": 1.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 45.0
+        },
+        {
+          "factor": "temperature_swing",
+          "exposure": 1.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 25.0
+        },
+        {
+          "factor": "bright_light",
+          "exposure": 1.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 25.0
+        },
+        {
+          "factor": "caffeine",
+          "exposure": 1.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 25.0
+        },
+        {
+          "factor": "screen_time",
+          "exposure": 1.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "humidity",
+          "exposure": 0.96,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 19.2
+        },
+        {
+          "factor": "alcohol",
+          "exposure": 0.25,
+          "weight": 0.35,
+          "confidence": 0.0,
+          "points": 8.8
+        },
+        {
+          "factor": "air_quality",
+          "exposure": 0.131,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 2.6
+        },
+        {
+          "factor": "pressure_drop",
+          "exposure": 0.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "pollen",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "neck_tension",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "dehydration",
+          "exposure": 0.0,
+          "weight": 0.3,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "cycle_phase",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        }
+      ],
+      "confidence": 0.0,
+      "coverage": 1.0,
+      "version": "1.0.0"
+    },
+    {
+      "date": "2026-01-15",
+      "load": 82.3,
+      "level": "high",
+      "contributions": [
+        {
+          "factor": "poor_sleep",
+          "exposure": 1.0,
+          "weight": 0.5,
+          "confidence": 0.0,
+          "points": 50.0
+        },
+        {
+          "factor": "stress",
+          "exposure": 0.5,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 22.5
+        },
+        {
+          "factor": "pollen",
+          "exposure": 1.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "screen_time",
+          "exposure": 1.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "humidity",
+          "exposure": 0.67,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 13.4
+        },
+        {
+          "factor": "temperature_swing",
+          "exposure": 0.44,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 11.0
+        },
+        {
+          "factor": "bright_light",
+          "exposure": 0.3,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 7.5
+        },
+        {
+          "factor": "pressure_drop",
+          "exposure": 0.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "air_quality",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "neck_tension",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "caffeine",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "alcohol",
+          "exposure": 0.0,
+          "weight": 0.35,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "dehydration",
+          "exposure": 0.0,
+          "weight": 0.3,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "cycle_phase",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        }
+      ],
+      "confidence": 0.0,
+      "coverage": 1.0,
+      "version": "1.0.0"
+    },
+    {
+      "date": "2026-01-16",
+      "load": 77.0,
+      "level": "high",
+      "contributions": [
+        {
+          "factor": "stress",
+          "exposure": 1.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 45.0
+        },
+        {
+          "factor": "poor_sleep",
+          "exposure": 0.5,
+          "weight": 0.5,
+          "confidence": 0.0,
+          "points": 25.0
+        },
+        {
+          "factor": "bright_light",
+          "exposure": 0.82,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 20.5
+        },
+        {
+          "factor": "dehydration",
+          "exposure": 0.5,
+          "weight": 0.3,
+          "confidence": 0.0,
+          "points": 15.0
+        },
+        {
+          "factor": "caffeine",
+          "exposure": 0.5,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 12.5
+        },
+        {
+          "factor": "air_quality",
+          "exposure": 0.291,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 5.8
+        },
+        {
+          "factor": "pressure_drop",
+          "exposure": 0.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "humidity",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "temperature_swing",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "pollen",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "screen_time",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "neck_tension",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "alcohol",
+          "exposure": 0.0,
+          "weight": 0.35,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "cycle_phase",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        }
+      ],
+      "confidence": 0.0,
+      "coverage": 1.0,
+      "version": "1.0.0"
+    },
+    {
+      "date": "2026-01-17",
+      "load": 86.3,
+      "level": "high",
+      "contributions": [
+        {
+          "factor": "poor_sleep",
+          "exposure": 1.0,
+          "weight": 0.5,
+          "confidence": 0.0,
+          "points": 50.0
+        },
+        {
+          "factor": "stress",
+          "exposure": 1.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 45.0
+        },
+        {
+          "factor": "screen_time",
+          "exposure": 1.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "neck_tension",
+          "exposure": 0.5,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "dehydration",
+          "exposure": 0.5,
+          "weight": 0.3,
+          "confidence": 0.0,
+          "points": 15.0
+        },
+        {
+          "factor": "bright_light",
+          "exposure": 0.28,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 7.0
+        },
+        {
+          "factor": "pollen",
+          "exposure": 0.059,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 1.2
+        },
+        {
+          "factor": "pressure_drop",
+          "exposure": 0.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "humidity",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "temperature_swing",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "air_quality",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "caffeine",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "alcohol",
+          "exposure": 0.0,
+          "weight": 0.35,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "cycle_phase",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        }
+      ],
+      "confidence": 0.0,
+      "coverage": 1.0,
+      "version": "1.0.0"
+    },
+    {
+      "date": "2026-01-18",
+      "load": 80.2,
+      "level": "high",
+      "contributions": [
+        {
+          "factor": "stress",
+          "exposure": 1.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 45.0
+        },
+        {
+          "factor": "neck_tension",
+          "exposure": 1.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 40.0
+        },
+        {
+          "factor": "poor_sleep",
+          "exposure": 0.5,
+          "weight": 0.5,
+          "confidence": 0.0,
+          "points": 25.0
+        },
+        {
+          "factor": "pollen",
+          "exposure": 0.582,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 11.6
+        },
+        {
+          "factor": "temperature_swing",
+          "exposure": 0.2,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 5.0
+        },
+        {
+          "factor": "bright_light",
+          "exposure": 0.14,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 3.5
+        },
+        {
+          "factor": "air_quality",
+          "exposure": 0.056,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 1.1
+        },
+        {
+          "factor": "pressure_drop",
+          "exposure": 0.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "humidity",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "screen_time",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "caffeine",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "alcohol",
+          "exposure": 0.0,
+          "weight": 0.35,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "dehydration",
+          "exposure": 0.0,
+          "weight": 0.3,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "cycle_phase",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        }
+      ],
+      "confidence": 0.0,
+      "coverage": 1.0,
+      "version": "1.0.0"
+    },
+    {
+      "date": "2026-01-19",
+      "load": 89.2,
+      "level": "high",
+      "contributions": [
+        {
+          "factor": "poor_sleep",
+          "exposure": 1.0,
+          "weight": 0.5,
+          "confidence": 0.0,
+          "points": 50.0
+        },
+        {
+          "factor": "stress",
+          "exposure": 1.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 45.0
+        },
+        {
+          "factor": "caffeine",
+          "exposure": 1.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 25.0
+        },
+        {
+          "factor": "neck_tension",
+          "exposure": 0.5,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "pollen",
+          "exposure": 0.972,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 19.5
+        },
+        {
+          "factor": "screen_time",
+          "exposure": 0.5,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 10.0
+        },
+        {
+          "factor": "air_quality",
+          "exposure": 0.494,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 9.9
+        },
+        {
+          "factor": "pressure_drop",
+          "exposure": 0.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "humidity",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "temperature_swing",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "bright_light",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "alcohol",
+          "exposure": 0.0,
+          "weight": 0.35,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "dehydration",
+          "exposure": 0.0,
+          "weight": 0.3,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "cycle_phase",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        }
+      ],
+      "confidence": 0.0,
+      "coverage": 1.0,
+      "version": "1.0.0"
+    },
+    {
+      "date": "2026-01-20",
+      "load": 85.6,
+      "level": "high",
+      "contributions": [
+        {
+          "factor": "poor_sleep",
+          "exposure": 1.0,
+          "weight": 0.5,
+          "confidence": 0.0,
+          "points": 50.0
+        },
+        {
+          "factor": "stress",
+          "exposure": 1.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 45.0
+        },
+        {
+          "factor": "bright_light",
+          "exposure": 1.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 25.0
+        },
+        {
+          "factor": "pollen",
+          "exposure": 0.747,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 15.0
+        },
+        {
+          "factor": "screen_time",
+          "exposure": 0.5,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 10.0
+        },
+        {
+          "factor": "air_quality",
+          "exposure": 0.427,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 8.5
+        },
+        {
+          "factor": "pressure_drop",
+          "exposure": 0.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "humidity",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "temperature_swing",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "neck_tension",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "caffeine",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "alcohol",
+          "exposure": 0.0,
+          "weight": 0.35,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "dehydration",
+          "exposure": 0.0,
+          "weight": 0.3,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "cycle_phase",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        }
+      ],
+      "confidence": 0.0,
+      "coverage": 1.0,
+      "version": "1.0.0"
+    },
+    {
+      "date": "2026-01-21",
+      "load": 74.2,
+      "level": "high",
+      "contributions": [
+        {
+          "factor": "poor_sleep",
+          "exposure": 0.5,
+          "weight": 0.5,
+          "confidence": 0.0,
+          "points": 25.0
+        },
+        {
+          "factor": "stress",
+          "exposure": 0.5,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 22.5
+        },
+        {
+          "factor": "humidity",
+          "exposure": 1.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "screen_time",
+          "exposure": 1.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "temperature_swing",
+          "exposure": 0.66,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 16.5
+        },
+        {
+          "factor": "dehydration",
+          "exposure": 0.5,
+          "weight": 0.3,
+          "confidence": 0.0,
+          "points": 15.0
+        },
+        {
+          "factor": "pressure_drop",
+          "exposure": 0.05,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 2.3
+        },
+        {
+          "factor": "air_quality",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "pollen",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "bright_light",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "neck_tension",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "caffeine",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "alcohol",
+          "exposure": 0.0,
+          "weight": 0.35,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "cycle_phase",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        }
+      ],
+      "confidence": 0.0,
+      "coverage": 1.0,
+      "version": "1.0.0"
+    },
+    {
+      "date": "2026-01-22",
+      "load": 93.3,
+      "level": "high",
+      "contributions": [
+        {
+          "factor": "stress",
+          "exposure": 1.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 45.0
+        },
+        {
+          "factor": "neck_tension",
+          "exposure": 1.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 40.0
+        },
+        {
+          "factor": "temperature_swing",
+          "exposure": 1.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 25.0
+        },
+        {
+          "factor": "bright_light",
+          "exposure": 1.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 25.0
+        },
+        {
+          "factor": "poor_sleep",
+          "exposure": 0.5,
+          "weight": 0.5,
+          "confidence": 0.0,
+          "points": 25.0
+        },
+        {
+          "factor": "caffeine",
+          "exposure": 1.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 25.0
+        },
+        {
+          "factor": "dehydration",
+          "exposure": 0.5,
+          "weight": 0.3,
+          "confidence": 0.0,
+          "points": 15.0
+        },
+        {
+          "factor": "screen_time",
+          "exposure": 0.5,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 10.0
+        },
+        {
+          "factor": "pollen",
+          "exposure": 0.436,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 8.7
+        },
+        {
+          "factor": "humidity",
+          "exposure": 0.42,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 8.4
+        },
+        {
+          "factor": "pressure_drop",
+          "exposure": 0.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "air_quality",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "alcohol",
+          "exposure": 0.0,
+          "weight": 0.35,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "cycle_phase",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        }
+      ],
+      "confidence": 0.0,
+      "coverage": 1.0,
+      "version": "1.0.0"
+    },
+    {
+      "date": "2026-01-23",
+      "load": 90.8,
+      "level": "high",
+      "contributions": [
+        {
+          "factor": "poor_sleep",
+          "exposure": 1.0,
+          "weight": 0.5,
+          "confidence": 0.0,
+          "points": 50.0
+        },
+        {
+          "factor": "stress",
+          "exposure": 1.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 45.0
+        },
+        {
+          "factor": "neck_tension",
+          "exposure": 1.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 40.0
+        },
+        {
+          "factor": "caffeine",
+          "exposure": 1.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 25.0
+        },
+        {
+          "factor": "air_quality",
+          "exposure": 1.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "pollen",
+          "exposure": 0.3,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 6.0
+        },
+        {
+          "factor": "bright_light",
+          "exposure": 0.04,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 1.0
+        },
+        {
+          "factor": "pressure_drop",
+          "exposure": 0.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "humidity",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "temperature_swing",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "screen_time",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "alcohol",
+          "exposure": 0.0,
+          "weight": 0.35,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "dehydration",
+          "exposure": 0.0,
+          "weight": 0.3,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "cycle_phase",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        }
+      ],
+      "confidence": 0.0,
+      "coverage": 1.0,
+      "version": "1.0.0"
+    },
+    {
+      "date": "2026-01-24",
+      "load": 85.2,
+      "level": "high",
+      "contributions": [
+        {
+          "factor": "stress",
+          "exposure": 1.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 45.0
+        },
+        {
+          "factor": "bright_light",
+          "exposure": 1.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 25.0
+        },
+        {
+          "factor": "poor_sleep",
+          "exposure": 0.5,
+          "weight": 0.5,
+          "confidence": 0.0,
+          "points": 25.0
+        },
+        {
+          "factor": "humidity",
+          "exposure": 1.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "screen_time",
+          "exposure": 1.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "dehydration",
+          "exposure": 0.5,
+          "weight": 0.3,
+          "confidence": 0.0,
+          "points": 15.0
+        },
+        {
+          "factor": "pollen",
+          "exposure": 0.333,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 6.7
+        },
+        {
+          "factor": "air_quality",
+          "exposure": 0.288,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 5.8
+        },
+        {
+          "factor": "pressure_drop",
+          "exposure": 0.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "temperature_swing",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "neck_tension",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "caffeine",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "alcohol",
+          "exposure": 0.0,
+          "weight": 0.35,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "cycle_phase",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        }
+      ],
+      "confidence": 0.0,
+      "coverage": 1.0,
+      "version": "1.0.0"
+    },
+    {
+      "date": "2026-01-25",
+      "load": 88.9,
+      "level": "high",
+      "contributions": [
+        {
+          "factor": "poor_sleep",
+          "exposure": 1.0,
+          "weight": 0.5,
+          "confidence": 0.0,
+          "points": 50.0
+        },
+        {
+          "factor": "stress",
+          "exposure": 1.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 45.0
+        },
+        {
+          "factor": "bright_light",
+          "exposure": 1.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 25.0
+        },
+        {
+          "factor": "caffeine",
+          "exposure": 1.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 25.0
+        },
+        {
+          "factor": "air_quality",
+          "exposure": 1.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "screen_time",
+          "exposure": 0.5,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 10.0
+        },
+        {
+          "factor": "pressure_drop",
+          "exposure": 0.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "humidity",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "temperature_swing",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "pollen",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "neck_tension",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "alcohol",
+          "exposure": 0.0,
+          "weight": 0.35,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "dehydration",
+          "exposure": 0.0,
+          "weight": 0.3,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "cycle_phase",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        }
+      ],
+      "confidence": 0.0,
+      "coverage": 1.0,
+      "version": "1.0.0"
+    },
+    {
+      "date": "2026-01-26",
+      "load": 88.0,
+      "level": "high",
+      "contributions": [
+        {
+          "factor": "poor_sleep",
+          "exposure": 1.0,
+          "weight": 0.5,
+          "confidence": 0.0,
+          "points": 50.0
+        },
+        {
+          "factor": "neck_tension",
+          "exposure": 1.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 40.0
+        },
+        {
+          "factor": "temperature_swing",
+          "exposure": 1.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 25.0
+        },
+        {
+          "factor": "stress",
+          "exposure": 0.5,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 22.5
+        },
+        {
+          "factor": "bright_light",
+          "exposure": 0.54,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 13.5
+        },
+        {
+          "factor": "caffeine",
+          "exposure": 0.5,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 12.5
+        },
+        {
+          "factor": "pollen",
+          "exposure": 0.465,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 9.3
+        },
+        {
+          "factor": "pressure_drop",
+          "exposure": 0.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "humidity",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "air_quality",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "screen_time",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "alcohol",
+          "exposure": 0.0,
+          "weight": 0.35,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "dehydration",
+          "exposure": 0.0,
+          "weight": 0.3,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "cycle_phase",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        }
+      ],
+      "confidence": 0.0,
+      "coverage": 1.0,
+      "version": "1.0.0"
+    },
+    {
+      "date": "2026-01-27",
+      "load": 75.9,
+      "level": "high",
+      "contributions": [
+        {
+          "factor": "stress",
+          "exposure": 1.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 45.0
+        },
+        {
+          "factor": "poor_sleep",
+          "exposure": 0.767,
+          "weight": 0.5,
+          "confidence": 0.0,
+          "points": 38.3
+        },
+        {
+          "factor": "screen_time",
+          "exposure": 1.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "temperature_swing",
+          "exposure": 0.32,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 8.0
+        },
+        {
+          "factor": "humidity",
+          "exposure": 0.16,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 3.2
+        },
+        {
+          "factor": "pollen",
+          "exposure": 0.021,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.4
+        },
+        {
+          "factor": "pressure_drop",
+          "exposure": 0.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "air_quality",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "bright_light",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "neck_tension",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "caffeine",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "alcohol",
+          "exposure": 0.0,
+          "weight": 0.35,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "dehydration",
+          "exposure": 0.0,
+          "weight": 0.3,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "cycle_phase",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        }
+      ],
+      "confidence": 0.0,
+      "coverage": 1.0,
+      "version": "1.0.0"
+    },
+    {
+      "date": "2026-01-28",
+      "load": 77.0,
+      "level": "high",
+      "contributions": [
+        {
+          "factor": "stress",
+          "exposure": 1.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 45.0
+        },
+        {
+          "factor": "bright_light",
+          "exposure": 1.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 25.0
+        },
+        {
+          "factor": "poor_sleep",
+          "exposure": 0.5,
+          "weight": 0.5,
+          "confidence": 0.0,
+          "points": 25.0
+        },
+        {
+          "factor": "temperature_swing",
+          "exposure": 0.5,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 12.5
+        },
+        {
+          "factor": "screen_time",
+          "exposure": 0.5,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 10.0
+        },
+        {
+          "factor": "air_quality",
+          "exposure": 0.275,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 5.5
+        },
+        {
+          "factor": "pressure_drop",
+          "exposure": 0.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "humidity",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "pollen",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "neck_tension",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "caffeine",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "alcohol",
+          "exposure": 0.0,
+          "weight": 0.35,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "dehydration",
+          "exposure": 0.0,
+          "weight": 0.3,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "cycle_phase",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        }
+      ],
+      "confidence": 0.0,
+      "coverage": 1.0,
+      "version": "1.0.0"
+    },
+    {
+      "date": "2026-01-29",
+      "load": 89.9,
+      "level": "high",
+      "contributions": [
+        {
+          "factor": "poor_sleep",
+          "exposure": 1.0,
+          "weight": 0.5,
+          "confidence": 0.0,
+          "points": 50.0
+        },
+        {
+          "factor": "neck_tension",
+          "exposure": 1.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 40.0
+        },
+        {
+          "factor": "stress",
+          "exposure": 0.5,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 22.5
+        },
+        {
+          "factor": "pollen",
+          "exposure": 1.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "screen_time",
+          "exposure": 1.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "bright_light",
+          "exposure": 0.68,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 17.0
+        },
+        {
+          "factor": "humidity",
+          "exposure": 0.575,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 11.5
+        },
+        {
+          "factor": "temperature_swing",
+          "exposure": 0.16,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 4.0
+        },
+        {
+          "factor": "air_quality",
+          "exposure": 0.171,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 3.4
+        },
+        {
+          "factor": "pressure_drop",
+          "exposure": 0.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "caffeine",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "alcohol",
+          "exposure": 0.0,
+          "weight": 0.35,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "dehydration",
+          "exposure": 0.0,
+          "weight": 0.3,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "cycle_phase",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        }
+      ],
+      "confidence": 0.0,
+      "coverage": 1.0,
+      "version": "1.0.0"
+    },
+    {
+      "date": "2026-01-30",
+      "load": 74.2,
+      "level": "high",
+      "contributions": [
+        {
+          "factor": "poor_sleep",
+          "exposure": 0.5,
+          "weight": 0.5,
+          "confidence": 0.0,
+          "points": 25.0
+        },
+        {
+          "factor": "stress",
+          "exposure": 0.5,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 22.5
+        },
+        {
+          "factor": "pollen",
+          "exposure": 1.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "bright_light",
+          "exposure": 0.54,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 13.5
+        },
+        {
+          "factor": "caffeine",
+          "exposure": 0.5,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 12.5
+        },
+        {
+          "factor": "screen_time",
+          "exposure": 0.5,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 10.0
+        },
+        {
+          "factor": "air_quality",
+          "exposure": 0.474,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 9.5
+        },
+        {
+          "factor": "alcohol",
+          "exposure": 0.25,
+          "weight": 0.35,
+          "confidence": 0.0,
+          "points": 8.8
+        },
+        {
+          "factor": "temperature_swing",
+          "exposure": 0.06,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 1.5
+        },
+        {
+          "factor": "pressure_drop",
+          "exposure": 0.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "humidity",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "neck_tension",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "dehydration",
+          "exposure": 0.0,
+          "weight": 0.3,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "cycle_phase",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        }
+      ],
+      "confidence": 0.0,
+      "coverage": 1.0,
+      "version": "1.0.0"
+    },
+    {
+      "date": "2026-01-31",
+      "load": 94.4,
+      "level": "high",
+      "contributions": [
+        {
+          "factor": "poor_sleep",
+          "exposure": 1.0,
+          "weight": 0.5,
+          "confidence": 0.0,
+          "points": 50.0
+        },
+        {
+          "factor": "stress",
+          "exposure": 1.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 45.0
+        },
+        {
+          "factor": "neck_tension",
+          "exposure": 1.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 40.0
+        },
+        {
+          "factor": "cycle_phase",
+          "exposure": 1.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 40.0
+        },
+        {
+          "factor": "temperature_swing",
+          "exposure": 0.96,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 24.0
+        },
+        {
+          "factor": "bright_light",
+          "exposure": 0.7,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 17.5
+        },
+        {
+          "factor": "pollen",
+          "exposure": 0.499,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 10.0
+        },
+        {
+          "factor": "pressure_drop",
+          "exposure": 0.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "humidity",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "air_quality",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "screen_time",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "caffeine",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "alcohol",
+          "exposure": 0.0,
+          "weight": 0.35,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "dehydration",
+          "exposure": 0.0,
+          "weight": 0.3,
+          "confidence": 0.0,
+          "points": 0.0
+        }
+      ],
+      "confidence": 0.0,
+      "coverage": 1.0,
+      "version": "1.0.0"
+    },
+    {
+      "date": "2026-02-01",
+      "load": 94.8,
+      "level": "high",
+      "contributions": [
+        {
+          "factor": "poor_sleep",
+          "exposure": 1.0,
+          "weight": 0.5,
+          "confidence": 0.0,
+          "points": 50.0
+        },
+        {
+          "factor": "stress",
+          "exposure": 1.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 45.0
+        },
+        {
+          "factor": "neck_tension",
+          "exposure": 1.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 40.0
+        },
+        {
+          "factor": "cycle_phase",
+          "exposure": 1.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 40.0
+        },
+        {
+          "factor": "air_quality",
+          "exposure": 1.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "pollen",
+          "exposure": 0.956,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 19.1
+        },
+        {
+          "factor": "dehydration",
+          "exposure": 0.5,
+          "weight": 0.3,
+          "confidence": 0.0,
+          "points": 15.0
+        },
+        {
+          "factor": "temperature_swing",
+          "exposure": 0.16,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 4.0
+        },
+        {
+          "factor": "pressure_drop",
+          "exposure": 0.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "humidity",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "bright_light",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "screen_time",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "caffeine",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "alcohol",
+          "exposure": 0.0,
+          "weight": 0.35,
+          "confidence": 0.0,
+          "points": 0.0
+        }
+      ],
+      "confidence": 0.0,
+      "coverage": 1.0,
+      "version": "1.0.0"
+    },
+    {
+      "date": "2026-02-02",
+      "load": 94.4,
+      "level": "high",
+      "contributions": [
+        {
+          "factor": "poor_sleep",
+          "exposure": 1.0,
+          "weight": 0.5,
+          "confidence": 0.0,
+          "points": 50.0
+        },
+        {
+          "factor": "stress",
+          "exposure": 1.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 45.0
+        },
+        {
+          "factor": "cycle_phase",
+          "exposure": 1.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 40.0
+        },
+        {
+          "factor": "bright_light",
+          "exposure": 0.82,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 20.5
+        },
+        {
+          "factor": "humidity",
+          "exposure": 1.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "neck_tension",
+          "exposure": 0.5,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "pollen",
+          "exposure": 0.738,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 14.8
+        },
+        {
+          "factor": "air_quality",
+          "exposure": 0.483,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 9.7
+        },
+        {
+          "factor": "alcohol",
+          "exposure": 0.25,
+          "weight": 0.35,
+          "confidence": 0.0,
+          "points": 8.8
+        },
+        {
+          "factor": "temperature_swing",
+          "exposure": 0.22,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 5.5
+        },
+        {
+          "factor": "pressure_drop",
+          "exposure": 0.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "screen_time",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "caffeine",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "dehydration",
+          "exposure": 0.0,
+          "weight": 0.3,
+          "confidence": 0.0,
+          "points": 0.0
+        }
+      ],
+      "confidence": 0.0,
+      "coverage": 1.0,
+      "version": "1.0.0"
+    },
+    {
+      "date": "2026-02-03",
+      "load": 93.3,
+      "level": "high",
+      "contributions": [
+        {
+          "factor": "poor_sleep",
+          "exposure": 1.0,
+          "weight": 0.5,
+          "confidence": 0.0,
+          "points": 50.0
+        },
+        {
+          "factor": "neck_tension",
+          "exposure": 1.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 40.0
+        },
+        {
+          "factor": "cycle_phase",
+          "exposure": 1.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 40.0
+        },
+        {
+          "factor": "stress",
+          "exposure": 0.5,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 22.5
+        },
+        {
+          "factor": "humidity",
+          "exposure": 1.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "air_quality",
+          "exposure": 0.946,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 18.9
+        },
+        {
+          "factor": "dehydration",
+          "exposure": 0.5,
+          "weight": 0.3,
+          "confidence": 0.0,
+          "points": 15.0
+        },
+        {
+          "factor": "screen_time",
+          "exposure": 0.5,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 10.0
+        },
+        {
+          "factor": "temperature_swing",
+          "exposure": 0.12,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 3.0
+        },
+        {
+          "factor": "pressure_drop",
+          "exposure": 0.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "pollen",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "bright_light",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "caffeine",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "alcohol",
+          "exposure": 0.0,
+          "weight": 0.35,
+          "confidence": 0.0,
+          "points": 0.0
+        }
+      ],
+      "confidence": 0.0,
+      "coverage": 1.0,
+      "version": "1.0.0"
+    },
+    {
+      "date": "2026-02-04",
+      "load": 90.6,
+      "level": "high",
+      "contributions": [
+        {
+          "factor": "poor_sleep",
+          "exposure": 1.0,
+          "weight": 0.5,
+          "confidence": 0.0,
+          "points": 50.0
+        },
+        {
+          "factor": "stress",
+          "exposure": 1.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 45.0
+        },
+        {
+          "factor": "caffeine",
+          "exposure": 1.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 25.0
+        },
+        {
+          "factor": "pollen",
+          "exposure": 1.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "cycle_phase",
+          "exposure": 0.5,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "dehydration",
+          "exposure": 0.5,
+          "weight": 0.3,
+          "confidence": 0.0,
+          "points": 15.0
+        },
+        {
+          "factor": "bright_light",
+          "exposure": 0.5,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 12.5
+        },
+        {
+          "factor": "air_quality",
+          "exposure": 0.215,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 4.3
+        },
+        {
+          "factor": "pressure_drop",
+          "exposure": 0.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "humidity",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "temperature_swing",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "screen_time",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "neck_tension",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "alcohol",
+          "exposure": 0.0,
+          "weight": 0.35,
+          "confidence": 0.0,
+          "points": 0.0
+        }
+      ],
+      "confidence": 0.0,
+      "coverage": 1.0,
+      "version": "1.0.0"
+    },
+    {
+      "date": "2026-02-05",
+      "load": 82.5,
+      "level": "high",
+      "contributions": [
+        {
+          "factor": "poor_sleep",
+          "exposure": 1.0,
+          "weight": 0.5,
+          "confidence": 0.0,
+          "points": 50.0
+        },
+        {
+          "factor": "stress",
+          "exposure": 1.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 45.0
+        },
+        {
+          "factor": "pollen",
+          "exposure": 0.597,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 12.0
+        },
+        {
+          "factor": "screen_time",
+          "exposure": 0.5,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 10.0
+        },
+        {
+          "factor": "air_quality",
+          "exposure": 0.381,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 7.6
+        },
+        {
+          "factor": "pressure_drop",
+          "exposure": 0.15,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 6.8
+        },
+        {
+          "factor": "bright_light",
+          "exposure": 0.26,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 6.5
+        },
+        {
+          "factor": "humidity",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "temperature_swing",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "neck_tension",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "caffeine",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "alcohol",
+          "exposure": 0.0,
+          "weight": 0.35,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "dehydration",
+          "exposure": 0.0,
+          "weight": 0.3,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "cycle_phase",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        }
+      ],
+      "confidence": 0.0,
+      "coverage": 1.0,
+      "version": "1.0.0"
+    },
+    {
+      "date": "2026-02-06",
+      "load": 86.3,
+      "level": "high",
+      "contributions": [
+        {
+          "factor": "poor_sleep",
+          "exposure": 1.0,
+          "weight": 0.5,
+          "confidence": 0.0,
+          "points": 50.0
+        },
+        {
+          "factor": "stress",
+          "exposure": 1.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 45.0
+        },
+        {
+          "factor": "humidity",
+          "exposure": 1.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "neck_tension",
+          "exposure": 0.5,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "bright_light",
+          "exposure": 0.76,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 19.0
+        },
+        {
+          "factor": "temperature_swing",
+          "exposure": 0.16,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 4.0
+        },
+        {
+          "factor": "pressure_drop",
+          "exposure": 0.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "air_quality",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "pollen",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "screen_time",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "caffeine",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "alcohol",
+          "exposure": 0.0,
+          "weight": 0.35,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "dehydration",
+          "exposure": 0.0,
+          "weight": 0.3,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "cycle_phase",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        }
+      ],
+      "confidence": 0.0,
+      "coverage": 1.0,
+      "version": "1.0.0"
+    },
+    {
+      "date": "2026-02-07",
+      "load": 90.9,
+      "level": "high",
+      "contributions": [
+        {
+          "factor": "poor_sleep",
+          "exposure": 1.0,
+          "weight": 0.5,
+          "confidence": 0.0,
+          "points": 50.0
+        },
+        {
+          "factor": "stress",
+          "exposure": 1.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 45.0
+        },
+        {
+          "factor": "neck_tension",
+          "exposure": 1.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 40.0
+        },
+        {
+          "factor": "pollen",
+          "exposure": 0.995,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 19.9
+        },
+        {
+          "factor": "alcohol",
+          "exposure": 0.5,
+          "weight": 0.35,
+          "confidence": 0.0,
+          "points": 17.5
+        },
+        {
+          "factor": "screen_time",
+          "exposure": 0.5,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 10.0
+        },
+        {
+          "factor": "air_quality",
+          "exposure": 0.371,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 7.4
+        },
+        {
+          "factor": "pressure_drop",
+          "exposure": 0.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "humidity",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "temperature_swing",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "bright_light",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "caffeine",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "dehydration",
+          "exposure": 0.0,
+          "weight": 0.3,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "cycle_phase",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        }
+      ],
+      "confidence": 0.0,
+      "coverage": 1.0,
+      "version": "1.0.0"
+    },
+    {
+      "date": "2026-02-08",
+      "load": 94.3,
+      "level": "high",
+      "contributions": [
+        {
+          "factor": "poor_sleep",
+          "exposure": 1.0,
+          "weight": 0.5,
+          "confidence": 0.0,
+          "points": 50.0
+        },
+        {
+          "factor": "alcohol",
+          "exposure": 1.0,
+          "weight": 0.35,
+          "confidence": 0.0,
+          "points": 35.0
+        },
+        {
+          "factor": "temperature_swing",
+          "exposure": 1.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 25.0
+        },
+        {
+          "factor": "caffeine",
+          "exposure": 1.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 25.0
+        },
+        {
+          "factor": "stress",
+          "exposure": 0.5,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 22.5
+        },
+        {
+          "factor": "humidity",
+          "exposure": 1.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "neck_tension",
+          "exposure": 0.5,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "pollen",
+          "exposure": 0.976,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 19.5
+        },
+        {
+          "factor": "bright_light",
+          "exposure": 0.5,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 12.5
+        },
+        {
+          "factor": "screen_time",
+          "exposure": 0.5,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 10.0
+        },
+        {
+          "factor": "pressure_drop",
+          "exposure": 0.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "air_quality",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "dehydration",
+          "exposure": 0.0,
+          "weight": 0.3,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "cycle_phase",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        }
+      ],
+      "confidence": 0.0,
+      "coverage": 1.0,
+      "version": "1.0.0"
+    },
+    {
+      "date": "2026-02-09",
+      "load": 86.9,
+      "level": "high",
+      "contributions": [
+        {
+          "factor": "poor_sleep",
+          "exposure": 1.0,
+          "weight": 0.5,
+          "confidence": 0.0,
+          "points": 50.0
+        },
+        {
+          "factor": "stress",
+          "exposure": 1.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 45.0
+        },
+        {
+          "factor": "humidity",
+          "exposure": 1.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "screen_time",
+          "exposure": 1.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "bright_light",
+          "exposure": 0.5,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 12.5
+        },
+        {
+          "factor": "caffeine",
+          "exposure": 0.5,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 12.5
+        },
+        {
+          "factor": "pollen",
+          "exposure": 0.092,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 1.8
+        },
+        {
+          "factor": "air_quality",
+          "exposure": 0.04,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.8
+        },
+        {
+          "factor": "pressure_drop",
+          "exposure": 0.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "temperature_swing",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "neck_tension",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "alcohol",
+          "exposure": 0.0,
+          "weight": 0.35,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "dehydration",
+          "exposure": 0.0,
+          "weight": 0.3,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "cycle_phase",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        }
+      ],
+      "confidence": 0.0,
+      "coverage": 1.0,
+      "version": "1.0.0"
+    },
+    {
+      "date": "2026-02-10",
+      "load": 88.2,
+      "level": "high",
+      "contributions": [
+        {
+          "factor": "poor_sleep",
+          "exposure": 1.0,
+          "weight": 0.5,
+          "confidence": 0.0,
+          "points": 50.0
+        },
+        {
+          "factor": "stress",
+          "exposure": 1.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 45.0
+        },
+        {
+          "factor": "temperature_swing",
+          "exposure": 1.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 25.0
+        },
+        {
+          "factor": "screen_time",
+          "exposure": 1.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "caffeine",
+          "exposure": 0.5,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 12.5
+        },
+        {
+          "factor": "humidity",
+          "exposure": 0.495,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 9.9
+        },
+        {
+          "factor": "air_quality",
+          "exposure": 0.262,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 5.2
+        },
+        {
+          "factor": "pollen",
+          "exposure": 0.219,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 4.4
+        },
+        {
+          "factor": "pressure_drop",
+          "exposure": 0.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "bright_light",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "neck_tension",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "alcohol",
+          "exposure": 0.0,
+          "weight": 0.35,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "dehydration",
+          "exposure": 0.0,
+          "weight": 0.3,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "cycle_phase",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        }
+      ],
+      "confidence": 0.0,
+      "coverage": 1.0,
+      "version": "1.0.0"
+    },
+    {
+      "date": "2026-02-11",
+      "load": 86.1,
+      "level": "high",
+      "contributions": [
+        {
+          "factor": "stress",
+          "exposure": 1.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 45.0
+        },
+        {
+          "factor": "neck_tension",
+          "exposure": 1.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 40.0
+        },
+        {
+          "factor": "temperature_swing",
+          "exposure": 1.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 25.0
+        },
+        {
+          "factor": "poor_sleep",
+          "exposure": 0.5,
+          "weight": 0.5,
+          "confidence": 0.0,
+          "points": 25.0
+        },
+        {
+          "factor": "screen_time",
+          "exposure": 1.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "pollen",
+          "exposure": 0.324,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 6.5
+        },
+        {
+          "factor": "pressure_drop",
+          "exposure": 0.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "humidity",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "air_quality",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "bright_light",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "caffeine",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "alcohol",
+          "exposure": 0.0,
+          "weight": 0.35,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "dehydration",
+          "exposure": 0.0,
+          "weight": 0.3,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "cycle_phase",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        }
+      ],
+      "confidence": 0.0,
+      "coverage": 1.0,
+      "version": "1.0.0"
+    },
+    {
+      "date": "2026-02-12",
+      "load": 85.6,
+      "level": "high",
+      "contributions": [
+        {
+          "factor": "poor_sleep",
+          "exposure": 1.0,
+          "weight": 0.5,
+          "confidence": 0.0,
+          "points": 50.0
+        },
+        {
+          "factor": "stress",
+          "exposure": 1.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 45.0
+        },
+        {
+          "factor": "air_quality",
+          "exposure": 1.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "pollen",
+          "exposure": 1.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "humidity",
+          "exposure": 0.625,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 12.5
+        },
+        {
+          "factor": "temperature_swing",
+          "exposure": 0.14,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 3.5
+        },
+        {
+          "factor": "bright_light",
+          "exposure": 0.12,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 3.0
+        },
+        {
+          "factor": "pressure_drop",
+          "exposure": 0.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "screen_time",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "neck_tension",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "caffeine",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "alcohol",
+          "exposure": 0.0,
+          "weight": 0.35,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "dehydration",
+          "exposure": 0.0,
+          "weight": 0.3,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "cycle_phase",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        }
+      ],
+      "confidence": 0.0,
+      "coverage": 1.0,
+      "version": "1.0.0"
+    },
+    {
+      "date": "2026-02-13",
+      "load": 76.9,
+      "level": "high",
+      "contributions": [
+        {
+          "factor": "temperature_swing",
+          "exposure": 1.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 25.0
+        },
+        {
+          "factor": "poor_sleep",
+          "exposure": 0.5,
+          "weight": 0.5,
+          "confidence": 0.0,
+          "points": 25.0
+        },
+        {
+          "factor": "stress",
+          "exposure": 0.5,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 22.5
+        },
+        {
+          "factor": "pollen",
+          "exposure": 1.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "neck_tension",
+          "exposure": 0.5,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "air_quality",
+          "exposure": 0.863,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 17.3
+        },
+        {
+          "factor": "pressure_drop",
+          "exposure": 0.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "humidity",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "bright_light",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "screen_time",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "caffeine",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "alcohol",
+          "exposure": 0.0,
+          "weight": 0.35,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "dehydration",
+          "exposure": 0.0,
+          "weight": 0.3,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "cycle_phase",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        }
+      ],
+      "confidence": 0.0,
+      "coverage": 1.0,
+      "version": "1.0.0"
+    },
+    {
+      "date": "2026-02-14",
+      "load": 84.8,
+      "level": "high",
+      "contributions": [
+        {
+          "factor": "neck_tension",
+          "exposure": 1.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 40.0
+        },
+        {
+          "factor": "poor_sleep",
+          "exposure": 0.5,
+          "weight": 0.5,
+          "confidence": 0.0,
+          "points": 25.0
+        },
+        {
+          "factor": "stress",
+          "exposure": 0.5,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 22.5
+        },
+        {
+          "factor": "temperature_swing",
+          "exposure": 0.84,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 21.0
+        },
+        {
+          "factor": "screen_time",
+          "exposure": 1.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "bright_light",
+          "exposure": 0.7,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 17.5
+        },
+        {
+          "factor": "pollen",
+          "exposure": 0.494,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 9.9
+        },
+        {
+          "factor": "air_quality",
+          "exposure": 0.304,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 6.1
+        },
+        {
+          "factor": "humidity",
+          "exposure": 0.055,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 1.1
+        },
+        {
+          "factor": "pressure_drop",
+          "exposure": 0.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "caffeine",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "alcohol",
+          "exposure": 0.0,
+          "weight": 0.35,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "dehydration",
+          "exposure": 0.0,
+          "weight": 0.3,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "cycle_phase",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        }
+      ],
+      "confidence": 0.0,
+      "coverage": 1.0,
+      "version": "1.0.0"
+    },
+    {
+      "date": "2026-02-15",
+      "load": 96.6,
+      "level": "high",
+      "contributions": [
+        {
+          "factor": "poor_sleep",
+          "exposure": 1.0,
+          "weight": 0.5,
+          "confidence": 0.0,
+          "points": 50.0
+        },
+        {
+          "factor": "stress",
+          "exposure": 1.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 45.0
+        },
+        {
+          "factor": "neck_tension",
+          "exposure": 1.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 40.0
+        },
+        {
+          "factor": "alcohol",
+          "exposure": 1.0,
+          "weight": 0.35,
+          "confidence": 0.0,
+          "points": 35.0
+        },
+        {
+          "factor": "temperature_swing",
+          "exposure": 0.8,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "air_quality",
+          "exposure": 1.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "screen_time",
+          "exposure": 1.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "dehydration",
+          "exposure": 0.5,
+          "weight": 0.3,
+          "confidence": 0.0,
+          "points": 15.0
+        },
+        {
+          "factor": "pollen",
+          "exposure": 0.663,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 13.3
+        },
+        {
+          "factor": "bright_light",
+          "exposure": 0.42,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 10.5
+        },
+        {
+          "factor": "humidity",
+          "exposure": 0.185,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 3.7
+        },
+        {
+          "factor": "pressure_drop",
+          "exposure": 0.075,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 3.4
+        },
+        {
+          "factor": "caffeine",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "cycle_phase",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        }
+      ],
+      "confidence": 0.0,
+      "coverage": 1.0,
+      "version": "1.0.0"
+    },
+    {
+      "date": "2026-02-16",
+      "load": 82.2,
+      "level": "high",
+      "contributions": [
+        {
+          "factor": "poor_sleep",
+          "exposure": 1.0,
+          "weight": 0.5,
+          "confidence": 0.0,
+          "points": 50.0
+        },
+        {
+          "factor": "stress",
+          "exposure": 0.5,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 22.5
+        },
+        {
+          "factor": "neck_tension",
+          "exposure": 0.5,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "dehydration",
+          "exposure": 0.5,
+          "weight": 0.3,
+          "confidence": 0.0,
+          "points": 15.0
+        },
+        {
+          "factor": "bright_light",
+          "exposure": 0.5,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 12.5
+        },
+        {
+          "factor": "screen_time",
+          "exposure": 0.5,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 10.0
+        },
+        {
+          "factor": "pollen",
+          "exposure": 0.391,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 7.8
+        },
+        {
+          "factor": "air_quality",
+          "exposure": 0.338,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 6.8
+        },
+        {
+          "factor": "pressure_drop",
+          "exposure": 0.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "humidity",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "temperature_swing",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "caffeine",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "alcohol",
+          "exposure": 0.0,
+          "weight": 0.35,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "cycle_phase",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        }
+      ],
+      "confidence": 0.0,
+      "coverage": 1.0,
+      "version": "1.0.0"
+    },
+    {
+      "date": "2026-02-17",
+      "load": 89.7,
+      "level": "high",
+      "contributions": [
+        {
+          "factor": "stress",
+          "exposure": 1.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 45.0
+        },
+        {
+          "factor": "neck_tension",
+          "exposure": 1.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 40.0
+        },
+        {
+          "factor": "poor_sleep",
+          "exposure": 0.5,
+          "weight": 0.5,
+          "confidence": 0.0,
+          "points": 25.0
+        },
+        {
+          "factor": "humidity",
+          "exposure": 1.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "screen_time",
+          "exposure": 1.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "air_quality",
+          "exposure": 0.974,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 19.5
+        },
+        {
+          "factor": "temperature_swing",
+          "exposure": 0.38,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 9.5
+        },
+        {
+          "factor": "bright_light",
+          "exposure": 0.3,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 7.5
+        },
+        {
+          "factor": "pollen",
+          "exposure": 0.191,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 3.8
+        },
+        {
+          "factor": "pressure_drop",
+          "exposure": 0.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "caffeine",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "alcohol",
+          "exposure": 0.0,
+          "weight": 0.35,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "dehydration",
+          "exposure": 0.0,
+          "weight": 0.3,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "cycle_phase",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        }
+      ],
+      "confidence": 0.0,
+      "coverage": 1.0,
+      "version": "1.0.0"
+    },
+    {
+      "date": "2026-02-18",
+      "load": 84.3,
+      "level": "high",
+      "contributions": [
+        {
+          "factor": "poor_sleep",
+          "exposure": 1.0,
+          "weight": 0.5,
+          "confidence": 0.0,
+          "points": 50.0
+        },
+        {
+          "factor": "temperature_swing",
+          "exposure": 0.9,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 22.5
+        },
+        {
+          "factor": "bright_light",
+          "exposure": 0.9,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 22.5
+        },
+        {
+          "factor": "stress",
+          "exposure": 0.5,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 22.5
+        },
+        {
+          "factor": "screen_time",
+          "exposure": 1.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "dehydration",
+          "exposure": 0.5,
+          "weight": 0.3,
+          "confidence": 0.0,
+          "points": 15.0
+        },
+        {
+          "factor": "pollen",
+          "exposure": 0.049,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 1.0
+        },
+        {
+          "factor": "pressure_drop",
+          "exposure": 0.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "humidity",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "air_quality",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "neck_tension",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "caffeine",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "alcohol",
+          "exposure": 0.0,
+          "weight": 0.35,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "cycle_phase",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        }
+      ],
+      "confidence": 0.0,
+      "coverage": 1.0,
+      "version": "1.0.0"
+    },
+    {
+      "date": "2026-02-19",
+      "load": 88.4,
+      "level": "high",
+      "contributions": [
+        {
+          "factor": "poor_sleep",
+          "exposure": 1.0,
+          "weight": 0.5,
+          "confidence": 0.0,
+          "points": 50.0
+        },
+        {
+          "factor": "stress",
+          "exposure": 1.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 45.0
+        },
+        {
+          "factor": "bright_light",
+          "exposure": 1.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 25.0
+        },
+        {
+          "factor": "temperature_swing",
+          "exposure": 0.74,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 18.5
+        },
+        {
+          "factor": "dehydration",
+          "exposure": 0.5,
+          "weight": 0.3,
+          "confidence": 0.0,
+          "points": 15.0
+        },
+        {
+          "factor": "pollen",
+          "exposure": 0.593,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 11.9
+        },
+        {
+          "factor": "air_quality",
+          "exposure": 0.301,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 6.0
+        },
+        {
+          "factor": "pressure_drop",
+          "exposure": 0.05,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 2.3
+        },
+        {
+          "factor": "humidity",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "screen_time",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "neck_tension",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "caffeine",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "alcohol",
+          "exposure": 0.0,
+          "weight": 0.35,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "cycle_phase",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        }
+      ],
+      "confidence": 0.0,
+      "coverage": 1.0,
+      "version": "1.0.0"
+    },
+    {
+      "date": "2026-02-20",
+      "load": 89.9,
+      "level": "high",
+      "contributions": [
+        {
+          "factor": "poor_sleep",
+          "exposure": 1.0,
+          "weight": 0.5,
+          "confidence": 0.0,
+          "points": 50.0
+        },
+        {
+          "factor": "stress",
+          "exposure": 1.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 45.0
+        },
+        {
+          "factor": "caffeine",
+          "exposure": 1.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 25.0
+        },
+        {
+          "factor": "neck_tension",
+          "exposure": 0.5,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "air_quality",
+          "exposure": 0.879,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 17.6
+        },
+        {
+          "factor": "pollen",
+          "exposure": 0.776,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 15.5
+        },
+        {
+          "factor": "screen_time",
+          "exposure": 0.5,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 10.0
+        },
+        {
+          "factor": "temperature_swing",
+          "exposure": 0.08,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 2.0
+        },
+        {
+          "factor": "pressure_drop",
+          "exposure": 0.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "humidity",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "bright_light",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "alcohol",
+          "exposure": 0.0,
+          "weight": 0.35,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "dehydration",
+          "exposure": 0.0,
+          "weight": 0.3,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "cycle_phase",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        }
+      ],
+      "confidence": 0.0,
+      "coverage": 1.0,
+      "version": "1.0.0"
+    },
+    {
+      "date": "2026-02-21",
+      "load": 84.9,
+      "level": "high",
+      "contributions": [
+        {
+          "factor": "stress",
+          "exposure": 1.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 45.0
+        },
+        {
+          "factor": "bright_light",
+          "exposure": 1.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 25.0
+        },
+        {
+          "factor": "poor_sleep",
+          "exposure": 0.5,
+          "weight": 0.5,
+          "confidence": 0.0,
+          "points": 25.0
+        },
+        {
+          "factor": "screen_time",
+          "exposure": 1.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "temperature_swing",
+          "exposure": 0.68,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 17.0
+        },
+        {
+          "factor": "dehydration",
+          "exposure": 0.5,
+          "weight": 0.3,
+          "confidence": 0.0,
+          "points": 15.0
+        },
+        {
+          "factor": "pollen",
+          "exposure": 0.663,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 13.3
+        },
+        {
+          "factor": "pressure_drop",
+          "exposure": 0.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "humidity",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "air_quality",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "neck_tension",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "caffeine",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "alcohol",
+          "exposure": 0.0,
+          "weight": 0.35,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "cycle_phase",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        }
+      ],
+      "confidence": 0.0,
+      "coverage": 1.0,
+      "version": "1.0.0"
+    },
+    {
+      "date": "2026-02-22",
+      "load": 93.7,
+      "level": "high",
+      "contributions": [
+        {
+          "factor": "poor_sleep",
+          "exposure": 1.0,
+          "weight": 0.5,
+          "confidence": 0.0,
+          "points": 50.0
+        },
+        {
+          "factor": "stress",
+          "exposure": 1.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 45.0
+        },
+        {
+          "factor": "caffeine",
+          "exposure": 1.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 25.0
+        },
+        {
+          "factor": "bright_light",
+          "exposure": 0.94,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 23.5
+        },
+        {
+          "factor": "neck_tension",
+          "exposure": 0.5,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "humidity",
+          "exposure": 0.985,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 19.7
+        },
+        {
+          "factor": "air_quality",
+          "exposure": 0.93,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 18.6
+        },
+        {
+          "factor": "dehydration",
+          "exposure": 0.5,
+          "weight": 0.3,
+          "confidence": 0.0,
+          "points": 15.0
+        },
+        {
+          "factor": "pollen",
+          "exposure": 0.369,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 7.4
+        },
+        {
+          "factor": "temperature_swing",
+          "exposure": 0.12,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 3.0
+        },
+        {
+          "factor": "pressure_drop",
+          "exposure": 0.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "screen_time",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "alcohol",
+          "exposure": 0.0,
+          "weight": 0.35,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "cycle_phase",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        }
+      ],
+      "confidence": 0.0,
+      "coverage": 1.0,
+      "version": "1.0.0"
+    },
+    {
+      "date": "2026-02-23",
+      "load": 88.2,
+      "level": "high",
+      "contributions": [
+        {
+          "factor": "poor_sleep",
+          "exposure": 1.0,
+          "weight": 0.5,
+          "confidence": 0.0,
+          "points": 50.0
+        },
+        {
+          "factor": "neck_tension",
+          "exposure": 1.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 40.0
+        },
+        {
+          "factor": "bright_light",
+          "exposure": 1.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 25.0
+        },
+        {
+          "factor": "stress",
+          "exposure": 0.5,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 22.5
+        },
+        {
+          "factor": "pollen",
+          "exposure": 1.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "air_quality",
+          "exposure": 0.784,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 15.7
+        },
+        {
+          "factor": "pressure_drop",
+          "exposure": 0.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "humidity",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "temperature_swing",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "screen_time",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "caffeine",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "alcohol",
+          "exposure": 0.0,
+          "weight": 0.35,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "dehydration",
+          "exposure": 0.0,
+          "weight": 0.3,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "cycle_phase",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        }
+      ],
+      "confidence": 0.0,
+      "coverage": 1.0,
+      "version": "1.0.0"
+    },
+    {
+      "date": "2026-02-24",
+      "load": 91.6,
+      "level": "high",
+      "contributions": [
+        {
+          "factor": "stress",
+          "exposure": 1.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 45.0
+        },
+        {
+          "factor": "poor_sleep",
+          "exposure": 0.5,
+          "weight": 0.5,
+          "confidence": 0.0,
+          "points": 25.0
+        },
+        {
+          "factor": "caffeine",
+          "exposure": 1.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 25.0
+        },
+        {
+          "factor": "neck_tension",
+          "exposure": 0.5,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "pollen",
+          "exposure": 0.809,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 16.2
+        },
+        {
+          "factor": "bright_light",
+          "exposure": 0.64,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 16.0
+        },
+        {
+          "factor": "humidity",
+          "exposure": 0.795,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 15.9
+        },
+        {
+          "factor": "dehydration",
+          "exposure": 0.5,
+          "weight": 0.3,
+          "confidence": 0.0,
+          "points": 15.0
+        },
+        {
+          "factor": "pressure_drop",
+          "exposure": 0.25,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 11.3
+        },
+        {
+          "factor": "screen_time",
+          "exposure": 0.5,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 10.0
+        },
+        {
+          "factor": "alcohol",
+          "exposure": 0.25,
+          "weight": 0.35,
+          "confidence": 0.0,
+          "points": 8.8
+        },
+        {
+          "factor": "air_quality",
+          "exposure": 0.356,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 7.1
+        },
+        {
+          "factor": "temperature_swing",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "cycle_phase",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        }
+      ],
+      "confidence": 0.0,
+      "coverage": 1.0,
+      "version": "1.0.0"
+    },
+    {
+      "date": "2026-02-25",
+      "load": 92.6,
+      "level": "high",
+      "contributions": [
+        {
+          "factor": "poor_sleep",
+          "exposure": 1.0,
+          "weight": 0.5,
+          "confidence": 0.0,
+          "points": 50.0
+        },
+        {
+          "factor": "stress",
+          "exposure": 1.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 45.0
+        },
+        {
+          "factor": "neck_tension",
+          "exposure": 1.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 40.0
+        },
+        {
+          "factor": "bright_light",
+          "exposure": 0.84,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 21.0
+        },
+        {
+          "factor": "screen_time",
+          "exposure": 1.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "air_quality",
+          "exposure": 0.934,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 18.7
+        },
+        {
+          "factor": "temperature_swing",
+          "exposure": 0.48,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 12.0
+        },
+        {
+          "factor": "pressure_drop",
+          "exposure": 0.025,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 1.1
+        },
+        {
+          "factor": "humidity",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "pollen",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "caffeine",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "alcohol",
+          "exposure": 0.0,
+          "weight": 0.35,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "dehydration",
+          "exposure": 0.0,
+          "weight": 0.3,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "cycle_phase",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        }
+      ],
+      "confidence": 0.0,
+      "coverage": 1.0,
+      "version": "1.0.0"
+    },
+    {
+      "date": "2026-02-26",
+      "load": 71.8,
+      "level": "high",
+      "contributions": [
+        {
+          "factor": "stress",
+          "exposure": 1.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 45.0
+        },
+        {
+          "factor": "poor_sleep",
+          "exposure": 0.5,
+          "weight": 0.5,
+          "confidence": 0.0,
+          "points": 25.0
+        },
+        {
+          "factor": "humidity",
+          "exposure": 1.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "bright_light",
+          "exposure": 0.28,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 7.0
+        },
+        {
+          "factor": "pollen",
+          "exposure": 0.215,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 4.3
+        },
+        {
+          "factor": "temperature_swing",
+          "exposure": 0.16,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 4.0
+        },
+        {
+          "factor": "pressure_drop",
+          "exposure": 0.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "air_quality",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "screen_time",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "neck_tension",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "caffeine",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "alcohol",
+          "exposure": 0.0,
+          "weight": 0.35,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "dehydration",
+          "exposure": 0.0,
+          "weight": 0.3,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "cycle_phase",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        }
+      ],
+      "confidence": 0.0,
+      "coverage": 1.0,
+      "version": "1.0.0"
+    },
+    {
+      "date": "2026-02-27",
+      "load": 94.0,
+      "level": "high",
+      "contributions": [
+        {
+          "factor": "poor_sleep",
+          "exposure": 1.0,
+          "weight": 0.5,
+          "confidence": 0.0,
+          "points": 50.0
+        },
+        {
+          "factor": "neck_tension",
+          "exposure": 1.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 40.0
+        },
+        {
+          "factor": "bright_light",
+          "exposure": 0.98,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 24.5
+        },
+        {
+          "factor": "temperature_swing",
+          "exposure": 0.96,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 24.0
+        },
+        {
+          "factor": "stress",
+          "exposure": 0.5,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 22.5
+        },
+        {
+          "factor": "pollen",
+          "exposure": 0.954,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 19.1
+        },
+        {
+          "factor": "alcohol",
+          "exposure": 0.5,
+          "weight": 0.35,
+          "confidence": 0.0,
+          "points": 17.5
+        },
+        {
+          "factor": "dehydration",
+          "exposure": 0.5,
+          "weight": 0.3,
+          "confidence": 0.0,
+          "points": 15.0
+        },
+        {
+          "factor": "caffeine",
+          "exposure": 0.5,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 12.5
+        },
+        {
+          "factor": "screen_time",
+          "exposure": 0.5,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 10.0
+        },
+        {
+          "factor": "pressure_drop",
+          "exposure": 0.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "humidity",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "air_quality",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "cycle_phase",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        }
+      ],
+      "confidence": 0.0,
+      "coverage": 1.0,
+      "version": "1.0.0"
+    },
+    {
+      "date": "2026-02-28",
+      "load": 91.1,
+      "level": "high",
+      "contributions": [
+        {
+          "factor": "poor_sleep",
+          "exposure": 1.0,
+          "weight": 0.5,
+          "confidence": 0.0,
+          "points": 50.0
+        },
+        {
+          "factor": "cycle_phase",
+          "exposure": 1.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 40.0
+        },
+        {
+          "factor": "caffeine",
+          "exposure": 1.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 25.0
+        },
+        {
+          "factor": "stress",
+          "exposure": 0.5,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 22.5
+        },
+        {
+          "factor": "neck_tension",
+          "exposure": 0.5,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "dehydration",
+          "exposure": 0.5,
+          "weight": 0.3,
+          "confidence": 0.0,
+          "points": 15.0
+        },
+        {
+          "factor": "bright_light",
+          "exposure": 0.48,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 12.0
+        },
+        {
+          "factor": "screen_time",
+          "exposure": 0.5,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 10.0
+        },
+        {
+          "factor": "pressure_drop",
+          "exposure": 0.125,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 5.6
+        },
+        {
+          "factor": "humidity",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "temperature_swing",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "air_quality",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "pollen",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "alcohol",
+          "exposure": 0.0,
+          "weight": 0.35,
+          "confidence": 0.0,
+          "points": 0.0
+        }
+      ],
+      "confidence": 0.0,
+      "coverage": 1.0,
+      "version": "1.0.0"
+    },
+    {
+      "date": "2026-03-01",
+      "load": 95.5,
+      "level": "high",
+      "contributions": [
+        {
+          "factor": "poor_sleep",
+          "exposure": 1.0,
+          "weight": 0.5,
+          "confidence": 0.0,
+          "points": 50.0
+        },
+        {
+          "factor": "stress",
+          "exposure": 1.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 45.0
+        },
+        {
+          "factor": "neck_tension",
+          "exposure": 1.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 40.0
+        },
+        {
+          "factor": "cycle_phase",
+          "exposure": 1.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 40.0
+        },
+        {
+          "factor": "screen_time",
+          "exposure": 1.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "pollen",
+          "exposure": 0.883,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 17.7
+        },
+        {
+          "factor": "dehydration",
+          "exposure": 0.5,
+          "weight": 0.3,
+          "confidence": 0.0,
+          "points": 15.0
+        },
+        {
+          "factor": "bright_light",
+          "exposure": 0.5,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 12.5
+        },
+        {
+          "factor": "air_quality",
+          "exposure": 0.24,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 4.8
+        },
+        {
+          "factor": "temperature_swing",
+          "exposure": 0.12,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 3.0
+        },
+        {
+          "factor": "pressure_drop",
+          "exposure": 0.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "humidity",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "caffeine",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "alcohol",
+          "exposure": 0.0,
+          "weight": 0.35,
+          "confidence": 0.0,
+          "points": 0.0
+        }
+      ],
+      "confidence": 0.0,
+      "coverage": 1.0,
+      "version": "1.0.0"
+    },
+    {
+      "date": "2026-03-02",
+      "load": 91.1,
+      "level": "high",
+      "contributions": [
+        {
+          "factor": "poor_sleep",
+          "exposure": 1.0,
+          "weight": 0.5,
+          "confidence": 0.0,
+          "points": 50.0
+        },
+        {
+          "factor": "stress",
+          "exposure": 1.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 45.0
+        },
+        {
+          "factor": "cycle_phase",
+          "exposure": 1.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 40.0
+        },
+        {
+          "factor": "neck_tension",
+          "exposure": 0.5,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "pollen",
+          "exposure": 0.919,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 18.4
+        },
+        {
+          "factor": "air_quality",
+          "exposure": 0.46,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 9.2
+        },
+        {
+          "factor": "temperature_swing",
+          "exposure": 0.34,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 8.5
+        },
+        {
+          "factor": "pressure_drop",
+          "exposure": 0.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "humidity",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "bright_light",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "screen_time",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "caffeine",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "alcohol",
+          "exposure": 0.0,
+          "weight": 0.35,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "dehydration",
+          "exposure": 0.0,
+          "weight": 0.3,
+          "confidence": 0.0,
+          "points": 0.0
+        }
+      ],
+      "confidence": 0.0,
+      "coverage": 1.0,
+      "version": "1.0.0"
+    },
+    {
+      "date": "2026-03-03",
+      "load": 94.1,
+      "level": "high",
+      "contributions": [
+        {
+          "factor": "poor_sleep",
+          "exposure": 1.0,
+          "weight": 0.5,
+          "confidence": 0.0,
+          "points": 50.0
+        },
+        {
+          "factor": "neck_tension",
+          "exposure": 1.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 40.0
+        },
+        {
+          "factor": "cycle_phase",
+          "exposure": 1.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 40.0
+        },
+        {
+          "factor": "temperature_swing",
+          "exposure": 1.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 25.0
+        },
+        {
+          "factor": "caffeine",
+          "exposure": 1.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 25.0
+        },
+        {
+          "factor": "stress",
+          "exposure": 0.5,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 22.5
+        },
+        {
+          "factor": "pollen",
+          "exposure": 0.511,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 10.2
+        },
+        {
+          "factor": "screen_time",
+          "exposure": 0.5,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 10.0
+        },
+        {
+          "factor": "humidity",
+          "exposure": 0.355,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 7.1
+        },
+        {
+          "factor": "pressure_drop",
+          "exposure": 0.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "air_quality",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "bright_light",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "alcohol",
+          "exposure": 0.0,
+          "weight": 0.35,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "dehydration",
+          "exposure": 0.0,
+          "weight": 0.3,
+          "confidence": 0.0,
+          "points": 0.0
+        }
+      ],
+      "confidence": 0.0,
+      "coverage": 1.0,
+      "version": "1.0.0"
+    },
+    {
+      "date": "2026-03-04",
+      "load": 94.2,
+      "level": "high",
+      "contributions": [
+        {
+          "factor": "poor_sleep",
+          "exposure": 1.0,
+          "weight": 0.5,
+          "confidence": 0.0,
+          "points": 50.0
+        },
+        {
+          "factor": "stress",
+          "exposure": 1.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 45.0
+        },
+        {
+          "factor": "bright_light",
+          "exposure": 1.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 25.0
+        },
+        {
+          "factor": "pollen",
+          "exposure": 1.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "screen_time",
+          "exposure": 1.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "neck_tension",
+          "exposure": 0.5,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "cycle_phase",
+          "exposure": 0.5,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "temperature_swing",
+          "exposure": 0.74,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 18.5
+        },
+        {
+          "factor": "dehydration",
+          "exposure": 0.5,
+          "weight": 0.3,
+          "confidence": 0.0,
+          "points": 15.0
+        },
+        {
+          "factor": "air_quality",
+          "exposure": 0.049,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 1.0
+        },
+        {
+          "factor": "pressure_drop",
+          "exposure": 0.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "humidity",
+          "exposure": 0.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "caffeine",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "alcohol",
+          "exposure": 0.0,
+          "weight": 0.35,
+          "confidence": 0.0,
+          "points": 0.0
+        }
+      ],
+      "confidence": 0.0,
+      "coverage": 1.0,
+      "version": "1.0.0"
+    },
+    {
+      "date": "2026-03-05",
+      "load": 92.6,
+      "level": "high",
+      "contributions": [
+        {
+          "factor": "poor_sleep",
+          "exposure": 1.0,
+          "weight": 0.5,
+          "confidence": 0.0,
+          "points": 50.0
+        },
+        {
+          "factor": "stress",
+          "exposure": 1.0,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 45.0
+        },
+        {
+          "factor": "alcohol",
+          "exposure": 1.0,
+          "weight": 0.35,
+          "confidence": 0.0,
+          "points": 35.0
+        },
+        {
+          "factor": "air_quality",
+          "exposure": 1.0,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 20.0
+        },
+        {
+          "factor": "dehydration",
+          "exposure": 0.5,
+          "weight": 0.3,
+          "confidence": 0.0,
+          "points": 15.0
+        },
+        {
+          "factor": "humidity",
+          "exposure": 0.52,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 10.4
+        },
+        {
+          "factor": "screen_time",
+          "exposure": 0.5,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 10.0
+        },
+        {
+          "factor": "pressure_drop",
+          "exposure": 0.2,
+          "weight": 0.45,
+          "confidence": 0.0,
+          "points": 9.0
+        },
+        {
+          "factor": "bright_light",
+          "exposure": 0.34,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 8.5
+        },
+        {
+          "factor": "pollen",
+          "exposure": 0.346,
+          "weight": 0.2,
+          "confidence": 0.0,
+          "points": 6.9
+        },
+        {
+          "factor": "temperature_swing",
+          "exposure": 0.12,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 3.0
+        },
+        {
+          "factor": "neck_tension",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "caffeine",
+          "exposure": 0.0,
+          "weight": 0.25,
+          "confidence": 0.0,
+          "points": 0.0
+        },
+        {
+          "factor": "cycle_phase",
+          "exposure": 0.0,
+          "weight": 0.4,
+          "confidence": 0.0,
+          "points": 0.0
+        }
+      ],
+      "confidence": 0.0,
+      "coverage": 1.0,
+      "version": "1.0.0"
+    }
+  ],
+  "modelVersion": "1.0.0"
+}

@@ -7,6 +7,10 @@ release time.
 ## [Unreleased]
 
 ### Added
+- Risk model core: pure Dart package `packages/risk_model` with 14
+  factor modules, population weights, deterministic 0 to 100 daily load
+  with drivers, levels, model version, five fixture users with frozen
+  outputs, scoring CLI and a 100 % coverage gate in CI (16).
 - Onboarding: first-run flow with the level explainer, location, health
   consent and reminder time, landing on the populated environment screen;
   explainer reachable from Settings; device integration test for the 60 s

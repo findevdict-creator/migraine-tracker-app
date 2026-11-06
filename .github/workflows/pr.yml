@@ -62,6 +62,9 @@ jobs:
           for pkg in packages/*/; do
             if [ -f "$pkg/pubspec.yaml" ]; then
               (cd "$pkg" && dart pub get && dart analyze --fatal-infos && dart test)
+              if [ -x "$pkg/tool/check_coverage.sh" ]; then
+                (cd "$pkg" && ./tool/check_coverage.sh)
+              fi
             fi
           done
       - uses: actions/upload-artifact@v4

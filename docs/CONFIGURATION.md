@@ -20,6 +20,16 @@ production build, and the few native files that mirror a value.
 | `AppAssets` | logo, logo mark, launcher icon, head map, routine illustrations | replacing artwork (keep the paths, swap the files) |
 | `AppLocales` | supported locales, fallback | adding a language |
 
+## The risk model
+
+The population rules (ramps, steps and weights per factor) and the
+default level thresholds live in `packages/risk_model/lib/src/factors/`
+and `thresholds.dart`, not in `app_config.dart`, because changing them
+changes stored results: every change needs a `modelVersion` bump and a
+refreeze of the fixtures (`dart run risk_model:score --write-expected
+test/fixtures/users/*.json`). The app-facing knobs (learning threshold,
+look-back window, display colours) stay in `app_config.dart`.
+
 ## Environment files
 
 Build with `--dart-define-from-file=env/<flavor>.json`.

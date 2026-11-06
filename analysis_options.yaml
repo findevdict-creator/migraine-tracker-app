@@ -16,6 +16,8 @@ analyzer:
     - "**/*.freezed.dart"
     - lib/core/l10n/generated/**
     - test/core/db/generated/**
+    # Pure Dart packages analyse themselves (CI "Pure Dart packages" step).
+    - packages/**
   errors:
     # The app is not a published package; public API docs are required only
     # under packages/.
