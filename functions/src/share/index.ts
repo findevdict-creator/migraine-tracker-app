@@ -4,6 +4,7 @@ import { HttpsError, onCall, onRequest } from "firebase-functions/v2/https";
 import { onSchedule } from "firebase-functions/v2/scheduler";
 
 import { config } from "../config";
+import { requirePremium } from "../premium";
 
 import { firestoreShareStore } from "./firestoreStore";
 import { createShare, parseCreate, readShare, revokeShare, sweepExpired } from "./share";
@@ -18,12 +19,9 @@ export const createShareLink = onCall<unknown, Promise<{ token: string; expiresA
   { region: config.region, enforceAppCheck: true, memory: "256MiB", maxInstances: 10 },
   async (request) => {
     const uid = uidOf(request.auth);
-    return createShare(
-      firestoreShareStore(getFirestore()),
-      uid,
-      parseCreate(request.data),
-      Date.now(),
-    );
+    const input = parseCreate(request.data);
+    await requirePremium(uid);
+    return createShare(firestoreShareStore(getFirestore()), uid, input, Date.now());
   },
 );
 

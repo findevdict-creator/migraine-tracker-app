@@ -51,15 +51,8 @@ export function openMeteoUrls(
   apiKey: string | undefined,
 ): { forecast: string; airQuality: string } {
   const key = apiKey?.trim();
-  const forecastBase = key
-    ? config.weather.forecastUrl.replace("https://api.", "https://customer-api.")
-    : config.weather.forecastUrl;
-  const aqBase = key
-    ? config.weather.airQualityUrl.replace(
-        "https://air-quality-api.",
-        "https://customer-air-quality-api.",
-      )
-    : config.weather.airQualityUrl;
+  const forecastBase = key ? config.weather.customerForecastUrl : config.weather.forecastUrl;
+  const aqBase = key ? config.weather.customerAirQualityUrl : config.weather.airQualityUrl;
   const common = new URLSearchParams({
     latitude: String(cell.lat),
     longitude: String(cell.lon),

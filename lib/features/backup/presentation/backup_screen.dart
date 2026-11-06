@@ -10,6 +10,8 @@ import 'package:migraine_tracker/core/widgets/widgets.dart';
 import 'package:migraine_tracker/features/account/presentation/account_controller.dart';
 import 'package:migraine_tracker/features/backup/application/backup_service.dart';
 import 'package:migraine_tracker/features/backup/domain/backup_store.dart';
+import 'package:migraine_tracker/features/premium/application/premium_controller.dart';
+import 'package:migraine_tracker/features/premium/presentation/premium_lock.dart';
 
 /// The stored backup's time and size, refreshed after every action.
 final FutureProvider<BackupInfo?> backupInfoProvider =
@@ -203,6 +205,7 @@ class _BackupScreenState extends ConsumerState<BackupScreen> {
     final info = ref.watch(backupInfoProvider);
     final existing = info.value;
     final enabled = !_busy;
+    final canBackUp = ref.watch(premiumProvider).allows(PremiumFeature.backup);
     return [
       Text(
         switch (info) {
@@ -214,37 +217,49 @@ class _BackupScreenState extends ConsumerState<BackupScreen> {
         key: const ValueKey('backup-status'),
         style: context.textStyles.titleMedium,
       ),
-      const SizedBox(height: AppThemeTokens.space4),
-      TextField(
-        key: const ValueKey('backup-passphrase'),
-        controller: _passphrase,
-        enabled: enabled,
-        obscureText: true,
-        autocorrect: false,
-        enableSuggestions: false,
-        decoration: InputDecoration(
-          labelText: l10n.backupPassphrase,
-          helperText: l10n.backupPassphraseHint(AppBackup.minPassphraseLength),
-          helperMaxLines: 2,
+      if (canBackUp || existing != null) ...[
+        const SizedBox(height: AppThemeTokens.space4),
+        TextField(
+          key: const ValueKey('backup-passphrase'),
+          controller: _passphrase,
+          enabled: enabled,
+          obscureText: true,
+          autocorrect: false,
+          enableSuggestions: false,
+          decoration: InputDecoration(
+            labelText: l10n.backupPassphrase,
+            helperText: l10n.backupPassphraseHint(
+              AppBackup.minPassphraseLength,
+            ),
+            helperMaxLines: 2,
+          ),
         ),
-      ),
-      const SizedBox(height: AppThemeTokens.space2),
-      TextField(
-        key: const ValueKey('backup-passphrase-repeat'),
-        controller: _repeat,
-        enabled: enabled,
-        obscureText: true,
-        autocorrect: false,
-        enableSuggestions: false,
-        decoration: InputDecoration(labelText: l10n.backupPassphraseRepeat),
-      ),
-      const SizedBox(height: AppThemeTokens.space3),
-      AppButton(
-        key: const ValueKey('backup-now'),
-        label: l10n.backupNow,
-        expand: true,
-        onPressed: enabled ? _backUp : null,
-      ),
+      ],
+      if (!canBackUp) ...[
+        const SizedBox(height: AppThemeTokens.space3),
+        PremiumLockCard(
+          feature: PremiumFeature.backup,
+          note: existing == null ? null : l10n.premiumLockBackupNote,
+        ),
+      ] else ...[
+        const SizedBox(height: AppThemeTokens.space2),
+        TextField(
+          key: const ValueKey('backup-passphrase-repeat'),
+          controller: _repeat,
+          enabled: enabled,
+          obscureText: true,
+          autocorrect: false,
+          enableSuggestions: false,
+          decoration: InputDecoration(labelText: l10n.backupPassphraseRepeat),
+        ),
+        const SizedBox(height: AppThemeTokens.space3),
+        AppButton(
+          key: const ValueKey('backup-now'),
+          label: l10n.backupNow,
+          expand: true,
+          onPressed: enabled ? _backUp : null,
+        ),
+      ],
       if (existing != null) ...[
         const SizedBox(height: AppThemeTokens.space2),
         AppButton(

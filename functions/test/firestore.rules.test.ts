@@ -68,6 +68,18 @@ describe("firestore.rules", () => {
     await assertFails(setDoc(doc(alice, "account_deletions/alice"), { requestedAt: 2 }));
   });
 
+  it("entitlements are readable by their owner and written only by the webhook", async () => {
+    await env.withSecurityRulesDisabled(async (ctx) => {
+      await setDoc(doc(ctx.firestore(), "entitlements/alice"), { expiresAt: 1, eventAt: 1 });
+    });
+    const alice = env.authenticatedContext("alice").firestore();
+    const bob = env.authenticatedContext("bob").firestore();
+    await assertSucceeds(getDoc(doc(alice, "entitlements/alice")));
+    await assertFails(getDoc(doc(bob, "entitlements/alice")));
+    await assertFails(setDoc(doc(alice, "entitlements/alice"), { expiresAt: null, eventAt: 2 }));
+    await assertFails(setDoc(doc(alice, "entitlements/carol"), { expiresAt: null, eventAt: 2 }));
+  });
+
   it("users read and write only their own document", async () => {
     const alice = env.authenticatedContext("alice").firestore();
     const bob = env.authenticatedContext("bob").firestore();

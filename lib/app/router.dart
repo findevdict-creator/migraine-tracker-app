@@ -18,6 +18,7 @@ import 'package:migraine_tracker/features/notifications/presentation/notificatio
 import 'package:migraine_tracker/features/onboarding/application/onboarding_state.dart';
 import 'package:migraine_tracker/features/onboarding/presentation/level_explainer.dart';
 import 'package:migraine_tracker/features/onboarding/presentation/onboarding_screen.dart';
+import 'package:migraine_tracker/features/premium/presentation/premium_screen.dart';
 import 'package:migraine_tracker/features/questionnaires/presentation/questionnaire_form_screen.dart';
 import 'package:migraine_tracker/features/questionnaires/presentation/questionnaires_screen.dart';
 import 'package:migraine_tracker/features/report/presentation/report_screen.dart';
@@ -57,6 +58,7 @@ abstract final class AppRoutes {
   static const String account = '/account';
   static const String backup = '/backup';
   static const String shareLinks = '/share-links';
+  static const String premium = '/premium';
   static const String routines = '/routines';
   static const String routinePattern = '/routines/:code';
   static String routine(String code) => '/routines/$code';
@@ -145,6 +147,11 @@ final routerProvider = Provider<GoRouter>((ref) {
         path: AppRoutes.backup,
         name: 'backup',
         builder: (context, state) => const BackupScreen(),
+      ),
+      GoRoute(
+        path: AppRoutes.premium,
+        name: 'premium',
+        builder: (context, state) => const PremiumScreen(),
       ),
       GoRoute(
         path: AppRoutes.shareLinks,

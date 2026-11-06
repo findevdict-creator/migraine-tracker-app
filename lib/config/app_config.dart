@@ -398,6 +398,51 @@ abstract final class AppShareLinks {
   }
 }
 
+/// What Premium unlocks (phase 35, FR-27). Anything not listed here is free
+/// for good: logging, the weather feed, the risk level, insights, the
+/// medication log and the doctor report never ask for a subscription and
+/// never run out.
+enum PremiumFeature { shareLink, experiments, extendedFactors, backup }
+
+/// Premium tier (phase 35, FR-27), sold as store subscriptions through
+/// RevenueCat. The SDK keys are [AppEnv.revenueCatApiKeyAndroid] and
+/// [AppEnv.revenueCatApiKeyIos]. Turning [AppFeatureFlags.premiumAvailable]
+/// off makes every feature free; set `premium.enforceOnServer` to false in
+/// functions/src/config.ts at the same time.
+abstract final class AppPremium {
+  /// Features that need Premium. Remove one to make it free.
+  static const Set<PremiumFeature> features = {
+    PremiumFeature.shareLink,
+    PremiumFeature.experiments,
+    PremiumFeature.extendedFactors,
+    PremiumFeature.backup,
+  };
+
+  /// RevenueCat entitlement. Must match the dashboard and
+  /// `premium.entitlementId` in functions/src/config.ts.
+  static const String entitlementId = 'premium';
+
+  /// RevenueCat offering shown on the paywall. Empty uses the offering
+  /// marked current in the dashboard. Prices always come from the store;
+  /// FR-27 targets about 2.99 a month and 19.99 a year.
+  static const String offeringId = '';
+
+  /// Rows of the environment factors card that count as extended factors.
+  /// The keys are the row keys in `EnvironmentFactorsCard`.
+  static const Set<String> extendedFactorKeys = {'pm', 'ozone', 'pollen'};
+
+  /// With no RevenueCat key, the dev flavor unlocks everything so emulator
+  /// builds can use every screen. The emulator also skips the server check.
+  static bool unlockWithoutStore(AppFlavor flavor) => flavor == AppFlavor.dev;
+
+  /// Store pages where a subscription is managed or cancelled, used when the
+  /// store does not give a management link.
+  static const String manageUrlAndroid =
+      'https://play.google.com/store/account/subscriptions';
+  static const String manageUrlIos =
+      'https://apps.apple.com/account/subscriptions';
+}
+
 // ---------------------------------------------------------------------------
 // Domain thresholds and timings
 // ---------------------------------------------------------------------------

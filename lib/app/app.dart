@@ -10,6 +10,7 @@ import 'package:migraine_tracker/core/theme/app_typography.dart';
 import 'package:migraine_tracker/features/home_widget/presentation/widget_launches.dart';
 import 'package:migraine_tracker/features/notifications/presentation/notification_responses.dart';
 import 'package:migraine_tracker/features/onboarding/application/onboarding_state.dart';
+import 'package:migraine_tracker/features/premium/presentation/premium_identity.dart';
 import 'package:migraine_tracker/features/push/presentation/push_lifecycle.dart';
 import 'package:migraine_tracker/features/watch/presentation/watch_commands_listener.dart';
 import 'package:migraine_tracker/features/weather/presentation/weather_lifecycle.dart';
@@ -47,11 +48,13 @@ class MigraineTrackerApp extends ConsumerWidget {
           child: PushWakeups(
             child: NotificationResponses(
               child: WeatherRefreshOnResume(
-                child: MediaQuery(
-                  data: MediaQuery.of(
-                    context,
-                  ).copyWith(textScaler: AppTypography.clampedScaler(context)),
-                  child: child!,
+                child: PremiumIdentitySync(
+                  child: MediaQuery(
+                    data: MediaQuery.of(context).copyWith(
+                      textScaler: AppTypography.clampedScaler(context),
+                    ),
+                    child: child!,
+                  ),
                 ),
               ),
             ),

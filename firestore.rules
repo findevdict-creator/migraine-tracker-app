@@ -2,7 +2,7 @@ rules_version = '2';
 
 // Deny by default. Every collection is opened explicitly and tested in
 // functions/test/rules.test.ts. The phone holds the user's data; the server
-// only sees the five small collections below.
+// only sees the small collections below.
 service cloud.firestore {
   match /databases/{database}/documents {
 
@@ -35,6 +35,13 @@ service cloud.firestore {
     // (Admin SDK), so a client can neither hide nor fake a deletion.
     match /account_deletions/{uid} {
       allow read, write: if false;
+    }
+
+    // Premium expiry per account: written only by the RevenueCat webhook
+    // (Admin SDK); the owner may read their own.
+    match /entitlements/{uid} {
+      allow read: if request.auth != null && request.auth.uid == uid;
+      allow write: if false;
     }
 
     // Report snapshots are read through the share-link function by token,

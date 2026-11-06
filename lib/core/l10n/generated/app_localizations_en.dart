@@ -2425,6 +2425,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get accountDeletePassword => 'Enter your password to confirm';
 
   @override
+  String get accountDeleteSubscription =>
+      'A Premium subscription is billed by the App Store or Google Play. Deleting the account does not cancel it; cancel it in the store.';
+
+  @override
   String get accountDeleteCancel => 'Keep account';
 
   @override
@@ -2672,4 +2676,154 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get shareLinkErrorSignedOut =>
       'Your sign-in has expired. Sign in again, then retry.';
+
+  @override
+  String get premiumTitle => 'Premium';
+
+  @override
+  String get premiumIntro =>
+      'Premium adds four extras. Everything else stays free, with no time limit.';
+
+  @override
+  String get premiumFreeNote =>
+      'Always free: logging attacks and check-ins, the weather feed, the risk level, insights, the medication log and the doctor report.';
+
+  @override
+  String get premiumFeatureShareLink => 'Clinician share link';
+
+  @override
+  String get premiumFeatureShareLinkHint =>
+      'Send your report as a web link that stops working after 7 or 30 days.';
+
+  @override
+  String get premiumFeatureExperiments => 'Experiments';
+
+  @override
+  String get premiumFeatureExperimentsHint =>
+      'Try one change for two weeks and compare it with the weeks before.';
+
+  @override
+  String get premiumFeatureExtendedFactors => 'Extended environment factors';
+
+  @override
+  String get premiumFeatureExtendedFactorsHint =>
+      'Particulates, ozone and pollen by type.';
+
+  @override
+  String get premiumFeatureBackup => 'Backup across phones';
+
+  @override
+  String get premiumFeatureBackupHint =>
+      'An encrypted backup you can restore on a new phone.';
+
+  @override
+  String get premiumActive => 'Premium is on.';
+
+  @override
+  String premiumRenews(String date) {
+    return 'Renews on $date.';
+  }
+
+  @override
+  String premiumEnds(String date) {
+    return 'Ends on $date.';
+  }
+
+  @override
+  String get premiumManage => 'Manage subscription';
+
+  @override
+  String premiumOfferMonthly(String price) {
+    return 'Monthly, $price';
+  }
+
+  @override
+  String premiumOfferAnnual(String price) {
+    return 'Yearly, $price';
+  }
+
+  @override
+  String premiumOfferOther(String price) {
+    return '$price';
+  }
+
+  @override
+  String get premiumRestore => 'Restore purchases';
+
+  @override
+  String get premiumRestoredNone =>
+      'No Premium purchase was found for this store account.';
+
+  @override
+  String get premiumThanks => 'Thank you. Premium is on.';
+
+  @override
+  String get premiumRenewalTerms =>
+      'Subscriptions renew automatically until you cancel in the store\'s settings. Cancel at least 24 hours before the renewal date to avoid the next charge.';
+
+  @override
+  String get premiumLoadingOffers => 'Loading prices.';
+
+  @override
+  String get premiumNoOffers =>
+      'Prices couldn\'t be loaded. Check the connection and try again.';
+
+  @override
+  String get premiumRetry => 'Try again';
+
+  @override
+  String get premiumUnavailable => 'Purchases aren\'t set up in this build.';
+
+  @override
+  String get premiumDevUnlocked =>
+      'Development build: every Premium feature is unlocked.';
+
+  @override
+  String get premiumAccountTip =>
+      'Using more than one phone? Sign in first, so Premium follows your account.';
+
+  @override
+  String get premiumErrorNotAllowed =>
+      'This store account can\'t make purchases.';
+
+  @override
+  String get premiumErrorPending =>
+      'The purchase is waiting for approval. Premium turns on once it goes through.';
+
+  @override
+  String get premiumErrorStore => 'The store had a problem. Try again later.';
+
+  @override
+  String premiumLockTitle(String feature) {
+    return '$feature comes with Premium.';
+  }
+
+  @override
+  String get premiumLockButton => 'See Premium';
+
+  @override
+  String get premiumLockShareLinkNote =>
+      'Links you already made keep working until they end, and you can stop sharing them at any time.';
+
+  @override
+  String get premiumLockExperimentsNote => 'Your past results stay here.';
+
+  @override
+  String get premiumLockBackupNote =>
+      'You can still restore or delete a backup you already have.';
+
+  @override
+  String get premiumFactorsLocked =>
+      'Particulates, ozone and pollen come with Premium.';
+
+  @override
+  String get settingsPremiumHint =>
+      'Share link, experiments, extended factors and backup';
+
+  @override
+  String get settingsPremiumActive => 'On';
+
+  @override
+  String get shareLinkErrorPremium =>
+      'Share links need Premium. If you just subscribed, wait a minute and try again.';
 }

@@ -4064,6 +4064,12 @@ abstract class AppLocalizations {
   /// **'Enter your password to confirm'**
   String get accountDeletePassword;
 
+  /// No description provided for @accountDeleteSubscription.
+  ///
+  /// In en, this message translates to:
+  /// **'A Premium subscription is billed by the App Store or Google Play. Deleting the account does not cancel it; cancel it in the store.'**
+  String get accountDeleteSubscription;
+
   /// No description provided for @accountDeleteCancel.
   ///
   /// In en, this message translates to:
@@ -4465,6 +4471,246 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Your sign-in has expired. Sign in again, then retry.'**
   String get shareLinkErrorSignedOut;
+
+  /// No description provided for @premiumTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Premium'**
+  String get premiumTitle;
+
+  /// No description provided for @premiumIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'Premium adds four extras. Everything else stays free, with no time limit.'**
+  String get premiumIntro;
+
+  /// No description provided for @premiumFreeNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Always free: logging attacks and check-ins, the weather feed, the risk level, insights, the medication log and the doctor report.'**
+  String get premiumFreeNote;
+
+  /// No description provided for @premiumFeatureShareLink.
+  ///
+  /// In en, this message translates to:
+  /// **'Clinician share link'**
+  String get premiumFeatureShareLink;
+
+  /// No description provided for @premiumFeatureShareLinkHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Send your report as a web link that stops working after 7 or 30 days.'**
+  String get premiumFeatureShareLinkHint;
+
+  /// No description provided for @premiumFeatureExperiments.
+  ///
+  /// In en, this message translates to:
+  /// **'Experiments'**
+  String get premiumFeatureExperiments;
+
+  /// No description provided for @premiumFeatureExperimentsHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Try one change for two weeks and compare it with the weeks before.'**
+  String get premiumFeatureExperimentsHint;
+
+  /// No description provided for @premiumFeatureExtendedFactors.
+  ///
+  /// In en, this message translates to:
+  /// **'Extended environment factors'**
+  String get premiumFeatureExtendedFactors;
+
+  /// No description provided for @premiumFeatureExtendedFactorsHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Particulates, ozone and pollen by type.'**
+  String get premiumFeatureExtendedFactorsHint;
+
+  /// No description provided for @premiumFeatureBackup.
+  ///
+  /// In en, this message translates to:
+  /// **'Backup across phones'**
+  String get premiumFeatureBackup;
+
+  /// No description provided for @premiumFeatureBackupHint.
+  ///
+  /// In en, this message translates to:
+  /// **'An encrypted backup you can restore on a new phone.'**
+  String get premiumFeatureBackupHint;
+
+  /// No description provided for @premiumActive.
+  ///
+  /// In en, this message translates to:
+  /// **'Premium is on.'**
+  String get premiumActive;
+
+  /// No description provided for @premiumRenews.
+  ///
+  /// In en, this message translates to:
+  /// **'Renews on {date}.'**
+  String premiumRenews(String date);
+
+  /// No description provided for @premiumEnds.
+  ///
+  /// In en, this message translates to:
+  /// **'Ends on {date}.'**
+  String premiumEnds(String date);
+
+  /// No description provided for @premiumManage.
+  ///
+  /// In en, this message translates to:
+  /// **'Manage subscription'**
+  String get premiumManage;
+
+  /// No description provided for @premiumOfferMonthly.
+  ///
+  /// In en, this message translates to:
+  /// **'Monthly, {price}'**
+  String premiumOfferMonthly(String price);
+
+  /// No description provided for @premiumOfferAnnual.
+  ///
+  /// In en, this message translates to:
+  /// **'Yearly, {price}'**
+  String premiumOfferAnnual(String price);
+
+  /// No description provided for @premiumOfferOther.
+  ///
+  /// In en, this message translates to:
+  /// **'{price}'**
+  String premiumOfferOther(String price);
+
+  /// No description provided for @premiumRestore.
+  ///
+  /// In en, this message translates to:
+  /// **'Restore purchases'**
+  String get premiumRestore;
+
+  /// No description provided for @premiumRestoredNone.
+  ///
+  /// In en, this message translates to:
+  /// **'No Premium purchase was found for this store account.'**
+  String get premiumRestoredNone;
+
+  /// No description provided for @premiumThanks.
+  ///
+  /// In en, this message translates to:
+  /// **'Thank you. Premium is on.'**
+  String get premiumThanks;
+
+  /// No description provided for @premiumRenewalTerms.
+  ///
+  /// In en, this message translates to:
+  /// **'Subscriptions renew automatically until you cancel in the store\'s settings. Cancel at least 24 hours before the renewal date to avoid the next charge.'**
+  String get premiumRenewalTerms;
+
+  /// No description provided for @premiumLoadingOffers.
+  ///
+  /// In en, this message translates to:
+  /// **'Loading prices.'**
+  String get premiumLoadingOffers;
+
+  /// No description provided for @premiumNoOffers.
+  ///
+  /// In en, this message translates to:
+  /// **'Prices couldn\'t be loaded. Check the connection and try again.'**
+  String get premiumNoOffers;
+
+  /// No description provided for @premiumRetry.
+  ///
+  /// In en, this message translates to:
+  /// **'Try again'**
+  String get premiumRetry;
+
+  /// No description provided for @premiumUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Purchases aren\'t set up in this build.'**
+  String get premiumUnavailable;
+
+  /// No description provided for @premiumDevUnlocked.
+  ///
+  /// In en, this message translates to:
+  /// **'Development build: every Premium feature is unlocked.'**
+  String get premiumDevUnlocked;
+
+  /// No description provided for @premiumAccountTip.
+  ///
+  /// In en, this message translates to:
+  /// **'Using more than one phone? Sign in first, so Premium follows your account.'**
+  String get premiumAccountTip;
+
+  /// No description provided for @premiumErrorNotAllowed.
+  ///
+  /// In en, this message translates to:
+  /// **'This store account can\'t make purchases.'**
+  String get premiumErrorNotAllowed;
+
+  /// No description provided for @premiumErrorPending.
+  ///
+  /// In en, this message translates to:
+  /// **'The purchase is waiting for approval. Premium turns on once it goes through.'**
+  String get premiumErrorPending;
+
+  /// No description provided for @premiumErrorStore.
+  ///
+  /// In en, this message translates to:
+  /// **'The store had a problem. Try again later.'**
+  String get premiumErrorStore;
+
+  /// No description provided for @premiumLockTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'{feature} comes with Premium.'**
+  String premiumLockTitle(String feature);
+
+  /// No description provided for @premiumLockButton.
+  ///
+  /// In en, this message translates to:
+  /// **'See Premium'**
+  String get premiumLockButton;
+
+  /// No description provided for @premiumLockShareLinkNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Links you already made keep working until they end, and you can stop sharing them at any time.'**
+  String get premiumLockShareLinkNote;
+
+  /// No description provided for @premiumLockExperimentsNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Your past results stay here.'**
+  String get premiumLockExperimentsNote;
+
+  /// No description provided for @premiumLockBackupNote.
+  ///
+  /// In en, this message translates to:
+  /// **'You can still restore or delete a backup you already have.'**
+  String get premiumLockBackupNote;
+
+  /// No description provided for @premiumFactorsLocked.
+  ///
+  /// In en, this message translates to:
+  /// **'Particulates, ozone and pollen come with Premium.'**
+  String get premiumFactorsLocked;
+
+  /// No description provided for @settingsPremiumHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Share link, experiments, extended factors and backup'**
+  String get settingsPremiumHint;
+
+  /// No description provided for @settingsPremiumActive.
+  ///
+  /// In en, this message translates to:
+  /// **'On'**
+  String get settingsPremiumActive;
+
+  /// No description provided for @shareLinkErrorPremium.
+  ///
+  /// In en, this message translates to:
+  /// **'Share links need Premium. If you just subscribed, wait a minute and try again.'**
+  String get shareLinkErrorPremium;
 }
 
 class _AppLocalizationsDelegate

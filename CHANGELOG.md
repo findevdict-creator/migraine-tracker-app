@@ -8,6 +8,8 @@ release time.
 
 ### Added
 
+- Premium: store subscriptions through RevenueCat unlock the clinician share link, experiments, extended environment factors (particulates, ozone, pollen) and backup across phones. Logging, the weather feed, the risk level, insights, the medication log and the doctor report stay free with no time limit. Purchases follow the account, and the server checks Premium before creating a share link (35).
+
 - Clinician share link: from Doctor report, create a 7 or 30 day read-only web link that shows the same report as the PDF; stop sharing at any time from Settings > Shared links. The server keeps only the report snapshot under a random 128-bit token and deletes it on expiry (34).
 
 - End-to-end encrypted backup: Settings > Encrypted backup locks the whole database on the phone with an Argon2id key from a passphrase (AES-256-GCM), uploads it over a certificate-pinned connection, and restores it on a fresh install or a second phone (33).

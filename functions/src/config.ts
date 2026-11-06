@@ -21,6 +21,28 @@ export const config = {
     apiKeySecret: "OPEN_METEO_API_KEY",
     forecastUrl: "https://api.open-meteo.com/v1/forecast",
     airQualityUrl: "https://air-quality-api.open-meteo.com/v1/air-quality",
+    /** Hosts used once the commercial key is set; Premium makes the app commercial. */
+    customerForecastUrl: "https://customer-api.open-meteo.com/v1/forecast",
+    customerAirQualityUrl: "https://customer-air-quality-api.open-meteo.com/v1/air-quality",
+  },
+
+  /** Premium tier (phase 35). */
+  premium: {
+    /** RevenueCat entitlement; must equal AppPremium.entitlementId in the app. */
+    entitlementId: "premium",
+    /**
+     * Refuse Premium-only calls (creating share links) without an active
+     * entitlement. Set false together with AppFeatureFlags.premiumAvailable
+     * to make everything free. Always skipped on the emulator.
+     */
+    enforceOnServer: true as boolean,
+    /** Secret Manager name of the value RevenueCat sends in the Authorization header. */
+    webhookAuthSecret: "REVENUECAT_WEBHOOK_AUTH",
+    /**
+     * Accept sandbox purchases. App Review and TestFlight buy in the sandbox
+     * against production builds, so this stays true in every project.
+     */
+    acceptSandbox: true as boolean,
   },
 
   /** Silent push wake-ups (phase 22). */
@@ -75,6 +97,8 @@ export const config = {
     auditCounts: "audit_counts",
     /** One tombstone per deleted account until its purge has finished. */
     accountDeletions: "account_deletions",
+    /** One document per account with its Premium expiry, written by the RevenueCat webhook. */
+    entitlements: "entitlements",
   },
 
   /** Storage paths. */

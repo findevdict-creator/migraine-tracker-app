@@ -11,6 +11,7 @@ import 'package:migraine_tracker/features/checkin/presentation/checkin_controlle
 import 'package:migraine_tracker/features/cycle/presentation/cycle_screen.dart';
 import 'package:migraine_tracker/features/export/data/export_service.dart';
 import 'package:migraine_tracker/features/export/presentation/share_files.dart';
+import 'package:migraine_tracker/features/premium/application/premium_controller.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 /// Settings skeleton. Later phases add their sections here: health sync
@@ -64,6 +65,18 @@ class SettingsScreen extends ConsumerWidget {
             subtitle: Text(l10n.settingsRoutinesHint),
             onTap: () => context.push(AppRoutes.routines),
           ),
+          if (AppFeatureFlags.premiumAvailable)
+            ListTile(
+              key: const ValueKey('settings-premium'),
+              leading: const Icon(Icons.workspace_premium_outlined),
+              title: Text(l10n.premiumTitle),
+              subtitle: Text(
+                ref.watch(premiumProvider).active
+                    ? l10n.settingsPremiumActive
+                    : l10n.settingsPremiumHint,
+              ),
+              onTap: () => context.push(AppRoutes.premium),
+            ),
           if (AppFeatureFlags.accountsAvailable)
             ListTile(
               key: const ValueKey('settings-account'),

@@ -14,6 +14,7 @@ production build, and the few native files that mirror a value.
 | `AppAccounts` | sign-in methods offered (Apple, Google, email), minimum password length, the purge deadline shown to the user (must match `purgeWithinMs` in `functions/src/config.ts`) | changing sign-in options or the deletion promise |
 | `AppBackup` | Argon2id costs and their upper limits, salt length, minimum passphrase length, storage folder and object name, size cap (mirrors `storage.rules`), storage host and emulator port, request timeout | changing the backup's security costs or location |
 | `AppShareLinks` | share link path and URL builder; lifetimes are `AppThresholds.shareLinkDays` and must match `shareLink.allowedDays` in `functions/src/config.ts` | changing the share site or path (also `firebase.json` rewrites) |
+| `AppPremium` (and the `PremiumFeature` enum) | which features need Premium, the RevenueCat entitlement and offering, which environment factor rows count as extended, the dev-build unlock without a store key, store subscription pages. Turning off `AppFeatureFlags.premiumAvailable` makes everything free (also set `premium.enforceOnServer` to false in `functions/src/config.ts`) | changing what Premium includes, renaming the entitlement |
 | `AppFeatureFlags` | dev tools, emulator use, crash-reporting availability, per-feature availability | hiding a feature, enabling dev screens |
 | `AppIdentity.clinicianGuidanceUrl` | page behind the medication-overuse notes | M publishes or changes it |
 | `AppThresholds` | overuse notes (10, 15 days), learning threshold (10 attacks), refresh cadences, forecast window, location rounding, weather retention and stale age, barometer sampling, calibration and gauge range, factor bands (AQI, UV, pollen), health import window and sleep bands, back-fill days, risk learning (attack window, shrinkage, threshold percentiles, history and forecast days, confidence bands, insight lift cut-offs), notification times (risk-rising evening and morning hours, default attack length, medication reminder), dedupe retention and lead time, push token refresh window, default report period, questionnaire reminder interval and hour, chart length, voice listen length, pause and on-device-only switch, widget refresh period and steady-pressure band, routine suggestion trigger and count, paced breathing timing, experiment length and small-sample threshold, attack duration estimate (minimum attacks, intensity band, rounding step) | product decisions |
@@ -62,7 +63,7 @@ Keys and where to find the values:
 | `FIREBASE_EMULATOR_HOST` | `10.0.2.2` for the Android emulator, `localhost` for iOS simulator |
 | `SHARE_BASE_URL` | Where clinician share links open (phase 34). Empty means `https://{project}.web.app` |
 | `GOOGLE_SERVER_CLIENT_ID`, `GOOGLE_IOS_CLIENT_ID` | Google sign-in OAuth client ids (phase 32): the web client id for Android, the iOS client id for iOS |
-| `REVENUECAT_API_KEY_ANDROID`, `REVENUECAT_API_KEY_IOS` | RevenueCat project API keys (phase 35) |
+| `REVENUECAT_API_KEY_ANDROID`, `REVENUECAT_API_KEY_IOS` | RevenueCat public SDK keys per platform (phase 35). Empty means no store: dev unlocks everything, staging and prod keep Premium features locked |
 
 CI secrets (set in the GitHub Environments `staging` and `production`, never
 in the repo): signing keys, Firebase service accounts, the Open-Meteo
@@ -130,7 +131,24 @@ commercial key (used only by the cache function), RevenueCat keys.
     (the `deploy:staging` and `deploy:prod` scripts now include it), enable the Firestore
     TTL policy on `share_snapshots.expiresAt`, and optionally set
     `SHARE_BASE_URL` to a custom domain connected in Hosting.
-15. Repository settings on GitHub: protect `main` (require PR, require the
+15. Premium (phase 35):
+    - App Store Connect and Play Console: create one subscription group
+      with a monthly and a yearly product (FR-27 targets about $2.99 and
+      $19.99). On iOS, add the In-App Purchase capability in Xcode and
+      sign the Paid Apps agreement.
+    - RevenueCat: create a project with both apps, an entitlement named
+      `premium` attached to both products, and a current offering with
+      the monthly and yearly packages. Put the public SDK keys in
+      `REVENUECAT_API_KEY_ANDROID` and `REVENUECAT_API_KEY_IOS`.
+    - Webhook: in RevenueCat, point a webhook at the `revenueCatWebhook`
+      function URL and set an Authorization value. Store the same value
+      with `firebase functions:secrets:set REVENUECAT_WEBHOOK_AUTH`.
+    - Open-Meteo: selling Premium makes the app commercial. Buy an API
+      plan and set `firebase functions:secrets:set OPEN_METEO_API_KEY`
+      before launch. The weather function logs a warning until it is set.
+    - Test sandbox purchases on both stores with the steps in
+      `docs/phases/35-premium.md`.
+16. Repository settings on GitHub: protect `main` (require PR, require the
    `pr` workflow jobs, require conversation resolution, block force pushes
    and deletions, merge commits only, delete head branches on merge).
 
@@ -139,11 +157,11 @@ commercial key (used only by the cache function), RevenueCat keys.
 `functions/src/config.ts` is the single configuration file for the Cloud
 Functions: region, cache freshness and TTL, cell size, Open-Meteo URLs and
 secret names, the push wake-up schedule, token TTL and batch size,
-share-link lifetimes, purge deadline and sweep schedule, collection and storage names. Values shared with the app (region, function names, cell size) must
+share-link lifetimes, the Premium entitlement, server enforcement and sandbox switch, purge deadline and sweep schedule, collection and storage names. Values shared with the app (region, function names, cell size) must
 match `lib/config/app_config.dart`.
 
 Secrets for functions live in Secret Manager (`firebase functions:secrets:set
-OPEN_METEO_API_KEY`), never in the repo.
+OPEN_METEO_API_KEY`, `REVENUECAT_WEBHOOK_AUTH`), never in the repo.
 
 ## Native mirrors of config values
 
