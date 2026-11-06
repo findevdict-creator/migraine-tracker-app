@@ -6675,6 +6675,214 @@ class SettingsCompanion extends UpdateCompanion<Setting> {
   }
 }
 
+class $BarometerReadingsTable extends BarometerReadings
+    with TableInfo<$BarometerReadingsTable, BarometerReading> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $BarometerReadingsTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _atMeta = const VerificationMeta('at');
+  @override
+  late final GeneratedColumn<DateTime> at = GeneratedColumn<DateTime>(
+    'at',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _hpaMeta = const VerificationMeta('hpa');
+  @override
+  late final GeneratedColumn<double> hpa = GeneratedColumn<double>(
+    'hpa',
+    aliasedName,
+    false,
+    type: DriftSqlType.double,
+    requiredDuringInsert: true,
+  );
+  @override
+  List<GeneratedColumn> get $columns => [at, hpa];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'barometer_readings';
+  @override
+  VerificationContext validateIntegrity(
+    Insertable<BarometerReading> instance, {
+    bool isInserting = false,
+  }) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('at')) {
+      context.handle(_atMeta, at.isAcceptableOrUnknown(data['at']!, _atMeta));
+    } else if (isInserting) {
+      context.missing(_atMeta);
+    }
+    if (data.containsKey('hpa')) {
+      context.handle(
+        _hpaMeta,
+        hpa.isAcceptableOrUnknown(data['hpa']!, _hpaMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_hpaMeta);
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {at};
+  @override
+  BarometerReading map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return BarometerReading(
+      at: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}at'],
+      )!,
+      hpa: attachedDatabase.typeMapping.read(
+        DriftSqlType.double,
+        data['${effectivePrefix}hpa'],
+      )!,
+    );
+  }
+
+  @override
+  $BarometerReadingsTable createAlias(String alias) {
+    return $BarometerReadingsTable(attachedDatabase, alias);
+  }
+}
+
+class BarometerReading extends DataClass
+    implements Insertable<BarometerReading> {
+  final DateTime at;
+
+  /// Raw sensor value in hPa, before calibration.
+  final double hpa;
+  const BarometerReading({required this.at, required this.hpa});
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['at'] = Variable<DateTime>(at);
+    map['hpa'] = Variable<double>(hpa);
+    return map;
+  }
+
+  BarometerReadingsCompanion toCompanion(bool nullToAbsent) {
+    return BarometerReadingsCompanion(at: Value(at), hpa: Value(hpa));
+  }
+
+  factory BarometerReading.fromJson(
+    Map<String, dynamic> json, {
+    ValueSerializer? serializer,
+  }) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return BarometerReading(
+      at: serializer.fromJson<DateTime>(json['at']),
+      hpa: serializer.fromJson<double>(json['hpa']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'at': serializer.toJson<DateTime>(at),
+      'hpa': serializer.toJson<double>(hpa),
+    };
+  }
+
+  BarometerReading copyWith({DateTime? at, double? hpa}) =>
+      BarometerReading(at: at ?? this.at, hpa: hpa ?? this.hpa);
+  BarometerReading copyWithCompanion(BarometerReadingsCompanion data) {
+    return BarometerReading(
+      at: data.at.present ? data.at.value : this.at,
+      hpa: data.hpa.present ? data.hpa.value : this.hpa,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('BarometerReading(')
+          ..write('at: $at, ')
+          ..write('hpa: $hpa')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => Object.hash(at, hpa);
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is BarometerReading &&
+          other.at == this.at &&
+          other.hpa == this.hpa);
+}
+
+class BarometerReadingsCompanion extends UpdateCompanion<BarometerReading> {
+  final Value<DateTime> at;
+  final Value<double> hpa;
+  final Value<int> rowid;
+  const BarometerReadingsCompanion({
+    this.at = const Value.absent(),
+    this.hpa = const Value.absent(),
+    this.rowid = const Value.absent(),
+  });
+  BarometerReadingsCompanion.insert({
+    required DateTime at,
+    required double hpa,
+    this.rowid = const Value.absent(),
+  }) : at = Value(at),
+       hpa = Value(hpa);
+  static Insertable<BarometerReading> custom({
+    Expression<DateTime>? at,
+    Expression<double>? hpa,
+    Expression<int>? rowid,
+  }) {
+    return RawValuesInsertable({
+      if (at != null) 'at': at,
+      if (hpa != null) 'hpa': hpa,
+      if (rowid != null) 'rowid': rowid,
+    });
+  }
+
+  BarometerReadingsCompanion copyWith({
+    Value<DateTime>? at,
+    Value<double>? hpa,
+    Value<int>? rowid,
+  }) {
+    return BarometerReadingsCompanion(
+      at: at ?? this.at,
+      hpa: hpa ?? this.hpa,
+      rowid: rowid ?? this.rowid,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (at.present) {
+      map['at'] = Variable<DateTime>(at.value);
+    }
+    if (hpa.present) {
+      map['hpa'] = Variable<double>(hpa.value);
+    }
+    if (rowid.present) {
+      map['rowid'] = Variable<int>(rowid.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('BarometerReadingsCompanion(')
+          ..write('at: $at, ')
+          ..write('hpa: $hpa, ')
+          ..write('rowid: $rowid')
+          ..write(')'))
+        .toString();
+  }
+}
+
 abstract class _$AppDatabase extends GeneratedDatabase {
   _$AppDatabase(QueryExecutor e) : super(e);
   $AppDatabaseManager get managers => $AppDatabaseManager(this);
@@ -6694,6 +6902,8 @@ abstract class _$AppDatabase extends GeneratedDatabase {
   late final $QuestionnairesTable questionnaires = $QuestionnairesTable(this);
   late final $ShareLinksTable shareLinks = $ShareLinksTable(this);
   late final $SettingsTable settings = $SettingsTable(this);
+  late final $BarometerReadingsTable barometerReadings =
+      $BarometerReadingsTable(this);
   late final AttackDao attackDao = AttackDao(this as AppDatabase);
   late final CheckinDao checkinDao = CheckinDao(this as AppDatabase);
   late final MedicationDao medicationDao = MedicationDao(this as AppDatabase);
@@ -6709,6 +6919,7 @@ abstract class _$AppDatabase extends GeneratedDatabase {
   );
   late final ShareLinkDao shareLinkDao = ShareLinkDao(this as AppDatabase);
   late final SettingsDao settingsDao = SettingsDao(this as AppDatabase);
+  late final BarometerDao barometerDao = BarometerDao(this as AppDatabase);
   @override
   Iterable<TableInfo<Table, Object?>> get allTables =>
       allSchemaEntities.whereType<TableInfo<Table, Object?>>();
@@ -6726,6 +6937,7 @@ abstract class _$AppDatabase extends GeneratedDatabase {
     questionnaires,
     shareLinks,
     settings,
+    barometerReadings,
   ];
   @override
   StreamQueryUpdateRules get streamUpdateRules => const StreamQueryUpdateRules([
@@ -10381,6 +10593,166 @@ typedef $$SettingsTableProcessedTableManager =
       Setting,
       PrefetchHooks Function()
     >;
+typedef $$BarometerReadingsTableCreateCompanionBuilder =
+    BarometerReadingsCompanion Function({
+      required DateTime at,
+      required double hpa,
+      Value<int> rowid,
+    });
+typedef $$BarometerReadingsTableUpdateCompanionBuilder =
+    BarometerReadingsCompanion Function({
+      Value<DateTime> at,
+      Value<double> hpa,
+      Value<int> rowid,
+    });
+
+class $$BarometerReadingsTableFilterComposer
+    extends Composer<_$AppDatabase, $BarometerReadingsTable> {
+  $$BarometerReadingsTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<DateTime> get at => $composableBuilder(
+    column: $table.at,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<double> get hpa => $composableBuilder(
+    column: $table.hpa,
+    builder: (column) => ColumnFilters(column),
+  );
+}
+
+class $$BarometerReadingsTableOrderingComposer
+    extends Composer<_$AppDatabase, $BarometerReadingsTable> {
+  $$BarometerReadingsTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<DateTime> get at => $composableBuilder(
+    column: $table.at,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<double> get hpa => $composableBuilder(
+    column: $table.hpa,
+    builder: (column) => ColumnOrderings(column),
+  );
+}
+
+class $$BarometerReadingsTableAnnotationComposer
+    extends Composer<_$AppDatabase, $BarometerReadingsTable> {
+  $$BarometerReadingsTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<DateTime> get at =>
+      $composableBuilder(column: $table.at, builder: (column) => column);
+
+  GeneratedColumn<double> get hpa =>
+      $composableBuilder(column: $table.hpa, builder: (column) => column);
+}
+
+class $$BarometerReadingsTableTableManager
+    extends
+        RootTableManager<
+          _$AppDatabase,
+          $BarometerReadingsTable,
+          BarometerReading,
+          $$BarometerReadingsTableFilterComposer,
+          $$BarometerReadingsTableOrderingComposer,
+          $$BarometerReadingsTableAnnotationComposer,
+          $$BarometerReadingsTableCreateCompanionBuilder,
+          $$BarometerReadingsTableUpdateCompanionBuilder,
+          (
+            BarometerReading,
+            BaseReferences<
+              _$AppDatabase,
+              $BarometerReadingsTable,
+              BarometerReading
+            >,
+          ),
+          BarometerReading,
+          PrefetchHooks Function()
+        > {
+  $$BarometerReadingsTableTableManager(
+    _$AppDatabase db,
+    $BarometerReadingsTable table,
+  ) : super(
+        TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$BarometerReadingsTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$BarometerReadingsTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$BarometerReadingsTableAnnotationComposer(
+                $db: db,
+                $table: table,
+              ),
+          updateCompanionCallback: ({
+            Value<DateTime> at = const Value.absent(),
+            Value<double> hpa = const Value.absent(),
+            Value<int> rowid = const Value.absent(),
+          }) => BarometerReadingsCompanion(at: at, hpa: hpa, rowid: rowid),
+          createCompanionCallback:
+              ({
+                required DateTime at,
+                required double hpa,
+                Value<int> rowid = const Value.absent(),
+              }) => BarometerReadingsCompanion.insert(
+                at: at,
+                hpa: hpa,
+                rowid: rowid,
+              ),
+          withReferenceMapper: (p0) => p0
+              .map(
+                (e) => (
+                  e.readTable<$BarometerReadingsTable, BarometerReading>(table),
+                  BaseReferences<
+                    _$AppDatabase,
+                    $BarometerReadingsTable,
+                    BarometerReading
+                  >(db, table, e),
+                ),
+              )
+              .toList(),
+          prefetchHooksCallback: null,
+        ),
+      );
+}
+
+typedef $$BarometerReadingsTableProcessedTableManager =
+    ProcessedTableManager<
+      _$AppDatabase,
+      $BarometerReadingsTable,
+      BarometerReading,
+      $$BarometerReadingsTableFilterComposer,
+      $$BarometerReadingsTableOrderingComposer,
+      $$BarometerReadingsTableAnnotationComposer,
+      $$BarometerReadingsTableCreateCompanionBuilder,
+      $$BarometerReadingsTableUpdateCompanionBuilder,
+      (
+        BarometerReading,
+        BaseReferences<
+          _$AppDatabase,
+          $BarometerReadingsTable,
+          BarometerReading
+        >,
+      ),
+      BarometerReading,
+      PrefetchHooks Function()
+    >;
 
 class $AppDatabaseManager {
   final _$AppDatabase _db;
@@ -10409,4 +10781,6 @@ class $AppDatabaseManager {
       $$ShareLinksTableTableManager(_db, _db.shareLinks);
   $$SettingsTableTableManager get settings =>
       $$SettingsTableTableManager(_db, _db.settings);
+  $$BarometerReadingsTableTableManager get barometerReadings =>
+      $$BarometerReadingsTableTableManager(_db, _db.barometerReadings);
 }

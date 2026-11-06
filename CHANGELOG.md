@@ -7,6 +7,9 @@ release time.
 ## [Unreleased]
 
 ### Added
+- Barometer: live sensor gauge, 24 h on-device trend, calibration offset
+  against the station series, sensor and station pressure stamped at
+  attack start, "from nearest station" fallback; schema version 2 (12).
 - Weather feed: while-using location rounded to a 0.1-degree cell before any
   call, typed-city fallback, local weather store, 3, 6, 12 and 24 h pressure
   deltas, weather attached to every attack and check-in at save time,

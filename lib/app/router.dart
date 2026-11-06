@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:migraine_tracker/app/bootstrap.dart';
 import 'package:migraine_tracker/config/app_config.dart';
 import 'package:migraine_tracker/features/attack_log/presentation/attack_screen.dart';
+import 'package:migraine_tracker/features/barometer/presentation/barometer_screen.dart';
 import 'package:migraine_tracker/features/checkin/presentation/checkin_screen.dart';
 import 'package:migraine_tracker/features/cycle/presentation/cycle_screen.dart';
 import 'package:migraine_tracker/features/dev_tools/presentation/theme_gallery_screen.dart';
@@ -23,6 +24,7 @@ abstract final class AppRoutes {
   static const String cycle = '/cycle';
   static const String settings = '/settings';
   static const String environment = '/environment';
+  static const String barometer = '/barometer';
   static String checkin(String date) => '/checkin/$date';
 }
 
@@ -64,6 +66,11 @@ final routerProvider = Provider<GoRouter>((ref) {
         path: AppRoutes.environment,
         name: 'environment',
         builder: (context, state) => const EnvironmentScreen(),
+      ),
+      GoRoute(
+        path: AppRoutes.barometer,
+        name: 'barometer',
+        builder: (context, state) => const BarometerScreen(),
       ),
       if (AppFeatureFlags.cycleTrackingAvailable)
         GoRoute(

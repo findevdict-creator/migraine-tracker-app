@@ -225,5 +225,21 @@
   "envTrendRising": "rising",
   "envTrendFalling": "falling",
   "envTrendSteady": "steady",
-  "envTrendUnknown": "no trend yet"
+  "envTrendUnknown": "no trend yet",
+  "barometerTitle": "Barometer",
+  "barometerOpen": "Open the barometer",
+  "barometerNoReading": "No reading",
+  "barometerFromSensor": "From this device's sensor",
+  "barometerFromStation": "From the nearest station",
+  "barometerNoSource": "No sensor on this device and no forecast saved yet",
+  "barometerCalibrationSection": "Calibration",
+  "barometerOffset": "Sensor offset {offset} against the station series, from {pairs} hourly pairs.",
+  "@barometerOffset": {"placeholders": {"offset": {"type": "String"}, "pairs": {"type": "int"}}},
+  "barometerNotCalibrated": "Not calibrated yet. Needs at least {pairs} hours with both a sensor sample and a station value.",
+  "@barometerNotCalibrated": {"placeholders": {"pairs": {"type": "int"}}},
+  "barometerTrendSection": "Last 24 hours on this device",
+  "barometerTrendEmpty": "Samples are taken while the app is open. Come back later to see the trend.",
+  "barometerTrendSamples": "{n, plural, =1{1 sample} other{{n} samples}}",
+  "@barometerTrendSamples": {"placeholders": {"n": {"type": "int"}}},
+  "barometerStampNote": "Each attack you start records the sensor reading and the station value of that hour."
 }

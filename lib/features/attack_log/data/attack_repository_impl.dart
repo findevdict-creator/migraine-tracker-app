@@ -5,6 +5,7 @@ import 'package:migraine_tracker/core/util/clock.dart';
 import 'package:migraine_tracker/features/attack_log/data/attack_mapper.dart';
 import 'package:migraine_tracker/features/attack_log/domain/attack_entity.dart';
 import 'package:migraine_tracker/features/attack_log/domain/attack_repository.dart';
+import 'package:migraine_tracker/features/barometer/application/pressure_stamp.dart';
 
 final attackRepositoryProvider = Provider<AttackRepository>(
   (ref) => DriftAttackRepository(
@@ -13,8 +14,10 @@ final attackRepositoryProvider = Provider<AttackRepository>(
   ),
 );
 
+/// The barometer phase supplies the real stamp; `NoPressureStamp` stays for
+/// tests that do not care about pressure.
 final pressureStampSourceProvider = Provider<PressureStampSource>(
-  (_) => const NoPressureStamp(),
+  (ref) => ref.watch(sensorPressureStampProvider),
 );
 
 /// Drift-backed [AttackRepository].

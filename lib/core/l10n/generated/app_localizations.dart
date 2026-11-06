@@ -1215,6 +1215,84 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'no trend yet'**
   String get envTrendUnknown;
+
+  /// No description provided for @barometerTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Barometer'**
+  String get barometerTitle;
+
+  /// No description provided for @barometerOpen.
+  ///
+  /// In en, this message translates to:
+  /// **'Open the barometer'**
+  String get barometerOpen;
+
+  /// No description provided for @barometerNoReading.
+  ///
+  /// In en, this message translates to:
+  /// **'No reading'**
+  String get barometerNoReading;
+
+  /// No description provided for @barometerFromSensor.
+  ///
+  /// In en, this message translates to:
+  /// **'From this device\'s sensor'**
+  String get barometerFromSensor;
+
+  /// No description provided for @barometerFromStation.
+  ///
+  /// In en, this message translates to:
+  /// **'From the nearest station'**
+  String get barometerFromStation;
+
+  /// No description provided for @barometerNoSource.
+  ///
+  /// In en, this message translates to:
+  /// **'No sensor on this device and no forecast saved yet'**
+  String get barometerNoSource;
+
+  /// No description provided for @barometerCalibrationSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Calibration'**
+  String get barometerCalibrationSection;
+
+  /// No description provided for @barometerOffset.
+  ///
+  /// In en, this message translates to:
+  /// **'Sensor offset {offset} against the station series, from {pairs} hourly pairs.'**
+  String barometerOffset(String offset, int pairs);
+
+  /// No description provided for @barometerNotCalibrated.
+  ///
+  /// In en, this message translates to:
+  /// **'Not calibrated yet. Needs at least {pairs} hours with both a sensor sample and a station value.'**
+  String barometerNotCalibrated(int pairs);
+
+  /// No description provided for @barometerTrendSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Last 24 hours on this device'**
+  String get barometerTrendSection;
+
+  /// No description provided for @barometerTrendEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'Samples are taken while the app is open. Come back later to see the trend.'**
+  String get barometerTrendEmpty;
+
+  /// No description provided for @barometerTrendSamples.
+  ///
+  /// In en, this message translates to:
+  /// **'{n, plural, =1{1 sample} other{{n} samples}}'**
+  String barometerTrendSamples(int n);
+
+  /// No description provided for @barometerStampNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Each attack you start records the sensor reading and the station value of that hour.'**
+  String get barometerStampNote;
 }
 
 class _AppLocalizationsDelegate
