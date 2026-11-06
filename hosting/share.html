@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="referrer" content="no-referrer" />
+    <title>Shared migraine report</title>
+    <link rel="stylesheet" href="/share.css" />
+  </head>
+  <body>
+    <main id="report" aria-live="polite">
+      <p class="status" id="loading">Loading the report.</p>
+    </main>
+    <template id="messages">
+      <p data-key="invalid">This link is not complete. Check that the whole link was copied.</p>
+      <p data-key="missing">This report is no longer shared. The person who shared it may have stopped sharing it.</p>
+      <p data-key="expired">This link has expired.</p>
+      <p data-key="error">The report could not be loaded. Try again in a moment.</p>
+      <p data-key="until">Shared until</p>
+      <p data-key="readonly">Read-only copy shared from the app. It shows a summary of the period, not the person's diary.</p>
+    </template>
+    <script src="/share.js"></script>
+  </body>
+</html>

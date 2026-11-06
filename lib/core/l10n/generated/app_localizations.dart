@@ -4315,6 +4315,156 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Your sign-in has expired. Sign in again, then retry.'**
   String get backupErrorNotAllowed;
+
+  /// No description provided for @shareLinkButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Share as a web link'**
+  String get shareLinkButton;
+
+  /// No description provided for @shareLinkTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Share with your clinician'**
+  String get shareLinkTitle;
+
+  /// No description provided for @shareLinkExplain.
+  ///
+  /// In en, this message translates to:
+  /// **'Anyone with the link can read this report until it expires. It shows the same summary as the PDF, not your diary. You can stop sharing at any time.'**
+  String get shareLinkExplain;
+
+  /// No description provided for @shareLinkNeedsAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Sharing a link needs an account. The PDF and CSV work without one.'**
+  String get shareLinkNeedsAccount;
+
+  /// No description provided for @shareLinkDuration.
+  ///
+  /// In en, this message translates to:
+  /// **'{days, plural, =1{1 day} other{{days} days}}'**
+  String shareLinkDuration(int days);
+
+  /// No description provided for @shareLinkCreate.
+  ///
+  /// In en, this message translates to:
+  /// **'Create link'**
+  String get shareLinkCreate;
+
+  /// No description provided for @shareLinkWorking.
+  ///
+  /// In en, this message translates to:
+  /// **'Creating the link.'**
+  String get shareLinkWorking;
+
+  /// No description provided for @shareLinkReady.
+  ///
+  /// In en, this message translates to:
+  /// **'Link ready. Shared until {date}.'**
+  String shareLinkReady(String date);
+
+  /// No description provided for @shareLinkCopy.
+  ///
+  /// In en, this message translates to:
+  /// **'Copy link'**
+  String get shareLinkCopy;
+
+  /// No description provided for @shareLinkCopied.
+  ///
+  /// In en, this message translates to:
+  /// **'Link copied.'**
+  String get shareLinkCopied;
+
+  /// No description provided for @shareLinkShare.
+  ///
+  /// In en, this message translates to:
+  /// **'Share link'**
+  String get shareLinkShare;
+
+  /// No description provided for @shareLinkMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'My migraine report: {url}'**
+  String shareLinkMessage(String url);
+
+  /// No description provided for @shareLinksTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Shared links'**
+  String get shareLinksTitle;
+
+  /// No description provided for @settingsShareLinksHint.
+  ///
+  /// In en, this message translates to:
+  /// **'See and stop the report links you shared'**
+  String get settingsShareLinksHint;
+
+  /// No description provided for @shareLinksEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'You haven\'t shared any links. Create one from Doctor report.'**
+  String get shareLinksEmpty;
+
+  /// No description provided for @shareLinkActiveUntil.
+  ///
+  /// In en, this message translates to:
+  /// **'Shared until {date}'**
+  String shareLinkActiveUntil(String date);
+
+  /// No description provided for @shareLinkExpiredOn.
+  ///
+  /// In en, this message translates to:
+  /// **'Expired {date}'**
+  String shareLinkExpiredOn(String date);
+
+  /// No description provided for @shareLinkRevoked.
+  ///
+  /// In en, this message translates to:
+  /// **'Sharing stopped'**
+  String get shareLinkRevoked;
+
+  /// No description provided for @shareLinkCreatedOn.
+  ///
+  /// In en, this message translates to:
+  /// **'Created {date}'**
+  String shareLinkCreatedOn(String date);
+
+  /// No description provided for @shareLinkRevoke.
+  ///
+  /// In en, this message translates to:
+  /// **'Stop sharing'**
+  String get shareLinkRevoke;
+
+  /// No description provided for @shareLinkRevokeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Stop sharing this report?'**
+  String get shareLinkRevokeTitle;
+
+  /// No description provided for @shareLinkRevokeBody.
+  ///
+  /// In en, this message translates to:
+  /// **'The link stops working at once, for everyone who has it.'**
+  String get shareLinkRevokeBody;
+
+  /// No description provided for @shareLinkRevokedDone.
+  ///
+  /// In en, this message translates to:
+  /// **'Sharing stopped. The link no longer works.'**
+  String get shareLinkRevokedDone;
+
+  /// No description provided for @shareLinkErrorUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Share links aren\'t set up in this build.'**
+  String get shareLinkErrorUnavailable;
+
+  /// No description provided for @shareLinkErrorSignedOut.
+  ///
+  /// In en, this message translates to:
+  /// **'Your sign-in has expired. Sign in again, then retry.'**
+  String get shareLinkErrorSignedOut;
 }
 
 class _AppLocalizationsDelegate

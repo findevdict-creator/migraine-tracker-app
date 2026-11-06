@@ -1,0 +1,59 @@
+:root {
+  --ink: #1f2933;
+  --muted: #6b7280;
+  --rule: #d1d5db;
+  --tile: #f3f4f6;
+  --band0: #fde68a;
+  --band1: #fca5a5;
+  --band2: #ef4444;
+  --bg: #ffffff;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #e5e7eb;
+    --muted: #9ca3af;
+    --rule: #374151;
+    --tile: #1f2937;
+    --bg: #111827;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+main { max-width: 860px; margin: 0 auto; padding: 24px 16px 48px; }
+h1 { font-size: 1.6rem; margin: 0 0 4px; }
+h2 { font-size: 1.2rem; margin: 28px 0 8px; border-bottom: 1px solid var(--rule); padding-bottom: 4px; }
+h3 { font-size: 1rem; margin: 12px 0 4px; }
+p { margin: 4px 0; }
+.hint, .disclaimer, footer { color: var(--muted); }
+.disclaimer { font-size: 0.85rem; margin-top: 32px; }
+footer { font-size: 0.85rem; margin-top: 8px; }
+.notice { background: var(--tile); border-radius: 6px; padding: 8px 12px; margin: 12px 0; }
+.status { padding: 32px 0; font-size: 1.1rem; }
+.tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+@media (max-width: 560px) { .tiles { grid-template-columns: repeat(2, 1fr); } }
+.tile { background: var(--tile); border-radius: 6px; padding: 10px; display: flex; flex-direction: column; }
+.tile strong { font-size: 1.4rem; }
+.tile span { font-size: 0.8rem; color: var(--muted); }
+.table-wrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 0.9rem; }
+th, td { text-align: left; padding: 4px 6px; border-bottom: 1px solid var(--rule); }
+th { font-weight: 600; }
+.columns { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px; }
+.month { display: inline-block; vertical-align: top; margin: 0 16px 12px 0; }
+.grid { display: grid; grid-template-columns: repeat(7, 28px); gap: 2px; }
+.day { height: 24px; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; border: 1px solid var(--rule); }
+.day.blank { border: none; }
+.day.out { color: var(--rule); }
+.day.attack { font-weight: 700; color: #1f2933; }
+.band0 { background: var(--band0); }
+.band1 { background: var(--band1); }
+.band2 { background: var(--band2); }
+@media print {
+  .notice { border: 1px solid var(--rule); }
+  main { padding: 0; }
+}

@@ -25,6 +25,7 @@ import 'package:migraine_tracker/features/risk/presentation/risk_screen.dart';
 import 'package:migraine_tracker/features/routines/presentation/routine_screen.dart';
 import 'package:migraine_tracker/features/routines/presentation/routines_screen.dart';
 import 'package:migraine_tracker/features/settings/presentation/settings_screen.dart';
+import 'package:migraine_tracker/features/share_link/presentation/share_links_screen.dart';
 import 'package:migraine_tracker/features/weather/presentation/about_data_screen.dart';
 import 'package:migraine_tracker/features/weather/presentation/environment_screen.dart';
 
@@ -55,6 +56,7 @@ abstract final class AppRoutes {
   static const String experiments = '/experiments';
   static const String account = '/account';
   static const String backup = '/backup';
+  static const String shareLinks = '/share-links';
   static const String routines = '/routines';
   static const String routinePattern = '/routines/:code';
   static String routine(String code) => '/routines/$code';
@@ -143,6 +145,11 @@ final routerProvider = Provider<GoRouter>((ref) {
         path: AppRoutes.backup,
         name: 'backup',
         builder: (context, state) => const BackupScreen(),
+      ),
+      GoRoute(
+        path: AppRoutes.shareLinks,
+        name: 'share-links',
+        builder: (context, state) => const ShareLinksScreen(),
       ),
       GoRoute(
         path: AppRoutes.experiments,

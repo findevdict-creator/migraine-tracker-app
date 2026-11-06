@@ -2571,4 +2571,105 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get backupErrorNotAllowed =>
       'Your sign-in has expired. Sign in again, then retry.';
+
+  @override
+  String get shareLinkButton => 'Share as a web link';
+
+  @override
+  String get shareLinkTitle => 'Share with your clinician';
+
+  @override
+  String get shareLinkExplain =>
+      'Anyone with the link can read this report until it expires. It shows the same summary as the PDF, not your diary. You can stop sharing at any time.';
+
+  @override
+  String get shareLinkNeedsAccount =>
+      'Sharing a link needs an account. The PDF and CSV work without one.';
+
+  @override
+  String shareLinkDuration(int days) {
+    String _temp0 = intl.Intl.pluralLogic(
+      days,
+      locale: localeName,
+      other: '$days days',
+      one: '1 day',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get shareLinkCreate => 'Create link';
+
+  @override
+  String get shareLinkWorking => 'Creating the link.';
+
+  @override
+  String shareLinkReady(String date) {
+    return 'Link ready. Shared until $date.';
+  }
+
+  @override
+  String get shareLinkCopy => 'Copy link';
+
+  @override
+  String get shareLinkCopied => 'Link copied.';
+
+  @override
+  String get shareLinkShare => 'Share link';
+
+  @override
+  String shareLinkMessage(String url) {
+    return 'My migraine report: $url';
+  }
+
+  @override
+  String get shareLinksTitle => 'Shared links';
+
+  @override
+  String get settingsShareLinksHint =>
+      'See and stop the report links you shared';
+
+  @override
+  String get shareLinksEmpty =>
+      'You haven\'t shared any links. Create one from Doctor report.';
+
+  @override
+  String shareLinkActiveUntil(String date) {
+    return 'Shared until $date';
+  }
+
+  @override
+  String shareLinkExpiredOn(String date) {
+    return 'Expired $date';
+  }
+
+  @override
+  String get shareLinkRevoked => 'Sharing stopped';
+
+  @override
+  String shareLinkCreatedOn(String date) {
+    return 'Created $date';
+  }
+
+  @override
+  String get shareLinkRevoke => 'Stop sharing';
+
+  @override
+  String get shareLinkRevokeTitle => 'Stop sharing this report?';
+
+  @override
+  String get shareLinkRevokeBody =>
+      'The link stops working at once, for everyone who has it.';
+
+  @override
+  String get shareLinkRevokedDone =>
+      'Sharing stopped. The link no longer works.';
+
+  @override
+  String get shareLinkErrorUnavailable =>
+      'Share links aren\'t set up in this build.';
+
+  @override
+  String get shareLinkErrorSignedOut =>
+      'Your sign-in has expired. Sign in again, then retry.';
 }

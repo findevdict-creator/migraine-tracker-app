@@ -170,6 +170,11 @@ class AppEnv {
     'GOOGLE_IOS_CLIENT_ID',
   );
 
+  /// Where clinician share links open (phase 34), for example
+  /// `https://migraine-tracker.web.app`. Empty means the Firebase Hosting
+  /// default for [firebaseProjectId].
+  static const String shareBaseUrl = String.fromEnvironment('SHARE_BASE_URL');
+
   /// RevenueCat public SDK keys (phase 35).
   static const String revenueCatApiKeyAndroid = String.fromEnvironment(
     'REVENUECAT_API_KEY_ANDROID',
@@ -205,7 +210,8 @@ class AppEndpoints {
   static const String weatherCacheFunction = 'weatherCache';
   static const String pushWakeupFunction = 'pushWakeup';
   static const String registerPushTokenFunction = 'registerPushToken';
-  static const String shareLinkFunction = 'shareLink';
+  static const String createShareLinkFunction = 'createShareLink';
+  static const String revokeShareLinkFunction = 'revokeShareLink';
   static const String purgeAccountFunction = 'purgeAccount';
   static const String auditCountsFunction = 'auditCounts';
 
@@ -375,6 +381,21 @@ abstract final class AppBackup {
   static const int emulatorStoragePort = 9199;
 
   static const Duration requestTimeout = Duration(seconds: 60);
+}
+
+/// Clinician share links (phase 34, FR-21). Lifetimes are in
+/// [AppThresholds.shareLinkDays].
+abstract final class AppShareLinks {
+  /// Path on the share site; `firebase.json` rewrites it to the page.
+  static const String pathPrefix = '/s/';
+
+  /// The link for a token.
+  static Uri url(String token) {
+    final base = AppEnv.shareBaseUrl.isNotEmpty
+        ? AppEnv.shareBaseUrl
+        : 'https://${AppEnv.firebaseProjectId}.web.app';
+    return Uri.parse('$base$pathPrefix$token');
+  }
 }
 
 // ---------------------------------------------------------------------------
@@ -577,7 +598,8 @@ class AppThresholds {
   /// Below this the range is rounded to half hours, above to whole hours.
   static const Duration durationFineStepBelow = Duration(hours: 3);
 
-  /// Share link lifetimes offered to the user.
+  /// Share link lifetimes offered to the user. Must match
+  /// `shareLink.allowedDays` in functions/src/config.ts.
   static const List<int> shareLinkDays = [7, 30];
 
   /// Attack-mode flow targets from the requirements doc.
