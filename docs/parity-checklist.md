@@ -36,3 +36,4 @@ feature PR adds its row.
 | 29 | Routine card appears on a high day and after a neck-tension check-in; "Not today" hides it until tomorrow; breathing timer runs and respects reduce motion | [ ] | [ ] | Content needs clinician review before release |
 | 30 | Pick a change, answer the daily question, see the comparison with sample sizes and caveat; stop and finish keep the result in the past list | [ ] | [ ] | |
 | 31 | Running attack shows "Typically X to Y h" with the sample size after five finished attacks; nothing before; updates with intensity and medication | [ ] | [ ] | |
+| 32 | Account screen: sign in with Apple (iOS), Google and email; signed-out app fully usable; delete account explains the 24-hour purge and keeps phone data | [ ] | [ ] | Needs sign-in methods turned on in Firebase |

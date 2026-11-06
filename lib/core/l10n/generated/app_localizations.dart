@@ -3913,6 +3913,210 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{before} attacks per week before, {during} during'**
   String experimentPastSummary(String before, String during);
+
+  /// No description provided for @accountTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Account'**
+  String get accountTitle;
+
+  /// No description provided for @settingsAccountHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Optional. Only needed for backup and share links'**
+  String get settingsAccountHint;
+
+  /// No description provided for @accountIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'An account is optional. Everything in the app works without one, and your entries stay on this phone. You only need one for encrypted backup and share links.'**
+  String get accountIntro;
+
+  /// No description provided for @accountUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Accounts aren\'t set up in this build.'**
+  String get accountUnavailable;
+
+  /// No description provided for @accountApple.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue with Apple'**
+  String get accountApple;
+
+  /// No description provided for @accountGoogle.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue with Google'**
+  String get accountGoogle;
+
+  /// No description provided for @accountOrEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Or use your email'**
+  String get accountOrEmail;
+
+  /// No description provided for @accountEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Email'**
+  String get accountEmail;
+
+  /// No description provided for @accountPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Password'**
+  String get accountPassword;
+
+  /// No description provided for @accountPasswordHint.
+  ///
+  /// In en, this message translates to:
+  /// **'At least {min} characters for a new account'**
+  String accountPasswordHint(int min);
+
+  /// No description provided for @accountSignIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in'**
+  String get accountSignIn;
+
+  /// No description provided for @accountCreate.
+  ///
+  /// In en, this message translates to:
+  /// **'Create account'**
+  String get accountCreate;
+
+  /// No description provided for @accountForgot.
+  ///
+  /// In en, this message translates to:
+  /// **'Forgot password?'**
+  String get accountForgot;
+
+  /// No description provided for @accountResetSent.
+  ///
+  /// In en, this message translates to:
+  /// **'If that email has an account, a reset link is on its way.'**
+  String get accountResetSent;
+
+  /// No description provided for @accountSignedInAs.
+  ///
+  /// In en, this message translates to:
+  /// **'Signed in as {email}'**
+  String accountSignedInAs(String email);
+
+  /// No description provided for @accountSignedInWith.
+  ///
+  /// In en, this message translates to:
+  /// **'Signed in with {method}'**
+  String accountSignedInWith(String method);
+
+  /// No description provided for @accountMethodApple.
+  ///
+  /// In en, this message translates to:
+  /// **'Apple'**
+  String get accountMethodApple;
+
+  /// No description provided for @accountMethodGoogle.
+  ///
+  /// In en, this message translates to:
+  /// **'Google'**
+  String get accountMethodGoogle;
+
+  /// No description provided for @accountMethodEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'email'**
+  String get accountMethodEmail;
+
+  /// No description provided for @accountSignedInNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Your entries still live on this phone. Signing out deletes nothing.'**
+  String get accountSignedInNote;
+
+  /// No description provided for @accountSignOut.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign out'**
+  String get accountSignOut;
+
+  /// No description provided for @accountDelete.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete account'**
+  String get accountDelete;
+
+  /// No description provided for @accountDeleteTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete your account?'**
+  String get accountDeleteTitle;
+
+  /// No description provided for @accountDeleteBody.
+  ///
+  /// In en, this message translates to:
+  /// **'This deletes your account. Within {hours} hours your encrypted backup and any share links are removed from our servers. Everything on this phone stays.'**
+  String accountDeleteBody(int hours);
+
+  /// No description provided for @accountDeletePassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your password to confirm'**
+  String get accountDeletePassword;
+
+  /// No description provided for @accountDeleteCancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Keep account'**
+  String get accountDeleteCancel;
+
+  /// No description provided for @accountDeleted.
+  ///
+  /// In en, this message translates to:
+  /// **'Account deleted. Its server data will be gone within {hours} hours.'**
+  String accountDeleted(int hours);
+
+  /// No description provided for @accountErrorWrongCredentials.
+  ///
+  /// In en, this message translates to:
+  /// **'That email and password don\'t match.'**
+  String get accountErrorWrongCredentials;
+
+  /// No description provided for @accountErrorEmailInUse.
+  ///
+  /// In en, this message translates to:
+  /// **'That email already has an account. Try signing in instead.'**
+  String get accountErrorEmailInUse;
+
+  /// No description provided for @accountErrorWeakPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose a longer password.'**
+  String get accountErrorWeakPassword;
+
+  /// No description provided for @accountErrorInvalidEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Check the email address.'**
+  String get accountErrorInvalidEmail;
+
+  /// No description provided for @accountErrorNetwork.
+  ///
+  /// In en, this message translates to:
+  /// **'No connection. Try again when you\'re online.'**
+  String get accountErrorNetwork;
+
+  /// No description provided for @accountErrorRecentSignIn.
+  ///
+  /// In en, this message translates to:
+  /// **'For your safety, sign in again, then try once more.'**
+  String get accountErrorRecentSignIn;
+
+  /// No description provided for @accountErrorUnknown.
+  ///
+  /// In en, this message translates to:
+  /// **'Something went wrong. Try again.'**
+  String get accountErrorUnknown;
 }
 
 class _AppLocalizationsDelegate

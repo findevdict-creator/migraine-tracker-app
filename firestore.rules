@@ -31,6 +31,12 @@ service cloud.firestore {
       allow read, write: if false;
     }
 
+    // Deletion tombstones: written and cleared only by the purge functions
+    // (Admin SDK), so a client can neither hide nor fake a deletion.
+    match /account_deletions/{uid} {
+      allow read, write: if false;
+    }
+
     // Report snapshots are read through the share-link function by token,
     // never directly.
     match /share_snapshots/{token} {

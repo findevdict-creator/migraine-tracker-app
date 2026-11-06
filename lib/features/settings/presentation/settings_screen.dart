@@ -64,6 +64,14 @@ class SettingsScreen extends ConsumerWidget {
             subtitle: Text(l10n.settingsRoutinesHint),
             onTap: () => context.push(AppRoutes.routines),
           ),
+          if (AppFeatureFlags.accountsAvailable)
+            ListTile(
+              key: const ValueKey('settings-account'),
+              leading: const Icon(Icons.account_circle_outlined),
+              title: Text(l10n.accountTitle),
+              subtitle: Text(l10n.settingsAccountHint),
+              onTap: () => context.push(AppRoutes.account),
+            ),
           if (AppFeatureFlags.experimentsAvailable)
             ListTile(
               key: const ValueKey('settings-experiments'),

@@ -2336,4 +2336,124 @@ class AppLocalizationsEn extends AppLocalizations {
   String experimentPastSummary(String before, String during) {
     return '$before attacks per week before, $during during';
   }
+
+  @override
+  String get accountTitle => 'Account';
+
+  @override
+  String get settingsAccountHint =>
+      'Optional. Only needed for backup and share links';
+
+  @override
+  String get accountIntro =>
+      'An account is optional. Everything in the app works without one, and your entries stay on this phone. You only need one for encrypted backup and share links.';
+
+  @override
+  String get accountUnavailable => 'Accounts aren\'t set up in this build.';
+
+  @override
+  String get accountApple => 'Continue with Apple';
+
+  @override
+  String get accountGoogle => 'Continue with Google';
+
+  @override
+  String get accountOrEmail => 'Or use your email';
+
+  @override
+  String get accountEmail => 'Email';
+
+  @override
+  String get accountPassword => 'Password';
+
+  @override
+  String accountPasswordHint(int min) {
+    return 'At least $min characters for a new account';
+  }
+
+  @override
+  String get accountSignIn => 'Sign in';
+
+  @override
+  String get accountCreate => 'Create account';
+
+  @override
+  String get accountForgot => 'Forgot password?';
+
+  @override
+  String get accountResetSent =>
+      'If that email has an account, a reset link is on its way.';
+
+  @override
+  String accountSignedInAs(String email) {
+    return 'Signed in as $email';
+  }
+
+  @override
+  String accountSignedInWith(String method) {
+    return 'Signed in with $method';
+  }
+
+  @override
+  String get accountMethodApple => 'Apple';
+
+  @override
+  String get accountMethodGoogle => 'Google';
+
+  @override
+  String get accountMethodEmail => 'email';
+
+  @override
+  String get accountSignedInNote =>
+      'Your entries still live on this phone. Signing out deletes nothing.';
+
+  @override
+  String get accountSignOut => 'Sign out';
+
+  @override
+  String get accountDelete => 'Delete account';
+
+  @override
+  String get accountDeleteTitle => 'Delete your account?';
+
+  @override
+  String accountDeleteBody(int hours) {
+    return 'This deletes your account. Within $hours hours your encrypted backup and any share links are removed from our servers. Everything on this phone stays.';
+  }
+
+  @override
+  String get accountDeletePassword => 'Enter your password to confirm';
+
+  @override
+  String get accountDeleteCancel => 'Keep account';
+
+  @override
+  String accountDeleted(int hours) {
+    return 'Account deleted. Its server data will be gone within $hours hours.';
+  }
+
+  @override
+  String get accountErrorWrongCredentials =>
+      'That email and password don\'t match.';
+
+  @override
+  String get accountErrorEmailInUse =>
+      'That email already has an account. Try signing in instead.';
+
+  @override
+  String get accountErrorWeakPassword => 'Choose a longer password.';
+
+  @override
+  String get accountErrorInvalidEmail => 'Check the email address.';
+
+  @override
+  String get accountErrorNetwork =>
+      'No connection. Try again when you\'re online.';
+
+  @override
+  String get accountErrorRecentSignIn =>
+      'For your safety, sign in again, then try once more.';
+
+  @override
+  String get accountErrorUnknown => 'Something went wrong. Try again.';
 }

@@ -44,6 +44,19 @@ export const config = {
   /** Account purge deadline after deletion, documented in the privacy policy. */
   purgeWithinMs: 24 * 60 * 60 * 1000,
 
+  /** Account deletion (phase 32). */
+  account: {
+    /**
+     * Cloud Scheduler expression for the purge sweep. Must run well inside
+     * `purgeWithinMs` so a failed purge is retried several times.
+     */
+    sweepSchedule: "every 1 hours",
+    /** Sweep interval in ms; the test checks it fits the deadline. */
+    sweepEveryMs: 60 * 60 * 1000,
+    /** Documents deleted per batch when purging a collection. */
+    batchSize: 400,
+  },
+
   /** Firestore collection names. */
   collections: {
     weatherCells: "weather_cells",
@@ -51,6 +64,8 @@ export const config = {
     users: "users",
     shareSnapshots: "share_snapshots",
     auditCounts: "audit_counts",
+    /** One tombstone per deleted account until its purge has finished. */
+    accountDeletions: "account_deletions",
   },
 
   /** Storage paths. */
