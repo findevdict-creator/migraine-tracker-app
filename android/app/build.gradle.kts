@@ -29,6 +29,11 @@ android {
         versionName = flutter.versionName
     }
 
+    buildFeatures {
+        // Needed for the per-flavor app_name resValue below.
+        resValues = true
+    }
+
     // Flavors mirror AppFlavor in lib/config/app_config.dart. The suffix and
     // label must match AppIdentity.bundleIdFor and AppIdentity.displayName.
     flavorDimensions += "environment"
