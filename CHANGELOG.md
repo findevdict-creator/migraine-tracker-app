@@ -7,6 +7,8 @@ release time.
 ## [Unreleased]
 
 ### Added
+- Daily check-in: three-tap screen, optional second row, 7-day back-fill
+  strip, per-field source column, reminder time setting, home card (06).
 - Attack log: one-tap start, attack screen in the attack theme, head map,
   symptom chips with per-tap times, phases on one record, end and finish
   later, every edit persisted at once (05).

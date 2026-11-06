@@ -6,6 +6,7 @@ import 'package:migraine_tracker/app/router.dart';
 import 'package:migraine_tracker/config/app_config.dart';
 import 'package:migraine_tracker/core/l10n/l10n.dart';
 import 'package:migraine_tracker/features/attack_log/presentation/start_attack_button.dart';
+import 'package:migraine_tracker/features/checkin/presentation/checkin_card.dart';
 
 /// Home screen. Carries the one-tap start-attack button; the risk card and
 /// load meter arrive in their own phases.
@@ -33,6 +34,8 @@ class HomeScreen extends ConsumerWidget {
         child: Column(
           children: [
             const StartAttackButton(),
+            const SizedBox(height: AppThemeTokens.space4),
+            const CheckinCard(),
             const SizedBox(height: AppThemeTokens.space5),
             Expanded(
               child: Center(

@@ -22,6 +22,12 @@ class CheckinDao extends DatabaseAccessor<AppDatabase> with _$CheckinDaoMixin {
             ..orderBy([(c) => OrderingTerm.asc(c.date)]))
           .get();
 
+  Stream<List<Checkin>> watchRange(String from, String to) =>
+      (select(checkins)
+            ..where((c) => c.date.isBetweenValues(from, to))
+            ..orderBy([(c) => OrderingTerm.asc(c.date)]))
+          .watch();
+
   Future<List<Checkin>> all() =>
       (select(checkins)..orderBy([(c) => OrderingTerm.asc(c.date)])).get();
 

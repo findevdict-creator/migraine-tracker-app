@@ -435,6 +435,222 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Neck'**
   String get headNeck;
+
+  /// No description provided for @checkinTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Daily check-in'**
+  String get checkinTitle;
+
+  /// No description provided for @checkinLoadError.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not load this day.'**
+  String get checkinLoadError;
+
+  /// No description provided for @checkinIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'Three taps. How was it?'**
+  String get checkinIntro;
+
+  /// No description provided for @checkinComplete.
+  ///
+  /// In en, this message translates to:
+  /// **'Done for this day. Tap a number to change it.'**
+  String get checkinComplete;
+
+  /// No description provided for @checkinAddMore.
+  ///
+  /// In en, this message translates to:
+  /// **'Add more (optional)'**
+  String get checkinAddMore;
+
+  /// No description provided for @checkinOptionalTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Optional'**
+  String get checkinOptionalTitle;
+
+  /// No description provided for @checkinDone.
+  ///
+  /// In en, this message translates to:
+  /// **'Done'**
+  String get checkinDone;
+
+  /// No description provided for @checkinToday.
+  ///
+  /// In en, this message translates to:
+  /// **'Today'**
+  String get checkinToday;
+
+  /// No description provided for @checkinSleepQuality.
+  ///
+  /// In en, this message translates to:
+  /// **'Sleep quality'**
+  String get checkinSleepQuality;
+
+  /// No description provided for @checkinStress.
+  ///
+  /// In en, this message translates to:
+  /// **'Stress'**
+  String get checkinStress;
+
+  /// No description provided for @checkinNeckTension.
+  ///
+  /// In en, this message translates to:
+  /// **'Neck tension'**
+  String get checkinNeckTension;
+
+  /// No description provided for @checkinCaffeine.
+  ///
+  /// In en, this message translates to:
+  /// **'Caffeine'**
+  String get checkinCaffeine;
+
+  /// No description provided for @checkinHydration.
+  ///
+  /// In en, this message translates to:
+  /// **'Hydration'**
+  String get checkinHydration;
+
+  /// No description provided for @checkinAlcohol.
+  ///
+  /// In en, this message translates to:
+  /// **'Alcohol'**
+  String get checkinAlcohol;
+
+  /// No description provided for @checkinLightExposure.
+  ///
+  /// In en, this message translates to:
+  /// **'Bright light'**
+  String get checkinLightExposure;
+
+  /// No description provided for @checkinScreenExposure.
+  ///
+  /// In en, this message translates to:
+  /// **'Screen time'**
+  String get checkinScreenExposure;
+
+  /// No description provided for @checkinSleepLow.
+  ///
+  /// In en, this message translates to:
+  /// **'Poor'**
+  String get checkinSleepLow;
+
+  /// No description provided for @checkinSleepHigh.
+  ///
+  /// In en, this message translates to:
+  /// **'Great'**
+  String get checkinSleepHigh;
+
+  /// No description provided for @checkinStressLow.
+  ///
+  /// In en, this message translates to:
+  /// **'Calm'**
+  String get checkinStressLow;
+
+  /// No description provided for @checkinStressHigh.
+  ///
+  /// In en, this message translates to:
+  /// **'Very stressed'**
+  String get checkinStressHigh;
+
+  /// No description provided for @checkinNeckLow.
+  ///
+  /// In en, this message translates to:
+  /// **'Relaxed'**
+  String get checkinNeckLow;
+
+  /// No description provided for @checkinNeckHigh.
+  ///
+  /// In en, this message translates to:
+  /// **'Very tight'**
+  String get checkinNeckHigh;
+
+  /// No description provided for @checkinHydrationLow.
+  ///
+  /// In en, this message translates to:
+  /// **'Little'**
+  String get checkinHydrationLow;
+
+  /// No description provided for @checkinHydrationHigh.
+  ///
+  /// In en, this message translates to:
+  /// **'Plenty'**
+  String get checkinHydrationHigh;
+
+  /// No description provided for @checkinExposureLow.
+  ///
+  /// In en, this message translates to:
+  /// **'Little'**
+  String get checkinExposureLow;
+
+  /// No description provided for @checkinExposureHigh.
+  ///
+  /// In en, this message translates to:
+  /// **'A lot'**
+  String get checkinExposureHigh;
+
+  /// No description provided for @checkinNone.
+  ///
+  /// In en, this message translates to:
+  /// **'None'**
+  String get checkinNone;
+
+  /// No description provided for @checkinCupsOrMore.
+  ///
+  /// In en, this message translates to:
+  /// **'{count}+ cups'**
+  String checkinCupsOrMore(int count);
+
+  /// No description provided for @checkinDrinksOrMore.
+  ///
+  /// In en, this message translates to:
+  /// **'{count}+ drinks'**
+  String checkinDrinksOrMore(int count);
+
+  /// No description provided for @checkinValueSemantics.
+  ///
+  /// In en, this message translates to:
+  /// **'{field}, {value} of {max}'**
+  String checkinValueSemantics(String field, int value, int max);
+
+  /// No description provided for @checkinReminderTooltip.
+  ///
+  /// In en, this message translates to:
+  /// **'Reminder time'**
+  String get checkinReminderTooltip;
+
+  /// No description provided for @checkinReminderAt.
+  ///
+  /// In en, this message translates to:
+  /// **'Reminder at {time}'**
+  String checkinReminderAt(String time);
+
+  /// No description provided for @checkinReminderPickerTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Daily check-in reminder'**
+  String get checkinReminderPickerTitle;
+
+  /// No description provided for @checkinCardTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Daily check-in'**
+  String get checkinCardTitle;
+
+  /// No description provided for @checkinCardDone.
+  ///
+  /// In en, this message translates to:
+  /// **'Done for today'**
+  String get checkinCardDone;
+
+  /// No description provided for @checkinCardTodo.
+  ///
+  /// In en, this message translates to:
+  /// **'Three taps, about 10 seconds'**
+  String get checkinCardTodo;
 }
 
 class _AppLocalizationsDelegate

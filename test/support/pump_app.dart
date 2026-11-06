@@ -31,6 +31,18 @@ extension PumpApp on WidgetTester {
     await pumpAndSettle();
   }
 
+  /// Scrolls the first scrollable until the widget with [key] is built and
+  /// visible. Screens are lazy lists, so far-down fields do not exist until
+  /// scrolled to.
+  Future<void> scrollToKey(String key) async {
+    await scrollUntilVisible(
+      find.byKey(ValueKey(key)),
+      200,
+      scrollable: find.byType(Scrollable).first,
+    );
+    await pumpAndSettle();
+  }
+
   /// Pumps a single widget inside a MaterialApp with localizations and the
   /// config provider, for screen and widget tests that do not need routing.
   Future<void> pumpLocalized(

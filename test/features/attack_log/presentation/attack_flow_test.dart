@@ -28,17 +28,6 @@ void main() {
     overrides: [clockProvider.overrideWithValue(() => now)],
   );
 
-  /// The attack form is a lazy list, so far-down fields must be scrolled
-  /// into existence before they can be found.
-  Future<void> scrollTo(WidgetTester tester, String key) async {
-    await tester.scrollUntilVisible(
-      find.byKey(ValueKey(key)),
-      200,
-      scrollable: find.byType(Scrollable).first,
-    );
-    await tester.pumpAndSettle();
-  }
-
   Future<AttackEntity> onlyAttack() async =>
       (await DriftAttackRepository(db, clock: () => now).all()).single;
 
@@ -70,17 +59,17 @@ void main() {
     await tester.drag(slider, const Offset(400, 0));
     await tester.pumpAndSettle();
 
-    await scrollTo(tester, 'head-leftTemple');
+    await tester.scrollToKey('head-leftTemple');
     await tester.tap(find.byKey(const ValueKey('head-leftTemple')));
     await tester.pumpAndSettle();
 
-    await scrollTo(tester, 'symptom-aura');
+    await tester.scrollToKey('symptom-aura');
     await tester.tap(find.byKey(const ValueKey('symptom-aura')));
     now = now.add(const Duration(minutes: 15));
     await tester.tap(find.byKey(const ValueKey('symptom-nausea')));
     await tester.pumpAndSettle();
 
-    await scrollTo(tester, 'phase-postdrome');
+    await tester.scrollToKey('phase-postdrome');
     await tester.tap(find.byKey(const ValueKey('phase-postdrome')));
     await tester.pumpAndSettle();
 
@@ -107,13 +96,13 @@ void main() {
     await tester.tap(find.byKey(const ValueKey('start-attack')));
     await tester.pumpAndSettle();
 
-    await scrollTo(tester, 'attack-notes');
+    await tester.scrollToKey('attack-notes');
     await tester.enterText(
       find.byKey(const ValueKey('attack-notes')),
       'long day',
     );
     now = now.add(const Duration(hours: 3));
-    await scrollTo(tester, 'attack-end');
+    await tester.scrollToKey('attack-end');
     await tester.tap(find.byKey(const ValueKey('attack-end')));
     await tester.pumpAndSettle();
 
