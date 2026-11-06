@@ -15,3 +15,4 @@ feature PR adds its row.
 | 08 | Cycle toggle, period start chip on check-in, cycle screen | [ ] | [ ] | |
 | 09 | Share sheet opens for JSON and CSV export; delete everything empties the app | [ ] | [ ] | |
 | 10 | Weather cache function (server only; checked on-device in 11) | n/a | n/a | |
+| 11 | Approximate-location prompt, environment screen fills, airplane mode shows age, typed city, background refresh runs | [ ] | [ ] | iOS: BGTaskScheduler simulate command in the phase doc |

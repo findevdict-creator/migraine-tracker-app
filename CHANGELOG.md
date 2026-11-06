@@ -7,6 +7,11 @@ release time.
 ## [Unreleased]
 
 ### Added
+- Weather feed: while-using location rounded to a 0.1-degree cell before any
+  call, typed-city fallback, local weather store, 3, 6, 12 and 24 h pressure
+  deltas, weather attached to every attack and check-in at save time,
+  foreground refresh every 3 h and daily background refresh, environment
+  screen with the 72 h pressure view and forecast age (11).
 - Weather cache function: per-cell Open-Meteo forecast and air-quality
   cache in Firestore with a 3 h freshness window, 48 h TTL and a compact
   sub-5 KB payload; unit, load and emulator tests (10).

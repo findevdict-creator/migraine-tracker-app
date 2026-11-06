@@ -9,6 +9,7 @@ import 'package:migraine_tracker/features/checkin/data/checkin_repository_impl.d
 import 'package:migraine_tracker/features/checkin/domain/checkin_entity.dart';
 import 'package:migraine_tracker/features/checkin/domain/checkin_repository.dart';
 import 'package:migraine_tracker/features/cycle/presentation/cycle_controller.dart';
+import 'package:migraine_tracker/features/weather/application/weather_snapshot.dart';
 
 /// Today's date key, from the injectable clock.
 final todayKeyProvider = Provider<String>(
@@ -60,12 +61,23 @@ class CheckinEditor extends AsyncNotifier<CheckinEntity> {
   /// Sets a typed value, or clears it with null. Tapping the selected chip
   /// again clears it.
   Future<void> setValue(CheckinField field, int? value) async {
+    if (state.value == null) return;
+    final cycleDay = await ref.read(cycleLogProvider).cycleDayFor(date);
+    // The weather is stamped once, on the first value of the day, so the
+    // snapshot reflects when the check-in was made rather than last edited.
+    final weather =
+        state.value?.weather ?? await ref.read(weatherSnapshotProvider).now();
+    // Read the state after the awaits so quick successive taps build on
+    // each other instead of on the same stale copy.
     final current = state.value;
     if (current == null) return;
-    final cycleDay = await ref.read(cycleLogProvider).cycleDayFor(date);
     final next = current
         .withValue(field, value, CheckinSource.typed)
-        .copyWith(cycleDay: cycleDay, clearCycleDay: cycleDay == null);
+        .copyWith(
+          cycleDay: cycleDay,
+          clearCycleDay: cycleDay == null,
+          weather: weather,
+        );
     state = AsyncData(next);
     await _repository.save(next);
   }

@@ -1,8 +1,12 @@
+import 'dart:io' show Platform;
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:migraine_tracker/app/app.dart';
 import 'package:migraine_tracker/config/app_config.dart';
 import 'package:migraine_tracker/core/firebase/firebase_bootstrap.dart';
+import 'package:migraine_tracker/features/weather/application/background_refresh.dart';
 
 /// Provides the resolved [AppConfig] to the whole widget tree.
 ///
@@ -17,6 +21,7 @@ Future<void> bootstrap(AppFlavor flavor) async {
   WidgetsFlutterBinding.ensureInitialized();
   final config = AppConfig(flavor: flavor);
   final firebase = await initializeFirebase(config);
+  await _scheduleBackgroundWork(flavor);
   runApp(
     ProviderScope(
       overrides: [
@@ -26,4 +31,15 @@ Future<void> bootstrap(AppFlavor flavor) async {
       child: const MigraineTrackerApp(),
     ),
   );
+}
+
+/// Registers the daily weather refresh on phones. Never fatal: a device
+/// that refuses background work still refreshes in the foreground.
+Future<void> _scheduleBackgroundWork(AppFlavor flavor) async {
+  if (kIsWeb || !(Platform.isAndroid || Platform.isIOS)) return;
+  try {
+    await scheduleWeatherBackgroundRefresh(flavor);
+  } on Object catch (error) {
+    debugPrint('background refresh not scheduled: $error');
+  }
 }

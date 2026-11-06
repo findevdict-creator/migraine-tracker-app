@@ -13,7 +13,8 @@ production build, and the few native files that mirror a value.
 | `AppEndpoints` | Open-Meteo URLs, Cloud Function names | a function is renamed or a provider changes |
 | `AppFeatureFlags` | dev tools, emulator use, crash-reporting availability, per-feature availability | hiding a feature, enabling dev screens |
 | `AppIdentity.clinicianGuidanceUrl` | page behind the medication-overuse notes | M publishes or changes it |
-| `AppThresholds` | overuse notes (10, 15 days), learning threshold (10 attacks), refresh cadences, forecast window, location rounding, back-fill days | product decisions |
+| `AppThresholds` | overuse notes (10, 15 days), learning threshold (10 attacks), refresh cadences, forecast window, location rounding, weather retention and stale age, back-fill days | product decisions |
+| `AppBackgroundTasks` | identifiers of background jobs (weather refresh) | mirrored in `ios/Runner/Info.plist` and `AppDelegate.swift`; change all three together |
 | `AppThemeTokens` | seed colour, risk colours, attack theme palette, semantic colours, font family, spacing, radii, tap targets, text scale ceiling, animation durations | design changes |
 | `AppAssets` | logo, logo mark, launcher icon, head map, routine illustrations | replacing artwork (keep the paths, swap the files) |
 | `AppLocales` | supported locales, fallback | adding a language |
@@ -79,4 +80,6 @@ These cannot be read from Dart at build time, so they mirror `AppIdentity`:
 | ----- | ---- | ------ |
 | Application id and flavor suffixes | `AppIdentity.bundleId`, `bundleIdFor` | `android/app/build.gradle.kts` (`applicationId`, `productFlavors`), iOS target bundle id per scheme |
 | Display name per flavor | `AppIdentity.displayName` | `android/app/build.gradle.kts` (`resValue app_name`), `ios/Runner/Info.plist` (`CFBundleDisplayName`) |
+| Background task identifier | `AppBackgroundTasks.weatherRefresh` | `ios/Runner/Info.plist` (`BGTaskSchedulerPermittedIdentifiers`), `ios/Runner/AppDelegate.swift` (`registerPeriodicTask`) |
+| Location purpose text | wording in `AppIdentity` privacy copy | `ios/Runner/Info.plist` (`NSLocationWhenInUseUsageDescription`), `AndroidManifest.xml` (`ACCESS_COARSE_LOCATION`) |
 | Launcher icon | `AppAssets.launcherIcon` | `android/app/src/main/res/mipmap-*`, `ios/Runner/Assets.xcassets/AppIcon.appiconset` (generated with `flutter_launcher_icons` in the release-prep phase) |

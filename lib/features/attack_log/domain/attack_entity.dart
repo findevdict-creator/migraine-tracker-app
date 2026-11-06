@@ -72,6 +72,7 @@ class AttackEntity {
     this.pressureSensorHpa,
     this.pressureStationHpa,
     this.finishLater = false,
+    this.weather,
   });
 
   final String id;
@@ -87,6 +88,11 @@ class AttackEntity {
   final double? pressureSensorHpa;
   final double? pressureStationHpa;
   final bool finishLater;
+
+  /// Weather snapshot attached at save time (phase 11); null when nothing
+  /// was cached. Keys: see `WeatherHourEntity.toSnapshot` and
+  /// `PressureDeltas.toJson`.
+  final Map<String, Object?>? weather;
 
   bool get isRunning => endedAt == null;
 
@@ -106,6 +112,7 @@ class AttackEntity {
     double? pressureSensorHpa,
     double? pressureStationHpa,
     bool? finishLater,
+    Map<String, Object?>? weather,
   }) => AttackEntity(
     id: id,
     startedAt: startedAt ?? this.startedAt,
@@ -118,6 +125,7 @@ class AttackEntity {
     pressureSensorHpa: pressureSensorHpa ?? this.pressureSensorHpa,
     pressureStationHpa: pressureStationHpa ?? this.pressureStationHpa,
     finishLater: finishLater ?? this.finishLater,
+    weather: weather ?? this.weather,
   );
 
   @override
@@ -133,7 +141,8 @@ class AttackEntity {
       other.notes == notes &&
       other.pressureSensorHpa == pressureSensorHpa &&
       other.pressureStationHpa == pressureStationHpa &&
-      other.finishLater == finishLater;
+      other.finishLater == finishLater &&
+      mapEquals(other.weather, weather);
 
   @override
   int get hashCode => Object.hash(id, startedAt, endedAt, intensity, notes);

@@ -4,6 +4,7 @@ import 'package:migraine_tracker/core/util/clock.dart';
 import 'package:migraine_tracker/features/attack_log/data/attack_repository_impl.dart';
 import 'package:migraine_tracker/features/attack_log/domain/attack_entity.dart';
 import 'package:migraine_tracker/features/attack_log/domain/attack_repository.dart';
+import 'package:migraine_tracker/features/weather/application/weather_snapshot.dart';
 
 /// The attack that is running right now, or null.
 final runningAttackProvider = StreamProvider<AttackEntity?>(
@@ -21,6 +22,7 @@ final attackStarterProvider = Provider<AttackStarter>(
   (ref) => AttackStarter(
     ref.watch(attackRepositoryProvider),
     pressure: ref.watch(pressureStampSourceProvider),
+    weather: ref.watch(weatherSnapshotProvider),
     clock: ref.watch(clockProvider),
     newId: ref.watch(idGeneratorProvider),
   ),
@@ -30,12 +32,14 @@ class AttackStarter {
   AttackStarter(
     this._repository, {
     required this.pressure,
+    required this.weather,
     required this.clock,
     required this.newId,
   });
 
   final AttackRepository _repository;
   final PressureStampSource pressure;
+  final WeatherSnapshot weather;
   final DateTime Function() clock;
   final String Function() newId;
 
@@ -45,12 +49,15 @@ class AttackStarter {
     if (running != null) return running.id;
     final now = clock();
     final stamp = await pressure.read();
+    // Pinned so pruning keeps the hour this attack points at.
+    final snapshot = await weather.at(now, pin: true);
     final attack = AttackEntity(
       id: newId(),
       startedAt: now,
       phases: {AttackPhase.attack: now},
       pressureSensorHpa: stamp.sensorHpa,
       pressureStationHpa: stamp.stationHpa,
+      weather: snapshot,
     );
     await _repository.save(attack);
     return attack.id;

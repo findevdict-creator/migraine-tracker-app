@@ -7,6 +7,7 @@ import 'package:migraine_tracker/config/app_config.dart';
 import 'package:migraine_tracker/core/l10n/generated/app_localizations.dart';
 import 'package:migraine_tracker/core/theme/app_theme.dart';
 import 'package:migraine_tracker/core/theme/app_typography.dart';
+import 'package:migraine_tracker/features/weather/presentation/weather_lifecycle.dart';
 
 /// Root widget: wires the router, the themes and the localizations.
 class MigraineTrackerApp extends ConsumerWidget {
@@ -22,10 +23,12 @@ class MigraineTrackerApp extends ConsumerWidget {
       theme: AppTheme.light(),
       darkTheme: AppTheme.dark(),
       routerConfig: router,
-      builder: (context, child) => MediaQuery(
-        data: MediaQuery.of(context)
-            .copyWith(textScaler: AppTypography.clampedScaler(context)),
-        child: child!,
+      builder: (context, child) => WeatherRefreshOnResume(
+        child: MediaQuery(
+          data: MediaQuery.of(context)
+              .copyWith(textScaler: AppTypography.clampedScaler(context)),
+          child: child!,
+        ),
       ),
       supportedLocales: AppLocales.supported,
       localizationsDelegates: const [
