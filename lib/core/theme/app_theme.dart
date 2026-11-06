@@ -1,7 +1,7 @@
-import 'package:flutter/cupertino.dart' show CupertinoPageTransitionsBuilder;
 import 'package:flutter/material.dart';
 import 'package:migraine_tracker/config/app_config.dart';
 import 'package:migraine_tracker/core/theme/app_colors.dart';
+import 'package:migraine_tracker/core/theme/app_motion.dart';
 import 'package:migraine_tracker/core/theme/app_typography.dart';
 
 /// Builds the three Material 3 themes from [AppThemeTokens]:
@@ -144,12 +144,8 @@ abstract final class AppTheme {
         shape: shape,
       ),
       dividerTheme: DividerThemeData(color: scheme.outlineVariant),
-      pageTransitionsTheme: const PageTransitionsTheme(
-        builders: {
-          TargetPlatform.android: PredictiveBackPageTransitionsBuilder(),
-          TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
-        },
-      ),
+      // The platform transitions, cut to nothing under reduce motion.
+      pageTransitionsTheme: appPageTransitions,
     );
   }
 }

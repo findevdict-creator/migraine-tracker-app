@@ -808,5 +808,7 @@
   "dataCoverageWorldwide": "पूरी दुनिया",
   "dataCoverageEuropeanAqi": "पूरी दुनिया, यूरोप में यूरोपीय AQI",
   "dataCoverageEurope": "सिर्फ़ यूरोप",
-  "dataCoverageBarometer": "प्रेशर सेंसर वाले फ़ोन"
+  "dataCoverageBarometer": "प्रेशर सेंसर वाले फ़ोन",
+  "settingsReduceMotion": "मोशन कम करें",
+  "settingsReduceMotionHint": "कम एनिमेशन, भले ही फ़ोन की सेटिंग बंद हो"
 }

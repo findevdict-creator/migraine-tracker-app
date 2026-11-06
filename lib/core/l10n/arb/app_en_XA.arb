@@ -808,5 +808,7 @@
   "dataCoverageWorldwide": "⟦Ŵöŕļðŵîðé ····⟧",
   "dataCoverageEuropeanAqi": "⟦Ŵöŕļðŵîðé, Éûŕöþéáñ ÅǪÎ îñ Éûŕöþé ············⟧",
   "dataCoverageEurope": "⟦Éûŕöþé öñļý ····⟧",
-  "dataCoverageBarometer": "⟦Þĥöñéš ŵîţĥ á þŕéššûŕé šéñšöŕ ···········⟧"
+  "dataCoverageBarometer": "⟦Þĥöñéš ŵîţĥ á þŕéššûŕé šéñšöŕ ···········⟧",
+  "settingsReduceMotion": "⟦Ŕéðûçé ɱöţîöñ ·····⟧",
+  "settingsReduceMotionHint": "⟦Ƒéŵéŕ áñîɱáţîöñš, éṽéñ ŵĥéñ ýöûŕ þĥöñé'š šéţţîñĝ îš öƒƒ ····················⟧"
 }

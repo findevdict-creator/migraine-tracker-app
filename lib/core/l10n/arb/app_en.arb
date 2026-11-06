@@ -967,5 +967,7 @@
   "dataCoverageWorldwide": "Worldwide",
   "dataCoverageEuropeanAqi": "Worldwide, European AQI in Europe",
   "dataCoverageEurope": "Europe only",
-  "dataCoverageBarometer": "Phones with a pressure sensor"
+  "dataCoverageBarometer": "Phones with a pressure sensor",
+  "settingsReduceMotion": "Reduce motion",
+  "settingsReduceMotionHint": "Fewer animations, even when your phone's setting is off"
 }

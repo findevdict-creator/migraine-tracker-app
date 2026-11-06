@@ -4972,6 +4972,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Phones with a pressure sensor'**
   String get dataCoverageBarometer;
+
+  /// No description provided for @settingsReduceMotion.
+  ///
+  /// In en, this message translates to:
+  /// **'Reduce motion'**
+  String get settingsReduceMotion;
+
+  /// No description provided for @settingsReduceMotionHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Fewer animations, even when your phone\'s setting is off'**
+  String get settingsReduceMotionHint;
 }
 
 class _AppLocalizationsDelegate

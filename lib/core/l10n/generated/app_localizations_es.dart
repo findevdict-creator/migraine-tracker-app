@@ -3012,4 +3012,11 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get dataCoverageBarometer => 'Teléfonos con sensor de presión';
+
+  @override
+  String get settingsReduceMotion => 'Reducir movimiento';
+
+  @override
+  String get settingsReduceMotionHint =>
+      'Menos animaciones, aunque el ajuste del teléfono esté desactivado';
 }

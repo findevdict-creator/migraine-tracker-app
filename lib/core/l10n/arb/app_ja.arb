@@ -808,5 +808,7 @@
   "dataCoverageWorldwide": "全世界",
   "dataCoverageEuropeanAqi": "全世界、ヨーロッパでは欧州AQI",
   "dataCoverageEurope": "ヨーロッパのみ",
-  "dataCoverageBarometer": "気圧センサー搭載のスマートフォン"
+  "dataCoverageBarometer": "気圧センサー搭載のスマートフォン",
+  "settingsReduceMotion": "視差効果を減らす",
+  "settingsReduceMotionHint": "スマートフォンの設定がオフでも、アニメーションを減らします"
 }

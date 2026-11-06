@@ -808,5 +808,7 @@
   "dataCoverageWorldwide": "Todo el mundo",
   "dataCoverageEuropeanAqi": "Todo el mundo, ICA europeo en Europa",
   "dataCoverageEurope": "Solo Europa",
-  "dataCoverageBarometer": "Teléfonos con sensor de presión"
+  "dataCoverageBarometer": "Teléfonos con sensor de presión",
+  "settingsReduceMotion": "Reducir movimiento",
+  "settingsReduceMotionHint": "Menos animaciones, aunque el ajuste del teléfono esté desactivado"
 }

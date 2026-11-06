@@ -91,11 +91,22 @@ class _AttackFormState extends ConsumerState<_AttackForm> {
               onPressed: () => showVoiceLogSheet(context, attack.id),
             ),
           if (attack.isRunning)
-            TextButton(
-              key: const ValueKey('attack-finish-later'),
-              onPressed: () => _leave(_editor.finishLater),
-              child: Text(l10n.attackFinishLater),
-            ),
+            // With large text the words no longer fit the app bar, so the
+            // action becomes an icon; its tooltip is the screen reader label.
+            if (MediaQuery.textScalerOf(context).scale(1) >
+                AppThemeTokens.appBarTextActionMaxScale)
+              IconButton(
+                key: const ValueKey('attack-finish-later'),
+                icon: const Icon(Icons.schedule),
+                tooltip: l10n.attackFinishLater,
+                onPressed: () => _leave(_editor.finishLater),
+              )
+            else
+              TextButton(
+                key: const ValueKey('attack-finish-later'),
+                onPressed: () => _leave(_editor.finishLater),
+                child: Text(l10n.attackFinishLater),
+              ),
         ],
       ),
       body: ListView(

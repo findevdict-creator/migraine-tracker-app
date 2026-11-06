@@ -3017,4 +3017,11 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get dataCoverageBarometer => 'Téléphones avec capteur de pression';
+
+  @override
+  String get settingsReduceMotion => 'Réduire les animations';
+
+  @override
+  String get settingsReduceMotionHint =>
+      'Moins d\'animations, même si le réglage du téléphone est désactivé';
 }

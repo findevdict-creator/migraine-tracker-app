@@ -2989,6 +2989,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get dataCoverageBarometer => 'Phones with a pressure sensor';
+
+  @override
+  String get settingsReduceMotion => 'Reduce motion';
+
+  @override
+  String get settingsReduceMotionHint =>
+      'Fewer animations, even when your phone\'s setting is off';
 }
 
 /// The translations for English (`en_XA`).
@@ -6029,4 +6036,11 @@ class AppLocalizationsEnXa extends AppLocalizationsEn {
   @override
   String get dataCoverageBarometer =>
       '⟦Þĥöñéš ŵîţĥ á þŕéššûŕé šéñšöŕ ···········⟧';
+
+  @override
+  String get settingsReduceMotion => '⟦Ŕéðûçé ɱöţîöñ ·····⟧';
+
+  @override
+  String get settingsReduceMotionHint =>
+      '⟦Ƒéŵéŕ áñîɱáţîöñš, éṽéñ ŵĥéñ ýöûŕ þĥöñé\'š šéţţîñĝ îš öƒƒ ····················⟧';
 }

@@ -3007,4 +3007,11 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get dataCoverageBarometer => 'Celulares com sensor de pressão';
+
+  @override
+  String get settingsReduceMotion => 'Reduzir movimento';
+
+  @override
+  String get settingsReduceMotionHint =>
+      'Menos animações, mesmo com a opção do celular desativada';
 }
