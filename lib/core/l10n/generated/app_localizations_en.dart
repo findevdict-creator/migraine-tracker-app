@@ -428,4 +428,70 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get cyclePhaseLuteal => 'Luteal';
+
+  @override
+  String get settingsTitle => 'Settings';
+
+  @override
+  String get settingsSectionDaily => 'Daily';
+
+  @override
+  String get settingsSectionData => 'Your data';
+
+  @override
+  String get settingsSectionAbout => 'About';
+
+  @override
+  String get settingsExportJson => 'Export as JSON';
+
+  @override
+  String get settingsExportJsonHint =>
+      'Every table in one file you can import again.';
+
+  @override
+  String get settingsExportCsv => 'Export as CSV';
+
+  @override
+  String get settingsExportCsvHint => 'One spreadsheet file per table.';
+
+  @override
+  String get settingsExportEmpty => 'Nothing to export yet.';
+
+  @override
+  String get settingsDeleteAll => 'Delete everything';
+
+  @override
+  String get settingsDeleteAllHint =>
+      'Removes all data from this device. Cannot be undone.';
+
+  @override
+  String settingsDeleteAllConfirm(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other:
+          'This deletes $count records from this device. This cannot be undone.',
+      one: 'This deletes 1 record from this device. This cannot be undone.',
+      zero: 'There is nothing stored yet. Delete anyway?',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get settingsDeleteAllButton => 'Delete';
+
+  @override
+  String get settingsCancel => 'Cancel';
+
+  @override
+  String get settingsDeletedAll => 'All data deleted.';
+
+  @override
+  String get settingsPrivacyPolicy => 'Privacy policy';
+
+  @override
+  String get settingsTerms => 'Terms of use';
+
+  @override
+  String get settingsSupport => 'Support';
 }

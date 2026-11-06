@@ -867,6 +867,114 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Luteal'**
   String get cyclePhaseLuteal;
+
+  /// No description provided for @settingsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Settings'**
+  String get settingsTitle;
+
+  /// No description provided for @settingsSectionDaily.
+  ///
+  /// In en, this message translates to:
+  /// **'Daily'**
+  String get settingsSectionDaily;
+
+  /// No description provided for @settingsSectionData.
+  ///
+  /// In en, this message translates to:
+  /// **'Your data'**
+  String get settingsSectionData;
+
+  /// No description provided for @settingsSectionAbout.
+  ///
+  /// In en, this message translates to:
+  /// **'About'**
+  String get settingsSectionAbout;
+
+  /// No description provided for @settingsExportJson.
+  ///
+  /// In en, this message translates to:
+  /// **'Export as JSON'**
+  String get settingsExportJson;
+
+  /// No description provided for @settingsExportJsonHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Every table in one file you can import again.'**
+  String get settingsExportJsonHint;
+
+  /// No description provided for @settingsExportCsv.
+  ///
+  /// In en, this message translates to:
+  /// **'Export as CSV'**
+  String get settingsExportCsv;
+
+  /// No description provided for @settingsExportCsvHint.
+  ///
+  /// In en, this message translates to:
+  /// **'One spreadsheet file per table.'**
+  String get settingsExportCsvHint;
+
+  /// No description provided for @settingsExportEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing to export yet.'**
+  String get settingsExportEmpty;
+
+  /// No description provided for @settingsDeleteAll.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete everything'**
+  String get settingsDeleteAll;
+
+  /// No description provided for @settingsDeleteAllHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Removes all data from this device. Cannot be undone.'**
+  String get settingsDeleteAllHint;
+
+  /// No description provided for @settingsDeleteAllConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =0{There is nothing stored yet. Delete anyway?} =1{This deletes 1 record from this device. This cannot be undone.} other{This deletes {count} records from this device. This cannot be undone.}}'**
+  String settingsDeleteAllConfirm(int count);
+
+  /// No description provided for @settingsDeleteAllButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete'**
+  String get settingsDeleteAllButton;
+
+  /// No description provided for @settingsCancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get settingsCancel;
+
+  /// No description provided for @settingsDeletedAll.
+  ///
+  /// In en, this message translates to:
+  /// **'All data deleted.'**
+  String get settingsDeletedAll;
+
+  /// No description provided for @settingsPrivacyPolicy.
+  ///
+  /// In en, this message translates to:
+  /// **'Privacy policy'**
+  String get settingsPrivacyPolicy;
+
+  /// No description provided for @settingsTerms.
+  ///
+  /// In en, this message translates to:
+  /// **'Terms of use'**
+  String get settingsTerms;
+
+  /// No description provided for @settingsSupport.
+  ///
+  /// In en, this message translates to:
+  /// **'Support'**
+  String get settingsSupport;
 }
 
 class _AppLocalizationsDelegate
