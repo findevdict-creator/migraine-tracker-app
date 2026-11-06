@@ -7,6 +7,9 @@ release time.
 ## [Unreleased]
 
 ### Added
+- Load meter: stacked 0 to 100 bar with one named, tappable segment per
+  factor and Moderate/High marks that follow the learned thresholds, on
+  the home card and the risk screen, with goldens (19).
 - Risk card: today's level with the top three drivers in plain words,
   confidence label, still-learning badge and the next three days on
   home; a risk screen with every driver's points, the explainer link

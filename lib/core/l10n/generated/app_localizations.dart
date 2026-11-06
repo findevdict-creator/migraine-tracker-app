@@ -2019,6 +2019,42 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Cycle phase'**
   String get riskFactorCyclePhase;
+
+  /// No description provided for @loadMeterTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Load'**
+  String get loadMeterTitle;
+
+  /// No description provided for @loadMeterSemantics.
+  ///
+  /// In en, this message translates to:
+  /// **'Load {value} of 100. {segments}'**
+  String loadMeterSemantics(String value, String segments);
+
+  /// No description provided for @loadSegmentDetail.
+  ///
+  /// In en, this message translates to:
+  /// **'{name}: {points} points'**
+  String loadSegmentDetail(String name, String points);
+
+  /// No description provided for @loadThresholdModerate.
+  ///
+  /// In en, this message translates to:
+  /// **'Moderate from {value}'**
+  String loadThresholdModerate(String value);
+
+  /// No description provided for @loadThresholdHigh.
+  ///
+  /// In en, this message translates to:
+  /// **'High from {value}'**
+  String loadThresholdHigh(String value);
+
+  /// No description provided for @loadMeterEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No load yet'**
+  String get loadMeterEmpty;
 }
 
 class _AppLocalizationsDelegate

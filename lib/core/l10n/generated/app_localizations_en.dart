@@ -1129,4 +1129,30 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get riskFactorCyclePhase => 'Cycle phase';
+
+  @override
+  String get loadMeterTitle => 'Load';
+
+  @override
+  String loadMeterSemantics(String value, String segments) {
+    return 'Load $value of 100. $segments';
+  }
+
+  @override
+  String loadSegmentDetail(String name, String points) {
+    return '$name: $points points';
+  }
+
+  @override
+  String loadThresholdModerate(String value) {
+    return 'Moderate from $value';
+  }
+
+  @override
+  String loadThresholdHigh(String value) {
+    return 'High from $value';
+  }
+
+  @override
+  String get loadMeterEmpty => 'No load yet';
 }

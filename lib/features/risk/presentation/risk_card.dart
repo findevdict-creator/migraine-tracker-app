@@ -7,8 +7,10 @@ import 'package:migraine_tracker/core/l10n/l10n.dart';
 import 'package:migraine_tracker/core/theme/app_colors.dart';
 import 'package:migraine_tracker/core/widgets/widgets.dart';
 import 'package:migraine_tracker/features/risk/domain/risk_entities.dart';
+import 'package:migraine_tracker/features/risk/presentation/load_meter.dart';
 import 'package:migraine_tracker/features/risk/presentation/risk_controller.dart';
 import 'package:migraine_tracker/features/risk/presentation/risk_text.dart';
+import 'package:risk_model/risk_model.dart';
 
 /// Home card: today's level, the top three drivers in plain words, the
 /// confidence label, the "still learning" badge and the next days'
@@ -22,6 +24,7 @@ class RiskCard extends ConsumerWidget {
     final today = ref.watch(riskTodayProvider);
     final days = ref.watch(upcomingRiskProvider).value ?? const [];
     final status = ref.watch(learningStatusProvider).value;
+    final thresholds = ref.watch(riskThresholdsProvider).value;
     final todayRisk = days.where((d) => d.date == today).firstOrNull;
     final ahead = days.where((d) => d.date != today).toList();
     return AppCard(
@@ -53,8 +56,19 @@ class RiskCard extends ConsumerWidget {
               key: const ValueKey('risk-empty'),
               style: context.textStyles.bodyMedium,
             )
-          else
+          else ...[
+            LoadMeter(
+              key: const ValueKey('risk-card-meter'),
+              load: todayRisk.score,
+              contributions: todayRisk.contributions,
+              thresholds: thresholds ?? const LevelThresholds.population(),
+              compact: true,
+              showLegend: false,
+              onSegmentTap: (s) => showSegmentDetail(context, s),
+            ),
+            const SizedBox(height: AppThemeTokens.space2),
             _Drivers(risk: todayRisk),
+          ],
           if (status != null) ...[
             const SizedBox(height: AppThemeTokens.space2),
             LearningBadge(status: status),
@@ -197,4 +211,22 @@ class _DayChip extends StatelessWidget {
       ),
     );
   }
+}
+
+/// Names the tapped segment with its points in a snack bar.
+void showSegmentDetail(BuildContext context, LoadSegment segment) {
+  final l10n = context.l10n;
+  ScaffoldMessenger.of(context)
+    ..hideCurrentSnackBar()
+    ..showSnackBar(
+      SnackBar(
+        key: const ValueKey('load-segment-detail'),
+        content: Text(
+          l10n.loadSegmentDetail(
+            factorLabel(l10n, segment.factor),
+            segment.points.toStringAsFixed(0),
+          ),
+        ),
+      ),
+    );
 }
