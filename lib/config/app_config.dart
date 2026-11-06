@@ -460,6 +460,14 @@ class AppThresholds {
   static const Duration questionnaireReminder = Duration(days: 90);
   static const int questionnaireReminderHour = 10;
 
+  /// Voice logging: the longest a listen runs, the silence that ends it,
+  /// and whether recognition must stay on the device (FR-3). With
+  /// [voiceOnDeviceOnly] a phone without an offline speech model shows a
+  /// message instead of sending audio to a server.
+  static const Duration voiceListenFor = Duration(seconds: 20);
+  static const Duration voicePauseFor = Duration(seconds: 3);
+  static const bool voiceOnDeviceOnly = true;
+
   /// Points of score history drawn on the questionnaire chart.
   static const int questionnaireChartPoints = 8;
 
