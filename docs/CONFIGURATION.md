@@ -94,7 +94,12 @@ commercial key (used only by the cache function), RevenueCat keys.
    key as the phone app and upload it to the same Play listing as a Wear
    OS release; the data layer only pairs apps with the same package name
    and signing key.
-10. Repository settings on GitHub: protect `main` (require PR, require the
+10. Apple Watch app (phase 28): add the watch app and its complication
+    to `ios/Runner.xcodeproj` as described in `docs/phases/28-watchos.md`
+    ("Adding the watch app to Runner"), so it ships inside the iPhone
+    app. CI builds the watch app on its own from `ios/RiskWatch/project.yml`
+    until then.
+11. Repository settings on GitHub: protect `main` (require PR, require the
    `pr` workflow jobs, require conversation resolution, block force pushes
    and deletions, merge commits only, delete head branches on merge).
 
@@ -124,5 +129,6 @@ These cannot be read from Dart at build time, so they mirror `AppIdentity`:
 | Location purpose text | wording in `AppIdentity` privacy copy | `ios/Runner/Info.plist` (`NSLocationWhenInUseUsageDescription`), `AndroidManifest.xml` (`ACCESS_COARSE_LOCATION`) |
 | Home-screen widget | `AppHomeWidgets` (provider, kind, app group, keys, start link), `AppThresholds.widgetRefresh`, `AppThemeTokens` risk colours | `android/app/src/main/kotlin/.../RiskWidgetProvider.kt` (keys, start link), `res/xml/risk_widget_info.xml` (`updatePeriodMillis`), `res/values/widget.xml` and `values-night/widget.xml` (colours, fallback strings), `AndroidManifest.xml` (receiver, `LAUNCH` intent filter); `ios/RiskWidget/RiskWidget.swift` (kind, app group, keys, colours, start link, 30-minute timeline), `ios/RiskWidget/RiskWidget.entitlements` and `ios/Runner/Runner.entitlements` (app group) |
 | Wear OS app | `AppIdentity.bundleId`, flavors, `AppWatch` | `wear/android/app/build.gradle.kts` (`applicationId` and flavor suffixes must equal the phone's, or the data layer will not connect), `wear/android/.../RiskTileService.kt` (tile keys, freshness), `wear/android/.../MainActivity.kt` (tile channel) |
+| Apple Watch app | `AppIdentity.iosBundleId`, `AppHomeWidgets.iosAppGroup`, `AppWatch` | `ios/RiskWatch/WatchProtocolKit/Sources/WatchProtocolKit/WatchConfig.swift` (app group, resend interval, complication refresh, storage keys), `ios/RiskWatch/project.yml` (watch bundle ids), `ios/RiskWatch/App/Info.plist` (`WKCompanionAppBundleIdentifier`), the two `.entitlements` files (app group). The message format is checked against `packages/watch_protocol/test/fixtures/` by the Swift tests |
 | Deep-link scheme | `AppIdentity.deepLinkScheme` | `ios/Runner/Info.plist` (`CFBundleURLTypes`), `AndroidManifest.xml` widget intent filter |
 | Launcher icon | `AppAssets.launcherIcon` | `android/app/src/main/res/mipmap-*`, `ios/Runner/Assets.xcassets/AppIcon.appiconset` (generated with `flutter_launcher_icons` in the release-prep phase) |

@@ -32,3 +32,4 @@ feature PR adds its row.
 | 25 | Voice sentence fills the confirm form and saves; works in airplane mode with the offline speech pack | [ ] | [ ] | Android needs the on-device recognition pack |
 | 26 | Widget shows today's level, pressure trend and update time; start button opens a new attack (or the running one) from a cold start; widget updates after an attack starts and ends | [ ] | [ ] | iOS needs the Xcode widget target and app group (CONFIGURATION item 8) |
 | 27 | Watch start, intensity and end show on the phone at the watch times; taps made with the phone away arrive once when it is back; tile shows today's level | [ ] | n/a | Wear OS only; watchOS is row 28 |
+| 28 | Watch start, intensity and end show on the iPhone at the watch times; taps made with the iPhone away arrive once when it is back; complication shows today's level | n/a | [ ] | watchOS only; needs the Runner targets (CONFIGURATION item 10) |

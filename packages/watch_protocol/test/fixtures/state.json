@@ -1,0 +1,24 @@
+{
+  "v": 1,
+  "sentAt": "2026-11-06T09:30:00.000Z",
+  "level": "high",
+  "levelLabel": "Level: High",
+  "headline": "Top factor: Pressure drop",
+  "pressure": "Pressure falling 4.3 hPa in 24 h",
+  "updated": "Updated 09:30",
+  "levelColor": 4293892762,
+  "accentColor": 4284177366,
+  "attack": {
+    "startedAt": "2026-11-06T08:50:00.000Z",
+    "intensity": 6
+  },
+  "labels": {
+    "start": "Start attack",
+    "stop": "End attack",
+    "intensity": "Intensity",
+    "since": "Since {time}",
+    "pending": "Saved on the watch. Sends when your phone is near.",
+    "noPhone": "Open the app on your phone once to connect the watch."
+  },
+  "acks": ["w1", "w2"]
+}

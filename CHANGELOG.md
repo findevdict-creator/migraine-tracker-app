@@ -8,6 +8,8 @@ release time.
 
 ### Added
 
+- Apple Watch companion: start and end an attack and set the intensity from the watch, with taps saved until the iPhone is near, and a watch-face complication with today's level (28).
+
 - Wear OS companion: start and end an attack and set the intensity from the watch, with taps saved on the watch until the phone is near, and a tile with today's level (27).
 
 - Home-screen widgets on Android and iOS: today's level, the top factor, the pressure trend and a one-tap start-attack button that opens the attack (or the running one) in the app (26).
