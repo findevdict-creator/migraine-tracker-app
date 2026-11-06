@@ -3439,6 +3439,42 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Open attack'**
   String get widgetOpenAttack;
+
+  /// No description provided for @watchStart.
+  ///
+  /// In en, this message translates to:
+  /// **'Start attack'**
+  String get watchStart;
+
+  /// No description provided for @watchStop.
+  ///
+  /// In en, this message translates to:
+  /// **'End attack'**
+  String get watchStop;
+
+  /// No description provided for @watchIntensity.
+  ///
+  /// In en, this message translates to:
+  /// **'Intensity'**
+  String get watchIntensity;
+
+  /// No description provided for @watchSince.
+  ///
+  /// In en, this message translates to:
+  /// **'Since {time}'**
+  String watchSince(String time);
+
+  /// No description provided for @watchPending.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved on the watch. Sends when your phone is near.'**
+  String get watchPending;
+
+  /// No description provided for @watchNoPhone.
+  ///
+  /// In en, this message translates to:
+  /// **'Open the app on your phone once to connect the watch.'**
+  String get watchNoPhone;
 }
 
 class _AppLocalizationsDelegate

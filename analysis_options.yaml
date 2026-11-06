@@ -18,6 +18,8 @@ analyzer:
     - test/core/db/generated/**
     # Pure Dart packages analyse themselves (CI "Pure Dart packages" step).
     - packages/**
+    # The Wear OS app analyses itself (CI "Wear OS" job).
+    - wear/**
   errors:
     # The app is not a published package; public API docs are required only
     # under packages/.

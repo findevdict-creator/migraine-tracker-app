@@ -1,0 +1,23 @@
+name: migraine_tracker_wear
+description: "Wear OS companion: start and end an attack, set the intensity, see today's level on a tile."
+publish_to: 'none'
+version: 0.1.0+1
+
+environment:
+  sdk: ^3.13.7
+
+dependencies:
+  flutter:
+    sdk: flutter
+  shared_preferences: ^2.5.6
+  watch_connectivity: ^0.2.11
+  watch_protocol:
+    path: ../packages/watch_protocol
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  very_good_analysis: ^11.0.0
+
+flutter:
+  uses-material-design: true

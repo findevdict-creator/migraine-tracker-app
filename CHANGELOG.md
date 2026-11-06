@@ -8,6 +8,8 @@ release time.
 
 ### Added
 
+- Wear OS companion: start and end an attack and set the intensity from the watch, with taps saved on the watch until the phone is near, and a tile with today's level (27).
+
 - Home-screen widgets on Android and iOS: today's level, the top factor, the pressure trend and a one-tap start-attack button that opens the attack (or the running one) in the app (26).
 
 - Voice log: on-device speech on the attack screen fills intensity, symptoms, head locations and the person's own medications, shown on a confirmation form before anything is saved (25).

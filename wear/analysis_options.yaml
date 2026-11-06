@@ -1,0 +1,14 @@
+# Same rule set as the phone app. Analysed on its own in the CI "Wear OS"
+# job; the phone's analysis excludes this folder.
+include: package:very_good_analysis/analysis_options.yaml
+
+analyzer:
+  exclude:
+    - build/**
+    - android/**
+
+linter:
+  rules:
+    public_member_api_docs: false
+    lines_longer_than_80_chars: true
+    unnecessary_type_name_in_constructor: false

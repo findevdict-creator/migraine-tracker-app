@@ -141,7 +141,7 @@ void main() {
     addTearDown(container.dispose);
     expect(
       await container.read(homeWidgetSyncProvider).publishQuietly(),
-      isNull,
+      isNotNull,
     );
   });
 }

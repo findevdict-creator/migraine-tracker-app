@@ -58,11 +58,13 @@ class AttackStarter {
   /// Runs after a new attack is saved (notification planning).
   final Future<void> Function()? afterStart;
 
-  /// Returns the id of the running attack, creating one if needed.
-  Future<String> start() async {
+  /// Returns the id of the running attack, creating one if needed. [at]
+  /// back-dates the start (a tap queued on the watch); never later than now.
+  Future<String> start({DateTime? at}) async {
     final running = await _repository.running();
     if (running != null) return running.id;
-    final now = clock();
+    final current = clock();
+    final now = at == null || at.isAfter(current) ? current : at;
     final stamp = await pressure.read();
     // Pinned so pruning keeps the hour this attack points at.
     final snapshot = await weather.at(now, pin: true);
@@ -179,13 +181,18 @@ class AttackEditor extends AsyncNotifier<AttackEntity> {
   Future<void> setNotes(String notes) =>
       _update((a) => a.copyWith(notes: notes.trim().isEmpty ? null : notes));
 
-  /// Ends the attack now. Idempotent. Writes the headache event to the
+  /// Ends the attack now, or at [at] (a tap queued on the watch), never
+  /// before it started. Idempotent. Writes the headache event to the
   /// health store when the person opted in (phase 14).
-  Future<void> end() async {
+  Future<void> end({DateTime? at}) async {
     final wasRunning = state.value?.isRunning ?? false;
-    await _update(
-      (a) => a.copyWith(endedAt: a.endedAt ?? _now, finishLater: false),
-    );
+    await _update((a) {
+      final when = at ?? _now;
+      return a.copyWith(
+        endedAt: a.endedAt ?? (when.isBefore(a.startedAt) ? a.startedAt : when),
+        finishLater: false,
+      );
+    });
     final ended = state.value;
     if (wasRunning && ended != null) {
       await ref.read(healthSyncProvider).exportAttack(ended);

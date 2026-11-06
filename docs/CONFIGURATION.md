@@ -20,6 +20,7 @@ production build, and the few native files that mirror a value.
 | `AppThemeTokens` | seed colour, risk colours, load meter factor palette, attack theme palette, semantic colours, font family, spacing, radii, tap targets, text scale ceiling, animation durations | design changes |
 | `AppAssets` | logo, logo mark, launcher icon, head map, routine illustrations | replacing artwork (keep the paths, swap the files) |
 | `AppHomeWidgets` | Android widget provider class, iOS widget kind and app group, the start-attack link, the keys the widget reads | renaming the native widget or the app group (mirrored natively, see below) |
+| `AppWatch` (= `WatchConfig` in `packages/watch_protocol/lib/src/watch_config.dart`) | tile freshness, resend interval, tile channel, the keys the watch stores and the tile reads; the on/off switch is `AppFeatureFlags.watchAvailable` | watch behaviour. The values live in the shared package because the Wear OS app cannot import the phone's config; `app_config.dart` re-exports them |
 | `AppLocales` | supported locales, fallback | adding a language |
 
 ## The risk model
@@ -89,7 +90,11 @@ commercial key (used only by the cache function), RevenueCat keys.
    `Runner/Runner.entitlements`. Enable the App Groups capability on both
    targets with `group.app.migrainetracker.migraineTracker` (register
    the group in the Apple Developer portal first). Android needs nothing.
-9. Repository settings on GitHub: protect `main` (require PR, require the
+9. Wear OS release (phase 27): sign the watch app with the same upload
+   key as the phone app and upload it to the same Play listing as a Wear
+   OS release; the data layer only pairs apps with the same package name
+   and signing key.
+10. Repository settings on GitHub: protect `main` (require PR, require the
    `pr` workflow jobs, require conversation resolution, block force pushes
    and deletions, merge commits only, delete head branches on merge).
 
@@ -118,5 +123,6 @@ These cannot be read from Dart at build time, so they mirror `AppIdentity`:
 | Microphone and speech purpose texts | voice logging (phase 25) | `ios/Runner/Info.plist` (`NSMicrophoneUsageDescription`, `NSSpeechRecognitionUsageDescription`), `AndroidManifest.xml` (`RECORD_AUDIO`, `RecognitionService` query) |
 | Location purpose text | wording in `AppIdentity` privacy copy | `ios/Runner/Info.plist` (`NSLocationWhenInUseUsageDescription`), `AndroidManifest.xml` (`ACCESS_COARSE_LOCATION`) |
 | Home-screen widget | `AppHomeWidgets` (provider, kind, app group, keys, start link), `AppThresholds.widgetRefresh`, `AppThemeTokens` risk colours | `android/app/src/main/kotlin/.../RiskWidgetProvider.kt` (keys, start link), `res/xml/risk_widget_info.xml` (`updatePeriodMillis`), `res/values/widget.xml` and `values-night/widget.xml` (colours, fallback strings), `AndroidManifest.xml` (receiver, `LAUNCH` intent filter); `ios/RiskWidget/RiskWidget.swift` (kind, app group, keys, colours, start link, 30-minute timeline), `ios/RiskWidget/RiskWidget.entitlements` and `ios/Runner/Runner.entitlements` (app group) |
+| Wear OS app | `AppIdentity.bundleId`, flavors, `AppWatch` | `wear/android/app/build.gradle.kts` (`applicationId` and flavor suffixes must equal the phone's, or the data layer will not connect), `wear/android/.../RiskTileService.kt` (tile keys, freshness), `wear/android/.../MainActivity.kt` (tile channel) |
 | Deep-link scheme | `AppIdentity.deepLinkScheme` | `ios/Runner/Info.plist` (`CFBundleURLTypes`), `AndroidManifest.xml` widget intent filter |
 | Launcher icon | `AppAssets.launcherIcon` | `android/app/src/main/res/mipmap-*`, `ios/Runner/Assets.xcassets/AppIcon.appiconset` (generated with `flutter_launcher_icons` in the release-prep phase) |
