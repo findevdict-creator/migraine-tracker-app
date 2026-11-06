@@ -8,6 +8,7 @@ import 'package:migraine_tracker/core/l10n/l10n.dart';
 import 'package:migraine_tracker/features/attack_log/presentation/start_attack_button.dart';
 import 'package:migraine_tracker/features/barometer/application/barometer_sampler.dart';
 import 'package:migraine_tracker/features/checkin/presentation/checkin_card.dart';
+import 'package:migraine_tracker/features/risk/application/risk_engine.dart';
 import 'package:migraine_tracker/features/weather/application/weather_sync.dart';
 import 'package:migraine_tracker/features/weather/presentation/environment_card.dart';
 
@@ -23,6 +24,8 @@ class HomeScreen extends ConsumerWidget {
     // Foreground refresh on open; returns early while the cache is fresh.
     ref
       ..watch(weatherRefreshProvider)
+      // Scores today and the days ahead once weather is in.
+      ..watch(riskRefreshProvider)
       // Keeps the barometer sampler running while the app is open.
       ..watch(liveReadingProvider);
     return Scaffold(

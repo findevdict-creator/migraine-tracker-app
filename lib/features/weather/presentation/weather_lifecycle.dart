@@ -1,5 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:migraine_tracker/features/risk/application/risk_engine.dart';
 import 'package:migraine_tracker/features/weather/application/weather_sync.dart';
 
 /// Re-runs the foreground weather refresh when the app returns to the
@@ -32,7 +33,9 @@ class _WeatherRefreshOnResumeState extends ConsumerState<WeatherRefreshOnResume>
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
     if (state == AppLifecycleState.resumed) {
-      ref.invalidate(weatherRefreshProvider);
+      ref
+        ..invalidate(weatherRefreshProvider)
+        ..invalidate(riskRefreshProvider);
     }
   }
 
