@@ -105,6 +105,120 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Nothing logged yet.\nYour risk level and environment will appear here.'**
   String get homeEmptyState;
+
+  /// Risk level name.
+  ///
+  /// In en, this message translates to:
+  /// **'Low'**
+  String get riskLevelLow;
+
+  /// Risk level name.
+  ///
+  /// In en, this message translates to:
+  /// **'Moderate'**
+  String get riskLevelModerate;
+
+  /// Risk level name.
+  ///
+  /// In en, this message translates to:
+  /// **'High'**
+  String get riskLevelHigh;
+
+  /// Developer screen title.
+  ///
+  /// In en, this message translates to:
+  /// **'Theme gallery'**
+  String get devThemeGalleryTitle;
+
+  /// No description provided for @devThemeLight.
+  ///
+  /// In en, this message translates to:
+  /// **'Light theme'**
+  String get devThemeLight;
+
+  /// No description provided for @devThemeDark.
+  ///
+  /// In en, this message translates to:
+  /// **'Dark theme'**
+  String get devThemeDark;
+
+  /// No description provided for @devThemeAttack.
+  ///
+  /// In en, this message translates to:
+  /// **'Attack theme'**
+  String get devThemeAttack;
+
+  /// No description provided for @devSampleBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Body text at the default size. It must stay readable at 200% text scale without truncation.'**
+  String get devSampleBody;
+
+  /// No description provided for @devSamplePrimary.
+  ///
+  /// In en, this message translates to:
+  /// **'Primary'**
+  String get devSamplePrimary;
+
+  /// No description provided for @devSampleSecondary.
+  ///
+  /// In en, this message translates to:
+  /// **'Secondary'**
+  String get devSampleSecondary;
+
+  /// No description provided for @devSampleText.
+  ///
+  /// In en, this message translates to:
+  /// **'Text'**
+  String get devSampleText;
+
+  /// No description provided for @devSampleDisabled.
+  ///
+  /// In en, this message translates to:
+  /// **'Disabled'**
+  String get devSampleDisabled;
+
+  /// No description provided for @devSampleChipOn.
+  ///
+  /// In en, this message translates to:
+  /// **'Aura'**
+  String get devSampleChipOn;
+
+  /// No description provided for @devSampleChipOff.
+  ///
+  /// In en, this message translates to:
+  /// **'Nausea'**
+  String get devSampleChipOff;
+
+  /// No description provided for @devSampleChipIcon.
+  ///
+  /// In en, this message translates to:
+  /// **'Light'**
+  String get devSampleChipIcon;
+
+  /// No description provided for @devSampleSlider.
+  ///
+  /// In en, this message translates to:
+  /// **'Intensity'**
+  String get devSampleSlider;
+
+  /// No description provided for @devSampleSliderLow.
+  ///
+  /// In en, this message translates to:
+  /// **'No pain'**
+  String get devSampleSliderLow;
+
+  /// No description provided for @devSampleSliderHigh.
+  ///
+  /// In en, this message translates to:
+  /// **'Worst'**
+  String get devSampleSliderHigh;
+
+  /// No description provided for @devSampleCard.
+  ///
+  /// In en, this message translates to:
+  /// **'A card with a badge'**
+  String get devSampleCard;
 }
 
 class _AppLocalizationsDelegate

@@ -7,6 +7,9 @@ release time.
 ## [Unreleased]
 
 ### Added
+- Design system: light, dark and attack themes from the config tokens,
+  semantic colours, type scale with 200% clamp, reduce-motion helpers, core
+  widgets, theme gallery and golden tests (03).
 - Local database: 12 Drift tables, SQLCipher encryption with the key in
   the platform keystore, DAOs, schema dump and migration test (02).
 - Project scaffold: Flutter app with dev, staging and prod flavors, central
