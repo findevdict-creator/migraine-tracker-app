@@ -1,5 +1,6 @@
 {
   "_comment": "Dev flavor. Committed with placeholders; dev builds use the Firebase emulator and need no real keys. Pass with: flutter run -t lib/main_dev.dart --dart-define-from-file=env/dev.json",
+  "APP_FLAVOR": "dev",
   "FIREBASE_PROJECT_ID": "migraine-tracker-dev",
   "FIREBASE_API_KEY": "",
   "FIREBASE_APP_ID_ANDROID": "",

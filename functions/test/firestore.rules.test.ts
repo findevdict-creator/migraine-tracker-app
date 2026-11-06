@@ -48,6 +48,17 @@ describe("firestore.rules", () => {
     await assertFails(setDoc(doc(user, "weather_cells/51.5,-0.1"), { hours: [] }));
   });
 
+  it("push tokens are closed to clients", async () => {
+    await env.withSecurityRulesDisabled(async (ctx) => {
+      await setDoc(doc(ctx.firestore(), "push_tokens/t1"), { platform: "android" });
+    });
+    const anon = env.unauthenticatedContext().firestore();
+    const user = env.authenticatedContext("alice").firestore();
+    await assertFails(getDoc(doc(anon, "push_tokens/t1")));
+    await assertFails(getDoc(doc(user, "push_tokens/t1")));
+    await assertFails(setDoc(doc(user, "push_tokens/t2"), { platform: "ios" }));
+  });
+
   it("users read and write only their own document", async () => {
     const alice = env.authenticatedContext("alice").firestore();
     const bob = env.authenticatedContext("bob").firestore();

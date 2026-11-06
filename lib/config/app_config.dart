@@ -32,6 +32,13 @@ enum AppFlavor {
 
   /// True for every flavor that is not a store build.
   bool get isNonProd => this != AppFlavor.prod;
+
+  /// The flavor named by the `APP_FLAVOR` define (the env file), for
+  /// isolates that have no entry point of their own (push handlers).
+  static AppFlavor fromEnvironment() => AppFlavor.values.firstWhere(
+    (f) => f.name == AppEnv.flavorName,
+    orElse: () => AppFlavor.prod,
+  );
 }
 
 // ---------------------------------------------------------------------------
@@ -128,6 +135,13 @@ class AppEnv {
     defaultValue: 'us-central1',
   );
 
+  /// Flavor name for isolates without an entry point (see
+  /// [AppFlavor.fromEnvironment]); the env files set it.
+  static const String flavorName = String.fromEnvironment(
+    'APP_FLAVOR',
+    defaultValue: 'prod',
+  );
+
   /// Base URL of the HTTPS Cloud Functions. Empty means "derive from the
   /// Firebase project id and [functionsRegion]".
   static const String functionsBaseUrl = String.fromEnvironment(
@@ -175,6 +189,7 @@ class AppEndpoints {
   /// Cloud Function names, one per server job.
   static const String weatherCacheFunction = 'weatherCache';
   static const String pushWakeupFunction = 'pushWakeup';
+  static const String registerPushTokenFunction = 'registerPushToken';
   static const String shareLinkFunction = 'shareLink';
   static const String purgeAccountFunction = 'purgeAccount';
   static const String auditCountsFunction = 'auditCounts';
@@ -278,6 +293,11 @@ class AppFeatureFlags {
   static const bool premiumAvailable = true;
   static const bool shareLinkAvailable = true;
   static const bool experimentsAvailable = true;
+
+  /// Silent push wake-ups that refresh the forecast between opens. Needs
+  /// a Firebase project with Cloud Messaging; off means local scheduling
+  /// only.
+  static const bool pushWakeupAvailable = true;
 }
 
 // ---------------------------------------------------------------------------
@@ -328,6 +348,11 @@ class AppThresholds {
   static const Duration defaultAttackDuration = Duration(hours: 4);
   static const Duration notificationDedupeRetention = Duration(days: 7);
   static const Duration notificationLeadTime = Duration(minutes: 1);
+
+  /// A push token is re-registered with the server after this long even
+  /// when unchanged, so the server's TTL (60 days) never expires a live
+  /// device.
+  static const Duration pushTokenRefresh = Duration(days: 7);
   static const TimeOfDay defaultMedicationReminder = TimeOfDay(
     hour: 21,
     minute: 0,
@@ -451,6 +476,10 @@ class AppBackgroundTasks {
 
   /// Daily weather refresh (workmanager / BGTaskScheduler).
   static const String weatherRefresh = 'app.migrainetracker.weatherRefresh';
+
+  /// `data.type` of the silent push the wake-up function sends; must match
+  /// `config.push.wakeupType` in `functions/src/config.ts`.
+  static const String pushWakeupType = 'wakeup';
 }
 
 /// Local notification channels (Android) and categories (iOS). The ids

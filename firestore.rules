@@ -25,6 +25,12 @@ service cloud.firestore {
       allow create, update: if isOwner() && allowedKeys();
     }
 
+    // Push tokens: registered and read only by the functions (Admin SDK).
+    // A token identifies an install, never a person.
+    match /push_tokens/{token} {
+      allow read, write: if false;
+    }
+
     // Report snapshots are read through the share-link function by token,
     // never directly.
     match /share_snapshots/{token} {

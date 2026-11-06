@@ -23,6 +23,18 @@ export const config = {
     airQualityUrl: "https://air-quality-api.open-meteo.com/v1/air-quality",
   },
 
+  /** Silent push wake-ups (phase 22). */
+  push: {
+    /** Cloud Scheduler expression for the wake-up function. */
+    schedule: "every 6 hours",
+    /** Tokens not re-registered within this window are dropped (Firestore TTL). */
+    tokenTtlMs: 60 * 24 * 60 * 60 * 1000,
+    /** FCM multicast limit per request. */
+    batchSize: 500,
+    /** `data.type` the app's handler expects. */
+    wakeupType: "wakeup",
+  },
+
   /** Share links. */
   shareLink: {
     tokenBytes: 16,
@@ -35,6 +47,7 @@ export const config = {
   /** Firestore collection names. */
   collections: {
     weatherCells: "weather_cells",
+    pushTokens: "push_tokens",
     users: "users",
     shareSnapshots: "share_snapshots",
     auditCounts: "audit_counts",
