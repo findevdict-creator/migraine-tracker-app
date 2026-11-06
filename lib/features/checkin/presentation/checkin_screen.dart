@@ -183,16 +183,24 @@ class _ScaleRow extends StatelessWidget {
             ],
           ),
           const SizedBox(height: AppThemeTokens.space1),
+          // Each end label gets half the width and wraps, so long
+          // translations or large text never push the other off screen.
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                checkinLowLabel(l10n, field),
-                style: context.textStyles.bodySmall,
+              Expanded(
+                child: Text(
+                  checkinLowLabel(l10n, field),
+                  style: context.textStyles.bodySmall,
+                ),
               ),
-              Text(
-                checkinHighLabel(l10n, field),
-                style: context.textStyles.bodySmall,
+              const SizedBox(width: AppThemeTokens.space2),
+              Expanded(
+                child: Text(
+                  checkinHighLabel(l10n, field),
+                  textAlign: TextAlign.end,
+                  style: context.textStyles.bodySmall,
+                ),
               ),
             ],
           ),

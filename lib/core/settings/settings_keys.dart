@@ -69,4 +69,7 @@ abstract final class SettingsKeys {
   /// Unset means the phone region's default.
   static const String unitPressure = 'units.pressure';
   static const String unitTemperature = 'units.temperature';
+
+  /// The app's own reduce-motion switch (bool).
+  static const String reduceMotion = 'a11y.reduceMotion';
 }

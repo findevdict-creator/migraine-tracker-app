@@ -839,6 +839,10 @@ class AppThemeTokens {
   /// Dynamic type ceiling the attack screen must honour without truncation.
   static const double maxTextScale = 2;
 
+  /// Above this text scale, worded app bar actions turn into icons with a
+  /// tooltip, because the words no longer fit beside the title.
+  static const double appBarTextActionMaxScale = 1.3;
+
   /// Animation durations; honoured only when reduce-motion is off.
   static const Duration animationShort = Duration(milliseconds: 150);
   static const Duration animationMedium = Duration(milliseconds: 300);

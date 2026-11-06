@@ -3019,4 +3019,11 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get dataCoverageBarometer => 'Handys mit Drucksensor';
+
+  @override
+  String get settingsReduceMotion => 'Bewegung reduzieren';
+
+  @override
+  String get settingsReduceMotionHint =>
+      'Weniger Animationen, auch wenn die Einstellung des Handys aus ist';
 }

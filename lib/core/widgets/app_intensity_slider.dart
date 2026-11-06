@@ -28,25 +28,35 @@ class AppIntensitySlider extends StatelessWidget {
   Widget build(BuildContext context) {
     final current = value ?? min;
     final textStyles = context.textStyles;
-    return Semantics(
-      label: semanticLabel,
-      value: value?.toString(),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Row(
-            children: [
-              Expanded(
-                child: Slider(
-                  value: current.toDouble(),
-                  min: min.toDouble(),
-                  max: max.toDouble(),
-                  divisions: max - min,
-                  label: current.toString(),
-                  onChanged: (v) => onChanged(v.round()),
+    final ends = [?lowLabel, ?highLabel].join(' – ');
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Row(
+          children: [
+            Expanded(
+              // One node for screen readers: "Pain intensity, 7, 0 is ...
+              // to 10 is ...", with swipe up and down to change it.
+              child: MergeSemantics(
+                child: Semantics(
+                  label: semanticLabel,
+                  hint: ends.isEmpty ? null : ends,
+                  child: Slider(
+                    value: current.toDouble(),
+                    min: min.toDouble(),
+                    max: max.toDouble(),
+                    divisions: max - min,
+                    label: current.toString(),
+                    // The scale's own number, not the default percentage.
+                    semanticFormatterCallback: (v) => v.round().toString(),
+                    onChanged: (v) => onChanged(v.round()),
+                  ),
                 ),
               ),
-              SizedBox(
+            ),
+            // The big number repeats the slider's value for sighted users.
+            ExcludeSemantics(
+              child: SizedBox(
                 width: AppThemeTokens.attackTapTarget,
                 child: Text(
                   value?.toString() ?? '–', // string_lint: ignore
@@ -54,23 +64,34 @@ class AppIntensitySlider extends StatelessWidget {
                   style: textStyles.headlineMedium,
                 ),
               ),
-            ],
-          ),
-          if (lowLabel != null || highLabel != null)
-            Padding(
+            ),
+          ],
+        ),
+        if (lowLabel != null || highLabel != null)
+          ExcludeSemantics(
+            child: Padding(
               padding: const EdgeInsets.symmetric(
                 horizontal: AppThemeTokens.space4,
               ),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(lowLabel ?? '', style: textStyles.bodyMedium),
-                  Text(highLabel ?? '', style: textStyles.bodyMedium),
+                  Expanded(
+                    child: Text(lowLabel ?? '', style: textStyles.bodyMedium),
+                  ),
+                  const SizedBox(width: AppThemeTokens.space2),
+                  Expanded(
+                    child: Text(
+                      highLabel ?? '',
+                      textAlign: TextAlign.end,
+                      style: textStyles.bodyMedium,
+                    ),
+                  ),
                 ],
               ),
             ),
-        ],
-      ),
+          ),
+      ],
     );
   }
 }

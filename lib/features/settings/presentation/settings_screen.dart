@@ -6,6 +6,7 @@ import 'package:migraine_tracker/app/router.dart';
 import 'package:migraine_tracker/config/app_config.dart';
 import 'package:migraine_tracker/core/l10n/l10n.dart';
 import 'package:migraine_tracker/core/theme/app_colors.dart';
+import 'package:migraine_tracker/core/theme/app_motion.dart';
 import 'package:migraine_tracker/core/widgets/widgets.dart';
 import 'package:migraine_tracker/features/audit/application/self_audit_controller.dart';
 import 'package:migraine_tracker/features/checkin/presentation/checkin_controller.dart';
@@ -56,6 +57,15 @@ class SettingsScreen extends ConsumerWidget {
             title: Text(l10n.unitsTitle),
             subtitle: Text(l10n.settingsUnitsHint),
             onTap: () => context.push(AppRoutes.units),
+          ),
+          SwitchListTile(
+            key: const ValueKey('settings-reduce-motion'),
+            secondary: const Icon(Icons.motion_photos_off_outlined),
+            title: Text(l10n.settingsReduceMotion),
+            subtitle: Text(l10n.settingsReduceMotionHint),
+            value: ref.watch(reduceMotionPreferenceProvider),
+            onChanged: (on) =>
+                ref.read(reduceMotionActionsProvider).set(enabled: on),
           ),
           if (AppFeatureFlags.healthSyncAvailable)
             ListTile(

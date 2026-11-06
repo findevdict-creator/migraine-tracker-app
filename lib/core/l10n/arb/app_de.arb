@@ -808,5 +808,7 @@
   "dataCoverageWorldwide": "Weltweit",
   "dataCoverageEuropeanAqi": "Weltweit, europäischer AQI in Europa",
   "dataCoverageEurope": "Nur Europa",
-  "dataCoverageBarometer": "Handys mit Drucksensor"
+  "dataCoverageBarometer": "Handys mit Drucksensor",
+  "settingsReduceMotion": "Bewegung reduzieren",
+  "settingsReduceMotionHint": "Weniger Animationen, auch wenn die Einstellung des Handys aus ist"
 }

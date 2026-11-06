@@ -8,6 +8,7 @@ import 'package:migraine_tracker/app/router.dart';
 import 'package:migraine_tracker/config/app_config.dart';
 import 'package:migraine_tracker/core/l10n/l10n.dart';
 import 'package:migraine_tracker/core/theme/app_colors.dart';
+import 'package:migraine_tracker/core/theme/app_motion.dart';
 import 'package:migraine_tracker/core/widgets/widgets.dart';
 import 'package:migraine_tracker/features/checkin/presentation/checkin_controller.dart';
 import 'package:migraine_tracker/features/health/application/health_sync.dart';
@@ -46,10 +47,12 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
       await _finish();
       return;
     }
-    await _controller.nextPage(
-      duration: AppThemeTokens.animationMedium,
-      curve: Curves.easeInOut,
-    );
+    final duration = AppMotion.medium(context);
+    if (duration == Duration.zero) {
+      _controller.jumpToPage(_page + 1);
+      return;
+    }
+    await _controller.nextPage(duration: duration, curve: Curves.easeInOut);
   }
 
   Future<void> _finish() async {

@@ -2981,4 +2981,11 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get dataCoverageBarometer => 'प्रेशर सेंसर वाले फ़ोन';
+
+  @override
+  String get settingsReduceMotion => 'मोशन कम करें';
+
+  @override
+  String get settingsReduceMotionHint =>
+      'कम एनिमेशन, भले ही फ़ोन की सेटिंग बंद हो';
 }

@@ -5,6 +5,7 @@ import 'package:migraine_tracker/app/bootstrap.dart';
 import 'package:migraine_tracker/app/router.dart';
 import 'package:migraine_tracker/config/app_config.dart';
 import 'package:migraine_tracker/core/l10n/generated/app_localizations.dart';
+import 'package:migraine_tracker/core/theme/app_motion.dart';
 import 'package:migraine_tracker/core/theme/app_theme.dart';
 import 'package:migraine_tracker/core/theme/app_typography.dart';
 import 'package:migraine_tracker/features/audit/presentation/audit_send.dart';
@@ -54,6 +55,11 @@ class MigraineTrackerApp extends ConsumerWidget {
                     child: MediaQuery(
                       data: MediaQuery.of(context).copyWith(
                         textScaler: AppTypography.clampedScaler(context),
+                        // The app's reduce-motion switch, so everything
+                        // below reads one flag.
+                        disableAnimations:
+                            MediaQuery.disableAnimationsOf(context) ||
+                            ref.watch(reduceMotionPreferenceProvider),
                       ),
                       child: child!,
                     ),

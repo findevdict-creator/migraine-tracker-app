@@ -808,5 +808,7 @@
   "dataCoverageWorldwide": "Mundo todo",
   "dataCoverageEuropeanAqi": "Mundo todo, IQA europeu na Europa",
   "dataCoverageEurope": "Só na Europa",
-  "dataCoverageBarometer": "Celulares com sensor de pressão"
+  "dataCoverageBarometer": "Celulares com sensor de pressão",
+  "settingsReduceMotion": "Reduzir movimento",
+  "settingsReduceMotionHint": "Menos animações, mesmo com a opção do celular desativada"
 }

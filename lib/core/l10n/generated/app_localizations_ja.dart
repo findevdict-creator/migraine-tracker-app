@@ -2875,4 +2875,10 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get dataCoverageBarometer => '気圧センサー搭載のスマートフォン';
+
+  @override
+  String get settingsReduceMotion => '視差効果を減らす';
+
+  @override
+  String get settingsReduceMotionHint => 'スマートフォンの設定がオフでも、アニメーションを減らします';
 }
