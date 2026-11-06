@@ -8,6 +8,8 @@ release time.
 
 ### Added
 
+- Experiments: try one change for two weeks with a daily "did you stick with it" question, then compare attacks per week, intensity and duration with the two weeks before, with sample sizes and a plain caveat (30).
+
 - Self-care routines: stretches, paced breathing with a guided timer, low light, water, caffeine and sleep, suggested on home on high days and after high neck-tension or stress check-ins, with "Not today" (29).
 
 - Apple Watch companion: start and end an attack and set the intensity from the watch, with taps saved until the iPhone is near, and a watch-face complication with today's level (28).

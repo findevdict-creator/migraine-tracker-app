@@ -2154,4 +2154,136 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get settingsRoutinesHint =>
       'Stretches, breathing and other simple routines';
+
+  @override
+  String get experimentsTitle => 'Experiments';
+
+  @override
+  String get settingsExperimentsHint =>
+      'Try one change for two weeks and compare';
+
+  @override
+  String get experimentsIntro =>
+      'Try one change for two weeks and compare it with the two weeks before. One experiment at a time.';
+
+  @override
+  String get experimentsPick => 'Pick one change';
+
+  @override
+  String get experimentChangeCutCaffeine => 'Cut back on caffeine';
+
+  @override
+  String get experimentChangeRegularSleep =>
+      'Go to bed at the same time every night';
+
+  @override
+  String get experimentChangeMoreWater => 'Drink more water';
+
+  @override
+  String get experimentChangeDailyStretches => 'Stretch your neck every day';
+
+  @override
+  String get experimentChangeLessScreens => 'Less screen time in the evening';
+
+  @override
+  String get experimentChangeNoAlcohol => 'Skip alcohol';
+
+  @override
+  String experimentDay(int day, int total) {
+    return 'Day $day of $total';
+  }
+
+  @override
+  String get experimentAdherenceQuestion => 'Did you stick with it today?';
+
+  @override
+  String get experimentYes => 'Yes';
+
+  @override
+  String get experimentNo => 'No';
+
+  @override
+  String experimentAdherence(int kept, int days) {
+    return 'Kept to it on $kept of $days days';
+  }
+
+  @override
+  String get experimentCompareTitle => 'Two weeks before and during';
+
+  @override
+  String get experimentBefore => 'Before';
+
+  @override
+  String get experimentDuring => 'During';
+
+  @override
+  String get experimentRowRate => 'Attacks per week';
+
+  @override
+  String get experimentRowIntensity => 'Average intensity';
+
+  @override
+  String get experimentRowDuration => 'Median duration';
+
+  @override
+  String experimentSample(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'from $count attacks',
+      one: 'from 1 attack',
+      zero: 'no attacks',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String experimentDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count days',
+      one: '1 day',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get experimentNoData => 'No data';
+
+  @override
+  String get experimentCaveat =>
+      'Two weeks is short. Weather, seasons and stress change on their own, so read this as a hint, not proof.';
+
+  @override
+  String experimentSmallSample(int min) {
+    return 'Fewer than $min attacks in one of the periods, so the numbers can swing a lot.';
+  }
+
+  @override
+  String get experimentStop => 'Stop experiment';
+
+  @override
+  String get experimentFinish => 'Finish and save the result';
+
+  @override
+  String get experimentDue => 'The two weeks are over.';
+
+  @override
+  String get experimentPast => 'Past experiments';
+
+  @override
+  String experimentFinished(String date) {
+    return 'Finished $date';
+  }
+
+  @override
+  String experimentStopped(String date) {
+    return 'Stopped $date';
+  }
+
+  @override
+  String experimentPastSummary(String before, String during) {
+    return '$before attacks per week before, $during during';
+  }
 }
