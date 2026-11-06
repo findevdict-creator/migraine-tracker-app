@@ -807,4 +807,129 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get aboutDataLimitsBody =>
       'Forecasts are model estimates for a grid cell, not a measurement at your door. Pollen is only available in Europe. Air quality may be missing in some regions. Where a factor has no data for your area it is simply not shown.';
+
+  @override
+  String get settingsHealthHint =>
+      'Sleep, heart rate, steps and cycle from your health app';
+
+  @override
+  String get healthTitle => 'Health data';
+
+  @override
+  String healthIntro(String store) {
+    return 'Choose what to read from $store. Each type has its own switch and its own reason.';
+  }
+
+  @override
+  String get healthPrivacyNote =>
+      'Imported data stays on this phone. It is never uploaded, not even with backup, unless you export it yourself.';
+
+  @override
+  String get healthStoreApple => 'Apple Health';
+
+  @override
+  String get healthStoreConnect => 'Health Connect';
+
+  @override
+  String healthUnavailable(String store) {
+    return '$store is not available on this device.';
+  }
+
+  @override
+  String get healthReadSection => 'Read';
+
+  @override
+  String get healthTypeSleep => 'Sleep';
+
+  @override
+  String get healthReasonSleep =>
+      'Fills in sleep quality on your daily check-in from the night\'s sleep, so you have one less tap.';
+
+  @override
+  String get healthTypeRestingHr => 'Resting heart rate';
+
+  @override
+  String get healthReasonRestingHr =>
+      'A higher resting rate than usual can show strain the day before an attack.';
+
+  @override
+  String get healthTypeHrv => 'Heart rate variability';
+
+  @override
+  String get healthReasonHrv =>
+      'Lower variability than usual often goes with stress and poor recovery.';
+
+  @override
+  String get healthTypeSteps => 'Steps';
+
+  @override
+  String get healthReasonSteps =>
+      'Very low or very high activity days are worth seeing next to your attacks.';
+
+  @override
+  String get healthTypeFlow => 'Menstrual flow';
+
+  @override
+  String get healthReasonFlow =>
+      'Fills in period starts for cycle tracking, if you use it.';
+
+  @override
+  String healthDenied(String store) {
+    return '$store did not grant access. You can change this in its own settings.';
+  }
+
+  @override
+  String get healthWriteSection => 'Write';
+
+  @override
+  String healthWriteHeadaches(String store) {
+    return 'Write headache events to $store';
+  }
+
+  @override
+  String get healthWriteHeadachesHint =>
+      'Each ended attack is saved as a headache with its start, end and severity. Nothing else is written.';
+
+  @override
+  String get healthImportSection => 'Import';
+
+  @override
+  String get healthImportNow => 'Import now';
+
+  @override
+  String get healthImportNever => 'Nothing imported yet';
+
+  @override
+  String healthImportLast(String age) {
+    return '$age';
+  }
+
+  @override
+  String get healthImportFailed =>
+      'The import did not finish. Try again later.';
+
+  @override
+  String healthImportResult(int imported, int prefilled) {
+    String _temp0 = intl.Intl.pluralLogic(
+      imported,
+      locale: localeName,
+      other: '$imported new samples.',
+      one: '1 new sample.',
+      zero: 'Nothing new.',
+    );
+    String _temp1 = intl.Intl.pluralLogic(
+      prefilled,
+      locale: localeName,
+      other: 'Sleep filled in for $prefilled days.',
+      one: 'Sleep filled in for 1 day.',
+      zero: '',
+    );
+    return '$_temp0 $_temp1';
+  }
+
+  @override
+  String get checkinSourceHealthkit => 'From Apple Health';
+
+  @override
+  String get checkinSourceHealthConnect => 'From Health Connect';
 }

@@ -4,6 +4,7 @@ import 'package:migraine_tracker/core/util/clock.dart';
 import 'package:migraine_tracker/features/attack_log/data/attack_repository_impl.dart';
 import 'package:migraine_tracker/features/attack_log/domain/attack_entity.dart';
 import 'package:migraine_tracker/features/attack_log/domain/attack_repository.dart';
+import 'package:migraine_tracker/features/health/application/health_sync.dart';
 import 'package:migraine_tracker/features/weather/application/weather_snapshot.dart';
 
 /// The attack that is running right now, or null.
@@ -133,10 +134,18 @@ class AttackEditor extends AsyncNotifier<AttackEntity> {
   Future<void> setNotes(String notes) =>
       _update((a) => a.copyWith(notes: notes.trim().isEmpty ? null : notes));
 
-  /// Ends the attack now. Idempotent.
-  Future<void> end() => _update(
-    (a) => a.copyWith(endedAt: a.endedAt ?? _now, finishLater: false),
-  );
+  /// Ends the attack now. Idempotent. Writes the headache event to the
+  /// health store when the person opted in (phase 14).
+  Future<void> end() async {
+    final wasRunning = state.value?.isRunning ?? false;
+    await _update(
+      (a) => a.copyWith(endedAt: a.endedAt ?? _now, finishLater: false),
+    );
+    final ended = state.value;
+    if (wasRunning && ended != null) {
+      await ref.read(healthSyncProvider).exportAttack(ended);
+    }
+  }
 
   /// Keeps the attack running but marks it so the home screen can nudge the
   /// user to come back and fill in the details.

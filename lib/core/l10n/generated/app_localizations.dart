@@ -1497,6 +1497,186 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Forecasts are model estimates for a grid cell, not a measurement at your door. Pollen is only available in Europe. Air quality may be missing in some regions. Where a factor has no data for your area it is simply not shown.'**
   String get aboutDataLimitsBody;
+
+  /// No description provided for @settingsHealthHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Sleep, heart rate, steps and cycle from your health app'**
+  String get settingsHealthHint;
+
+  /// No description provided for @healthTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Health data'**
+  String get healthTitle;
+
+  /// No description provided for @healthIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose what to read from {store}. Each type has its own switch and its own reason.'**
+  String healthIntro(String store);
+
+  /// No description provided for @healthPrivacyNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Imported data stays on this phone. It is never uploaded, not even with backup, unless you export it yourself.'**
+  String get healthPrivacyNote;
+
+  /// No description provided for @healthStoreApple.
+  ///
+  /// In en, this message translates to:
+  /// **'Apple Health'**
+  String get healthStoreApple;
+
+  /// No description provided for @healthStoreConnect.
+  ///
+  /// In en, this message translates to:
+  /// **'Health Connect'**
+  String get healthStoreConnect;
+
+  /// No description provided for @healthUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'{store} is not available on this device.'**
+  String healthUnavailable(String store);
+
+  /// No description provided for @healthReadSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Read'**
+  String get healthReadSection;
+
+  /// No description provided for @healthTypeSleep.
+  ///
+  /// In en, this message translates to:
+  /// **'Sleep'**
+  String get healthTypeSleep;
+
+  /// No description provided for @healthReasonSleep.
+  ///
+  /// In en, this message translates to:
+  /// **'Fills in sleep quality on your daily check-in from the night\'s sleep, so you have one less tap.'**
+  String get healthReasonSleep;
+
+  /// No description provided for @healthTypeRestingHr.
+  ///
+  /// In en, this message translates to:
+  /// **'Resting heart rate'**
+  String get healthTypeRestingHr;
+
+  /// No description provided for @healthReasonRestingHr.
+  ///
+  /// In en, this message translates to:
+  /// **'A higher resting rate than usual can show strain the day before an attack.'**
+  String get healthReasonRestingHr;
+
+  /// No description provided for @healthTypeHrv.
+  ///
+  /// In en, this message translates to:
+  /// **'Heart rate variability'**
+  String get healthTypeHrv;
+
+  /// No description provided for @healthReasonHrv.
+  ///
+  /// In en, this message translates to:
+  /// **'Lower variability than usual often goes with stress and poor recovery.'**
+  String get healthReasonHrv;
+
+  /// No description provided for @healthTypeSteps.
+  ///
+  /// In en, this message translates to:
+  /// **'Steps'**
+  String get healthTypeSteps;
+
+  /// No description provided for @healthReasonSteps.
+  ///
+  /// In en, this message translates to:
+  /// **'Very low or very high activity days are worth seeing next to your attacks.'**
+  String get healthReasonSteps;
+
+  /// No description provided for @healthTypeFlow.
+  ///
+  /// In en, this message translates to:
+  /// **'Menstrual flow'**
+  String get healthTypeFlow;
+
+  /// No description provided for @healthReasonFlow.
+  ///
+  /// In en, this message translates to:
+  /// **'Fills in period starts for cycle tracking, if you use it.'**
+  String get healthReasonFlow;
+
+  /// No description provided for @healthDenied.
+  ///
+  /// In en, this message translates to:
+  /// **'{store} did not grant access. You can change this in its own settings.'**
+  String healthDenied(String store);
+
+  /// No description provided for @healthWriteSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Write'**
+  String get healthWriteSection;
+
+  /// No description provided for @healthWriteHeadaches.
+  ///
+  /// In en, this message translates to:
+  /// **'Write headache events to {store}'**
+  String healthWriteHeadaches(String store);
+
+  /// No description provided for @healthWriteHeadachesHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Each ended attack is saved as a headache with its start, end and severity. Nothing else is written.'**
+  String get healthWriteHeadachesHint;
+
+  /// No description provided for @healthImportSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Import'**
+  String get healthImportSection;
+
+  /// No description provided for @healthImportNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Import now'**
+  String get healthImportNow;
+
+  /// No description provided for @healthImportNever.
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing imported yet'**
+  String get healthImportNever;
+
+  /// No description provided for @healthImportLast.
+  ///
+  /// In en, this message translates to:
+  /// **'{age}'**
+  String healthImportLast(String age);
+
+  /// No description provided for @healthImportFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'The import did not finish. Try again later.'**
+  String get healthImportFailed;
+
+  /// No description provided for @healthImportResult.
+  ///
+  /// In en, this message translates to:
+  /// **'{imported, plural, =0{Nothing new.} =1{1 new sample.} other{{imported} new samples.}} {prefilled, plural, =0{} =1{Sleep filled in for 1 day.} other{Sleep filled in for {prefilled} days.}}'**
+  String healthImportResult(int imported, int prefilled);
+
+  /// No description provided for @checkinSourceHealthkit.
+  ///
+  /// In en, this message translates to:
+  /// **'From Apple Health'**
+  String get checkinSourceHealthkit;
+
+  /// No description provided for @checkinSourceHealthConnect.
+  ///
+  /// In en, this message translates to:
+  /// **'From Health Connect'**
+  String get checkinSourceHealthConnect;
 }
 
 class _AppLocalizationsDelegate

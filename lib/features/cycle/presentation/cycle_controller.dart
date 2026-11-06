@@ -67,6 +67,22 @@ class CycleLog {
     await _restampCheckins(starts);
   }
 
+  /// Adds a period start if not logged yet. Returns true when added.
+  /// Used by health sync; does nothing while tracking is off.
+  Future<bool> addPeriodStart(String date) async {
+    final enabled =
+        await _settings.read<bool>(SettingsKeys.cycleTrackingEnabled) ?? false;
+    if (!enabled) return false;
+    final starts = await _starts();
+    if (starts.contains(date)) return false;
+    starts
+      ..add(date)
+      ..sort();
+    await _settings.write(SettingsKeys.cyclePeriodStarts, starts);
+    await _restampCheckins(starts);
+    return true;
+  }
+
   /// Rewrites `cycleDay` on every check-in from the derived cycle.
   Future<void> _restampCheckins(List<String> starts) async {
     final repo = _ref.read(checkinRepositoryProvider);
