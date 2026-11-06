@@ -64,6 +64,14 @@ class SettingsScreen extends ConsumerWidget {
             subtitle: Text(l10n.settingsRoutinesHint),
             onTap: () => context.push(AppRoutes.routines),
           ),
+          if (AppFeatureFlags.experimentsAvailable)
+            ListTile(
+              key: const ValueKey('settings-experiments'),
+              leading: const Icon(Icons.science_outlined),
+              title: Text(l10n.experimentsTitle),
+              subtitle: Text(l10n.settingsExperimentsHint),
+              onTap: () => context.push(AppRoutes.experiments),
+            ),
           ListTile(
             key: const ValueKey('settings-questionnaires'),
             leading: const Icon(Icons.checklist_outlined),

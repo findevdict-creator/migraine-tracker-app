@@ -3679,6 +3679,204 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Stretches, breathing and other simple routines'**
   String get settingsRoutinesHint;
+
+  /// No description provided for @experimentsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Experiments'**
+  String get experimentsTitle;
+
+  /// No description provided for @settingsExperimentsHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Try one change for two weeks and compare'**
+  String get settingsExperimentsHint;
+
+  /// No description provided for @experimentsIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'Try one change for two weeks and compare it with the two weeks before. One experiment at a time.'**
+  String get experimentsIntro;
+
+  /// No description provided for @experimentsPick.
+  ///
+  /// In en, this message translates to:
+  /// **'Pick one change'**
+  String get experimentsPick;
+
+  /// No description provided for @experimentChangeCutCaffeine.
+  ///
+  /// In en, this message translates to:
+  /// **'Cut back on caffeine'**
+  String get experimentChangeCutCaffeine;
+
+  /// No description provided for @experimentChangeRegularSleep.
+  ///
+  /// In en, this message translates to:
+  /// **'Go to bed at the same time every night'**
+  String get experimentChangeRegularSleep;
+
+  /// No description provided for @experimentChangeMoreWater.
+  ///
+  /// In en, this message translates to:
+  /// **'Drink more water'**
+  String get experimentChangeMoreWater;
+
+  /// No description provided for @experimentChangeDailyStretches.
+  ///
+  /// In en, this message translates to:
+  /// **'Stretch your neck every day'**
+  String get experimentChangeDailyStretches;
+
+  /// No description provided for @experimentChangeLessScreens.
+  ///
+  /// In en, this message translates to:
+  /// **'Less screen time in the evening'**
+  String get experimentChangeLessScreens;
+
+  /// No description provided for @experimentChangeNoAlcohol.
+  ///
+  /// In en, this message translates to:
+  /// **'Skip alcohol'**
+  String get experimentChangeNoAlcohol;
+
+  /// No description provided for @experimentDay.
+  ///
+  /// In en, this message translates to:
+  /// **'Day {day} of {total}'**
+  String experimentDay(int day, int total);
+
+  /// No description provided for @experimentAdherenceQuestion.
+  ///
+  /// In en, this message translates to:
+  /// **'Did you stick with it today?'**
+  String get experimentAdherenceQuestion;
+
+  /// No description provided for @experimentYes.
+  ///
+  /// In en, this message translates to:
+  /// **'Yes'**
+  String get experimentYes;
+
+  /// No description provided for @experimentNo.
+  ///
+  /// In en, this message translates to:
+  /// **'No'**
+  String get experimentNo;
+
+  /// No description provided for @experimentAdherence.
+  ///
+  /// In en, this message translates to:
+  /// **'Kept to it on {kept} of {days} days'**
+  String experimentAdherence(int kept, int days);
+
+  /// No description provided for @experimentCompareTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Two weeks before and during'**
+  String get experimentCompareTitle;
+
+  /// No description provided for @experimentBefore.
+  ///
+  /// In en, this message translates to:
+  /// **'Before'**
+  String get experimentBefore;
+
+  /// No description provided for @experimentDuring.
+  ///
+  /// In en, this message translates to:
+  /// **'During'**
+  String get experimentDuring;
+
+  /// No description provided for @experimentRowRate.
+  ///
+  /// In en, this message translates to:
+  /// **'Attacks per week'**
+  String get experimentRowRate;
+
+  /// No description provided for @experimentRowIntensity.
+  ///
+  /// In en, this message translates to:
+  /// **'Average intensity'**
+  String get experimentRowIntensity;
+
+  /// No description provided for @experimentRowDuration.
+  ///
+  /// In en, this message translates to:
+  /// **'Median duration'**
+  String get experimentRowDuration;
+
+  /// No description provided for @experimentSample.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =0{no attacks} =1{from 1 attack} other{from {count} attacks}}'**
+  String experimentSample(int count);
+
+  /// No description provided for @experimentDays.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 day} other{{count} days}}'**
+  String experimentDays(int count);
+
+  /// No description provided for @experimentNoData.
+  ///
+  /// In en, this message translates to:
+  /// **'No data'**
+  String get experimentNoData;
+
+  /// No description provided for @experimentCaveat.
+  ///
+  /// In en, this message translates to:
+  /// **'Two weeks is short. Weather, seasons and stress change on their own, so read this as a hint, not proof.'**
+  String get experimentCaveat;
+
+  /// No description provided for @experimentSmallSample.
+  ///
+  /// In en, this message translates to:
+  /// **'Fewer than {min} attacks in one of the periods, so the numbers can swing a lot.'**
+  String experimentSmallSample(int min);
+
+  /// No description provided for @experimentStop.
+  ///
+  /// In en, this message translates to:
+  /// **'Stop experiment'**
+  String get experimentStop;
+
+  /// No description provided for @experimentFinish.
+  ///
+  /// In en, this message translates to:
+  /// **'Finish and save the result'**
+  String get experimentFinish;
+
+  /// No description provided for @experimentDue.
+  ///
+  /// In en, this message translates to:
+  /// **'The two weeks are over.'**
+  String get experimentDue;
+
+  /// No description provided for @experimentPast.
+  ///
+  /// In en, this message translates to:
+  /// **'Past experiments'**
+  String get experimentPast;
+
+  /// No description provided for @experimentFinished.
+  ///
+  /// In en, this message translates to:
+  /// **'Finished {date}'**
+  String experimentFinished(String date);
+
+  /// No description provided for @experimentStopped.
+  ///
+  /// In en, this message translates to:
+  /// **'Stopped {date}'**
+  String experimentStopped(String date);
+
+  /// No description provided for @experimentPastSummary.
+  ///
+  /// In en, this message translates to:
+  /// **'{before} attacks per week before, {during} during'**
+  String experimentPastSummary(String before, String during);
 }
 
 class _AppLocalizationsDelegate

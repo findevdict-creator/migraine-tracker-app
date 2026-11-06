@@ -495,8 +495,10 @@ class AppThresholds {
   static const Duration breathingOut = Duration(seconds: 6);
   static const int breathingRounds = 6;
 
-  /// Experiment comparison window, in days.
+  /// Experiment comparison window, in days, and the fewest attacks in a
+  /// period before the comparison stops calling itself "too few".
   static const int experimentWindowDays = 14;
+  static const int experimentMinAttacks = 3;
 
   /// Share link lifetimes offered to the user.
   static const List<int> shareLinkDays = [7, 30];
