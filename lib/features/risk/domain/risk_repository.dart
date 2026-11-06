@@ -13,4 +13,14 @@ abstract interface class RiskRepository {
   Stream<List<RiskDayEntity>> watchRiskRange(String from, String to);
   Future<void> saveRisk(List<DayRisk> days, {required DateTime now});
   Future<List<RiskDayEntity>> allRisk();
+
+  /// Freezes what was shown: days after [today] take the newest forecast,
+  /// [today] keeps its first score. Never rewritten by relearning.
+  Future<void> recordShown(
+    List<DayRisk> days, {
+    required String today,
+    required DateTime now,
+  });
+  Stream<List<ShownRisk>> watchShown();
+  Future<List<ShownRisk>> allShown();
 }

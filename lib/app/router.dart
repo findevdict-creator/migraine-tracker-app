@@ -4,6 +4,7 @@ import 'package:migraine_tracker/app/bootstrap.dart';
 import 'package:migraine_tracker/config/app_config.dart';
 import 'package:migraine_tracker/features/account/presentation/account_screen.dart';
 import 'package:migraine_tracker/features/attack_log/presentation/attack_screen.dart';
+import 'package:migraine_tracker/features/audit/presentation/audit_screen.dart';
 import 'package:migraine_tracker/features/backup/presentation/backup_screen.dart';
 import 'package:migraine_tracker/features/barometer/presentation/barometer_screen.dart';
 import 'package:migraine_tracker/features/checkin/presentation/checkin_screen.dart';
@@ -59,6 +60,7 @@ abstract final class AppRoutes {
   static const String backup = '/backup';
   static const String shareLinks = '/share-links';
   static const String premium = '/premium';
+  static const String audit = '/audit';
   static const String routines = '/routines';
   static const String routinePattern = '/routines/:code';
   static String routine(String code) => '/routines/$code';
@@ -152,6 +154,11 @@ final routerProvider = Provider<GoRouter>((ref) {
         path: AppRoutes.premium,
         name: 'premium',
         builder: (context, state) => const PremiumScreen(),
+      ),
+      GoRoute(
+        path: AppRoutes.audit,
+        name: 'audit',
+        builder: (context, state) => const AuditScreen(),
       ),
       GoRoute(
         path: AppRoutes.shareLinks,

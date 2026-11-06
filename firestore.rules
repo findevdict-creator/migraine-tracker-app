@@ -50,19 +50,10 @@ service cloud.firestore {
       allow read, write: if false;
     }
 
-    // Opt-in audit counts: create only, by a signed-in user, counts only.
+    // Opt-in audit counts arrive only through the auditCounts function,
+    // which accepts the five counts and the model version. No client access.
     match /audit_counts/{doc} {
-      allow create: if request.auth != null
-        && request.resource.data.uid == request.auth.uid
-        && request.resource.data.keys().hasOnly([
-          'uid', 'month', 'attacks', 'highDays', 'hits', 'misses', 'falseAlarms', 'createdAt'
-        ])
-        && request.resource.data.attacks is int
-        && request.resource.data.highDays is int
-        && request.resource.data.hits is int
-        && request.resource.data.misses is int
-        && request.resource.data.falseAlarms is int;
-      allow read, update, delete: if false;
+      allow read, write: if false;
     }
 
     match /{document=**} {

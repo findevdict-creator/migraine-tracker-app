@@ -319,6 +319,13 @@ class AppFeatureFlags {
   /// else in the app depends on being signed in.
   static const bool accountsAvailable = true;
 
+  /// Accuracy self-audit (phase 36). Off hides the page; the frozen daily
+  /// levels are still recorded.
+  static const bool selfAuditAvailable = true;
+
+  /// Opt-in monthly upload of the audit counts. Off hides the switch.
+  static const bool auditUploadAvailable = true;
+
   /// End-to-end encrypted backup (phase 33). Needs an account.
   static const bool backupAvailable = true;
 
@@ -521,6 +528,20 @@ class AppThresholds {
 
   /// Attacks before the accuracy self-audit page appears.
   static const int attacksBeforeSelfAudit = 10;
+
+  /// Self-audit (phase 36, FR-13). An attack counts as following a High
+  /// day when its start date, or one of this many days before it, was
+  /// shown as High. A High day with no attack starting on it or within the
+  /// same number of days after counts as a High day with no attack.
+  static const int auditWindowDays = 1;
+
+  /// Months shown in the self-audit trend, newest first.
+  static const int auditTrendMonths = 6;
+
+  /// The previous month's counts are sent from this day of the month on,
+  /// so every High day's window has closed and the server, which stamps
+  /// the month from its own clock, agrees on which month it was.
+  static const int auditUploadFromDay = 3;
 
   /// Default pressure-drop alert threshold, hPa over 24 h.
   static const double defaultPressureDropAlertHpa = 5;

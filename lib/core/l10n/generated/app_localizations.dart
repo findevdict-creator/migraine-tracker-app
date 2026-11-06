@@ -4711,6 +4711,102 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Share links need Premium. If you just subscribed, wait a minute and try again.'**
   String get shareLinkErrorPremium;
+
+  /// No description provided for @auditTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'How the risk level has done'**
+  String get auditTitle;
+
+  /// No description provided for @auditNotYet.
+  ///
+  /// In en, this message translates to:
+  /// **'This page appears once you have logged {needed} attacks. You have logged {logged} so far.'**
+  String auditNotYet(int needed, int logged);
+
+  /// No description provided for @auditIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'This compares the level the app showed each day with when your attacks started. An attack counts as following a High day when the day it started, or the {window, plural, =1{day} other{{window} days}} before, was shown as High.'**
+  String auditIntro(int window);
+
+  /// No description provided for @auditEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing to compare yet. The app keeps the level it shows each day from now on, and the first numbers appear after your next attack or High day.'**
+  String get auditEmpty;
+
+  /// No description provided for @auditHitsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Attacks that followed a High day'**
+  String get auditHitsTitle;
+
+  /// No description provided for @auditHitsValue.
+  ///
+  /// In en, this message translates to:
+  /// **'{hits} of {attacks} ({share})'**
+  String auditHitsValue(int hits, int attacks, String share);
+
+  /// No description provided for @auditMissesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Attacks without a High day before them'**
+  String get auditMissesTitle;
+
+  /// No description provided for @auditMissesValue.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 attack} other{{count} attacks}}'**
+  String auditMissesValue(int count);
+
+  /// No description provided for @auditFalseAlarmsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'High days with no attack'**
+  String get auditFalseAlarmsTitle;
+
+  /// No description provided for @auditFalseAlarmsValue.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} of {highDays} High days'**
+  String auditFalseAlarmsValue(int count, int highDays);
+
+  /// No description provided for @auditTrend.
+  ///
+  /// In en, this message translates to:
+  /// **'By month'**
+  String get auditTrend;
+
+  /// No description provided for @auditMonthLine.
+  ///
+  /// In en, this message translates to:
+  /// **'{hits} of {attacks} attacks after a High day; {falseAlarms} of {highDays} High days without an attack'**
+  String auditMonthLine(int hits, int attacks, int falseAlarms, int highDays);
+
+  /// No description provided for @auditCaveat.
+  ///
+  /// In en, this message translates to:
+  /// **'Small numbers move a lot from month to month. A High day without an attack is not a mistake: it means more of your usual triggers lined up. The level is a guide to plan around, not a promise.'**
+  String get auditCaveat;
+
+  /// No description provided for @auditShare.
+  ///
+  /// In en, this message translates to:
+  /// **'Share these counts each month'**
+  String get auditShare;
+
+  /// No description provided for @auditShareHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Helps check the app for everyone. Only the five numbers and the model version are sent, never dates, places, your log or your account. Off unless you turn it on.'**
+  String get auditShareHint;
+
+  /// No description provided for @settingsAuditHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Attacks after High days and High days without one'**
+  String get settingsAuditHint;
 }
 
 class _AppLocalizationsDelegate

@@ -24,7 +24,8 @@ export interface PurgeDeps {
 const BY_ID = [config.collections.users, config.collections.entitlements] as const;
 
 /** Collections whose documents carry the owner in a `uid` field. */
-const BY_OWNER = [config.collections.shareSnapshots, config.collections.auditCounts] as const;
+const BY_OWNER = [config.collections.shareSnapshots] as const;
+// Audit counts carry no uid (phase 36), so there is nothing of an account's to find there.
 
 /** The backup folder of one account, with the trailing slash. */
 export function backupPrefix(uid: string): string {

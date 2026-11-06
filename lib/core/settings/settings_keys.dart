@@ -59,4 +59,9 @@ abstract final class SettingsKeys {
   /// Routine suggestions dismissed for one day (phase 29):
   /// `{"date": "yyyy-MM-dd", "codes": [...]}`.
   static const String routinesDismissed = 'routines.dismissed';
+
+  /// Self-audit (phase 36): whether the monthly counts are shared (off
+  /// unless the person turns it on) and the last month sent (`yyyy-MM`).
+  static const String auditShare = 'audit.share';
+  static const String auditLastSentMonth = 'audit.lastSentMonth';
 }

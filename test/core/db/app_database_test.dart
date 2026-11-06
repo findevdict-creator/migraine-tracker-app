@@ -11,32 +11,31 @@ void main() {
   tearDown(() => db.close());
 
   group('AppDatabase', () {
-    test(
-      'creates the 12 tables of the data model plus barometer samples',
-      () async {
-        final counts = await db.rowCounts();
-        expect(counts.keys, hasLength(13));
-        expect(
-          counts.keys,
-          containsAll([
-            'attacks',
-            'barometer_readings',
-            'checkins',
-            'medication_events',
-            'weather_hours',
-            'environment_days',
-            'health_samples',
-            'factor_weights',
-            'risk_days',
-            'experiments',
-            'questionnaires',
-            'share_links',
-            'settings',
-          ]),
-        );
-        expect(counts.values.every((c) => c == 0), isTrue);
-      },
-    );
+    test('creates the 12 tables of the data model plus barometer samples and '
+        'frozen audit levels', () async {
+      final counts = await db.rowCounts();
+      expect(counts.keys, hasLength(14));
+      expect(
+        counts.keys,
+        containsAll([
+          'attacks',
+          'barometer_readings',
+          'checkins',
+          'medication_events',
+          'weather_hours',
+          'environment_days',
+          'health_samples',
+          'factor_weights',
+          'risk_days',
+          'audit_days',
+          'experiments',
+          'questionnaires',
+          'share_links',
+          'settings',
+        ]),
+      );
+      expect(counts.values.every((c) => c == 0), isTrue);
+    });
 
     test('stores dates as ISO-8601 text', () async {
       final now = DateTime.utc(2026, 11, 6, 8, 30);

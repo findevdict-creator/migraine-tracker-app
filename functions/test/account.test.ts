@@ -67,9 +67,10 @@ function seed(mem: Memory): void {
   for (const uid of ["alice", "bob"]) {
     mem.docs.set(`${C.users}/${uid}`, { createdAt: 1 });
     mem.docs.set(`${C.shareSnapshots}/tok-${uid}`, { uid, report: "{}" });
-    mem.docs.set(`${C.auditCounts}/m-${uid}`, { uid, month: "2026-10", attacks: 3 });
     mem.files.add(`${backupPrefix(uid)}snapshot.bin`);
   }
+  // Audit counts are anonymous: no uid, so they are nobody's to purge.
+  mem.docs.set(`${C.auditCounts}/anon1`, { month: "2026-10", attacks: 3 });
   // A folder whose name starts with "alice" but is someone else's.
   mem.files.add(`${config.storage.backupsPrefix}/alice2/snapshot.bin`);
 }
@@ -90,7 +91,7 @@ describe("account purge", () => {
     expect(mem.docs.get(`${C.users}/alice`)).toEqual({ createdAt: deps.now() });
   });
 
-  it("deletes the account's metadata, backup, share snapshots and audit counts, and nothing else", async () => {
+  it("deletes the account's metadata, backup and share snapshots, and nothing else", async () => {
     const { mem, deps } = setup();
     seed(mem);
     await onAccountDeleted("alice", deps);
@@ -99,7 +100,7 @@ describe("account purge", () => {
     // Bob and the look-alike folder are untouched.
     expect(mem.docs.has(`${C.users}/bob`)).toBe(true);
     expect(mem.docs.has(`${C.shareSnapshots}/tok-bob`)).toBe(true);
-    expect(mem.docs.has(`${C.auditCounts}/m-bob`)).toBe(true);
+    expect(mem.docs.has(`${C.auditCounts}/anon1`)).toBe(true);
     expect(mem.files.has(`${backupPrefix("bob")}snapshot.bin`)).toBe(true);
     expect(mem.files.has(`${config.storage.backupsPrefix}/alice2/snapshot.bin`)).toBe(true);
   });

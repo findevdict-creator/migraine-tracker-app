@@ -6885,6 +6885,331 @@ class BarometerReadingsCompanion extends UpdateCompanion<BarometerReading> {
   }
 }
 
+class $AuditDaysTable extends AuditDays
+    with TableInfo<$AuditDaysTable, AuditDay> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $AuditDaysTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _dateMeta = const VerificationMeta('date');
+  @override
+  late final GeneratedColumn<String> date = GeneratedColumn<String>(
+    'date',
+    aliasedName,
+    false,
+    additionalChecks: GeneratedColumn.checkTextLength(
+      minTextLength: 10,
+      maxTextLength: 10,
+    ),
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _levelMeta = const VerificationMeta('level');
+  @override
+  late final GeneratedColumn<String> level = GeneratedColumn<String>(
+    'level',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _modelVersionMeta = const VerificationMeta(
+    'modelVersion',
+  );
+  @override
+  late final GeneratedColumn<String> modelVersion = GeneratedColumn<String>(
+    'model_version',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _recordedAtMeta = const VerificationMeta(
+    'recordedAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> recordedAt = GeneratedColumn<DateTime>(
+    'recorded_at',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  @override
+  List<GeneratedColumn> get $columns => [date, level, modelVersion, recordedAt];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'audit_days';
+  @override
+  VerificationContext validateIntegrity(
+    Insertable<AuditDay> instance, {
+    bool isInserting = false,
+  }) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('date')) {
+      context.handle(
+        _dateMeta,
+        date.isAcceptableOrUnknown(data['date']!, _dateMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_dateMeta);
+    }
+    if (data.containsKey('level')) {
+      context.handle(
+        _levelMeta,
+        level.isAcceptableOrUnknown(data['level']!, _levelMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_levelMeta);
+    }
+    if (data.containsKey('model_version')) {
+      context.handle(
+        _modelVersionMeta,
+        modelVersion.isAcceptableOrUnknown(
+          data['model_version']!,
+          _modelVersionMeta,
+        ),
+      );
+    } else if (isInserting) {
+      context.missing(_modelVersionMeta);
+    }
+    if (data.containsKey('recorded_at')) {
+      context.handle(
+        _recordedAtMeta,
+        recordedAt.isAcceptableOrUnknown(data['recorded_at']!, _recordedAtMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_recordedAtMeta);
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {date};
+  @override
+  AuditDay map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return AuditDay(
+      date: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}date'],
+      )!,
+      level: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}level'],
+      )!,
+      modelVersion: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}model_version'],
+      )!,
+      recordedAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}recorded_at'],
+      )!,
+    );
+  }
+
+  @override
+  $AuditDaysTable createAlias(String alias) {
+    return $AuditDaysTable(attachedDatabase, alias);
+  }
+}
+
+class AuditDay extends DataClass implements Insertable<AuditDay> {
+  /// Local calendar date as `yyyy-MM-dd`.
+  final String date;
+
+  /// `low`, `moderate` or `high`.
+  final String level;
+  final String modelVersion;
+  final DateTime recordedAt;
+  const AuditDay({
+    required this.date,
+    required this.level,
+    required this.modelVersion,
+    required this.recordedAt,
+  });
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['date'] = Variable<String>(date);
+    map['level'] = Variable<String>(level);
+    map['model_version'] = Variable<String>(modelVersion);
+    map['recorded_at'] = Variable<DateTime>(recordedAt);
+    return map;
+  }
+
+  AuditDaysCompanion toCompanion(bool nullToAbsent) {
+    return AuditDaysCompanion(
+      date: Value(date),
+      level: Value(level),
+      modelVersion: Value(modelVersion),
+      recordedAt: Value(recordedAt),
+    );
+  }
+
+  factory AuditDay.fromJson(
+    Map<String, dynamic> json, {
+    ValueSerializer? serializer,
+  }) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return AuditDay(
+      date: serializer.fromJson<String>(json['date']),
+      level: serializer.fromJson<String>(json['level']),
+      modelVersion: serializer.fromJson<String>(json['modelVersion']),
+      recordedAt: serializer.fromJson<DateTime>(json['recordedAt']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'date': serializer.toJson<String>(date),
+      'level': serializer.toJson<String>(level),
+      'modelVersion': serializer.toJson<String>(modelVersion),
+      'recordedAt': serializer.toJson<DateTime>(recordedAt),
+    };
+  }
+
+  AuditDay copyWith({
+    String? date,
+    String? level,
+    String? modelVersion,
+    DateTime? recordedAt,
+  }) => AuditDay(
+    date: date ?? this.date,
+    level: level ?? this.level,
+    modelVersion: modelVersion ?? this.modelVersion,
+    recordedAt: recordedAt ?? this.recordedAt,
+  );
+  AuditDay copyWithCompanion(AuditDaysCompanion data) {
+    return AuditDay(
+      date: data.date.present ? data.date.value : this.date,
+      level: data.level.present ? data.level.value : this.level,
+      modelVersion: data.modelVersion.present
+          ? data.modelVersion.value
+          : this.modelVersion,
+      recordedAt: data.recordedAt.present
+          ? data.recordedAt.value
+          : this.recordedAt,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('AuditDay(')
+          ..write('date: $date, ')
+          ..write('level: $level, ')
+          ..write('modelVersion: $modelVersion, ')
+          ..write('recordedAt: $recordedAt')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => Object.hash(date, level, modelVersion, recordedAt);
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is AuditDay &&
+          other.date == this.date &&
+          other.level == this.level &&
+          other.modelVersion == this.modelVersion &&
+          other.recordedAt == this.recordedAt);
+}
+
+class AuditDaysCompanion extends UpdateCompanion<AuditDay> {
+  final Value<String> date;
+  final Value<String> level;
+  final Value<String> modelVersion;
+  final Value<DateTime> recordedAt;
+  final Value<int> rowid;
+  const AuditDaysCompanion({
+    this.date = const Value.absent(),
+    this.level = const Value.absent(),
+    this.modelVersion = const Value.absent(),
+    this.recordedAt = const Value.absent(),
+    this.rowid = const Value.absent(),
+  });
+  AuditDaysCompanion.insert({
+    required String date,
+    required String level,
+    required String modelVersion,
+    required DateTime recordedAt,
+    this.rowid = const Value.absent(),
+  }) : date = Value(date),
+       level = Value(level),
+       modelVersion = Value(modelVersion),
+       recordedAt = Value(recordedAt);
+  static Insertable<AuditDay> custom({
+    Expression<String>? date,
+    Expression<String>? level,
+    Expression<String>? modelVersion,
+    Expression<DateTime>? recordedAt,
+    Expression<int>? rowid,
+  }) {
+    return RawValuesInsertable({
+      if (date != null) 'date': date,
+      if (level != null) 'level': level,
+      if (modelVersion != null) 'model_version': modelVersion,
+      if (recordedAt != null) 'recorded_at': recordedAt,
+      if (rowid != null) 'rowid': rowid,
+    });
+  }
+
+  AuditDaysCompanion copyWith({
+    Value<String>? date,
+    Value<String>? level,
+    Value<String>? modelVersion,
+    Value<DateTime>? recordedAt,
+    Value<int>? rowid,
+  }) {
+    return AuditDaysCompanion(
+      date: date ?? this.date,
+      level: level ?? this.level,
+      modelVersion: modelVersion ?? this.modelVersion,
+      recordedAt: recordedAt ?? this.recordedAt,
+      rowid: rowid ?? this.rowid,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (date.present) {
+      map['date'] = Variable<String>(date.value);
+    }
+    if (level.present) {
+      map['level'] = Variable<String>(level.value);
+    }
+    if (modelVersion.present) {
+      map['model_version'] = Variable<String>(modelVersion.value);
+    }
+    if (recordedAt.present) {
+      map['recorded_at'] = Variable<DateTime>(recordedAt.value);
+    }
+    if (rowid.present) {
+      map['rowid'] = Variable<int>(rowid.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('AuditDaysCompanion(')
+          ..write('date: $date, ')
+          ..write('level: $level, ')
+          ..write('modelVersion: $modelVersion, ')
+          ..write('recordedAt: $recordedAt, ')
+          ..write('rowid: $rowid')
+          ..write(')'))
+        .toString();
+  }
+}
+
 abstract class _$AppDatabase extends GeneratedDatabase {
   _$AppDatabase(QueryExecutor e) : super(e);
   $AppDatabaseManager get managers => $AppDatabaseManager(this);
@@ -6906,6 +7231,7 @@ abstract class _$AppDatabase extends GeneratedDatabase {
   late final $SettingsTable settings = $SettingsTable(this);
   late final $BarometerReadingsTable barometerReadings =
       $BarometerReadingsTable(this);
+  late final $AuditDaysTable auditDays = $AuditDaysTable(this);
   late final AttackDao attackDao = AttackDao(this as AppDatabase);
   late final CheckinDao checkinDao = CheckinDao(this as AppDatabase);
   late final MedicationDao medicationDao = MedicationDao(this as AppDatabase);
@@ -6940,6 +7266,7 @@ abstract class _$AppDatabase extends GeneratedDatabase {
     shareLinks,
     settings,
     barometerReadings,
+    auditDays,
   ];
   @override
   StreamQueryUpdateRules get streamUpdateRules => const StreamQueryUpdateRules([
@@ -10755,6 +11082,192 @@ typedef $$BarometerReadingsTableProcessedTableManager =
       BarometerReading,
       PrefetchHooks Function()
     >;
+typedef $$AuditDaysTableCreateCompanionBuilder = AuditDaysCompanion Function({
+  required String date,
+  required String level,
+  required String modelVersion,
+  required DateTime recordedAt,
+  Value<int> rowid,
+});
+typedef $$AuditDaysTableUpdateCompanionBuilder = AuditDaysCompanion Function({
+  Value<String> date,
+  Value<String> level,
+  Value<String> modelVersion,
+  Value<DateTime> recordedAt,
+  Value<int> rowid,
+});
+
+class $$AuditDaysTableFilterComposer
+    extends Composer<_$AppDatabase, $AuditDaysTable> {
+  $$AuditDaysTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<String> get date => $composableBuilder(
+    column: $table.date,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get level => $composableBuilder(
+    column: $table.level,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get modelVersion => $composableBuilder(
+    column: $table.modelVersion,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get recordedAt => $composableBuilder(
+    column: $table.recordedAt,
+    builder: (column) => ColumnFilters(column),
+  );
+}
+
+class $$AuditDaysTableOrderingComposer
+    extends Composer<_$AppDatabase, $AuditDaysTable> {
+  $$AuditDaysTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<String> get date => $composableBuilder(
+    column: $table.date,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get level => $composableBuilder(
+    column: $table.level,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get modelVersion => $composableBuilder(
+    column: $table.modelVersion,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get recordedAt => $composableBuilder(
+    column: $table.recordedAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+}
+
+class $$AuditDaysTableAnnotationComposer
+    extends Composer<_$AppDatabase, $AuditDaysTable> {
+  $$AuditDaysTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<String> get date =>
+      $composableBuilder(column: $table.date, builder: (column) => column);
+
+  GeneratedColumn<String> get level =>
+      $composableBuilder(column: $table.level, builder: (column) => column);
+
+  GeneratedColumn<String> get modelVersion => $composableBuilder(
+    column: $table.modelVersion,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<DateTime> get recordedAt => $composableBuilder(
+    column: $table.recordedAt,
+    builder: (column) => column,
+  );
+}
+
+class $$AuditDaysTableTableManager
+    extends
+        RootTableManager<
+          _$AppDatabase,
+          $AuditDaysTable,
+          AuditDay,
+          $$AuditDaysTableFilterComposer,
+          $$AuditDaysTableOrderingComposer,
+          $$AuditDaysTableAnnotationComposer,
+          $$AuditDaysTableCreateCompanionBuilder,
+          $$AuditDaysTableUpdateCompanionBuilder,
+          (AuditDay, BaseReferences<_$AppDatabase, $AuditDaysTable, AuditDay>),
+          AuditDay,
+          PrefetchHooks Function()
+        > {
+  $$AuditDaysTableTableManager(_$AppDatabase db, $AuditDaysTable table)
+    : super(
+        TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$AuditDaysTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$AuditDaysTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$AuditDaysTableAnnotationComposer($db: db, $table: table),
+          updateCompanionCallback:
+              ({
+                Value<String> date = const Value.absent(),
+                Value<String> level = const Value.absent(),
+                Value<String> modelVersion = const Value.absent(),
+                Value<DateTime> recordedAt = const Value.absent(),
+                Value<int> rowid = const Value.absent(),
+              }) => AuditDaysCompanion(
+                date: date,
+                level: level,
+                modelVersion: modelVersion,
+                recordedAt: recordedAt,
+                rowid: rowid,
+              ),
+          createCompanionCallback:
+              ({
+                required String date,
+                required String level,
+                required String modelVersion,
+                required DateTime recordedAt,
+                Value<int> rowid = const Value.absent(),
+              }) => AuditDaysCompanion.insert(
+                date: date,
+                level: level,
+                modelVersion: modelVersion,
+                recordedAt: recordedAt,
+                rowid: rowid,
+              ),
+          withReferenceMapper: (p0) => p0
+              .map(
+                (e) => (
+                  e.readTable<$AuditDaysTable, AuditDay>(table),
+                  BaseReferences<_$AppDatabase, $AuditDaysTable, AuditDay>(
+                    db,
+                    table,
+                    e,
+                  ),
+                ),
+              )
+              .toList(),
+          prefetchHooksCallback: null,
+        ),
+      );
+}
+
+typedef $$AuditDaysTableProcessedTableManager =
+    ProcessedTableManager<
+      _$AppDatabase,
+      $AuditDaysTable,
+      AuditDay,
+      $$AuditDaysTableFilterComposer,
+      $$AuditDaysTableOrderingComposer,
+      $$AuditDaysTableAnnotationComposer,
+      $$AuditDaysTableCreateCompanionBuilder,
+      $$AuditDaysTableUpdateCompanionBuilder,
+      (AuditDay, BaseReferences<_$AppDatabase, $AuditDaysTable, AuditDay>),
+      AuditDay,
+      PrefetchHooks Function()
+    >;
 
 class $AppDatabaseManager {
   final _$AppDatabase _db;
@@ -10785,4 +11298,6 @@ class $AppDatabaseManager {
       $$SettingsTableTableManager(_db, _db.settings);
   $$BarometerReadingsTableTableManager get barometerReadings =>
       $$BarometerReadingsTableTableManager(_db, _db.barometerReadings);
+  $$AuditDaysTableTableManager get auditDays =>
+      $$AuditDaysTableTableManager(_db, _db.auditDays);
 }
