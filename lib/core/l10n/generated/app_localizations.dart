@@ -3475,6 +3475,210 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Open the app on your phone once to connect the watch.'**
   String get watchNoPhone;
+
+  /// No description provided for @routinesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Self-care routines'**
+  String get routinesTitle;
+
+  /// No description provided for @routinesIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'Simple things many people find helpful on hard days. Use what suits you and skip the rest.'**
+  String get routinesIntro;
+
+  /// No description provided for @routineCardTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Something that may help today'**
+  String get routineCardTitle;
+
+  /// No description provided for @routineNotToday.
+  ///
+  /// In en, this message translates to:
+  /// **'Not today'**
+  String get routineNotToday;
+
+  /// No description provided for @routineSeeAll.
+  ///
+  /// In en, this message translates to:
+  /// **'All routines'**
+  String get routineSeeAll;
+
+  /// No description provided for @routineStepsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'How to'**
+  String get routineStepsTitle;
+
+  /// No description provided for @routineReasonHighDay.
+  ///
+  /// In en, this message translates to:
+  /// **'Today\'s level is high'**
+  String get routineReasonHighDay;
+
+  /// No description provided for @routineReasonNeckTension.
+  ///
+  /// In en, this message translates to:
+  /// **'Your check-in shows neck tension'**
+  String get routineReasonNeckTension;
+
+  /// No description provided for @routineReasonStress.
+  ///
+  /// In en, this message translates to:
+  /// **'Your check-in shows high stress'**
+  String get routineReasonStress;
+
+  /// No description provided for @routineStretchesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Gentle neck and shoulder stretches'**
+  String get routineStretchesTitle;
+
+  /// No description provided for @routineStretchesSummary.
+  ///
+  /// In en, this message translates to:
+  /// **'Five slow movements to ease tightness in your neck and shoulders. Stop if anything hurts.'**
+  String get routineStretchesSummary;
+
+  /// One step per line.
+  ///
+  /// In en, this message translates to:
+  /// **'Sit tall with your shoulders relaxed and your feet flat.\nSlowly tilt your right ear towards your right shoulder. Hold for 15 seconds, then switch sides.\nLower your chin towards your chest and hold for 15 seconds.\nRoll your shoulders backwards five times, then forwards five times.\nClasp your hands behind your back and gently open your chest for 15 seconds.'**
+  String get routineStretchesSteps;
+
+  /// No description provided for @routineBreathingTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Paced breathing'**
+  String get routineBreathingTitle;
+
+  /// No description provided for @routineBreathingSummary.
+  ///
+  /// In en, this message translates to:
+  /// **'Breathe in for 4 seconds and out for 6, for about a minute. A slow out-breath helps many people settle.'**
+  String get routineBreathingSummary;
+
+  /// One step per line.
+  ///
+  /// In en, this message translates to:
+  /// **'Sit or lie down somewhere comfortable.\nBreathe in through your nose while the circle grows.\nBreathe out slowly while it shrinks.\nKeep going for six rounds, or for as long as feels good.'**
+  String get routineBreathingSteps;
+
+  /// No description provided for @routineLowLightTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Low light and quiet'**
+  String get routineLowLightTitle;
+
+  /// No description provided for @routineLowLightSummary.
+  ///
+  /// In en, this message translates to:
+  /// **'Bright light and noise bother many people on sensitive days and during an attack.'**
+  String get routineLowLightSummary;
+
+  /// One step per line.
+  ///
+  /// In en, this message translates to:
+  /// **'Dim the lights or close the curtains.\nTurn on dark mode and lower your screen brightness.\nWear an eye mask or sunglasses if light still bothers you.\nCut down noise with earplugs or a quiet room.'**
+  String get routineLowLightSteps;
+
+  /// No description provided for @routineHydrationTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Drink some water'**
+  String get routineHydrationTitle;
+
+  /// No description provided for @routineHydrationSummary.
+  ///
+  /// In en, this message translates to:
+  /// **'Keeping water within reach makes it easier to drink through the day.'**
+  String get routineHydrationSummary;
+
+  /// One step per line.
+  ///
+  /// In en, this message translates to:
+  /// **'Keep a glass or bottle of water within reach.\nTake a few sips every hour.\nHave a glass of water with each meal.'**
+  String get routineHydrationSteps;
+
+  /// No description provided for @routineCaffeineTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Keep caffeine steady'**
+  String get routineCaffeineTitle;
+
+  /// No description provided for @routineCaffeineSummary.
+  ///
+  /// In en, this message translates to:
+  /// **'Big changes in how much caffeine you have can matter for some people.'**
+  String get routineCaffeineSummary;
+
+  /// One step per line.
+  ///
+  /// In en, this message translates to:
+  /// **'Have caffeine at about the same times each day.\nAvoid big increases, and avoid suddenly skipping your usual amount.\nHave your last caffeinated drink by early afternoon.'**
+  String get routineCaffeineSteps;
+
+  /// No description provided for @routineSleepTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Steady sleep'**
+  String get routineSleepTitle;
+
+  /// No description provided for @routineSleepSummary.
+  ///
+  /// In en, this message translates to:
+  /// **'A regular sleep schedule, weekends included, helps many people.'**
+  String get routineSleepSummary;
+
+  /// One step per line.
+  ///
+  /// In en, this message translates to:
+  /// **'Go to bed and get up at about the same time every day.\nKeep the bedroom dark, quiet and cool.\nPut screens away 30 minutes before bed.\nAvoid long naps late in the day.'**
+  String get routineSleepSteps;
+
+  /// No description provided for @breathingStart.
+  ///
+  /// In en, this message translates to:
+  /// **'Start breathing'**
+  String get breathingStart;
+
+  /// No description provided for @breathingStop.
+  ///
+  /// In en, this message translates to:
+  /// **'Stop'**
+  String get breathingStop;
+
+  /// No description provided for @breathingIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Breathe in'**
+  String get breathingIn;
+
+  /// No description provided for @breathingOut.
+  ///
+  /// In en, this message translates to:
+  /// **'Breathe out'**
+  String get breathingOut;
+
+  /// No description provided for @breathingRound.
+  ///
+  /// In en, this message translates to:
+  /// **'Round {round} of {total}'**
+  String breathingRound(int round, int total);
+
+  /// No description provided for @breathingDone.
+  ///
+  /// In en, this message translates to:
+  /// **'Done. Take a moment before you get up.'**
+  String get breathingDone;
+
+  /// No description provided for @settingsRoutinesHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Stretches, breathing and other simple routines'**
+  String get settingsRoutinesHint;
 }
 
 class _AppLocalizationsDelegate

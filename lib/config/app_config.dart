@@ -484,6 +484,17 @@ class AppThresholds {
   /// Points of score history drawn on the questionnaire chart.
   static const int questionnaireChartPoints = 8;
 
+  /// Self-care routine suggestions (FR-22): a stress or neck-tension
+  /// check-in at or above this value suggests a routine, as does a high
+  /// day; at most [routineSuggestionsMax] show on home.
+  static const int routineCheckinTrigger = 4;
+  static const int routineSuggestionsMax = 2;
+
+  /// Paced breathing: seconds in, seconds out, rounds (one minute).
+  static const Duration breathingIn = Duration(seconds: 4);
+  static const Duration breathingOut = Duration(seconds: 6);
+  static const int breathingRounds = 6;
+
   /// Experiment comparison window, in days.
   static const int experimentWindowDays = 14;
 
@@ -693,6 +704,9 @@ class AppAssets {
   static const String launcherIcon = 'assets/brand/launcher_icon.png';
   static const String headMap = 'assets/images/head_map.svg';
   static const String routinesDir = 'assets/routines/';
+
+  /// Illustration for a routine code (`stretches`, `breathing`, ...).
+  static String routineIllustration(String code) => '$routinesDir$code.svg';
 }
 
 // ---------------------------------------------------------------------------

@@ -2036,4 +2036,122 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get watchNoPhone =>
       'Open the app on your phone once to connect the watch.';
+
+  @override
+  String get routinesTitle => 'Self-care routines';
+
+  @override
+  String get routinesIntro =>
+      'Simple things many people find helpful on hard days. Use what suits you and skip the rest.';
+
+  @override
+  String get routineCardTitle => 'Something that may help today';
+
+  @override
+  String get routineNotToday => 'Not today';
+
+  @override
+  String get routineSeeAll => 'All routines';
+
+  @override
+  String get routineStepsTitle => 'How to';
+
+  @override
+  String get routineReasonHighDay => 'Today\'s level is high';
+
+  @override
+  String get routineReasonNeckTension => 'Your check-in shows neck tension';
+
+  @override
+  String get routineReasonStress => 'Your check-in shows high stress';
+
+  @override
+  String get routineStretchesTitle => 'Gentle neck and shoulder stretches';
+
+  @override
+  String get routineStretchesSummary =>
+      'Five slow movements to ease tightness in your neck and shoulders. Stop if anything hurts.';
+
+  @override
+  String get routineStretchesSteps =>
+      'Sit tall with your shoulders relaxed and your feet flat.\nSlowly tilt your right ear towards your right shoulder. Hold for 15 seconds, then switch sides.\nLower your chin towards your chest and hold for 15 seconds.\nRoll your shoulders backwards five times, then forwards five times.\nClasp your hands behind your back and gently open your chest for 15 seconds.';
+
+  @override
+  String get routineBreathingTitle => 'Paced breathing';
+
+  @override
+  String get routineBreathingSummary =>
+      'Breathe in for 4 seconds and out for 6, for about a minute. A slow out-breath helps many people settle.';
+
+  @override
+  String get routineBreathingSteps =>
+      'Sit or lie down somewhere comfortable.\nBreathe in through your nose while the circle grows.\nBreathe out slowly while it shrinks.\nKeep going for six rounds, or for as long as feels good.';
+
+  @override
+  String get routineLowLightTitle => 'Low light and quiet';
+
+  @override
+  String get routineLowLightSummary =>
+      'Bright light and noise bother many people on sensitive days and during an attack.';
+
+  @override
+  String get routineLowLightSteps =>
+      'Dim the lights or close the curtains.\nTurn on dark mode and lower your screen brightness.\nWear an eye mask or sunglasses if light still bothers you.\nCut down noise with earplugs or a quiet room.';
+
+  @override
+  String get routineHydrationTitle => 'Drink some water';
+
+  @override
+  String get routineHydrationSummary =>
+      'Keeping water within reach makes it easier to drink through the day.';
+
+  @override
+  String get routineHydrationSteps =>
+      'Keep a glass or bottle of water within reach.\nTake a few sips every hour.\nHave a glass of water with each meal.';
+
+  @override
+  String get routineCaffeineTitle => 'Keep caffeine steady';
+
+  @override
+  String get routineCaffeineSummary =>
+      'Big changes in how much caffeine you have can matter for some people.';
+
+  @override
+  String get routineCaffeineSteps =>
+      'Have caffeine at about the same times each day.\nAvoid big increases, and avoid suddenly skipping your usual amount.\nHave your last caffeinated drink by early afternoon.';
+
+  @override
+  String get routineSleepTitle => 'Steady sleep';
+
+  @override
+  String get routineSleepSummary =>
+      'A regular sleep schedule, weekends included, helps many people.';
+
+  @override
+  String get routineSleepSteps =>
+      'Go to bed and get up at about the same time every day.\nKeep the bedroom dark, quiet and cool.\nPut screens away 30 minutes before bed.\nAvoid long naps late in the day.';
+
+  @override
+  String get breathingStart => 'Start breathing';
+
+  @override
+  String get breathingStop => 'Stop';
+
+  @override
+  String get breathingIn => 'Breathe in';
+
+  @override
+  String get breathingOut => 'Breathe out';
+
+  @override
+  String breathingRound(int round, int total) {
+    return 'Round $round of $total';
+  }
+
+  @override
+  String get breathingDone => 'Done. Take a moment before you get up.';
+
+  @override
+  String get settingsRoutinesHint =>
+      'Stretches, breathing and other simple routines';
 }

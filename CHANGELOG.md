@@ -8,6 +8,8 @@ release time.
 
 ### Added
 
+- Self-care routines: stretches, paced breathing with a guided timer, low light, water, caffeine and sleep, suggested on home on high days and after high neck-tension or stress check-ins, with "Not today" (29).
+
 - Apple Watch companion: start and end an attack and set the intensity from the watch, with taps saved until the iPhone is near, and a watch-face complication with today's level (28).
 
 - Wear OS companion: start and end an attack and set the intensity from the watch, with taps saved on the watch until the phone is near, and a tile with today's level (27).

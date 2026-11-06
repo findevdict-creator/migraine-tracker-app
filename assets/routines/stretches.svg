@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <!-- Placeholder artwork. Replace the file, keep the name (AppAssets.routineIllustration). -->
+  <rect width="120" height="120" rx="24" fill="#5B5BD6" fill-opacity="0.08"/>
+  <g fill="#5B5BD6"><circle cx="60" cy="34" r="14"/><path d="M60 48 L60 92 M60 60 L36 76 M60 60 L84 44 M60 92 L44 112 M60 92 L76 112" stroke="#5B5BD6" stroke-width="7" stroke-linecap="round" fill="none"/></g>
+</svg>
