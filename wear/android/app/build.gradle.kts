@@ -1,8 +1,31 @@
+import java.util.Properties
+
 plugins {
     id("com.android.application")
     // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
     id("dev.flutter.flutter-gradle-plugin")
 }
+
+// Release signing (phase 39): the same upload key as the phone app, which
+// the Wearable data layer requires. Read from the phone's
+// android/key.properties or the ANDROID_KEYSTORE_* variables the release
+// workflow sets; debug key otherwise.
+val keyProperties = Properties().apply {
+    val file = rootProject.file("../../android/key.properties")
+    if (file.exists()) file.inputStream().use { load(it) }
+}
+
+fun signingValue(property: String, env: String): String? =
+    keyProperties.getProperty(property) ?: System.getenv(env)
+
+val releaseStoreFile = signingValue("storeFile", "ANDROID_KEYSTORE_PATH")?.let {
+    // key.properties paths are relative to the phone's android/ folder.
+    if (File(it).isAbsolute) it else rootProject.file("../../android/$it").path
+}
+
+// Play needs a distinct version code per form factor under one package.
+// Mirrors AppRelease.wearVersionCodeOffset in lib/config/app_config.dart.
+val wearVersionCodeOffset = 100_000_000
 
 android {
     namespace = "app.migrainetracker.migraine_tracker_wear"
@@ -27,7 +50,7 @@ android {
         // is added automatically by Flutter. (https://developer.android.com/studio/build/configure-apk-splits#configure-APK-versions)
         // You can force using the value of versionCode by specifying the `-P force-version-code-ignoring-abi=true`
         // flag during build.
-        versionCode = flutter.versionCode
+        versionCode = wearVersionCodeOffset + flutter.versionCode
         versionName = flutter.versionName
     }
 
@@ -55,11 +78,24 @@ android {
         }
     }
 
+    signingConfigs {
+        if (releaseStoreFile != null) {
+            create("release") {
+                storeFile = file(releaseStoreFile)
+                storePassword = signingValue("storePassword", "ANDROID_KEYSTORE_PASSWORD")
+                keyAlias = signingValue("keyAlias", "ANDROID_KEY_ALIAS")
+                keyPassword = signingValue("keyPassword", "ANDROID_KEY_PASSWORD")
+            }
+        }
+    }
+
     buildTypes {
         release {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
-            signingConfig = signingConfigs.getByName("debug")
+            signingConfig = if (releaseStoreFile != null) {
+                signingConfigs.getByName("release")
+            } else {
+                signingConfigs.getByName("debug")
+            }
         }
     }
 }

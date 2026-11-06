@@ -890,6 +890,50 @@ class AppAssets {
 }
 
 // ---------------------------------------------------------------------------
+// Release
+// ---------------------------------------------------------------------------
+
+/// Release settings (phase 39). The release workflow, the fastlane lanes
+/// and the budget check read their own copies; `release_config_test.dart`
+/// keeps those copies equal to these.
+class AppRelease {
+  const AppRelease._();
+
+  /// Git tags that start a store release: `v1.0.0` must match the
+  /// `version:` line in pubspec.yaml.
+  static const String tagPrefix = 'v';
+
+  /// Play track each tagged build goes to (`android/fastlane/Fastfile`).
+  static const String playTrack = 'internal';
+
+  /// Play track for the Wear OS bundle.
+  static const String wearPlayTrack = 'wear:internal';
+
+  /// Share of production users at each staged-rollout step, in order. The
+  /// `promote` lane takes the next one.
+  static const List<double> productionRollout = [0.05, 0.2, 0.5, 1];
+
+  /// Crash-free users needed before the next rollout step: Play Console
+  /// Android vitals (user-perceived crash rate at most 1 minus this) and
+  /// App Store Connect crash metrics. Crashlytics alone cannot show the
+  /// share without Google Analytics, which the app leaves out.
+  static const double crashFreeUsersTarget = 0.995;
+
+  /// Days a rollout step must run before the next one.
+  static const int minDaysPerRolloutStep = 2;
+
+  /// Added to the version code of the Wear OS app, which shares the phone's
+  /// package name: Play needs distinct codes (`wear/android/app/build.gradle.kts`).
+  static const int wearVersionCodeOffset = 100000000;
+
+  /// Monthly Google Cloud budget per project in US dollars, and the alert
+  /// thresholds as shares of it (\$10 and \$25 at the defaults), checked by
+  /// `tool/check_budgets.sh`.
+  static const int monthlyBudgetUsd = 25;
+  static const List<double> budgetAlertShares = [0.4, 1];
+}
+
+// ---------------------------------------------------------------------------
 // Localization
 // ---------------------------------------------------------------------------
 

@@ -1,0 +1,14 @@
+# Signing certificates and profiles live in a private git repository,
+# encrypted with MATCH_PASSWORD (docs/release/README.md).
+git_url(ENV["MATCH_GIT_URL"]) if ENV["MATCH_GIT_URL"]
+storage_mode("git")
+type("appstore")
+# The app, its widget, the watch app and its complication each need a
+# profile. Mirrors the Xcode targets (the widget id is Xcode's default for
+# a target named RiskWidget, CONFIGURATION item 8) and RiskWatch/project.yml.
+app_identifier([
+  "app.migrainetracker.migraineTracker",
+  "app.migrainetracker.migraineTracker.RiskWidget",
+  "app.migrainetracker.migraineTracker.watchkitapp",
+  "app.migrainetracker.migraineTracker.watchkitapp.complication",
+])

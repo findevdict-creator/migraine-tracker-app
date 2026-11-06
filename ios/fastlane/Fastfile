@@ -1,0 +1,37 @@
+# App Store lanes (phase 39).
+#
+#   bundle exec fastlane ios certificates   install signing (read-only match) on this machine or CI
+#   bundle exec fastlane ios beta           upload build/ios/ipa/*.ipa to TestFlight
+#
+# The ipa itself is built by `flutter build ipa` (see the release
+# workflow), so Flutter controls the build and fastlane only signs and ships.
+default_platform(:ios)
+
+def api_key
+  app_store_connect_api_key(
+    key_id: ENV.fetch("ASC_KEY_ID"),
+    issuer_id: ENV.fetch("ASC_ISSUER_ID"),
+    key_content: ENV.fetch("ASC_KEY_P8"),
+    is_key_content_base64: true,
+  )
+end
+
+platform :ios do
+  desc "Install the App Store certificates and profiles (read-only)"
+  lane :certificates do
+    setup_ci if ENV["CI"]
+    match(type: "appstore", readonly: true, api_key: api_key)
+  end
+
+  desc "Upload the built ipa to TestFlight"
+  lane :beta do
+    ipa = Dir["../build/ios/ipa/*.ipa"].first
+    UI.user_error!("No ipa in build/ios/ipa; run flutter build ipa first") if ipa.nil?
+    upload_to_testflight(
+      api_key: api_key,
+      ipa: ipa,
+      skip_waiting_for_build_processing: true,
+      changelog: ENV["RELEASE_NOTES"],
+    )
+  end
+end

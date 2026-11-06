@@ -1,0 +1,192 @@
+name: release
+
+# A tag like v1.0.0 (AppRelease.tagPrefix + the pubspec version) builds the
+# signed prod apps and sends them to Play internal testing and TestFlight,
+# then drafts the GitHub release from CHANGELOG.md. Production rollout is
+# a separate, manual step (docs/release/README.md).
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    name: Tag, version and tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Tag matches the version
+        run: tool/check_release_tag.sh "${GITHUB_REF_NAME}"
+      - name: Read Flutter version
+        id: fvm
+        run: echo "version=$(jq -r .flutter .fvmrc)" >> "$GITHUB_OUTPUT"
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ steps.fvm.outputs.version }}
+          channel: stable
+          cache: true
+      - run: flutter pub get
+      - run: flutter analyze --fatal-infos
+      - run: flutter test
+
+  android:
+    name: Play internal testing
+    needs: verify
+    runs-on: ubuntu-latest
+    environment: production
+    env:
+      ENV_PROD_JSON: ${{ secrets.ENV_PROD_JSON }}
+      GOOGLE_SERVICES_PROD_JSON: ${{ secrets.GOOGLE_SERVICES_PROD_JSON }}
+      ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+      ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+      ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+      ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+      PLAY_SERVICE_ACCOUNT_JSON: ${{ secrets.PLAY_SERVICE_ACCOUNT_JSON }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Required secrets are set
+        run: |
+          missing=()
+          for name in ENV_PROD_JSON GOOGLE_SERVICES_PROD_JSON ANDROID_KEYSTORE_BASE64 \
+                      ANDROID_KEYSTORE_PASSWORD ANDROID_KEY_ALIAS ANDROID_KEY_PASSWORD \
+                      PLAY_SERVICE_ACCOUNT_JSON; do
+            [ -n "${!name}" ] || missing+=("$name")
+          done
+          if [ ${#missing[@]} -gt 0 ]; then
+            echo "::error::Missing repository secrets: ${missing[*]} (docs/release/README.md)"
+            exit 1
+          fi
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+      - name: Read Flutter version
+        id: fvm
+        run: echo "version=$(jq -r .flutter .fvmrc)" >> "$GITHUB_OUTPUT"
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ steps.fvm.outputs.version }}
+          channel: stable
+          cache: true
+      - name: Write the prod configuration and the upload key
+        run: |
+          printf '%s' "$ENV_PROD_JSON" > env/prod.json
+          printf '%s' "$GOOGLE_SERVICES_PROD_JSON" > android/app/src/prod/google-services.json
+          echo "$ANDROID_KEYSTORE_BASE64" | base64 --decode > "$RUNNER_TEMP/upload.jks"
+          echo "ANDROID_KEYSTORE_PATH=$RUNNER_TEMP/upload.jks" >> "$GITHUB_ENV"
+      - run: flutter pub get
+      - name: Phone app bundle
+        run: >
+          flutter build appbundle --release --flavor prod
+          -t lib/main_prod.dart --dart-define-from-file=env/prod.json
+          --obfuscate --split-debug-info=build/symbols/android
+      - name: Wear OS app bundle
+        working-directory: wear
+        run: |
+          flutter pub get
+          flutter build appbundle --release --flavor prod
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+      - name: Upload to Play internal testing
+        working-directory: android
+        run: bundle exec fastlane android internal
+      - uses: actions/upload-artifact@v4
+        with:
+          name: android-release
+          path: |
+            build/app/outputs/bundle/prodRelease/*.aab
+            wear/build/app/outputs/bundle/prodRelease/*.aab
+            build/symbols/android
+      - name: Remove the upload key
+        if: always()
+        run: rm -f "$RUNNER_TEMP/upload.jks" env/prod.json
+
+  ios:
+    name: TestFlight
+    needs: verify
+    runs-on: macos-latest
+    environment: production
+    env:
+      ENV_PROD_JSON: ${{ secrets.ENV_PROD_JSON }}
+      APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+      ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+      ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+      ASC_KEY_P8: ${{ secrets.ASC_KEY_P8 }}
+      MATCH_GIT_URL: ${{ secrets.MATCH_GIT_URL }}
+      MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+      MATCH_GIT_BASIC_AUTHORIZATION: ${{ secrets.MATCH_GIT_BASIC_AUTHORIZATION }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Required secrets are set
+        run: |
+          missing=()
+          for name in ENV_PROD_JSON APPLE_TEAM_ID ASC_KEY_ID ASC_ISSUER_ID ASC_KEY_P8 \
+                      MATCH_GIT_URL MATCH_PASSWORD MATCH_GIT_BASIC_AUTHORIZATION; do
+            [ -n "${!name}" ] || missing+=("$name")
+          done
+          if [ ${#missing[@]} -gt 0 ]; then
+            echo "::error::Missing repository secrets: ${missing[*]} (docs/release/README.md)"
+            exit 1
+          fi
+      - name: Read Flutter version
+        id: fvm
+        run: echo "version=$(jq -r .flutter .fvmrc)" >> "$GITHUB_OUTPUT"
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ steps.fvm.outputs.version }}
+          channel: stable
+          cache: true
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+      - name: Write the prod configuration
+        run: |
+          printf '%s' "$ENV_PROD_JSON" > env/prod.json
+          sed -i '' "s/APPLE_TEAM_ID/${APPLE_TEAM_ID}/" ios/ExportOptions.plist
+      - name: Signing certificates
+        working-directory: ios
+        run: bundle exec fastlane ios certificates
+      - run: flutter pub get
+      - name: App Store ipa
+        run: >
+          flutter build ipa --release
+          -t lib/main_prod.dart --dart-define-from-file=env/prod.json
+          --export-options-plist=ios/ExportOptions.plist
+          --obfuscate --split-debug-info=build/symbols/ios
+      - name: Upload to TestFlight
+        working-directory: ios
+        run: |
+          export RELEASE_NOTES="$(../tool/release_notes.sh "${GITHUB_REF_NAME#v}" | head -c 3900)"
+          bundle exec fastlane ios beta
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ios-release
+          path: |
+            build/ios/ipa/*.ipa
+            build/symbols/ios
+      - name: Remove the prod configuration
+        if: always()
+        run: rm -f env/prod.json
+
+  github-release:
+    name: Draft the GitHub release
+    needs: [android, ios]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Draft release from CHANGELOG.md
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tool/release_notes.sh "${GITHUB_REF_NAME#v}" > "$RUNNER_TEMP/notes.md"
+          gh release create "$GITHUB_REF_NAME" --draft --verify-tag \
+            --title "$GITHUB_REF_NAME" --notes-file "$RUNNER_TEMP/notes.md"

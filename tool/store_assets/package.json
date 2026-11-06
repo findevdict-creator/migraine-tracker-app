@@ -1,0 +1,12 @@
+{
+  "name": "migraine-tracker-store-assets",
+  "private": true,
+  "type": "module",
+  "description": "Renders launcher icons and store graphics from assets/brand and lib/config/app_config.dart.",
+  "scripts": {
+    "render": "node render.mjs"
+  },
+  "devDependencies": {
+    "playwright": "1.63.0"
+  }
+}

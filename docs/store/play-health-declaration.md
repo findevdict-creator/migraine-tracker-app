@@ -1,7 +1,9 @@
-# Google Play: Health Connect declaration (draft)
+# Google Play: Health Connect declaration
 
-Draft text for the Play Console "Health apps" declaration and the Health
-Connect permissions form. Fill in when the app is submitted (phase 39).
+Text for the Play Console "Health apps" declaration and the Health
+Connect permissions form, for version 1.0.0. The rest of App content is in
+[play-data-safety.md](play-data-safety.md); the release steps are in
+[docs/release/README.md](../release/README.md).
 
 ## App category
 

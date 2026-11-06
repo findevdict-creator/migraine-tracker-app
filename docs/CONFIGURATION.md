@@ -27,6 +27,7 @@ production build, and the few native files that mirror a value.
 | `AppWatch` (= `WatchConfig` in `packages/watch_protocol/lib/src/watch_config.dart`) | tile freshness, resend interval, tile channel, the keys the watch stores and the tile reads; the on/off switch is `AppFeatureFlags.watchAvailable` | watch behaviour. The values live in the shared package because the Wear OS app cannot import the phone's config; `app_config.dart` re-exports them |
 | `AppLocales` | supported locales (en, es, pt, de, fr, hi, ja), fallback, the PDF's fallback language per language (`pdfFallback`: Hindi prints in English because the PDF engine cannot shape Devanagari), the PDF font per script (`pdfFonts`: Noto Sans JP for Japanese), the pseudo-locale `en_XA` offered only in dev and staging builds | adding a language (also the ARB file, `bannedStems` in `tool/copy_lint.dart` and `STRINGS` in `hosting/share.js`) |
 | `AppUnits` | regions that default to inHg and to °F, digits per pressure unit, conversion factors. The person can change both in Settings > Units | a region's convention, display precision |
+| `AppRelease` | release tag prefix, Play tracks for the phone and the watch, staged rollout steps, the crash-free users target and the days per step, the Wear OS version code offset, the monthly Google Cloud budget and its alert shares | changing the release process (also the mirrors below; `test/config/release_config_test.dart` checks them) |
 
 ## The risk model
 
@@ -159,7 +160,29 @@ commercial key (used only by the cache function), RevenueCat keys.
     QualityMetric with the licence in item 7; MIDAS translations from the
     published validation studies). The App Store and Play listings also
     need translating per language.
-17. Repository settings on GitHub: protect `main` (require PR, require the
+17. Release (phase 39), step by step in `docs/release/README.md`:
+    - Create the Android upload keystore and `android/key.properties`
+      (both gitignored); turn on Play App Signing.
+    - Create the apps in Play Console and App Store Connect, fill in the
+      forms from `docs/store/` (data safety, health declaration, App
+      Privacy, listing, content rating) and upload the first Play bundles
+      by hand.
+    - Set up fastlane match with a private certificates repo, an App Store
+      Connect API key and a Play service account.
+    - Create the GitHub Environments `production` and `staging` and add
+      the secrets listed in the runbook.
+    - Create the budgets and run `tool/check_budgets.sh`.
+    - Replace `assets/brand/logo_mark.svg` with the final artwork, then run
+      `cd tool/store_assets && npm install && npx playwright install chromium && npm run render`,
+      then `dart run flutter_launcher_icons` from the repo root, to
+      regenerate the icons and store graphics. The icon tool also edits
+      `ios/Runner.xcodeproj/project.pbxproj`; discard that change
+      (`git checkout ios/Runner.xcodeproj`), the asset catalogue is all
+      it needs to update.
+    - Take the store screenshots (list in `docs/store/listing.md`).
+    - Fill in the sign-off at the end of `docs/parity-checklist.md`, then
+      tag `v1.0.0`.
+18. Repository settings on GitHub: protect `main` (require PR, require the
    `pr` workflow jobs, require conversation resolution, block force pushes
    and deletions, merge commits only, delete head branches on merge).
 
@@ -191,4 +214,10 @@ These cannot be read from Dart at build time, so they mirror `AppIdentity`:
 | Wear OS app | `AppIdentity.bundleId`, flavors, `AppWatch` | `wear/android/app/build.gradle.kts` (`applicationId` and flavor suffixes must equal the phone's, or the data layer will not connect), `wear/android/.../RiskTileService.kt` (tile keys, freshness), `wear/android/.../MainActivity.kt` (tile channel) |
 | Apple Watch app | `AppIdentity.iosBundleId`, `AppHomeWidgets.iosAppGroup`, `AppWatch` | `ios/RiskWatch/WatchProtocolKit/Sources/WatchProtocolKit/WatchConfig.swift` (app group, resend interval, complication refresh, storage keys), `ios/RiskWatch/project.yml` (watch bundle ids), `ios/RiskWatch/App/Info.plist` (`WKCompanionAppBundleIdentifier`), the two `.entitlements` files (app group). The message format is checked against `packages/watch_protocol/test/fixtures/` by the Swift tests |
 | Deep-link scheme | `AppIdentity.deepLinkScheme` | `ios/Runner/Info.plist` (`CFBundleURLTypes`), `AndroidManifest.xml` widget intent filter |
-| Launcher icon | `AppAssets.launcherIcon` | `android/app/src/main/res/mipmap-*`, `ios/Runner/Assets.xcassets/AppIcon.appiconset` (generated with `flutter_launcher_icons` in the release-prep phase) |
+| Launcher icon | `AppAssets.launcherIcon`, `AppThemeTokens.seed` | `pubspec.yaml` `flutter_launcher_icons` (`image_path`, `adaptive_icon_background`), generated into `android/app/src/main/res/mipmap-*`, `drawable-*`, `values/colors.xml` and `ios/Runner/Assets.xcassets/AppIcon.appiconset`; the PNGs come from `tool/store_assets/render.mjs` |
+| Release tracks and rollout | `AppRelease.playTrack`, `wearPlayTrack`, `productionRollout` | `android/fastlane/Fastfile` (`PLAY_TRACK`, `WEAR_PLAY_TRACK`, `PRODUCTION_ROLLOUT`) |
+| Wear OS version code offset | `AppRelease.wearVersionCodeOffset` | `wear/android/app/build.gradle.kts` (`wearVersionCodeOffset`) |
+| Store bundle ids | `AppIdentity.bundleId`, `iosBundleId` | `android/fastlane/Appfile`, `ios/fastlane/Appfile`, `ios/fastlane/Matchfile`, `ios/ExportOptions.plist` (profile per bundle id) |
+| Release tag and budget | `AppRelease.tagPrefix`, `monthlyBudgetUsd`, `budgetAlertShares` | read from `app_config.dart` by `tool/check_release_tag.sh` and `tool/check_budgets.sh` |
+| Version | `pubspec.yaml` `version:` | `wear/pubspec.yaml` (same name), `CHANGELOG.md` section; checked by the release workflow |
+| Data collected (privacy) | features that send data (accounts, share links, Premium, weather, push, crash reports, audit counts) | `ios/Runner/PrivacyInfo.xcprivacy`, `docs/store/play-data-safety.md`, `docs/store/app-store-privacy.md`: change all three together |

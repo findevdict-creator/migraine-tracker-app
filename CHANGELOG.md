@@ -6,7 +6,14 @@ release time.
 
 ## [Unreleased]
 
+## [1.0.0]
+
+First store release: everything below, built across phases 01 to 39. The
+date is set when M tags `v1.0.0` after the phase branches are merged.
+
 ### Added
+
+- Release preparation: version 1.0.0, release signing for the phone and Wear OS apps, launcher icons and store graphics rendered from the brand artwork, the iOS privacy manifest, the Play data safety and App Store privacy answers, fastlane lanes for Play internal testing and TestFlight, and a release workflow that ships a tagged build to both (39).
 
 - Accessibility pass: Settings > Reduce motion (saved, alongside the phone's setting) cuts page transitions and the onboarding slide. Screen readers now hear the intensity sliders as one control with the scale's own number and both ends, instead of "50%". At 200% text, Finish later becomes an icon instead of overflowing. A scanner checks contrast, labels and tap target sizes on 22 screens in light and dark on every run (38).
 
