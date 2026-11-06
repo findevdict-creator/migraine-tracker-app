@@ -98,6 +98,56 @@ class AppLocalizationsEn extends AppLocalizations {
   String get attackIntensity => 'Pain intensity';
 
   @override
+  String get durationEstimateTitle => 'How long attacks like this usually last';
+
+  @override
+  String durationEstimateRange(String low, String high) {
+    return 'Typically $low to $high h';
+  }
+
+  @override
+  String durationEstimateSameMedication(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other:
+          'Based on $count past attacks of similar intensity with the same medication',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String durationEstimateNoMedication(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other:
+          'Based on $count past attacks of similar intensity without medication',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String durationEstimateSimilar(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Based on $count past attacks of similar intensity',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String durationEstimateAll(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Based on $count of your past attacks',
+    );
+    return '$_temp0';
+  }
+
+  @override
   String get attackIntensityLow => 'No pain';
 
   @override
