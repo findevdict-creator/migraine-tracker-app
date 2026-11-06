@@ -13,6 +13,7 @@
 library;
 
 import 'package:flutter/material.dart';
+import 'package:watch_protocol/watch_protocol.dart' show WatchConfig;
 
 // ---------------------------------------------------------------------------
 // Flavors
@@ -298,6 +299,10 @@ class AppFeatureFlags {
   /// a Firebase project with Cloud Messaging; off means local scheduling
   /// only.
   static const bool pushWakeupAvailable = true;
+
+  /// Phone side of the watch apps (phases 27 and 28). Off stops sending
+  /// state to the watch and ignores watch commands.
+  static const bool watchAvailable = true;
 }
 
 // ---------------------------------------------------------------------------
@@ -537,6 +542,13 @@ class AppHomeWidgets {
   static const String keyStartLabel = 'startLabel';
   static const String keyRunning = 'running';
 }
+
+/// Watch apps (phases 27 and 28). The values both the phone and the Wear OS
+/// app read live in `packages/watch_protocol/lib/src/watch_config.dart`
+/// (`WatchConfig`), the one place the watch app can import; they are
+/// re-exported here so phone code reads them from this file like any other
+/// setting. The on/off switch is `AppFeatureFlags.watchAvailable`.
+typedef AppWatch = WatchConfig;
 
 /// Local notification channels (Android) and categories (iOS). The ids
 /// are stored by the OS; renaming one creates a new channel.

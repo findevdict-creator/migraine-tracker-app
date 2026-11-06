@@ -52,4 +52,7 @@ abstract final class SettingsKeys {
   /// The FCM token last registered with the server, and when.
   static const String pushToken = 'push.token';
   static const String pushTokenRegisteredAt = 'push.registeredAt';
+
+  /// Ids of watch commands already applied (phase 27), oldest first.
+  static const String watchLedger = 'watch.ledger';
 }

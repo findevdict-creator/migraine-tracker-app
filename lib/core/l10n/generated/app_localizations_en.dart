@@ -2014,4 +2014,26 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get widgetOpenAttack => 'Open attack';
+
+  @override
+  String get watchStart => 'Start attack';
+
+  @override
+  String get watchStop => 'End attack';
+
+  @override
+  String get watchIntensity => 'Intensity';
+
+  @override
+  String watchSince(String time) {
+    return 'Since $time';
+  }
+
+  @override
+  String get watchPending =>
+      'Saved on the watch. Sends when your phone is near.';
+
+  @override
+  String get watchNoPhone =>
+      'Open the app on your phone once to connect the watch.';
 }

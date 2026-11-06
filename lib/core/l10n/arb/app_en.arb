@@ -661,5 +661,12 @@
   "widgetUpdated": "Updated {time}",
   "@widgetUpdated": {"placeholders": {"time": {"type": "String"}}},
   "widgetStartAttack": "Start attack",
-  "widgetOpenAttack": "Open attack"
+  "widgetOpenAttack": "Open attack",
+  "watchStart": "Start attack",
+  "watchStop": "End attack",
+  "watchIntensity": "Intensity",
+  "watchSince": "Since {time}",
+  "@watchSince": {"placeholders": {"time": {"type": "String"}}},
+  "watchPending": "Saved on the watch. Sends when your phone is near.",
+  "watchNoPhone": "Open the app on your phone once to connect the watch."
 }

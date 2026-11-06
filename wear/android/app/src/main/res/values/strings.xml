@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Shown by the system before the app has run once; everything else on
+     the tile comes from the phone in its language. -->
+<resources>
+    <string name="tile_label">Migraine level</string>
+    <string name="tile_description">Today\'s level, top factor and pressure trend</string>
+    <string name="tile_empty">Open the app to connect your phone</string>
+</resources>
