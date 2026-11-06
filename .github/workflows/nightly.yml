@@ -1,0 +1,55 @@
+name: nightly
+
+on:
+  schedule:
+    - cron: "0 2 * * *"
+  workflow_dispatch:
+
+jobs:
+  dependencies:
+    name: Outdated dependencies and vulnerability scan
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Read Flutter version
+        id: fvm
+        run: echo "version=$(jq -r .flutter .fvmrc)" >> "$GITHUB_OUTPUT"
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ steps.fvm.outputs.version }}
+          channel: stable
+          cache: true
+      - run: flutter pub get
+      - run: flutter pub outdated || true
+      - name: Secrets scan
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: npm audit (functions)
+        if: hashFiles('functions/package.json') != ''
+        working-directory: functions
+        run: npm audit --audit-level=high || true
+
+  benchmarks:
+    name: Performance benchmarks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Read Flutter version
+        id: fvm
+        run: echo "version=$(jq -r .flutter .fvmrc)" >> "$GITHUB_OUTPUT"
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ steps.fvm.outputs.version }}
+          channel: stable
+          cache: true
+      - run: flutter pub get
+      - name: Benchmarks (added per feature under test/benchmark)
+        run: |
+          if ls test/benchmark/*_test.dart >/dev/null 2>&1; then
+            flutter test test/benchmark
+          else
+            echo "no benchmarks yet"
+          fi
+  # Firebase Test Lab device runs and the battery check are added in the
+  # release-prep phase once the Firebase projects exist.

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Migraine Tracker logo">
+  <rect width="256" height="256" rx="56" fill="#5B5BD6"/>
+  <circle cx="128" cy="120" r="56" fill="none" stroke="#FFFFFF" stroke-width="16"/>
+  <path d="M72 184 Q128 232 184 184" fill="none" stroke="#FFB74D" stroke-width="16" stroke-linecap="round"/>
+</svg>
