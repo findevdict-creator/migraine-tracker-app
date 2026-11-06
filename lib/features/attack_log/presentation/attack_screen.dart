@@ -10,6 +10,7 @@ import 'package:migraine_tracker/features/attack_log/domain/attack_entity.dart';
 import 'package:migraine_tracker/features/attack_log/presentation/attack_log_controller.dart';
 import 'package:migraine_tracker/features/attack_log/presentation/head_map.dart';
 import 'package:migraine_tracker/features/medication/presentation/medication_log_screen.dart';
+import 'package:migraine_tracker/features/voice/presentation/voice_log_sheet.dart';
 
 /// The attack screen. Always rendered in the attack theme: true black,
 /// 56 pt targets, no animation, nothing that needs reading closely.
@@ -81,6 +82,13 @@ class _AttackFormState extends ConsumerState<_AttackForm> {
           attack.isRunning ? l10n.attackTitleRunning : l10n.attackTitleEnded,
         ),
         actions: [
+          if (AppFeatureFlags.voiceLogAvailable)
+            IconButton(
+              key: const ValueKey('attack-voice'),
+              icon: const Icon(Icons.mic_none),
+              tooltip: l10n.voiceButton,
+              onPressed: () => showVoiceLogSheet(context, attack.id),
+            ),
           if (attack.isRunning)
             TextButton(
               key: const ValueKey('attack-finish-later'),

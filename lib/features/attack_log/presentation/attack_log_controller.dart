@@ -152,6 +152,26 @@ class AttackEditor extends AsyncNotifier<AttackEntity> {
     return a.copyWith(phases: next);
   });
 
+  /// Merges confirmed voice fields in one save: sets the intensity when
+  /// one was heard, adds symptoms (stamped now) and head locations that
+  /// are not there yet. Never removes anything.
+  Future<void> applyVoice({
+    int? intensity,
+    Set<Symptom> symptoms = const {},
+    Set<HeadLocation> locations = const {},
+  }) => _update((a) {
+    final now = _now;
+    return a.copyWith(
+      intensity: intensity ?? a.intensity,
+      headLocations: {...a.headLocations, ...locations},
+      symptoms: [
+        ...a.symptoms,
+        for (final s in symptoms)
+          if (!a.hasSymptom(s)) SymptomTap(symptom: s, at: now),
+      ],
+    );
+  });
+
   Future<void> setNotes(String notes) =>
       _update((a) => a.copyWith(notes: notes.trim().isEmpty ? null : notes));
 

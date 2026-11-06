@@ -3271,6 +3271,108 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Band'**
   String get reportColBand;
+
+  /// No description provided for @voiceButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Log by voice'**
+  String get voiceButton;
+
+  /// No description provided for @voiceListening.
+  ///
+  /// In en, this message translates to:
+  /// **'Listening'**
+  String get voiceListening;
+
+  /// No description provided for @voiceListeningHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Say how it feels, for example: pain seven out of ten, behind my eyes, nausea, took ibuprofen.'**
+  String get voiceListeningHint;
+
+  /// No description provided for @voiceStop.
+  ///
+  /// In en, this message translates to:
+  /// **'Done talking'**
+  String get voiceStop;
+
+  /// No description provided for @voiceCancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get voiceCancel;
+
+  /// No description provided for @voiceTryAgain.
+  ///
+  /// In en, this message translates to:
+  /// **'Try again'**
+  String get voiceTryAgain;
+
+  /// No description provided for @voiceUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Voice is not available on this phone. Speech recognition needs microphone permission and an offline speech pack for your language.'**
+  String get voiceUnavailable;
+
+  /// No description provided for @voiceNoMatch.
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing was heard. Try again closer to the phone, or tap the fields instead.'**
+  String get voiceNoMatch;
+
+  /// No description provided for @voiceReviewTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Check before saving'**
+  String get voiceReviewTitle;
+
+  /// No description provided for @voiceHeard.
+  ///
+  /// In en, this message translates to:
+  /// **'Heard: “{text}”'**
+  String voiceHeard(String text);
+
+  /// No description provided for @voiceNothingUnderstood.
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing on the form matched what was said. Tap the fields instead, or try again.'**
+  String get voiceNothingUnderstood;
+
+  /// No description provided for @voiceIntensity.
+  ///
+  /// In en, this message translates to:
+  /// **'Intensity'**
+  String get voiceIntensity;
+
+  /// No description provided for @voiceIntensityNone.
+  ///
+  /// In en, this message translates to:
+  /// **'Not said'**
+  String get voiceIntensityNone;
+
+  /// No description provided for @voiceSymptoms.
+  ///
+  /// In en, this message translates to:
+  /// **'Symptoms'**
+  String get voiceSymptoms;
+
+  /// No description provided for @voiceLocations.
+  ///
+  /// In en, this message translates to:
+  /// **'Where it hurts'**
+  String get voiceLocations;
+
+  /// No description provided for @voiceMedications.
+  ///
+  /// In en, this message translates to:
+  /// **'Medication taken now'**
+  String get voiceMedications;
+
+  /// No description provided for @voiceSave.
+  ///
+  /// In en, this message translates to:
+  /// **'Save to attack'**
+  String get voiceSave;
 }
 
 class _AppLocalizationsDelegate

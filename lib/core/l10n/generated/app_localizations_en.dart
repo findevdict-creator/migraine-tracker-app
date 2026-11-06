@@ -1914,4 +1914,61 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get reportColBand => 'Band';
+
+  @override
+  String get voiceButton => 'Log by voice';
+
+  @override
+  String get voiceListening => 'Listening';
+
+  @override
+  String get voiceListeningHint =>
+      'Say how it feels, for example: pain seven out of ten, behind my eyes, nausea, took ibuprofen.';
+
+  @override
+  String get voiceStop => 'Done talking';
+
+  @override
+  String get voiceCancel => 'Cancel';
+
+  @override
+  String get voiceTryAgain => 'Try again';
+
+  @override
+  String get voiceUnavailable =>
+      'Voice is not available on this phone. Speech recognition needs microphone permission and an offline speech pack for your language.';
+
+  @override
+  String get voiceNoMatch =>
+      'Nothing was heard. Try again closer to the phone, or tap the fields instead.';
+
+  @override
+  String get voiceReviewTitle => 'Check before saving';
+
+  @override
+  String voiceHeard(String text) {
+    return 'Heard: “$text”';
+  }
+
+  @override
+  String get voiceNothingUnderstood =>
+      'Nothing on the form matched what was said. Tap the fields instead, or try again.';
+
+  @override
+  String get voiceIntensity => 'Intensity';
+
+  @override
+  String get voiceIntensityNone => 'Not said';
+
+  @override
+  String get voiceSymptoms => 'Symptoms';
+
+  @override
+  String get voiceLocations => 'Where it hurts';
+
+  @override
+  String get voiceMedications => 'Medication taken now';
+
+  @override
+  String get voiceSave => 'Save to attack';
 }
