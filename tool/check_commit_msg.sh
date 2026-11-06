@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# Conventional Commits check: type(scope): summary, summary under 72 chars.
+# Conventional Commits check: type(scope): summary. Aim for a subject under
+# 72 characters; the hard limit is 100 (commitlint default).
 # Merge commits are exempt.
 set -euo pipefail
 file="${1:?commit message file}"
@@ -12,7 +13,7 @@ if [[ ! "$subject" =~ $pattern ]]; then
   echo "got: $subject" >&2
   exit 1
 fi
-if (( ${#subject} > 72 )); then
-  echo "commit subject must be under 72 characters (got ${#subject})" >&2
+if (( ${#subject} > 100 )); then
+  echo "commit subject must be at most 100 characters (got ${#subject})" >&2
   exit 1
 fi
