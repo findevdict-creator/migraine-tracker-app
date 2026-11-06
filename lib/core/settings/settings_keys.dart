@@ -64,4 +64,9 @@ abstract final class SettingsKeys {
   /// unless the person turns it on) and the last month sent (`yyyy-MM`).
   static const String auditShare = 'audit.share';
   static const String auditLastSentMonth = 'audit.lastSentMonth';
+
+  /// Display units (phase 37): `hpa`, `inhg` or `mmhg`, and `c` or `f`.
+  /// Unset means the phone region's default.
+  static const String unitPressure = 'units.pressure';
+  static const String unitTemperature = 'units.temperature';
 }

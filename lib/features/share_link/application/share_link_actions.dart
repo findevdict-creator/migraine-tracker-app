@@ -1,5 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:migraine_tracker/core/l10n/l10n.dart';
+import 'package:migraine_tracker/core/units/units.dart';
 import 'package:migraine_tracker/core/util/clock.dart';
 import 'package:migraine_tracker/features/account/presentation/account_controller.dart';
 import 'package:migraine_tracker/features/report/application/report_content.dart';
@@ -48,6 +49,7 @@ class ShareLinkActions {
     final document = ReportContent(
       l10n,
       locale: locale,
+      units: _ref.read(unitsProvider),
     ).build(summary, includeQuestionnaires: includeQuestionnaires);
     final created = await _ref
         .read(shareLinkGatewayProvider)

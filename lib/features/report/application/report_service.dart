@@ -1,8 +1,10 @@
 import 'dart:io';
+import 'dart:ui' show Locale;
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:migraine_tracker/config/app_config.dart';
 import 'package:migraine_tracker/core/l10n/l10n.dart';
+import 'package:migraine_tracker/core/units/units.dart';
 import 'package:migraine_tracker/core/util/clock.dart';
 import 'package:migraine_tracker/features/attack_log/data/attack_repository_impl.dart';
 import 'package:migraine_tracker/features/attack_log/domain/attack_repository.dart';
@@ -28,6 +30,7 @@ final reportServiceProvider = Provider<ReportService>(
     risk: ref.watch(riskRepositoryProvider),
     questionnaires: ref.watch(questionnaireRepositoryProvider),
     clock: ref.watch(clockProvider),
+    units: ref.watch(unitsProvider),
   ),
 );
 
@@ -44,7 +47,16 @@ class ReportService {
     required RiskRepository risk,
     required QuestionnaireRepository questionnaires,
     required DateTime Function() clock,
-  }) : this._(attacks, medications, checkins, risk, questionnaires, clock);
+    Units units = const Units(),
+  }) : this._(
+         attacks,
+         medications,
+         checkins,
+         risk,
+         questionnaires,
+         clock,
+         units,
+       );
 
   const ReportService._(
     this._attacks,
@@ -53,6 +65,7 @@ class ReportService {
     this._risk,
     this._questionnaires,
     this._clock,
+    this.units,
   );
 
   final AttackRepository _attacks;
@@ -61,6 +74,9 @@ class ReportService {
   final RiskRepository _risk;
   final QuestionnaireRepository _questionnaires;
   final DateTime Function() _clock;
+
+  /// Display units for the report text.
+  final Units units;
 
   Future<ReportInputs> load(ReportRange range) async {
     final attacks = await _attacks.inRange(range.from, range.end);
@@ -80,6 +96,26 @@ class ReportService {
       weights: weights,
       questionnaires: questionnaires,
     );
+  }
+
+  /// The PDF in the person's language, or in `AppLocales.pdfFallback`'s
+  /// language when the PDF cannot set their script.
+  ReportPdf _pdf(AppLocalizations l10n, String? locale) {
+    final language = pdfLanguageFor(l10n.localeName);
+    if (language.languageCode == l10n.localeName.split('_').first) {
+      return ReportPdf(l10n, locale: locale, units: units);
+    }
+    return ReportPdf(
+      lookupAppLocalizations(language),
+      locale: language.toString(),
+      units: units,
+    );
+  }
+
+  /// The language the PDF is written in for an app language.
+  static Locale pdfLanguageFor(String localeName) {
+    final language = localeName.split('_').first;
+    return Locale(AppLocales.pdfFallback[language] ?? language);
   }
 
   Future<ReportSummary> summary(ReportRange range) async =>
@@ -103,7 +139,7 @@ class ReportService {
     return [
       if (format != ReportFormat.csv)
         await File(p.join(dir.path, '$stem.pdf')).writeAsBytes(
-          await ReportPdf(l10n, locale: locale).build(
+          await _pdf(l10n, locale).build(
             ReportBuilder.build(inputs),
             includeQuestionnaires: includeQuestionnaires,
           ),

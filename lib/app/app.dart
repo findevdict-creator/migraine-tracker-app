@@ -64,7 +64,7 @@ class MigraineTrackerApp extends ConsumerWidget {
           ),
         ),
       ),
-      supportedLocales: AppLocales.supported,
+      supportedLocales: AppLocales.forBuild(devTools: config.showDevTools),
       localizationsDelegates: const [
         AppLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,

@@ -49,7 +49,7 @@ class RoutineScreen extends StatelessWidget {
             ),
           const SizedBox(height: AppThemeTokens.space3),
           Text(
-            AppIdentity.wellnessDisclaimer,
+            context.l10n.wellnessDisclaimer,
             key: const ValueKey('routine-disclaimer'),
             style: context.textStyles.bodySmall,
           ),

@@ -5,6 +5,7 @@ import 'package:migraine_tracker/app/router.dart';
 import 'package:migraine_tracker/config/app_config.dart';
 import 'package:migraine_tracker/core/l10n/l10n.dart';
 import 'package:migraine_tracker/core/theme/app_colors.dart';
+import 'package:migraine_tracker/core/units/units.dart';
 import 'package:migraine_tracker/core/widgets/widgets.dart';
 import 'package:migraine_tracker/features/weather/presentation/environment_controller.dart';
 import 'package:migraine_tracker/features/weather/presentation/weather_text.dart';
@@ -39,7 +40,7 @@ class EnvironmentCard extends ConsumerWidget {
                   current == null
                       ? l10n.environmentCardEmpty
                       : l10n.environmentCardSummary(
-                          current.toStringAsFixed(1),
+                          ref.watch(unitsProvider).pressureText(l10n, current),
                           trendLabel(l10n, view?.deltas.strongest),
                         ),
                   key: const ValueKey('environment-card-summary'),

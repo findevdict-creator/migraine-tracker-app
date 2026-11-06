@@ -12,6 +12,7 @@ class ReportDocument {
     required this.blocks,
     required this.disclaimer,
     required this.footer,
+    this.lang,
   });
 
   factory ReportDocument.fromJson(Map<String, Object?> json) => ReportDocument(
@@ -24,6 +25,7 @@ class ReportDocument {
     ],
     disclaimer: json['disclaimer']! as String,
     footer: json['footer']! as String,
+    lang: json['lang'] as String?,
   );
 
   /// Bumped when a block type changes; the share page checks it.
@@ -36,6 +38,10 @@ class ReportDocument {
   final String disclaimer;
   final String footer;
 
+  /// The language the text is in (`de`, `pt`...). The share page uses it
+  /// for its own labels; older documents have none.
+  final String? lang;
+
   Map<String, Object?> toJson() => {
     'v': formatVersion,
     'title': title,
@@ -44,6 +50,7 @@ class ReportDocument {
     'blocks': [for (final b in blocks) b.toJson()],
     'disclaimer': disclaimer,
     'footer': footer,
+    'lang': ?lang,
   };
 }
 

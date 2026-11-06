@@ -59,14 +59,13 @@ class EnvironmentFactorsCard extends ConsumerWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
+          // Wraps so a long translated button label drops below the title
+          // instead of overflowing.
+          Wrap(
+            alignment: WrapAlignment.spaceBetween,
+            crossAxisAlignment: WrapCrossAlignment.center,
             children: [
-              Expanded(
-                child: Text(
-                  l10n.envFactorsTitle,
-                  style: context.textStyles.titleMedium,
-                ),
-              ),
+              Text(l10n.envFactorsTitle, style: context.textStyles.titleMedium),
               TextButton(
                 key: const ValueKey('env-about-data'),
                 onPressed: () => context.push(AppRoutes.aboutData),

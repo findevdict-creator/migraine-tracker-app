@@ -35,7 +35,7 @@ class LevelExplainer extends StatelessWidget {
         for (final line in doesNot) _Line(icon: Icons.close, text: line),
         const SizedBox(height: AppThemeTokens.space4),
         Text(
-          AppIdentity.wellnessDisclaimer,
+          context.l10n.wellnessDisclaimer,
           style: context.textStyles.bodySmall,
         ),
       ],

@@ -9,6 +9,7 @@ import 'package:migraine_tracker/core/db/database_provider.dart';
 import 'package:migraine_tracker/core/l10n/l10n.dart';
 import 'package:migraine_tracker/core/settings/settings_keys.dart';
 import 'package:migraine_tracker/core/settings/settings_repository.dart';
+import 'package:migraine_tracker/core/units/units.dart';
 import 'package:migraine_tracker/core/util/clock.dart';
 import 'package:migraine_tracker/features/attack_log/data/attack_repository_impl.dart';
 import 'package:migraine_tracker/features/attack_log/domain/attack_entity.dart';
@@ -37,6 +38,7 @@ void main() {
         appDatabaseProvider.overrideWithValue(db),
         clockProvider.overrideWithValue(() => now),
         notificationGatewayProvider.overrideWithValue(gateway),
+        deviceRegionProvider.overrideWithValue(null),
       ],
     );
   });

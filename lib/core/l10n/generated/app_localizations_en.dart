@@ -556,17 +556,12 @@ class AppLocalizationsEn extends AppLocalizations {
       'No weather saved yet. Tap to set your location.';
 
   @override
-  String environmentCardSummary(String hpa, String trend) {
-    return '$hpa hPa, $trend';
+  String environmentCardSummary(String pressure, String trend) {
+    return '$pressure, $trend';
   }
 
   @override
   String get envPressureSection => 'Air pressure';
-
-  @override
-  String envPressureNow(String hpa) {
-    return '$hpa hPa';
-  }
 
   @override
   String get envPressureUnknown => 'No reading for this hour';
@@ -582,11 +577,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get envDelta24h => '24 h';
-
-  @override
-  String envDeltaValue(String value) {
-    return '$value hPa';
-  }
 
   @override
   String get envDeltaUnknown => '–';
@@ -1253,8 +1243,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get insightsMethodTitle => 'How this is counted';
 
   @override
-  String get insightsMethod1 =>
-      'An exposure day is a day where a factor was present in your log or in the weather, for example a sleep answer of 1 or a pressure drop of more than 2 hPa.';
+  String insightsMethod1(String pressure) {
+    return 'An exposure day is a day where a factor was present in your log or in the weather, for example a sleep answer of 1 or a pressure drop of more than $pressure.';
+  }
 
   @override
   String get insightsMethod2 =>
@@ -1306,8 +1297,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get notifTypePressureDrop => 'Pressure drop';
 
   @override
-  String notifTypePressureDropHint(String hpa) {
-    return 'When the forecast shows a fall of $hpa hPa or more in 24 hours';
+  String notifTypePressureDropHint(String pressure) {
+    return 'When the forecast shows a fall of $pressure or more in 24 hours';
   }
 
   @override
@@ -1330,8 +1321,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get notifTypeMedicationHint => 'A daily nudge for a preventive dose';
 
   @override
-  String notifPressureThreshold(String hpa) {
-    return 'Pressure drop threshold: $hpa hPa in 24 h';
+  String notifPressureThreshold(String pressure) {
+    return 'Pressure drop threshold: $pressure in 24 h';
   }
 
   @override
@@ -1361,8 +1352,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get notifPressureTitle => 'Air pressure is dropping';
 
   @override
-  String notifPressureBody(String hpa, String time) {
-    return 'A fall of $hpa hPa is expected by $time.';
+  String notifPressureBody(String pressure, String time) {
+    return 'A fall of $pressure is expected by $time.';
   }
 
   @override
@@ -1687,8 +1678,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get reportSectionWeather => 'Air pressure';
 
   @override
-  String reportWeatherHint(String hpa) {
-    return 'A fall is a drop of $hpa hPa or more over 24 h at the time of the entry.';
+  String reportWeatherHint(String pressure) {
+    return 'A fall is a drop of $pressure or more over 24 h at the time of the entry.';
   }
 
   @override
@@ -2039,13 +2030,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get widgetNoDriver => 'No single factor stands out';
 
   @override
-  String widgetPressureFalling(String hpa) {
-    return 'Pressure falling $hpa hPa in 24 h';
+  String widgetPressureFalling(String pressure) {
+    return 'Pressure falling $pressure in 24 h';
   }
 
   @override
-  String widgetPressureRising(String hpa) {
-    return 'Pressure rising $hpa hPa in 24 h';
+  String widgetPressureRising(String pressure) {
+    return 'Pressure rising $pressure in 24 h';
   }
 
   @override
@@ -2902,4 +2893,3140 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get settingsAuditHint =>
       'Attacks after High days and High days without one';
+
+  @override
+  String unitHpa(String value) {
+    return '$value hPa';
+  }
+
+  @override
+  String unitInHg(String value) {
+    return '$value inHg';
+  }
+
+  @override
+  String unitMmHg(String value) {
+    return '$value mmHg';
+  }
+
+  @override
+  String unitCelsius(String value) {
+    return '$value °C';
+  }
+
+  @override
+  String unitFahrenheit(String value) {
+    return '$value °F';
+  }
+
+  @override
+  String get unitsTitle => 'Units';
+
+  @override
+  String get settingsUnitsHint => 'Pressure and temperature';
+
+  @override
+  String get unitsPressure => 'Pressure';
+
+  @override
+  String get unitsTemperature => 'Temperature';
+
+  @override
+  String get unitNameHpa => 'Hectopascals (hPa)';
+
+  @override
+  String get unitNameInHg => 'Inches of mercury (inHg)';
+
+  @override
+  String get unitNameMmHg => 'Millimetres of mercury (mmHg)';
+
+  @override
+  String get unitNameCelsius => 'Celsius (°C)';
+
+  @override
+  String get unitNameFahrenheit => 'Fahrenheit (°F)';
+
+  @override
+  String get unitsNote =>
+      'The first choice comes from your phone\'s region. Changing it only changes how values are shown; your log stays the same.';
+
+  @override
+  String envTemperatureNow(String temperature) {
+    return 'Temperature now: $temperature';
+  }
+
+  @override
+  String get questionnaireEnglishNote =>
+      'The questions are shown in their original English wording until a validated translation is added, so your scores stay comparable.';
+
+  @override
+  String get wellnessDisclaimer =>
+      'General wellness information, not medical advice. Talk to your clinician about treatment.';
+
+  @override
+  String get dataSourceWeather => 'Open-Meteo weather';
+
+  @override
+  String get dataSourceAirQuality => 'Open-Meteo air quality and UV (CAMS)';
+
+  @override
+  String get dataSourcePollen => 'Open-Meteo pollen (CAMS)';
+
+  @override
+  String get dataSourceGeocoding => 'Open-Meteo geocoding';
+
+  @override
+  String get dataSourceBarometer => 'Device barometer';
+
+  @override
+  String get dataCoverageWorldwide => 'Worldwide';
+
+  @override
+  String get dataCoverageEuropeanAqi => 'Worldwide, European AQI in Europe';
+
+  @override
+  String get dataCoverageEurope => 'Europe only';
+
+  @override
+  String get dataCoverageBarometer => 'Phones with a pressure sensor';
+}
+
+/// The translations for English (`en_XA`).
+class AppLocalizationsEnXa extends AppLocalizationsEn {
+  AppLocalizationsEnXa() : super('en_XA');
+
+  @override
+  String get appTitle => '⟦Ṁîĝŕáîñé Ţŕáçķéŕ ······⟧';
+
+  @override
+  String get homeEmptyState =>
+      '⟦Ñöţĥîñĝ ļöĝĝéð ýéţ.\nÝöûŕ ŕîšķ ļéṽéļ áñð éñṽîŕöñɱéñţ ŵîļļ áþþéáŕ ĥéŕé. ·························⟧';
+
+  @override
+  String get riskLevelLow => '⟦Ļöŵ ··⟧';
+
+  @override
+  String get riskLevelModerate => '⟦Ṁöðéŕáţé ···⟧';
+
+  @override
+  String get riskLevelHigh => '⟦Ĥîĝĥ ··⟧';
+
+  @override
+  String get devThemeGalleryTitle => '⟦Ţĥéɱé ĝáļļéŕý ·····⟧';
+
+  @override
+  String get devThemeLight => '⟦Ļîĝĥţ ţĥéɱé ····⟧';
+
+  @override
+  String get devThemeDark => '⟦Ðáŕķ ţĥéɱé ····⟧';
+
+  @override
+  String get devThemeAttack => '⟦Åţţáçķ ţĥéɱé ·····⟧';
+
+  @override
+  String get devSampleBody =>
+      '⟦Ɓöðý ţéẋţ áţ ţĥé ðéƒáûļţ šîžé. Îţ ɱûšţ šţáý ŕéáðáƀļé áţ 200% ţéẋţ šçáļé ŵîţĥöûţ ţŕûñçáţîöñ. ································⟧';
+
+  @override
+  String get devSamplePrimary => '⟦Þŕîɱáŕý ···⟧';
+
+  @override
+  String get devSampleSecondary => '⟦Šéçöñðáŕý ····⟧';
+
+  @override
+  String get devSampleText => '⟦Ţéẋţ ··⟧';
+
+  @override
+  String get devSampleDisabled => '⟦Ðîšáƀļéð ···⟧';
+
+  @override
+  String get devSampleChipOn => '⟦Åûŕá ··⟧';
+
+  @override
+  String get devSampleChipOff => '⟦Ñáûšéá ···⟧';
+
+  @override
+  String get devSampleChipIcon => '⟦Ļîĝĥţ ··⟧';
+
+  @override
+  String get devSampleSlider => '⟦Îñţéñšîţý ····⟧';
+
+  @override
+  String get devSampleSliderLow => '⟦Ñö þáîñ ···⟧';
+
+  @override
+  String get devSampleSliderHigh => '⟦Ŵöŕšţ ··⟧';
+
+  @override
+  String get devSampleCard => '⟦Å çáŕð ŵîţĥ á ƀáðĝé ·······⟧';
+
+  @override
+  String get attackStart => '⟦Šţáŕţ áţţáçķ ·····⟧';
+
+  @override
+  String get attackContinue => '⟦Çöñţîñûé áţţáçķ ······⟧';
+
+  @override
+  String get attackTitleRunning => '⟦Åţţáçķ îñ þŕöĝŕéšš ·······⟧';
+
+  @override
+  String get attackTitleEnded => '⟦Åţţáçķ ···⟧';
+
+  @override
+  String attackStartedAt(String time) {
+    return '⟦Šţáŕţéð áţ $time ····⟧';
+  }
+
+  @override
+  String get attackNotFound => '⟦Ţĥîš áţţáçķ ñö ļöñĝéŕ éẋîšţš. ···········⟧';
+
+  @override
+  String get attackIntensity => '⟦Þáîñ îñţéñšîţý ·····⟧';
+
+  @override
+  String get durationEstimateTitle =>
+      '⟦Ĥöŵ ļöñĝ áţţáçķš ļîķé ţĥîš ûšûáļļý ļášţ ··············⟧';
+
+  @override
+  String durationEstimateRange(String low, String high) {
+    return '⟦Ţýþîçáļļý $low ţö $high ĥ ······⟧';
+  }
+
+  @override
+  String durationEstimateSameMedication(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other:
+          'Ɓášéð öñ $count þášţ áţţáçķš öƒ šîɱîļáŕ îñţéñšîţý ŵîţĥ ţĥé šáɱé ɱéðîçáţîöñ',
+    );
+    return '⟦$_temp0 ·································⟧';
+  }
+
+  @override
+  String durationEstimateNoMedication(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other:
+          'Ɓášéð öñ $count þášţ áţţáçķš öƒ šîɱîļáŕ îñţéñšîţý ŵîţĥöûţ ɱéðîçáţîöñ',
+    );
+    return '⟦$_temp0 ·······························⟧';
+  }
+
+  @override
+  String durationEstimateSimilar(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Ɓášéð öñ $count þášţ áţţáçķš öƒ šîɱîļáŕ îñţéñšîţý',
+    );
+    return '⟦$_temp0 ························⟧';
+  }
+
+  @override
+  String durationEstimateAll(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Ɓášéð öñ $count öƒ ýöûŕ þášţ áţţáçķš',
+    );
+    return '⟦$_temp0 ···················⟧';
+  }
+
+  @override
+  String get attackIntensityLow => '⟦Ñö þáîñ ···⟧';
+
+  @override
+  String get attackIntensityHigh => '⟦Ŵöŕšţ ··⟧';
+
+  @override
+  String get attackWhereItHurts => '⟦Ŵĥéŕé îţ ĥûŕţš ·····⟧';
+
+  @override
+  String get attackSymptoms => '⟦Šýɱþţöɱš ···⟧';
+
+  @override
+  String get attackPhases => '⟦Þĥášéš ···⟧';
+
+  @override
+  String get attackNotes => '⟦Ñöţéš ··⟧';
+
+  @override
+  String get attackNotesHint => '⟦Åñýţĥîñĝ éļšé ŵöŕţĥ ŕéɱéɱƀéŕîñĝ ···········⟧';
+
+  @override
+  String get attackEnd => '⟦Éñð áţţáçķ ····⟧';
+
+  @override
+  String get attackDone => '⟦Ðöñé ··⟧';
+
+  @override
+  String get attackFinishLater => '⟦Ƒîñîšĥ ļáţéŕ ·····⟧';
+
+  @override
+  String get symptomAura => '⟦Åûŕá ··⟧';
+
+  @override
+  String get symptomNeckTension => '⟦Ñéçķ ţéñšîöñ ·····⟧';
+
+  @override
+  String get symptomLightSensitivity => '⟦Ļîĝĥţ ··⟧';
+
+  @override
+  String get symptomSoundSensitivity => '⟦Šöûñð ··⟧';
+
+  @override
+  String get symptomSmellSensitivity => '⟦Šɱéļļ ··⟧';
+
+  @override
+  String get symptomNausea => '⟦Ñáûšéá ···⟧';
+
+  @override
+  String get phaseProdrome => '⟦Þŕöðŕöɱé ···⟧';
+
+  @override
+  String get phaseAura => '⟦Åûŕá ··⟧';
+
+  @override
+  String get phaseAttack => '⟦Åţţáçķ ···⟧';
+
+  @override
+  String get phasePostdrome => '⟦Þöšţðŕöɱé ····⟧';
+
+  @override
+  String get headForehead => '⟦Ƒöŕéĥéáð ···⟧';
+
+  @override
+  String get headLeftTemple => '⟦Ļéƒţ ţéɱþļé ····⟧';
+
+  @override
+  String get headRightTemple => '⟦Ŕîĝĥţ ţéɱþļé ·····⟧';
+
+  @override
+  String get headBehindEyes => '⟦Ɓéĥîñð ţĥé éýéš ······⟧';
+
+  @override
+  String get headLeftSide => '⟦Ļéƒţ šîðé ····⟧';
+
+  @override
+  String get headRightSide => '⟦Ŕîĝĥţ šîðé ····⟧';
+
+  @override
+  String get headTopOfHead => '⟦Ţöþ öƒ ĥéáð ····⟧';
+
+  @override
+  String get headBackOfHead => '⟦Ɓáçķ öƒ ĥéáð ·····⟧';
+
+  @override
+  String get headNeck => '⟦Ñéçķ ··⟧';
+
+  @override
+  String get checkinTitle => '⟦Ðáîļý çĥéçķ-îñ ·····⟧';
+
+  @override
+  String get checkinLoadError => '⟦Çöûļð ñöţ ļöáð ţĥîš ðáý. ·········⟧';
+
+  @override
+  String get checkinIntro => '⟦Ţĥŕéé ţáþš. Ĥöŵ ŵáš îţ? ·········⟧';
+
+  @override
+  String get checkinComplete =>
+      '⟦Ðöñé ƒöŕ ţĥîš ðáý. Ţáþ á ñûɱƀéŕ ţö çĥáñĝé îţ. ················⟧';
+
+  @override
+  String get checkinAddMore => '⟦Åðð ɱöŕé (öþţîöñáļ) ·······⟧';
+
+  @override
+  String get checkinOptionalTitle => '⟦Öþţîöñáļ ···⟧';
+
+  @override
+  String get checkinDone => '⟦Ðöñé ··⟧';
+
+  @override
+  String get checkinToday => '⟦Ţöðáý ··⟧';
+
+  @override
+  String get checkinSleepQuality => '⟦Šļééþ ǫûáļîţý ·····⟧';
+
+  @override
+  String get checkinStress => '⟦Šţŕéšš ···⟧';
+
+  @override
+  String get checkinNeckTension => '⟦Ñéçķ ţéñšîöñ ·····⟧';
+
+  @override
+  String get checkinCaffeine => '⟦Çáƒƒéîñé ···⟧';
+
+  @override
+  String get checkinHydration => '⟦Ĥýðŕáţîöñ ····⟧';
+
+  @override
+  String get checkinAlcohol => '⟦Åļçöĥöļ ···⟧';
+
+  @override
+  String get checkinLightExposure => '⟦Ɓŕîĝĥţ ļîĝĥţ ·····⟧';
+
+  @override
+  String get checkinScreenExposure => '⟦Šçŕééñ ţîɱé ····⟧';
+
+  @override
+  String get checkinSleepLow => '⟦Þööŕ ··⟧';
+
+  @override
+  String get checkinSleepHigh => '⟦Ĝŕéáţ ··⟧';
+
+  @override
+  String get checkinStressLow => '⟦Çáļɱ ··⟧';
+
+  @override
+  String get checkinStressHigh => '⟦Ṽéŕý šţŕéššéð ·····⟧';
+
+  @override
+  String get checkinNeckLow => '⟦Ŕéļáẋéð ···⟧';
+
+  @override
+  String get checkinNeckHigh => '⟦Ṽéŕý ţîĝĥţ ····⟧';
+
+  @override
+  String get checkinHydrationLow => '⟦Ļîţţļé ···⟧';
+
+  @override
+  String get checkinHydrationHigh => '⟦Þļéñţý ···⟧';
+
+  @override
+  String get checkinExposureLow => '⟦Ļîţţļé ···⟧';
+
+  @override
+  String get checkinExposureHigh => '⟦Å ļöţ ··⟧';
+
+  @override
+  String get checkinNone => '⟦Ñöñé ··⟧';
+
+  @override
+  String checkinCupsOrMore(int count) {
+    return '⟦$count+ çûþš ···⟧';
+  }
+
+  @override
+  String checkinDrinksOrMore(int count) {
+    return '⟦$count+ ðŕîñķš ···⟧';
+  }
+
+  @override
+  String checkinValueSemantics(String field, int value, int max) {
+    return '⟦$field, $value öƒ $max ···⟧';
+  }
+
+  @override
+  String get checkinReminderTooltip => '⟦Ŕéɱîñðéŕ ţîɱé ·····⟧';
+
+  @override
+  String checkinReminderAt(String time) {
+    return '⟦Ŕéɱîñðéŕ áţ $time ·····⟧';
+  }
+
+  @override
+  String get checkinReminderPickerTitle =>
+      '⟦Ðáîļý çĥéçķ-îñ ŕéɱîñðéŕ ·········⟧';
+
+  @override
+  String get checkinCardTitle => '⟦Ðáîļý çĥéçķ-îñ ·····⟧';
+
+  @override
+  String get checkinCardDone => '⟦Ðöñé ƒöŕ ţöðáý ·····⟧';
+
+  @override
+  String get checkinCardTodo => '⟦Ţĥŕéé ţáþš, áƀöûţ 10 šéçöñðš ··········⟧';
+
+  @override
+  String get medicationTitle => '⟦Ṁéðîçáţîöñ ····⟧';
+
+  @override
+  String get medicationAdd => '⟦Åðð ɱéðîçáţîöñ ·····⟧';
+
+  @override
+  String get medicationAddTitle => '⟦Ļöĝ á ðöšé ····⟧';
+
+  @override
+  String get medicationName => '⟦Ṁéðîçáţîöñ ····⟧';
+
+  @override
+  String get medicationDose => '⟦Ðöšé ··⟧';
+
+  @override
+  String get medicationDoseHint => '⟦é.ĝ. 400 ɱĝ ····⟧';
+
+  @override
+  String get medicationKindAcute => '⟦Åçûţé ··⟧';
+
+  @override
+  String get medicationKindPreventive => '⟦Þŕéṽéñţîṽé ····⟧';
+
+  @override
+  String medicationTakenAt(String time) {
+    return '⟦Ţáķéñ áţ $time ····⟧';
+  }
+
+  @override
+  String get medicationLog => '⟦Ļöĝ ··⟧';
+
+  @override
+  String get medicationDelete => '⟦Ðéļéţé ···⟧';
+
+  @override
+  String get medicationThisMonth => '⟦Ţĥîš ɱöñţĥ ····⟧';
+
+  @override
+  String get medicationEmpty => '⟦Ñö ðöšéš ļöĝĝéð ţĥîš ɱöñţĥ. ··········⟧';
+
+  @override
+  String get medicationReliefQuestion => '⟦Ŕéļîéƒ áƒţéŕ 2 ĥ? ······⟧';
+
+  @override
+  String get medicationReliefNone => '⟦Ñöñé ··⟧';
+
+  @override
+  String get medicationReliefPartial => '⟦Šöɱé ··⟧';
+
+  @override
+  String get medicationReliefFull => '⟦Ƒûļļ ··⟧';
+
+  @override
+  String medicationAcuteDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count áçûţé-ɱéðîçáţîöñ ðáýš ţĥîš ɱöñţĥ',
+      one: '1 áçûţé-ɱéðîçáţîöñ ðáý ţĥîš ɱöñţĥ',
+      zero: 'Ñö áçûţé-ɱéðîçáţîöñ ðáýš ţĥîš ɱöñţĥ',
+    );
+    return '⟦$_temp0 ·······················⟧';
+  }
+
+  @override
+  String get medicationAcuteDaysHint =>
+      '⟦Ðáýš ŵîţĥ áţ ļéášţ öñé áçûţé ðöšé, çöûñţéð þéŕ çáļéñðáŕ ɱöñţĥ. ······················⟧';
+
+  @override
+  String medicationOveruseFirstNote(int days) {
+    return '⟦Ýöû ĥáṽé ŕéáçĥéð $days áçûţé-ɱéðîçáţîöñ ðáýš ţĥîš ɱöñţĥ. Ṁáñý çļîñîçîáñš šûĝĝéšţ ķééþîñĝ ţĥîš ñûɱƀéŕ ļöŵ; îţ ɱáý ƀé ŵöŕţĥ á çöñṽéŕšáţîöñ. ········································⟧';
+  }
+
+  @override
+  String medicationOveruseSecondNote(int days) {
+    return '⟦Ýöû ĥáṽé ŕéáçĥéð $days áçûţé-ɱéðîçáţîöñ ðáýš ţĥîš ɱöñţĥ. Þļéášé çöñšîðéŕ ţáļķîñĝ ţö ýöûŕ çļîñîçîáñ áƀöûţ ţĥîš þáţţéŕñ. ········································⟧';
+  }
+
+  @override
+  String get medicationTalkToClinician => '⟦Ţáļķ ţö ýöûŕ çļîñîçîáñ ········⟧';
+
+  @override
+  String get cycleTitle => '⟦Çýçļé ··⟧';
+
+  @override
+  String get cycleToggleTitle => '⟦Ţŕáçķ ɱý çýçļé ·····⟧';
+
+  @override
+  String get cycleToggleSubtitle =>
+      '⟦Öƒƒ ƀý ðéƒáûļţ. Ŵĥéñ öñ, çýçļé ðáý îš ķéþţ ŵîţĥ éáçĥ çĥéçķ-îñ áñð ûšéð áš á ƒáçţöŕ. ······························⟧';
+
+  @override
+  String get cycleNoData =>
+      '⟦Ļöĝ á þéŕîöð šţáŕţ ţö šéé ýöûŕ çýçļé ðáý. ···············⟧';
+
+  @override
+  String cycleDayAndPhase(int day, String phase) {
+    return '⟦Çýçļé ðáý $day · $phase ·····⟧';
+  }
+
+  @override
+  String cycleLength(int days) {
+    return '⟦Ɓášéð öñ á $days-ðáý çýçļé ········⟧';
+  }
+
+  @override
+  String get cyclePeriodStarts => '⟦Þéŕîöð šţáŕţš ·····⟧';
+
+  @override
+  String get cycleNoStarts => '⟦Ñöñé ļöĝĝéð ýéţ. ······⟧';
+
+  @override
+  String get cycleRemoveStart => '⟦Ŕéɱöṽé ···⟧';
+
+  @override
+  String get cyclePeriodStartedToday => '⟦Þéŕîöð šţáŕţéð ţĥîš ðáý ·········⟧';
+
+  @override
+  String get cyclePhaseMenstrual => '⟦Ṁéñšţŕûáļ ····⟧';
+
+  @override
+  String get cyclePhaseFollicular => '⟦Ƒöļļîçûļáŕ ····⟧';
+
+  @override
+  String get cyclePhaseOvulation => '⟦Åŕöûñð öṽûļáţîöñ ······⟧';
+
+  @override
+  String get cyclePhaseLuteal => '⟦Ļûţéáļ ···⟧';
+
+  @override
+  String get settingsTitle => '⟦Šéţţîñĝš ···⟧';
+
+  @override
+  String get settingsSectionDaily => '⟦Ðáîļý ··⟧';
+
+  @override
+  String get settingsSectionData => '⟦Ýöûŕ ðáţá ····⟧';
+
+  @override
+  String get settingsSectionAbout => '⟦Åƀöûţ ··⟧';
+
+  @override
+  String get settingsExportJson => '⟦Éẋþöŕţ áš ĴŠÖÑ ·····⟧';
+
+  @override
+  String get settingsExportJsonHint =>
+      '⟦Éṽéŕý ţáƀļé îñ öñé ƒîļé ýöû çáñ îɱþöŕţ áĝáîñ. ················⟧';
+
+  @override
+  String get settingsExportCsv => '⟦Éẋþöŕţ áš ÇŠṼ ·····⟧';
+
+  @override
+  String get settingsExportCsvHint =>
+      '⟦Öñé šþŕéáðšĥééţ ƒîļé þéŕ ţáƀļé. ···········⟧';
+
+  @override
+  String get settingsExportEmpty => '⟦Ñöţĥîñĝ ţö éẋþöŕţ ýéţ. ········⟧';
+
+  @override
+  String get settingsDeleteAll => '⟦Ðéļéţé éṽéŕýţĥîñĝ ······⟧';
+
+  @override
+  String get settingsDeleteAllHint =>
+      '⟦Ŕéɱöṽéš áļļ ðáţá ƒŕöɱ ţĥîš ðéṽîçé. Çáññöţ ƀé ûñðöñé. ···················⟧';
+
+  @override
+  String settingsDeleteAllConfirm(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other:
+          'Ţĥîš ðéļéţéš $count ŕéçöŕðš ƒŕöɱ ţĥîš ðéṽîçé. Ţĥîš çáññöţ ƀé ûñðöñé.',
+      one: 'Ţĥîš ðéļéţéš 1 ŕéçöŕð ƒŕöɱ ţĥîš ðéṽîçé. Ţĥîš çáññöţ ƀé ûñðöñé.',
+      zero: 'Ţĥéŕé îš ñöţĥîñĝ šţöŕéð ýéţ. Ðéļéţé áñýŵáý?',
+    );
+    return '⟦$_temp0 ·································⟧';
+  }
+
+  @override
+  String get settingsDeleteAllButton => '⟦Ðéļéţé ···⟧';
+
+  @override
+  String get settingsCancel => '⟦Çáñçéļ ···⟧';
+
+  @override
+  String get settingsDeletedAll => '⟦Åļļ ðáţá ðéļéţéð. ······⟧';
+
+  @override
+  String get settingsPrivacyPolicy => '⟦Þŕîṽáçý þöļîçý ·····⟧';
+
+  @override
+  String get settingsTerms => '⟦Ţéŕɱš öƒ ûšé ·····⟧';
+
+  @override
+  String get settingsSupport => '⟦Šûþþöŕţ ···⟧';
+
+  @override
+  String get environmentTitle => '⟦Éñṽîŕöñɱéñţ ····⟧';
+
+  @override
+  String get environmentCardTitle => '⟦Þŕéššûŕé ···⟧';
+
+  @override
+  String get environmentCardEmpty =>
+      '⟦Ñö ŵéáţĥéŕ šáṽéð ýéţ. Ţáþ ţö šéţ ýöûŕ ļöçáţîöñ. ·················⟧';
+
+  @override
+  String environmentCardSummary(String pressure, String trend) {
+    return '⟦$pressure, $trend ·⟧';
+  }
+
+  @override
+  String get envPressureSection => '⟦Åîŕ þŕéššûŕé ·····⟧';
+
+  @override
+  String get envPressureUnknown => '⟦Ñö ŕéáðîñĝ ƒöŕ ţĥîš ĥöûŕ ·········⟧';
+
+  @override
+  String get envDelta3h => '⟦3 ĥ ··⟧';
+
+  @override
+  String get envDelta6h => '⟦6 ĥ ··⟧';
+
+  @override
+  String get envDelta12h => '⟦12 ĥ ··⟧';
+
+  @override
+  String get envDelta24h => '⟦24 ĥ ··⟧';
+
+  @override
+  String get envDeltaUnknown => '⟦– ·⟧';
+
+  @override
+  String get envChartTitle => '⟦Ļášţ 48 ĥöûŕš áñð ñéẋţ 24 ·········⟧';
+
+  @override
+  String get envUpdatedNever => '⟦Ñöţ ûþðáţéð ýéţ ······⟧';
+
+  @override
+  String get envUpdatedJustNow => '⟦Ûþðáţéð ĵûšţ ñöŵ ······⟧';
+
+  @override
+  String envUpdatedMinutes(int n) {
+    return '⟦Ûþðáţéð $n ɱîñ áĝö ······⟧';
+  }
+
+  @override
+  String envUpdatedHours(int n) {
+    return '⟦Ûþðáţéð $n ĥ áĝö ·····⟧';
+  }
+
+  @override
+  String envUpdatedDays(int n) {
+    return '⟦Ûþðáţéð $n ð áĝö ·····⟧';
+  }
+
+  @override
+  String get envStale =>
+      '⟦Ţĥîš ƒöŕéçášţ îš á ƒéŵ ĥöûŕš öļð. Îţ ŕéƒŕéšĥéš ŵĥéñ ýöû áŕé ƀáçķ öñļîñé. ··························⟧';
+
+  @override
+  String get envOffline =>
+      '⟦Çöûļð ñöţ ŕéáçĥ ţĥé ŵéáţĥéŕ šéŕṽîçé. Šĥöŵîñĝ ŵĥáţ îš šáṽéð öñ ţĥîš ðéṽîçé. ··························⟧';
+
+  @override
+  String get envNoData =>
+      '⟦Ñö ŵéáţĥéŕ šáṽéð ýéţ. Åļļöŵ ļöçáţîöñ öŕ çĥööšé á çîţý ţö šéé ţĥé þŕéššûŕé ţŕéñð. ····························⟧';
+
+  @override
+  String get envRefresh => '⟦Ŕéƒŕéšĥ ···⟧';
+
+  @override
+  String get envLocationSection => '⟦Ļöçáţîöñ ···⟧';
+
+  @override
+  String get envLocationGps => '⟦Ûšîñĝ ýöûŕ áþþŕöẋîɱáţé ļöçáţîöñ ···········⟧';
+
+  @override
+  String envLocationManual(String city) {
+    return '⟦Ûšîñĝ $city ···⟧';
+  }
+
+  @override
+  String get envLocationLast => '⟦Ûšîñĝ ţĥé ļášţ ķñöŵñ áŕéá ·········⟧';
+
+  @override
+  String get envLocationNone => '⟦Ñö ļöçáţîöñ šéţ ······⟧';
+
+  @override
+  String get envUseMyLocation => '⟦Ûšé ɱý ļöçáţîöñ ······⟧';
+
+  @override
+  String get envChooseCity => '⟦Çĥööšé á çîţý ·····⟧';
+
+  @override
+  String get envCitySearchTitle => '⟦Çĥööšé á çîţý ·····⟧';
+
+  @override
+  String get envCitySearchHint => '⟦Çîţý ñáɱé ····⟧';
+
+  @override
+  String get envCityNoResults => '⟦Ñö þļáçéš ƒöûñð ······⟧';
+
+  @override
+  String get envCitySearchFailed =>
+      '⟦Çöûļð ñöţ šéáŕçĥ ŕîĝĥţ ñöŵ. Çĥéçķ ýöûŕ çöññéçţîöñ áñð ţŕý áĝáîñ. ·······················⟧';
+
+  @override
+  String get envPrivacyNote =>
+      '⟦Ýöûŕ ļöçáţîöñ îš ŕöûñðéð ţö áƀöûţ 10 ķɱ ƀéƒöŕé îţ ļéáṽéš ţĥîš ðéṽîçé. ·························⟧';
+
+  @override
+  String get envAttribution => '⟦Ŵéáţĥéŕ ðáţá ƀý Öþéñ-Ṁéţéö ··········⟧';
+
+  @override
+  String get envTrendRising => '⟦ŕîšîñĝ ···⟧';
+
+  @override
+  String get envTrendFalling => '⟦ƒáļļîñĝ ···⟧';
+
+  @override
+  String get envTrendSteady => '⟦šţéáðý ···⟧';
+
+  @override
+  String get envTrendUnknown => '⟦ñö ţŕéñð ýéţ ·····⟧';
+
+  @override
+  String get barometerTitle => '⟦Ɓáŕöɱéţéŕ ····⟧';
+
+  @override
+  String get barometerOpen => '⟦Öþéñ ţĥé ƀáŕöɱéţéŕ ·······⟧';
+
+  @override
+  String get barometerNoReading => '⟦Ñö ŕéáðîñĝ ····⟧';
+
+  @override
+  String get barometerFromSensor => '⟦Ƒŕöɱ ţĥîš ðéṽîçé\'š šéñšöŕ ·········⟧';
+
+  @override
+  String get barometerFromStation => '⟦Ƒŕöɱ ţĥé ñéáŕéšţ šţáţîöñ ·········⟧';
+
+  @override
+  String get barometerNoSource =>
+      '⟦Ñö šéñšöŕ öñ ţĥîš ðéṽîçé áñð ñö ƒöŕéçášţ šáṽéð ýéţ ··················⟧';
+
+  @override
+  String get barometerCalibrationSection => '⟦Çáļîƀŕáţîöñ ····⟧';
+
+  @override
+  String barometerOffset(String offset, int pairs) {
+    return '⟦Šéñšöŕ öƒƒšéţ $offset áĝáîñšţ ţĥé šţáţîöñ šéŕîéš, ƒŕöɱ $pairs ĥöûŕļý þáîŕš. ······················⟧';
+  }
+
+  @override
+  String barometerNotCalibrated(int pairs) {
+    return '⟦Ñöţ çáļîƀŕáţéð ýéţ. Ñééðš áţ ļéášţ $pairs ĥöûŕš ŵîţĥ ƀöţĥ á šéñšöŕ šáɱþļé áñð á šţáţîöñ ṽáļûé. ·······························⟧';
+  }
+
+  @override
+  String get barometerTrendSection =>
+      '⟦Ļášţ 24 ĥöûŕš öñ ţĥîš ðéṽîçé ··········⟧';
+
+  @override
+  String get barometerTrendEmpty =>
+      '⟦Šáɱþļéš áŕé ţáķéñ ŵĥîļé ţĥé áþþ îš öþéñ. Çöɱé ƀáçķ ļáţéŕ ţö šéé ţĥé ţŕéñð. ··························⟧';
+
+  @override
+  String barometerTrendSamples(int n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: '$n šáɱþļéš',
+      one: '1 šáɱþļé',
+    );
+    return '⟦$_temp0 ···········⟧';
+  }
+
+  @override
+  String get barometerStampNote =>
+      '⟦Éáçĥ áţţáçķ ýöû šţáŕţ ŕéçöŕðš ţĥé šéñšöŕ ŕéáðîñĝ áñð ţĥé šţáţîöñ ṽáļûé öƒ ţĥáţ ĥöûŕ. ······························⟧';
+
+  @override
+  String get envFactorsTitle => '⟦Ţöðáý\'š ƒáçţöŕš ······⟧';
+
+  @override
+  String get envFactorsEmpty =>
+      '⟦Ñö ðáîļý ƒáçţöŕš ƒöŕ ţĥîš áŕéá ýéţ. ·············⟧';
+
+  @override
+  String get factorBandLow => '⟦ļöŵ ··⟧';
+
+  @override
+  String get factorBandModerate => '⟦ɱöðéŕáţé ···⟧';
+
+  @override
+  String get factorBandHigh => '⟦ĥîĝĥ ··⟧';
+
+  @override
+  String get factorBandVeryHigh => '⟦ṽéŕý ĥîĝĥ ····⟧';
+
+  @override
+  String factorValueWithBand(String value, String band) {
+    return '⟦$value ($band) ··⟧';
+  }
+
+  @override
+  String get factorAqiUs => '⟦Åîŕ ǫûáļîţý (ÛŠ ÅǪÎ) ·······⟧';
+
+  @override
+  String get factorAqiEu => '⟦Åîŕ ǫûáļîţý (Éûŕöþéáñ ÅǪÎ) ··········⟧';
+
+  @override
+  String get factorParticulates => '⟦Þáŕţîçûļáţéš ÞṀ2.5 / ÞṀ10 ·········⟧';
+
+  @override
+  String factorParticulatesValue(String pm25, String pm10) {
+    return '⟦$pm25 / $pm10 µĝ/ɱ³ ····⟧';
+  }
+
+  @override
+  String get factorOzone => '⟦Öžöñé ··⟧';
+
+  @override
+  String factorMicrograms(String value) {
+    return '⟦$value µĝ/ɱ³ ···⟧';
+  }
+
+  @override
+  String get factorPollen => '⟦Þöļļéñ (Éûŕöþé öñļý) ·······⟧';
+
+  @override
+  String factorPollenType(String type, String band) {
+    return '⟦$type $band ·⟧';
+  }
+
+  @override
+  String get pollenAlder => '⟦áļðéŕ ··⟧';
+
+  @override
+  String get pollenBirch => '⟦ƀîŕçĥ ··⟧';
+
+  @override
+  String get pollenGrass => '⟦ĝŕášš ··⟧';
+
+  @override
+  String get pollenMugwort => '⟦ɱûĝŵöŕţ ···⟧';
+
+  @override
+  String get pollenOlive => '⟦öļîṽé ··⟧';
+
+  @override
+  String get pollenRagweed => '⟦ŕáĝŵééð ···⟧';
+
+  @override
+  String get factorUvMax => '⟦ÛṼ îñðéẋ, ðáîļý ɱáẋ ·······⟧';
+
+  @override
+  String get factorDaylight => '⟦Ðáýļîĝĥţ ···⟧';
+
+  @override
+  String factorDaylightValue(int hours, int minutes) {
+    return '⟦$hours ĥ $minutes ɱîñ ···⟧';
+  }
+
+  @override
+  String get factorSun => '⟦Šûñŕîšé áñð šûñšéţ ·······⟧';
+
+  @override
+  String factorSunValue(String sunrise, String sunset) {
+    return '⟦$sunrise ţö $sunset ··⟧';
+  }
+
+  @override
+  String get aboutDataTitle => '⟦Åƀöûţ ţĥé ðáţá ·····⟧';
+
+  @override
+  String get aboutDataIntro =>
+      '⟦Ŵĥéŕé ţĥé ñûɱƀéŕš îñ ţĥîš áþþ çöɱé ƒŕöɱ, áñð ŵĥáţ éáçĥ öñé çáñ áñð çáññöţ ţéļļ ýöû. ······························⟧';
+
+  @override
+  String get aboutDataSources => '⟦Šöûŕçéš ···⟧';
+
+  @override
+  String aboutDataLicence(String coverage, String licence) {
+    return '⟦$coverage. Ļîçéñçé: $licence. ·····⟧';
+  }
+
+  @override
+  String get aboutDataPrivacy => '⟦Ŵĥáţ ļéáṽéš ýöûŕ þĥöñé ········⟧';
+
+  @override
+  String get aboutDataPrivacyBody =>
+      '⟦Öñļý á ļöçáţîöñ ŕöûñðéð ţö áƀöûţ 10 ķɱ, šö ţĥé ŵéáţĥéŕ šéŕṽîçé çáñ áñšŵéŕ ƒöŕ ýöûŕ áŕéá. Ýöûŕ áţţáçķš, çĥéçķ-îñš, ɱéðîçáţîöñ áñð ĥéáļţĥ ðáţá šţáý öñ ţĥîš ðéṽîçé ûñļéšš ýöû çĥööšé ţö ƀáçķ ûþ öŕ šĥáŕé ţĥéɱ. ········································⟧';
+
+  @override
+  String get aboutDataLimits => '⟦Ļîɱîţš ···⟧';
+
+  @override
+  String get aboutDataLimitsBody =>
+      '⟦Ƒöŕéçášţš áŕé ɱöðéļ éšţîɱáţéš ƒöŕ á ĝŕîð çéļļ, ñöţ á ɱéášûŕéɱéñţ áţ ýöûŕ ðööŕ. Þöļļéñ îš öñļý áṽáîļáƀļé îñ Éûŕöþé. Åîŕ ǫûáļîţý ɱáý ƀé ɱîššîñĝ îñ šöɱé ŕéĝîöñš. Ŵĥéŕé á ƒáçţöŕ ĥáš ñö ðáţá ƒöŕ ýöûŕ áŕéá îţ îš šîɱþļý ñöţ šĥöŵñ. ········································⟧';
+
+  @override
+  String get settingsHealthHint =>
+      '⟦Šļééþ, ĥéáŕţ ŕáţé, šţéþš áñð çýçļé ƒŕöɱ ýöûŕ ĥéáļţĥ áþþ ····················⟧';
+
+  @override
+  String get healthTitle => '⟦Ĥéáļţĥ ðáţá ····⟧';
+
+  @override
+  String healthIntro(String store) {
+    return '⟦Çĥööšé ŵĥáţ ţö ŕéáð ƒŕöɱ $store. Éáçĥ ţýþé ĥáš îţš öŵñ šŵîţçĥ áñð îţš öŵñ ŕéášöñ. ···························⟧';
+  }
+
+  @override
+  String get healthPrivacyNote =>
+      '⟦Îɱþöŕţéð ðáţá šţáýš öñ ţĥîš þĥöñé. Îţ îš ñéṽéŕ ûþļöáðéð, ñöţ éṽéñ ŵîţĥ ƀáçķûþ, ûñļéšš ýöû éẋþöŕţ îţ ýöûŕšéļƒ. ·······································⟧';
+
+  @override
+  String get healthStoreApple => '⟦Åþþļé Ĥéáļţĥ ·····⟧';
+
+  @override
+  String get healthStoreConnect => '⟦Ĥéáļţĥ Çöññéçţ ·····⟧';
+
+  @override
+  String healthUnavailable(String store) {
+    return '⟦$store îš ñöţ áṽáîļáƀļé öñ ţĥîš ðéṽîçé. ············⟧';
+  }
+
+  @override
+  String get healthReadSection => '⟦Ŕéáð ··⟧';
+
+  @override
+  String get healthTypeSleep => '⟦Šļééþ ··⟧';
+
+  @override
+  String get healthReasonSleep =>
+      '⟦Ƒîļļš îñ šļééþ ǫûáļîţý öñ ýöûŕ ðáîļý çĥéçķ-îñ ƒŕöɱ ţĥé ñîĝĥţ\'š šļééþ, šö ýöû ĥáṽé öñé ļéšš ţáþ. ··································⟧';
+
+  @override
+  String get healthTypeRestingHr => '⟦Ŕéšţîñĝ ĥéáŕţ ŕáţé ·······⟧';
+
+  @override
+  String get healthReasonRestingHr =>
+      '⟦Å ĥîĝĥéŕ ŕéšţîñĝ ŕáţé ţĥáñ ûšûáļ çáñ šĥöŵ šţŕáîñ ţĥé ðáý ƀéƒöŕé áñ áţţáçķ. ··························⟧';
+
+  @override
+  String get healthTypeHrv => '⟦Ĥéáŕţ ŕáţé ṽáŕîáƀîļîţý ········⟧';
+
+  @override
+  String get healthReasonHrv =>
+      '⟦Ļöŵéŕ ṽáŕîáƀîļîţý ţĥáñ ûšûáļ öƒţéñ ĝöéš ŵîţĥ šţŕéšš áñð þööŕ ŕéçöṽéŕý. ·························⟧';
+
+  @override
+  String get healthTypeSteps => '⟦Šţéþš ··⟧';
+
+  @override
+  String get healthReasonSteps =>
+      '⟦Ṽéŕý ļöŵ öŕ ṽéŕý ĥîĝĥ áçţîṽîţý ðáýš áŕé ŵöŕţĥ šééîñĝ ñéẋţ ţö ýöûŕ áţţáçķš. ··························⟧';
+
+  @override
+  String get healthTypeFlow => '⟦Ṁéñšţŕûáļ ƒļöŵ ·····⟧';
+
+  @override
+  String get healthReasonFlow =>
+      '⟦Ƒîļļš îñ þéŕîöð šţáŕţš ƒöŕ çýçļé ţŕáçķîñĝ, îƒ ýöû ûšé îţ. ····················⟧';
+
+  @override
+  String healthDenied(String store) {
+    return '⟦$store ðîð ñöţ ĝŕáñţ áççéšš. Ýöû çáñ çĥáñĝé ţĥîš îñ îţš öŵñ šéţţîñĝš. ·······················⟧';
+  }
+
+  @override
+  String get healthWriteSection => '⟦Ŵŕîţé ··⟧';
+
+  @override
+  String healthWriteHeadaches(String store) {
+    return '⟦Ŵŕîţé ĥéáðáçĥé éṽéñţš ţö $store ·········⟧';
+  }
+
+  @override
+  String get healthWriteHeadachesHint =>
+      '⟦Éáçĥ éñðéð áţţáçķ îš šáṽéð áš á ĥéáðáçĥé ŵîţĥ îţš šţáŕţ, éñð áñð šéṽéŕîţý. Ñöţĥîñĝ éļšé îš ŵŕîţţéñ. ···································⟧';
+
+  @override
+  String get healthImportSection => '⟦Îɱþöŕţ ···⟧';
+
+  @override
+  String get healthImportNow => '⟦Îɱþöŕţ ñöŵ ····⟧';
+
+  @override
+  String get healthImportNever => '⟦Ñöţĥîñĝ îɱþöŕţéð ýéţ ·······⟧';
+
+  @override
+  String healthImportLast(String age) {
+    return '⟦$age ·⟧';
+  }
+
+  @override
+  String get healthImportFailed =>
+      '⟦Ţĥé îɱþöŕţ ðîð ñöţ ƒîñîšĥ. Ţŕý áĝáîñ ļáţéŕ. ················⟧';
+
+  @override
+  String healthImportResult(int imported, int prefilled) {
+    String _temp0 = intl.Intl.pluralLogic(
+      imported,
+      locale: localeName,
+      other: '$imported ñéŵ šáɱþļéš.',
+      one: '1 ñéŵ šáɱþļé.',
+      zero: 'Ñöţĥîñĝ ñéŵ.',
+    );
+    String _temp1 = intl.Intl.pluralLogic(
+      prefilled,
+      locale: localeName,
+      other: 'Šļééþ ƒîļļéð îñ ƒöŕ $prefilled ðáýš.',
+      one: 'Šļééþ ƒîļļéð îñ ƒöŕ 1 ðáý.',
+      zero: '',
+    );
+    return '⟦$_temp0 $_temp1 ······································⟧';
+  }
+
+  @override
+  String get checkinSourceHealthkit => '⟦Ƒŕöɱ Åþþļé Ĥéáļţĥ ······⟧';
+
+  @override
+  String get checkinSourceHealthConnect => '⟦Ƒŕöɱ Ĥéáļţĥ Çöññéçţ ·······⟧';
+
+  @override
+  String get onboardingSkip => '⟦Šķîþ ··⟧';
+
+  @override
+  String get onboardingNext => '⟦Ñéẋţ ··⟧';
+
+  @override
+  String get onboardingFinish => '⟦Ƒîñîšĥ ···⟧';
+
+  @override
+  String onboardingStep(int step, int total) {
+    return '⟦Šţéþ $step öƒ $total ····⟧';
+  }
+
+  @override
+  String get onboardingWelcomeTitle => '⟦Ŵéļçöɱé ···⟧';
+
+  @override
+  String get onboardingLocationTitle => '⟦Ýöûŕ áŕéá\'š ŵéáţĥéŕ ·······⟧';
+
+  @override
+  String get onboardingLocationBody =>
+      '⟦Åîŕ þŕéššûŕé çĥáñĝéš áŕé öñé öƒ ţĥé ɱöšţ çöɱɱöñ ţĥîñĝš þéöþļé ñöţîçé ƀéƒöŕé áñ áţţáçķ. Åļļöŵ áñ áþþŕöẋîɱáţé ļöçáţîöñ, öŕ þîçķ á çîţý, ţö šéé ţĥéɱ. ········································⟧';
+
+  @override
+  String get onboardingLocationNone =>
+      '⟦Ñö ļöçáţîöñ ýéţ. Ýöû çáñ áļšö šéţ ţĥîš ļáţéŕ ƒŕöɱ ţĥé éñṽîŕöñɱéñţ šçŕééñ. ··························⟧';
+
+  @override
+  String get onboardingHealthTitle => '⟦Ĥéáļţĥ ðáţá ····⟧';
+
+  @override
+  String get onboardingHealthBody =>
+      '⟦Öþţîöñáļ. Éáçĥ ţýþé ĥáš îţš öŵñ šŵîţçĥ áñð îţš öŵñ ŕéášöñ. Ýöû çáñ çĥáñĝé áñý öƒ ţĥéɱ ļáţéŕ îñ Šéţţîñĝš. ·····································⟧';
+
+  @override
+  String get onboardingHealthUnavailable =>
+      '⟦Ñö ĥéáļţĥ áþþ îš áṽáîļáƀļé öñ ţĥîš ðéṽîçé. Ýöû çáñ šķîþ ţĥîš šţéþ. ························⟧';
+
+  @override
+  String get onboardingReminderTitle => '⟦Ðáîļý çĥéçķ-îñ ·····⟧';
+
+  @override
+  String get onboardingReminderBody =>
+      '⟦Ţĥŕéé ţáþš á ðáý, áƀöûţ ţéñ šéçöñðš. Þîçķ á ţîɱé ƒöŕ ţĥé ŕéɱîñðéŕ. ························⟧';
+
+  @override
+  String get onboardingReminderNote =>
+      '⟦Ŕéɱîñðéŕš šţáŕţ öñçé ñöţîƒîçáţîöñš áŕé šéţ ûþ. Ýöû çáñ çĥáñĝé ţĥé ţîɱé áñý ðáý ƒŕöɱ ţĥé çĥéçķ-îñ. ··································⟧';
+
+  @override
+  String get explainerTitle => '⟦Ŵĥáţ ţĥé ļéṽéļ ɱéáñš ·······⟧';
+
+  @override
+  String get explainerIntro =>
+      '⟦Éáçĥ ðáý ţĥé áþþ šĥöŵš á ļéṽéļ ƀûîļţ ƒŕöɱ ýöûŕ öŵñ ĥîšţöŕý áñð ţöðáý\'š çöñðîţîöñš. ·····························⟧';
+
+  @override
+  String get explainerDoesTitle => '⟦Ŵĥáţ îţ ðöéš ·····⟧';
+
+  @override
+  String get explainerDoes1 =>
+      '⟦Šĥöŵš ĥöŵ ţöðáý\'š ŵéáţĥéŕ, šļééþ, šţŕéšš áñð ŕöûţîñé çöɱþáŕé ŵîţĥ ţĥé ðáýš ƀéƒöŕé ýöûŕ þášţ áţţáçķš. ···································⟧';
+
+  @override
+  String get explainerDoes2 =>
+      '⟦Ļéáŕñš ƒŕöɱ ýöûŕ öŵñ ļöĝ, šö îţ ĝéţš ɱöŕé šþéçîƒîç ţĥé ɱöŕé ýöû ŕéçöŕð. ·························⟧';
+
+  @override
+  String get explainerDoes3 =>
+      '⟦Ĥéļþš ýöû ðéçîðé ŵĥéţĥéŕ ţöðáý îš á ðáý ţö ĝö éášîéŕ öñ ýöûŕšéļƒ. ·······················⟧';
+
+  @override
+  String get explainerDoesNotTitle => '⟦Ŵĥáţ îţ ðöéš ñöţ ðö ·······⟧';
+
+  @override
+  String get explainerDoesNot1 =>
+      '⟦Îţ îš ñöţ á ƒöŕéçášţ öƒ áñ áţţáçķ. Å ĥîĝĥ ļéṽéļ îš á þáţţéŕñ, ñöţ á çéŕţáîñţý, áñð á ļöŵ ļéṽéļ îš ñöţ á þŕöɱîšé. ········································⟧';
+
+  @override
+  String get explainerDoesNot2 =>
+      '⟦Îţ îš ñöţ á ɱéðîçáļ öþîñîöñ áñð ðöéš ñöţ ŕéþļáçé ýöûŕ çļîñîçîáñ. ·······················⟧';
+
+  @override
+  String get explainerDoesNot3 =>
+      '⟦Îţ ñéṽéŕ šéñðš ýöûŕ ļöĝ áñýŵĥéŕé. Ţĥé ļéṽéļ îš çöɱþûţéð öñ ţĥîš þĥöñé. ·························⟧';
+
+  @override
+  String get riskCardTitle => '⟦Ţöðáý\'š ļéṽéļ ·····⟧';
+
+  @override
+  String get riskCardEmpty =>
+      '⟦Ñö ļéṽéļ ýéţ. Åðð á çĥéçķ-îñ öŕ ļéţ ţĥé ŵéáţĥéŕ ļöáð. ···················⟧';
+
+  @override
+  String get riskScreenTitle => '⟦Ýöûŕ ļéṽéļ ····⟧';
+
+  @override
+  String get riskWhyTitle => '⟦Ŵĥý ··⟧';
+
+  @override
+  String get riskNoDrivers => '⟦Ñöţĥîñĝ šţáñðš öûţ. ·······⟧';
+
+  @override
+  String get riskNextDays => '⟦Ñéẋţ ðáýš ····⟧';
+
+  @override
+  String get riskDayToday => '⟦Ţöðáý ··⟧';
+
+  @override
+  String get riskDayTomorrow => '⟦Ţöɱöŕŕöŵ ···⟧';
+
+  @override
+  String riskLoad(String value) {
+    return '⟦Ļöáð $value öƒ 100 ·····⟧';
+  }
+
+  @override
+  String riskConfidence(String label) {
+    return '⟦Çöñƒîðéñçé: $label ·····⟧';
+  }
+
+  @override
+  String get riskConfidenceLow => '⟦ļöŵ ··⟧';
+
+  @override
+  String get riskConfidenceMedium => '⟦ɱéðîûɱ ···⟧';
+
+  @override
+  String get riskConfidenceHigh => '⟦ĥîĝĥ ··⟧';
+
+  @override
+  String riskStillLearning(int count, int needed) {
+    return '⟦Šţîļļ ļéáŕñîñĝ: $count öƒ $needed áţţáçķš ļöĝĝéð ·············⟧';
+  }
+
+  @override
+  String get riskTuned => '⟦Ţûñéð ţö ýöûŕ ļöĝ ······⟧';
+
+  @override
+  String riskDriverPoints(String points) {
+    return '⟦$points þöîñţš ···⟧';
+  }
+
+  @override
+  String riskUpdated(String time) {
+    return '⟦Ûþðáţéð $time ···⟧';
+  }
+
+  @override
+  String get riskExplainerLink => '⟦Ŵĥáţ ţĥé ļéṽéļ ɱéáñš ·······⟧';
+
+  @override
+  String get riskOpenCheckin => '⟦Åðð ţöðáý\'š çĥéçķ-îñ ·······⟧';
+
+  @override
+  String get riskFactorPressureDrop => '⟦Ƒáļļîñĝ áîŕ þŕéššûŕé ·······⟧';
+
+  @override
+  String get riskFactorHumidity => '⟦Ĥîĝĥ ĥûɱîðîţý ·····⟧';
+
+  @override
+  String get riskFactorTemperatureSwing => '⟦Ţéɱþéŕáţûŕé çĥáñĝé ·······⟧';
+
+  @override
+  String get riskFactorAirQuality => '⟦Åîŕ ǫûáļîţý ····⟧';
+
+  @override
+  String get riskFactorPollen => '⟦Þöļļéñ ···⟧';
+
+  @override
+  String get riskFactorBrightLight => '⟦Ɓŕîĝĥţ ļîĝĥţ ·····⟧';
+
+  @override
+  String get riskFactorScreenTime => '⟦Šçŕééñ ţîɱé ····⟧';
+
+  @override
+  String get riskFactorPoorSleep => '⟦Þööŕ šļééþ ····⟧';
+
+  @override
+  String get riskFactorStress => '⟦Šţŕéšš ···⟧';
+
+  @override
+  String get riskFactorNeckTension => '⟦Ñéçķ ţéñšîöñ ·····⟧';
+
+  @override
+  String get riskFactorCaffeine => '⟦Çáƒƒéîñé ···⟧';
+
+  @override
+  String get riskFactorAlcohol => '⟦Åļçöĥöļ ···⟧';
+
+  @override
+  String get riskFactorDehydration => '⟦Ļöŵ ĥýðŕáţîöñ ·····⟧';
+
+  @override
+  String get riskFactorCyclePhase => '⟦Çýçļé þĥášé ····⟧';
+
+  @override
+  String get loadMeterTitle => '⟦Ļöáð ··⟧';
+
+  @override
+  String loadMeterSemantics(String value, String segments) {
+    return '⟦Ļöáð $value öƒ 100. $segments ·····⟧';
+  }
+
+  @override
+  String loadSegmentDetail(String name, String points) {
+    return '⟦$name: $points þöîñţš ····⟧';
+  }
+
+  @override
+  String loadThresholdModerate(String value) {
+    return '⟦Ṁöðéŕáţé ƒŕöɱ $value ·····⟧';
+  }
+
+  @override
+  String loadThresholdHigh(String value) {
+    return '⟦Ĥîĝĥ ƒŕöɱ $value ····⟧';
+  }
+
+  @override
+  String get loadMeterEmpty => '⟦Ñö ļöáð ýéţ ····⟧';
+
+  @override
+  String get insightsTitle => '⟦Ýöûŕ ƒáçţöŕš ·····⟧';
+
+  @override
+  String get insightsIntro =>
+      '⟦Ĥöŵ öƒţéñ áñ áţţáçķ ƒöļļöŵéð éáçĥ ƒáçţöŕ îñ ýöûŕ öŵñ ļöĝ, çöɱþáŕéð ŵîţĥ ýöûŕ ûšûáļ ŕáţé. ·······························⟧';
+
+  @override
+  String get insightsTriggers => '⟦Ṁöŕé áţţáçķš ƒöļļöŵéð ········⟧';
+
+  @override
+  String get insightsProtectors => '⟦Ƒéŵéŕ áţţáçķš ƒöļļöŵéð ········⟧';
+
+  @override
+  String get insightsNeutral => '⟦Ñö çļéáŕ éƒƒéçţ ······⟧';
+
+  @override
+  String get insightsNotEnough => '⟦Ñöţ éñöûĝĥ ðáţá ýéţ ·······⟧';
+
+  @override
+  String get insightsEmptyBucket => '⟦Ñöţĥîñĝ ĥéŕé ýéţ. ······⟧';
+
+  @override
+  String insightsSample(int days, int attacks) {
+    return '⟦$days éẋþöšûŕé ðáýš, $attacks ƒöļļöŵéð ƀý áñ áţţáçķ ··············⟧';
+  }
+
+  @override
+  String insightsLift(String ratio) {
+    return '⟦$ratio× ýöûŕ ûšûáļ ŕáţé ······⟧';
+  }
+
+  @override
+  String insightsNeedMore(int days, int needed) {
+    return '⟦$days öƒ $needed éẋþöšûŕé ðáýš ļöĝĝéð ·········⟧';
+  }
+
+  @override
+  String get insightsNoRunYet =>
+      '⟦Ļöĝ áñð éñð áñ áţţáçķ ţö šţáŕţ çöûñţîñĝ. ··············⟧';
+
+  @override
+  String get insightsMethodLink => '⟦Ĥöŵ ţĥîš îš çöûñţéð ·······⟧';
+
+  @override
+  String get insightsMethodTitle => '⟦Ĥöŵ ţĥîš îš çöûñţéð ·······⟧';
+
+  @override
+  String insightsMethod1(String pressure) {
+    return '⟦Åñ éẋþöšûŕé ðáý îš á ðáý ŵĥéŕé á ƒáçţöŕ ŵáš þŕéšéñţ îñ ýöûŕ ļöĝ öŕ îñ ţĥé ŵéáţĥéŕ, ƒöŕ éẋáɱþļé á šļééþ áñšŵéŕ öƒ 1 öŕ á þŕéššûŕé ðŕöþ öƒ ɱöŕé ţĥáñ $pressure. ········································⟧';
+  }
+
+  @override
+  String get insightsMethod2 =>
+      '⟦Åñ áţţáçķ çöûñţš áš ƒöļļöŵîñĝ á ðáý ŵĥéñ îţ šţáŕţéð öñ ţĥáţ ðáý öŕ ţĥé ñéẋţ, ţĥé 24 ţö 48 ĥöûŕš ţĥé ɱöðéļ ļööķš áţ. ········································⟧';
+
+  @override
+  String get insightsMethod3 =>
+      '⟦Ţĥé ŕáţîö çöɱþáŕéš ĥöŵ öƒţéñ áţţáçķš ƒöļļöŵéð ţĥáţ ƒáçţöŕ\'š ðáýš ŵîţĥ ĥöŵ öƒţéñ ţĥéý ƒöļļöŵéð áñý ðáý îñ ýöûŕ ļöĝ. 1.5× ɱéáñš öñé áñð á ĥáļƒ ţîɱéš ýöûŕ ûšûáļ ŕáţé; 0.5× ɱéáñš ĥáļƒ. ········································⟧';
+
+  @override
+  String insightsMethod4(int needed) {
+    return '⟦Å ƒáçţöŕ ñééðš $needed éẋþöšûŕé ðáýš ƀéƒöŕé îţ îš šöŕţéð. Ûñţîļ ţĥéñ îţ šîţš ûñðéŕ \"Ñöţ éñöûĝĥ ðáţá ýéţ\". Ƒéŵéŕ áţţáçķš ƒöļļöŵîñĝ á ƒáçţöŕ îš áš ûšéƒûļ ţö ķñöŵ áš ɱöŕé, šö ƀöţĥ ļîšţš ĝéţ ţĥé šáɱé þļáçé. ········································⟧';
+  }
+
+  @override
+  String get insightsMethod5 =>
+      '⟦Ñöñé öƒ ţĥîš îš á çáûšé. Å ƒáçţöŕ çáñ šîţ îñ á ļîšţ ƀéçáûšé öƒ šöɱéţĥîñĝ îţ ţŕáṽéļš ŵîţĥ, šûçĥ áš ŵééķéñðš öŕ á ɱéðîçáţîöñ çĥáñĝé. Ûšé ţĥé ļîšţš ţö ðéçîðé ŵĥáţ ţö ţŕý, ñöţ ŵĥáţ ţö ƀļáɱé. ········································⟧';
+
+  @override
+  String get riskInsightsLink => '⟦Ýöûŕ ƒáçţöŕš ·····⟧';
+
+  @override
+  String get settingsInsightsHint =>
+      '⟦Ŵĥîçĥ ƒáçţöŕš áţţáçķš ƒöļļöŵéð îñ ýöûŕ ļöĝ ···············⟧';
+
+  @override
+  String get notificationsTitle => '⟦Ñöţîƒîçáţîöñš ·····⟧';
+
+  @override
+  String get settingsNotificationsHint =>
+      '⟦Ļéṽéļ áļéŕţš, þŕéššûŕé ðŕöþš, ŕéɱîñðéŕš ··············⟧';
+
+  @override
+  String get notificationsIntro =>
+      '⟦Éṽéŕýţĥîñĝ îš šçĥéðûļéð öñ ţĥîš þĥöñé ƒŕöɱ ţĥé šáṽéð ƒöŕéçášţ áñð ýöûŕ ļöĝ. Šŵîţçĥ öƒƒ áñý ţýþé ýöû ðö ñöţ ŵáñţ. ········································⟧';
+
+  @override
+  String get notificationsPermissionDenied =>
+      '⟦Ñöţîƒîçáţîöñš áŕé öƒƒ ƒöŕ ţĥîš áþþ îñ ţĥé šýšţéɱ šéţţîñĝš. ·····················⟧';
+
+  @override
+  String get notifTypeRiskRising => '⟦Ļéṽéļ ŕîšîñĝ ·····⟧';
+
+  @override
+  String get notifTypeRiskRisingHint =>
+      '⟦Ţĥé éṽéñîñĝ ƀéƒöŕé áñð ţĥé ɱöŕñîñĝ öƒ á ĥîĝĥéŕ ðáý ··················⟧';
+
+  @override
+  String get notifTypePressureDrop => '⟦Þŕéššûŕé ðŕöþ ·····⟧';
+
+  @override
+  String notifTypePressureDropHint(String pressure) {
+    return '⟦Ŵĥéñ ţĥé ƒöŕéçášţ šĥöŵš á ƒáļļ öƒ $pressure öŕ ɱöŕé îñ 24 ĥöûŕš ···················⟧';
+  }
+
+  @override
+  String get notifTypeAttackOver => '⟦Îš ýöûŕ áţţáçķ öṽéŕ? ·······⟧';
+
+  @override
+  String get notifTypeAttackOverHint =>
+      '⟦Åţ ýöûŕ ţýþîçáļ áţţáçķ ļéñĝţĥ, ŵîţĥ áñ Éñð ƀûţţöñ ··················⟧';
+
+  @override
+  String get notifTypeCheckin => '⟦Çĥéçķ-îñ ŕéɱîñðéŕ ······⟧';
+
+  @override
+  String get notifTypeCheckinHint => '⟦Åţ ţĥé ţîɱé šéţ ûñðéŕ Ðáîļý ··········⟧';
+
+  @override
+  String get notifTypeMedication => '⟦Þŕéṽéñţîṽé ŕéɱîñðéŕ ·······⟧';
+
+  @override
+  String get notifTypeMedicationHint =>
+      '⟦Å ðáîļý ñûðĝé ƒöŕ á þŕéṽéñţîṽé ðöšé ·············⟧';
+
+  @override
+  String notifPressureThreshold(String pressure) {
+    return '⟦Þŕéššûŕé ðŕöþ ţĥŕéšĥöļð: $pressure îñ 24 ĥ ············⟧';
+  }
+
+  @override
+  String get notifMedicationTime => '⟦Þŕéṽéñţîṽé ŕéɱîñðéŕ ţîɱé ·········⟧';
+
+  @override
+  String notifRiskEveningTitle(String level) {
+    return '⟦Ţöɱöŕŕöŵ\'š ļéṽéļ: $level ·······⟧';
+  }
+
+  @override
+  String notifRiskEveningBody(String level, String driver) {
+    return '⟦Ýöûŕ ļéṽéļ ƒöŕ ţöɱöŕŕöŵ îš $level. Ţöþ öƒ ţĥé ļîšţ: $driver. ·················⟧';
+  }
+
+  @override
+  String notifRiskMorningTitle(String level) {
+    return '⟦Ţöðáý\'š ļéṽéļ: $level ······⟧';
+  }
+
+  @override
+  String notifRiskMorningBody(String level, String driver) {
+    return '⟦Ýöûŕ ļéṽéļ ţöðáý îš $level. Ţöþ öƒ ţĥé ļîšţ: $driver. ··············⟧';
+  }
+
+  @override
+  String get notifPressureTitle => '⟦Åîŕ þŕéššûŕé îš ðŕöþþîñĝ ·········⟧';
+
+  @override
+  String notifPressureBody(String pressure, String time) {
+    return '⟦Å ƒáļļ öƒ $pressure îš éẋþéçţéð ƀý $time. ··········⟧';
+  }
+
+  @override
+  String get notifAttackOverTitle => '⟦Îš ýöûŕ áţţáçķ öṽéŕ? ·······⟧';
+
+  @override
+  String notifAttackOverBody(String duration) {
+    return '⟦Îţ šţáŕţéð $duration áĝö. Éñð îţ ĥéŕé ŵĥéñ îţ ĥáš þáššéð. ·················⟧';
+  }
+
+  @override
+  String get notifEndAttackAction => '⟦Éñð áţţáçķ ····⟧';
+
+  @override
+  String get notifCheckinTitle => '⟦Ţĥŕéé ţáþš ƒöŕ ţöðáý ·······⟧';
+
+  @override
+  String get notifCheckinBody =>
+      '⟦Šļééþ, šţŕéšš áñð ñéçķ ţéñšîöñ. Ƒîƒţééñ šéçöñðš. ·················⟧';
+
+  @override
+  String get notifMedicationTitle => '⟦Þŕéṽéñţîṽé ðöšé ······⟧';
+
+  @override
+  String get notifMedicationBody =>
+      '⟦Ţîɱé ƒöŕ ţöðáý\'š þŕéṽéñţîṽé ɱéðîçáţîöñ, îƒ ýöû ţáķé öñé. ····················⟧';
+
+  @override
+  String get notifChannelAlerts => '⟦Åļéŕţš ···⟧';
+
+  @override
+  String get notifChannelAlertsDescription =>
+      '⟦Ļéṽéļ áñð þŕéššûŕé áļéŕţš ƒŕöɱ ţĥé šáṽéð ƒöŕéçášţ ··················⟧';
+
+  @override
+  String get notifChannelReminders => '⟦Ŕéɱîñðéŕš ····⟧';
+
+  @override
+  String get notifChannelRemindersDescription =>
+      '⟦Çĥéçķ-îñ áñð þŕéṽéñţîṽé ðöšé ŕéɱîñðéŕš ··············⟧';
+
+  @override
+  String get notifChannelAttack => '⟦Åţţáçķ ···⟧';
+
+  @override
+  String get notifChannelAttackDescription =>
+      '⟦Ǫûéšţîöñš áƀöûţ á ŕûññîñĝ áţţáçķ ············⟧';
+
+  @override
+  String get reportTitle => '⟦Ðöçţöŕ ŕéþöŕţ ·····⟧';
+
+  @override
+  String get settingsReportHint =>
+      '⟦ÞÐƑ áñð šþŕéáðšĥééţ ƒöŕ á ðáţé ŕáñĝé ·············⟧';
+
+  @override
+  String get reportIntro =>
+      '⟦Å šûɱɱáŕý öƒ ŵĥáţ ýöû ļöĝĝéð, ƒöŕ ýöûŕ ñéẋţ áþþöîñţɱéñţ. Þîçķ á þéŕîöð, ţĥéñ šĥáŕé ţĥé ÞÐƑ öŕ ţĥé šþŕéáðšĥééţš. ·······································⟧';
+
+  @override
+  String get reportRangeLabel => '⟦Þéŕîöð ···⟧';
+
+  @override
+  String reportRangeDays(int days) {
+    return '⟦$days ðáýš ··⟧';
+  }
+
+  @override
+  String get reportRangeCustom => '⟦Çûšţöɱ ···⟧';
+
+  @override
+  String reportRangeText(String from, String to) {
+    return '⟦$from ţö $to ··⟧';
+  }
+
+  @override
+  String reportPreviewAttacks(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count áţţáçķš',
+      one: '1 áţţáçķ',
+      zero: 'Ñö áţţáçķš',
+    );
+    return '⟦$_temp0 ··············⟧';
+  }
+
+  @override
+  String reportPreviewAttackDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count áţţáçķ ðáýš',
+      one: '1 áţţáçķ ðáý',
+      zero: 'ñö áţţáçķ ðáýš',
+    );
+    return '⟦$_temp0 ···············⟧';
+  }
+
+  @override
+  String reportPreviewDoses(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count ðöšéš',
+      one: '1 ðöšé',
+      zero: 'ñö ðöšéš',
+    );
+    return '⟦$_temp0 ·············⟧';
+  }
+
+  @override
+  String reportPreviewCheckins(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count çĥéçķ-îñš',
+      one: '1 çĥéçķ-îñ',
+      zero: 'ñö çĥéçķ-îñš',
+    );
+    return '⟦$_temp0 ··············⟧';
+  }
+
+  @override
+  String get reportEmpty => '⟦Ñöţĥîñĝ ļöĝĝéð îñ ţĥîš þéŕîöð ýéţ. ············⟧';
+
+  @override
+  String get reportSharePdf => '⟦Šĥáŕé ÞÐƑ ····⟧';
+
+  @override
+  String get reportShareCsv => '⟦Šĥáŕé šþŕéáðšĥééţš ·······⟧';
+
+  @override
+  String get reportShareAll => '⟦Šĥáŕé éṽéŕýţĥîñĝ ······⟧';
+
+  @override
+  String get reportBuilding => '⟦Þŕéþáŕîñĝ ţĥé ŕéþöŕţ ·······⟧';
+
+  @override
+  String get reportFailed =>
+      '⟦Ţĥé ŕéþöŕţ çöûļð ñöţ ƀé þŕéþáŕéð. Ţŕý áĝáîñ. ················⟧';
+
+  @override
+  String get reportWhatIsIn => '⟦Ŵĥáţ ţĥé ÞÐƑ çöñţáîñš ········⟧';
+
+  @override
+  String get reportContents =>
+      '⟦Åţţáçķ çáļéñðáŕ, ɱöñţĥļý çöûñţš, ðûŕáţîöñ, ƒáçţöŕš ŵîţĥ ţĥéîŕ šáɱþļé šîžéš, ɱéðîçáţîöñ ðáýš, þŕéššûŕé çĥáñĝéš, šýɱþţöɱš áñð ĥéáð ļöçáţîöñš. Ñö ñáɱéš, ñö ñöţéš. ········································⟧';
+
+  @override
+  String reportPdfTitle(String app) {
+    return '⟦$app ŕéþöŕţ ···⟧';
+  }
+
+  @override
+  String reportPdfPeriod(String from, String to, int days) {
+    return '⟦Þéŕîöð: $from ţö $to ($days ðáýš) ·······⟧';
+  }
+
+  @override
+  String reportPdfGenerated(String date) {
+    return '⟦Ĝéñéŕáţéð $date öñ ţĥé þéŕšöñ\'š ðéṽîçé ƒŕöɱ ţĥéîŕ öŵñ ļöĝ. ···················⟧';
+  }
+
+  @override
+  String get reportPdfDisclaimer =>
+      '⟦Ţĥîš îš á šéļƒ-ŕéþöŕţéð ðîáŕý šûɱɱáŕý ƒŕöɱ á ŵéļļñéšš áþþ. Îţ îš ñöţ á ɱéðîçáļ ŕéçöŕð áñð ðöéš ñöţ ŕéþļáçé á çļîñîçáļ áššéššɱéñţ. Ƒáçţöŕ ŕáţîöš ðéšçŕîƀé ţĥîš þéŕšöñ\'š ļöĝ öñļý áñð áŕé ñöţ çáûšéš. ········································⟧';
+
+  @override
+  String reportPdfPage(int page, int pages) {
+    return '⟦Þáĝé $page öƒ $pages ····⟧';
+  }
+
+  @override
+  String get reportSectionOverview => '⟦Öṽéŕṽîéŵ ···⟧';
+
+  @override
+  String get reportStatAttacks => '⟦Åţţáçķš ···⟧';
+
+  @override
+  String get reportStatAttackDays => '⟦Åţţáçķ ðáýš ····⟧';
+
+  @override
+  String get reportStatPerMonth => '⟦Åţţáçķš þéŕ 30 ðáýš ·······⟧';
+
+  @override
+  String get reportStatMeanIntensity => '⟦Ṁéáñ îñţéñšîţý (0-10) ········⟧';
+
+  @override
+  String get reportStatAcuteDays => '⟦Ðáýš ŵîţĥ áçûţé ɱéðîçáţîöñ ··········⟧';
+
+  @override
+  String get reportStatCheckins => '⟦Ðáýš ŵîţĥ á çĥéçķ-îñ ·······⟧';
+
+  @override
+  String get reportSectionMonths => '⟦Ɓý ɱöñţĥ ···⟧';
+
+  @override
+  String get reportColMonth => '⟦Ṁöñţĥ ··⟧';
+
+  @override
+  String get reportColAttacks => '⟦Åţţáçķš ···⟧';
+
+  @override
+  String get reportColAttackDays => '⟦Åţţáçķ ðáýš ····⟧';
+
+  @override
+  String get reportColMeanIntensity => '⟦Ṁéáñ îñţéñšîţý ·····⟧';
+
+  @override
+  String get reportColAcuteDays => '⟦Åçûţé ðáýš ····⟧';
+
+  @override
+  String get reportColNote => '⟦Ñöţé ··⟧';
+
+  @override
+  String get reportOveruseWatch => '⟦10+ áçûţé ðáýš ·····⟧';
+
+  @override
+  String get reportOveruseHigh => '⟦15+ áçûţé ðáýš ·····⟧';
+
+  @override
+  String get reportSectionCalendar => '⟦Åţţáçķ çáļéñðáŕ ······⟧';
+
+  @override
+  String get reportCalendarHint =>
+      '⟦Öñé çéļļ þéŕ ðáý. Šĥáðéð çéļļš ĥáð áñ áţţáçķ; ţĥé ñûɱƀéŕ îš ţĥé ĥîĝĥéšţ îñţéñšîţý ţĥáţ ðáý. ································⟧';
+
+  @override
+  String get reportSectionDuration => '⟦Åţţáçķ ðûŕáţîöñ ······⟧';
+
+  @override
+  String get reportDurationNone =>
+      '⟦Ñö éñðéð áţţáçķš îñ ţĥîš þéŕîöð. ············⟧';
+
+  @override
+  String reportDurationSummary(
+    int count,
+    String shortest,
+    String median,
+    String longest,
+  ) {
+    return '⟦$count éñðéð áţţáçķš. Šĥöŕţéšţ $shortest, ɱéðîáñ $median, ļöñĝéšţ $longest. ················⟧';
+  }
+
+  @override
+  String get reportBucketUnderFour => '⟦Ûñðéŕ 4 ĥ ····⟧';
+
+  @override
+  String get reportBucketFourToTwelve => '⟦4 ţö 12 ĥ ····⟧';
+
+  @override
+  String get reportBucketTwelveToDay => '⟦12 ţö 24 ĥ ····⟧';
+
+  @override
+  String get reportBucketOneToThreeDays => '⟦1 ţö 3 ðáýš ····⟧';
+
+  @override
+  String get reportBucketOverThreeDays => '⟦Öṽéŕ 3 ðáýš ····⟧';
+
+  @override
+  String get reportSectionTriggers =>
+      '⟦Ƒáçţöŕš îñ ţĥé þéŕšöñ\'š ļöĝ ··········⟧';
+
+  @override
+  String reportTriggersHint(int floor) {
+    return '⟦Ŕáţîö öƒ áţţáçķš áƒţéŕ ðáýš ŵîţĥ ţĥé ƒáçţöŕ ţö ţĥé þéŕšöñ\'š ûšûáļ ŕáţé, ŵîţĥ ţĥé ñûɱƀéŕ öƒ éẋþöšûŕé ðáýš ƀéĥîñð îţ. Ɓéļöŵ $floor éẋþöšûŕé ðáýš ţĥé ŕáţîö îš ñöţ šĥöŵñ. ········································⟧';
+  }
+
+  @override
+  String get reportTriggersNone =>
+      '⟦Ñöţ éñöûĝĥ ļöĝĝéð ðáýš ýéţ ţö çöɱþáŕé ƒáçţöŕš. ·················⟧';
+
+  @override
+  String get reportColFactor => '⟦Ƒáçţöŕ ···⟧';
+
+  @override
+  String get reportColRatio => '⟦Ŕáţîö ··⟧';
+
+  @override
+  String get reportColExposures => '⟦Éẋþöšûŕé ðáýš ·····⟧';
+
+  @override
+  String get reportColFollowed => '⟦Ƒöļļöŵéð ƀý áţţáçķ ·······⟧';
+
+  @override
+  String get reportColConfidence => '⟦Éṽîðéñçé ···⟧';
+
+  @override
+  String get reportConfidenceLow => '⟦ļöŵ ··⟧';
+
+  @override
+  String get reportConfidenceMedium => '⟦ɱöðéŕáţé ···⟧';
+
+  @override
+  String get reportConfidenceHigh => '⟦ĝööð ··⟧';
+
+  @override
+  String get reportSectionMedications => '⟦Ṁéðîçáţîöñ ····⟧';
+
+  @override
+  String get reportMedicationsNone =>
+      '⟦Ñö ðöšéš ļöĝĝéð îñ ţĥîš þéŕîöð. ···········⟧';
+
+  @override
+  String get reportColMedication => '⟦Ṁéðîçáţîöñ ····⟧';
+
+  @override
+  String get reportColKind => '⟦Ţýþé ··⟧';
+
+  @override
+  String get reportColDoses => '⟦Ðöšéš ··⟧';
+
+  @override
+  String get reportColDays => '⟦Ðáýš ··⟧';
+
+  @override
+  String get reportColRelief =>
+      '⟦Ŕéļîéƒ áţ 2 ĥ (ñöñé / þáŕţîáļ / ƒûļļ) ·············⟧';
+
+  @override
+  String get reportKindAcute => '⟦áçûţé ··⟧';
+
+  @override
+  String get reportKindPreventive => '⟦þŕéṽéñţîṽé ····⟧';
+
+  @override
+  String get reportSectionWeather => '⟦Åîŕ þŕéššûŕé ·····⟧';
+
+  @override
+  String reportWeatherHint(String pressure) {
+    return '⟦Å ƒáļļ îš á ðŕöþ öƒ $pressure öŕ ɱöŕé öṽéŕ 24 ĥ áţ ţĥé ţîɱé öƒ ţĥé éñţŕý. ·······················⟧';
+  }
+
+  @override
+  String get reportWeatherNone =>
+      '⟦Ñö ŵéáţĥéŕ šñáþšĥöţš îñ ţĥîš þéŕîöð. ·············⟧';
+
+  @override
+  String reportWeatherAttacks(int fall, int total) {
+    return '⟦$fall öƒ $total áţţáçķš ƀéĝáñ áƒţéŕ á þŕéššûŕé ƒáļļ. ···············⟧';
+  }
+
+  @override
+  String reportWeatherDays(int fall, int total) {
+    return '⟦$fall öƒ $total çĥéçķ-îñ ðáýš ĥáð öñé. ··········⟧';
+  }
+
+  @override
+  String reportWeatherLift(String lift) {
+    return '⟦Ŕáţîö: $liftẋ (1.0 ɱéáñš ñö ŕéļáţîöñ). ············⟧';
+  }
+
+  @override
+  String get reportSectionSymptoms =>
+      '⟦Šýɱþţöɱš áñð ĥéáð ļöçáţîöñš ··········⟧';
+
+  @override
+  String get reportSymptomsNone =>
+      '⟦Ñö šýɱþţöɱš öŕ ļöçáţîöñš ļöĝĝéð. ············⟧';
+
+  @override
+  String reportCountOfAttacks(String name, int count, int total) {
+    return '⟦$name: $count öƒ $total áţţáçķš ·····⟧';
+  }
+
+  @override
+  String reportHoursShort(String hours) {
+    return '⟦$hours ĥ ·⟧';
+  }
+
+  @override
+  String get notifTypeQuestionnaire =>
+      '⟦Ţĥŕéé-ɱöñţĥ ǫûéšţîöññáîŕéš ··········⟧';
+
+  @override
+  String get notifTypeQuestionnaireHint =>
+      '⟦ṀÎÐÅŠ áñð ĤÎŢ-6, ţĥŕéé ɱöñţĥš áƒţéŕ ţĥé ļášţ ŕöûñð ··················⟧';
+
+  @override
+  String get notifQuestionnaireTitle =>
+      '⟦Ţĥŕéé ɱöñţĥš šîñçé ýöûŕ ļášţ ǫûéšţîöññáîŕéš ················⟧';
+
+  @override
+  String get notifQuestionnaireBody =>
+      '⟦Ƒîļļ îñ ṀÎÐÅŠ áñð ĤÎŢ-6 áĝáîñ ţö šéé ĥöŵ ţĥé ļášţ ǫûáŕţéŕ çöɱþáŕéš. ························⟧';
+
+  @override
+  String get questionnairesTitle => '⟦Ǫûéšţîöññáîŕéš ·····⟧';
+
+  @override
+  String get settingsQuestionnairesHint =>
+      '⟦ṀÎÐÅŠ áñð ĤÎŢ-6, šçöŕéð áñð çĥáŕţéð ·············⟧';
+
+  @override
+  String get questionnairesIntro =>
+      '⟦Ţŵö šĥöŕţ, ṽáļîðáţéð ǫûéšţîöññáîŕéš áƀöûţ ţĥé ļášţ ţĥŕéé ɱöñţĥš. Ŕéþéáţ ţĥéɱ éṽéŕý ǫûáŕţéŕ áñð ţĥé šçöŕéš áŕé çĥáŕţéð ĥéŕé áñð çáñ ĝö îñţö ţĥé ðöçţöŕ ŕéþöŕţ. ········································⟧';
+
+  @override
+  String get questionnaireMidasTitle => '⟦ṀÎÐÅŠ ··⟧';
+
+  @override
+  String get questionnaireMidasSubtitle =>
+      '⟦Ṁîĝŕáîñé Ðîšáƀîļîţý Åššéššɱéñţ: ƒîṽé ðáý çöûñţš öṽéŕ ţĥé ļášţ ţĥŕéé ɱöñţĥš ··························⟧';
+
+  @override
+  String get questionnaireHit6Title => '⟦ĤÎŢ-6 ··⟧';
+
+  @override
+  String get questionnaireHit6Subtitle =>
+      '⟦Ĥéáðáçĥé Îɱþáçţ Ţéšţ: šîẋ ǫûéšţîöñš öñ ĥöŵ ĥéáðáçĥéš áƒƒéçţ ýöûŕ ļîƒé ·························⟧';
+
+  @override
+  String get questionnaireNeverDone => '⟦Ñöţ ƒîļļéð îñ ýéţ ······⟧';
+
+  @override
+  String questionnaireLatest(int score, String date) {
+    return '⟦Ļášţ šçöŕé $score öñ $date ······⟧';
+  }
+
+  @override
+  String get questionnaireDueNow => '⟦Ðûé ñöŵ ···⟧';
+
+  @override
+  String questionnaireDueOn(String date) {
+    return '⟦Ñéẋţ ŕöûñð $date ····⟧';
+  }
+
+  @override
+  String get questionnaireStart => '⟦Ƒîļļ îñ ···⟧';
+
+  @override
+  String get questionnaireRepeat => '⟦Ƒîļļ îñ áĝáîñ ·····⟧';
+
+  @override
+  String get questionnaireHistory => '⟦Šçöŕé ĥîšţöŕý ·····⟧';
+
+  @override
+  String questionnaireChartLabel(
+    int count,
+    String first,
+    String last,
+    int latest,
+  ) {
+    return '⟦$count šçöŕéš ƒŕöɱ $first ţö $last, ļáţéšţ $latest ··········⟧';
+  }
+
+  @override
+  String get questionnaireAbout => '⟦Åƀöûţ ţĥé šçöŕéš ······⟧';
+
+  @override
+  String get questionnaireAboutBody =>
+      '⟦ṀÎÐÅŠ áððš ûþ ƒîṽé ðáý çöûñţš: 0 ţö 5 îš ĝŕáðé Î (ļîţţļé öŕ ñö ðîšáƀîļîţý), 6 ţö 10 ĝŕáðé ÎÎ (ɱîļð), 11 ţö 20 ĝŕáðé ÎÎÎ (ɱöðéŕáţé), 21 áñð öṽéŕ ĝŕáðé ÎṼ (šéṽéŕé). ĤÎŢ-6 ĝîṽéš 6, 8, 10, 11 öŕ 13 þöîñţš þéŕ áñšŵéŕ, 36 ţö 78 îñ áļļ: ûþ ţö 49 îš ļîţţļé öŕ ñö îɱþáçţ, 50 ţö 55 šöɱé îɱþáçţ, 56 ţö 59 šûƀšţáñţîáļ îɱþáçţ, 60 áñð öṽéŕ šéṽéŕé îɱþáçţ. Ţĥé ƀáñðš áŕé ţĥé þûƀļîšĥéð öñéš; ţĥé šçöŕéš áŕé ƒöŕ ýöû áñð ýöûŕ çļîñîçîáñ ţö ðîšçûšš. ········································⟧';
+
+  @override
+  String get questionnaireMidasIntro =>
+      '⟦Ţĥîñķ áƀöûţ ţĥé ļášţ ţĥŕéé ɱöñţĥš. Çöûñţ ðáýš; á ðáý çöûñţš öñçé þéŕ ǫûéšţîöñ. ····························⟧';
+
+  @override
+  String get questionnaireMidasQ1 =>
+      '⟦Öñ ĥöŵ ɱáñý ðáýš ðîð ýöû ɱîšš ŵöŕķ öŕ šçĥööļ ƀéçáûšé öƒ ýöûŕ ĥéáðáçĥéš? ·························⟧';
+
+  @override
+  String get questionnaireMidasQ2 =>
+      '⟦Öñ ĥöŵ ɱáñý ðáýš ŵáš ýöûŕ þŕöðûçţîṽîţý áţ ŵöŕķ öŕ šçĥööļ ŕéðûçéð ƀý ĥáļƒ öŕ ɱöŕé ƀéçáûšé öƒ ýöûŕ ĥéáðáçĥéš? (Ðö ñöţ çöûñţ ðáýš ýöû ɱîššéð.) ········································⟧';
+
+  @override
+  String get questionnaireMidasQ3 =>
+      '⟦Öñ ĥöŵ ɱáñý ðáýš ðîð ýöû ñöţ ðö ĥöûšéĥöļð ŵöŕķ ƀéçáûšé öƒ ýöûŕ ĥéáðáçĥéš? ··························⟧';
+
+  @override
+  String get questionnaireMidasQ4 =>
+      '⟦Öñ ĥöŵ ɱáñý ðáýš ŵáš ýöûŕ þŕöðûçţîṽîţý îñ ĥöûšéĥöļð ŵöŕķ ŕéðûçéð ƀý ĥáļƒ öŕ ɱöŕé ƀéçáûšé öƒ ýöûŕ ĥéáðáçĥéš? (Ðö ñöţ çöûñţ ðáýš ýöû ðîð ñöñé.) ········································⟧';
+
+  @override
+  String get questionnaireMidasQ5 =>
+      '⟦Öñ ĥöŵ ɱáñý ðáýš ðîð ýöû ɱîšš ƒáɱîļý, šöçîáļ öŕ ļéîšûŕé áçţîṽîţîéš ƀéçáûšé öƒ ýöûŕ ĥéáðáçĥéš? ·································⟧';
+
+  @override
+  String get questionnaireMidasA =>
+      '⟦Öñ ĥöŵ ɱáñý ðáýš ðîð ýöû ĥáṽé á ĥéáðáçĥé? (Îƒ á ĥéáðáçĥé ļášţéð ɱöŕé ţĥáñ öñé ðáý, çöûñţ éáçĥ ðáý.) ···································⟧';
+
+  @override
+  String get questionnaireMidasB =>
+      '⟦Öñ á šçáļé öƒ 0 ţö 10, öñ áṽéŕáĝé ĥöŵ þáîñƒûļ ŵéŕé ţĥéšé ĥéáðáçĥéš? (0 = ñö þáîñ, 10 = þáîñ áš ƀáð áš îţ çáñ ƀé) ········································⟧';
+
+  @override
+  String get questionnaireMidasUnscored => '⟦Ñöţ þáŕţ öƒ ţĥé šçöŕé ········⟧';
+
+  @override
+  String get questionnaireDaysField => '⟦Ðáýš (0 ţö 90) ·····⟧';
+
+  @override
+  String get questionnairePainField => '⟦Þáîñ (0 ţö 10) ·····⟧';
+
+  @override
+  String questionnaireDaysError(int max) {
+    return '⟦Éñţéŕ á ñûɱƀéŕ ƒŕöɱ 0 ţö $max ·········⟧';
+  }
+
+  @override
+  String get questionnaireHit6Intro =>
+      '⟦Ţĥîñķ áƀöûţ ţĥé ļášţ ƒöûŕ ŵééķš áñð þîçķ ţĥé áñšŵéŕ ţĥáţ ƒîţš ƀéšţ ƒöŕ éáçĥ ǫûéšţîöñ. ······························⟧';
+
+  @override
+  String get questionnaireHit6Q1 =>
+      '⟦Ŵĥéñ ýöû ĥáṽé ĥéáðáçĥéš, ĥöŵ öƒţéñ îš ţĥé þáîñ šéṽéŕé? ···················⟧';
+
+  @override
+  String get questionnaireHit6Q2 =>
+      '⟦Ĥöŵ öƒţéñ ðö ĥéáðáçĥéš ļîɱîţ ýöûŕ áƀîļîţý ţö ðö ûšûáļ ðáîļý áçţîṽîţîéš, îñçļûðîñĝ ĥöûšéĥöļð ŵöŕķ, ŵöŕķ, šçĥööļ öŕ šöçîáļ áçţîṽîţîéš? ········································⟧';
+
+  @override
+  String get questionnaireHit6Q3 =>
+      '⟦Ŵĥéñ ýöû ĥáṽé á ĥéáðáçĥé, ĥöŵ öƒţéñ ðö ýöû ŵîšĥ ýöû çöûļð ļîé ðöŵñ? ························⟧';
+
+  @override
+  String get questionnaireHit6Q4 =>
+      '⟦Îñ ţĥé þášţ ƒöûŕ ŵééķš, ĥöŵ öƒţéñ ĥáṽé ýöû ƒéļţ ţöö ţîŕéð ţö ðö ŵöŕķ öŕ ðáîļý áçţîṽîţîéš ƀéçáûšé öƒ ýöûŕ ĥéáðáçĥéš? ········································⟧';
+
+  @override
+  String get questionnaireHit6Q5 =>
+      '⟦Îñ ţĥé þášţ ƒöûŕ ŵééķš, ĥöŵ öƒţéñ ĥáṽé ýöû ƒéļţ ƒéð ûþ öŕ îŕŕîţáţéð ƀéçáûšé öƒ ýöûŕ ĥéáðáçĥéš? ·································⟧';
+
+  @override
+  String get questionnaireHit6Q6 =>
+      '⟦Îñ ţĥé þášţ ƒöûŕ ŵééķš, ĥöŵ öƒţéñ ðîð ĥéáðáçĥéš ļîɱîţ ýöûŕ áƀîļîţý ţö çöñçéñţŕáţé öñ ŵöŕķ öŕ ðáîļý áçţîṽîţîéš? ·······································⟧';
+
+  @override
+  String get questionnaireOptionNever => '⟦Ñéṽéŕ ··⟧';
+
+  @override
+  String get questionnaireOptionRarely => '⟦Ŕáŕéļý ···⟧';
+
+  @override
+  String get questionnaireOptionSometimes => '⟦Šöɱéţîɱéš ····⟧';
+
+  @override
+  String get questionnaireOptionVeryOften => '⟦Ṽéŕý öƒţéñ ····⟧';
+
+  @override
+  String get questionnaireOptionAlways => '⟦Åļŵáýš ···⟧';
+
+  @override
+  String get questionnaireSave => '⟦Šáṽé áñð šçöŕé ·····⟧';
+
+  @override
+  String get questionnaireIncomplete =>
+      '⟦Åñšŵéŕ éṽéŕý šçöŕéð ǫûéšţîöñ ţö šáṽé. ·············⟧';
+
+  @override
+  String questionnaireResultTitle(int score) {
+    return '⟦Ýöûŕ šçöŕé: $score ·····⟧';
+  }
+
+  @override
+  String get questionnaireResultDone => '⟦Ðöñé ··⟧';
+
+  @override
+  String get questionnaireResultDisclaimer =>
+      '⟦Å šçöŕé ðéšçŕîƀéš ţĥé ļášţ ţĥŕéé ɱöñţĥš áš ýöû ŕéɱéɱƀéŕ ţĥéɱ. Îţ îš á šţáŕţîñĝ þöîñţ ƒöŕ á çöñṽéŕšáţîöñ ŵîţĥ ýöûŕ çļîñîçîáñ, ñöţ á ɱéðîçáļ áššéššɱéñţ. ········································⟧';
+
+  @override
+  String get questionnaireMidasBandMinimal =>
+      '⟦Ĝŕáðé Î: ļîţţļé öŕ ñö ðîšáƀîļîţý ············⟧';
+
+  @override
+  String get questionnaireMidasBandMild =>
+      '⟦Ĝŕáðé ÎÎ: ɱîļð ðîšáƀîļîţý ·········⟧';
+
+  @override
+  String get questionnaireMidasBandModerate =>
+      '⟦Ĝŕáðé ÎÎÎ: ɱöðéŕáţé ðîšáƀîļîţý ···········⟧';
+
+  @override
+  String get questionnaireMidasBandSevere =>
+      '⟦Ĝŕáðé ÎṼ: šéṽéŕé ðîšáƀîļîţý ··········⟧';
+
+  @override
+  String get questionnaireHit6BandMinimal => '⟦Ļîţţļé öŕ ñö îɱþáçţ ·······⟧';
+
+  @override
+  String get questionnaireHit6BandMild => '⟦Šöɱé îɱþáçţ ····⟧';
+
+  @override
+  String get questionnaireHit6BandModerate => '⟦Šûƀšţáñţîáļ îɱþáçţ ·······⟧';
+
+  @override
+  String get questionnaireHit6BandSevere => '⟦Šéṽéŕé îɱþáçţ ·····⟧';
+
+  @override
+  String get reportIncludeQuestionnaires =>
+      '⟦Îñçļûðé ǫûéšţîöññáîŕé šçöŕéš ··········⟧';
+
+  @override
+  String get reportIncludeQuestionnairesHint =>
+      '⟦ṀÎÐÅŠ áñð ĤÎŢ-6 ŕöûñðš çöɱþļéţéð îñ ţĥé þéŕîöð ·················⟧';
+
+  @override
+  String get reportSectionQuestionnaires => '⟦Ǫûéšţîöññáîŕéš ·····⟧';
+
+  @override
+  String get reportQuestionnairesNone =>
+      '⟦Ñö ǫûéšţîöññáîŕéš çöɱþļéţéð îñ ţĥîš þéŕîöð. ················⟧';
+
+  @override
+  String get reportColDate => '⟦Ðáţé ··⟧';
+
+  @override
+  String get reportColQuestionnaire => '⟦Ǫûéšţîöññáîŕé ·····⟧';
+
+  @override
+  String get reportColScore => '⟦Šçöŕé ··⟧';
+
+  @override
+  String get reportColBand => '⟦Ɓáñð ··⟧';
+
+  @override
+  String get voiceButton => '⟦Ļöĝ ƀý ṽöîçé ·····⟧';
+
+  @override
+  String get voiceListening => '⟦Ļîšţéñîñĝ ····⟧';
+
+  @override
+  String get voiceListeningHint =>
+      '⟦Šáý ĥöŵ îţ ƒééļš, ƒöŕ éẋáɱþļé: þáîñ šéṽéñ öûţ öƒ ţéñ, ƀéĥîñð ɱý éýéš, ñáûšéá, ţööķ îƀûþŕöƒéñ. ·································⟧';
+
+  @override
+  String get voiceStop => '⟦Ðöñé ţáļķîñĝ ·····⟧';
+
+  @override
+  String get voiceCancel => '⟦Çáñçéļ ···⟧';
+
+  @override
+  String get voiceTryAgain => '⟦Ţŕý áĝáîñ ····⟧';
+
+  @override
+  String get voiceUnavailable =>
+      '⟦Ṽöîçé îš ñöţ áṽáîļáƀļé öñ ţĥîš þĥöñé. Šþééçĥ ŕéçöĝñîţîöñ ñééðš ɱîçŕöþĥöñé þéŕɱîššîöñ áñð áñ öƒƒļîñé šþééçĥ þáçķ ƒöŕ ýöûŕ ļáñĝûáĝé. ········································⟧';
+
+  @override
+  String get voiceNoMatch =>
+      '⟦Ñöţĥîñĝ ŵáš ĥéáŕð. Ţŕý áĝáîñ çļöšéŕ ţö ţĥé þĥöñé, öŕ ţáþ ţĥé ƒîéļðš îñšţéáð. ···························⟧';
+
+  @override
+  String get voiceReviewTitle => '⟦Çĥéçķ ƀéƒöŕé šáṽîñĝ ·······⟧';
+
+  @override
+  String voiceHeard(String text) {
+    return '⟦Ĥéáŕð: “$text” ····⟧';
+  }
+
+  @override
+  String get voiceNothingUnderstood =>
+      '⟦Ñöţĥîñĝ öñ ţĥé ƒöŕɱ ɱáţçĥéð ŵĥáţ ŵáš šáîð. Ţáþ ţĥé ƒîéļðš îñšţéáð, öŕ ţŕý áĝáîñ. ····························⟧';
+
+  @override
+  String get voiceIntensity => '⟦Îñţéñšîţý ····⟧';
+
+  @override
+  String get voiceIntensityNone => '⟦Ñöţ šáîð ···⟧';
+
+  @override
+  String get voiceSymptoms => '⟦Šýɱþţöɱš ···⟧';
+
+  @override
+  String get voiceLocations => '⟦Ŵĥéŕé îţ ĥûŕţš ·····⟧';
+
+  @override
+  String get voiceMedications => '⟦Ṁéðîçáţîöñ ţáķéñ ñöŵ ·······⟧';
+
+  @override
+  String get voiceSave => '⟦Šáṽé ţö áţţáçķ ·····⟧';
+
+  @override
+  String widgetLevel(String level) {
+    return '⟦Ļéṽéļ: $level ···⟧';
+  }
+
+  @override
+  String get widgetNoLevel =>
+      '⟦Öþéñ ţĥé áþþ ţö ļöáð ţöðáý\'š ļéṽéļ ············⟧';
+
+  @override
+  String widgetDriver(String factor) {
+    return '⟦Ţöþ ƒáçţöŕ: $factor ·····⟧';
+  }
+
+  @override
+  String get widgetNoDriver => '⟦Ñö šîñĝļé ƒáçţöŕ šţáñðš öûţ ··········⟧';
+
+  @override
+  String widgetPressureFalling(String pressure) {
+    return '⟦Þŕéššûŕé ƒáļļîñĝ $pressure îñ 24 ĥ ·········⟧';
+  }
+
+  @override
+  String widgetPressureRising(String pressure) {
+    return '⟦Þŕéššûŕé ŕîšîñĝ $pressure îñ 24 ĥ ·········⟧';
+  }
+
+  @override
+  String get widgetPressureSteady => '⟦Þŕéššûŕé šţéáðý ······⟧';
+
+  @override
+  String get widgetPressureUnknown => '⟦Ñö þŕéššûŕé ƒöŕéçášţ ýéţ ·········⟧';
+
+  @override
+  String widgetUpdated(String time) {
+    return '⟦Ûþðáţéð $time ···⟧';
+  }
+
+  @override
+  String get widgetStartAttack => '⟦Šţáŕţ áţţáçķ ·····⟧';
+
+  @override
+  String get widgetOpenAttack => '⟦Öþéñ áţţáçķ ····⟧';
+
+  @override
+  String get watchStart => '⟦Šţáŕţ áţţáçķ ·····⟧';
+
+  @override
+  String get watchStop => '⟦Éñð áţţáçķ ····⟧';
+
+  @override
+  String get watchIntensity => '⟦Îñţéñšîţý ····⟧';
+
+  @override
+  String watchSince(String time) {
+    return '⟦Šîñçé $time ···⟧';
+  }
+
+  @override
+  String get watchPending =>
+      '⟦Šáṽéð öñ ţĥé ŵáţçĥ. Šéñðš ŵĥéñ ýöûŕ þĥöñé îš ñéáŕ. ··················⟧';
+
+  @override
+  String get watchNoPhone =>
+      '⟦Öþéñ ţĥé áþþ öñ ýöûŕ þĥöñé öñçé ţö çöññéçţ ţĥé ŵáţçĥ. ···················⟧';
+
+  @override
+  String get routinesTitle => '⟦Šéļƒ-çáŕé ŕöûţîñéš ·······⟧';
+
+  @override
+  String get routinesIntro =>
+      '⟦Šîɱþļé ţĥîñĝš ɱáñý þéöþļé ƒîñð ĥéļþƒûļ öñ ĥáŕð ðáýš. Ûšé ŵĥáţ šûîţš ýöû áñð šķîþ ţĥé ŕéšţ. ································⟧';
+
+  @override
+  String get routineCardTitle => '⟦Šöɱéţĥîñĝ ţĥáţ ɱáý ĥéļþ ţöðáý ···········⟧';
+
+  @override
+  String get routineNotToday => '⟦Ñöţ ţöðáý ····⟧';
+
+  @override
+  String get routineSeeAll => '⟦Åļļ ŕöûţîñéš ·····⟧';
+
+  @override
+  String get routineStepsTitle => '⟦Ĥöŵ ţö ···⟧';
+
+  @override
+  String get routineReasonHighDay => '⟦Ţöðáý\'š ļéṽéļ îš ĥîĝĥ ········⟧';
+
+  @override
+  String get routineReasonNeckTension =>
+      '⟦Ýöûŕ çĥéçķ-îñ šĥöŵš ñéçķ ţéñšîöñ ············⟧';
+
+  @override
+  String get routineReasonStress =>
+      '⟦Ýöûŕ çĥéçķ-îñ šĥöŵš ĥîĝĥ šţŕéšš ···········⟧';
+
+  @override
+  String get routineStretchesTitle =>
+      '⟦Ĝéñţļé ñéçķ áñð šĥöûļðéŕ šţŕéţçĥéš ············⟧';
+
+  @override
+  String get routineStretchesSummary =>
+      '⟦Ƒîṽé šļöŵ ɱöṽéɱéñţš ţö éášé ţîĝĥţñéšš îñ ýöûŕ ñéçķ áñð šĥöûļðéŕš. Šţöþ îƒ áñýţĥîñĝ ĥûŕţš. ································⟧';
+
+  @override
+  String get routineStretchesSteps =>
+      '⟦Šîţ ţáļļ ŵîţĥ ýöûŕ šĥöûļðéŕš ŕéļáẋéð áñð ýöûŕ ƒééţ ƒļáţ.\nŠļöŵļý ţîļţ ýöûŕ ŕîĝĥţ éáŕ ţöŵáŕðš ýöûŕ ŕîĝĥţ šĥöûļðéŕ. Ĥöļð ƒöŕ 15 šéçöñðš, ţĥéñ šŵîţçĥ šîðéš.\nĻöŵéŕ ýöûŕ çĥîñ ţöŵáŕðš ýöûŕ çĥéšţ áñð ĥöļð ƒöŕ 15 šéçöñðš.\nŔöļļ ýöûŕ šĥöûļðéŕš ƀáçķŵáŕðš ƒîṽé ţîɱéš, ţĥéñ ƒöŕŵáŕðš ƒîṽé ţîɱéš.\nÇļášþ ýöûŕ ĥáñðš ƀéĥîñð ýöûŕ ƀáçķ áñð ĝéñţļý öþéñ ýöûŕ çĥéšţ ƒöŕ 15 šéçöñðš. ········································⟧';
+
+  @override
+  String get routineBreathingTitle => '⟦Þáçéð ƀŕéáţĥîñĝ ······⟧';
+
+  @override
+  String get routineBreathingSummary =>
+      '⟦Ɓŕéáţĥé îñ ƒöŕ 4 šéçöñðš áñð öûţ ƒöŕ 6, ƒöŕ áƀöûţ á ɱîñûţé. Å šļöŵ öûţ-ƀŕéáţĥ ĥéļþš ɱáñý þéöþļé šéţţļé. ·····································⟧';
+
+  @override
+  String get routineBreathingSteps =>
+      '⟦Šîţ öŕ ļîé ðöŵñ šöɱéŵĥéŕé çöɱƒöŕţáƀļé.\nƁŕéáţĥé îñ ţĥŕöûĝĥ ýöûŕ ñöšé ŵĥîļé ţĥé çîŕçļé ĝŕöŵš.\nƁŕéáţĥé öûţ šļöŵļý ŵĥîļé îţ šĥŕîñķš.\nĶééþ ĝöîñĝ ƒöŕ šîẋ ŕöûñðš, öŕ ƒöŕ áš ļöñĝ áš ƒééļš ĝööð. ········································⟧';
+
+  @override
+  String get routineLowLightTitle => '⟦Ļöŵ ļîĝĥţ áñð ǫûîéţ ·······⟧';
+
+  @override
+  String get routineLowLightSummary =>
+      '⟦Ɓŕîĝĥţ ļîĝĥţ áñð ñöîšé ƀöţĥéŕ ɱáñý þéöþļé öñ šéñšîţîṽé ðáýš áñð ðûŕîñĝ áñ áţţáçķ. ·····························⟧';
+
+  @override
+  String get routineLowLightSteps =>
+      '⟦Ðîɱ ţĥé ļîĝĥţš öŕ çļöšé ţĥé çûŕţáîñš.\nŢûŕñ öñ ðáŕķ ɱöðé áñð ļöŵéŕ ýöûŕ šçŕééñ ƀŕîĝĥţñéšš.\nŴéáŕ áñ éýé ɱášķ öŕ šûñĝļáššéš îƒ ļîĝĥţ šţîļļ ƀöţĥéŕš ýöû.\nÇûţ ðöŵñ ñöîšé ŵîţĥ éáŕþļûĝš öŕ á ǫûîéţ ŕööɱ. ········································⟧';
+
+  @override
+  String get routineHydrationTitle => '⟦Ðŕîñķ šöɱé ŵáţéŕ ······⟧';
+
+  @override
+  String get routineHydrationSummary =>
+      '⟦Ķééþîñĝ ŵáţéŕ ŵîţĥîñ ŕéáçĥ ɱáķéš îţ éášîéŕ ţö ðŕîñķ ţĥŕöûĝĥ ţĥé ðáý. ························⟧';
+
+  @override
+  String get routineHydrationSteps =>
+      '⟦Ķééþ á ĝļášš öŕ ƀöţţļé öƒ ŵáţéŕ ŵîţĥîñ ŕéáçĥ.\nŢáķé á ƒéŵ šîþš éṽéŕý ĥöûŕ.\nĤáṽé á ĝļášš öƒ ŵáţéŕ ŵîţĥ éáçĥ ɱéáļ. ·······································⟧';
+
+  @override
+  String get routineCaffeineTitle => '⟦Ķééþ çáƒƒéîñé šţéáðý ·······⟧';
+
+  @override
+  String get routineCaffeineSummary =>
+      '⟦Ɓîĝ çĥáñĝéš îñ ĥöŵ ɱûçĥ çáƒƒéîñé ýöû ĥáṽé çáñ ɱáţţéŕ ƒöŕ šöɱé þéöþļé. ·························⟧';
+
+  @override
+  String get routineCaffeineSteps =>
+      '⟦Ĥáṽé çáƒƒéîñé áţ áƀöûţ ţĥé šáɱé ţîɱéš éáçĥ ðáý.\nÅṽöîð ƀîĝ îñçŕéášéš, áñð áṽöîð šûððéñļý šķîþþîñĝ ýöûŕ ûšûáļ áɱöûñţ.\nĤáṽé ýöûŕ ļášţ çáƒƒéîñáţéð ðŕîñķ ƀý éáŕļý áƒţéŕñööñ. ········································⟧';
+
+  @override
+  String get routineSleepTitle => '⟦Šţéáðý šļééþ ·····⟧';
+
+  @override
+  String get routineSleepSummary =>
+      '⟦Å ŕéĝûļáŕ šļééþ šçĥéðûļé, ŵééķéñðš îñçļûðéð, ĥéļþš ɱáñý þéöþļé. ·······················⟧';
+
+  @override
+  String get routineSleepSteps =>
+      '⟦Ĝö ţö ƀéð áñð ĝéţ ûþ áţ áƀöûţ ţĥé šáɱé ţîɱé éṽéŕý ðáý.\nĶééþ ţĥé ƀéðŕööɱ ðáŕķ, ǫûîéţ áñð çööļ.\nÞûţ šçŕééñš áŵáý 30 ɱîñûţéš ƀéƒöŕé ƀéð.\nÅṽöîð ļöñĝ ñáþš ļáţé îñ ţĥé ðáý. ········································⟧';
+
+  @override
+  String get breathingStart => '⟦Šţáŕţ ƀŕéáţĥîñĝ ······⟧';
+
+  @override
+  String get breathingStop => '⟦Šţöþ ··⟧';
+
+  @override
+  String get breathingIn => '⟦Ɓŕéáţĥé îñ ····⟧';
+
+  @override
+  String get breathingOut => '⟦Ɓŕéáţĥé öûţ ····⟧';
+
+  @override
+  String breathingRound(int round, int total) {
+    return '⟦Ŕöûñð $round öƒ $total ····⟧';
+  }
+
+  @override
+  String get breathingDone =>
+      '⟦Ðöñé. Ţáķé á ɱöɱéñţ ƀéƒöŕé ýöû ĝéţ ûþ. ··············⟧';
+
+  @override
+  String get settingsRoutinesHint =>
+      '⟦Šţŕéţçĥéš, ƀŕéáţĥîñĝ áñð öţĥéŕ šîɱþļé ŕöûţîñéš ·················⟧';
+
+  @override
+  String get experimentsTitle => '⟦Éẋþéŕîɱéñţš ····⟧';
+
+  @override
+  String get settingsExperimentsHint =>
+      '⟦Ţŕý öñé çĥáñĝé ƒöŕ ţŵö ŵééķš áñð çöɱþáŕé ··············⟧';
+
+  @override
+  String get experimentsIntro =>
+      '⟦Ţŕý öñé çĥáñĝé ƒöŕ ţŵö ŵééķš áñð çöɱþáŕé îţ ŵîţĥ ţĥé ţŵö ŵééķš ƀéƒöŕé. Öñé éẋþéŕîɱéñţ áţ á ţîɱé. ··································⟧';
+
+  @override
+  String get experimentsPick => '⟦Þîçķ öñé çĥáñĝé ······⟧';
+
+  @override
+  String get experimentChangeCutCaffeine => '⟦Çûţ ƀáçķ öñ çáƒƒéîñé ·······⟧';
+
+  @override
+  String get experimentChangeRegularSleep =>
+      '⟦Ĝö ţö ƀéð áţ ţĥé šáɱé ţîɱé éṽéŕý ñîĝĥţ ··············⟧';
+
+  @override
+  String get experimentChangeMoreWater => '⟦Ðŕîñķ ɱöŕé ŵáţéŕ ······⟧';
+
+  @override
+  String get experimentChangeDailyStretches =>
+      '⟦Šţŕéţçĥ ýöûŕ ñéçķ éṽéŕý ðáý ··········⟧';
+
+  @override
+  String get experimentChangeLessScreens =>
+      '⟦Ļéšš šçŕééñ ţîɱé îñ ţĥé éṽéñîñĝ ···········⟧';
+
+  @override
+  String get experimentChangeNoAlcohol => '⟦Šķîþ áļçöĥöļ ·····⟧';
+
+  @override
+  String experimentDay(int day, int total) {
+    return '⟦Ðáý $day öƒ $total ···⟧';
+  }
+
+  @override
+  String get experimentAdherenceQuestion =>
+      '⟦Ðîð ýöû šţîçķ ŵîţĥ îţ ţöðáý? ··········⟧';
+
+  @override
+  String get experimentYes => '⟦Ýéš ··⟧';
+
+  @override
+  String get experimentNo => '⟦Ñö ·⟧';
+
+  @override
+  String experimentAdherence(int kept, int days) {
+    return '⟦Ķéþţ ţö îţ öñ $kept öƒ $days ðáýš ·········⟧';
+  }
+
+  @override
+  String get experimentCompareTitle =>
+      '⟦Ţŵö ŵééķš ƀéƒöŕé áñð ðûŕîñĝ ··········⟧';
+
+  @override
+  String get experimentBefore => '⟦Ɓéƒöŕé ···⟧';
+
+  @override
+  String get experimentDuring => '⟦Ðûŕîñĝ ···⟧';
+
+  @override
+  String get experimentRowRate => '⟦Åţţáçķš þéŕ ŵééķ ······⟧';
+
+  @override
+  String get experimentRowIntensity => '⟦Åṽéŕáĝé îñţéñšîţý ······⟧';
+
+  @override
+  String get experimentRowDuration => '⟦Ṁéðîáñ ðûŕáţîöñ ······⟧';
+
+  @override
+  String experimentSample(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'ƒŕöɱ $count áţţáçķš',
+      one: 'ƒŕöɱ 1 áţţáçķ',
+      zero: 'ñö áţţáçķš',
+    );
+    return '⟦$_temp0 ················⟧';
+  }
+
+  @override
+  String experimentDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count ðáýš',
+      one: '1 ðáý',
+    );
+    return '⟦$_temp0 ············⟧';
+  }
+
+  @override
+  String get experimentNoData => '⟦Ñö ðáţá ···⟧';
+
+  @override
+  String get experimentCaveat =>
+      '⟦Ţŵö ŵééķš îš šĥöŕţ. Ŵéáţĥéŕ, šéášöñš áñð šţŕéšš çĥáñĝé öñ ţĥéîŕ öŵñ, šö ŕéáð ţĥîš áš á ĥîñţ, ñöţ þŕööƒ. ·····································⟧';
+
+  @override
+  String experimentSmallSample(int min) {
+    return '⟦Ƒéŵéŕ ţĥáñ $min áţţáçķš îñ öñé öƒ ţĥé þéŕîöðš, šö ţĥé ñûɱƀéŕš çáñ šŵîñĝ á ļöţ. ··························⟧';
+  }
+
+  @override
+  String get experimentStop => '⟦Šţöþ éẋþéŕîɱéñţ ······⟧';
+
+  @override
+  String get experimentFinish => '⟦Ƒîñîšĥ áñð šáṽé ţĥé ŕéšûļţ ··········⟧';
+
+  @override
+  String get experimentDue => '⟦Ţĥé ţŵö ŵééķš áŕé öṽéŕ. ·········⟧';
+
+  @override
+  String get experimentPast => '⟦Þášţ éẋþéŕîɱéñţš ······⟧';
+
+  @override
+  String experimentFinished(String date) {
+    return '⟦Ƒîñîšĥéð $date ····⟧';
+  }
+
+  @override
+  String experimentStopped(String date) {
+    return '⟦Šţöþþéð $date ···⟧';
+  }
+
+  @override
+  String experimentPastSummary(String before, String during) {
+    return '⟦$before áţţáçķš þéŕ ŵééķ ƀéƒöŕé, $during ðûŕîñĝ ············⟧';
+  }
+
+  @override
+  String get accountTitle => '⟦Åççöûñţ ···⟧';
+
+  @override
+  String get settingsAccountHint =>
+      '⟦Öþţîöñáļ. Öñļý ñééðéð ƒöŕ ƀáçķûþ áñð šĥáŕé ļîñķš ·················⟧';
+
+  @override
+  String get accountIntro =>
+      '⟦Åñ áççöûñţ îš öþţîöñáļ. Éṽéŕýţĥîñĝ îñ ţĥé áþþ ŵöŕķš ŵîţĥöûţ öñé, áñð ýöûŕ éñţŕîéš šţáý öñ ţĥîš þĥöñé. Ýöû öñļý ñééð öñé ƒöŕ éñçŕýþţéð ƀáçķûþ áñð šĥáŕé ļîñķš. ········································⟧';
+
+  @override
+  String get accountUnavailable =>
+      '⟦Åççöûñţš áŕéñ\'ţ šéţ ûþ îñ ţĥîš ƀûîļð. ·············⟧';
+
+  @override
+  String get accountApple => '⟦Çöñţîñûé ŵîţĥ Åþþļé ·······⟧';
+
+  @override
+  String get accountGoogle => '⟦Çöñţîñûé ŵîţĥ Ĝööĝļé ·······⟧';
+
+  @override
+  String get accountOrEmail => '⟦Öŕ ûšé ýöûŕ éɱáîļ ······⟧';
+
+  @override
+  String get accountEmail => '⟦Éɱáîļ ··⟧';
+
+  @override
+  String get accountPassword => '⟦Þáššŵöŕð ···⟧';
+
+  @override
+  String accountPasswordHint(int min) {
+    return '⟦Åţ ļéášţ $min çĥáŕáçţéŕš ƒöŕ á ñéŵ áççöûñţ ··············⟧';
+  }
+
+  @override
+  String get accountSignIn => '⟦Šîĝñ îñ ···⟧';
+
+  @override
+  String get accountCreate => '⟦Çŕéáţé áççöûñţ ·····⟧';
+
+  @override
+  String get accountForgot => '⟦Ƒöŕĝöţ þáššŵöŕð? ······⟧';
+
+  @override
+  String get accountResetSent =>
+      '⟦Îƒ ţĥáţ éɱáîļ ĥáš áñ áççöûñţ, á ŕéšéţ ļîñķ îš öñ îţš ŵáý. ····················⟧';
+
+  @override
+  String accountSignedInAs(String email) {
+    return '⟦Šîĝñéð îñ áš $email ·····⟧';
+  }
+
+  @override
+  String accountSignedInWith(String method) {
+    return '⟦Šîĝñéð îñ ŵîţĥ $method ······⟧';
+  }
+
+  @override
+  String get accountMethodApple => '⟦Åþþļé ··⟧';
+
+  @override
+  String get accountMethodGoogle => '⟦Ĝööĝļé ···⟧';
+
+  @override
+  String get accountMethodEmail => '⟦éɱáîļ ··⟧';
+
+  @override
+  String get accountSignedInNote =>
+      '⟦Ýöûŕ éñţŕîéš šţîļļ ļîṽé öñ ţĥîš þĥöñé. Šîĝñîñĝ öûţ ðéļéţéš ñöţĥîñĝ. ························⟧';
+
+  @override
+  String get accountSignOut => '⟦Šîĝñ öûţ ···⟧';
+
+  @override
+  String get accountDelete => '⟦Ðéļéţé áççöûñţ ·····⟧';
+
+  @override
+  String get accountDeleteTitle => '⟦Ðéļéţé ýöûŕ áççöûñţ? ·······⟧';
+
+  @override
+  String accountDeleteBody(int hours) {
+    return '⟦Ţĥîš ðéļéţéš ýöûŕ áççöûñţ. Ŵîţĥîñ $hours ĥöûŕš ýöûŕ éñçŕýþţéð ƀáçķûþ áñð áñý šĥáŕé ļîñķš áŕé ŕéɱöṽéð ƒŕöɱ öûŕ šéŕṽéŕš. Éṽéŕýţĥîñĝ öñ ţĥîš þĥöñé šţáýš. ········································⟧';
+  }
+
+  @override
+  String get accountDeletePassword =>
+      '⟦Éñţéŕ ýöûŕ þáššŵöŕð ţö çöñƒîŕɱ ···········⟧';
+
+  @override
+  String get accountDeleteSubscription =>
+      '⟦Å Þŕéɱîûɱ šûƀšçŕîþţîöñ îš ƀîļļéð ƀý ţĥé Åþþ Šţöŕé öŕ Ĝööĝļé Þļáý. Ðéļéţîñĝ ţĥé áççöûñţ ðöéš ñöţ çáñçéļ îţ; çáñçéļ îţ îñ ţĥé šţöŕé. ········································⟧';
+
+  @override
+  String get accountDeleteCancel => '⟦Ķééþ áççöûñţ ·····⟧';
+
+  @override
+  String accountDeleted(int hours) {
+    return '⟦Åççöûñţ ðéļéţéð. Îţš šéŕṽéŕ ðáţá ŵîļļ ƀé ĝöñé ŵîţĥîñ $hours ĥöûŕš. ·····················⟧';
+  }
+
+  @override
+  String get accountErrorWrongCredentials =>
+      '⟦Ţĥáţ éɱáîļ áñð þáššŵöŕð ðöñ\'ţ ɱáţçĥ. ·············⟧';
+
+  @override
+  String get accountErrorEmailInUse =>
+      '⟦Ţĥáţ éɱáîļ áļŕéáðý ĥáš áñ áççöûñţ. Ţŕý šîĝñîñĝ îñ îñšţéáð. ·····················⟧';
+
+  @override
+  String get accountErrorWeakPassword =>
+      '⟦Çĥööšé á ļöñĝéŕ þáššŵöŕð. ·········⟧';
+
+  @override
+  String get accountErrorInvalidEmail => '⟦Çĥéçķ ţĥé éɱáîļ áððŕéšš. ·········⟧';
+
+  @override
+  String get accountErrorNetwork =>
+      '⟦Ñö çöññéçţîöñ. Ţŕý áĝáîñ ŵĥéñ ýöû\'ŕé öñļîñé. ················⟧';
+
+  @override
+  String get accountErrorRecentSignIn =>
+      '⟦Ƒöŕ ýöûŕ šáƒéţý, šîĝñ îñ áĝáîñ, ţĥéñ ţŕý öñçé ɱöŕé. ··················⟧';
+
+  @override
+  String get accountErrorUnknown =>
+      '⟦Šöɱéţĥîñĝ ŵéñţ ŵŕöñĝ. Ţŕý áĝáîñ. ············⟧';
+
+  @override
+  String get backupTitle => '⟦Éñçŕýþţéð ƀáçķûþ ······⟧';
+
+  @override
+  String get settingsBackupHint =>
+      '⟦Ļöçķéð ŵîţĥ á þáššþĥŕášé öñļý ýöû ķñöŵ ··············⟧';
+
+  @override
+  String get backupIntro =>
+      '⟦Ýöûŕ ƀáçķûþ îš ļöçķéð öñ ţĥîš þĥöñé ŵîţĥ ýöûŕ þáššþĥŕášé ƀéƒöŕé îţ îš ûþļöáðéð. Ŵé šţöŕé öñļý ţĥé ļöçķéð ƒîļé áñð çáññöţ öþéñ îţ. ········································⟧';
+
+  @override
+  String get backupForgetWarning =>
+      '⟦Îƒ ýöû ƒöŕĝéţ ţĥé þáššþĥŕášé, ñöƀöðý çáñ öþéñ ţĥé ƀáçķûþ, ñöţ éṽéñ ûš. Ŵŕîţé îţ ðöŵñ šöɱéŵĥéŕé šáƒé. ···································⟧';
+
+  @override
+  String get backupNeedsAccount =>
+      '⟦Ɓáçķûþ ñééðš áñ áççöûñţ. Éṽéŕýţĥîñĝ éļšé ŵöŕķš ŵîţĥöûţ öñé. ·····················⟧';
+
+  @override
+  String get backupOpenAccount => '⟦Šéţ ûþ áñ áççöûñţ ······⟧';
+
+  @override
+  String get backupNone => '⟦Ñö ƀáçķûþ ýéţ ·····⟧';
+
+  @override
+  String backupLast(String date) {
+    return '⟦Ļášţ ƀáçķûþ: $date ·····⟧';
+  }
+
+  @override
+  String get backupStatusUnknown =>
+      '⟦Çöûļðñ\'ţ çĥéçķ ƒöŕ á ƀáçķûþ ŕîĝĥţ ñöŵ. ··············⟧';
+
+  @override
+  String get backupPassphrase => '⟦Þáššþĥŕášé ····⟧';
+
+  @override
+  String backupPassphraseHint(int min) {
+    return '⟦Åţ ļéášţ $min çĥáŕáçţéŕš. Å ƒéŵ ûñŕéļáţéð ŵöŕðš ŵöŕķ ŵéļļ. ···················⟧';
+  }
+
+  @override
+  String get backupPassphraseRepeat =>
+      '⟦Ŕéþéáţ ţĥé þáššþĥŕášé ţö ƀáçķ ûþ ············⟧';
+
+  @override
+  String get backupNow => '⟦Ɓáçķ ûþ ñöŵ ····⟧';
+
+  @override
+  String get backupDone => '⟦Ɓáçķéð ûþ. ····⟧';
+
+  @override
+  String get backupRestore => '⟦Ŕéšţöŕé ƒŕöɱ ƀáçķûþ ·······⟧';
+
+  @override
+  String get backupRestoreTitle =>
+      '⟦Ŕéþļáçé éṽéŕýţĥîñĝ öñ ţĥîš þĥöñé? ············⟧';
+
+  @override
+  String backupRestoreBody(String date) {
+    return '⟦Éṽéŕýţĥîñĝ öñ ţĥîš þĥöñé îš ŕéþļáçéð ŵîţĥ ţĥé ƀáçķûþ ƒŕöɱ $date. ·····················⟧';
+  }
+
+  @override
+  String get backupRestoreConfirm => '⟦Ŕéšţöŕé ···⟧';
+
+  @override
+  String get backupRestored => '⟦Ŕéšţöŕéð ƒŕöɱ ýöûŕ ƀáçķûþ. ··········⟧';
+
+  @override
+  String get backupDelete => '⟦Ðéļéţé ƀáçķûþ ·····⟧';
+
+  @override
+  String get backupDeleteTitle => '⟦Ðéļéţé ţĥé ƀáçķûþ? ·······⟧';
+
+  @override
+  String get backupDeleteBody =>
+      '⟦Ţĥé ļöçķéð ƒîļé îš ŕéɱöṽéð ƒŕöɱ öûŕ šéŕṽéŕš. Éṽéŕýţĥîñĝ öñ ţĥîš þĥöñé šţáýš. ···························⟧';
+
+  @override
+  String get backupDeleted => '⟦Ɓáçķûþ ðéļéţéð. ······⟧';
+
+  @override
+  String get backupWorking =>
+      '⟦Ŵöŕķîñĝ öñ îţ. Ţĥîš çáñ ţáķé á ƒéŵ šéçöñðš. ················⟧';
+
+  @override
+  String get backupErrorMismatch =>
+      '⟦Ţĥé ţŵö þáššþĥŕášéš ðöñ\'ţ ɱáţçĥ. ············⟧';
+
+  @override
+  String backupErrorShort(int min) {
+    return '⟦Ûšé áţ ļéášţ $min çĥáŕáçţéŕš. ·········⟧';
+  }
+
+  @override
+  String get backupErrorNoBackup =>
+      '⟦Ţĥéŕé\'š ñö ƀáçķûþ öñ ţĥîš áççöûñţ ýéţ. ··············⟧';
+
+  @override
+  String get backupErrorTooLarge =>
+      '⟦Ţĥé ƀáçķûþ îš ţöö ļáŕĝé ţö ûþļöáð. ············⟧';
+
+  @override
+  String get backupErrorNewerApp =>
+      '⟦Ţĥîš ƀáçķûþ ŵáš ɱáðé ƀý á ñéŵéŕ ṽéŕšîöñ öƒ ţĥé áþþ. Ûþðáţé ţĥé áþþ, ţĥéñ ţŕý áĝáîñ. ······························⟧';
+
+  @override
+  String get backupErrorWrongPassphrase =>
+      '⟦Ţĥáţ þáššþĥŕášé ðöéšñ\'ţ öþéñ ţĥîš ƀáçķûþ. ···············⟧';
+
+  @override
+  String get backupErrorDamaged => '⟦Ţĥé ƀáçķûþ ƒîļé îš ðáɱáĝéð. ··········⟧';
+
+  @override
+  String get backupErrorPinning =>
+      '⟦Ţĥé çöññéçţîöñ ţö ţĥé ƀáçķûþ šéŕṽéŕ çöûļðñ\'ţ ƀé ṽéŕîƒîéð, šö ñöţĥîñĝ ŵáš šéñţ. Ţŕý áñöţĥéŕ ñéţŵöŕķ. ···································⟧';
+
+  @override
+  String get backupErrorNotAllowed =>
+      '⟦Ýöûŕ šîĝñ-îñ ĥáš éẋþîŕéð. Šîĝñ îñ áĝáîñ, ţĥéñ ŕéţŕý. ···················⟧';
+
+  @override
+  String get shareLinkButton => '⟦Šĥáŕé áš á ŵéƀ ļîñķ ·······⟧';
+
+  @override
+  String get shareLinkTitle => '⟦Šĥáŕé ŵîţĥ ýöûŕ çļîñîçîáñ ·········⟧';
+
+  @override
+  String get shareLinkExplain =>
+      '⟦Åñýöñé ŵîţĥ ţĥé ļîñķ çáñ ŕéáð ţĥîš ŕéþöŕţ ûñţîļ îţ éẋþîŕéš. Îţ šĥöŵš ţĥé šáɱé šûɱɱáŕý áš ţĥé ÞÐƑ, ñöţ ýöûŕ ðîáŕý. Ýöû çáñ šţöþ šĥáŕîñĝ áţ áñý ţîɱé. ········································⟧';
+
+  @override
+  String get shareLinkNeedsAccount =>
+      '⟦Šĥáŕîñĝ á ļîñķ ñééðš áñ áççöûñţ. Ţĥé ÞÐƑ áñð ÇŠṼ ŵöŕķ ŵîţĥöûţ öñé. ························⟧';
+
+  @override
+  String shareLinkDuration(int days) {
+    String _temp0 = intl.Intl.pluralLogic(
+      days,
+      locale: localeName,
+      other: '$days ðáýš',
+      one: '1 ðáý',
+    );
+    return '⟦$_temp0 ···········⟧';
+  }
+
+  @override
+  String get shareLinkCreate => '⟦Çŕéáţé ļîñķ ····⟧';
+
+  @override
+  String get shareLinkWorking => '⟦Çŕéáţîñĝ ţĥé ļîñķ. ·······⟧';
+
+  @override
+  String shareLinkReady(String date) {
+    return '⟦Ļîñķ ŕéáðý. Šĥáŕéð ûñţîļ $date. ··········⟧';
+  }
+
+  @override
+  String get shareLinkCopy => '⟦Çöþý ļîñķ ····⟧';
+
+  @override
+  String get shareLinkCopied => '⟦Ļîñķ çöþîéð. ·····⟧';
+
+  @override
+  String get shareLinkShare => '⟦Šĥáŕé ļîñķ ····⟧';
+
+  @override
+  String shareLinkMessage(String url) {
+    return '⟦Ṁý ɱîĝŕáîñé ŕéþöŕţ: $url ·······⟧';
+  }
+
+  @override
+  String get shareLinksTitle => '⟦Šĥáŕéð ļîñķš ·····⟧';
+
+  @override
+  String get settingsShareLinksHint =>
+      '⟦Šéé áñð šţöþ ţĥé ŕéþöŕţ ļîñķš ýöû šĥáŕéð ··············⟧';
+
+  @override
+  String get shareLinksEmpty =>
+      '⟦Ýöû ĥáṽéñ\'ţ šĥáŕéð áñý ļîñķš. Çŕéáţé öñé ƒŕöɱ Ðöçţöŕ ŕéþöŕţ. ·····················⟧';
+
+  @override
+  String shareLinkActiveUntil(String date) {
+    return '⟦Šĥáŕéð ûñţîļ $date ·····⟧';
+  }
+
+  @override
+  String shareLinkExpiredOn(String date) {
+    return '⟦Éẋþîŕéð $date ···⟧';
+  }
+
+  @override
+  String get shareLinkRevoked => '⟦Šĥáŕîñĝ šţöþþéð ······⟧';
+
+  @override
+  String shareLinkCreatedOn(String date) {
+    return '⟦Çŕéáţéð $date ···⟧';
+  }
+
+  @override
+  String get shareLinkRevoke => '⟦Šţöþ šĥáŕîñĝ ·····⟧';
+
+  @override
+  String get shareLinkRevokeTitle => '⟦Šţöþ šĥáŕîñĝ ţĥîš ŕéþöŕţ? ·········⟧';
+
+  @override
+  String get shareLinkRevokeBody =>
+      '⟦Ţĥé ļîñķ šţöþš ŵöŕķîñĝ áţ öñçé, ƒöŕ éṽéŕýöñé ŵĥö ĥáš îţ. ····················⟧';
+
+  @override
+  String get shareLinkRevokedDone =>
+      '⟦Šĥáŕîñĝ šţöþþéð. Ţĥé ļîñķ ñö ļöñĝéŕ ŵöŕķš. ···············⟧';
+
+  @override
+  String get shareLinkErrorUnavailable =>
+      '⟦Šĥáŕé ļîñķš áŕéñ\'ţ šéţ ûþ îñ ţĥîš ƀûîļð. ··············⟧';
+
+  @override
+  String get shareLinkErrorSignedOut =>
+      '⟦Ýöûŕ šîĝñ-îñ ĥáš éẋþîŕéð. Šîĝñ îñ áĝáîñ, ţĥéñ ŕéţŕý. ···················⟧';
+
+  @override
+  String get premiumTitle => '⟦Þŕéɱîûɱ ···⟧';
+
+  @override
+  String get premiumIntro =>
+      '⟦Þŕéɱîûɱ áððš ƒöûŕ éẋţŕáš. Éṽéŕýţĥîñĝ éļšé šţáýš ƒŕéé, ŵîţĥ ñö ţîɱé ļîɱîţ. ··························⟧';
+
+  @override
+  String get premiumFreeNote =>
+      '⟦Åļŵáýš ƒŕéé: ļöĝĝîñĝ áţţáçķš áñð çĥéçķ-îñš, ţĥé ŵéáţĥéŕ ƒééð, ţĥé ŕîšķ ļéṽéļ, îñšîĝĥţš, ţĥé ɱéðîçáţîöñ ļöĝ áñð ţĥé ðöçţöŕ ŕéþöŕţ. ········································⟧';
+
+  @override
+  String get premiumFeatureShareLink => '⟦Çļîñîçîáñ šĥáŕé ļîñķ ·······⟧';
+
+  @override
+  String get premiumFeatureShareLinkHint =>
+      '⟦Šéñð ýöûŕ ŕéþöŕţ áš á ŵéƀ ļîñķ ţĥáţ šţöþš ŵöŕķîñĝ áƒţéŕ 7 öŕ 30 ðáýš. ·························⟧';
+
+  @override
+  String get premiumFeatureExperiments => '⟦Éẋþéŕîɱéñţš ····⟧';
+
+  @override
+  String get premiumFeatureExperimentsHint =>
+      '⟦Ţŕý öñé çĥáñĝé ƒöŕ ţŵö ŵééķš áñð çöɱþáŕé îţ ŵîţĥ ţĥé ŵééķš ƀéƒöŕé. ························⟧';
+
+  @override
+  String get premiumFeatureExtendedFactors =>
+      '⟦Éẋţéñðéð éñṽîŕöñɱéñţ ƒáçţöŕš ··········⟧';
+
+  @override
+  String get premiumFeatureExtendedFactorsHint =>
+      '⟦Þáŕţîçûļáţéš, öžöñé áñð þöļļéñ ƀý ţýþé. ··············⟧';
+
+  @override
+  String get premiumFeatureBackup => '⟦Ɓáçķûþ áçŕöšš þĥöñéš ·······⟧';
+
+  @override
+  String get premiumFeatureBackupHint =>
+      '⟦Åñ éñçŕýþţéð ƀáçķûþ ýöû çáñ ŕéšţöŕé öñ á ñéŵ þĥöñé. ··················⟧';
+
+  @override
+  String get premiumActive => '⟦Þŕéɱîûɱ îš öñ. ·····⟧';
+
+  @override
+  String premiumRenews(String date) {
+    return '⟦Ŕéñéŵš öñ $date. ····⟧';
+  }
+
+  @override
+  String premiumEnds(String date) {
+    return '⟦Éñðš öñ $date. ····⟧';
+  }
+
+  @override
+  String get premiumManage => '⟦Ṁáñáĝé šûƀšçŕîþţîöñ ·······⟧';
+
+  @override
+  String premiumOfferMonthly(String price) {
+    return '⟦Ṁöñţĥļý, $price ····⟧';
+  }
+
+  @override
+  String premiumOfferAnnual(String price) {
+    return '⟦Ýéáŕļý, $price ···⟧';
+  }
+
+  @override
+  String premiumOfferOther(String price) {
+    return '⟦$price ·⟧';
+  }
+
+  @override
+  String get premiumRestore => '⟦Ŕéšţöŕé þûŕçĥášéš ······⟧';
+
+  @override
+  String get premiumRestoredNone =>
+      '⟦Ñö Þŕéɱîûɱ þûŕçĥášé ŵáš ƒöûñð ƒöŕ ţĥîš šţöŕé áççöûñţ. ···················⟧';
+
+  @override
+  String get premiumThanks => '⟦Ţĥáñķ ýöû. Þŕéɱîûɱ îš öñ. ·········⟧';
+
+  @override
+  String get premiumRenewalTerms =>
+      '⟦Šûƀšçŕîþţîöñš ŕéñéŵ áûţöɱáţîçáļļý ûñţîļ ýöû çáñçéļ îñ ţĥé šţöŕé\'š šéţţîñĝš. Çáñçéļ áţ ļéášţ 24 ĥöûŕš ƀéƒöŕé ţĥé ŕéñéŵáļ ðáţé ţö áṽöîð ţĥé ñéẋţ çĥáŕĝé. ········································⟧';
+
+  @override
+  String get premiumLoadingOffers => '⟦Ļöáðîñĝ þŕîçéš. ······⟧';
+
+  @override
+  String get premiumNoOffers =>
+      '⟦Þŕîçéš çöûļðñ\'ţ ƀé ļöáðéð. Çĥéçķ ţĥé çöññéçţîöñ áñð ţŕý áĝáîñ. ······················⟧';
+
+  @override
+  String get premiumRetry => '⟦Ţŕý áĝáîñ ····⟧';
+
+  @override
+  String get premiumUnavailable =>
+      '⟦Þûŕçĥášéš áŕéñ\'ţ šéţ ûþ îñ ţĥîš ƀûîļð. ··············⟧';
+
+  @override
+  String get premiumDevUnlocked =>
+      '⟦Ðéṽéļöþɱéñţ ƀûîļð: éṽéŕý Þŕéɱîûɱ ƒéáţûŕé îš ûñļöçķéð. ···················⟧';
+
+  @override
+  String get premiumAccountTip =>
+      '⟦Ûšîñĝ ɱöŕé ţĥáñ öñé þĥöñé? Šîĝñ îñ ƒîŕšţ, šö Þŕéɱîûɱ ƒöļļöŵš ýöûŕ áççöûñţ. ··························⟧';
+
+  @override
+  String get premiumErrorNotAllowed =>
+      '⟦Ţĥîš šţöŕé áççöûñţ çáñ\'ţ ɱáķé þûŕçĥášéš. ··············⟧';
+
+  @override
+  String get premiumErrorPending =>
+      '⟦Ţĥé þûŕçĥášé îš ŵáîţîñĝ ƒöŕ áþþŕöṽáļ. Þŕéɱîûɱ ţûŕñš öñ öñçé îţ ĝöéš ţĥŕöûĝĥ. ···························⟧';
+
+  @override
+  String get premiumErrorStore =>
+      '⟦Ţĥé šţöŕé ĥáð á þŕöƀļéɱ. Ţŕý áĝáîñ ļáţéŕ. ···············⟧';
+
+  @override
+  String premiumLockTitle(String feature) {
+    return '⟦$feature çöɱéš ŵîţĥ Þŕéɱîûɱ. ·······⟧';
+  }
+
+  @override
+  String get premiumLockButton => '⟦Šéé Þŕéɱîûɱ ····⟧';
+
+  @override
+  String get premiumLockShareLinkNote =>
+      '⟦Ļîñķš ýöû áļŕéáðý ɱáðé ķééþ ŵöŕķîñĝ ûñţîļ ţĥéý éñð, áñð ýöû çáñ šţöþ šĥáŕîñĝ ţĥéɱ áţ áñý ţîɱé. ·································⟧';
+
+  @override
+  String get premiumLockExperimentsNote =>
+      '⟦Ýöûŕ þášţ ŕéšûļţš šţáý ĥéŕé. ··········⟧';
+
+  @override
+  String get premiumLockBackupNote =>
+      '⟦Ýöû çáñ šţîļļ ŕéšţöŕé öŕ ðéļéţé á ƀáçķûþ ýöû áļŕéáðý ĥáṽé. ·····················⟧';
+
+  @override
+  String get premiumFactorsLocked =>
+      '⟦Þáŕţîçûļáţéš, öžöñé áñð þöļļéñ çöɱé ŵîţĥ Þŕéɱîûɱ. ··················⟧';
+
+  @override
+  String get settingsPremiumHint =>
+      '⟦Šĥáŕé ļîñķ, éẋþéŕîɱéñţš, éẋţéñðéð ƒáçţöŕš áñð ƀáçķûþ ···················⟧';
+
+  @override
+  String get settingsPremiumActive => '⟦Öñ ·⟧';
+
+  @override
+  String get shareLinkErrorPremium =>
+      '⟦Šĥáŕé ļîñķš ñééð Þŕéɱîûɱ. Îƒ ýöû ĵûšţ šûƀšçŕîƀéð, ŵáîţ á ɱîñûţé áñð ţŕý áĝáîñ. ····························⟧';
+
+  @override
+  String get auditTitle => '⟦Ĥöŵ ţĥé ŕîšķ ļéṽéļ ĥáš ðöñé ··········⟧';
+
+  @override
+  String auditNotYet(int needed, int logged) {
+    return '⟦Ţĥîš þáĝé áþþéáŕš öñçé ýöû ĥáṽé ļöĝĝéð $needed áţţáçķš. Ýöû ĥáṽé ļöĝĝéð $logged šö ƒáŕ. ··························⟧';
+  }
+
+  @override
+  String auditIntro(int window) {
+    String _temp0 = intl.Intl.pluralLogic(
+      window,
+      locale: localeName,
+      other: '$window ðáýš',
+      one: 'ðáý',
+    );
+    return '⟦Ţĥîš çöɱþáŕéš ţĥé ļéṽéļ ţĥé áþþ šĥöŵéð éáçĥ ðáý ŵîţĥ ŵĥéñ ýöûŕ áţţáçķš šţáŕţéð. Åñ áţţáçķ çöûñţš áš ƒöļļöŵîñĝ á Ĥîĝĥ ðáý ŵĥéñ ţĥé ðáý îţ šţáŕţéð, öŕ ţĥé $_temp0 ƀéƒöŕé, ŵáš šĥöŵñ áš Ĥîĝĥ. ········································⟧';
+  }
+
+  @override
+  String get auditEmpty =>
+      '⟦Ñöţĥîñĝ ţö çöɱþáŕé ýéţ. Ţĥé áþþ ķééþš ţĥé ļéṽéļ îţ šĥöŵš éáçĥ ðáý ƒŕöɱ ñöŵ öñ, áñð ţĥé ƒîŕšţ ñûɱƀéŕš áþþéáŕ áƒţéŕ ýöûŕ ñéẋţ áţţáçķ öŕ Ĥîĝĥ ðáý. ········································⟧';
+
+  @override
+  String get auditHitsTitle =>
+      '⟦Åţţáçķš ţĥáţ ƒöļļöŵéð á Ĥîĝĥ ðáý ············⟧';
+
+  @override
+  String auditHitsValue(int hits, int attacks, String share) {
+    return '⟦$hits öƒ $attacks ($share) ···⟧';
+  }
+
+  @override
+  String get auditMissesTitle =>
+      '⟦Åţţáçķš ŵîţĥöûţ á Ĥîĝĥ ðáý ƀéƒöŕé ţĥéɱ ··············⟧';
+
+  @override
+  String auditMissesValue(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count áţţáçķš',
+      one: '1 áţţáçķ',
+    );
+    return '⟦$_temp0 ·············⟧';
+  }
+
+  @override
+  String get auditFalseAlarmsTitle => '⟦Ĥîĝĥ ðáýš ŵîţĥ ñö áţţáçķ ·········⟧';
+
+  @override
+  String auditFalseAlarmsValue(int count, int highDays) {
+    return '⟦$count öƒ $highDays Ĥîĝĥ ðáýš ·····⟧';
+  }
+
+  @override
+  String get auditTrend => '⟦Ɓý ɱöñţĥ ···⟧';
+
+  @override
+  String auditMonthLine(int hits, int attacks, int falseAlarms, int highDays) {
+    return '⟦$hits öƒ $attacks áţţáçķš áƒţéŕ á Ĥîĝĥ ðáý; $falseAlarms öƒ $highDays Ĥîĝĥ ðáýš ŵîţĥöûţ áñ áţţáçķ ·······················⟧';
+  }
+
+  @override
+  String get auditCaveat =>
+      '⟦Šɱáļļ ñûɱƀéŕš ɱöṽé á ļöţ ƒŕöɱ ɱöñţĥ ţö ɱöñţĥ. Å Ĥîĝĥ ðáý ŵîţĥöûţ áñ áţţáçķ îš ñöţ á ɱîšţáķé: îţ ɱéáñš ɱöŕé öƒ ýöûŕ ûšûáļ ţŕîĝĝéŕš ļîñéð ûþ. Ţĥé ļéṽéļ îš á ĝûîðé ţö þļáñ áŕöûñð, ñöţ á þŕöɱîšé. ········································⟧';
+
+  @override
+  String get auditShare => '⟦Šĥáŕé ţĥéšé çöûñţš éáçĥ ɱöñţĥ ···········⟧';
+
+  @override
+  String get auditShareHint =>
+      '⟦Ĥéļþš çĥéçķ ţĥé áþþ ƒöŕ éṽéŕýöñé. Öñļý ţĥé ƒîṽé ñûɱƀéŕš áñð ţĥé ɱöðéļ ṽéŕšîöñ áŕé šéñţ, ñéṽéŕ ðáţéš, þļáçéš, ýöûŕ ļöĝ öŕ ýöûŕ áççöûñţ. Öƒƒ ûñļéšš ýöû ţûŕñ îţ öñ. ········································⟧';
+
+  @override
+  String get settingsAuditHint =>
+      '⟦Åţţáçķš áƒţéŕ Ĥîĝĥ ðáýš áñð Ĥîĝĥ ðáýš ŵîţĥöûţ öñé ··················⟧';
+
+  @override
+  String unitHpa(String value) {
+    return '⟦$value ĥÞá ··⟧';
+  }
+
+  @override
+  String unitInHg(String value) {
+    return '⟦$value îñĤĝ ··⟧';
+  }
+
+  @override
+  String unitMmHg(String value) {
+    return '⟦$value ɱɱĤĝ ··⟧';
+  }
+
+  @override
+  String unitCelsius(String value) {
+    return '⟦$value °Ç ··⟧';
+  }
+
+  @override
+  String unitFahrenheit(String value) {
+    return '⟦$value °Ƒ ··⟧';
+  }
+
+  @override
+  String get unitsTitle => '⟦Ûñîţš ··⟧';
+
+  @override
+  String get settingsUnitsHint => '⟦Þŕéššûŕé áñð ţéɱþéŕáţûŕé ·········⟧';
+
+  @override
+  String get unitsPressure => '⟦Þŕéššûŕé ···⟧';
+
+  @override
+  String get unitsTemperature => '⟦Ţéɱþéŕáţûŕé ····⟧';
+
+  @override
+  String get unitNameHpa => '⟦Ĥéçţöþášçáļš (ĥÞá) ·······⟧';
+
+  @override
+  String get unitNameInHg => '⟦Îñçĥéš öƒ ɱéŕçûŕý (îñĤĝ) ·········⟧';
+
+  @override
+  String get unitNameMmHg => '⟦Ṁîļļîɱéţŕéš öƒ ɱéŕçûŕý (ɱɱĤĝ) ···········⟧';
+
+  @override
+  String get unitNameCelsius => '⟦Çéļšîûš (°Ç) ·····⟧';
+
+  @override
+  String get unitNameFahrenheit => '⟦Ƒáĥŕéñĥéîţ (°Ƒ) ······⟧';
+
+  @override
+  String get unitsNote =>
+      '⟦Ţĥé ƒîŕšţ çĥöîçé çöɱéš ƒŕöɱ ýöûŕ þĥöñé\'š ŕéĝîöñ. Çĥáñĝîñĝ îţ öñļý çĥáñĝéš ĥöŵ ṽáļûéš áŕé šĥöŵñ; ýöûŕ ļöĝ šţáýš ţĥé šáɱé. ········································⟧';
+
+  @override
+  String envTemperatureNow(String temperature) {
+    return '⟦Ţéɱþéŕáţûŕé ñöŵ: $temperature ······⟧';
+  }
+
+  @override
+  String get questionnaireEnglishNote =>
+      '⟦Ţĥé ǫûéšţîöñš áŕé šĥöŵñ îñ ţĥéîŕ öŕîĝîñáļ Éñĝļîšĥ ŵöŕðîñĝ ûñţîļ á ṽáļîðáţéð ţŕáñšļáţîöñ îš áððéð, šö ýöûŕ šçöŕéš šţáý çöɱþáŕáƀļé. ········································⟧';
+
+  @override
+  String get wellnessDisclaimer =>
+      '⟦Ĝéñéŕáļ ŵéļļñéšš îñƒöŕɱáţîöñ, ñöţ ɱéðîçáļ áðṽîçé. Ţáļķ ţö ýöûŕ çļîñîçîáñ áƀöûţ ţŕéáţɱéñţ. ································⟧';
+
+  @override
+  String get dataSourceWeather => '⟦Öþéñ-Ṁéţéö ŵéáţĥéŕ ·······⟧';
+
+  @override
+  String get dataSourceAirQuality =>
+      '⟦Öþéñ-Ṁéţéö áîŕ ǫûáļîţý áñð ÛṼ (ÇÅṀŠ) ·············⟧';
+
+  @override
+  String get dataSourcePollen => '⟦Öþéñ-Ṁéţéö þöļļéñ (ÇÅṀŠ) ·········⟧';
+
+  @override
+  String get dataSourceGeocoding => '⟦Öþéñ-Ṁéţéö ĝéöçöðîñĝ ·······⟧';
+
+  @override
+  String get dataSourceBarometer => '⟦Ðéṽîçé ƀáŕöɱéţéŕ ······⟧';
+
+  @override
+  String get dataCoverageWorldwide => '⟦Ŵöŕļðŵîðé ····⟧';
+
+  @override
+  String get dataCoverageEuropeanAqi =>
+      '⟦Ŵöŕļðŵîðé, Éûŕöþéáñ ÅǪÎ îñ Éûŕöþé ············⟧';
+
+  @override
+  String get dataCoverageEurope => '⟦Éûŕöþé öñļý ····⟧';
+
+  @override
+  String get dataCoverageBarometer =>
+      '⟦Þĥöñéš ŵîţĥ á þŕéššûŕé šéñšöŕ ···········⟧';
 }

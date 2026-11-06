@@ -1,4 +1,5 @@
 import 'package:migraine_tracker/core/l10n/l10n.dart';
+import 'package:migraine_tracker/core/units/units.dart';
 
 /// "Updated X ago" for a forecast age; "not yet" when there is none.
 String forecastAge(AppLocalizations l10n, Duration? age) {
@@ -9,11 +10,9 @@ String forecastAge(AppLocalizations l10n, Duration? age) {
   return l10n.envUpdatedDays(age.inDays);
 }
 
-/// Signed hPa delta such as `+2.3 hPa`.
-String formatDelta(AppLocalizations l10n, double value) {
-  final sign = value > 0 ? '+' : '';
-  return l10n.envDeltaValue('$sign${value.toStringAsFixed(1)}');
-}
+/// Signed pressure change such as `+2.3 hPa` or `+0.07 inHg`.
+String formatDelta(AppLocalizations l10n, Units units, double hpa) =>
+    units.pressureText(l10n, hpa, signed: true);
 
 /// Trend word for the strongest recent change.
 String trendLabel(AppLocalizations l10n, double? strongest) {

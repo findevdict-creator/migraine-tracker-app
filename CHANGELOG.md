@@ -8,6 +8,8 @@ release time.
 
 ### Added
 
+- Six more languages: Spanish, Portuguese, German, French, Hindi and Japanese, chosen from the phone's language, for every screen, notification, the home-screen widget, the watch and the doctor report. Settings > Units switches pressure between hPa, inHg and mmHg and temperature between °C and °F, defaulting by region. The Japanese PDF embeds Noto Sans JP; the Hindi PDF prints in English for now. The share page follows the report's language. MIDAS and HIT-6 items stay in their validated English wording with a translated note. A pseudo-locale check and per-language copy lint run in CI (37).
+
 - Accuracy self-audit: after ten attacks, Settings > How the risk level has done shows how many attacks followed a High day, how many High days passed without one, and the trend by month, scored against a frozen record of the level shown each day so relearning cannot flatter it. Optional, off by default: share the five monthly counts and the model version anonymously, with no dates, places or account (36).
 
 - Premium: store subscriptions through RevenueCat unlock the clinician share link, experiments, extended environment factors (particulates, ozone, pollen) and backup across phones. Logging, the weather feed, the risk level, insights, the medication log and the doctor report stay free with no time limit. Purchases follow the account, and the server checks Premium before creating a share link (35).

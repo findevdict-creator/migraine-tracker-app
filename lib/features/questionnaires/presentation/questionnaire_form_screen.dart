@@ -84,6 +84,16 @@ class _QuestionnaireFormScreenState
             QuestionnaireKind.midas => l10n.questionnaireMidasIntro,
             QuestionnaireKind.hit6 => l10n.questionnaireHit6Intro,
           }, style: context.textStyles.bodyMedium),
+          // The validated wording is English-only until a licensed
+          // translation is added (docs/phases/37-localization.md).
+          if (!l10n.localeName.startsWith('en')) ...[
+            const SizedBox(height: AppThemeTokens.space2),
+            Text(
+              l10n.questionnaireEnglishNote,
+              key: const ValueKey('questionnaire-english-note'),
+              style: context.textStyles.bodySmall,
+            ),
+          ],
           const SizedBox(height: AppThemeTokens.space4),
           switch (kind) {
             QuestionnaireKind.midas => _MidasItems(

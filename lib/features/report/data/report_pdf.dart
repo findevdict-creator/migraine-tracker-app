@@ -1,7 +1,9 @@
 import 'dart:typed_data';
 
+import 'package:flutter/services.dart' show rootBundle;
 import 'package:migraine_tracker/config/app_config.dart';
 import 'package:migraine_tracker/core/l10n/l10n.dart';
+import 'package:migraine_tracker/core/units/units.dart';
 import 'package:migraine_tracker/features/report/application/report_content.dart';
 import 'package:migraine_tracker/features/report/domain/report_document.dart';
 import 'package:migraine_tracker/features/report/domain/report_model.dart';
@@ -10,13 +12,35 @@ import 'package:pdf/widgets.dart' as pw;
 
 /// Draws a [ReportDocument] as an A4 PDF. The wording lives in
 /// [ReportContent], shared with the clinician share page, so this file is
-/// layout only. Uses the built-in Helvetica fonts (Latin-1).
+/// layout only. Uses the built-in Helvetica fonts (Latin-1), or the font
+/// in `AppLocales.pdfFonts` for scripts outside Latin-1.
 class ReportPdf {
-  ReportPdf(this.l10n, {String? locale})
-    : _content = ReportContent(l10n, locale: locale);
+  ReportPdf(
+    this.l10n, {
+    String? locale,
+    Units units = const Units(),
+    this.loadFont = _bundledFont,
+  }) : _content = ReportContent(l10n, locale: locale, units: units);
 
   final AppLocalizations l10n;
   final ReportContent _content;
+
+  /// Loads a font asset; replaced in tests.
+  final Future<ByteData> Function(String asset) loadFont;
+
+  static Future<ByteData> _bundledFont(String asset) => rootBundle.load(asset);
+
+  Future<pw.ThemeData> _theme() async {
+    final asset = AppLocales.pdfFonts[l10n.localeName.split('_').first];
+    if (asset == null) {
+      return pw.ThemeData.withFont(
+        base: pw.Font.helvetica(),
+        bold: pw.Font.helveticaBold(),
+      );
+    }
+    final font = pw.Font.ttf(await loadFont(asset));
+    return pw.ThemeData.withFont(base: font, bold: font);
+  }
 
   static const _ink = PdfColor.fromInt(0xFF1F2933);
   static const _muted = PdfColor.fromInt(0xFF6B7280);
@@ -36,6 +60,7 @@ class ReportPdf {
   );
 
   Future<Uint8List> render(ReportDocument d) async {
+    final theme = await _theme();
     final doc =
         pw.Document(
           title: d.title,
@@ -45,16 +70,9 @@ class ReportPdf {
           pw.MultiPage(
             pageFormat: PdfPageFormat.a4,
             margin: const pw.EdgeInsets.all(40),
-            theme:
-                pw.ThemeData.withFont(
-                  base: pw.Font.helvetica(),
-                  bold: pw.Font.helveticaBold(),
-                ).copyWith(
-                  defaultTextStyle: const pw.TextStyle(
-                    fontSize: 10,
-                    color: _ink,
-                  ),
-                ),
+            theme: theme.copyWith(
+              defaultTextStyle: const pw.TextStyle(fontSize: 10, color: _ink),
+            ),
             footer: (context) => pw.Padding(
               padding: const pw.EdgeInsets.only(top: 8),
               child: pw.Row(

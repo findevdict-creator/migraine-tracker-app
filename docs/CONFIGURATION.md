@@ -8,7 +8,7 @@ production build, and the few native files that mirror a value.
 
 | Section | Controls | Change when |
 | ------- | -------- | ----------- |
-| `AppIdentity` | product name, per-flavor display names, bundle id (and the iOS bundle id, which has no underscores), deep-link scheme, support email, privacy and terms URLs, wellness disclaimer | rebranding, new domain |
+| `AppIdentity` | product name, per-flavor display names, bundle id (and the iOS bundle id, which has no underscores), deep-link scheme, support email, privacy and terms URLs (the wellness disclaimer is copy and lives in the ARB files as `wellnessDisclaimer`) | rebranding, new domain |
 | `AppEnv` | Firebase options, functions region and base URL, emulator host, Google sign-in client ids, RevenueCat keys (all from `env/*.json`) | never edited directly; fill the env files |
 | `AppEndpoints` | Open-Meteo URLs, Cloud Function names | a function is renamed or a provider changes |
 | `AppAccounts` | sign-in methods offered (Apple, Google, email), minimum password length, the purge deadline shown to the user (must match `purgeWithinMs` in `functions/src/config.ts`) | changing sign-in options or the deletion promise |
@@ -18,14 +18,15 @@ production build, and the few native files that mirror a value.
 | `AppFeatureFlags` | dev tools, emulator use, crash-reporting availability, per-feature availability | hiding a feature, enabling dev screens |
 | `AppIdentity.clinicianGuidanceUrl` | page behind the medication-overuse notes | M publishes or changes it |
 | `AppThresholds` | overuse notes (10, 15 days), learning threshold (10 attacks), refresh cadences, forecast window, location rounding, weather retention and stale age, barometer sampling, calibration and gauge range, factor bands (AQI, UV, pollen), health import window and sleep bands, back-fill days, risk learning (attack window, shrinkage, threshold percentiles, history and forecast days, confidence bands, insight lift cut-offs), notification times (risk-rising evening and morning hours, default attack length, medication reminder), dedupe retention and lead time, push token refresh window, default report period, questionnaire reminder interval and hour, chart length, voice listen length, pause and on-device-only switch, widget refresh period and steady-pressure band, routine suggestion trigger and count, paced breathing timing, experiment length and small-sample threshold, attack duration estimate (minimum attacks, intensity band, rounding step), accuracy self-audit (attacks before it appears, window, trend months, upload day) | product decisions |
-| `AppDataSources` | every outside data source shown on "About the data": name, coverage, licence, link | a source is added or replaced |
+| `AppDataSources` (and the `DataCoverage` enum) | every outside data source shown on "About the data": id, coverage, licence, link. The display name is translated: add a `dataSource...` string to the ARB files and a case in `dataSourceName` | a source is added or replaced |
 | `AppBackgroundTasks` | identifiers of background jobs (weather refresh), the push wake-up message type | mirrored in `ios/Runner/Info.plist` and `AppDelegate.swift`; the message type must match `config.push.wakeupType` in the functions |
 | `AppNotificationChannels` | notification channel ids (alerts, reminders, attack), the iOS category and end-attack action ids, the Android small icon | renaming a channel (Android keeps the old one until reinstall), swapping the icon |
 | `AppThemeTokens` | seed colour, risk colours, load meter factor palette, attack theme palette, semantic colours, font family, spacing, radii, tap targets, text scale ceiling, animation durations | design changes |
 | `AppAssets` | logo, logo mark, launcher icon, head map, routine illustrations (`assets/routines/<code>.svg`), backup certificate pins (`assets/certs/google_trust_roots.pem`) | replacing artwork (keep the paths, swap the files) |
 | `AppHomeWidgets` | Android widget provider class, iOS widget kind and app group, the start-attack link, the keys the widget reads | renaming the native widget or the app group (mirrored natively, see below) |
 | `AppWatch` (= `WatchConfig` in `packages/watch_protocol/lib/src/watch_config.dart`) | tile freshness, resend interval, tile channel, the keys the watch stores and the tile reads; the on/off switch is `AppFeatureFlags.watchAvailable` | watch behaviour. The values live in the shared package because the Wear OS app cannot import the phone's config; `app_config.dart` re-exports them |
-| `AppLocales` | supported locales, fallback | adding a language |
+| `AppLocales` | supported locales (en, es, pt, de, fr, hi, ja), fallback, the PDF's fallback language per language (`pdfFallback`: Hindi prints in English because the PDF engine cannot shape Devanagari), the PDF font per script (`pdfFonts`: Noto Sans JP for Japanese), the pseudo-locale `en_XA` offered only in dev and staging builds | adding a language (also the ARB file, `bannedStems` in `tool/copy_lint.dart` and `STRINGS` in `hosting/share.js`) |
+| `AppUnits` | regions that default to inHg and to °F, digits per pressure unit, conversion factors. The person can change both in Settings > Units | a region's convention, display precision |
 
 ## The risk model
 
@@ -148,7 +149,17 @@ commercial key (used only by the cache function), RevenueCat keys.
       before launch. The weather function logs a warning until it is set.
     - Test sandbox purchases on both stores with the steps in
       `docs/phases/35-premium.md`.
-16. Repository settings on GitHub: protect `main` (require PR, require the
+16. Translations (phase 37): the Spanish, Portuguese, German, French,
+    Hindi and Japanese text was written without a native-speaker review.
+    Have each reviewed before release (start with the safety copy:
+    disclaimers, medication overuse notes, the risk level explainer), and
+    extend `bannedStems` in `tool/copy_lint.dart` with the reviewer's
+    list. MIDAS and HIT-6 item wording stays in English in every language
+    until licensed, validated translations are obtained (HIT-6 from
+    QualityMetric with the licence in item 7; MIDAS translations from the
+    published validation studies). The App Store and Play listings also
+    need translating per language.
+17. Repository settings on GitHub: protect `main` (require PR, require the
    `pr` workflow jobs, require conversation resolution, block force pushes
    and deletions, merge commits only, delete head branches on merge).
 

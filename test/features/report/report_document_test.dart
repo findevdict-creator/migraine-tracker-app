@@ -82,4 +82,31 @@ void main() {
     expect([mild.band, severe.band], [0, 2]);
     expect([mild.label, severe.label, quiet.label], ['3', '8', '3']);
   });
+
+  group('in each language', () {
+    for (final locale in AppLocales.supported) {
+      final language = locale.languageCode;
+      if (AppLocales.pdfFallback.containsKey(language)) continue;
+
+      test('$language: the document names its language and the PDF can '
+          'set every character', () async {
+        await initializeDateFormatting(language);
+        final words = lookupAppLocalizations(locale);
+        final summary = ReportBuilder.build(yearOfData(today: today));
+        final doc = ReportContent(words, locale: language).build(summary);
+        expect(doc.lang, language);
+        if (!AppLocales.pdfFonts.containsKey(language)) {
+          // Helvetica is Latin-1 only; anything outside it prints blank.
+          final text = jsonEncode(doc.toJson());
+          final outside = {
+            for (final rune in jsonDecode(text).toString().runes)
+              if (rune > 0xff) String.fromCharCode(rune),
+          };
+          expect(outside, isEmpty, reason: 'not in Latin-1');
+          final bytes = await ReportPdf(words, locale: language).build(summary);
+          expect(String.fromCharCodes(bytes.take(5)), '%PDF-');
+        }
+      });
+    }
+  });
 }

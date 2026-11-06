@@ -5,6 +5,7 @@ import 'package:migraine_tracker/config/app_config.dart';
 import 'package:migraine_tracker/core/l10n/l10n.dart';
 import 'package:migraine_tracker/core/settings/settings_keys.dart';
 import 'package:migraine_tracker/core/settings/settings_repository.dart';
+import 'package:migraine_tracker/core/units/units.dart';
 import 'package:migraine_tracker/core/util/clock.dart';
 import 'package:migraine_tracker/features/attack_log/data/attack_repository_impl.dart';
 import 'package:migraine_tracker/features/home_widget/domain/widget_snapshot.dart';
@@ -24,10 +25,11 @@ class WatchSync {
   Future<WatchState?> publish(
     WidgetSnapshot snapshot,
     AppLocalizations l10n,
-    Locale locale,
-  ) async {
+    Locale locale, {
+    Units units = const Units(),
+  }) async {
     if (!AppFeatureFlags.watchAvailable) return null;
-    final state = await build(snapshot, l10n, locale);
+    final state = await build(snapshot, l10n, locale, units: units);
     await _ref
         .read(watchLinkProvider)
         .pushState(WatchWire.wrap(state.toJson()));
@@ -37,9 +39,10 @@ class WatchSync {
   Future<WatchState> build(
     WidgetSnapshot snapshot,
     AppLocalizations l10n,
-    Locale locale,
-  ) async {
-    final text = snapshot.render(l10n, locale: locale.toString());
+    Locale locale, {
+    Units units = const Units(),
+  }) async {
+    final text = snapshot.render(l10n, locale: locale.toString(), units: units);
     final running = await _ref.read(attackRepositoryProvider).running();
     final ledger = await _ref.read(watchLedgerStoreProvider).read();
     final level = snapshot.level;

@@ -6,6 +6,7 @@ import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_timezone/flutter_timezone.dart';
 import 'package:migraine_tracker/config/app_config.dart';
+import 'package:migraine_tracker/core/l10n/device_locale.dart';
 import 'package:migraine_tracker/core/l10n/generated/app_localizations.dart';
 import 'package:migraine_tracker/features/notifications/domain/notification_gateway.dart';
 import 'package:migraine_tracker/features/notifications/domain/planned_notification.dart';
@@ -24,7 +25,7 @@ final notificationGatewayProvider = Provider<NotificationGateway>((ref) {
     return const NoNotificationGateway();
   }
   return LocalNotificationGateway(
-    l10n: lookupAppLocalizations(AppLocales.fallback),
+    l10n: lookupAppLocalizations(ref.watch(deviceLocaleProvider)),
   );
 });
 

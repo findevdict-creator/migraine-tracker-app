@@ -5,7 +5,13 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/intl.dart' as intl;
 
+import 'app_localizations_de.dart';
 import 'app_localizations_en.dart';
+import 'app_localizations_es.dart';
+import 'app_localizations_fr.dart';
+import 'app_localizations_hi.dart';
+import 'app_localizations_ja.dart';
+import 'app_localizations_pt.dart';
 
 // ignore_for_file: type=lint
 
@@ -92,7 +98,16 @@ abstract class AppLocalizations {
       ];
 
   /// A list of this localizations delegate's supported locales.
-  static const List<Locale> supportedLocales = <Locale>[Locale('en')];
+  static const List<Locale> supportedLocales = <Locale>[
+    Locale('de'),
+    Locale('en'),
+    Locale('en', 'XA'),
+    Locale('es'),
+    Locale('fr'),
+    Locale('hi'),
+    Locale('ja'),
+    Locale('pt'),
+  ];
 
   /// Fallback app title; the live title comes from AppIdentity.
   ///
@@ -1033,20 +1048,14 @@ abstract class AppLocalizations {
   /// No description provided for @environmentCardSummary.
   ///
   /// In en, this message translates to:
-  /// **'{hpa} hPa, {trend}'**
-  String environmentCardSummary(String hpa, String trend);
+  /// **'{pressure}, {trend}'**
+  String environmentCardSummary(String pressure, String trend);
 
   /// No description provided for @envPressureSection.
   ///
   /// In en, this message translates to:
   /// **'Air pressure'**
   String get envPressureSection;
-
-  /// No description provided for @envPressureNow.
-  ///
-  /// In en, this message translates to:
-  /// **'{hpa} hPa'**
-  String envPressureNow(String hpa);
 
   /// No description provided for @envPressureUnknown.
   ///
@@ -1077,12 +1086,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'24 h'**
   String get envDelta24h;
-
-  /// No description provided for @envDeltaValue.
-  ///
-  /// In en, this message translates to:
-  /// **'{value} hPa'**
-  String envDeltaValue(String value);
 
   /// No description provided for @envDeltaUnknown.
   ///
@@ -2173,8 +2176,8 @@ abstract class AppLocalizations {
   /// No description provided for @insightsMethod1.
   ///
   /// In en, this message translates to:
-  /// **'An exposure day is a day where a factor was present in your log or in the weather, for example a sleep answer of 1 or a pressure drop of more than 2 hPa.'**
-  String get insightsMethod1;
+  /// **'An exposure day is a day where a factor was present in your log or in the weather, for example a sleep answer of 1 or a pressure drop of more than {pressure}.'**
+  String insightsMethod1(String pressure);
 
   /// No description provided for @insightsMethod2.
   ///
@@ -2257,8 +2260,8 @@ abstract class AppLocalizations {
   /// No description provided for @notifTypePressureDropHint.
   ///
   /// In en, this message translates to:
-  /// **'When the forecast shows a fall of {hpa} hPa or more in 24 hours'**
-  String notifTypePressureDropHint(String hpa);
+  /// **'When the forecast shows a fall of {pressure} or more in 24 hours'**
+  String notifTypePressureDropHint(String pressure);
 
   /// No description provided for @notifTypeAttackOver.
   ///
@@ -2299,8 +2302,8 @@ abstract class AppLocalizations {
   /// No description provided for @notifPressureThreshold.
   ///
   /// In en, this message translates to:
-  /// **'Pressure drop threshold: {hpa} hPa in 24 h'**
-  String notifPressureThreshold(String hpa);
+  /// **'Pressure drop threshold: {pressure} in 24 h'**
+  String notifPressureThreshold(String pressure);
 
   /// No description provided for @notifMedicationTime.
   ///
@@ -2341,8 +2344,8 @@ abstract class AppLocalizations {
   /// No description provided for @notifPressureBody.
   ///
   /// In en, this message translates to:
-  /// **'A fall of {hpa} hPa is expected by {time}.'**
-  String notifPressureBody(String hpa, String time);
+  /// **'A fall of {pressure} is expected by {time}.'**
+  String notifPressureBody(String pressure, String time);
 
   /// No description provided for @notifAttackOverTitle.
   ///
@@ -2856,8 +2859,8 @@ abstract class AppLocalizations {
   /// No description provided for @reportWeatherHint.
   ///
   /// In en, this message translates to:
-  /// **'A fall is a drop of {hpa} hPa or more over 24 h at the time of the entry.'**
-  String reportWeatherHint(String hpa);
+  /// **'A fall is a drop of {pressure} or more over 24 h at the time of the entry.'**
+  String reportWeatherHint(String pressure);
 
   /// No description provided for @reportWeatherNone.
   ///
@@ -3437,14 +3440,14 @@ abstract class AppLocalizations {
   /// No description provided for @widgetPressureFalling.
   ///
   /// In en, this message translates to:
-  /// **'Pressure falling {hpa} hPa in 24 h'**
-  String widgetPressureFalling(String hpa);
+  /// **'Pressure falling {pressure} in 24 h'**
+  String widgetPressureFalling(String pressure);
 
   /// No description provided for @widgetPressureRising.
   ///
   /// In en, this message translates to:
-  /// **'Pressure rising {hpa} hPa in 24 h'**
-  String widgetPressureRising(String hpa);
+  /// **'Pressure rising {pressure} in 24 h'**
+  String widgetPressureRising(String pressure);
 
   /// No description provided for @widgetPressureSteady.
   ///
@@ -4807,6 +4810,168 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Attacks after High days and High days without one'**
   String get settingsAuditHint;
+
+  /// No description provided for @unitHpa.
+  ///
+  /// In en, this message translates to:
+  /// **'{value} hPa'**
+  String unitHpa(String value);
+
+  /// No description provided for @unitInHg.
+  ///
+  /// In en, this message translates to:
+  /// **'{value} inHg'**
+  String unitInHg(String value);
+
+  /// No description provided for @unitMmHg.
+  ///
+  /// In en, this message translates to:
+  /// **'{value} mmHg'**
+  String unitMmHg(String value);
+
+  /// No description provided for @unitCelsius.
+  ///
+  /// In en, this message translates to:
+  /// **'{value} °C'**
+  String unitCelsius(String value);
+
+  /// No description provided for @unitFahrenheit.
+  ///
+  /// In en, this message translates to:
+  /// **'{value} °F'**
+  String unitFahrenheit(String value);
+
+  /// No description provided for @unitsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Units'**
+  String get unitsTitle;
+
+  /// No description provided for @settingsUnitsHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Pressure and temperature'**
+  String get settingsUnitsHint;
+
+  /// No description provided for @unitsPressure.
+  ///
+  /// In en, this message translates to:
+  /// **'Pressure'**
+  String get unitsPressure;
+
+  /// No description provided for @unitsTemperature.
+  ///
+  /// In en, this message translates to:
+  /// **'Temperature'**
+  String get unitsTemperature;
+
+  /// No description provided for @unitNameHpa.
+  ///
+  /// In en, this message translates to:
+  /// **'Hectopascals (hPa)'**
+  String get unitNameHpa;
+
+  /// No description provided for @unitNameInHg.
+  ///
+  /// In en, this message translates to:
+  /// **'Inches of mercury (inHg)'**
+  String get unitNameInHg;
+
+  /// No description provided for @unitNameMmHg.
+  ///
+  /// In en, this message translates to:
+  /// **'Millimetres of mercury (mmHg)'**
+  String get unitNameMmHg;
+
+  /// No description provided for @unitNameCelsius.
+  ///
+  /// In en, this message translates to:
+  /// **'Celsius (°C)'**
+  String get unitNameCelsius;
+
+  /// No description provided for @unitNameFahrenheit.
+  ///
+  /// In en, this message translates to:
+  /// **'Fahrenheit (°F)'**
+  String get unitNameFahrenheit;
+
+  /// No description provided for @unitsNote.
+  ///
+  /// In en, this message translates to:
+  /// **'The first choice comes from your phone\'s region. Changing it only changes how values are shown; your log stays the same.'**
+  String get unitsNote;
+
+  /// No description provided for @envTemperatureNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Temperature now: {temperature}'**
+  String envTemperatureNow(String temperature);
+
+  /// No description provided for @questionnaireEnglishNote.
+  ///
+  /// In en, this message translates to:
+  /// **'The questions are shown in their original English wording until a validated translation is added, so your scores stay comparable.'**
+  String get questionnaireEnglishNote;
+
+  /// No description provided for @wellnessDisclaimer.
+  ///
+  /// In en, this message translates to:
+  /// **'General wellness information, not medical advice. Talk to your clinician about treatment.'**
+  String get wellnessDisclaimer;
+
+  /// No description provided for @dataSourceWeather.
+  ///
+  /// In en, this message translates to:
+  /// **'Open-Meteo weather'**
+  String get dataSourceWeather;
+
+  /// No description provided for @dataSourceAirQuality.
+  ///
+  /// In en, this message translates to:
+  /// **'Open-Meteo air quality and UV (CAMS)'**
+  String get dataSourceAirQuality;
+
+  /// No description provided for @dataSourcePollen.
+  ///
+  /// In en, this message translates to:
+  /// **'Open-Meteo pollen (CAMS)'**
+  String get dataSourcePollen;
+
+  /// No description provided for @dataSourceGeocoding.
+  ///
+  /// In en, this message translates to:
+  /// **'Open-Meteo geocoding'**
+  String get dataSourceGeocoding;
+
+  /// No description provided for @dataSourceBarometer.
+  ///
+  /// In en, this message translates to:
+  /// **'Device barometer'**
+  String get dataSourceBarometer;
+
+  /// No description provided for @dataCoverageWorldwide.
+  ///
+  /// In en, this message translates to:
+  /// **'Worldwide'**
+  String get dataCoverageWorldwide;
+
+  /// No description provided for @dataCoverageEuropeanAqi.
+  ///
+  /// In en, this message translates to:
+  /// **'Worldwide, European AQI in Europe'**
+  String get dataCoverageEuropeanAqi;
+
+  /// No description provided for @dataCoverageEurope.
+  ///
+  /// In en, this message translates to:
+  /// **'Europe only'**
+  String get dataCoverageEurope;
+
+  /// No description provided for @dataCoverageBarometer.
+  ///
+  /// In en, this message translates to:
+  /// **'Phones with a pressure sensor'**
+  String get dataCoverageBarometer;
 }
 
 class _AppLocalizationsDelegate
@@ -4819,18 +4984,49 @@ class _AppLocalizationsDelegate
   }
 
   @override
-  bool isSupported(Locale locale) =>
-      <String>['en'].contains(locale.languageCode);
+  bool isSupported(Locale locale) => <String>[
+    'de',
+    'en',
+    'es',
+    'fr',
+    'hi',
+    'ja',
+    'pt',
+  ].contains(locale.languageCode);
 
   @override
   bool shouldReload(_AppLocalizationsDelegate old) => false;
 }
 
 AppLocalizations lookupAppLocalizations(Locale locale) {
-  // Lookup logic when only language code is specified.
+  // Lookup logic when language+country codes are specified.
   switch (locale.languageCode) {
     case 'en':
+      {
+        switch (locale.countryCode) {
+          case 'XA':
+            return AppLocalizationsEnXa();
+        }
+        break;
+      }
+  }
+
+  // Lookup logic when only language code is specified.
+  switch (locale.languageCode) {
+    case 'de':
+      return AppLocalizationsDe();
+    case 'en':
       return AppLocalizationsEn();
+    case 'es':
+      return AppLocalizationsEs();
+    case 'fr':
+      return AppLocalizationsFr();
+    case 'hi':
+      return AppLocalizationsHi();
+    case 'ja':
+      return AppLocalizationsJa();
+    case 'pt':
+      return AppLocalizationsPt();
   }
 
   throw FlutterError(

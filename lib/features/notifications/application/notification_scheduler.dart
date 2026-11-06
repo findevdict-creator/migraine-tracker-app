@@ -1,11 +1,14 @@
 import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart' show TimeOfDay;
+import 'package:flutter/material.dart' show Locale, TimeOfDay;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:intl/date_symbol_data_local.dart';
 import 'package:intl/intl.dart';
 import 'package:migraine_tracker/config/app_config.dart';
+import 'package:migraine_tracker/core/l10n/device_locale.dart';
 import 'package:migraine_tracker/core/l10n/generated/app_localizations.dart';
 import 'package:migraine_tracker/core/settings/settings_keys.dart';
 import 'package:migraine_tracker/core/settings/settings_repository.dart';
+import 'package:migraine_tracker/core/units/units.dart';
 import 'package:migraine_tracker/core/util/clock.dart';
 import 'package:migraine_tracker/core/widgets/risk_level_badge.dart';
 import 'package:migraine_tracker/features/attack_log/data/attack_repository_impl.dart';
@@ -95,14 +98,21 @@ class NotificationScheduler {
 
   Future<List<PlannedNotification>> _reschedule() async {
     final now = _now;
+    // Read before the first await, while the provider is surely alive.
+    final locale = _ref.read<Locale>(deviceLocaleProvider);
+    final region = _ref.read(deviceRegionProvider);
     final input = await _input(now);
     final planned = NotificationPlanner.plan(input);
     final delivered = await _deliveredKeys();
     final fresh = NotificationPlanner.dedupe(planned, delivered, now);
     await _gateway.cancelPending();
-    final l10n = lookupAppLocalizations(AppLocales.fallback);
+    final l10n = lookupAppLocalizations(locale);
+    // Times in the copy use the phone's language, also from a background
+    // isolate where the widget tree has not loaded the date symbols.
+    await initializeDateFormatting(l10n.localeName);
+    final units = await Units.read(_settings, region);
     for (final n in fresh) {
-      await _gateway.schedule(n, render(l10n, n));
+      await _gateway.schedule(n, render(l10n, n, units: units));
     }
     final kept = NotificationPlanner.prune(delivered, now);
     for (final n in fresh) {
@@ -218,7 +228,11 @@ class NotificationScheduler {
   }
 
   /// Title and body for a planned notification.
-  static NotificationCopy render(AppLocalizations l10n, PlannedNotification n) {
+  static NotificationCopy render(
+    AppLocalizations l10n,
+    PlannedNotification n, {
+    Units units = const Units(),
+  }) {
     switch (n.type) {
       case NotificationType.riskRising:
         final level = RiskLevel.fromId(n.args['level'] ?? 'low').label(l10n);
@@ -238,8 +252,8 @@ class NotificationScheduler {
         return NotificationCopy(
           title: l10n.notifPressureTitle,
           body: l10n.notifPressureBody(
-            n.args['hpa'] ?? '',
-            at == null ? '' : DateFormat.Hm().format(at),
+            units.pressureText(l10n, double.tryParse(n.args['hpa'] ?? '') ?? 0),
+            at == null ? '' : DateFormat.Hm(l10n.localeName).format(at),
           ),
         );
       case NotificationType.attackOver:

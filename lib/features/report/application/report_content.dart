@@ -1,6 +1,7 @@
 import 'package:intl/intl.dart';
 import 'package:migraine_tracker/config/app_config.dart';
 import 'package:migraine_tracker/core/l10n/l10n.dart';
+import 'package:migraine_tracker/core/units/units.dart';
 import 'package:migraine_tracker/core/util/clock.dart';
 import 'package:migraine_tracker/features/attack_log/presentation/attack_screen.dart';
 import 'package:migraine_tracker/features/attack_log/presentation/head_map.dart';
@@ -16,10 +17,11 @@ import 'package:migraine_tracker/features/risk/presentation/risk_text.dart';
 /// [AppLocalizations] or a locale-formatted number. The copy avoids
 /// typographic dashes because the PDF uses Latin-1 fonts.
 class ReportContent {
-  ReportContent(this.l10n, {String? locale})
+  ReportContent(this.l10n, {String? locale, this.units = const Units()})
     : _locale = locale ?? AppLocales.fallback.toString();
 
   final AppLocalizations l10n;
+  final Units units;
   final String _locale;
 
   ReportDocument build(ReportSummary r, {bool includeQuestionnaires = true}) =>
@@ -33,6 +35,7 @@ class ReportContent {
         generated: l10n.reportPdfGenerated(_date(r.inputs.generatedAt)),
         footer: AppIdentity.name,
         disclaimer: l10n.reportPdfDisclaimer,
+        lang: l10n.localeName,
         blocks: [
           HeadingBlock(l10n.reportSectionOverview),
           _overview(r),
@@ -51,7 +54,11 @@ class ReportContent {
           HeadingBlock(l10n.reportSectionMedications),
           _medications(r),
           HeadingBlock(l10n.reportSectionWeather),
-          HintBlock(l10n.reportWeatherHint(_num(r.weather.thresholdHpa))),
+          HintBlock(
+            l10n.reportWeatherHint(
+              units.pressureChange(l10n, r.weather.thresholdHpa),
+            ),
+          ),
           ..._weather(r),
           HeadingBlock(l10n.reportSectionSymptoms),
           _symptoms(r),
