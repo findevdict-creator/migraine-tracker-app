@@ -50,7 +50,7 @@ extension PumpApp on WidgetTester {
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
           ],
-          home: child,
+          home: Scaffold(body: child),
         ),
       ),
     );

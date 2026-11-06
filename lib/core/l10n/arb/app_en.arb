@@ -1,7 +1,42 @@
 {
   "@@locale": "en",
   "appTitle": "Migraine Tracker",
-  "@appTitle": {"description": "Fallback app title; the live title comes from AppIdentity."},
+  "@appTitle": {
+    "description": "Fallback app title; the live title comes from AppIdentity."
+  },
   "homeEmptyState": "Nothing logged yet.\nYour risk level and environment will appear here.",
-  "@homeEmptyState": {"description": "Home screen placeholder before any feature ships."}
+  "@homeEmptyState": {
+    "description": "Home screen placeholder before any feature ships."
+  },
+  "riskLevelLow": "Low",
+  "@riskLevelLow": {
+    "description": "Risk level name."
+  },
+  "riskLevelModerate": "Moderate",
+  "@riskLevelModerate": {
+    "description": "Risk level name."
+  },
+  "riskLevelHigh": "High",
+  "@riskLevelHigh": {
+    "description": "Risk level name."
+  },
+  "devThemeGalleryTitle": "Theme gallery",
+  "@devThemeGalleryTitle": {
+    "description": "Developer screen title."
+  },
+  "devThemeLight": "Light theme",
+  "devThemeDark": "Dark theme",
+  "devThemeAttack": "Attack theme",
+  "devSampleBody": "Body text at the default size. It must stay readable at 200% text scale without truncation.",
+  "devSamplePrimary": "Primary",
+  "devSampleSecondary": "Secondary",
+  "devSampleText": "Text",
+  "devSampleDisabled": "Disabled",
+  "devSampleChipOn": "Aura",
+  "devSampleChipOff": "Nausea",
+  "devSampleChipIcon": "Light",
+  "devSampleSlider": "Intensity",
+  "devSampleSliderLow": "No pain",
+  "devSampleSliderHigh": "Worst",
+  "devSampleCard": "A card with a badge"
 }

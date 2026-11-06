@@ -283,27 +283,40 @@ class AppThemeTokens {
   /// Seed colour for the light and dark schemes.
   static const Color seed = Color(0xFF5B5BD6);
 
-  /// Risk level colours (WCAG 2.2 AA against their surfaces; verified in the
-  /// design-system phase).
+  /// Risk level colours. The light set is used as a fill with white text
+  /// and as text on light surfaces; the dark set as text and fills on dark
+  /// surfaces. All pairs meet WCAG 2.2 AA (4.5:1), checked by
+  /// `test/core/theme/contrast_test.dart`.
   static const Color riskLow = Color(0xFF2E7D32);
-  static const Color riskModerate = Color(0xFFB26A00);
+  static const Color riskModerate = Color(0xFF9A5B00);
   static const Color riskHigh = Color(0xFFC62828);
+  static const Color riskLowDark = Color(0xFF81C784);
+  static const Color riskModerateDark = Color(0xFFFFB74D);
+  static const Color riskHighDark = Color(0xFFEF9A9A);
 
   /// Attack theme: high-contrast dark palette for photophobia.
   static const Color attackBackground = Color(0xFF000000);
-  static const Color attackSurface = Color(0xFF121212);
+  static const Color attackSurface = Color(0xFF0E0E0E);
+  static const Color attackSurfaceRaised = Color(0xFF1E1E1E);
   static const Color attackOnBackground = Color(0xFFE6E6E6);
   static const Color attackAccent = Color(0xFFFFB74D);
-  static const Color attackMuted = Color(0xFF8A8A8A);
+  static const Color attackMuted = Color(0xFFA0A0A0);
 
-  /// Semantic colours.
+  /// Semantic colours (light surfaces; the dark theme reuses the risk set).
   static const Color success = Color(0xFF2E7D32);
-  static const Color warning = Color(0xFFB26A00);
+  static const Color warning = Color(0xFF9A5B00);
   static const Color danger = Color(0xFFC62828);
   static const Color info = Color(0xFF1565C0);
+  static const Color infoDark = Color(0xFF90CAF9);
 
   /// Typography. Null family means the platform default.
   static const String? fontFamily = null;
+  static const double fontDisplay = 44;
+  static const double fontHeadline = 28;
+  static const double fontTitle = 22;
+  static const double fontBody = 17;
+  static const double fontBodySmall = 15;
+  static const double fontLabel = 15;
 
   /// Spacing scale in logical pixels.
   static const double space1 = 4;
