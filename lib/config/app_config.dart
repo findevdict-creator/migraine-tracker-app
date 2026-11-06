@@ -67,6 +67,10 @@ class AppIdentity {
   /// `android/app/build.gradle.kts` and the iOS schemes, which mirror this).
   static const String bundleId = 'app.migrainetracker.migraine_tracker';
 
+  /// iOS bundle id. Apple ids cannot contain underscores, so iOS uses
+  /// camel case; mirrored in `ios/Runner.xcodeproj` (`PRODUCT_BUNDLE_IDENTIFIER`).
+  static const String iosBundleId = 'app.migrainetracker.migraineTracker';
+
   /// Application id for a flavor. Must match the native build configuration.
   static String bundleIdFor(AppFlavor flavor) => switch (flavor) {
     AppFlavor.dev => '$bundleId.dev',
@@ -520,7 +524,7 @@ class AppHomeWidgets {
   static const String iosKind = 'RiskWidget';
 
   /// iOS App Group shared by the app and the widget extension.
-  static const String iosAppGroup = 'group.${AppIdentity.bundleId}';
+  static const String iosAppGroup = 'group.${AppIdentity.iosBundleId}';
 
   /// Deep link the widget's start button opens. The `homeWidget` query
   /// marks it as a widget launch for the plugin on iOS.
