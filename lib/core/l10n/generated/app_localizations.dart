@@ -1821,6 +1821,204 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'It never sends your log anywhere. The level is computed on this phone.'**
   String get explainerDoesNot3;
+
+  /// No description provided for @riskCardTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Today\'s level'**
+  String get riskCardTitle;
+
+  /// No description provided for @riskCardEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No level yet. Add a check-in or let the weather load.'**
+  String get riskCardEmpty;
+
+  /// No description provided for @riskScreenTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Your level'**
+  String get riskScreenTitle;
+
+  /// No description provided for @riskWhyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Why'**
+  String get riskWhyTitle;
+
+  /// No description provided for @riskNoDrivers.
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing stands out.'**
+  String get riskNoDrivers;
+
+  /// No description provided for @riskNextDays.
+  ///
+  /// In en, this message translates to:
+  /// **'Next days'**
+  String get riskNextDays;
+
+  /// No description provided for @riskDayToday.
+  ///
+  /// In en, this message translates to:
+  /// **'Today'**
+  String get riskDayToday;
+
+  /// No description provided for @riskDayTomorrow.
+  ///
+  /// In en, this message translates to:
+  /// **'Tomorrow'**
+  String get riskDayTomorrow;
+
+  /// No description provided for @riskLoad.
+  ///
+  /// In en, this message translates to:
+  /// **'Load {value} of 100'**
+  String riskLoad(String value);
+
+  /// No description provided for @riskConfidence.
+  ///
+  /// In en, this message translates to:
+  /// **'Confidence: {label}'**
+  String riskConfidence(String label);
+
+  /// No description provided for @riskConfidenceLow.
+  ///
+  /// In en, this message translates to:
+  /// **'low'**
+  String get riskConfidenceLow;
+
+  /// No description provided for @riskConfidenceMedium.
+  ///
+  /// In en, this message translates to:
+  /// **'medium'**
+  String get riskConfidenceMedium;
+
+  /// No description provided for @riskConfidenceHigh.
+  ///
+  /// In en, this message translates to:
+  /// **'high'**
+  String get riskConfidenceHigh;
+
+  /// No description provided for @riskStillLearning.
+  ///
+  /// In en, this message translates to:
+  /// **'Still learning: {count} of {needed} attacks logged'**
+  String riskStillLearning(int count, int needed);
+
+  /// No description provided for @riskTuned.
+  ///
+  /// In en, this message translates to:
+  /// **'Tuned to your log'**
+  String get riskTuned;
+
+  /// No description provided for @riskDriverPoints.
+  ///
+  /// In en, this message translates to:
+  /// **'{points} points'**
+  String riskDriverPoints(String points);
+
+  /// No description provided for @riskUpdated.
+  ///
+  /// In en, this message translates to:
+  /// **'Updated {time}'**
+  String riskUpdated(String time);
+
+  /// No description provided for @riskExplainerLink.
+  ///
+  /// In en, this message translates to:
+  /// **'What the level means'**
+  String get riskExplainerLink;
+
+  /// No description provided for @riskOpenCheckin.
+  ///
+  /// In en, this message translates to:
+  /// **'Add today\'s check-in'**
+  String get riskOpenCheckin;
+
+  /// No description provided for @riskFactorPressureDrop.
+  ///
+  /// In en, this message translates to:
+  /// **'Falling air pressure'**
+  String get riskFactorPressureDrop;
+
+  /// No description provided for @riskFactorHumidity.
+  ///
+  /// In en, this message translates to:
+  /// **'High humidity'**
+  String get riskFactorHumidity;
+
+  /// No description provided for @riskFactorTemperatureSwing.
+  ///
+  /// In en, this message translates to:
+  /// **'Temperature change'**
+  String get riskFactorTemperatureSwing;
+
+  /// No description provided for @riskFactorAirQuality.
+  ///
+  /// In en, this message translates to:
+  /// **'Air quality'**
+  String get riskFactorAirQuality;
+
+  /// No description provided for @riskFactorPollen.
+  ///
+  /// In en, this message translates to:
+  /// **'Pollen'**
+  String get riskFactorPollen;
+
+  /// No description provided for @riskFactorBrightLight.
+  ///
+  /// In en, this message translates to:
+  /// **'Bright light'**
+  String get riskFactorBrightLight;
+
+  /// No description provided for @riskFactorScreenTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Screen time'**
+  String get riskFactorScreenTime;
+
+  /// No description provided for @riskFactorPoorSleep.
+  ///
+  /// In en, this message translates to:
+  /// **'Poor sleep'**
+  String get riskFactorPoorSleep;
+
+  /// No description provided for @riskFactorStress.
+  ///
+  /// In en, this message translates to:
+  /// **'Stress'**
+  String get riskFactorStress;
+
+  /// No description provided for @riskFactorNeckTension.
+  ///
+  /// In en, this message translates to:
+  /// **'Neck tension'**
+  String get riskFactorNeckTension;
+
+  /// No description provided for @riskFactorCaffeine.
+  ///
+  /// In en, this message translates to:
+  /// **'Caffeine'**
+  String get riskFactorCaffeine;
+
+  /// No description provided for @riskFactorAlcohol.
+  ///
+  /// In en, this message translates to:
+  /// **'Alcohol'**
+  String get riskFactorAlcohol;
+
+  /// No description provided for @riskFactorDehydration.
+  ///
+  /// In en, this message translates to:
+  /// **'Low hydration'**
+  String get riskFactorDehydration;
+
+  /// No description provided for @riskFactorCyclePhase.
+  ///
+  /// In en, this message translates to:
+  /// **'Cycle phase'**
+  String get riskFactorCyclePhase;
 }
 
 class _AppLocalizationsDelegate

@@ -316,6 +316,10 @@ class AppThresholds {
   static const int riskHistoryDays = 730;
   static const int riskForecastDays = 3;
 
+  /// Mean weight confidence below which the card says "low", and from
+  /// which it says "high"; "medium" between.
+  static const List<double> riskConfidenceBands = [0.3, 0.7];
+
   /// Exposures below which a factor is "not enough data".
   static const int minExposuresForInsight = 5;
 

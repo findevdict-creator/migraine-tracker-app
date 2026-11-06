@@ -35,6 +35,13 @@ class RiskDayEntity {
   final String modelVersion;
   final DateTime computedAt;
 
+  /// Mean weight confidence over the factors that had data, 0 to 1.
+  double get confidence {
+    if (contributions.isEmpty) return 0;
+    final sum = contributions.fold<double>(0, (a, c) => a + c.confidence);
+    return sum / contributions.length;
+  }
+
   /// The strongest contributions with points, at most [count].
   List<Contribution> drivers({int count = 3}) =>
       contributions.where((c) => c.points > 0).take(count).toList();
