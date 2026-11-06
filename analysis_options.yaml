@@ -15,6 +15,7 @@ analyzer:
     - "**/*.g.dart"
     - "**/*.freezed.dart"
     - lib/core/l10n/generated/**
+    - test/core/db/generated/**
   errors:
     # The app is not a published package; public API docs are required only
     # under packages/.

@@ -331,6 +331,21 @@ class AppThemeTokens {
 }
 
 // ---------------------------------------------------------------------------
+// Storage
+// ---------------------------------------------------------------------------
+
+/// On-device storage names. Changing these after release needs a migration.
+class AppStorage {
+  const AppStorage._();
+
+  /// SQLCipher database file inside the application support directory.
+  static const String databaseFileName = 'migraine_tracker.db';
+
+  /// Keystore entry that holds the database key.
+  static const String databaseKeyName = 'migraine_tracker.db.key';
+}
+
+// ---------------------------------------------------------------------------
 // Assets
 // ---------------------------------------------------------------------------
 
