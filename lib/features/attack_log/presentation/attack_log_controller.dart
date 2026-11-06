@@ -1,3 +1,6 @@
+import 'dart:async';
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_riverpod/misc.dart';
 import 'package:migraine_tracker/core/util/clock.dart';
@@ -5,6 +8,7 @@ import 'package:migraine_tracker/features/attack_log/data/attack_repository_impl
 import 'package:migraine_tracker/features/attack_log/domain/attack_entity.dart';
 import 'package:migraine_tracker/features/attack_log/domain/attack_repository.dart';
 import 'package:migraine_tracker/features/health/application/health_sync.dart';
+import 'package:migraine_tracker/features/notifications/application/notification_scheduler.dart';
 import 'package:migraine_tracker/features/risk/application/risk_engine.dart';
 import 'package:migraine_tracker/features/weather/application/weather_snapshot.dart';
 
@@ -27,6 +31,7 @@ final attackStarterProvider = Provider<AttackStarter>(
     weather: ref.watch(weatherSnapshotProvider),
     clock: ref.watch(clockProvider),
     newId: ref.watch(idGeneratorProvider),
+    afterStart: () => ref.read(notificationSchedulerProvider).reschedule(),
   ),
 );
 
@@ -37,6 +42,7 @@ class AttackStarter {
     required this.weather,
     required this.clock,
     required this.newId,
+    this.afterStart,
   });
 
   final AttackRepository _repository;
@@ -44,6 +50,9 @@ class AttackStarter {
   final WeatherSnapshot weather;
   final DateTime Function() clock;
   final String Function() newId;
+
+  /// Runs after a new attack is saved (notification planning).
+  final Future<void> Function()? afterStart;
 
   /// Returns the id of the running attack, creating one if needed.
   Future<String> start() async {
@@ -62,7 +71,18 @@ class AttackStarter {
       weather: snapshot,
     );
     await _repository.save(attack);
+    // "Is your attack over?" is planned from the start time. Not awaited:
+    // the attack screen must open at once, and the plan fails safe.
+    unawaited(_runAfterStart());
     return attack.id;
+  }
+
+  Future<void> _runAfterStart() async {
+    try {
+      await afterStart?.call();
+    } on Object catch (error) {
+      debugPrint('notification reschedule after start failed: $error');
+    }
   }
 }
 
