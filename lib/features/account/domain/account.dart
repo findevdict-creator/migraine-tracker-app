@@ -55,6 +55,10 @@ abstract interface class AuthGateway {
 
   Stream<AccountUser?> userChanges();
 
+  /// A fresh Firebase ID token for the signed-in account, or null. Sent to
+  /// Cloud Storage with the encrypted backup (phase 33).
+  Future<String?> idToken();
+
   Future<void> signInWithApple();
   Future<void> signInWithGoogle();
   Future<void> signInWithEmail(String email, String password);
@@ -79,6 +83,9 @@ class UnavailableAuthGateway implements AuthGateway {
 
   @override
   Stream<AccountUser?> userChanges() => Stream.value(null);
+
+  @override
+  Future<String?> idToken() async => null;
 
   @override
   Future<void> signInWithApple() => Future.error(_refused);

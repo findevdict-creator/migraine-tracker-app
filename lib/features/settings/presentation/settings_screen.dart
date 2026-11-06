@@ -72,6 +72,14 @@ class SettingsScreen extends ConsumerWidget {
               subtitle: Text(l10n.settingsAccountHint),
               onTap: () => context.push(AppRoutes.account),
             ),
+          if (AppFeatureFlags.backupAvailable)
+            ListTile(
+              key: const ValueKey('settings-backup'),
+              leading: const Icon(Icons.cloud_upload_outlined),
+              title: Text(l10n.backupTitle),
+              subtitle: Text(l10n.settingsBackupHint),
+              onTap: () => context.push(AppRoutes.backup),
+            ),
           if (AppFeatureFlags.experimentsAvailable)
             ListTile(
               key: const ValueKey('settings-experiments'),

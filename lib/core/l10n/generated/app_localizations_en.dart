@@ -2456,4 +2456,119 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get accountErrorUnknown => 'Something went wrong. Try again.';
+
+  @override
+  String get backupTitle => 'Encrypted backup';
+
+  @override
+  String get settingsBackupHint => 'Locked with a passphrase only you know';
+
+  @override
+  String get backupIntro =>
+      'Your backup is locked on this phone with your passphrase before it is uploaded. We store only the locked file and cannot open it.';
+
+  @override
+  String get backupForgetWarning =>
+      'If you forget the passphrase, nobody can open the backup, not even us. Write it down somewhere safe.';
+
+  @override
+  String get backupNeedsAccount =>
+      'Backup needs an account. Everything else works without one.';
+
+  @override
+  String get backupOpenAccount => 'Set up an account';
+
+  @override
+  String get backupNone => 'No backup yet';
+
+  @override
+  String backupLast(String date) {
+    return 'Last backup: $date';
+  }
+
+  @override
+  String get backupStatusUnknown => 'Couldn\'t check for a backup right now.';
+
+  @override
+  String get backupPassphrase => 'Passphrase';
+
+  @override
+  String backupPassphraseHint(int min) {
+    return 'At least $min characters. A few unrelated words work well.';
+  }
+
+  @override
+  String get backupPassphraseRepeat => 'Repeat the passphrase to back up';
+
+  @override
+  String get backupNow => 'Back up now';
+
+  @override
+  String get backupDone => 'Backed up.';
+
+  @override
+  String get backupRestore => 'Restore from backup';
+
+  @override
+  String get backupRestoreTitle => 'Replace everything on this phone?';
+
+  @override
+  String backupRestoreBody(String date) {
+    return 'Everything on this phone is replaced with the backup from $date.';
+  }
+
+  @override
+  String get backupRestoreConfirm => 'Restore';
+
+  @override
+  String get backupRestored => 'Restored from your backup.';
+
+  @override
+  String get backupDelete => 'Delete backup';
+
+  @override
+  String get backupDeleteTitle => 'Delete the backup?';
+
+  @override
+  String get backupDeleteBody =>
+      'The locked file is removed from our servers. Everything on this phone stays.';
+
+  @override
+  String get backupDeleted => 'Backup deleted.';
+
+  @override
+  String get backupWorking => 'Working on it. This can take a few seconds.';
+
+  @override
+  String get backupErrorMismatch => 'The two passphrases don\'t match.';
+
+  @override
+  String backupErrorShort(int min) {
+    return 'Use at least $min characters.';
+  }
+
+  @override
+  String get backupErrorNoBackup => 'There\'s no backup on this account yet.';
+
+  @override
+  String get backupErrorTooLarge => 'The backup is too large to upload.';
+
+  @override
+  String get backupErrorNewerApp =>
+      'This backup was made by a newer version of the app. Update the app, then try again.';
+
+  @override
+  String get backupErrorWrongPassphrase =>
+      'That passphrase doesn\'t open this backup.';
+
+  @override
+  String get backupErrorDamaged => 'The backup file is damaged.';
+
+  @override
+  String get backupErrorPinning =>
+      'The connection to the backup server couldn\'t be verified, so nothing was sent. Try another network.';
+
+  @override
+  String get backupErrorNotAllowed =>
+      'Your sign-in has expired. Sign in again, then retry.';
 }

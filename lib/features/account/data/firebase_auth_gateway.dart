@@ -34,6 +34,9 @@ class FirebaseAuthGateway implements AuthGateway {
         : AccountUser(uid: u.uid, email: u.email, method: methodOf(u)),
   );
 
+  @override
+  Future<String?> idToken() async => await _auth.currentUser?.getIdToken();
+
   static SignInMethod? methodOf(User user) {
     for (final info in user.providerData) {
       switch (info.providerId) {
