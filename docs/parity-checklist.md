@@ -14,3 +14,4 @@ feature PR adds its row.
 | 07 | Log a dose standalone and inside an attack; relief question; overuse note link opens browser | [ ] | [ ] | |
 | 08 | Cycle toggle, period start chip on check-in, cycle screen | [ ] | [ ] | |
 | 09 | Share sheet opens for JSON and CSV export; delete everything empties the app | [ ] | [ ] | |
+| 10 | Weather cache function (server only; checked on-device in 11) | n/a | n/a | |
