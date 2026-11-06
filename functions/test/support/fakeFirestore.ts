@@ -1,14 +1,38 @@
 import type { Firestore } from "firebase-admin/firestore";
 
-/** Enough of Firestore for the cache: one collection of documents. */
+export interface FakeSnapshotDoc {
+  id: string;
+  ref: FakeDoc;
+  data: () => Record<string, unknown>;
+}
+
+export interface FakeCollection {
+  doc: (id: string) => FakeDoc;
+  get: () => Promise<{ docs: FakeSnapshotDoc[] }>;
+}
+
+/** Enough of Firestore for the functions: flat collections of documents. */
 export class FakeFirestore {
   readonly docs = new Map<string, Record<string, unknown>>();
   reads = 0;
   writes = 0;
+  deletes = 0;
 
-  collection(name: string): { doc: (id: string) => FakeDoc } {
+  collection(name: string): FakeCollection {
     return {
-      doc: (id: string) => new FakeDoc(this, `${name}/${id}`),
+      doc: (id: string): FakeDoc => new FakeDoc(this, `${name}/${id}`),
+      get: (): Promise<{ docs: FakeSnapshotDoc[] }> => {
+        this.reads++;
+        const prefix = `${name}/`;
+        const docs = [...this.docs.entries()]
+          .filter(([path]) => path.startsWith(prefix))
+          .map(([path, data]) => ({
+            id: path.slice(prefix.length),
+            ref: new FakeDoc(this, path),
+            data: (): Record<string, unknown> => data,
+          }));
+        return Promise.resolve({ docs });
+      },
     };
   }
 
@@ -17,7 +41,7 @@ export class FakeFirestore {
   }
 }
 
-class FakeDoc {
+export class FakeDoc {
   constructor(
     private readonly store: FakeFirestore,
     private readonly path: string,
@@ -32,6 +56,12 @@ class FakeDoc {
   set(data: Record<string, unknown>): Promise<void> {
     this.store.writes++;
     this.store.docs.set(this.path, structuredClone(data));
+    return Promise.resolve();
+  }
+
+  delete(): Promise<void> {
+    this.store.deletes++;
+    this.store.docs.delete(this.path);
     return Promise.resolve();
   }
 }

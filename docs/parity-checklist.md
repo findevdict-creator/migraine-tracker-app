@@ -26,3 +26,4 @@ feature PR adds its row.
 | 19 | Meter segments tappable on the card; marks move after learning | [ ] | [ ] | |
 | 20 | Insights lists match the drivers seen over the past weeks | [ ] | [ ] | |
 | 21 | Attack-over notification carries End attack; every type can be turned off | [ ] | [ ] | |
+| 22 | A test wake-up push refreshes the forecast with the app closed | [ ] | [ ] | |

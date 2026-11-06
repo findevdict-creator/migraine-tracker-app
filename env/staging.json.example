@@ -1,5 +1,6 @@
 {
   "_comment": "Copy to env/staging.json (git-ignored) and fill in from the Firebase console for the staging project. Never commit the filled file.",
+  "APP_FLAVOR": "staging",
   "FIREBASE_PROJECT_ID": "migraine-tracker-staging",
   "FIREBASE_API_KEY": "<Firebase console > Project settings > Web API key>",
   "FIREBASE_APP_ID_ANDROID": "<1:...:android:...>",

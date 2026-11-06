@@ -48,4 +48,8 @@ abstract final class SettingsKeys {
   static const String notificationMedicationTime =
       'notifications.medicationTime';
   static const String notificationSentKeys = 'notifications.sentKeys';
+
+  /// The FCM token last registered with the server, and when.
+  static const String pushToken = 'push.token';
+  static const String pushTokenRegisteredAt = 'push.registeredAt';
 }

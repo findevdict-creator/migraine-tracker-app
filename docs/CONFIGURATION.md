@@ -13,9 +13,9 @@ production build, and the few native files that mirror a value.
 | `AppEndpoints` | Open-Meteo URLs, Cloud Function names | a function is renamed or a provider changes |
 | `AppFeatureFlags` | dev tools, emulator use, crash-reporting availability, per-feature availability | hiding a feature, enabling dev screens |
 | `AppIdentity.clinicianGuidanceUrl` | page behind the medication-overuse notes | M publishes or changes it |
-| `AppThresholds` | overuse notes (10, 15 days), learning threshold (10 attacks), refresh cadences, forecast window, location rounding, weather retention and stale age, barometer sampling, calibration and gauge range, factor bands (AQI, UV, pollen), health import window and sleep bands, back-fill days, risk learning (attack window, shrinkage, threshold percentiles, history and forecast days, confidence bands, insight lift cut-offs), notification times (risk-rising evening and morning hours, default attack length, medication reminder), dedupe retention and lead time | product decisions |
+| `AppThresholds` | overuse notes (10, 15 days), learning threshold (10 attacks), refresh cadences, forecast window, location rounding, weather retention and stale age, barometer sampling, calibration and gauge range, factor bands (AQI, UV, pollen), health import window and sleep bands, back-fill days, risk learning (attack window, shrinkage, threshold percentiles, history and forecast days, confidence bands, insight lift cut-offs), notification times (risk-rising evening and morning hours, default attack length, medication reminder), dedupe retention and lead time, push token refresh window | product decisions |
 | `AppDataSources` | every outside data source shown on "About the data": name, coverage, licence, link | a source is added or replaced |
-| `AppBackgroundTasks` | identifiers of background jobs (weather refresh) | mirrored in `ios/Runner/Info.plist` and `AppDelegate.swift`; change all three together |
+| `AppBackgroundTasks` | identifiers of background jobs (weather refresh), the push wake-up message type | mirrored in `ios/Runner/Info.plist` and `AppDelegate.swift`; the message type must match `config.push.wakeupType` in the functions |
 | `AppNotificationChannels` | notification channel ids (alerts, reminders, attack), the iOS category and end-attack action ids, the Android small icon | renaming a channel (Android keeps the old one until reinstall), swapping the icon |
 | `AppThemeTokens` | seed colour, risk colours, load meter factor palette, attack theme palette, semantic colours, font family, spacing, radii, tap targets, text scale ceiling, animation durations | design changes |
 | `AppAssets` | logo, logo mark, launcher icon, head map, routine illustrations | replacing artwork (keep the paths, swap the files) |
@@ -49,6 +49,7 @@ Keys and where to find the values:
 | `FIREBASE_API_KEY` | Firebase console, project settings, Web API key |
 | `FIREBASE_APP_ID_ANDROID`, `FIREBASE_APP_ID_IOS` | Firebase console, Your apps |
 | `FIREBASE_MESSAGING_SENDER_ID` | Firebase console, Cloud Messaging (project number) |
+| `APP_FLAVOR` | `dev`, `staging` or `prod`; read by isolates that have no entry point (the push wake-up handler) |
 | `FIREBASE_STORAGE_BUCKET` | Firebase console, Storage |
 | `FIREBASE_IOS_BUNDLE_ID` | must equal the iOS bundle id of the flavor |
 | `FUNCTIONS_REGION` | region chosen when deploying `functions/` |
@@ -71,7 +72,11 @@ commercial key (used only by the cache function), RevenueCat keys.
 4. Set the real support email, privacy and terms URLs in `AppIdentity`.
 5. Xcode: enable the HealthKit capability on the Runner target (phase 14)
    and confirm Background Modes shows fetch and processing (phase 11).
-6. Repository settings on GitHub: protect `main` (require PR, require the
+6. Push wake-ups (phase 22): enable the Cloud Messaging API on staging
+   and prod, upload an APNs key for each iOS app, add the Push
+   Notifications capability in Xcode, and enable the Firestore TTL policy
+   on `push_tokens.expiresAt`.
+7. Repository settings on GitHub: protect `main` (require PR, require the
    `pr` workflow jobs, require conversation resolution, block force pushes
    and deletions, merge commits only, delete head branches on merge).
 
@@ -79,8 +84,8 @@ commercial key (used only by the cache function), RevenueCat keys.
 
 `functions/src/config.ts` is the single configuration file for the Cloud
 Functions: region, cache freshness and TTL, cell size, Open-Meteo URLs and
-secret names, share-link lifetimes, purge deadline, collection and storage
-names. Values shared with the app (region, function names, cell size) must
+secret names, the push wake-up schedule, token TTL and batch size,
+share-link lifetimes, purge deadline, collection and storage names. Values shared with the app (region, function names, cell size) must
 match `lib/config/app_config.dart`.
 
 Secrets for functions live in Secret Manager (`firebase functions:secrets:set

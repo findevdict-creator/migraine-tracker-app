@@ -7,6 +7,9 @@ release time.
 ## [Unreleased]
 
 ### Added
+- Push wake-up: a scheduled silent push refreshes the forecast and
+  re-plans the local alerts between opens; tokens registered without an
+  account (22).
 - Notifications: risk rising, pressure drop, "is your attack over?" with
   an end-attack action, check-in and medication reminders, each with its
   own switch, planned on the phone and deduplicated by event key (21).

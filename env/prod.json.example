@@ -1,5 +1,6 @@
 {
   "_comment": "Copy to env/prod.json (git-ignored) and fill in from the Firebase console for the prod project. Never commit the filled file.",
+  "APP_FLAVOR": "prod",
   "FIREBASE_PROJECT_ID": "migraine-tracker-prod",
   "FIREBASE_API_KEY": "<Firebase console > Project settings > Web API key>",
   "FIREBASE_APP_ID_ANDROID": "<1:...:android:...>",
