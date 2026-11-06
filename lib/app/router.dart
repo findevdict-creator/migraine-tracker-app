@@ -5,6 +5,7 @@ import 'package:migraine_tracker/features/attack_log/presentation/attack_screen.
 import 'package:migraine_tracker/features/checkin/presentation/checkin_screen.dart';
 import 'package:migraine_tracker/features/dev_tools/presentation/theme_gallery_screen.dart';
 import 'package:migraine_tracker/features/home/presentation/home_screen.dart';
+import 'package:migraine_tracker/features/medication/presentation/medication_log_screen.dart';
 
 /// Route paths. Features register their routes here so deep links, widgets
 /// and notifications share one table.
@@ -14,6 +15,7 @@ abstract final class AppRoutes {
   static const String attackPattern = '/attack/:id';
   static String attack(String id) => '/attack/$id';
   static const String checkinPattern = '/checkin/:date';
+  static const String medications = '/medications';
   static String checkin(String date) => '/checkin/$date';
 }
 
@@ -40,6 +42,11 @@ final routerProvider = Provider<GoRouter>((ref) {
         name: 'checkin',
         builder: (context, state) =>
             CheckinScreen(date: state.pathParameters['date']!),
+      ),
+      GoRoute(
+        path: AppRoutes.medications,
+        name: 'medications',
+        builder: (context, state) => const MedicationLogScreen(),
       ),
       if (config.showDevTools)
         GoRoute(

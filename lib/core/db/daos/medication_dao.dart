@@ -20,6 +20,23 @@ class MedicationDao extends DatabaseAccessor<AppDatabase>
             ..orderBy([(m) => OrderingTerm.asc(m.takenAt)]))
           .get();
 
+  Stream<List<MedicationEvent>> watchForAttack(String attackId) =>
+      (select(medicationEvents)
+            ..where((m) => m.attackId.equals(attackId))
+            ..orderBy([(m) => OrderingTerm.asc(m.takenAt)]))
+          .watch();
+
+  Stream<List<MedicationEvent>> watchRange(DateTime from, DateTime to) =>
+      (select(medicationEvents)
+            ..where((m) => m.takenAt.isBiggerOrEqualValue(from))
+            ..where((m) => m.takenAt.isSmallerThanValue(to))
+            ..orderBy([(m) => OrderingTerm.asc(m.takenAt)]))
+          .watch();
+
+  Stream<List<MedicationEvent>> watchAll() => (select(
+    medicationEvents,
+  )..orderBy([(m) => OrderingTerm.desc(m.takenAt)])).watch();
+
   /// Events taken inside `[from, to)`, oldest first.
   Future<List<MedicationEvent>> inRange(DateTime from, DateTime to) =>
       (select(medicationEvents)

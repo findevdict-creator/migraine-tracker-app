@@ -12,6 +12,7 @@ production build, and the few native files that mirror a value.
 | `AppEnv` | Firebase options, functions region and base URL, emulator host, RevenueCat keys (all from `env/*.json`) | never edited directly; fill the env files |
 | `AppEndpoints` | Open-Meteo URLs, Cloud Function names | a function is renamed or a provider changes |
 | `AppFeatureFlags` | dev tools, emulator use, crash-reporting availability, per-feature availability | hiding a feature, enabling dev screens |
+| `AppIdentity.clinicianGuidanceUrl` | page behind the medication-overuse notes | M publishes or changes it |
 | `AppThresholds` | overuse notes (10, 15 days), learning threshold (10 attacks), refresh cadences, forecast window, location rounding, back-fill days | product decisions |
 | `AppThemeTokens` | seed colour, risk colours, attack theme palette, semantic colours, font family, spacing, radii, tap targets, text scale ceiling, animation durations | design changes |
 | `AppAssets` | logo, logo mark, launcher icon, head map, routine illustrations | replacing artwork (keep the paths, swap the files) |

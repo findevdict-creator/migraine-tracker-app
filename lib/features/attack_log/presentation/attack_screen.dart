@@ -9,6 +9,7 @@ import 'package:migraine_tracker/core/widgets/widgets.dart';
 import 'package:migraine_tracker/features/attack_log/domain/attack_entity.dart';
 import 'package:migraine_tracker/features/attack_log/presentation/attack_log_controller.dart';
 import 'package:migraine_tracker/features/attack_log/presentation/head_map.dart';
+import 'package:migraine_tracker/features/medication/presentation/medication_log_screen.dart';
 
 /// The attack screen. Always rendered in the attack theme: true black,
 /// 56 pt targets, no animation, nothing that needs reading closely.
@@ -140,6 +141,8 @@ class _AttackFormState extends ConsumerState<_AttackForm> {
                 ),
             ],
           ),
+          const SizedBox(height: AppThemeTokens.space5),
+          AttackMedicationSection(attackId: attack.id),
           const SizedBox(height: AppThemeTokens.space5),
           SectionHeader(title: l10n.attackNotes),
           TextField(
