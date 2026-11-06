@@ -381,5 +381,15 @@
   "riskFactorCaffeine": "Caffeine",
   "riskFactorAlcohol": "Alcohol",
   "riskFactorDehydration": "Low hydration",
-  "riskFactorCyclePhase": "Cycle phase"
+  "riskFactorCyclePhase": "Cycle phase",
+  "loadMeterTitle": "Load",
+  "loadMeterSemantics": "Load {value} of 100. {segments}",
+  "@loadMeterSemantics": {"placeholders": {"value": {"type": "String"}, "segments": {"type": "String"}}},
+  "loadSegmentDetail": "{name}: {points} points",
+  "@loadSegmentDetail": {"placeholders": {"name": {"type": "String"}, "points": {"type": "String"}}},
+  "loadThresholdModerate": "Moderate from {value}",
+  "@loadThresholdModerate": {"placeholders": {"value": {"type": "String"}}},
+  "loadThresholdHigh": "High from {value}",
+  "@loadThresholdHigh": {"placeholders": {"value": {"type": "String"}}},
+  "loadMeterEmpty": "No load yet"
 }

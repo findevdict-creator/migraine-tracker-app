@@ -8,9 +8,11 @@ import 'package:migraine_tracker/core/l10n/l10n.dart';
 import 'package:migraine_tracker/core/theme/app_colors.dart';
 import 'package:migraine_tracker/core/widgets/widgets.dart';
 import 'package:migraine_tracker/features/risk/domain/risk_entities.dart';
+import 'package:migraine_tracker/features/risk/presentation/load_meter.dart';
 import 'package:migraine_tracker/features/risk/presentation/risk_card.dart';
 import 'package:migraine_tracker/features/risk/presentation/risk_controller.dart';
 import 'package:migraine_tracker/features/risk/presentation/risk_text.dart';
+import 'package:risk_model/risk_model.dart';
 
 /// Today and the next days in full: level, load, every driver with its
 /// points, confidence, the learning badge, the explainer link and the
@@ -24,6 +26,9 @@ class RiskScreen extends ConsumerWidget {
     final today = ref.watch(riskTodayProvider);
     final days = ref.watch(upcomingRiskProvider).value ?? const [];
     final status = ref.watch(learningStatusProvider).value;
+    final thresholds =
+        ref.watch(riskThresholdsProvider).value ??
+        const LevelThresholds.population();
     final locale = Localizations.localeOf(context).toString();
     return Scaffold(
       appBar: AppBar(title: Text(l10n.riskScreenTitle)),
@@ -51,6 +56,7 @@ class RiskScreen extends ConsumerWidget {
               key: ValueKey('risk-section-$i'),
               risk: d,
               label: dayLabel(l10n, d.date, today, locale: locale),
+              thresholds: thresholds,
             ),
             const SizedBox(height: AppThemeTokens.space3),
           ],
@@ -77,10 +83,16 @@ class RiskScreen extends ConsumerWidget {
 }
 
 class _DaySection extends StatelessWidget {
-  const _DaySection({required this.risk, required this.label, super.key});
+  const _DaySection({
+    required this.risk,
+    required this.label,
+    required this.thresholds,
+    super.key,
+  });
 
   final RiskDayEntity risk;
   final String label;
+  final LevelThresholds thresholds;
 
   @override
   Widget build(BuildContext context) {
@@ -103,6 +115,13 @@ class _DaySection extends StatelessWidget {
           Text(
             l10n.riskLoad(risk.score.toStringAsFixed(0)),
             style: context.textStyles.bodyMedium,
+          ),
+          const SizedBox(height: AppThemeTokens.space2),
+          LoadMeter(
+            load: risk.score,
+            contributions: risk.contributions,
+            thresholds: thresholds,
+            onSegmentTap: (s) => showSegmentDetail(context, s),
           ),
           const SizedBox(height: AppThemeTokens.space2),
           Text(l10n.riskWhyTitle, style: context.textStyles.titleSmall),

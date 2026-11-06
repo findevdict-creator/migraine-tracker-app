@@ -452,6 +452,26 @@ class AppThemeTokens {
   static const Color riskModerateDark = Color(0xFFFFB74D);
   static const Color riskHighDark = Color(0xFFEF9A9A);
 
+  /// Segment colours of the load meter, one per factor in `Factor` order
+  /// (fourteen). Chosen to stay distinguishable from their neighbours on
+  /// both light and dark surfaces; names are always shown beside them.
+  static const List<Color> factorPalette = [
+    Color(0xFF5B5BD6), // pressure drop
+    Color(0xFF26A69A), // humidity
+    Color(0xFFEF6C00), // temperature swing
+    Color(0xFF8D6E63), // air quality
+    Color(0xFF9CCC65), // pollen
+    Color(0xFFFFCA28), // bright light
+    Color(0xFF42A5F5), // screen time
+    Color(0xFF7E57C2), // poor sleep
+    Color(0xFFEC407A), // stress
+    Color(0xFFAB47BC), // neck tension
+    Color(0xFF6D4C41), // caffeine
+    Color(0xFFD4E157), // alcohol
+    Color(0xFF29B6F6), // dehydration
+    Color(0xFFF06292), // cycle phase
+  ];
+
   /// Attack theme: high-contrast dark palette for photophobia.
   static const Color attackBackground = Color(0xFF000000);
   static const Color attackSurface = Color(0xFF0E0E0E);

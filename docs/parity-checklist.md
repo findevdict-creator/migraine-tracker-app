@@ -23,3 +23,4 @@ feature PR adds its row.
 | 16 | Risk model package (pure Dart, no device behaviour) | n/a | n/a | |
 | 17 | Weights re-learned after an attack ends; risk rows stored on open | [ ] | [ ] | |
 | 18 | Risk card shows the level in airplane mode; badge flips at ten attacks | [ ] | [ ] | |
+| 19 | Meter segments tappable on the card; marks move after learning | [ ] | [ ] | |
