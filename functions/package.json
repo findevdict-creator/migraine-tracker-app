@@ -16,8 +16,8 @@
     "test": "jest --coverage",
     "test:rules": "npx -y firebase-tools@15 emulators:exec --only firestore,storage --project migraine-tracker-rules-test \"npx jest --config jest.rules.config.js\"",
     "serve": "npm run build && firebase emulators:start --only functions,firestore,storage",
-    "deploy:staging": "firebase deploy --only functions,firestore:rules,storage --project staging",
-    "deploy:prod": "firebase deploy --only functions,firestore:rules,storage --project prod"
+    "deploy:staging": "firebase deploy --only functions,firestore:rules,storage,hosting --project staging",
+    "deploy:prod": "firebase deploy --only functions,firestore:rules,storage,hosting --project prod"
   },
   "dependencies": {
     "firebase-admin": "^13.0.0",

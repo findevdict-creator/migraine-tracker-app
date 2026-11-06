@@ -80,6 +80,14 @@ class SettingsScreen extends ConsumerWidget {
               subtitle: Text(l10n.settingsBackupHint),
               onTap: () => context.push(AppRoutes.backup),
             ),
+          if (AppFeatureFlags.shareLinkAvailable)
+            ListTile(
+              key: const ValueKey('settings-share-links'),
+              leading: const Icon(Icons.link),
+              title: Text(l10n.shareLinksTitle),
+              subtitle: Text(l10n.settingsShareLinksHint),
+              onTap: () => context.push(AppRoutes.shareLinks),
+            ),
           if (AppFeatureFlags.experimentsAvailable)
             ListTile(
               key: const ValueKey('settings-experiments'),

@@ -11,6 +11,7 @@ import 'package:migraine_tracker/core/widgets/widgets.dart';
 import 'package:migraine_tracker/features/export/presentation/share_files.dart';
 import 'package:migraine_tracker/features/report/application/report_service.dart';
 import 'package:migraine_tracker/features/report/domain/report_model.dart';
+import 'package:migraine_tracker/features/share_link/presentation/share_link_sheet.dart';
 
 /// Pick a period, see what it holds, share the PDF or the spreadsheets.
 class ReportScreen extends ConsumerStatefulWidget {
@@ -214,6 +215,23 @@ class _ReportScreenState extends ConsumerState<ReportScreen> {
             expand: true,
             onPressed: _busy ? null : () => _share(ReportFormat.all),
           ),
+          if (AppFeatureFlags.shareLinkAvailable) ...[
+            const SizedBox(height: AppThemeTokens.space2),
+            AppButton(
+              key: const ValueKey('report-share-link'),
+              label: l10n.shareLinkButton,
+              icon: Icons.link,
+              variant: AppButtonVariant.secondary,
+              expand: true,
+              onPressed: _busy
+                  ? null
+                  : () => showShareLinkSheet(
+                      context,
+                      range: _range,
+                      includeQuestionnaires: _includeQuestionnaires,
+                    ),
+            ),
+          ],
           if (_busy)
             Padding(
               padding: const EdgeInsets.only(top: AppThemeTokens.space4),

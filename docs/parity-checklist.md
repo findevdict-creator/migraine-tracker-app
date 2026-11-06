@@ -38,3 +38,4 @@ feature PR adds its row.
 | 31 | Running attack shows "Typically X to Y h" with the sample size after five finished attacks; nothing before; updates with intensity and medication | [ ] | [ ] | |
 | 32 | Account screen: sign in with Apple (iOS), Google and email; signed-out app fully usable; delete account explains the 24-hour purge and keeps phone data | [ ] | [ ] | Needs sign-in methods turned on in Firebase |
 | 33 | Back up with a passphrase, restore on a reinstall and on a second phone; wrong passphrase changes nothing; mitmproxy with a user CA is refused | [ ] | [ ] | Pentest checklist in docs/security |
+| 34 | Create a 7 and a 30 day link from Doctor report; the page matches the PDF; Stop sharing makes the page say it is no longer shared; an expired link says so | [ ] | [ ] | Needs Hosting deployed |

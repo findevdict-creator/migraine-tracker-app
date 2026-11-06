@@ -35,10 +35,19 @@ export const config = {
     wakeupType: "wakeup",
   },
 
-  /** Share links. */
+  /** Clinician share links (phase 34). */
   shareLink: {
+    /** 16 random bytes = a 128-bit token, 22 characters in base64url. */
     tokenBytes: 16,
+    /** Lifetimes the app may ask for; mirrors AppThresholds.shareLinkDays. */
     allowedDays: [7, 30],
+    /** Largest report snapshot accepted, as JSON. */
+    maxDocumentBytes: 256 * 1024,
+    /** Report document format the share page can draw. */
+    documentVersion: 1,
+    /** Expired snapshots are also removed by Firestore TTL on `expiresAt`. */
+    sweepSchedule: "every 24 hours",
+    sweepBatch: 400,
   },
 
   /** Account purge deadline after deletion, documented in the privacy policy. */

@@ -13,6 +13,7 @@
   "FIREBASE_EMULATOR_HOST": "",
   "GOOGLE_SERVER_CLIENT_ID": "",
   "GOOGLE_IOS_CLIENT_ID": "",
+  "SHARE_BASE_URL": "",
   "REVENUECAT_API_KEY_ANDROID": "<RevenueCat > Project > API keys > Google>",
   "REVENUECAT_API_KEY_IOS": "<RevenueCat > Project > API keys > Apple>"
 }
