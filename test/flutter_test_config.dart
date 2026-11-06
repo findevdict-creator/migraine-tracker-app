@@ -11,6 +11,8 @@ Future<void> testExecutable(FutureOr<void> Function() testMain) {
       platformGoldensConfig: PlatformGoldensConfig(enabled: false),
       ciGoldensConfig: CiGoldensConfig(),
     ),
-    run: () async => testMain(),
+    run: () async {
+      await testMain();
+    },
   );
 }
