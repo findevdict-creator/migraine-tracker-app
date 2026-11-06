@@ -78,6 +78,7 @@ class _CheckinBodyState extends ConsumerState<_CheckinBody> {
           _ScaleRow(
             field: field,
             value: checkin[field],
+            source: checkin.sources[field],
             onTap: (v) => editor.toggleValue(field, v),
           ),
         CheckinCycleRow(date: checkin.date),
@@ -96,6 +97,7 @@ class _CheckinBodyState extends ConsumerState<_CheckinBody> {
             _ScaleRow(
               field: field,
               value: checkin[field],
+              source: checkin.sources[field],
               onTap: (v) => editor.toggleValue(field, v),
             ),
         ],
@@ -117,10 +119,12 @@ class _ScaleRow extends StatelessWidget {
     required this.field,
     required this.value,
     required this.onTap,
+    this.source,
   });
 
   final CheckinField field;
   final int? value;
+  final CheckinSource? source;
   final ValueChanged<int> onTap;
 
   @override
@@ -131,12 +135,33 @@ class _ScaleRow extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Semantics(
-            header: true,
-            child: Text(
-              checkinFieldLabel(l10n, field),
-              style: context.textStyles.titleMedium,
-            ),
+          Row(
+            children: [
+              Expanded(
+                child: Semantics(
+                  header: true,
+                  child: Text(
+                    checkinFieldLabel(l10n, field),
+                    style: context.textStyles.titleMedium,
+                  ),
+                ),
+              ),
+              if (source != null && source != CheckinSource.typed)
+                Tooltip(
+                  key: ValueKey('checkin-source-${field.name}'),
+                  message: source == CheckinSource.healthkit
+                      ? l10n.checkinSourceHealthkit
+                      : l10n.checkinSourceHealthConnect,
+                  child: Icon(
+                    Icons.favorite,
+                    size: 18,
+                    semanticLabel: source == CheckinSource.healthkit
+                        ? l10n.checkinSourceHealthkit
+                        : l10n.checkinSourceHealthConnect,
+                    color: context.theme.colorScheme.primary,
+                  ),
+                ),
+            ],
           ),
           const SizedBox(height: AppThemeTokens.space2),
           Row(

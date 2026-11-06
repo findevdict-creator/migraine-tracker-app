@@ -7,6 +7,7 @@ import 'package:migraine_tracker/features/barometer/presentation/barometer_scree
 import 'package:migraine_tracker/features/checkin/presentation/checkin_screen.dart';
 import 'package:migraine_tracker/features/cycle/presentation/cycle_screen.dart';
 import 'package:migraine_tracker/features/dev_tools/presentation/theme_gallery_screen.dart';
+import 'package:migraine_tracker/features/health/presentation/health_settings_screen.dart';
 import 'package:migraine_tracker/features/home/presentation/home_screen.dart';
 import 'package:migraine_tracker/features/medication/presentation/medication_log_screen.dart';
 import 'package:migraine_tracker/features/settings/presentation/settings_screen.dart';
@@ -27,6 +28,7 @@ abstract final class AppRoutes {
   static const String environment = '/environment';
   static const String barometer = '/barometer';
   static const String aboutData = '/about-data';
+  static const String health = '/health';
   static String checkin(String date) => '/checkin/$date';
 }
 
@@ -79,6 +81,12 @@ final routerProvider = Provider<GoRouter>((ref) {
         name: 'aboutData',
         builder: (context, state) => const AboutDataScreen(),
       ),
+      if (AppFeatureFlags.healthSyncAvailable)
+        GoRoute(
+          path: AppRoutes.health,
+          name: 'health',
+          builder: (context, state) => const HealthSettingsScreen(),
+        ),
       if (AppFeatureFlags.cycleTrackingAvailable)
         GoRoute(
           path: AppRoutes.cycle,

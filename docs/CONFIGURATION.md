@@ -13,7 +13,7 @@ production build, and the few native files that mirror a value.
 | `AppEndpoints` | Open-Meteo URLs, Cloud Function names | a function is renamed or a provider changes |
 | `AppFeatureFlags` | dev tools, emulator use, crash-reporting availability, per-feature availability | hiding a feature, enabling dev screens |
 | `AppIdentity.clinicianGuidanceUrl` | page behind the medication-overuse notes | M publishes or changes it |
-| `AppThresholds` | overuse notes (10, 15 days), learning threshold (10 attacks), refresh cadences, forecast window, location rounding, weather retention and stale age, barometer sampling, calibration and gauge range, factor bands (AQI, UV, pollen), back-fill days | product decisions |
+| `AppThresholds` | overuse notes (10, 15 days), learning threshold (10 attacks), refresh cadences, forecast window, location rounding, weather retention and stale age, barometer sampling, calibration and gauge range, factor bands (AQI, UV, pollen), health import window and sleep bands, back-fill days | product decisions |
 | `AppDataSources` | every outside data source shown on "About the data": name, coverage, licence, link | a source is added or replaced |
 | `AppBackgroundTasks` | identifiers of background jobs (weather refresh) | mirrored in `ios/Runner/Info.plist` and `AppDelegate.swift`; change all three together |
 | `AppThemeTokens` | seed colour, risk colours, attack theme palette, semantic colours, font family, spacing, radii, tap targets, text scale ceiling, animation durations | design changes |
@@ -58,7 +58,9 @@ commercial key (used only by the cache function), RevenueCat keys.
 3. Replace the placeholder artwork under `assets/brand/` (keep the file
    names).
 4. Set the real support email, privacy and terms URLs in `AppIdentity`.
-5. Repository settings on GitHub: protect `main` (require PR, require the
+5. Xcode: enable the HealthKit capability on the Runner target (phase 14)
+   and confirm Background Modes shows fetch and processing (phase 11).
+6. Repository settings on GitHub: protect `main` (require PR, require the
    `pr` workflow jobs, require conversation resolution, block force pushes
    and deletions, merge commits only, delete head branches on merge).
 
@@ -82,5 +84,6 @@ These cannot be read from Dart at build time, so they mirror `AppIdentity`:
 | Application id and flavor suffixes | `AppIdentity.bundleId`, `bundleIdFor` | `android/app/build.gradle.kts` (`applicationId`, `productFlavors`), iOS target bundle id per scheme |
 | Display name per flavor | `AppIdentity.displayName` | `android/app/build.gradle.kts` (`resValue app_name`), `ios/Runner/Info.plist` (`CFBundleDisplayName`) |
 | Background task identifier | `AppBackgroundTasks.weatherRefresh` | `ios/Runner/Info.plist` (`BGTaskSchedulerPermittedIdentifiers`), `ios/Runner/AppDelegate.swift` (`registerPeriodicTask`) |
+| Health purpose texts | reasons shown on the Health data screen (ARB) | `ios/Runner/Info.plist` (`NSHealthShareUsageDescription`, `NSHealthUpdateUsageDescription`), `AndroidManifest.xml` health permissions, `docs/store/play-health-declaration.md` |
 | Location purpose text | wording in `AppIdentity` privacy copy | `ios/Runner/Info.plist` (`NSLocationWhenInUseUsageDescription`), `AndroidManifest.xml` (`ACCESS_COARSE_LOCATION`) |
 | Launcher icon | `AppAssets.launcherIcon` | `android/app/src/main/res/mipmap-*`, `ios/Runner/Assets.xcassets/AppIcon.appiconset` (generated with `flutter_launcher_icons` in the release-prep phase) |

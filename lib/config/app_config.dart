@@ -273,6 +273,7 @@ class AppFeatureFlags {
 
   /// Features that ship behind a flag until their phase is complete.
   static const bool cycleTrackingAvailable = true;
+  static const bool healthSyncAvailable = true;
   static const bool voiceLogAvailable = true;
   static const bool premiumAvailable = true;
   static const bool shareLinkAvailable = true;
@@ -343,6 +344,12 @@ class AppThresholds {
   /// Gauge range in hPa.
   static const double barometerGaugeMinHpa = 950;
   static const double barometerGaugeMaxHpa = 1050;
+
+  /// Health sync (phase 14): history imported on first consent, and the
+  /// sleep-minute bounds (inclusive upper) that map imported sleep onto the
+  /// 1 to 5 check-in scale: under 5 h is 1, under 6 h is 2, and so on.
+  static const int healthImportDays = 30;
+  static const List<int> sleepQualityMinuteBands = [300, 360, 420, 480];
 
   /// Environment factor bands (phase 13): upper bounds, inclusive, of the
   /// low, moderate and high bands. Above the last bound is "very high".

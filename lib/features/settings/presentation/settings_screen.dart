@@ -48,6 +48,14 @@ class SettingsScreen extends ConsumerWidget {
           ),
           if (AppFeatureFlags.cycleTrackingAvailable)
             const CycleTrackingToggle(),
+          if (AppFeatureFlags.healthSyncAvailable)
+            ListTile(
+              key: const ValueKey('settings-health'),
+              leading: const Icon(Icons.favorite_outline),
+              title: Text(l10n.healthTitle),
+              subtitle: Text(l10n.settingsHealthHint),
+              onTap: () => context.push(AppRoutes.health),
+            ),
           SectionHeader(title: l10n.settingsSectionData),
           ListTile(
             key: const ValueKey('settings-export-json'),

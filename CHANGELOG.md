@@ -7,6 +7,11 @@ release time.
 ## [Unreleased]
 
 ### Added
+- Health sync: per-type consent for sleep, resting heart rate, HRV, steps
+  and menstrual flow with plain-language reasons, Health Connect history
+  permission, sleep pre-fill on the check-in with a source icon, period
+  starts from flow, headache events written back on opt-in, Play health
+  declaration draft (14).
 - Environment factors: daily air quality, particulates, ozone, pollen
   (Europe only), UV, daylight and sun times on the environment screen,
   hidden where the region has no data; "About the data" screen listing

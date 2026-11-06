@@ -23,4 +23,10 @@ abstract final class SettingsKeys {
   /// The last cell weather was fetched for, so the app can show cached
   /// data before location is available.
   static const String weatherLastCell = 'weather.lastCell';
+
+  /// Health sync (phase 14): map of type code to consent, whether headache
+  /// events are written back, and the last import time.
+  static const String healthConsent = 'health.consent';
+  static const String healthWriteHeadaches = 'health.writeHeadaches';
+  static const String healthLastImport = 'health.lastImport';
 }
