@@ -381,4 +381,51 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get medicationTalkToClinician => 'Talk to your clinician';
+
+  @override
+  String get cycleTitle => 'Cycle';
+
+  @override
+  String get cycleToggleTitle => 'Track my cycle';
+
+  @override
+  String get cycleToggleSubtitle =>
+      'Off by default. When on, cycle day is kept with each check-in and used as a factor.';
+
+  @override
+  String get cycleNoData => 'Log a period start to see your cycle day.';
+
+  @override
+  String cycleDayAndPhase(int day, String phase) {
+    return 'Cycle day $day · $phase';
+  }
+
+  @override
+  String cycleLength(int days) {
+    return 'Based on a $days-day cycle';
+  }
+
+  @override
+  String get cyclePeriodStarts => 'Period starts';
+
+  @override
+  String get cycleNoStarts => 'None logged yet.';
+
+  @override
+  String get cycleRemoveStart => 'Remove';
+
+  @override
+  String get cyclePeriodStartedToday => 'Period started this day';
+
+  @override
+  String get cyclePhaseMenstrual => 'Menstrual';
+
+  @override
+  String get cyclePhaseFollicular => 'Follicular';
+
+  @override
+  String get cyclePhaseOvulation => 'Around ovulation';
+
+  @override
+  String get cyclePhaseLuteal => 'Luteal';
 }

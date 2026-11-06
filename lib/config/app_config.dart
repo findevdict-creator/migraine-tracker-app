@@ -258,6 +258,15 @@ class AppThresholds {
   /// Days a check-in can be back-filled.
   static const int checkinBackfillDays = 7;
 
+  /// Cycle length assumed until enough periods are logged, and the range an
+  /// averaged length is clamped to.
+  static const int defaultCycleLengthDays = 28;
+  static const int minCycleLengthDays = 21;
+  static const int maxCycleLengthDays = 35;
+
+  /// Period starts averaged for the cycle length.
+  static const int cycleLengthSampleSize = 6;
+
   /// Default daily check-in reminder time (local), until the user changes it.
   static const TimeOfDay defaultCheckinReminder = TimeOfDay(
     hour: 20,

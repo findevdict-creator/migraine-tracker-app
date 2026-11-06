@@ -21,6 +21,13 @@ class HomeScreen extends ConsumerWidget {
       appBar: AppBar(
         title: Text(config.displayName),
         actions: [
+          if (AppFeatureFlags.cycleTrackingAvailable)
+            IconButton(
+              key: const ValueKey('home-cycle'),
+              icon: const Icon(Icons.loop),
+              tooltip: l10n.cycleTitle,
+              onPressed: () => context.push(AppRoutes.cycle),
+            ),
           IconButton(
             key: const ValueKey('home-medications'),
             icon: const Icon(Icons.medication_outlined),

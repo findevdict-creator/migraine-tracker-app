@@ -143,5 +143,21 @@
   "@medicationOveruseFirstNote": {"placeholders": {"days": {"type": "int"}}},
   "medicationOveruseSecondNote": "You have reached {days} acute-medication days this month. Please consider talking to your clinician about this pattern.",
   "@medicationOveruseSecondNote": {"placeholders": {"days": {"type": "int"}}},
-  "medicationTalkToClinician": "Talk to your clinician"
+  "medicationTalkToClinician": "Talk to your clinician",
+  "cycleTitle": "Cycle",
+  "cycleToggleTitle": "Track my cycle",
+  "cycleToggleSubtitle": "Off by default. When on, cycle day is kept with each check-in and used as a factor.",
+  "cycleNoData": "Log a period start to see your cycle day.",
+  "cycleDayAndPhase": "Cycle day {day} · {phase}",
+  "@cycleDayAndPhase": {"placeholders": {"day": {"type": "int"}, "phase": {"type": "String"}}},
+  "cycleLength": "Based on a {days}-day cycle",
+  "@cycleLength": {"placeholders": {"days": {"type": "int"}}},
+  "cyclePeriodStarts": "Period starts",
+  "cycleNoStarts": "None logged yet.",
+  "cycleRemoveStart": "Remove",
+  "cyclePeriodStartedToday": "Period started this day",
+  "cyclePhaseMenstrual": "Menstrual",
+  "cyclePhaseFollicular": "Follicular",
+  "cyclePhaseOvulation": "Around ovulation",
+  "cyclePhaseLuteal": "Luteal"
 }
