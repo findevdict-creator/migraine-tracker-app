@@ -65,6 +65,12 @@ class RiskScreen extends ConsumerWidget {
             const SizedBox(height: AppThemeTokens.space3),
           ],
           TextButton.icon(
+            key: const ValueKey('risk-insights'),
+            onPressed: () => context.push(AppRoutes.insights),
+            icon: const Icon(Icons.insights_outlined),
+            label: Text(l10n.riskInsightsLink),
+          ),
+          TextButton.icon(
             key: const ValueKey('risk-explainer'),
             onPressed: () => context.push(AppRoutes.explainer),
             icon: const Icon(Icons.info_outline),

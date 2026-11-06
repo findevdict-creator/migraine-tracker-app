@@ -9,6 +9,7 @@ import 'package:migraine_tracker/features/cycle/presentation/cycle_screen.dart';
 import 'package:migraine_tracker/features/dev_tools/presentation/theme_gallery_screen.dart';
 import 'package:migraine_tracker/features/health/presentation/health_settings_screen.dart';
 import 'package:migraine_tracker/features/home/presentation/home_screen.dart';
+import 'package:migraine_tracker/features/insights/presentation/insights_screen.dart';
 import 'package:migraine_tracker/features/medication/presentation/medication_log_screen.dart';
 import 'package:migraine_tracker/features/onboarding/application/onboarding_state.dart';
 import 'package:migraine_tracker/features/onboarding/presentation/level_explainer.dart';
@@ -36,6 +37,8 @@ abstract final class AppRoutes {
   static const String onboarding = '/onboarding';
   static const String explainer = '/explainer';
   static const String risk = '/risk';
+  static const String insights = '/insights';
+  static const String insightsMethod = '/insights/method';
   static String checkin(String date) => '/checkin/$date';
 }
 
@@ -105,6 +108,16 @@ final routerProvider = Provider<GoRouter>((ref) {
         path: AppRoutes.risk,
         name: 'risk',
         builder: (context, state) => const RiskScreen(),
+      ),
+      GoRoute(
+        path: AppRoutes.insights,
+        name: 'insights',
+        builder: (context, state) => const InsightsScreen(),
+      ),
+      GoRoute(
+        path: AppRoutes.insightsMethod,
+        name: 'insightsMethod',
+        builder: (context, state) => const InsightsMethodScreen(),
       ),
       GoRoute(
         path: AppRoutes.barometer,
