@@ -34,6 +34,12 @@ class HomeScreen extends ConsumerWidget {
             tooltip: l10n.medicationTitle,
             onPressed: () => context.push(AppRoutes.medications),
           ),
+          IconButton(
+            key: const ValueKey('home-settings'),
+            icon: const Icon(Icons.settings_outlined),
+            tooltip: l10n.settingsTitle,
+            onPressed: () => context.push(AppRoutes.settings),
+          ),
           if (config.showDevTools)
             IconButton(
               icon: const Icon(Icons.palette_outlined),

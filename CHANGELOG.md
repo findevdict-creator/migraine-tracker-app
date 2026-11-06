@@ -7,6 +7,9 @@ release time.
 ## [Unreleased]
 
 ### Added
+- Export and delete: JSON and CSV export of every table through the share
+  sheet, re-importable JSON, delete everything with confirmation, settings
+  screen skeleton (09).
 - Cycle tracking: opt-in toggle, period start logging, derived cycle day
   and phase stored per check-in day (08).
 - Medication log: acute and preventive doses with suggestions, dose, time

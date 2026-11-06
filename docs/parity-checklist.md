@@ -13,3 +13,4 @@ feature PR adds its row.
 | 06 | Three-tap check-in, back-fill strip, reminder time picker | [ ] | [ ] | |
 | 07 | Log a dose standalone and inside an attack; relief question; overuse note link opens browser | [ ] | [ ] | |
 | 08 | Cycle toggle, period start chip on check-in, cycle screen | [ ] | [ ] | |
+| 09 | Share sheet opens for JSON and CSV export; delete everything empties the app | [ ] | [ ] | |
