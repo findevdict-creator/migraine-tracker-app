@@ -2,6 +2,11 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<!-- Sign in with Apple (phase 32, AppAccounts.appleEnabled). -->
+	<key>com.apple.developer.applesignin</key>
+	<array>
+		<string>Default</string>
+	</array>
 	<!-- Mirrors AppHomeWidgets.iosAppGroup; shared by the app and the widget. -->
 	<key>com.apple.security.application-groups</key>
 	<array>

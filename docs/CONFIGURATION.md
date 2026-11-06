@@ -9,8 +9,9 @@ production build, and the few native files that mirror a value.
 | Section | Controls | Change when |
 | ------- | -------- | ----------- |
 | `AppIdentity` | product name, per-flavor display names, bundle id (and the iOS bundle id, which has no underscores), deep-link scheme, support email, privacy and terms URLs, wellness disclaimer | rebranding, new domain |
-| `AppEnv` | Firebase options, functions region and base URL, emulator host, RevenueCat keys (all from `env/*.json`) | never edited directly; fill the env files |
+| `AppEnv` | Firebase options, functions region and base URL, emulator host, Google sign-in client ids, RevenueCat keys (all from `env/*.json`) | never edited directly; fill the env files |
 | `AppEndpoints` | Open-Meteo URLs, Cloud Function names | a function is renamed or a provider changes |
+| `AppAccounts` | sign-in methods offered (Apple, Google, email), minimum password length, the purge deadline shown to the user (must match `purgeWithinMs` in `functions/src/config.ts`) | changing sign-in options or the deletion promise |
 | `AppFeatureFlags` | dev tools, emulator use, crash-reporting availability, per-feature availability | hiding a feature, enabling dev screens |
 | `AppIdentity.clinicianGuidanceUrl` | page behind the medication-overuse notes | M publishes or changes it |
 | `AppThresholds` | overuse notes (10, 15 days), learning threshold (10 attacks), refresh cadences, forecast window, location rounding, weather retention and stale age, barometer sampling, calibration and gauge range, factor bands (AQI, UV, pollen), health import window and sleep bands, back-fill days, risk learning (attack window, shrinkage, threshold percentiles, history and forecast days, confidence bands, insight lift cut-offs), notification times (risk-rising evening and morning hours, default attack length, medication reminder), dedupe retention and lead time, push token refresh window, default report period, questionnaire reminder interval and hour, chart length, voice listen length, pause and on-device-only switch, widget refresh period and steady-pressure band, routine suggestion trigger and count, paced breathing timing, experiment length and small-sample threshold, attack duration estimate (minimum attacks, intensity band, rounding step) | product decisions |
@@ -57,6 +58,7 @@ Keys and where to find the values:
 | `FUNCTIONS_REGION` | region chosen when deploying `functions/` |
 | `FUNCTIONS_BASE_URL` | leave empty to derive from project id and region |
 | `FIREBASE_EMULATOR_HOST` | `10.0.2.2` for the Android emulator, `localhost` for iOS simulator |
+| `GOOGLE_SERVER_CLIENT_ID`, `GOOGLE_IOS_CLIENT_ID` | Google sign-in OAuth client ids (phase 32): the web client id for Android, the iOS client id for iOS |
 | `REVENUECAT_API_KEY_ANDROID`, `REVENUECAT_API_KEY_IOS` | RevenueCat project API keys (phase 35) |
 
 CI secrets (set in the GitHub Environments `staging` and `production`, never
@@ -103,7 +105,20 @@ commercial key (used only by the cache function), RevenueCat keys.
     wording in `docs/content/routines-review.md` before the first public
     release, and replace the placeholder illustrations in
     `assets/routines/` (keep the file names).
-12. Repository settings on GitHub: protect `main` (require PR, require the
+12. Accounts (phase 32), in the Firebase console for each project:
+    - Authentication > Sign-in method: turn on Apple, Google and
+      Email/Password.
+    - Google: copy the web client id into `GOOGLE_SERVER_CLIENT_ID` and
+      the iOS client id into `GOOGLE_IOS_CLIENT_ID`. Add the Android
+      signing SHA-1 and SHA-256 fingerprints to the Android app. On iOS,
+      add the reversed iOS client id as a URL type in
+      `ios/Runner/Info.plist`.
+    - Apple: turn on "Sign in with Apple" for the App ID in the Apple
+      developer portal. The entitlement is already in
+      `ios/Runner/Runner.entitlements`.
+    - Logging: create an alert on the log line "account purge behind
+      schedule" from `accountPurgeSweep`.
+13. Repository settings on GitHub: protect `main` (require PR, require the
    `pr` workflow jobs, require conversation resolution, block force pushes
    and deletions, merge commits only, delete head branches on merge).
 
@@ -112,7 +127,7 @@ commercial key (used only by the cache function), RevenueCat keys.
 `functions/src/config.ts` is the single configuration file for the Cloud
 Functions: region, cache freshness and TTL, cell size, Open-Meteo URLs and
 secret names, the push wake-up schedule, token TTL and batch size,
-share-link lifetimes, purge deadline, collection and storage names. Values shared with the app (region, function names, cell size) must
+share-link lifetimes, purge deadline and sweep schedule, collection and storage names. Values shared with the app (region, function names, cell size) must
 match `lib/config/app_config.dart`.
 
 Secrets for functions live in Secret Manager (`firebase functions:secrets:set

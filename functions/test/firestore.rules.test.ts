@@ -59,6 +59,15 @@ describe("firestore.rules", () => {
     await assertFails(setDoc(doc(user, "push_tokens/t2"), { platform: "ios" }));
   });
 
+  it("account deletion records are closed to clients, even the owner", async () => {
+    await env.withSecurityRulesDisabled(async (ctx) => {
+      await setDoc(doc(ctx.firestore(), "account_deletions/alice"), { requestedAt: 1 });
+    });
+    const alice = env.authenticatedContext("alice").firestore();
+    await assertFails(getDoc(doc(alice, "account_deletions/alice")));
+    await assertFails(setDoc(doc(alice, "account_deletions/alice"), { requestedAt: 2 }));
+  });
+
   it("users read and write only their own document", async () => {
     const alice = env.authenticatedContext("alice").firestore();
     const bob = env.authenticatedContext("bob").firestore();

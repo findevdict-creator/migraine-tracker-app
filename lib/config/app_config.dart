@@ -160,6 +160,16 @@ class AppEnv {
     defaultValue: '10.0.2.2',
   );
 
+  /// Google sign-in OAuth client ids (phase 32). The server (web) client id
+  /// is needed on Android; the iOS client id on iOS. Both come from the
+  /// Firebase console, Authentication > Sign-in method > Google.
+  static const String googleServerClientId = String.fromEnvironment(
+    'GOOGLE_SERVER_CLIENT_ID',
+  );
+  static const String googleIosClientId = String.fromEnvironment(
+    'GOOGLE_IOS_CLIENT_ID',
+  );
+
   /// RevenueCat public SDK keys (phase 35).
   static const String revenueCatApiKeyAndroid = String.fromEnvironment(
     'REVENUECAT_API_KEY_ANDROID',
@@ -299,6 +309,10 @@ class AppFeatureFlags {
   static const bool shareLinkAvailable = true;
   static const bool experimentsAvailable = true;
 
+  /// Optional account (phase 32). Off hides the settings entry; nothing
+  /// else in the app depends on being signed in.
+  static const bool accountsAvailable = true;
+
   /// Silent push wake-ups that refresh the forecast between opens. Needs
   /// a Firebase project with Cloud Messaging; off means local scheduling
   /// only.
@@ -307,6 +321,22 @@ class AppFeatureFlags {
   /// Phone side of the watch apps (phases 27 and 28). Off stops sending
   /// state to the watch and ignores watch commands.
   static const bool watchAvailable = true;
+}
+
+/// Optional account (phase 32, FR-23). Every feature except backup and
+/// share links works signed out.
+abstract final class AppAccounts {
+  /// Sign-in methods offered. Apple shows on iOS and macOS only.
+  static const bool appleEnabled = true;
+  static const bool googleEnabled = true;
+  static const bool emailEnabled = true;
+
+  /// Shortest password accepted for a new email account.
+  static const int minPasswordLength = 8;
+
+  /// How soon the server purges a deleted account's data. Must match
+  /// `purgeWithinMs` in functions/src/config.ts and the privacy policy.
+  static const int purgeWithinHours = 24;
 }
 
 // ---------------------------------------------------------------------------

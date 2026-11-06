@@ -2,6 +2,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:migraine_tracker/app/bootstrap.dart';
 import 'package:migraine_tracker/config/app_config.dart';
+import 'package:migraine_tracker/features/account/presentation/account_screen.dart';
 import 'package:migraine_tracker/features/attack_log/presentation/attack_screen.dart';
 import 'package:migraine_tracker/features/barometer/presentation/barometer_screen.dart';
 import 'package:migraine_tracker/features/checkin/presentation/checkin_screen.dart';
@@ -51,6 +52,7 @@ abstract final class AppRoutes {
   static String questionnaire(String kind) => '/questionnaires/$kind';
   static const String notifications = '/notifications';
   static const String experiments = '/experiments';
+  static const String account = '/account';
   static const String routines = '/routines';
   static const String routinePattern = '/routines/:code';
   static String routine(String code) => '/routines/$code';
@@ -129,6 +131,11 @@ final routerProvider = Provider<GoRouter>((ref) {
         path: AppRoutes.notifications,
         name: 'notifications',
         builder: (context, state) => const NotificationSettingsScreen(),
+      ),
+      GoRoute(
+        path: AppRoutes.account,
+        name: 'account',
+        builder: (context, state) => const AccountScreen(),
       ),
       GoRoute(
         path: AppRoutes.experiments,
