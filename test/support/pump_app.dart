@@ -9,6 +9,8 @@ import 'package:migraine_tracker/config/app_config.dart';
 import 'package:migraine_tracker/core/db/app_database.dart';
 import 'package:migraine_tracker/core/db/database_provider.dart';
 import 'package:migraine_tracker/core/l10n/l10n.dart';
+import 'package:migraine_tracker/features/barometer/data/barometer_sources.dart';
+import 'package:migraine_tracker/features/barometer/domain/barometer_source.dart';
 
 import 'test_database.dart';
 
@@ -16,15 +18,18 @@ import 'test_database.dart';
 extension PumpApp on WidgetTester {
   /// Pumps the whole app (router, theme, localizations) for a flavor.
   ///
-  /// Uses a fresh in-memory database unless [database] is given.
+  /// Uses a fresh in-memory database unless [database] is given, and no
+  /// barometer unless [barometer] is given (the platform sensor has no
+  /// implementation under test).
   Future<void> pumpApp({
     AppFlavor flavor = AppFlavor.dev,
     List<Override> overrides = const [],
     AppDatabase? database,
+    BarometerSource barometer = const NoBarometer(),
   }) async {
     await pumpWidget(
       UncontrolledProviderScope(
-        container: _container(flavor, database, overrides),
+        container: _container(flavor, database, barometer, overrides),
         child: const MigraineTrackerApp(),
       ),
     );
@@ -51,10 +56,11 @@ extension PumpApp on WidgetTester {
     List<Override> overrides = const [],
     ThemeData? theme,
     AppDatabase? database,
+    BarometerSource barometer = const NoBarometer(),
   }) async {
     await pumpWidget(
       UncontrolledProviderScope(
-        container: _container(flavor, database, overrides),
+        container: _container(flavor, database, barometer, overrides),
         child: MaterialApp(
           theme: theme,
           supportedLocales: AppLocales.supported,
@@ -78,12 +84,14 @@ extension PumpApp on WidgetTester {
 ProviderContainer _container(
   AppFlavor flavor,
   AppDatabase? database,
+  BarometerSource barometer,
   List<Override> overrides,
 ) {
   final container = ProviderContainer(
     overrides: [
       appConfigProvider.overrideWithValue(AppConfig(flavor: flavor)),
       _databaseOverride(database),
+      barometerSourceProvider.overrideWithValue(barometer),
       ...overrides,
     ],
   );

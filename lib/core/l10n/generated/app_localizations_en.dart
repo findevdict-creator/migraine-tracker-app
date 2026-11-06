@@ -634,4 +634,58 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get envTrendUnknown => 'no trend yet';
+
+  @override
+  String get barometerTitle => 'Barometer';
+
+  @override
+  String get barometerOpen => 'Open the barometer';
+
+  @override
+  String get barometerNoReading => 'No reading';
+
+  @override
+  String get barometerFromSensor => 'From this device\'s sensor';
+
+  @override
+  String get barometerFromStation => 'From the nearest station';
+
+  @override
+  String get barometerNoSource =>
+      'No sensor on this device and no forecast saved yet';
+
+  @override
+  String get barometerCalibrationSection => 'Calibration';
+
+  @override
+  String barometerOffset(String offset, int pairs) {
+    return 'Sensor offset $offset against the station series, from $pairs hourly pairs.';
+  }
+
+  @override
+  String barometerNotCalibrated(int pairs) {
+    return 'Not calibrated yet. Needs at least $pairs hours with both a sensor sample and a station value.';
+  }
+
+  @override
+  String get barometerTrendSection => 'Last 24 hours on this device';
+
+  @override
+  String get barometerTrendEmpty =>
+      'Samples are taken while the app is open. Come back later to see the trend.';
+
+  @override
+  String barometerTrendSamples(int n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: '$n samples',
+      one: '1 sample',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get barometerStampNote =>
+      'Each attack you start records the sensor reading and the station value of that hour.';
 }

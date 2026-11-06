@@ -1,6 +1,7 @@
 import 'package:drift/drift.dart';
 import 'package:migraine_tracker/core/db/converters.dart';
 import 'package:migraine_tracker/core/db/daos/attack_dao.dart';
+import 'package:migraine_tracker/core/db/daos/barometer_dao.dart';
 import 'package:migraine_tracker/core/db/daos/checkin_dao.dart';
 import 'package:migraine_tracker/core/db/daos/environment_dao.dart';
 import 'package:migraine_tracker/core/db/daos/experiment_dao.dart';
@@ -12,6 +13,7 @@ import 'package:migraine_tracker/core/db/daos/settings_dao.dart';
 import 'package:migraine_tracker/core/db/daos/share_link_dao.dart';
 import 'package:migraine_tracker/core/db/daos/weather_dao.dart';
 import 'package:migraine_tracker/core/db/tables/attacks.dart';
+import 'package:migraine_tracker/core/db/tables/barometer_readings.dart';
 import 'package:migraine_tracker/core/db/tables/checkins.dart';
 import 'package:migraine_tracker/core/db/tables/environment_days.dart';
 import 'package:migraine_tracker/core/db/tables/experiments.dart';
@@ -26,7 +28,8 @@ import 'package:migraine_tracker/core/db/tables/weather_hours.dart';
 
 part 'app_database.g.dart';
 
-/// The on-device database: the 12 tables of the requirements doc data model.
+/// The on-device database: the 12 tables of the requirements doc data model
+/// plus the barometer sample table added in phase 12.
 ///
 /// Dates are stored as ISO-8601 text so exports stay readable and the file is
 /// portable. Every write that belongs to one user action runs in a single
@@ -45,6 +48,7 @@ part 'app_database.g.dart';
     Questionnaires,
     ShareLinks,
     Settings,
+    BarometerReadings,
   ],
   daos: [
     AttackDao,
@@ -58,13 +62,14 @@ part 'app_database.g.dart';
     QuestionnaireDao,
     ShareLinkDao,
     SettingsDao,
+    BarometerDao,
   ],
 )
 class AppDatabase extends _$AppDatabase {
   AppDatabase(super.e);
 
   /// Bump on every schema change and add a step in [migration].
-  static const int currentSchemaVersion = 1;
+  static const int currentSchemaVersion = 2;
 
   @override
   int get schemaVersion => currentSchemaVersion;
@@ -80,6 +85,7 @@ class AppDatabase extends _$AppDatabase {
       // Migrations are written as explicit steps so each one can be
       // tested against the schema dump of the version it upgrades from.
       // Version 1 has no predecessor.
+      if (from < 2) await m.createTable(barometerReadings);
     },
     beforeOpen: (details) async {
       await customStatement('PRAGMA foreign_keys = ON');

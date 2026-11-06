@@ -266,6 +266,23 @@ class AppThresholds {
   /// Cached weather older than this is shown with an "outdated" note.
   static const Duration weatherStaleAfter = Duration(hours: 6);
 
+  /// Barometer (phase 12): one stored sample per interval while the app is
+  /// open, the trend window shown on the gauge screen, how long samples are
+  /// kept, and how old a reading may be to be stamped on a new attack.
+  static const Duration barometerSampleInterval = Duration(minutes: 10);
+  static const Duration barometerTrendWindow = Duration(hours: 24);
+  static const Duration barometerRetention = Duration(hours: 48);
+  static const Duration barometerStampMaxAge = Duration(minutes: 15);
+
+  /// Calibration: median offset between station and sensor over this
+  /// window, only once this many hourly pairs exist.
+  static const Duration barometerCalibrationWindow = Duration(hours: 24);
+  static const int barometerCalibrationMinPairs = 3;
+
+  /// Gauge range in hPa.
+  static const double barometerGaugeMinHpa = 950;
+  static const double barometerGaugeMaxHpa = 1050;
+
   /// Days a check-in can be back-filled.
   static const int checkinBackfillDays = 7;
 

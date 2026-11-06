@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
+import 'package:migraine_tracker/app/router.dart';
 import 'package:migraine_tracker/config/app_config.dart';
 import 'package:migraine_tracker/core/l10n/l10n.dart';
 import 'package:migraine_tracker/core/theme/app_colors.dart';
@@ -59,7 +61,14 @@ class EnvironmentScreen extends ConsumerWidget {
             )
           else
             _PressureCard(view: view, offline: refreshError != null),
-          const SizedBox(height: AppThemeTokens.space4),
+          const SizedBox(height: AppThemeTokens.space2),
+          TextButton.icon(
+            key: const ValueKey('env-barometer'),
+            icon: const Icon(Icons.speed),
+            label: Text(l10n.barometerOpen),
+            onPressed: () => context.push(AppRoutes.barometer),
+          ),
+          const SizedBox(height: AppThemeTokens.space2),
           SectionHeader(title: l10n.envLocationSection),
           AppCard(
             child: Column(
