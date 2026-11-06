@@ -299,6 +299,23 @@ class AppThresholds {
   /// Completed attacks before the duration estimate is shown.
   static const int attacksBeforeDurationEstimate = 5;
 
+  /// Risk learning (FR-9). An exposure counts as followed by an attack
+  /// when one starts on that day or the next ([riskAttackWindowDays] = 2,
+  /// the 24 to 48 h before). [riskWeightShrinkage] exposure days bring a
+  /// factor's confidence to one half; [attacksBeforeModelIsTuned] attacks
+  /// let it reach one. Thresholds move to the person's own load
+  /// distribution after [riskThresholdMinDays] days of data.
+  static const int riskAttackWindowDays = 2;
+  static const int riskWeightShrinkage = 10;
+  static const double riskModeratePercentile = 0.6;
+  static const double riskHighPercentile = 0.85;
+  static const int riskThresholdMinDays = 30;
+  static const double riskThresholdMinGap = 5;
+
+  /// Days of history the learner reads, and days ahead that are scored.
+  static const int riskHistoryDays = 730;
+  static const int riskForecastDays = 3;
+
   /// Exposures below which a factor is "not enough data".
   static const int minExposuresForInsight = 5;
 

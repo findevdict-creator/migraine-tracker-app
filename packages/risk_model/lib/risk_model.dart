@@ -12,6 +12,7 @@ export 'src/day_risk.dart';
 export 'src/factor.dart';
 export 'src/factor_module.dart';
 export 'src/factors/factors.dart';
+export 'src/learning.dart';
 export 'src/load.dart';
 export 'src/model_version.dart';
 export 'src/thresholds.dart';

@@ -7,6 +7,10 @@ release time.
 ## [Unreleased]
 
 ### Added
+- Personal re-weighting: learner with per-factor lift, shrinkage and
+  own-distribution thresholds; inputs built from weather, environment,
+  check-ins, health sleep and cycle; weights re-learned after each attack
+  and today plus three days scored and stored on open (17).
 - Risk model core: pure Dart package `packages/risk_model` with 14
   factor modules, population weights, deterministic 0 to 100 daily load
   with drivers, levels, model version, five fixture users with frozen

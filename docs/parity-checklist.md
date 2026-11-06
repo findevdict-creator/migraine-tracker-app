@@ -21,3 +21,4 @@ feature PR adds its row.
 | 14 | Health prompts per type, history prompt (Android), sleep pre-filled with icon, headache written back | [ ] | [ ] | iOS needs the HealthKit capability in Xcode |
 | 15 | Fresh install flow, location prompt, populated environment screen under 60 s (`integration_test/onboarding_flow_test.dart`) | [ ] | [ ] | |
 | 16 | Risk model package (pure Dart, no device behaviour) | n/a | n/a | |
+| 17 | Weights re-learned after an attack ends; risk rows stored on open | [ ] | [ ] | |

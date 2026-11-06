@@ -33,4 +33,9 @@ abstract final class SettingsKeys {
   /// Onboarding (phase 15): set once the first-run flow finished or was
   /// skipped, so it never shows again.
   static const String onboardingCompleted = 'onboarding.completed';
+
+  /// Learned level thresholds (`{moderate, high}`) and when the last
+  /// learning run finished (ISO 8601).
+  static const String riskThresholds = 'risk.thresholds';
+  static const String riskLastLearnedAt = 'risk.lastLearnedAt';
 }

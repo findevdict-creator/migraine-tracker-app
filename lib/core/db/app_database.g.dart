@@ -5053,7 +5053,9 @@ class RiskDay extends DataClass implements Insertable<RiskDay> {
   final String level;
   final double score;
 
-  /// Top drivers: `[{"factor": "pressure_drop", "contribution": 62}]`.
+  /// Every factor's contribution, strongest first, as
+  /// `risk_model`'s `Contribution.toJson()`:
+  /// `[{"factor": "pressure_drop", "points": 31.5, ...}]`.
   final List<Map<String, dynamic>> drivers;
   final String modelVersion;
   final DateTime computedAt;

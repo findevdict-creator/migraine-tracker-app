@@ -11,7 +11,9 @@ class RiskDays extends Table {
   TextColumn get level => text()();
   RealColumn get score => real()();
 
-  /// Top drivers: `[{"factor": "pressure_drop", "contribution": 62}]`.
+  /// Every factor's contribution, strongest first, as
+  /// `risk_model`'s `Contribution.toJson()`:
+  /// `[{"factor": "pressure_drop", "points": 31.5, ...}]`.
   TextColumn get drivers =>
       text().map(const JsonListConverter()).withDefault(const Constant('[]'))();
   TextColumn get modelVersion => text()();

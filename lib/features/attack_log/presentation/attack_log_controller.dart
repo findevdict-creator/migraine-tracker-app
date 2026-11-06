@@ -5,6 +5,7 @@ import 'package:migraine_tracker/features/attack_log/data/attack_repository_impl
 import 'package:migraine_tracker/features/attack_log/domain/attack_entity.dart';
 import 'package:migraine_tracker/features/attack_log/domain/attack_repository.dart';
 import 'package:migraine_tracker/features/health/application/health_sync.dart';
+import 'package:migraine_tracker/features/risk/application/risk_engine.dart';
 import 'package:migraine_tracker/features/weather/application/weather_snapshot.dart';
 
 /// The attack that is running right now, or null.
@@ -144,6 +145,8 @@ class AttackEditor extends AsyncNotifier<AttackEntity> {
     final ended = state.value;
     if (wasRunning && ended != null) {
       await ref.read(healthSyncProvider).exportAttack(ended);
+      // Every finished attack re-tunes the weights (FR-9).
+      await relearnQuietly(ref);
     }
   }
 
