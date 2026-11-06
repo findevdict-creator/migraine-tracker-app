@@ -7,6 +7,10 @@ release time.
 ## [Unreleased]
 
 ### Added
+- Risk card: today's level with the top three drivers in plain words,
+  confidence label, still-learning badge and the next three days on
+  home; a risk screen with every driver's points, the explainer link
+  and the disclaimer; home scrolls (18).
 - Personal re-weighting: learner with per-factor lift, shrinkage and
   own-distribution thresholds; inputs built from weather, environment,
   check-ins, health sleep and cycle; weights re-learned after each attack

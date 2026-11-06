@@ -5,10 +5,12 @@ import 'package:migraine_tracker/app/bootstrap.dart';
 import 'package:migraine_tracker/app/router.dart';
 import 'package:migraine_tracker/config/app_config.dart';
 import 'package:migraine_tracker/core/l10n/l10n.dart';
+import 'package:migraine_tracker/core/theme/app_colors.dart';
 import 'package:migraine_tracker/features/attack_log/presentation/start_attack_button.dart';
 import 'package:migraine_tracker/features/barometer/application/barometer_sampler.dart';
 import 'package:migraine_tracker/features/checkin/presentation/checkin_card.dart';
 import 'package:migraine_tracker/features/risk/application/risk_engine.dart';
+import 'package:migraine_tracker/features/risk/presentation/risk_card.dart';
 import 'package:migraine_tracker/features/weather/application/weather_sync.dart';
 import 'package:migraine_tracker/features/weather/presentation/environment_card.dart';
 
@@ -59,23 +61,25 @@ class HomeScreen extends ConsumerWidget {
             ),
         ],
       ),
-      body: Padding(
+      body: ListView(
+        key: const ValueKey('home-list'),
         padding: const EdgeInsets.all(AppThemeTokens.space4),
-        child: Column(
-          children: [
-            const StartAttackButton(),
-            const SizedBox(height: AppThemeTokens.space4),
-            const CheckinCard(),
-            const SizedBox(height: AppThemeTokens.space4),
-            const EnvironmentCard(),
-            const SizedBox(height: AppThemeTokens.space5),
-            Expanded(
-              child: Center(
-                child: Text(l10n.homeEmptyState, textAlign: TextAlign.center),
-              ),
-            ),
-          ],
-        ),
+        children: [
+          const StartAttackButton(),
+          const SizedBox(height: AppThemeTokens.space4),
+          const RiskCard(),
+          const SizedBox(height: AppThemeTokens.space4),
+          const CheckinCard(),
+          const SizedBox(height: AppThemeTokens.space4),
+          const EnvironmentCard(),
+          const SizedBox(height: AppThemeTokens.space5),
+          Text(
+            l10n.homeEmptyState,
+            key: const ValueKey('home-empty'),
+            textAlign: TextAlign.center,
+            style: context.textStyles.bodySmall,
+          ),
+        ],
       ),
     );
   }

@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:migraine_tracker/config/app_config.dart';
 import 'package:migraine_tracker/core/l10n/l10n.dart';
 import 'package:migraine_tracker/core/theme/app_colors.dart';
+import 'package:risk_model/risk_model.dart' show RiskLevel;
 
-/// The three risk levels. The order is the severity order.
-enum RiskLevel { low, moderate, high }
+export 'package:risk_model/risk_model.dart' show RiskLevel;
 
 extension RiskLevelX on RiskLevel {
   Color color(AppColors colors) => switch (this) {

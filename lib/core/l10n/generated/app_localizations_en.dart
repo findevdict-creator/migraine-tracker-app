@@ -1019,4 +1019,114 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get explainerDoesNot3 =>
       'It never sends your log anywhere. The level is computed on this phone.';
+
+  @override
+  String get riskCardTitle => 'Today\'s level';
+
+  @override
+  String get riskCardEmpty =>
+      'No level yet. Add a check-in or let the weather load.';
+
+  @override
+  String get riskScreenTitle => 'Your level';
+
+  @override
+  String get riskWhyTitle => 'Why';
+
+  @override
+  String get riskNoDrivers => 'Nothing stands out.';
+
+  @override
+  String get riskNextDays => 'Next days';
+
+  @override
+  String get riskDayToday => 'Today';
+
+  @override
+  String get riskDayTomorrow => 'Tomorrow';
+
+  @override
+  String riskLoad(String value) {
+    return 'Load $value of 100';
+  }
+
+  @override
+  String riskConfidence(String label) {
+    return 'Confidence: $label';
+  }
+
+  @override
+  String get riskConfidenceLow => 'low';
+
+  @override
+  String get riskConfidenceMedium => 'medium';
+
+  @override
+  String get riskConfidenceHigh => 'high';
+
+  @override
+  String riskStillLearning(int count, int needed) {
+    return 'Still learning: $count of $needed attacks logged';
+  }
+
+  @override
+  String get riskTuned => 'Tuned to your log';
+
+  @override
+  String riskDriverPoints(String points) {
+    return '$points points';
+  }
+
+  @override
+  String riskUpdated(String time) {
+    return 'Updated $time';
+  }
+
+  @override
+  String get riskExplainerLink => 'What the level means';
+
+  @override
+  String get riskOpenCheckin => 'Add today\'s check-in';
+
+  @override
+  String get riskFactorPressureDrop => 'Falling air pressure';
+
+  @override
+  String get riskFactorHumidity => 'High humidity';
+
+  @override
+  String get riskFactorTemperatureSwing => 'Temperature change';
+
+  @override
+  String get riskFactorAirQuality => 'Air quality';
+
+  @override
+  String get riskFactorPollen => 'Pollen';
+
+  @override
+  String get riskFactorBrightLight => 'Bright light';
+
+  @override
+  String get riskFactorScreenTime => 'Screen time';
+
+  @override
+  String get riskFactorPoorSleep => 'Poor sleep';
+
+  @override
+  String get riskFactorStress => 'Stress';
+
+  @override
+  String get riskFactorNeckTension => 'Neck tension';
+
+  @override
+  String get riskFactorCaffeine => 'Caffeine';
+
+  @override
+  String get riskFactorAlcohol => 'Alcohol';
+
+  @override
+  String get riskFactorDehydration => 'Low hydration';
+
+  @override
+  String get riskFactorCyclePhase => 'Cycle phase';
 }
