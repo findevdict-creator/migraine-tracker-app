@@ -27,6 +27,9 @@ class FakeAuthGateway implements AuthGateway {
   bool get available => true;
 
   @override
+  Future<String?> idToken() async => current == null ? null : 'token-u1';
+
+  @override
   Stream<AccountUser?> userChanges() async* {
     yield current;
     yield* _changes.stream;

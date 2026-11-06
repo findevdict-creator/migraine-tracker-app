@@ -4117,6 +4117,204 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Something went wrong. Try again.'**
   String get accountErrorUnknown;
+
+  /// No description provided for @backupTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Encrypted backup'**
+  String get backupTitle;
+
+  /// No description provided for @settingsBackupHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Locked with a passphrase only you know'**
+  String get settingsBackupHint;
+
+  /// No description provided for @backupIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'Your backup is locked on this phone with your passphrase before it is uploaded. We store only the locked file and cannot open it.'**
+  String get backupIntro;
+
+  /// No description provided for @backupForgetWarning.
+  ///
+  /// In en, this message translates to:
+  /// **'If you forget the passphrase, nobody can open the backup, not even us. Write it down somewhere safe.'**
+  String get backupForgetWarning;
+
+  /// No description provided for @backupNeedsAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Backup needs an account. Everything else works without one.'**
+  String get backupNeedsAccount;
+
+  /// No description provided for @backupOpenAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Set up an account'**
+  String get backupOpenAccount;
+
+  /// No description provided for @backupNone.
+  ///
+  /// In en, this message translates to:
+  /// **'No backup yet'**
+  String get backupNone;
+
+  /// No description provided for @backupLast.
+  ///
+  /// In en, this message translates to:
+  /// **'Last backup: {date}'**
+  String backupLast(String date);
+
+  /// No description provided for @backupStatusUnknown.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t check for a backup right now.'**
+  String get backupStatusUnknown;
+
+  /// No description provided for @backupPassphrase.
+  ///
+  /// In en, this message translates to:
+  /// **'Passphrase'**
+  String get backupPassphrase;
+
+  /// No description provided for @backupPassphraseHint.
+  ///
+  /// In en, this message translates to:
+  /// **'At least {min} characters. A few unrelated words work well.'**
+  String backupPassphraseHint(int min);
+
+  /// No description provided for @backupPassphraseRepeat.
+  ///
+  /// In en, this message translates to:
+  /// **'Repeat the passphrase to back up'**
+  String get backupPassphraseRepeat;
+
+  /// No description provided for @backupNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Back up now'**
+  String get backupNow;
+
+  /// No description provided for @backupDone.
+  ///
+  /// In en, this message translates to:
+  /// **'Backed up.'**
+  String get backupDone;
+
+  /// No description provided for @backupRestore.
+  ///
+  /// In en, this message translates to:
+  /// **'Restore from backup'**
+  String get backupRestore;
+
+  /// No description provided for @backupRestoreTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Replace everything on this phone?'**
+  String get backupRestoreTitle;
+
+  /// No description provided for @backupRestoreBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Everything on this phone is replaced with the backup from {date}.'**
+  String backupRestoreBody(String date);
+
+  /// No description provided for @backupRestoreConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Restore'**
+  String get backupRestoreConfirm;
+
+  /// No description provided for @backupRestored.
+  ///
+  /// In en, this message translates to:
+  /// **'Restored from your backup.'**
+  String get backupRestored;
+
+  /// No description provided for @backupDelete.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete backup'**
+  String get backupDelete;
+
+  /// No description provided for @backupDeleteTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete the backup?'**
+  String get backupDeleteTitle;
+
+  /// No description provided for @backupDeleteBody.
+  ///
+  /// In en, this message translates to:
+  /// **'The locked file is removed from our servers. Everything on this phone stays.'**
+  String get backupDeleteBody;
+
+  /// No description provided for @backupDeleted.
+  ///
+  /// In en, this message translates to:
+  /// **'Backup deleted.'**
+  String get backupDeleted;
+
+  /// No description provided for @backupWorking.
+  ///
+  /// In en, this message translates to:
+  /// **'Working on it. This can take a few seconds.'**
+  String get backupWorking;
+
+  /// No description provided for @backupErrorMismatch.
+  ///
+  /// In en, this message translates to:
+  /// **'The two passphrases don\'t match.'**
+  String get backupErrorMismatch;
+
+  /// No description provided for @backupErrorShort.
+  ///
+  /// In en, this message translates to:
+  /// **'Use at least {min} characters.'**
+  String backupErrorShort(int min);
+
+  /// No description provided for @backupErrorNoBackup.
+  ///
+  /// In en, this message translates to:
+  /// **'There\'s no backup on this account yet.'**
+  String get backupErrorNoBackup;
+
+  /// No description provided for @backupErrorTooLarge.
+  ///
+  /// In en, this message translates to:
+  /// **'The backup is too large to upload.'**
+  String get backupErrorTooLarge;
+
+  /// No description provided for @backupErrorNewerApp.
+  ///
+  /// In en, this message translates to:
+  /// **'This backup was made by a newer version of the app. Update the app, then try again.'**
+  String get backupErrorNewerApp;
+
+  /// No description provided for @backupErrorWrongPassphrase.
+  ///
+  /// In en, this message translates to:
+  /// **'That passphrase doesn\'t open this backup.'**
+  String get backupErrorWrongPassphrase;
+
+  /// No description provided for @backupErrorDamaged.
+  ///
+  /// In en, this message translates to:
+  /// **'The backup file is damaged.'**
+  String get backupErrorDamaged;
+
+  /// No description provided for @backupErrorPinning.
+  ///
+  /// In en, this message translates to:
+  /// **'The connection to the backup server couldn\'t be verified, so nothing was sent. Try another network.'**
+  String get backupErrorPinning;
+
+  /// No description provided for @backupErrorNotAllowed.
+  ///
+  /// In en, this message translates to:
+  /// **'Your sign-in has expired. Sign in again, then retry.'**
+  String get backupErrorNotAllowed;
 }
 
 class _AppLocalizationsDelegate

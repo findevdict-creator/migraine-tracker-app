@@ -8,6 +8,8 @@ release time.
 
 ### Added
 
+- End-to-end encrypted backup: Settings > Encrypted backup locks the whole database on the phone with an Argon2id key from a passphrase (AES-256-GCM), uploads it over a certificate-pinned connection, and restores it on a fresh install or a second phone (33).
+
 - Optional account: sign in with Apple, Google or email from Settings > Account; the app stays fully usable signed out. Deleting the account purges its server data (backup, share links, audit counts) within 24 hours, with an hourly retry sweep (32).
 
 - Attack duration estimate: while an attack runs, a card shows how long similar attacks usually last as a range, with how many past attacks it is based on, after five completed attacks (31).

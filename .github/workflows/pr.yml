@@ -57,6 +57,8 @@ jobs:
         run: dart run tool/string_lint.dart
       - name: Tests
         run: flutter test --coverage
+      - name: Backup certificate pinning against the live hosts
+        run: flutter test --run-skipped --tags network test/network
       - name: Pure Dart packages
         run: |
           for pkg in packages/*/; do

@@ -313,6 +313,9 @@ class AppFeatureFlags {
   /// else in the app depends on being signed in.
   static const bool accountsAvailable = true;
 
+  /// End-to-end encrypted backup (phase 33). Needs an account.
+  static const bool backupAvailable = true;
+
   /// Silent push wake-ups that refresh the forecast between opens. Needs
   /// a Firebase project with Cloud Messaging; off means local scheduling
   /// only.
@@ -337,6 +340,41 @@ abstract final class AppAccounts {
   /// How soon the server purges a deleted account's data. Must match
   /// `purgeWithinMs` in functions/src/config.ts and the privacy policy.
   static const int purgeWithinHours = 24;
+}
+
+/// End-to-end encrypted backup (phase 33, FR-23). The key is derived on the
+/// phone from the passphrase; the server only ever stores ciphertext.
+abstract final class AppBackup {
+  /// Argon2id cost (OWASP minimum: 19 MiB, 2 passes, 1 lane). Stored in
+  /// each backup, so raising them later still opens old backups.
+  static const int argonMemoryKiB = 19456;
+  static const int argonIterations = 2;
+  static const int argonParallelism = 1;
+
+  /// Upper bounds accepted when opening a backup, so a crafted header
+  /// cannot make the phone allocate gigabytes.
+  static const int argonMaxMemoryKiB = 262144;
+  static const int argonMaxIterations = 10;
+
+  static const int saltBytes = 16;
+  static const int minPassphraseLength = 12;
+
+  /// One object per account: `backups/{uid}/latest.bin`. Each device's
+  /// backup replaces the last one. The folder must match
+  /// `storage.backupsPrefix` in functions/src/config.ts and storage.rules.
+  static const String folder = 'backups';
+  static const String objectName = 'latest.bin';
+
+  /// Mirrors the size cap in storage.rules.
+  static const int maxBytes = 50 * 1024 * 1024;
+
+  /// Cloud Storage REST host; pinned to [AppAssets.backupTrustRoots].
+  static const String storageHost = 'firebasestorage.googleapis.com';
+
+  /// Storage emulator port, used when [AppFeatureFlags.useEmulators] is on.
+  static const int emulatorStoragePort = 9199;
+
+  static const Duration requestTimeout = Duration(seconds: 60);
 }
 
 // ---------------------------------------------------------------------------
@@ -745,6 +783,10 @@ class AppAssets {
   static const String launcherIcon = 'assets/brand/launcher_icon.png';
   static const String headMap = 'assets/images/head_map.svg';
   static const String routinesDir = 'assets/routines/';
+
+  /// Root certificates the backup upload trusts, and nothing else
+  /// (certificate pinning, phase 33).
+  static const String backupTrustRoots = 'assets/certs/google_trust_roots.pem';
 
   /// Illustration for a routine code (`stretches`, `breathing`, ...).
   static String routineIllustration(String code) => '$routinesDir$code.svg';
