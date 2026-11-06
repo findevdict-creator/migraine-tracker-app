@@ -6,7 +6,10 @@ plugins {
 
 android {
     namespace = "app.migrainetracker.migraine_tracker"
-    compileSdk = flutter.compileSdkVersion
+    // flutter_local_notifications 23 and androidx.core 1.19 compile against
+    // API 37. Compiling against a newer API is backward compatible; the
+    // target SDK (runtime behaviour) still follows Flutter's default.
+    compileSdk = maxOf(37, flutter.compileSdkVersion)
     ndkVersion = flutter.ndkVersion
 
     compileOptions {
