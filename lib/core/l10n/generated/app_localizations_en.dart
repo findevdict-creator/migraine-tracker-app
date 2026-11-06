@@ -2826,4 +2826,80 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get shareLinkErrorPremium =>
       'Share links need Premium. If you just subscribed, wait a minute and try again.';
+
+  @override
+  String get auditTitle => 'How the risk level has done';
+
+  @override
+  String auditNotYet(int needed, int logged) {
+    return 'This page appears once you have logged $needed attacks. You have logged $logged so far.';
+  }
+
+  @override
+  String auditIntro(int window) {
+    String _temp0 = intl.Intl.pluralLogic(
+      window,
+      locale: localeName,
+      other: '$window days',
+      one: 'day',
+    );
+    return 'This compares the level the app showed each day with when your attacks started. An attack counts as following a High day when the day it started, or the $_temp0 before, was shown as High.';
+  }
+
+  @override
+  String get auditEmpty =>
+      'Nothing to compare yet. The app keeps the level it shows each day from now on, and the first numbers appear after your next attack or High day.';
+
+  @override
+  String get auditHitsTitle => 'Attacks that followed a High day';
+
+  @override
+  String auditHitsValue(int hits, int attacks, String share) {
+    return '$hits of $attacks ($share)';
+  }
+
+  @override
+  String get auditMissesTitle => 'Attacks without a High day before them';
+
+  @override
+  String auditMissesValue(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count attacks',
+      one: '1 attack',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get auditFalseAlarmsTitle => 'High days with no attack';
+
+  @override
+  String auditFalseAlarmsValue(int count, int highDays) {
+    return '$count of $highDays High days';
+  }
+
+  @override
+  String get auditTrend => 'By month';
+
+  @override
+  String auditMonthLine(int hits, int attacks, int falseAlarms, int highDays) {
+    return '$hits of $attacks attacks after a High day; $falseAlarms of $highDays High days without an attack';
+  }
+
+  @override
+  String get auditCaveat =>
+      'Small numbers move a lot from month to month. A High day without an attack is not a mistake: it means more of your usual triggers lined up. The level is a guide to plan around, not a promise.';
+
+  @override
+  String get auditShare => 'Share these counts each month';
+
+  @override
+  String get auditShareHint =>
+      'Helps check the app for everyone. Only the five numbers and the model version are sent, never dates, places, your log or your account. Off unless you turn it on.';
+
+  @override
+  String get settingsAuditHint =>
+      'Attacks after High days and High days without one';
 }

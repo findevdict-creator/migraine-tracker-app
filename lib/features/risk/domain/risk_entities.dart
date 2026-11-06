@@ -46,3 +46,17 @@ class RiskDayEntity {
   List<Contribution> drivers({int count = 3}) =>
       contributions.where((c) => c.points > 0).take(count).toList();
 }
+
+/// The level shown for one day, frozen for the self-audit (`audit_days`).
+@immutable
+class ShownRisk {
+  const ShownRisk({
+    required this.date,
+    required this.level,
+    required this.modelVersion,
+  });
+
+  final String date;
+  final RiskLevel level;
+  final String modelVersion;
+}

@@ -8,6 +8,8 @@ release time.
 
 ### Added
 
+- Accuracy self-audit: after ten attacks, Settings > How the risk level has done shows how many attacks followed a High day, how many High days passed without one, and the trend by month, scored against a frozen record of the level shown each day so relearning cannot flatter it. Optional, off by default: share the five monthly counts and the model version anonymously, with no dates, places or account (36).
+
 - Premium: store subscriptions through RevenueCat unlock the clinician share link, experiments, extended environment factors (particulates, ozone, pollen) and backup across phones. Logging, the weather feed, the risk level, insights, the medication log and the doctor report stay free with no time limit. Purchases follow the account, and the server checks Premium before creating a share link (35).
 
 - Clinician share link: from Doctor report, create a 7 or 30 day read-only web link that shows the same report as the PDF; stop sharing at any time from Settings > Shared links. The server keeps only the report snapshot under a random 128-bit token and deletes it on expiry (34).

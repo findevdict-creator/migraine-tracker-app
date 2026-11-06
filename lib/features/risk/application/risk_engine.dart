@@ -96,7 +96,10 @@ class RiskEngine {
       thresholds: await thresholds(),
     );
     final risks = [for (final d in days) scorer.compute(d)];
-    if (risks.isNotEmpty) await _repo.saveRisk(risks, now: now);
+    if (risks.isNotEmpty) {
+      await _repo.saveRisk(risks, now: now);
+      await _repo.recordShown(risks, today: from, now: now);
+    }
     return risks;
   }
 }

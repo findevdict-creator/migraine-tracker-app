@@ -88,6 +88,42 @@ class DriftRiskRepository implements RiskRepository {
   Future<List<RiskDayEntity>> allRisk() async =>
       (await _dao.allRisk()).map(_entity).toList();
 
+  @override
+  Future<void> recordShown(
+    List<DayRisk> days, {
+    required String today,
+    required DateTime now,
+  }) {
+    db.AuditDaysCompanion row(DayRisk d) => db.AuditDaysCompanion(
+      date: Value(d.date),
+      level: Value(d.level.id),
+      modelVersion: Value(d.version),
+      recordedAt: Value(now),
+    );
+    final todays = days.where((d) => d.date == today).firstOrNull;
+    return _dao.recordShown(
+      ahead: [
+        for (final d in days)
+          if (d.date.compareTo(today) > 0) row(d),
+      ],
+      today: todays == null ? null : row(todays),
+    );
+  }
+
+  @override
+  Stream<List<ShownRisk>> watchShown() =>
+      _dao.watchShown().map((rows) => rows.map(_shown).toList());
+
+  @override
+  Future<List<ShownRisk>> allShown() async =>
+      (await _dao.allShown()).map(_shown).toList();
+
+  ShownRisk _shown(db.AuditDay row) => ShownRisk(
+    date: row.date,
+    level: RiskLevel.fromId(row.level),
+    modelVersion: row.modelVersion,
+  );
+
   RiskDayEntity _entity(db.RiskDay row) => RiskDayEntity(
     date: row.date,
     level: RiskLevel.fromId(row.level),

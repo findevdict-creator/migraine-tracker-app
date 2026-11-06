@@ -7,6 +7,7 @@ import 'package:migraine_tracker/config/app_config.dart';
 import 'package:migraine_tracker/core/l10n/l10n.dart';
 import 'package:migraine_tracker/core/theme/app_colors.dart';
 import 'package:migraine_tracker/core/widgets/widgets.dart';
+import 'package:migraine_tracker/features/audit/application/self_audit_controller.dart';
 import 'package:migraine_tracker/features/checkin/presentation/checkin_controller.dart';
 import 'package:migraine_tracker/features/cycle/presentation/cycle_screen.dart';
 import 'package:migraine_tracker/features/export/data/export_service.dart';
@@ -170,6 +171,14 @@ class SettingsScreen extends ConsumerWidget {
             subtitle: Text(l10n.settingsInsightsHint),
             onTap: () => context.push(AppRoutes.insights),
           ),
+          if (ref.watch(selfAuditReadyProvider))
+            ListTile(
+              key: const ValueKey('settings-audit'),
+              leading: const Icon(Icons.fact_check_outlined),
+              title: Text(l10n.auditTitle),
+              subtitle: Text(l10n.settingsAuditHint),
+              onTap: () => context.push(AppRoutes.audit),
+            ),
           ListTile(
             key: const ValueKey('settings-explainer'),
             leading: const Icon(Icons.help_outline),

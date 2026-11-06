@@ -1,12 +1,14 @@
 import 'package:drift/drift.dart';
 import 'package:migraine_tracker/core/db/app_database.dart';
+import 'package:migraine_tracker/core/db/tables/audit_days.dart';
 import 'package:migraine_tracker/core/db/tables/factor_weights.dart';
 import 'package:migraine_tracker/core/db/tables/risk_days.dart';
 
 part 'risk_dao.g.dart';
 
-/// Reads and writes the learned factor weights and the daily risk output.
-@DriftAccessor(tables: [FactorWeights, RiskDays])
+/// Reads and writes the learned factor weights, the daily risk output and
+/// the frozen levels the self-audit scores.
+@DriftAccessor(tables: [FactorWeights, RiskDays, AuditDays])
 class RiskDao extends DatabaseAccessor<AppDatabase> with _$RiskDaoMixin {
   RiskDao(super.attachedDatabase);
 
@@ -39,4 +41,22 @@ class RiskDao extends DatabaseAccessor<AppDatabase> with _$RiskDaoMixin {
 
   Future<List<RiskDay>> allRisk() =>
       (select(riskDays)..orderBy([(r) => OrderingTerm.asc(r.date)])).get();
+
+  /// Days ahead take the newest forecast; today keeps its first score, so
+  /// nothing learned during the day changes what was shown.
+  Future<void> recordShown({
+    required List<AuditDaysCompanion> ahead,
+    AuditDaysCompanion? today,
+  }) => batch((b) {
+    b.insertAllOnConflictUpdate(auditDays, ahead);
+    if (today != null) {
+      b.insert(auditDays, today, mode: InsertMode.insertOrIgnore);
+    }
+  });
+
+  Future<List<AuditDay>> allShown() =>
+      (select(auditDays)..orderBy([(r) => OrderingTerm.asc(r.date)])).get();
+
+  Stream<List<AuditDay>> watchShown() =>
+      (select(auditDays)..orderBy([(r) => OrderingTerm.asc(r.date)])).watch();
 }

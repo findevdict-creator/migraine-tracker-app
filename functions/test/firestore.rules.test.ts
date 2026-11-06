@@ -101,25 +101,16 @@ describe("firestore.rules", () => {
     await assertFails(getDoc(doc(env.unauthenticatedContext().firestore(), "share_snapshots/tok")));
   });
 
-  it("audit counts accept only integer counts from the signed-in user", async () => {
+  it("audit counts are closed to clients: only the function writes them", async () => {
     const alice = env.authenticatedContext("alice").firestore();
-    const good = {
-      uid: "alice",
-      month: "2026-11",
-      attacks: 3,
-      highDays: 4,
-      hits: 2,
-      misses: 1,
-      falseAlarms: 2,
-      createdAt: 1,
-    };
-    await assertSucceeds(setDoc(doc(alice, "audit_counts/a1"), good));
-    await assertFails(setDoc(doc(alice, "audit_counts/a2"), { ...good, uid: "bob" }));
-    await assertFails(setDoc(doc(alice, "audit_counts/a3"), { ...good, dates: ["2026-11-01"] }));
-    await assertFails(setDoc(doc(alice, "audit_counts/a4"), { ...good, attacks: "3" }));
-    await assertFails(getDoc(doc(alice, "audit_counts/a1")));
+    const counts = { attacks: 3, hits: 2, misses: 1, highDays: 4, falseAlarms: 2 };
+    await assertFails(setDoc(doc(alice, "audit_counts/a1"), counts));
     await assertFails(
-      setDoc(doc(env.unauthenticatedContext().firestore(), "audit_counts/a5"), good),
+      setDoc(doc(env.unauthenticatedContext().firestore(), "audit_counts/a2"), counts),
     );
+    await env.withSecurityRulesDisabled(async (ctx) => {
+      await setDoc(doc(ctx.firestore(), "audit_counts/a3"), counts);
+    });
+    await assertFails(getDoc(doc(alice, "audit_counts/a3")));
   });
 });

@@ -88,6 +88,15 @@ export const config = {
     batchSize: 400,
   },
 
+  /** Opt-in accuracy counts (FR-13). One document per person per month, with no id. */
+  audit: {
+    /** Highest count accepted for any field; a month has at most 31 High days. */
+    maxAttacks: 200,
+    maxHighDays: 31,
+    /** The risk model's version, as `major.minor.patch`. */
+    modelVersionPattern: /^\d{1,3}\.\d{1,3}\.\d{1,3}$/,
+  },
+
   /** Firestore collection names. */
   collections: {
     weatherCells: "weather_cells",

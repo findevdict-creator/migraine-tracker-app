@@ -13,6 +13,7 @@ import 'package:migraine_tracker/core/db/daos/settings_dao.dart';
 import 'package:migraine_tracker/core/db/daos/share_link_dao.dart';
 import 'package:migraine_tracker/core/db/daos/weather_dao.dart';
 import 'package:migraine_tracker/core/db/tables/attacks.dart';
+import 'package:migraine_tracker/core/db/tables/audit_days.dart';
 import 'package:migraine_tracker/core/db/tables/barometer_readings.dart';
 import 'package:migraine_tracker/core/db/tables/checkins.dart';
 import 'package:migraine_tracker/core/db/tables/environment_days.dart';
@@ -29,7 +30,8 @@ import 'package:migraine_tracker/core/db/tables/weather_hours.dart';
 part 'app_database.g.dart';
 
 /// The on-device database: the 12 tables of the requirements doc data model
-/// plus the barometer sample table added in phase 12.
+/// plus the barometer sample table added in phase 12 and the frozen
+/// self-audit levels added in phase 36.
 ///
 /// Dates are stored as ISO-8601 text so exports stay readable and the file is
 /// portable. Every write that belongs to one user action runs in a single
@@ -49,6 +51,7 @@ part 'app_database.g.dart';
     ShareLinks,
     Settings,
     BarometerReadings,
+    AuditDays,
   ],
   daos: [
     AttackDao,
@@ -69,7 +72,7 @@ class AppDatabase extends _$AppDatabase {
   AppDatabase(super.e);
 
   /// Bump on every schema change and add a step in [migration].
-  static const int currentSchemaVersion = 2;
+  static const int currentSchemaVersion = 3;
 
   @override
   int get schemaVersion => currentSchemaVersion;
@@ -86,6 +89,7 @@ class AppDatabase extends _$AppDatabase {
       // tested against the schema dump of the version it upgrades from.
       // Version 1 has no predecessor.
       if (from < 2) await m.createTable(barometerReadings);
+      if (from < 3) await m.createTable(auditDays);
     },
     beforeOpen: (details) async {
       await customStatement('PRAGMA foreign_keys = ON');

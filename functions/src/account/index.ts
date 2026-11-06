@@ -27,8 +27,8 @@ export const accountCreated = v1
 
 /**
  * Purges the server data of a deleted account: its metadata, backup,
- * share snapshots and audit counts. A failure leaves a tombstone for the
- * sweep below.
+ * share snapshots and entitlement. A failure leaves a tombstone for the
+ * sweep below. Audit counts carry no uid, so none are tied to the account.
  */
 export const accountDeleted = v1
   .region(config.region)
