@@ -645,5 +645,21 @@
   "voiceSymptoms": "Symptoms",
   "voiceLocations": "Where it hurts",
   "voiceMedications": "Medication taken now",
-  "voiceSave": "Save to attack"
+  "voiceSave": "Save to attack",
+  "widgetLevel": "Level: {level}",
+  "@widgetLevel": {"placeholders": {"level": {"type": "String"}}},
+  "widgetNoLevel": "Open the app to load today's level",
+  "widgetDriver": "Top factor: {factor}",
+  "@widgetDriver": {"placeholders": {"factor": {"type": "String"}}},
+  "widgetNoDriver": "No single factor stands out",
+  "widgetPressureFalling": "Pressure falling {hpa} hPa in 24 h",
+  "@widgetPressureFalling": {"placeholders": {"hpa": {"type": "String"}}},
+  "widgetPressureRising": "Pressure rising {hpa} hPa in 24 h",
+  "@widgetPressureRising": {"placeholders": {"hpa": {"type": "String"}}},
+  "widgetPressureSteady": "Pressure steady",
+  "widgetPressureUnknown": "No pressure forecast yet",
+  "widgetUpdated": "Updated {time}",
+  "@widgetUpdated": {"placeholders": {"time": {"type": "String"}}},
+  "widgetStartAttack": "Start attack",
+  "widgetOpenAttack": "Open attack"
 }

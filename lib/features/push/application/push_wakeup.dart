@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:migraine_tracker/app/bootstrap.dart';
 import 'package:migraine_tracker/config/app_config.dart';
 import 'package:migraine_tracker/core/firebase/firebase_bootstrap.dart';
+import 'package:migraine_tracker/features/home_widget/application/home_widget_sync.dart';
 import 'package:migraine_tracker/features/notifications/application/notification_scheduler.dart';
 import 'package:migraine_tracker/features/risk/application/risk_engine.dart';
 import 'package:migraine_tracker/features/weather/application/weather_sync.dart';
@@ -32,6 +33,7 @@ abstract final class PushWakeup {
     } on Object catch (error) {
       debugPrint('wake-up reschedule failed: $error');
     }
+    await ref.read(homeWidgetSyncProvider).publishQuietly();
     return WakeupOutcome(
       fetched: weather.fetched,
       scoredDays: scored,

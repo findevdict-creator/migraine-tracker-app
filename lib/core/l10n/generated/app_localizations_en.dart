@@ -1971,4 +1971,47 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get voiceSave => 'Save to attack';
+
+  @override
+  String widgetLevel(String level) {
+    return 'Level: $level';
+  }
+
+  @override
+  String get widgetNoLevel => 'Open the app to load today\'s level';
+
+  @override
+  String widgetDriver(String factor) {
+    return 'Top factor: $factor';
+  }
+
+  @override
+  String get widgetNoDriver => 'No single factor stands out';
+
+  @override
+  String widgetPressureFalling(String hpa) {
+    return 'Pressure falling $hpa hPa in 24 h';
+  }
+
+  @override
+  String widgetPressureRising(String hpa) {
+    return 'Pressure rising $hpa hPa in 24 h';
+  }
+
+  @override
+  String get widgetPressureSteady => 'Pressure steady';
+
+  @override
+  String get widgetPressureUnknown => 'No pressure forecast yet';
+
+  @override
+  String widgetUpdated(String time) {
+    return 'Updated $time';
+  }
+
+  @override
+  String get widgetStartAttack => 'Start attack';
+
+  @override
+  String get widgetOpenAttack => 'Open attack';
 }

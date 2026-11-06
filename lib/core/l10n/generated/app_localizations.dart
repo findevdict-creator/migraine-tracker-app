@@ -3373,6 +3373,72 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Save to attack'**
   String get voiceSave;
+
+  /// No description provided for @widgetLevel.
+  ///
+  /// In en, this message translates to:
+  /// **'Level: {level}'**
+  String widgetLevel(String level);
+
+  /// No description provided for @widgetNoLevel.
+  ///
+  /// In en, this message translates to:
+  /// **'Open the app to load today\'s level'**
+  String get widgetNoLevel;
+
+  /// No description provided for @widgetDriver.
+  ///
+  /// In en, this message translates to:
+  /// **'Top factor: {factor}'**
+  String widgetDriver(String factor);
+
+  /// No description provided for @widgetNoDriver.
+  ///
+  /// In en, this message translates to:
+  /// **'No single factor stands out'**
+  String get widgetNoDriver;
+
+  /// No description provided for @widgetPressureFalling.
+  ///
+  /// In en, this message translates to:
+  /// **'Pressure falling {hpa} hPa in 24 h'**
+  String widgetPressureFalling(String hpa);
+
+  /// No description provided for @widgetPressureRising.
+  ///
+  /// In en, this message translates to:
+  /// **'Pressure rising {hpa} hPa in 24 h'**
+  String widgetPressureRising(String hpa);
+
+  /// No description provided for @widgetPressureSteady.
+  ///
+  /// In en, this message translates to:
+  /// **'Pressure steady'**
+  String get widgetPressureSteady;
+
+  /// No description provided for @widgetPressureUnknown.
+  ///
+  /// In en, this message translates to:
+  /// **'No pressure forecast yet'**
+  String get widgetPressureUnknown;
+
+  /// No description provided for @widgetUpdated.
+  ///
+  /// In en, this message translates to:
+  /// **'Updated {time}'**
+  String widgetUpdated(String time);
+
+  /// No description provided for @widgetStartAttack.
+  ///
+  /// In en, this message translates to:
+  /// **'Start attack'**
+  String get widgetStartAttack;
+
+  /// No description provided for @widgetOpenAttack.
+  ///
+  /// In en, this message translates to:
+  /// **'Open attack'**
+  String get widgetOpenAttack;
 }
 
 class _AppLocalizationsDelegate

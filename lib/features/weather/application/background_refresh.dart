@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:migraine_tracker/app/bootstrap.dart';
 import 'package:migraine_tracker/config/app_config.dart';
 import 'package:migraine_tracker/core/firebase/firebase_bootstrap.dart';
+import 'package:migraine_tracker/features/home_widget/application/home_widget_sync.dart';
 import 'package:migraine_tracker/features/weather/application/weather_sync.dart';
 import 'package:workmanager/workmanager.dart';
 
@@ -43,6 +44,8 @@ void weatherBackgroundDispatcher() {
     );
     try {
       final result = await container.read(weatherSyncProvider).refresh();
+      // Fresh pressure for the home-screen widgets (phase 26).
+      await container.read(homeWidgetSyncProvider).publishQuietly();
       return result.error == null;
     } finally {
       container.dispose();

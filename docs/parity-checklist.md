@@ -30,3 +30,4 @@ feature PR adds its row.
 | 23 | Share PDF opens the share sheet with a readable PDF; spreadsheets open with one row per attack and per day | [ ] | [ ] | |
 | 24 | MIDAS and HIT-6 forms score and save; three-month reminder arrives; chart after two rounds | [ ] | [ ] | HIT-6 licence to confirm before release |
 | 25 | Voice sentence fills the confirm form and saves; works in airplane mode with the offline speech pack | [ ] | [ ] | Android needs the on-device recognition pack |
+| 26 | Widget shows today's level, pressure trend and update time; start button opens a new attack (or the running one) from a cold start; widget updates after an attack starts and ends | [ ] | [ ] | iOS needs the Xcode widget target and app group (CONFIGURATION item 8) |

@@ -148,7 +148,7 @@ class NotificationScheduler {
       now: now,
       enabled: enabled,
       riskDays: riskDays,
-      pressure: await _pressure(now),
+      pressure: await pressureForecast(now),
       pressureThresholdHpa: await pressureThreshold(),
       runningAttackId: running?.id,
       runningAttackStartedAt: running?.startedAt,
@@ -183,7 +183,7 @@ class NotificationScheduler {
 
   /// 24 h deltas for every cached hour from now to the end of the
   /// forecast window.
-  Future<List<PressureForecastPoint>> _pressure(DateTime now) async {
+  Future<List<PressureForecastPoint>> pressureForecast(DateTime now) async {
     final LocationCell? cell;
     try {
       cell = (await _ref.read(weatherSyncProvider).resolveLocation()).cell;

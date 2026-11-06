@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Shown only before the app has written its first strings. -->
+    <string name="widget_description">Today\'s level, the pressure trend and a start-attack button</string>
+    <string name="widget_placeholder">Open the app to load today\'s level</string>
+    <string name="widget_start_fallback">Start attack</string>
+
+    <!-- Mirrors of AppThemeTokens.riskLow, riskModerate, riskHigh. -->
+    <color name="widget_risk_low">#2E7D32</color>
+    <color name="widget_risk_moderate">#9A5B00</color>
+    <color name="widget_risk_high">#C62828</color>
+    <color name="widget_surface">#FFFFFFFF</color>
+    <color name="widget_text">#FF1F2933</color>
+    <color name="widget_muted">#FF6B7280</color>
+</resources>
