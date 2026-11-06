@@ -1,0 +1,11 @@
+# gitleaks configuration. Default rules plus the files that must never hold
+# production credentials.
+[extend]
+useDefault = true
+
+[allowlist]
+paths = [
+  '''env/dev\.json''',
+  '''env/.*\.example''',
+  '''docs/.*''',
+]

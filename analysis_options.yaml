@@ -1,0 +1,29 @@
+# Lint configuration. very_good_analysis is the base rule set; riverpod_lint
+# runs as a native analyzer plugin. Warnings are errors in CI
+# (`flutter analyze --fatal-infos`). No later branch may loosen a rule
+# without an ADR in docs/adr/.
+include: package:very_good_analysis/analysis_options.yaml
+
+plugins:
+  riverpod_lint: ^3.1.9
+
+analyzer:
+  exclude:
+    - build/**
+    - android/**
+    - ios/**
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
+    - lib/core/l10n/generated/**
+  errors:
+    # The app is not a published package; public API docs are required only
+    # under packages/.
+    public_member_api_docs: ignore
+
+linter:
+  rules:
+    public_member_api_docs: false
+    # Our files already carry a `library;` directive where needed.
+    lines_longer_than_80_chars: true
+    # Keep the conventional `const ClassName._()` form for readability.
+    unnecessary_type_name_in_constructor: false

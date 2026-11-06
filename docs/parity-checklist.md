@@ -1,0 +1,8 @@
+# iOS versus Android feature parity
+
+Ticked when the feature is verified on a real device of each platform. Every
+feature PR adds its row.
+
+| # | Feature | Android | iOS | Notes |
+| - | ------- | ------- | --- | ----- |
+| 01 | App boots to the home screen in all three flavors | [ ] | [ ] | iOS schemes to be created in Xcode |

@@ -1,0 +1,21 @@
+# Pre-commit hooks. Install once with `lefthook install` (see CONTRIBUTING.md).
+# Every check here is repeated in CI, so a skipped hook changes nothing.
+pre-commit:
+  parallel: true
+  commands:
+    format:
+      glob: "*.dart"
+      run: dart format --set-exit-if-changed {staged_files}
+    analyze:
+      glob: "*.dart"
+      run: flutter analyze --fatal-infos
+    copy-lint:
+      glob: "lib/core/l10n/arb/*.arb"
+      run: dart run tool/copy_lint.dart
+    gitleaks:
+      run: gitleaks protect --staged --redact
+
+commit-msg:
+  commands:
+    conventional:
+      run: tool/check_commit_msg.sh {1}

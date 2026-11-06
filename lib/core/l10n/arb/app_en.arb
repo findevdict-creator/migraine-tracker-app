@@ -1,0 +1,7 @@
+{
+  "@@locale": "en",
+  "appTitle": "Migraine Tracker",
+  "@appTitle": {"description": "Fallback app title; the live title comes from AppIdentity."},
+  "homeEmptyState": "Nothing logged yet.\nYour risk level and environment will appear here.",
+  "@homeEmptyState": {"description": "Home screen placeholder before any feature ships."}
+}
