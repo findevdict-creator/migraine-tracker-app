@@ -7,6 +7,7 @@ import 'package:migraine_tracker/core/l10n/l10n.dart';
 import 'package:migraine_tracker/core/theme/app_colors.dart';
 import 'package:migraine_tracker/core/util/clock.dart';
 import 'package:migraine_tracker/core/widgets/widgets.dart';
+import 'package:migraine_tracker/features/premium/application/premium_controller.dart';
 import 'package:migraine_tracker/features/weather/application/weather_sync.dart';
 import 'package:migraine_tracker/features/weather/data/weather_repository_impl.dart';
 import 'package:migraine_tracker/features/weather/domain/factor_bands.dart';
@@ -40,7 +41,19 @@ class EnvironmentFactorsCard extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = context.l10n;
     final day = ref.watch(todayFactorsProvider).value;
-    final rows = day == null ? const <Widget>[] : _rows(context, day);
+    final all = day == null ? const <Widget>[] : _rows(context, day);
+    final extended = ref
+        .watch(premiumProvider)
+        .allows(PremiumFeature.extendedFactors);
+    final lockedKeys = {
+      if (!extended)
+        for (final k in AppPremium.extendedFactorKeys) ValueKey('factor-$k'),
+    };
+    final rows = [
+      for (final r in all)
+        if (!lockedKeys.contains(r.key)) r,
+    ];
+    final anyLocked = rows.length < all.length;
     return AppCard(
       key: const ValueKey('env-factors'),
       child: Column(
@@ -69,6 +82,7 @@ class EnvironmentFactorsCard extends ConsumerWidget {
             )
           else
             ...rows,
+          if (anyLocked) _LockedFactors(),
         ],
       ),
     );
@@ -190,4 +204,29 @@ class EnvironmentFactorsCard extends ConsumerWidget {
     'ragweed' => l10n.pollenRagweed,
     _ => key,
   };
+}
+
+/// Stands in for the extended rows when there is data for them but no
+/// Premium.
+class _LockedFactors extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final l10n = context.l10n;
+    return Padding(
+      key: const ValueKey('factor-premium'),
+      padding: const EdgeInsets.only(top: AppThemeTokens.space2),
+      child: Row(
+        children: [
+          const Icon(Icons.lock_outline, size: 18),
+          const SizedBox(width: AppThemeTokens.space2),
+          Expanded(child: Text(l10n.premiumFactorsLocked)),
+          TextButton(
+            key: const ValueKey('factor-premium-open'),
+            onPressed: () => context.push(AppRoutes.premium),
+            child: Text(l10n.premiumLockButton),
+          ),
+        ],
+      ),
+    );
+  }
 }

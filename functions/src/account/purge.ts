@@ -21,7 +21,7 @@ export interface PurgeDeps {
 }
 
 /** Collections keyed by account id. */
-const BY_ID = [config.collections.users] as const;
+const BY_ID = [config.collections.users, config.collections.entitlements] as const;
 
 /** Collections whose documents carry the owner in a `uid` field. */
 const BY_OWNER = [config.collections.shareSnapshots, config.collections.auditCounts] as const;

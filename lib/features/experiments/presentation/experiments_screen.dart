@@ -11,6 +11,8 @@ import 'package:migraine_tracker/core/widgets/widgets.dart';
 import 'package:migraine_tracker/features/experiments/domain/experiment.dart';
 import 'package:migraine_tracker/features/experiments/presentation/experiment_controller.dart';
 import 'package:migraine_tracker/features/experiments/presentation/experiment_text.dart';
+import 'package:migraine_tracker/features/premium/application/premium_controller.dart';
+import 'package:migraine_tracker/features/premium/presentation/premium_lock.dart';
 
 /// FR-12: one change at a time, a daily "did you stick with it", and the
 /// two weeks before against the experiment days.
@@ -34,6 +36,16 @@ class ExperimentsScreen extends ConsumerWidget {
             AsyncData(value: final experiment?) => [
               _ActiveExperiment(experiment: experiment),
             ],
+            AsyncData()
+                when !ref
+                    .watch(premiumProvider)
+                    .allows(PremiumFeature.experiments) =>
+              [
+                PremiumLockCard(
+                  feature: PremiumFeature.experiments,
+                  note: past.isEmpty ? null : l10n.premiumLockExperimentsNote,
+                ),
+              ],
             AsyncData() => [const _ChangePicker()],
             // Loading takes a frame or two; nothing flashes meanwhile.
             _ => const <Widget>[],

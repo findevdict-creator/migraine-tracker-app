@@ -9,6 +9,8 @@ import 'package:migraine_tracker/core/l10n/l10n.dart';
 import 'package:migraine_tracker/core/theme/app_colors.dart';
 import 'package:migraine_tracker/core/widgets/widgets.dart';
 import 'package:migraine_tracker/features/account/presentation/account_controller.dart';
+import 'package:migraine_tracker/features/premium/application/premium_controller.dart';
+import 'package:migraine_tracker/features/premium/presentation/premium_lock.dart';
 import 'package:migraine_tracker/features/report/domain/report_model.dart';
 import 'package:migraine_tracker/features/share_link/application/share_link_actions.dart';
 import 'package:migraine_tracker/features/share_link/domain/share_link.dart';
@@ -109,6 +111,15 @@ class _ShareLinkSheetState extends ConsumerState<_ShareLinkSheet> {
                   Navigator.of(context).pop();
                   await router.push<void>(AppRoutes.account);
                 },
+              ),
+            ] else if (link == null &&
+                !ref
+                    .watch(premiumProvider)
+                    .allows(PremiumFeature.shareLink)) ...[
+              PremiumLockCard(
+                feature: PremiumFeature.shareLink,
+                note: l10n.premiumLockShareLinkNote,
+                beforeOpen: () => Navigator.of(context).pop(),
               ),
             ] else if (link == null) ...[
               Wrap(

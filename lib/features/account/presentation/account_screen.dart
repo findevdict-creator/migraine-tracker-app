@@ -385,6 +385,13 @@ class _DeleteDialogState extends State<_DeleteDialog> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(l10n.accountDeleteBody(AppAccounts.purgeWithinHours)),
+          if (AppFeatureFlags.premiumAvailable) ...[
+            const SizedBox(height: AppThemeTokens.space2),
+            Text(
+              l10n.accountDeleteSubscription,
+              key: const ValueKey('account-delete-subscription'),
+            ),
+          ],
           if (widget.needsPassword)
             TextField(
               key: const ValueKey('account-delete-password'),

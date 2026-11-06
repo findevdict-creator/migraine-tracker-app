@@ -3,6 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:migraine_tracker/config/app_config.dart';
 import 'package:migraine_tracker/core/db/app_database.dart';
 import 'package:migraine_tracker/core/util/clock.dart';
+import 'package:migraine_tracker/features/premium/presentation/premium_screen.dart';
 import 'package:migraine_tracker/features/weather/data/weather_sources.dart';
 import 'package:migraine_tracker/features/weather/domain/weather_repository.dart';
 import 'package:migraine_tracker/features/weather/presentation/about_data_screen.dart';
@@ -24,9 +25,14 @@ void main() {
 
   tearDown(() => db.close());
 
-  Future<void> openEnvironment(WidgetTester tester, {LocationFix? fix}) async {
+  Future<void> openEnvironment(
+    WidgetTester tester, {
+    LocationFix? fix,
+    AppFlavor flavor = AppFlavor.dev,
+  }) async {
     await tester.pumpApp(
       database: db,
+      flavor: flavor,
       overrides: [
         clockProvider.overrideWithValue(() => now),
         weatherSourceProvider.overrideWithValue(source),
@@ -58,6 +64,24 @@ void main() {
     expect(rowText(tester, 'daylight'), '9 h 0 min');
     expect(rowText(tester, 'sun'), isNotEmpty);
     expect(find.byKey(const ValueKey('env-factors-empty')), findsNothing);
+  });
+
+  testWidgets('without Premium the extended factors give way to one line '
+      'that opens the paywall; the rest stay', (tester) async {
+    await openEnvironment(
+      tester,
+      fix: const LocationFix(lat: 51.5, lon: -0.1),
+      flavor: AppFlavor.staging,
+    );
+    expect(rowText(tester, 'aqi-us'), '42 (low)');
+    expect(rowText(tester, 'uv'), '4.5 (moderate)');
+    for (final key in AppPremium.extendedFactorKeys) {
+      expect(find.byKey(ValueKey('factor-$key')), findsNothing, reason: key);
+    }
+    await tester.scrollToKey('factor-premium-open');
+    await tester.tap(find.byKey(const ValueKey('factor-premium-open')));
+    await tester.pumpAndSettle();
+    expect(find.byType(PremiumScreen), findsOneWidget);
   });
 
   testWidgets('hides factors the region lacks, and the card says so when '

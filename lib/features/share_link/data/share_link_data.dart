@@ -76,6 +76,7 @@ class FunctionsShareLinkGateway implements ShareLinkGateway {
     } on FirebaseFunctionsException catch (e) {
       throw ShareLinkException(switch (e.code) {
         'unauthenticated' => ShareLinkError.signedOut,
+        'permission-denied' => ShareLinkError.premiumRequired,
         'unavailable' || 'deadline-exceeded' => ShareLinkError.network,
         _ => ShareLinkError.unknown,
       });

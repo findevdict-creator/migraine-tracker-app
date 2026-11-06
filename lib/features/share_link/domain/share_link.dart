@@ -28,7 +28,13 @@ class ShareLinkEntity {
   }
 }
 
-enum ShareLinkError { signedOut, unavailable, network, unknown }
+enum ShareLinkError {
+  signedOut,
+  premiumRequired,
+  unavailable,
+  network,
+  unknown,
+}
 
 class ShareLinkException implements Exception {
   const ShareLinkException(this.error);
