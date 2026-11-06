@@ -688,4 +688,123 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get barometerStampNote =>
       'Each attack you start records the sensor reading and the station value of that hour.';
+
+  @override
+  String get envFactorsTitle => 'Today\'s factors';
+
+  @override
+  String get envFactorsEmpty => 'No daily factors for this area yet.';
+
+  @override
+  String get factorBandLow => 'low';
+
+  @override
+  String get factorBandModerate => 'moderate';
+
+  @override
+  String get factorBandHigh => 'high';
+
+  @override
+  String get factorBandVeryHigh => 'very high';
+
+  @override
+  String factorValueWithBand(String value, String band) {
+    return '$value ($band)';
+  }
+
+  @override
+  String get factorAqiUs => 'Air quality (US AQI)';
+
+  @override
+  String get factorAqiEu => 'Air quality (European AQI)';
+
+  @override
+  String get factorParticulates => 'Particulates PM2.5 / PM10';
+
+  @override
+  String factorParticulatesValue(String pm25, String pm10) {
+    return '$pm25 / $pm10 µg/m³';
+  }
+
+  @override
+  String get factorOzone => 'Ozone';
+
+  @override
+  String factorMicrograms(String value) {
+    return '$value µg/m³';
+  }
+
+  @override
+  String get factorPollen => 'Pollen (Europe only)';
+
+  @override
+  String factorPollenType(String type, String band) {
+    return '$type $band';
+  }
+
+  @override
+  String get pollenAlder => 'alder';
+
+  @override
+  String get pollenBirch => 'birch';
+
+  @override
+  String get pollenGrass => 'grass';
+
+  @override
+  String get pollenMugwort => 'mugwort';
+
+  @override
+  String get pollenOlive => 'olive';
+
+  @override
+  String get pollenRagweed => 'ragweed';
+
+  @override
+  String get factorUvMax => 'UV index, daily max';
+
+  @override
+  String get factorDaylight => 'Daylight';
+
+  @override
+  String factorDaylightValue(int hours, int minutes) {
+    return '$hours h $minutes min';
+  }
+
+  @override
+  String get factorSun => 'Sunrise and sunset';
+
+  @override
+  String factorSunValue(String sunrise, String sunset) {
+    return '$sunrise to $sunset';
+  }
+
+  @override
+  String get aboutDataTitle => 'About the data';
+
+  @override
+  String get aboutDataIntro =>
+      'Where the numbers in this app come from, and what each one can and cannot tell you.';
+
+  @override
+  String get aboutDataSources => 'Sources';
+
+  @override
+  String aboutDataLicence(String coverage, String licence) {
+    return '$coverage. Licence: $licence.';
+  }
+
+  @override
+  String get aboutDataPrivacy => 'What leaves your phone';
+
+  @override
+  String get aboutDataPrivacyBody =>
+      'Only a location rounded to about 10 km, so the weather service can answer for your area. Your attacks, check-ins, medication and health data stay on this device unless you choose to back up or share them.';
+
+  @override
+  String get aboutDataLimits => 'Limits';
+
+  @override
+  String get aboutDataLimitsBody =>
+      'Forecasts are model estimates for a grid cell, not a measurement at your door. Pollen is only available in Europe. Air quality may be missing in some regions. Where a factor has no data for your area it is simply not shown.';
 }

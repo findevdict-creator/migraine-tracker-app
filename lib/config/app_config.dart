@@ -193,6 +193,67 @@ class AppEndpoints {
 
 // ---------------------------------------------------------------------------
 // Feature flags
+/// Every outside source the app shows data from, for the "About the data"
+/// screen. Add a row when a source is added; the screen lists this.
+class AppDataSources {
+  const AppDataSources._();
+
+  static const List<DataSource> entries = [
+    DataSource(
+      id: 'open-meteo-weather',
+      name: 'Open-Meteo weather',
+      url: AppEndpoints.openMeteoAttributionUrl,
+      licence: 'CC BY 4.0',
+      coverage: 'Worldwide',
+    ),
+    DataSource(
+      id: 'open-meteo-air-quality',
+      name: 'Open-Meteo air quality and UV (CAMS)',
+      url: AppEndpoints.openMeteoAttributionUrl,
+      licence: 'CC BY 4.0',
+      coverage: 'Worldwide, European AQI in Europe',
+    ),
+    DataSource(
+      id: 'open-meteo-pollen',
+      name: 'Open-Meteo pollen (CAMS)',
+      url: AppEndpoints.openMeteoAttributionUrl,
+      licence: 'CC BY 4.0',
+      coverage: 'Europe only',
+    ),
+    DataSource(
+      id: 'open-meteo-geocoding',
+      name: 'Open-Meteo geocoding',
+      url: AppEndpoints.openMeteoAttributionUrl,
+      licence: 'CC BY 4.0',
+      coverage: 'Worldwide',
+    ),
+    DataSource(
+      id: 'device-barometer',
+      name: 'Device barometer',
+      url: null,
+      licence: null,
+      coverage: 'Phones with a pressure sensor',
+    ),
+  ];
+}
+
+/// One row of [AppDataSources.entries].
+class DataSource {
+  const DataSource({
+    required this.id,
+    required this.name,
+    required this.url,
+    required this.licence,
+    required this.coverage,
+  });
+
+  final String id;
+  final String name;
+  final String? url;
+  final String? licence;
+  final String coverage;
+}
+
 // ---------------------------------------------------------------------------
 
 /// Feature flags. Static per flavor; a flag that must flip at runtime gets a
@@ -282,6 +343,15 @@ class AppThresholds {
   /// Gauge range in hPa.
   static const double barometerGaugeMinHpa = 950;
   static const double barometerGaugeMaxHpa = 1050;
+
+  /// Environment factor bands (phase 13): upper bounds, inclusive, of the
+  /// low, moderate and high bands. Above the last bound is "very high".
+  /// US AQI follows the EPA breakpoints; UV the WHO index; pollen is in
+  /// grains per cubic metre as served by Open-Meteo.
+  static const List<int> aqiUsBands = [50, 100, 150];
+  static const List<int> aqiEuBands = [20, 40, 60];
+  static const List<double> uvBands = [2, 5, 7];
+  static const List<double> pollenBands = [20, 50, 100];
 
   /// Days a check-in can be back-filled.
   static const int checkinBackfillDays = 7;

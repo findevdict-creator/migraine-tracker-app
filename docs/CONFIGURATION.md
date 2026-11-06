@@ -13,7 +13,8 @@ production build, and the few native files that mirror a value.
 | `AppEndpoints` | Open-Meteo URLs, Cloud Function names | a function is renamed or a provider changes |
 | `AppFeatureFlags` | dev tools, emulator use, crash-reporting availability, per-feature availability | hiding a feature, enabling dev screens |
 | `AppIdentity.clinicianGuidanceUrl` | page behind the medication-overuse notes | M publishes or changes it |
-| `AppThresholds` | overuse notes (10, 15 days), learning threshold (10 attacks), refresh cadences, forecast window, location rounding, weather retention and stale age, barometer sampling, calibration and gauge range, back-fill days | product decisions |
+| `AppThresholds` | overuse notes (10, 15 days), learning threshold (10 attacks), refresh cadences, forecast window, location rounding, weather retention and stale age, barometer sampling, calibration and gauge range, factor bands (AQI, UV, pollen), back-fill days | product decisions |
+| `AppDataSources` | every outside data source shown on "About the data": name, coverage, licence, link | a source is added or replaced |
 | `AppBackgroundTasks` | identifiers of background jobs (weather refresh) | mirrored in `ios/Runner/Info.plist` and `AppDelegate.swift`; change all three together |
 | `AppThemeTokens` | seed colour, risk colours, attack theme palette, semantic colours, font family, spacing, radii, tap targets, text scale ceiling, animation durations | design changes |
 | `AppAssets` | logo, logo mark, launcher icon, head map, routine illustrations | replacing artwork (keep the paths, swap the files) |
