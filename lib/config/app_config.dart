@@ -365,6 +365,10 @@ class AppThresholds {
   /// Exposures below which a factor is "not enough data".
   static const int minExposuresForInsight = 5;
 
+  /// Period the doctor report opens with; the chips offer 30, 90, 180
+  /// and 365 days plus a custom range.
+  static const int defaultReportDays = 90;
+
   /// Insight buckets (FR-11) from the ratio of the learned weight to the
   /// population weight: a trigger at or above [insightTriggerLift], a
   /// protector at or below [insightProtectorLift], no clear effect

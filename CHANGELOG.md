@@ -7,6 +7,8 @@ release time.
 ## [Unreleased]
 
 ### Added
+
+- Doctor report: on-device PDF and two CSV files for a chosen period (attack calendar, monthly counts, duration, factors with sample sizes, medication days, pressure correlation, symptoms), shared through the OS share sheet from Settings > Doctor report (23).
 - Push wake-up: a scheduled silent push refreshes the forecast and
   re-plans the local alerts between opens; tokens registered without an
   account (22).

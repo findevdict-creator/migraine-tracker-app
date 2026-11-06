@@ -2385,6 +2385,491 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Questions about a running attack'**
   String get notifChannelAttackDescription;
+
+  /// No description provided for @reportTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Doctor report'**
+  String get reportTitle;
+
+  /// No description provided for @settingsReportHint.
+  ///
+  /// In en, this message translates to:
+  /// **'PDF and spreadsheet for a date range'**
+  String get settingsReportHint;
+
+  /// No description provided for @reportIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'A summary of what you logged, for your next appointment. Pick a period, then share the PDF or the spreadsheets.'**
+  String get reportIntro;
+
+  /// No description provided for @reportRangeLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Period'**
+  String get reportRangeLabel;
+
+  /// No description provided for @reportRangeDays.
+  ///
+  /// In en, this message translates to:
+  /// **'{days} days'**
+  String reportRangeDays(int days);
+
+  /// No description provided for @reportRangeCustom.
+  ///
+  /// In en, this message translates to:
+  /// **'Custom'**
+  String get reportRangeCustom;
+
+  /// No description provided for @reportRangeText.
+  ///
+  /// In en, this message translates to:
+  /// **'{from} to {to}'**
+  String reportRangeText(String from, String to);
+
+  /// No description provided for @reportPreviewAttacks.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =0{No attacks} =1{1 attack} other{{count} attacks}}'**
+  String reportPreviewAttacks(int count);
+
+  /// No description provided for @reportPreviewAttackDays.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =0{no attack days} =1{1 attack day} other{{count} attack days}}'**
+  String reportPreviewAttackDays(int count);
+
+  /// No description provided for @reportPreviewDoses.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =0{no doses} =1{1 dose} other{{count} doses}}'**
+  String reportPreviewDoses(int count);
+
+  /// No description provided for @reportPreviewCheckins.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =0{no check-ins} =1{1 check-in} other{{count} check-ins}}'**
+  String reportPreviewCheckins(int count);
+
+  /// No description provided for @reportEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing logged in this period yet.'**
+  String get reportEmpty;
+
+  /// No description provided for @reportSharePdf.
+  ///
+  /// In en, this message translates to:
+  /// **'Share PDF'**
+  String get reportSharePdf;
+
+  /// No description provided for @reportShareCsv.
+  ///
+  /// In en, this message translates to:
+  /// **'Share spreadsheets'**
+  String get reportShareCsv;
+
+  /// No description provided for @reportShareAll.
+  ///
+  /// In en, this message translates to:
+  /// **'Share everything'**
+  String get reportShareAll;
+
+  /// No description provided for @reportBuilding.
+  ///
+  /// In en, this message translates to:
+  /// **'Preparing the report'**
+  String get reportBuilding;
+
+  /// No description provided for @reportFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'The report could not be prepared. Try again.'**
+  String get reportFailed;
+
+  /// No description provided for @reportWhatIsIn.
+  ///
+  /// In en, this message translates to:
+  /// **'What the PDF contains'**
+  String get reportWhatIsIn;
+
+  /// No description provided for @reportContents.
+  ///
+  /// In en, this message translates to:
+  /// **'Attack calendar, monthly counts, duration, factors with their sample sizes, medication days, pressure changes, symptoms and head locations. No names, no notes.'**
+  String get reportContents;
+
+  /// No description provided for @reportPdfTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'{app} report'**
+  String reportPdfTitle(String app);
+
+  /// No description provided for @reportPdfPeriod.
+  ///
+  /// In en, this message translates to:
+  /// **'Period: {from} to {to} ({days} days)'**
+  String reportPdfPeriod(String from, String to, int days);
+
+  /// No description provided for @reportPdfGenerated.
+  ///
+  /// In en, this message translates to:
+  /// **'Generated {date} on the person\'s device from their own log.'**
+  String reportPdfGenerated(String date);
+
+  /// No description provided for @reportPdfDisclaimer.
+  ///
+  /// In en, this message translates to:
+  /// **'This is a self-reported diary summary from a wellness app. It is not a medical record and does not replace a clinical assessment. Factor ratios describe this person\'s log only and are not causes.'**
+  String get reportPdfDisclaimer;
+
+  /// No description provided for @reportPdfPage.
+  ///
+  /// In en, this message translates to:
+  /// **'Page {page} of {pages}'**
+  String reportPdfPage(int page, int pages);
+
+  /// No description provided for @reportSectionOverview.
+  ///
+  /// In en, this message translates to:
+  /// **'Overview'**
+  String get reportSectionOverview;
+
+  /// No description provided for @reportStatAttacks.
+  ///
+  /// In en, this message translates to:
+  /// **'Attacks'**
+  String get reportStatAttacks;
+
+  /// No description provided for @reportStatAttackDays.
+  ///
+  /// In en, this message translates to:
+  /// **'Attack days'**
+  String get reportStatAttackDays;
+
+  /// No description provided for @reportStatPerMonth.
+  ///
+  /// In en, this message translates to:
+  /// **'Attacks per 30 days'**
+  String get reportStatPerMonth;
+
+  /// No description provided for @reportStatMeanIntensity.
+  ///
+  /// In en, this message translates to:
+  /// **'Mean intensity (0-10)'**
+  String get reportStatMeanIntensity;
+
+  /// No description provided for @reportStatAcuteDays.
+  ///
+  /// In en, this message translates to:
+  /// **'Days with acute medication'**
+  String get reportStatAcuteDays;
+
+  /// No description provided for @reportStatCheckins.
+  ///
+  /// In en, this message translates to:
+  /// **'Days with a check-in'**
+  String get reportStatCheckins;
+
+  /// No description provided for @reportSectionMonths.
+  ///
+  /// In en, this message translates to:
+  /// **'By month'**
+  String get reportSectionMonths;
+
+  /// No description provided for @reportColMonth.
+  ///
+  /// In en, this message translates to:
+  /// **'Month'**
+  String get reportColMonth;
+
+  /// No description provided for @reportColAttacks.
+  ///
+  /// In en, this message translates to:
+  /// **'Attacks'**
+  String get reportColAttacks;
+
+  /// No description provided for @reportColAttackDays.
+  ///
+  /// In en, this message translates to:
+  /// **'Attack days'**
+  String get reportColAttackDays;
+
+  /// No description provided for @reportColMeanIntensity.
+  ///
+  /// In en, this message translates to:
+  /// **'Mean intensity'**
+  String get reportColMeanIntensity;
+
+  /// No description provided for @reportColAcuteDays.
+  ///
+  /// In en, this message translates to:
+  /// **'Acute days'**
+  String get reportColAcuteDays;
+
+  /// No description provided for @reportColNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Note'**
+  String get reportColNote;
+
+  /// No description provided for @reportOveruseWatch.
+  ///
+  /// In en, this message translates to:
+  /// **'10+ acute days'**
+  String get reportOveruseWatch;
+
+  /// No description provided for @reportOveruseHigh.
+  ///
+  /// In en, this message translates to:
+  /// **'15+ acute days'**
+  String get reportOveruseHigh;
+
+  /// No description provided for @reportSectionCalendar.
+  ///
+  /// In en, this message translates to:
+  /// **'Attack calendar'**
+  String get reportSectionCalendar;
+
+  /// No description provided for @reportCalendarHint.
+  ///
+  /// In en, this message translates to:
+  /// **'One cell per day. Shaded cells had an attack; the number is the highest intensity that day.'**
+  String get reportCalendarHint;
+
+  /// No description provided for @reportSectionDuration.
+  ///
+  /// In en, this message translates to:
+  /// **'Attack duration'**
+  String get reportSectionDuration;
+
+  /// No description provided for @reportDurationNone.
+  ///
+  /// In en, this message translates to:
+  /// **'No ended attacks in this period.'**
+  String get reportDurationNone;
+
+  /// No description provided for @reportDurationSummary.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} ended attacks. Shortest {shortest}, median {median}, longest {longest}.'**
+  String reportDurationSummary(
+    int count,
+    String shortest,
+    String median,
+    String longest,
+  );
+
+  /// No description provided for @reportBucketUnderFour.
+  ///
+  /// In en, this message translates to:
+  /// **'Under 4 h'**
+  String get reportBucketUnderFour;
+
+  /// No description provided for @reportBucketFourToTwelve.
+  ///
+  /// In en, this message translates to:
+  /// **'4 to 12 h'**
+  String get reportBucketFourToTwelve;
+
+  /// No description provided for @reportBucketTwelveToDay.
+  ///
+  /// In en, this message translates to:
+  /// **'12 to 24 h'**
+  String get reportBucketTwelveToDay;
+
+  /// No description provided for @reportBucketOneToThreeDays.
+  ///
+  /// In en, this message translates to:
+  /// **'1 to 3 days'**
+  String get reportBucketOneToThreeDays;
+
+  /// No description provided for @reportBucketOverThreeDays.
+  ///
+  /// In en, this message translates to:
+  /// **'Over 3 days'**
+  String get reportBucketOverThreeDays;
+
+  /// No description provided for @reportSectionTriggers.
+  ///
+  /// In en, this message translates to:
+  /// **'Factors in the person\'s log'**
+  String get reportSectionTriggers;
+
+  /// No description provided for @reportTriggersHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Ratio of attacks after days with the factor to the person\'s usual rate, with the number of exposure days behind it. Below {floor} exposure days the ratio is not shown.'**
+  String reportTriggersHint(int floor);
+
+  /// No description provided for @reportTriggersNone.
+  ///
+  /// In en, this message translates to:
+  /// **'Not enough logged days yet to compare factors.'**
+  String get reportTriggersNone;
+
+  /// No description provided for @reportColFactor.
+  ///
+  /// In en, this message translates to:
+  /// **'Factor'**
+  String get reportColFactor;
+
+  /// No description provided for @reportColRatio.
+  ///
+  /// In en, this message translates to:
+  /// **'Ratio'**
+  String get reportColRatio;
+
+  /// No description provided for @reportColExposures.
+  ///
+  /// In en, this message translates to:
+  /// **'Exposure days'**
+  String get reportColExposures;
+
+  /// No description provided for @reportColFollowed.
+  ///
+  /// In en, this message translates to:
+  /// **'Followed by attack'**
+  String get reportColFollowed;
+
+  /// No description provided for @reportColConfidence.
+  ///
+  /// In en, this message translates to:
+  /// **'Evidence'**
+  String get reportColConfidence;
+
+  /// No description provided for @reportConfidenceLow.
+  ///
+  /// In en, this message translates to:
+  /// **'low'**
+  String get reportConfidenceLow;
+
+  /// No description provided for @reportConfidenceMedium.
+  ///
+  /// In en, this message translates to:
+  /// **'moderate'**
+  String get reportConfidenceMedium;
+
+  /// No description provided for @reportConfidenceHigh.
+  ///
+  /// In en, this message translates to:
+  /// **'good'**
+  String get reportConfidenceHigh;
+
+  /// No description provided for @reportSectionMedications.
+  ///
+  /// In en, this message translates to:
+  /// **'Medication'**
+  String get reportSectionMedications;
+
+  /// No description provided for @reportMedicationsNone.
+  ///
+  /// In en, this message translates to:
+  /// **'No doses logged in this period.'**
+  String get reportMedicationsNone;
+
+  /// No description provided for @reportColMedication.
+  ///
+  /// In en, this message translates to:
+  /// **'Medication'**
+  String get reportColMedication;
+
+  /// No description provided for @reportColKind.
+  ///
+  /// In en, this message translates to:
+  /// **'Type'**
+  String get reportColKind;
+
+  /// No description provided for @reportColDoses.
+  ///
+  /// In en, this message translates to:
+  /// **'Doses'**
+  String get reportColDoses;
+
+  /// No description provided for @reportColDays.
+  ///
+  /// In en, this message translates to:
+  /// **'Days'**
+  String get reportColDays;
+
+  /// No description provided for @reportColRelief.
+  ///
+  /// In en, this message translates to:
+  /// **'Relief at 2 h (none / partial / full)'**
+  String get reportColRelief;
+
+  /// No description provided for @reportKindAcute.
+  ///
+  /// In en, this message translates to:
+  /// **'acute'**
+  String get reportKindAcute;
+
+  /// No description provided for @reportKindPreventive.
+  ///
+  /// In en, this message translates to:
+  /// **'preventive'**
+  String get reportKindPreventive;
+
+  /// No description provided for @reportSectionWeather.
+  ///
+  /// In en, this message translates to:
+  /// **'Air pressure'**
+  String get reportSectionWeather;
+
+  /// No description provided for @reportWeatherHint.
+  ///
+  /// In en, this message translates to:
+  /// **'A fall is a drop of {hpa} hPa or more over 24 h at the time of the entry.'**
+  String reportWeatherHint(String hpa);
+
+  /// No description provided for @reportWeatherNone.
+  ///
+  /// In en, this message translates to:
+  /// **'No weather snapshots in this period.'**
+  String get reportWeatherNone;
+
+  /// No description provided for @reportWeatherAttacks.
+  ///
+  /// In en, this message translates to:
+  /// **'{fall} of {total} attacks began after a pressure fall.'**
+  String reportWeatherAttacks(int fall, int total);
+
+  /// No description provided for @reportWeatherDays.
+  ///
+  /// In en, this message translates to:
+  /// **'{fall} of {total} check-in days had one.'**
+  String reportWeatherDays(int fall, int total);
+
+  /// No description provided for @reportWeatherLift.
+  ///
+  /// In en, this message translates to:
+  /// **'Ratio: {lift}x (1.0 means no relation).'**
+  String reportWeatherLift(String lift);
+
+  /// No description provided for @reportSectionSymptoms.
+  ///
+  /// In en, this message translates to:
+  /// **'Symptoms and head locations'**
+  String get reportSectionSymptoms;
+
+  /// No description provided for @reportSymptomsNone.
+  ///
+  /// In en, this message translates to:
+  /// **'No symptoms or locations logged.'**
+  String get reportSymptomsNone;
+
+  /// No description provided for @reportCountOfAttacks.
+  ///
+  /// In en, this message translates to:
+  /// **'{name}: {count} of {total} attacks'**
+  String reportCountOfAttacks(String name, int count, int total);
+
+  /// No description provided for @reportHoursShort.
+  ///
+  /// In en, this message translates to:
+  /// **'{hours} h'**
+  String reportHoursShort(String hours);
 }
 
 class _AppLocalizationsDelegate

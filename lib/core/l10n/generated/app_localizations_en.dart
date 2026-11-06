@@ -1360,4 +1360,318 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get notifChannelAttackDescription =>
       'Questions about a running attack';
+
+  @override
+  String get reportTitle => 'Doctor report';
+
+  @override
+  String get settingsReportHint => 'PDF and spreadsheet for a date range';
+
+  @override
+  String get reportIntro =>
+      'A summary of what you logged, for your next appointment. Pick a period, then share the PDF or the spreadsheets.';
+
+  @override
+  String get reportRangeLabel => 'Period';
+
+  @override
+  String reportRangeDays(int days) {
+    return '$days days';
+  }
+
+  @override
+  String get reportRangeCustom => 'Custom';
+
+  @override
+  String reportRangeText(String from, String to) {
+    return '$from to $to';
+  }
+
+  @override
+  String reportPreviewAttacks(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count attacks',
+      one: '1 attack',
+      zero: 'No attacks',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String reportPreviewAttackDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count attack days',
+      one: '1 attack day',
+      zero: 'no attack days',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String reportPreviewDoses(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count doses',
+      one: '1 dose',
+      zero: 'no doses',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String reportPreviewCheckins(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count check-ins',
+      one: '1 check-in',
+      zero: 'no check-ins',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get reportEmpty => 'Nothing logged in this period yet.';
+
+  @override
+  String get reportSharePdf => 'Share PDF';
+
+  @override
+  String get reportShareCsv => 'Share spreadsheets';
+
+  @override
+  String get reportShareAll => 'Share everything';
+
+  @override
+  String get reportBuilding => 'Preparing the report';
+
+  @override
+  String get reportFailed => 'The report could not be prepared. Try again.';
+
+  @override
+  String get reportWhatIsIn => 'What the PDF contains';
+
+  @override
+  String get reportContents =>
+      'Attack calendar, monthly counts, duration, factors with their sample sizes, medication days, pressure changes, symptoms and head locations. No names, no notes.';
+
+  @override
+  String reportPdfTitle(String app) {
+    return '$app report';
+  }
+
+  @override
+  String reportPdfPeriod(String from, String to, int days) {
+    return 'Period: $from to $to ($days days)';
+  }
+
+  @override
+  String reportPdfGenerated(String date) {
+    return 'Generated $date on the person\'s device from their own log.';
+  }
+
+  @override
+  String get reportPdfDisclaimer =>
+      'This is a self-reported diary summary from a wellness app. It is not a medical record and does not replace a clinical assessment. Factor ratios describe this person\'s log only and are not causes.';
+
+  @override
+  String reportPdfPage(int page, int pages) {
+    return 'Page $page of $pages';
+  }
+
+  @override
+  String get reportSectionOverview => 'Overview';
+
+  @override
+  String get reportStatAttacks => 'Attacks';
+
+  @override
+  String get reportStatAttackDays => 'Attack days';
+
+  @override
+  String get reportStatPerMonth => 'Attacks per 30 days';
+
+  @override
+  String get reportStatMeanIntensity => 'Mean intensity (0-10)';
+
+  @override
+  String get reportStatAcuteDays => 'Days with acute medication';
+
+  @override
+  String get reportStatCheckins => 'Days with a check-in';
+
+  @override
+  String get reportSectionMonths => 'By month';
+
+  @override
+  String get reportColMonth => 'Month';
+
+  @override
+  String get reportColAttacks => 'Attacks';
+
+  @override
+  String get reportColAttackDays => 'Attack days';
+
+  @override
+  String get reportColMeanIntensity => 'Mean intensity';
+
+  @override
+  String get reportColAcuteDays => 'Acute days';
+
+  @override
+  String get reportColNote => 'Note';
+
+  @override
+  String get reportOveruseWatch => '10+ acute days';
+
+  @override
+  String get reportOveruseHigh => '15+ acute days';
+
+  @override
+  String get reportSectionCalendar => 'Attack calendar';
+
+  @override
+  String get reportCalendarHint =>
+      'One cell per day. Shaded cells had an attack; the number is the highest intensity that day.';
+
+  @override
+  String get reportSectionDuration => 'Attack duration';
+
+  @override
+  String get reportDurationNone => 'No ended attacks in this period.';
+
+  @override
+  String reportDurationSummary(
+    int count,
+    String shortest,
+    String median,
+    String longest,
+  ) {
+    return '$count ended attacks. Shortest $shortest, median $median, longest $longest.';
+  }
+
+  @override
+  String get reportBucketUnderFour => 'Under 4 h';
+
+  @override
+  String get reportBucketFourToTwelve => '4 to 12 h';
+
+  @override
+  String get reportBucketTwelveToDay => '12 to 24 h';
+
+  @override
+  String get reportBucketOneToThreeDays => '1 to 3 days';
+
+  @override
+  String get reportBucketOverThreeDays => 'Over 3 days';
+
+  @override
+  String get reportSectionTriggers => 'Factors in the person\'s log';
+
+  @override
+  String reportTriggersHint(int floor) {
+    return 'Ratio of attacks after days with the factor to the person\'s usual rate, with the number of exposure days behind it. Below $floor exposure days the ratio is not shown.';
+  }
+
+  @override
+  String get reportTriggersNone =>
+      'Not enough logged days yet to compare factors.';
+
+  @override
+  String get reportColFactor => 'Factor';
+
+  @override
+  String get reportColRatio => 'Ratio';
+
+  @override
+  String get reportColExposures => 'Exposure days';
+
+  @override
+  String get reportColFollowed => 'Followed by attack';
+
+  @override
+  String get reportColConfidence => 'Evidence';
+
+  @override
+  String get reportConfidenceLow => 'low';
+
+  @override
+  String get reportConfidenceMedium => 'moderate';
+
+  @override
+  String get reportConfidenceHigh => 'good';
+
+  @override
+  String get reportSectionMedications => 'Medication';
+
+  @override
+  String get reportMedicationsNone => 'No doses logged in this period.';
+
+  @override
+  String get reportColMedication => 'Medication';
+
+  @override
+  String get reportColKind => 'Type';
+
+  @override
+  String get reportColDoses => 'Doses';
+
+  @override
+  String get reportColDays => 'Days';
+
+  @override
+  String get reportColRelief => 'Relief at 2 h (none / partial / full)';
+
+  @override
+  String get reportKindAcute => 'acute';
+
+  @override
+  String get reportKindPreventive => 'preventive';
+
+  @override
+  String get reportSectionWeather => 'Air pressure';
+
+  @override
+  String reportWeatherHint(String hpa) {
+    return 'A fall is a drop of $hpa hPa or more over 24 h at the time of the entry.';
+  }
+
+  @override
+  String get reportWeatherNone => 'No weather snapshots in this period.';
+
+  @override
+  String reportWeatherAttacks(int fall, int total) {
+    return '$fall of $total attacks began after a pressure fall.';
+  }
+
+  @override
+  String reportWeatherDays(int fall, int total) {
+    return '$fall of $total check-in days had one.';
+  }
+
+  @override
+  String reportWeatherLift(String lift) {
+    return 'Ratio: ${lift}x (1.0 means no relation).';
+  }
+
+  @override
+  String get reportSectionSymptoms => 'Symptoms and head locations';
+
+  @override
+  String get reportSymptomsNone => 'No symptoms or locations logged.';
+
+  @override
+  String reportCountOfAttacks(String name, int count, int total) {
+    return '$name: $count of $total attacks';
+  }
+
+  @override
+  String reportHoursShort(String hours) {
+    return '$hours h';
+  }
 }

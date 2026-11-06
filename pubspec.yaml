@@ -28,6 +28,7 @@ dependencies:
   intl: ^0.20.3
   path: ^1.9.1
   path_provider: ^2.1.6
+  pdf: ^3.13.1
   risk_model:
     path: packages/risk_model
   sensors_plus: ^7.1.1
