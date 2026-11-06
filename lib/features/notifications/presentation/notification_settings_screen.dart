@@ -174,6 +174,7 @@ class _NotificationSettingsScreenState
     NotificationType.attackOver => l10n.notifTypeAttackOver,
     NotificationType.checkin => l10n.notifTypeCheckin,
     NotificationType.medication => l10n.notifTypeMedication,
+    NotificationType.questionnaire => l10n.notifTypeQuestionnaire,
   };
 
   String _hint(
@@ -188,5 +189,6 @@ class _NotificationSettingsScreenState
     NotificationType.attackOver => l10n.notifTypeAttackOverHint,
     NotificationType.checkin => l10n.notifTypeCheckinHint,
     NotificationType.medication => l10n.notifTypeMedicationHint,
+    NotificationType.questionnaire => l10n.notifTypeQuestionnaireHint,
   };
 }

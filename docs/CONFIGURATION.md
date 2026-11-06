@@ -13,7 +13,7 @@ production build, and the few native files that mirror a value.
 | `AppEndpoints` | Open-Meteo URLs, Cloud Function names | a function is renamed or a provider changes |
 | `AppFeatureFlags` | dev tools, emulator use, crash-reporting availability, per-feature availability | hiding a feature, enabling dev screens |
 | `AppIdentity.clinicianGuidanceUrl` | page behind the medication-overuse notes | M publishes or changes it |
-| `AppThresholds` | overuse notes (10, 15 days), learning threshold (10 attacks), refresh cadences, forecast window, location rounding, weather retention and stale age, barometer sampling, calibration and gauge range, factor bands (AQI, UV, pollen), health import window and sleep bands, back-fill days, risk learning (attack window, shrinkage, threshold percentiles, history and forecast days, confidence bands, insight lift cut-offs), notification times (risk-rising evening and morning hours, default attack length, medication reminder), dedupe retention and lead time, push token refresh window, default report period | product decisions |
+| `AppThresholds` | overuse notes (10, 15 days), learning threshold (10 attacks), refresh cadences, forecast window, location rounding, weather retention and stale age, barometer sampling, calibration and gauge range, factor bands (AQI, UV, pollen), health import window and sleep bands, back-fill days, risk learning (attack window, shrinkage, threshold percentiles, history and forecast days, confidence bands, insight lift cut-offs), notification times (risk-rising evening and morning hours, default attack length, medication reminder), dedupe retention and lead time, push token refresh window, default report period, questionnaire reminder interval and hour, chart length | product decisions |
 | `AppDataSources` | every outside data source shown on "About the data": name, coverage, licence, link | a source is added or replaced |
 | `AppBackgroundTasks` | identifiers of background jobs (weather refresh), the push wake-up message type | mirrored in `ios/Runner/Info.plist` and `AppDelegate.swift`; the message type must match `config.push.wakeupType` in the functions |
 | `AppNotificationChannels` | notification channel ids (alerts, reminders, attack), the iOS category and end-attack action ids, the Android small icon | renaming a channel (Android keeps the old one until reinstall), swapping the icon |
@@ -76,7 +76,10 @@ commercial key (used only by the cache function), RevenueCat keys.
    and prod, upload an APNs key for each iOS app, add the Push
    Notifications capability in Xcode, and enable the Firestore TTL policy
    on `push_tokens.expiresAt`.
-7. Repository settings on GitHub: protect `main` (require PR, require the
+7. Questionnaires (phase 24): confirm the HIT-6 licence with
+   QualityMetric before a commercial release; MIDAS needs attribution
+   only.
+8. Repository settings on GitHub: protect `main` (require PR, require the
    `pr` workflow jobs, require conversation resolution, block force pushes
    and deletions, merge commits only, delete head branches on merge).
 

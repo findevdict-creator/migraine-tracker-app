@@ -202,6 +202,41 @@ void main() {
     });
   });
 
+  group('questionnaire', () {
+    PlannerInput input(DateTime? due, {bool on = true}) => PlannerInput(
+      now: now,
+      enabled: {if (on) NotificationType.questionnaire},
+      questionnaireDue: due,
+    );
+
+    test('nothing before the first round', () {
+      expect(NotificationPlanner.plan(input(null)), isEmpty);
+    });
+
+    test('fires at the configured hour on the due day', () {
+      final plan = NotificationPlanner.plan(input(DateTime(2026, 12, 1, 18)));
+      expect(keys(plan), ['questionnaire:2026-12-01']);
+      expect(plan.single.at, DateTime(2026, 12, 1, 10));
+    });
+
+    test('an overdue round fires soon, under the same key per due day', () {
+      final plan = NotificationPlanner.plan(input(DateTime(2026, 10, 20)));
+      expect(keys(plan), ['questionnaire:2026-10-20']);
+      expect(plan.single.at.isAfter(now), isTrue);
+      expect(
+        plan.single.at.difference(now),
+        lessThanOrEqualTo(const Duration(minutes: 5)),
+      );
+    });
+
+    test('switched off: nothing', () {
+      expect(
+        NotificationPlanner.plan(input(DateTime(2026, 12, 1), on: false)),
+        isEmpty,
+      );
+    });
+  });
+
   test('the plan is sorted by time across types', () {
     final plan = NotificationPlanner.plan(
       PlannerInput(

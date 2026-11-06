@@ -455,8 +455,13 @@ class AppThresholds {
   /// Widget refresh cadence.
   static const Duration widgetRefresh = Duration(minutes: 30);
 
-  /// Questionnaire reminder cadence.
+  /// Questionnaire reminder cadence (MIDAS and HIT-6 ask about the last
+  /// three months), and the local hour the reminder fires.
   static const Duration questionnaireReminder = Duration(days: 90);
+  static const int questionnaireReminderHour = 10;
+
+  /// Points of score history drawn on the questionnaire chart.
+  static const int questionnaireChartPoints = 8;
 
   /// Experiment comparison window, in days.
   static const int experimentWindowDays = 14;

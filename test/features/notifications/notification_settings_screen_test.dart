@@ -129,6 +129,8 @@ void main() {
       tester,
       () => tester.tap(find.byKey(const ValueKey('notif-medication'))),
     );
+    // The hint sits above the switches; the list is lazy.
+    await tester.scrollToKey('notif-denied');
     expect(find.byKey(const ValueKey('notif-denied')), findsOneWidget);
   });
 

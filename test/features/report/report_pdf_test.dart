@@ -32,5 +32,8 @@ void main() {
     );
     final bytes = await ReportPdf(l10n).build(summary);
     expect(String.fromCharCodes(bytes.take(5)), '%PDF-');
+    final without = await ReportPdf(l10n)
+        .build(summary, includeQuestionnaires: false);
+    expect(without.length, lessThan(bytes.length));
   });
 }

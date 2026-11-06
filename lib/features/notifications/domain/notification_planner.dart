@@ -39,6 +39,8 @@ class PlannerInput {
     this.checkedInDates = const {},
     this.medicationTime = AppThresholds.defaultMedicationReminder,
     this.horizonDays = AppThresholds.riskForecastDays,
+    this.questionnaireDue,
+    this.questionnaireHour = AppThresholds.questionnaireReminderHour,
   });
 
   final DateTime now;
@@ -59,6 +61,11 @@ class PlannerInput {
   final Set<String> checkedInDates;
   final TimeOfDay medicationTime;
   final int horizonDays;
+
+  /// When the next MIDAS and HIT-6 round is due; null until one was
+  /// completed.
+  final DateTime? questionnaireDue;
+  final int questionnaireHour;
 }
 
 /// FR-14: turns the stores into dated notifications with event keys.
@@ -76,6 +83,7 @@ abstract final class NotificationPlanner {
         skipDates: input.checkedInDates,
       ),
       ..._daily(input, NotificationType.medication, input.medicationTime),
+      ..._questionnaire(input),
     ]..sort((a, b) => a.at.compareTo(b.at));
     return out;
   }
@@ -198,6 +206,23 @@ abstract final class NotificationPlanner {
       args: {'duration': input.typicalAttackDuration.inMinutes.toString()},
       payload: id,
       withEndAttackAction: true,
+    );
+  }
+
+  /// One reminder on the due day at [PlannerInput.questionnaireHour]; at
+  /// once (after the lead time) when the due day has passed.
+  static Iterable<PlannedNotification> _questionnaire(
+    PlannerInput input,
+  ) sync* {
+    if (!input.enabled.contains(NotificationType.questionnaire)) return;
+    final due = input.questionnaireDue;
+    if (due == null) return;
+    final day = due.toLocal().startOfDay;
+    final at = DateTime(day.year, day.month, day.day, input.questionnaireHour);
+    yield PlannedNotification(
+      key: 'questionnaire:${day.dateKey}',
+      type: NotificationType.questionnaire,
+      at: at.isAfter(input.now) ? at : _soonest(input.now),
     );
   }
 

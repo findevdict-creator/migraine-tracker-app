@@ -15,6 +15,8 @@ import 'package:migraine_tracker/features/notifications/domain/notification_gate
 import 'package:migraine_tracker/features/notifications/domain/notification_planner.dart';
 import 'package:migraine_tracker/features/notifications/domain/notification_types.dart';
 import 'package:migraine_tracker/features/notifications/domain/planned_notification.dart';
+import 'package:migraine_tracker/features/questionnaires/data/questionnaire_repository_impl.dart';
+import 'package:migraine_tracker/features/questionnaires/domain/questionnaire.dart';
 import 'package:migraine_tracker/features/risk/application/risk_engine.dart';
 import 'package:migraine_tracker/features/risk/data/risk_repository_impl.dart';
 import 'package:migraine_tracker/features/risk/presentation/risk_text.dart';
@@ -139,6 +141,9 @@ class NotificationScheduler {
         .read(checkinRepositoryProvider)
         .inRange(today, to);
     final checkinTime = await _checkinTime();
+    final questionnaires = await _ref
+        .read(questionnaireRepositoryProvider)
+        .all();
     return PlannerInput(
       now: now,
       enabled: enabled,
@@ -151,6 +156,10 @@ class NotificationScheduler {
       checkinTime: checkinTime,
       checkedInDates: {for (final c in checkins) c.date},
       medicationTime: await medicationTime(),
+      questionnaireDue: QuestionnaireDue.nextDue(
+        questionnaires,
+        AppThresholds.questionnaireReminder,
+      ),
     );
   }
 
@@ -252,6 +261,11 @@ class NotificationScheduler {
         return NotificationCopy(
           title: l10n.notifMedicationTitle,
           body: l10n.notifMedicationBody,
+        );
+      case NotificationType.questionnaire:
+        return NotificationCopy(
+          title: l10n.notifQuestionnaireTitle,
+          body: l10n.notifQuestionnaireBody,
         );
     }
   }

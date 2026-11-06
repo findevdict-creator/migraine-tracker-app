@@ -10,6 +10,8 @@ import 'package:migraine_tracker/features/checkin/data/checkin_repository_impl.d
 import 'package:migraine_tracker/features/checkin/domain/checkin_repository.dart';
 import 'package:migraine_tracker/features/medication/data/medication_repository_impl.dart';
 import 'package:migraine_tracker/features/medication/domain/medication_repository.dart';
+import 'package:migraine_tracker/features/questionnaires/data/questionnaire_repository_impl.dart';
+import 'package:migraine_tracker/features/questionnaires/domain/questionnaire_repository.dart';
 import 'package:migraine_tracker/features/report/data/report_pdf.dart';
 import 'package:migraine_tracker/features/report/domain/report_csv.dart';
 import 'package:migraine_tracker/features/report/domain/report_model.dart';
@@ -24,6 +26,7 @@ final reportServiceProvider = Provider<ReportService>(
     medications: ref.watch(medicationRepositoryProvider),
     checkins: ref.watch(checkinRepositoryProvider),
     risk: ref.watch(riskRepositoryProvider),
+    questionnaires: ref.watch(questionnaireRepositoryProvider),
     clock: ref.watch(clockProvider),
   ),
 );
@@ -39,14 +42,16 @@ class ReportService {
     required MedicationRepository medications,
     required CheckinRepository checkins,
     required RiskRepository risk,
+    required QuestionnaireRepository questionnaires,
     required DateTime Function() clock,
-  }) : this._(attacks, medications, checkins, risk, clock);
+  }) : this._(attacks, medications, checkins, risk, questionnaires, clock);
 
   const ReportService._(
     this._attacks,
     this._medications,
     this._checkins,
     this._risk,
+    this._questionnaires,
     this._clock,
   );
 
@@ -54,6 +59,7 @@ class ReportService {
   final MedicationRepository _medications;
   final CheckinRepository _checkins;
   final RiskRepository _risk;
+  final QuestionnaireRepository _questionnaires;
   final DateTime Function() _clock;
 
   Future<ReportInputs> load(ReportRange range) async {
@@ -64,6 +70,7 @@ class ReportService {
       range.to.dateKey,
     );
     final weights = await _risk.weights();
+    final questionnaires = await _questionnaires.inRange(range.from, range.end);
     return ReportInputs(
       range: range,
       generatedAt: _clock(),
@@ -71,6 +78,7 @@ class ReportService {
       medications: medications,
       checkins: checkins,
       weights: weights,
+      questionnaires: questionnaires,
     );
   }
 
@@ -85,6 +93,7 @@ class ReportService {
     required AppLocalizations l10n,
     String? locale,
     Directory? directory,
+    bool includeQuestionnaires = true,
   }) async {
     final inputs = await load(range);
     final dir = directory ?? await getTemporaryDirectory();
@@ -94,10 +103,10 @@ class ReportService {
     return [
       if (format != ReportFormat.csv)
         await File(p.join(dir.path, '$stem.pdf')).writeAsBytes(
-          await ReportPdf(
-            l10n,
-            locale: locale,
-          ).build(ReportBuilder.build(inputs)),
+          await ReportPdf(l10n, locale: locale).build(
+            ReportBuilder.build(inputs),
+            includeQuestionnaires: includeQuestionnaires,
+          ),
         ),
       if (format != ReportFormat.pdf) ...[
         await File(p.join(dir.path, '$stem-attacks.csv'))

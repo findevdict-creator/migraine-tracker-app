@@ -28,3 +28,4 @@ feature PR adds its row.
 | 21 | Attack-over notification carries End attack; every type can be turned off | [ ] | [ ] | |
 | 22 | A test wake-up push refreshes the forecast with the app closed | [ ] | [ ] | |
 | 23 | Share PDF opens the share sheet with a readable PDF; spreadsheets open with one row per attack and per day | [ ] | [ ] | |
+| 24 | MIDAS and HIT-6 forms score and save; three-month reminder arrives; chart after two rounds | [ ] | [ ] | HIT-6 licence to confirm before release |
