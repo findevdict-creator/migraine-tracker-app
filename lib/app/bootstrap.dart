@@ -2,6 +2,7 @@ import 'dart:io' show Platform;
 
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:migraine_tracker/app/app.dart';
@@ -22,6 +23,10 @@ final appConfigProvider = Provider<AppConfig>(
 /// Starts the app for one flavor. Every `main_*.dart` calls this.
 Future<void> bootstrap(AppFlavor flavor) async {
   WidgetsFlutterBinding.ensureInitialized();
+  LicenseRegistry.addLicense(() async* {
+    final text = await rootBundle.loadString('assets/fonts/OFL.txt');
+    yield LicenseEntryWithLineBreaks(const ['Noto Sans JP'], text);
+  });
   final config = AppConfig(flavor: flavor);
   final firebase = await initializeFirebase(config);
   await _scheduleBackgroundWork(flavor);

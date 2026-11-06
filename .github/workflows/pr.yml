@@ -53,6 +53,8 @@ jobs:
         run: flutter analyze --fatal-infos
       - name: Copy lint
         run: dart run tool/copy_lint.dart
+      - name: Pseudo-locale is up to date
+        run: dart run tool/pseudo_arb.dart --check
       - name: Hard-coded string lint
         run: dart run tool/string_lint.dart
       - name: Tests

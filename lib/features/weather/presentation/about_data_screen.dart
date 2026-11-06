@@ -26,11 +26,14 @@ class AboutDataScreen extends StatelessWidget {
             ListTile(
               key: ValueKey('source-${source.id}'),
               contentPadding: EdgeInsets.zero,
-              title: Text(source.name),
+              title: Text(dataSourceName(l10n, source)),
               subtitle: Text(
                 source.licence == null
-                    ? source.coverage
-                    : l10n.aboutDataLicence(source.coverage, source.licence!),
+                    ? dataCoverageText(l10n, source.coverage)
+                    : l10n.aboutDataLicence(
+                        dataCoverageText(l10n, source.coverage),
+                        source.licence!,
+                      ),
               ),
               trailing: source.url == null
                   ? null
@@ -53,3 +56,22 @@ class AboutDataScreen extends StatelessWidget {
     );
   }
 }
+
+/// The translated name of a configured source; its id when none is added.
+String dataSourceName(AppLocalizations l10n, DataSource source) =>
+    switch (source.id) {
+      'open-meteo-weather' => l10n.dataSourceWeather,
+      'open-meteo-air-quality' => l10n.dataSourceAirQuality,
+      'open-meteo-pollen' => l10n.dataSourcePollen,
+      'open-meteo-geocoding' => l10n.dataSourceGeocoding,
+      'device-barometer' => l10n.dataSourceBarometer,
+      _ => source.id,
+    };
+
+String dataCoverageText(AppLocalizations l10n, DataCoverage coverage) =>
+    switch (coverage) {
+      DataCoverage.worldwide => l10n.dataCoverageWorldwide,
+      DataCoverage.worldwideEuropeanAqi => l10n.dataCoverageEuropeanAqi,
+      DataCoverage.europe => l10n.dataCoverageEurope,
+      DataCoverage.phonesWithBarometer => l10n.dataCoverageBarometer,
+    };

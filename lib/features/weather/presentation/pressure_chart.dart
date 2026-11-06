@@ -2,6 +2,7 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 import 'package:migraine_tracker/config/app_config.dart';
+import 'package:migraine_tracker/core/units/units.dart';
 import 'package:migraine_tracker/features/weather/domain/weather_entities.dart';
 
 /// 72-hour sea-level pressure line. Past hours are drawn solid, forecast
@@ -11,12 +12,14 @@ class PressureChart extends StatelessWidget {
   const PressureChart({
     required this.hours,
     required this.now,
+    this.units = const Units(),
     this.height = 160,
     super.key,
   });
 
   final List<WeatherHourEntity> hours;
   final DateTime now;
+  final Units units;
   final double height;
 
   @override
@@ -29,6 +32,7 @@ class PressureChart extends StatelessWidget {
         painter: PressureChartPainter(
           hours: hours,
           now: now,
+          units: units,
           lineColor: scheme.primary,
           forecastColor: scheme.primary.withValues(alpha: 0.5),
           gridColor: scheme.outlineVariant,
@@ -49,11 +53,13 @@ class PressureChartPainter extends CustomPainter {
     required this.forecastColor,
     required this.gridColor,
     required this.nowColor,
+    this.units = const Units(),
     this.labelStyle,
   });
 
   final List<WeatherHourEntity> hours;
   final DateTime now;
+  final Units units;
   final Color lineColor;
   final Color forecastColor;
   final Color gridColor;
@@ -95,7 +101,7 @@ class PressureChartPainter extends CustomPainter {
       ..strokeWidth = 1;
     for (final p in [minP, (minP + maxP) / 2, maxP]) {
       canvas.drawLine(Offset(plot.left, y(p)), Offset(plot.right, y(p)), grid);
-      _label(canvas, p.toStringAsFixed(0), Offset(0, y(p) - 6));
+      _label(canvas, _axis(p), Offset(0, y(p) - 6));
     }
 
     final nowHour = now.toUtc();
@@ -154,6 +160,11 @@ class PressureChartPainter extends CustomPainter {
     }
   }
 
+  /// Axis label in the chosen unit: whole hPa or mmHg, inHg to 0.01.
+  String _axis(double hpa) => units.pressure
+      .convert(hpa)
+      .toStringAsFixed(units.pressure == PressureUnit.inHg ? 2 : 0);
+
   void _label(Canvas canvas, String text, Offset at) {
     TextPainter(
         text: TextSpan(text: text, style: labelStyle),
@@ -165,5 +176,8 @@ class PressureChartPainter extends CustomPainter {
 
   @override
   bool shouldRepaint(PressureChartPainter old) =>
-      old.hours != hours || old.now != now || old.lineColor != lineColor;
+      old.hours != hours ||
+      old.now != now ||
+      old.units.pressure != units.pressure ||
+      old.lineColor != lineColor;
 }

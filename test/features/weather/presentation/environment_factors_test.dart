@@ -114,5 +114,6 @@ void main() {
       expect(find.byKey(ValueKey('source-${source.id}')), findsOneWidget);
     }
     expect(find.textContaining('Europe only'), findsWidgets);
+    expect(find.text('Open-Meteo pollen (CAMS)'), findsOneWidget);
   });
 }

@@ -9,6 +9,7 @@ import 'package:migraine_tracker/config/app_config.dart';
 import 'package:migraine_tracker/core/db/app_database.dart';
 import 'package:migraine_tracker/core/db/database_provider.dart';
 import 'package:migraine_tracker/core/l10n/l10n.dart';
+import 'package:migraine_tracker/core/units/units.dart';
 import 'package:migraine_tracker/features/barometer/data/barometer_sources.dart';
 import 'package:migraine_tracker/features/barometer/domain/barometer_source.dart';
 import 'package:migraine_tracker/features/onboarding/application/onboarding_state.dart';
@@ -116,6 +117,9 @@ ProviderContainer _container(
       appConfigProvider.overrideWithValue(AppConfig(flavor: flavor)),
       _databaseOverride(database),
       barometerSourceProvider.overrideWithValue(barometer),
+      // The test host reports en_US; keep the metric defaults unless a
+      // test sets a region.
+      deviceRegionProvider.overrideWithValue(null),
       if (onboarded)
         onboardingStateProvider.overrideWith(_SeededOnboarding.new),
       ...overrides,

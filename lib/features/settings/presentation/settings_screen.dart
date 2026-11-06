@@ -50,6 +50,13 @@ class SettingsScreen extends ConsumerWidget {
           ),
           if (AppFeatureFlags.cycleTrackingAvailable)
             const CycleTrackingToggle(),
+          ListTile(
+            key: const ValueKey('settings-units'),
+            leading: const Icon(Icons.straighten),
+            title: Text(l10n.unitsTitle),
+            subtitle: Text(l10n.settingsUnitsHint),
+            onTap: () => context.push(AppRoutes.units),
+          ),
           if (AppFeatureFlags.healthSyncAvailable)
             ListTile(
               key: const ValueKey('settings-health'),
@@ -155,7 +162,7 @@ class SettingsScreen extends ConsumerWidget {
           ListTile(
             leading: const Icon(Icons.info_outline),
             title: Text(config.displayName),
-            subtitle: const Text(AppIdentity.wellnessDisclaimer),
+            subtitle: Text(context.l10n.wellnessDisclaimer),
           ),
           ListTile(
             key: const ValueKey('settings-notifications'),

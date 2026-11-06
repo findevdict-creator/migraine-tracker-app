@@ -78,7 +78,7 @@ class RiskScreen extends ConsumerWidget {
           ),
           const SizedBox(height: AppThemeTokens.space2),
           Text(
-            AppIdentity.wellnessDisclaimer,
+            context.l10n.wellnessDisclaimer,
             key: const ValueKey('risk-disclaimer'),
             style: context.textStyles.bodySmall,
           ),

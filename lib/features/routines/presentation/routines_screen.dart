@@ -54,7 +54,7 @@ class RoutinesScreen extends StatelessWidget {
           ],
           const SizedBox(height: AppThemeTokens.space2),
           Text(
-            AppIdentity.wellnessDisclaimer,
+            context.l10n.wellnessDisclaimer,
             key: const ValueKey('routines-disclaimer'),
             style: context.textStyles.bodySmall,
           ),

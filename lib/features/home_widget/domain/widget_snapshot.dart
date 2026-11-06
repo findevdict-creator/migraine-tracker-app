@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:intl/intl.dart';
 import 'package:migraine_tracker/config/app_config.dart';
 import 'package:migraine_tracker/core/l10n/l10n.dart';
+import 'package:migraine_tracker/core/units/units.dart';
 import 'package:migraine_tracker/core/widgets/risk_level_badge.dart';
 import 'package:migraine_tracker/features/notifications/domain/notification_planner.dart';
 import 'package:migraine_tracker/features/risk/domain/risk_entities.dart';
@@ -69,16 +70,15 @@ class WidgetSnapshot {
   final bool attackRunning;
 
   /// The strings the native widgets display, keyed by [AppHomeWidgets].
-  Map<String, String> render(AppLocalizations l10n, {String? locale}) {
+  Map<String, String> render(
+    AppLocalizations l10n, {
+    String? locale,
+    Units units = const Units(),
+  }) {
     final level = this.level;
     final driver = this.driver;
     final delta = delta24h;
-    final hpa = delta == null
-        ? ''
-        : NumberFormat.decimalPatternDigits(
-            locale: locale,
-            decimalDigits: 1,
-          ).format(delta.abs());
+    final hpa = delta == null ? '' : units.pressureText(l10n, delta.abs());
     return {
       AppHomeWidgets.keyLevel: level?.id ?? '',
       AppHomeWidgets.keyLevelLabel: level == null

@@ -5,6 +5,7 @@ import 'package:migraine_tracker/app/router.dart';
 import 'package:migraine_tracker/config/app_config.dart';
 import 'package:migraine_tracker/core/l10n/l10n.dart';
 import 'package:migraine_tracker/core/theme/app_colors.dart';
+import 'package:migraine_tracker/core/units/units.dart';
 import 'package:migraine_tracker/core/widgets/widgets.dart';
 import 'package:migraine_tracker/features/insights/application/insights_controller.dart';
 import 'package:migraine_tracker/features/insights/domain/factor_insight.dart';
@@ -75,7 +76,7 @@ class InsightsScreen extends ConsumerWidget {
           ),
           const SizedBox(height: AppThemeTokens.space2),
           Text(
-            AppIdentity.wellnessDisclaimer,
+            context.l10n.wellnessDisclaimer,
             style: context.textStyles.bodySmall,
           ),
         ],
@@ -163,14 +164,15 @@ class _Bucket extends StatelessWidget {
 
 /// The method page: what an exposure day is, what "followed" means, how
 /// the ratio is formed, the sample floor, and that none of it is a cause.
-class InsightsMethodScreen extends StatelessWidget {
+class InsightsMethodScreen extends ConsumerWidget {
   const InsightsMethodScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final l10n = context.l10n;
     final paragraphs = [
-      l10n.insightsMethod1,
+      // 2 hPa is where PressureDropModule's exposure ramp starts.
+      l10n.insightsMethod1(ref.watch(unitsProvider).pressureChange(l10n, 2)),
       l10n.insightsMethod2,
       l10n.insightsMethod3,
       l10n.insightsMethod4(AppThresholds.minExposuresForInsight),
@@ -188,7 +190,7 @@ class InsightsMethodScreen extends StatelessWidget {
               child: Text(p, style: context.textStyles.bodyMedium),
             ),
           Text(
-            AppIdentity.wellnessDisclaimer,
+            context.l10n.wellnessDisclaimer,
             style: context.textStyles.bodySmall,
           ),
         ],

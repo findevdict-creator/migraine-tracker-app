@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:migraine_tracker/config/app_config.dart';
 import 'package:migraine_tracker/core/db/app_database.dart' hide RiskDay;
+import 'package:migraine_tracker/core/l10n/l10n.dart';
 import 'package:migraine_tracker/core/settings/settings_keys.dart';
 import 'package:migraine_tracker/core/settings/settings_repository.dart';
 import 'package:migraine_tracker/core/util/clock.dart';
@@ -78,7 +79,7 @@ void main() {
     expect(find.byType(RoutineScreen), findsOneWidget);
     expect(find.text('Gentle neck and shoulder stretches'), findsWidgets);
     await tester.scrollToKey('routine-disclaimer');
-    expect(find.text(AppIdentity.wellnessDisclaimer), findsOneWidget);
+    expect(find.text(_en.wellnessDisclaimer), findsOneWidget);
     await tester.pageBack();
     await tester.pumpAndSettle();
 
@@ -151,3 +152,5 @@ void main() {
     expect(shown('breathing-start'), isTrue);
   });
 }
+
+final AppLocalizations _en = lookupAppLocalizations(AppLocales.fallback);

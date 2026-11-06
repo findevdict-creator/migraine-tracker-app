@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:migraine_tracker/config/app_config.dart';
 import 'package:migraine_tracker/core/l10n/l10n.dart';
 import 'package:migraine_tracker/core/theme/app_colors.dart';
+import 'package:migraine_tracker/core/units/units.dart';
 import 'package:migraine_tracker/core/widgets/widgets.dart';
 import 'package:migraine_tracker/features/barometer/domain/barometer_entities.dart';
 import 'package:migraine_tracker/features/barometer/presentation/barometer_controller.dart';
@@ -36,9 +37,9 @@ class BarometerScreen extends ConsumerWidget {
                       Text(
                         state.displayHpa == null
                             ? l10n.barometerNoReading
-                            : l10n.envPressureNow(
-                                state.displayHpa!.toStringAsFixed(1),
-                              ),
+                            : ref
+                                  .watch(unitsProvider)
+                                  .pressureText(l10n, state.displayHpa!),
                         key: const ValueKey('baro-value'),
                         style: context.textStyles.headlineMedium,
                       ),
@@ -61,7 +62,11 @@ class BarometerScreen extends ConsumerWidget {
                   child: Text(
                     state.calibration.isCalibrated
                         ? l10n.barometerOffset(
-                            formatDelta(l10n, state.calibration.offset!),
+                            formatDelta(
+                              l10n,
+                              ref.watch(unitsProvider),
+                              state.calibration.offset!,
+                            ),
                             state.calibration.pairs,
                           )
                         : l10n.barometerNotCalibrated(

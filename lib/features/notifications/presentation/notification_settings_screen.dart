@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:migraine_tracker/config/app_config.dart';
 import 'package:migraine_tracker/core/l10n/l10n.dart';
 import 'package:migraine_tracker/core/theme/app_colors.dart';
+import 'package:migraine_tracker/core/units/units.dart';
 import 'package:migraine_tracker/features/notifications/application/notification_scheduler.dart';
 import 'package:migraine_tracker/features/notifications/data/local_notification_gateway.dart';
 import 'package:migraine_tracker/features/notifications/domain/notification_types.dart';
@@ -86,6 +87,7 @@ class _NotificationSettingsScreenState
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
+    final units = ref.watch(unitsProvider);
     final settings = ref.watch(notificationSettingsProvider).value;
     final controller = ref.read(notificationSettingsProvider.notifier);
     return Scaffold(
@@ -121,7 +123,7 @@ class _NotificationSettingsScreenState
                   SwitchListTile(
                     key: ValueKey('notif-${type.code}'),
                     title: Text(_title(l10n, type)),
-                    subtitle: Text(_hint(l10n, type, settings)),
+                    subtitle: Text(_hint(l10n, type, settings, units)),
                     value: settings.enabled[type] ?? type.defaultOn,
                     onChanged: (on) async {
                       final granted = await controller.setEnabled(
@@ -135,7 +137,7 @@ class _NotificationSettingsScreenState
                   key: const ValueKey('notif-threshold'),
                   title: Text(
                     l10n.notifPressureThreshold(
-                      settings.pressureThreshold.toStringAsFixed(0),
+                      units.pressureChange(l10n, settings.pressureThreshold),
                     ),
                   ),
                   subtitle: Slider(
@@ -144,7 +146,10 @@ class _NotificationSettingsScreenState
                     min: 2,
                     max: 12,
                     divisions: 10,
-                    label: settings.pressureThreshold.toStringAsFixed(0),
+                    label: units.pressureChange(
+                      l10n,
+                      settings.pressureThreshold,
+                    ),
                     onChanged: controller.setPressureThreshold,
                   ),
                 ),
@@ -181,10 +186,11 @@ class _NotificationSettingsScreenState
     AppLocalizations l10n,
     NotificationType type,
     NotificationSettings settings,
+    Units units,
   ) => switch (type) {
     NotificationType.riskRising => l10n.notifTypeRiskRisingHint,
     NotificationType.pressureDrop => l10n.notifTypePressureDropHint(
-      settings.pressureThreshold.toStringAsFixed(0),
+      units.pressureChange(l10n, settings.pressureThreshold),
     ),
     NotificationType.attackOver => l10n.notifTypeAttackOverHint,
     NotificationType.checkin => l10n.notifTypeCheckinHint,

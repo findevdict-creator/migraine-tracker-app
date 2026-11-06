@@ -5,6 +5,7 @@ import 'package:migraine_tracker/app/router.dart';
 import 'package:migraine_tracker/config/app_config.dart';
 import 'package:migraine_tracker/core/l10n/l10n.dart';
 import 'package:migraine_tracker/core/theme/app_colors.dart';
+import 'package:migraine_tracker/core/units/units.dart';
 import 'package:migraine_tracker/core/widgets/widgets.dart';
 import 'package:migraine_tracker/features/weather/application/weather_sync.dart';
 import 'package:migraine_tracker/features/weather/domain/location_cell.dart';
@@ -123,17 +124,22 @@ class EnvironmentScreen extends ConsumerWidget {
   }
 }
 
-class _PressureCard extends StatelessWidget {
+class _PressureCard extends ConsumerWidget {
   const _PressureCard({required this.view, required this.offline});
 
   final EnvironmentView view;
   final bool offline;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final l10n = context.l10n;
+    final units = ref.watch(unitsProvider);
     final deltas = view.deltas;
     final current = deltas.current;
+    final temperature = view.hours
+        .where((h) => !h.hourUtc.isAfter(view.now.toUtc()))
+        .lastOrNull
+        ?.temperature;
     return AppCard(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -143,10 +149,16 @@ class _PressureCard extends StatelessWidget {
           Text(
             current == null
                 ? l10n.envPressureUnknown
-                : l10n.envPressureNow(current.toStringAsFixed(1)),
+                : units.pressureText(l10n, current),
             key: const ValueKey('env-pressure-now'),
             style: context.textStyles.headlineMedium,
           ),
+          if (temperature != null)
+            Text(
+              l10n.envTemperatureNow(units.temperatureText(l10n, temperature)),
+              key: const ValueKey('env-temperature-now'),
+              style: context.textStyles.bodyMedium,
+            ),
           const SizedBox(height: AppThemeTokens.space2),
           Wrap(
             spacing: AppThemeTokens.space3,
@@ -172,6 +184,7 @@ class _PressureCard extends StatelessWidget {
             key: const ValueKey('env-chart'),
             hours: view.hours,
             now: view.now,
+            units: units,
           ),
           const SizedBox(height: AppThemeTokens.space2),
           Text(
@@ -194,7 +207,7 @@ class _PressureCard extends StatelessWidget {
   }
 }
 
-class _Delta extends StatelessWidget {
+class _Delta extends ConsumerWidget {
   const _Delta({
     required this.label,
     required this.value,
@@ -206,7 +219,7 @@ class _Delta extends StatelessWidget {
   final String keyName;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final l10n = context.l10n;
     return Column(
       key: ValueKey('env-delta-$keyName'),
@@ -214,7 +227,9 @@ class _Delta extends StatelessWidget {
       children: [
         Text(label, style: context.textStyles.labelSmall),
         Text(
-          value == null ? l10n.envDeltaUnknown : formatDelta(l10n, value!),
+          value == null
+              ? l10n.envDeltaUnknown
+              : formatDelta(l10n, ref.watch(unitsProvider), value!),
           style: context.textStyles.bodyMedium,
         ),
       ],
