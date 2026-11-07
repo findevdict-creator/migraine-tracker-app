@@ -93,6 +93,8 @@ void main() {
 
   testWidgets('end attack closes the record and returns home', (tester) async {
     await pump(tester);
+    // The first-run hint shows until something is logged.
+    expect(find.byKey(const ValueKey('home-empty')), findsOneWidget);
     await tester.tap(find.byKey(const ValueKey('start-attack')));
     await tester.pumpAndSettle();
 
@@ -111,6 +113,7 @@ void main() {
     expect(attack.duration, const Duration(hours: 3));
     expect(attack.notes, 'long day');
     expect(find.byKey(const ValueKey('start-attack')), findsOneWidget);
+    expect(find.byKey(const ValueKey('home-empty')), findsNothing);
   });
 
   testWidgets(
