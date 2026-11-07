@@ -10,7 +10,7 @@ class AppLocalizationsEs extends AppLocalizations {
   AppLocalizationsEs([String locale = 'es']) : super(locale);
 
   @override
-  String get appTitle => 'Migraine Tracker';
+  String get appTitle => 'Aurawell';
 
   @override
   String get homeEmptyState =>

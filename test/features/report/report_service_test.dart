@@ -77,9 +77,9 @@ void main() {
       directory: temp,
     );
     expect(files.map((f) => f.path.split('/').last), [
-      'migraine-tracker-report-2025-11-07-2026-11-06.pdf',
-      'migraine-tracker-report-2025-11-07-2026-11-06-attacks.csv',
-      'migraine-tracker-report-2025-11-07-2026-11-06-days.csv',
+      'aurawell-report-2025-11-07-2026-11-06.pdf',
+      'aurawell-report-2025-11-07-2026-11-06-attacks.csv',
+      'aurawell-report-2025-11-07-2026-11-06-days.csv',
     ]);
     expect(await files.first.length(), greaterThan(10000));
     expect((await files[1].readAsLines()).length, 93);

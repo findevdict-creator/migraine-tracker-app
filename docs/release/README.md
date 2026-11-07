@@ -33,7 +33,9 @@ the app signing key and this one is only the upload key.
 ### 2. Store accounts and apps
 
 - Google Play Console: create the app with the package name
-  `AppIdentity.bundleId`, then fill in App content with
+  `AppIdentity.bundleId` (`app.aurawell.mobile`; the Firebase Android
+  and iOS apps must be registered with the same ids, with `.dev` and
+  `.staging` suffixes for those flavors), then fill in App content with
   [play-data-safety.md](../store/play-data-safety.md),
   [play-health-declaration.md](../store/play-health-declaration.md), the
   content rating questionnaire and the listing in
@@ -114,7 +116,7 @@ billing admins. Verify with:
 
 ```sh
 BILLING_ACCOUNT=XXXXXX-XXXXXX-XXXXXX tool/check_budgets.sh \
-  migraine-tracker-staging migraine-tracker-prod
+  aurawell-staging aurawell-prod
 ```
 
 Each project prints `ok` or `MISSING`.
@@ -122,7 +124,7 @@ Each project prints `ok` or `MISSING`.
 ## Each release
 
 1. Merge the release branch into `main` (for 1.0.0: the phase PRs #1 to
-   #39, in order).
+   #40, in order).
 2. Bump `version:` in `pubspec.yaml` and `wear/pubspec.yaml` (same name,
    build number +1) and move the `[Unreleased]` notes in `CHANGELOG.md`
    under a `## [x.y.z]` heading with the date. A PR, as always.
@@ -177,6 +179,10 @@ bundle exec fastlane android rollout to:0.2
 
 If the rate is above target, halt the rollout in Play Console (Production
 > Halt rollout), fix, and ship a new build number through the same path.
+The fix goes through the stack like every other change: a `NN-fix-slug`
+branch off the head feature branch with its PR targeting that branch,
+never a branch cut from `main` (see CONTRIBUTING.md). Nothing reaches
+`main` that the stack has not carried.
 
 ## Nightly Test Lab run
 

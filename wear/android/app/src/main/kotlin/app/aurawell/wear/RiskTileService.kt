@@ -1,4 +1,4 @@
-package app.migrainetracker.migraine_tracker_wear
+package app.aurawell.wear
 
 import android.content.Context
 import androidx.concurrent.futures.CallbackToFutureAdapter

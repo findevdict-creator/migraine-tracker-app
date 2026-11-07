@@ -1,4 +1,4 @@
-package app.migrainetracker.migraine_tracker_wear
+package app.aurawell.wear
 
 import androidx.wear.tiles.TileService
 import io.flutter.embedding.android.FlutterActivity
@@ -22,6 +22,6 @@ class MainActivity : FlutterActivity() {
     }
 
     private companion object {
-        const val TILE_CHANNEL = "app.migrainetracker/wear_tile"
+        const val TILE_CHANNEL = "app.aurawell/wear_tile"
     }
 }

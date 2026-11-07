@@ -25,7 +25,7 @@ val releaseStoreFile = signingValue("storeFile", "ANDROID_KEYSTORE_PATH")?.let {
 }
 
 android {
-    namespace = "app.migrainetracker.migraine_tracker"
+    namespace = "app.aurawell.mobile"
     // flutter_local_notifications 23 and androidx.core 1.19 compile against
     // API 37. Compiling against a newer API is backward compatible; the
     // target SDK (runtime behaviour) still follows Flutter's default.
@@ -41,7 +41,7 @@ android {
 
     defaultConfig {
         // Mirrors AppIdentity.bundleId in lib/config/app_config.dart.
-        applicationId = "app.migrainetracker.migraine_tracker"
+        applicationId = "app.aurawell.mobile"
         // Android 9 (API 28) is the floor from the requirements doc
         // (Health Connect needs it).
         minSdk = maxOf(28, flutter.minSdkVersion)
@@ -66,16 +66,16 @@ android {
         create("dev") {
             dimension = "environment"
             applicationIdSuffix = ".dev"
-            resValue("string", "app_name", "Migraine Tracker (dev)")
+            resValue("string", "app_name", "Aurawell (dev)")
         }
         create("staging") {
             dimension = "environment"
             applicationIdSuffix = ".staging"
-            resValue("string", "app_name", "Migraine Tracker (beta)")
+            resValue("string", "app_name", "Aurawell (beta)")
         }
         create("prod") {
             dimension = "environment"
-            resValue("string", "app_name", "Migraine Tracker")
+            resValue("string", "app_name", "Aurawell")
         }
     }
 

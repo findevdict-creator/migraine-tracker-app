@@ -11,7 +11,7 @@ abstract final class WatchConfig {
   static const Duration resendEvery = Duration(seconds: 30);
 
   /// Method channel between the Wear OS Flutter code and its tile service.
-  static const String tileChannel = 'app.migrainetracker/wear_tile';
+  static const String tileChannel = 'app.aurawell/wear_tile';
 
   /// Shared-preferences keys (without Flutter's `flutter.` prefix) the
   /// Wear OS app writes and its tile reads. Mirrored in

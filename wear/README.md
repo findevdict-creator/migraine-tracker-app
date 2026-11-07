@@ -1,4 +1,4 @@
-# Migraine Tracker for Wear OS
+# Aurawell for Wear OS
 
 The watch companion (phase 27). It starts and ends an attack, sets the
 intensity and shows today's level on a tile. It never goes online: it

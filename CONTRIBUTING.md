@@ -13,9 +13,10 @@
 - A fix branch carries the number of the feature it fixes and targets that
   feature branch, or the current head feature branch if the feature is already
   on `main`.
-- Production hotfix after a store release (the one exception): cut
-  `NN-fix-slug` from `main`, PR base `main`, then merge `main` into the head
-  feature branch the same day.
+- Every fix goes through the stack, including a production hotfix after a
+  store release: cut `NN-fix-slug` from the head feature branch, target that
+  branch, and let it reach `main` when the stack merges. Nothing is cut from
+  `main` directly, so `main` never carries a commit the stack does not.
 - Never rebase a branch that has an open PR. Bring upstream changes down with
   `git merge`.
 

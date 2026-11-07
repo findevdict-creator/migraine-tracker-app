@@ -10,7 +10,7 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
-  String get appTitle => 'Migraine Tracker';
+  String get appTitle => 'Aurawell';
 
   @override
   String get homeEmptyState =>
@@ -3003,7 +3003,7 @@ class AppLocalizationsEnXa extends AppLocalizationsEn {
   AppLocalizationsEnXa() : super('en_XA');
 
   @override
-  String get appTitle => '⟦Ṁîĝŕáîñé Ţŕáçķéŕ ······⟧';
+  String get appTitle => '⟦Åûŕáŵéļļ ···⟧';
 
   @override
   String get homeEmptyState =>

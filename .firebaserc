@@ -1,8 +1,8 @@
 {
   "projects": {
-    "default": "migraine-tracker-dev",
-    "dev": "migraine-tracker-dev",
-    "staging": "migraine-tracker-staging",
-    "prod": "migraine-tracker-prod"
+    "default": "aurawell-dev",
+    "dev": "aurawell-dev",
+    "staging": "aurawell-staging",
+    "prod": "aurawell-prod"
   }
 }

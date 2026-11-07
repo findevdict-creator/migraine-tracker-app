@@ -1,5 +1,5 @@
 {
-  "name": "migraine-tracker-store-assets",
+  "name": "aurawell-store-assets",
   "private": true,
   "type": "module",
   "description": "Renders launcher icons and store graphics from assets/brand and lib/config/app_config.dart.",

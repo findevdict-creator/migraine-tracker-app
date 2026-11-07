@@ -134,15 +134,12 @@ void main() {
     final dir = await Directory.systemTemp.createTemp('export');
     addTearDown(() => dir.delete(recursive: true));
     final json = await service.writeJsonFile(directory: dir);
-    expect(json.path, endsWith('migraine-export-20261106-0900.json'));
+    expect(json.path, endsWith('aurawell-export-20261106-0900.json'));
     final csv = await service.writeCsvFiles(directory: dir);
     expect(
       csv.map((f) => f.uri.pathSegments.last),
-      contains('migraine-export-20261106-0900-attacks.csv'),
+      contains('aurawell-export-20261106-0900-attacks.csv'),
     );
-    expect(
-      await json.readAsString(),
-      contains('"format": "migraine-tracker-export"'),
-    );
+    expect(await json.readAsString(), contains('"format": "aurawell-export"'));
   });
 }

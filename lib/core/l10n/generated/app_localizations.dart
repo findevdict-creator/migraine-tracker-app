@@ -112,7 +112,7 @@ abstract class AppLocalizations {
   /// Fallback app title; the live title comes from AppIdentity.
   ///
   /// In en, this message translates to:
-  /// **'Migraine Tracker'**
+  /// **'Aurawell'**
   String get appTitle;
 
   /// Home screen placeholder before any feature ships.

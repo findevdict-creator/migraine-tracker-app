@@ -7,8 +7,8 @@ type("appstore")
 # profile. Mirrors the Xcode targets (the widget id is Xcode's default for
 # a target named RiskWidget, CONFIGURATION item 8) and RiskWatch/project.yml.
 app_identifier([
-  "app.migrainetracker.migraineTracker",
-  "app.migrainetracker.migraineTracker.RiskWidget",
-  "app.migrainetracker.migraineTracker.watchkitapp",
-  "app.migrainetracker.migraineTracker.watchkitapp.complication",
+  "app.aurawell.mobile",
+  "app.aurawell.mobile.RiskWidget",
+  "app.aurawell.mobile.watchkitapp",
+  "app.aurawell.mobile.watchkitapp.complication",
 ])

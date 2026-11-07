@@ -1,4 +1,4 @@
-package app.migrainetracker.migraine_tracker
+package app.aurawell.mobile
 
 import io.flutter.embedding.android.FlutterActivity
 

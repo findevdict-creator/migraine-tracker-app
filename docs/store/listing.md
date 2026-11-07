@@ -9,7 +9,7 @@ same rule `tool/copy_lint.dart` enforces in the app.
 
 | Field | Value |
 | ----- | ----- |
-| App name | Migraine Tracker (`AppIdentity.name`) |
+| App name | Aurawell (`AppIdentity.name`) |
 | Subtitle (App Store, 30 characters) | Log attacks, spot your triggers |
 | Short description (Play, 80 characters) | Log migraine attacks in one tap and see which triggers line up with yours. |
 | Category | Health & Fitness (both stores) |
@@ -20,7 +20,7 @@ same rule `tool/copy_lint.dart` enforces in the app.
 
 ## Description
 
-Migraine Tracker helps you log attacks quickly and see what tends to come
+Aurawell helps you log attacks quickly and see what tends to come
 before them, so you can plan your day and bring clear notes to your
 doctor.
 
@@ -56,7 +56,7 @@ passphrase only you know.
 extended environment factors and backup across phones. Everything else is
 free, with no time limit.
 
-Migraine Tracker offers general wellness information and is not a medical
+Aurawell offers general wellness information and is not a medical
 device. Talk to your clinician about your care and treatment.
 
 ## Screenshots

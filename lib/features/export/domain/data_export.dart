@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart';
 
 /// Format name written into every JSON export so imports can refuse files
 /// that are not ours.
-const String exportFormat = 'migraine-tracker-export';
+const String exportFormat = 'aurawell-export';
 
 /// Bumped when the export envelope changes shape (not the schema).
 const int exportFormatVersion = 1;
@@ -21,7 +21,7 @@ class DataExport {
   /// Parses an envelope, throwing [FormatException] for foreign files.
   factory DataExport.fromJson(Map<String, Object?> json) {
     if (json['format'] != exportFormat) {
-      throw const FormatException('Not a Migraine Tracker export');
+      throw const FormatException('Not a Aurawell export');
     }
     final tables = json['tables'];
     if (tables is! Map) throw const FormatException('Missing tables');

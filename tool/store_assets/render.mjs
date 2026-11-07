@@ -5,7 +5,7 @@
 //
 // Inputs (change these, then re-run):
 //   assets/brand/logo_mark.svg         the icon artwork
-//   lib/config/app_config.dart         AppIdentity.name, AppThemeTokens.seed
+//   lib/config/app_config.dart         AppIdentity.wordmark, AppThemeTokens.seed
 // Outputs:
 //   assets/brand/launcher_icon.png             1024 square, full bleed (iOS, legacy Android)
 //   assets/brand/launcher_icon_foreground.png  1024, artwork in the adaptive safe zone
@@ -27,7 +27,7 @@ function configValue(pattern, what) {
   return match[1];
 }
 
-const name = configValue(/static const String name = '([^']+)'/, "AppIdentity.name");
+const wordmark = configValue(/static const String wordmark = '([^']+)'/, "AppIdentity.wordmark");
 const seed = "#" + configValue(/static const Color seed = Color\(0xFF([0-9A-Fa-f]{6})\)/, "AppThemeTokens.seed");
 const mark = readFileSync(join(root, "assets/brand/logo_mark.svg"), "utf8");
 // The artwork without its rounded background square, for layouts that
@@ -61,7 +61,7 @@ const outputs = [
       500,
       `<div style="display:flex;align-items:center;gap:40px;color:#fff">
          ${sized(mark, 220)}
-         <div style="font-size:64px;font-weight:700;letter-spacing:-1px">${escapeHtml(name)}</div>
+         <div style="font-size:88px;font-weight:700;letter-spacing:-2px">${escapeHtml(wordmark)}</div>
        </div>`,
       seed,
     ),

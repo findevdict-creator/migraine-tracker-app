@@ -1,6 +1,6 @@
 {
   "@@locale": "fr",
-  "appTitle": "Migraine Tracker",
+  "appTitle": "Aurawell",
   "homeEmptyState": "Rien n'est encore enregistré.\nVotre niveau de risque et votre environnement apparaîtront ici.",
   "riskLevelLow": "Faible",
   "riskLevelModerate": "Modéré",

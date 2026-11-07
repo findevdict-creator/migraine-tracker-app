@@ -124,7 +124,7 @@ void main() {
   testWidgets('a plain widget tap only opens the app', (tester) async {
     final gateway = FakeWidgetGateway();
     await pump(tester, gateway);
-    gateway.tap(Uri.parse('migrainetracker://widget'));
+    gateway.tap(Uri.parse('aurawell://widget'));
     await tester.pumpAndSettle();
     expect(find.byType(AttackScreen), findsNothing);
     expect(await attacks(), isEmpty);

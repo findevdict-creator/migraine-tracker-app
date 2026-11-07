@@ -73,7 +73,7 @@ commercial key (used only by the cache function), RevenueCat keys.
 
 ## What M must fill in
 
-1. Create three Firebase projects (`migraine-tracker-dev`, `-staging`,
+1. Create three Firebase projects (`aurawell-dev`, `-staging`,
    `-prod`) on the Blaze plan with budget alerts at $10 and $25.
 2. Copy the example env files and fill the Firebase values for staging and
    prod. Dev needs nothing beyond the emulator.
@@ -96,7 +96,7 @@ commercial key (used only by the cache function), RevenueCat keys.
    `CODE_SIGN_ENTITLEMENTS` to `ios/RiskWidget/RiskWidget.entitlements`.
    On the Runner target set `CODE_SIGN_ENTITLEMENTS` to
    `Runner/Runner.entitlements`. Enable the App Groups capability on both
-   targets with `group.app.migrainetracker.migraineTracker` (register
+   targets with `group.app.aurawell.mobile` (register
    the group in the Apple Developer portal first). Android needs nothing.
 9. Wear OS release (phase 27): sign the watch app with the same upload
    key as the phone app and upload it to the same Play listing as a Wear

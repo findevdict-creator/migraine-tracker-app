@@ -1,5 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Migraine Tracker logo">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Aurawell logo mark">
   <rect width="256" height="256" rx="56" fill="#5B5BD6"/>
-  <circle cx="128" cy="120" r="56" fill="none" stroke="#FFFFFF" stroke-width="16"/>
-  <path d="M72 184 Q128 232 184 184" fill="none" stroke="#FFB74D" stroke-width="16" stroke-linecap="round"/>
+  <!-- Rounded head profile, facing right. -->
+  <path fill="#FFFFFF" d="M100 222 C100 204 92 190 82 176 C64 150 62 116 74 92 C88 62 124 50 154 62 C178 72 190 96 188 120 L202 136 C206 142 204 148 198 150 L192 152 C190 158 192 164 188 170 C190 178 186 186 178 190 C172 200 164 206 156 214 L156 222 Z"/>
+  <!-- Rising arc above the forehead: the "aura". -->
+  <path d="M164 36 A44 44 0 0 1 226 72" fill="none" stroke="#FFFFFF" stroke-width="14" stroke-linecap="round"/>
 </svg>

@@ -5,7 +5,7 @@ import Foundation
 /// mirrors `AppHomeWidgets.iosAppGroup` in lib/config/app_config.dart.
 public enum WatchConfig {
     /// App group shared by the watch app and its complication.
-    public static let appGroup = "group.app.migrainetracker.migraineTracker"
+    public static let appGroup = "group.app.aurawell.mobile"
 
     /// WidgetKit kind of the complication.
     public static let complicationKind = "RiskComplication"

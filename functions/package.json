@@ -1,8 +1,8 @@
 {
-  "name": "migraine-tracker-functions",
+  "name": "aurawell-functions",
   "version": "1.0.0",
   "private": true,
-  "description": "Cloud Functions for Migraine Tracker: weather cache, push wake-up, share links, account purge, audit counts.",
+  "description": "Cloud Functions for Aurawell: weather cache, push wake-up, share links, account purge, audit counts.",
   "main": "lib/index.js",
   "engines": {
     "node": "22"
@@ -14,7 +14,7 @@
     "format": "prettier --check \"src/**/*.ts\" \"test/**/*.ts\"",
     "format:write": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "test": "jest --coverage",
-    "test:rules": "npx -y firebase-tools@15 emulators:exec --only firestore,storage --project migraine-tracker-rules-test \"npx jest --config jest.rules.config.js\"",
+    "test:rules": "npx -y firebase-tools@15 emulators:exec --only firestore,storage --project aurawell-rules-test \"npx jest --config jest.rules.config.js\"",
     "serve": "npm run build && firebase emulators:start --only functions,firestore,storage",
     "deploy:staging": "firebase deploy --only functions,firestore:rules,storage,hosting --project staging",
     "deploy:prod": "firebase deploy --only functions,firestore:rules,storage,hosting --project prod"

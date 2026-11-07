@@ -222,4 +222,4 @@ jobs:
       - name: Security rules tests (Firestore and Storage emulators)
         if: steps.check.outputs.run == 'true'
         working-directory: functions
-        run: npx -y firebase-tools@15 emulators:exec --only firestore,storage --project migraine-tracker-rules-test "npx jest --config jest.rules.config.js"
+        run: npx -y firebase-tools@15 emulators:exec --only firestore,storage --project aurawell-rules-test "npx jest --config jest.rules.config.js"

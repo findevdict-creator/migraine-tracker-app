@@ -1,6 +1,6 @@
 {
   "@@locale": "en",
-  "appTitle": "Migraine Tracker",
+  "appTitle": "Aurawell",
   "@appTitle": {
     "description": "Fallback app title; the live title comes from AppIdentity."
   },
