@@ -28,7 +28,7 @@ val releaseStoreFile = signingValue("storeFile", "ANDROID_KEYSTORE_PATH")?.let {
 val wearVersionCodeOffset = 100_000_000
 
 android {
-    namespace = "app.migrainetracker.migraine_tracker_wear"
+    namespace = "app.aurawell.wear"
     // Same as the phone app: plugins compile against API 37.
     compileSdk = maxOf(37, flutter.compileSdkVersion)
     ndkVersion = flutter.ndkVersion
@@ -42,7 +42,7 @@ android {
         // The Wearable data layer only connects apps with the same package
         // name and signing key, so this mirrors the phone's applicationId
         // (AppIdentity.bundleId in lib/config/app_config.dart).
-        applicationId = "app.migrainetracker.migraine_tracker"
+        applicationId = "app.aurawell.mobile"
         // Wear OS 3 (API 30) is the floor for tiles and the data layer.
         minSdk = maxOf(30, flutter.minSdkVersion)
         targetSdk = flutter.targetSdkVersion
@@ -65,16 +65,16 @@ android {
         create("dev") {
             dimension = "environment"
             applicationIdSuffix = ".dev"
-            resValue("string", "app_name", "Migraine Tracker (dev)")
+            resValue("string", "app_name", "Aurawell (dev)")
         }
         create("staging") {
             dimension = "environment"
             applicationIdSuffix = ".staging"
-            resValue("string", "app_name", "Migraine Tracker (beta)")
+            resValue("string", "app_name", "Aurawell (beta)")
         }
         create("prod") {
             dimension = "environment"
-            resValue("string", "app_name", "Migraine Tracker")
+            resValue("string", "app_name", "Aurawell")
         }
     }
 

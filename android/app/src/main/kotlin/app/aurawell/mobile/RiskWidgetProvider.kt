@@ -1,4 +1,4 @@
-package app.migrainetracker.migraine_tracker
+package app.aurawell.mobile
 
 import android.appwidget.AppWidgetManager
 import android.content.Context
@@ -72,6 +72,6 @@ class RiskWidgetProvider : HomeWidgetProvider() {
       )
 
   companion object {
-    const val START_ATTACK_URI = "migrainetracker://widget/start-attack?homeWidget"
+    const val START_ATTACK_URI = "aurawell://widget/start-attack?homeWidget"
   }
 }

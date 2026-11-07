@@ -98,13 +98,13 @@ void main() {
       );
       expect(
         AppHomeWidgets.startAttackUri.toString(),
-        'migrainetracker://widget/start-attack?homeWidget',
+        'aurawell://widget/start-attack?homeWidget',
       );
     });
 
     test('other app links just open; foreign links are ignored', () {
       expect(
-        WidgetLink.parse(Uri.parse('migrainetracker://widget')),
+        WidgetLink.parse(Uri.parse('aurawell://widget')),
         WidgetAction.open,
       );
       expect(WidgetLink.parse(Uri.parse('https://example.com/x')), isNull);

@@ -4,7 +4,7 @@
 # (docs/phases/28-watchos.md, "Adding the watch app to Runner").
 name: RiskWatch
 options:
-  bundleIdPrefix: app.migrainetracker
+  bundleIdPrefix: app.aurawell
   deploymentTarget:
     watchOS: "10.0"
 settings:
@@ -31,7 +31,7 @@ targets:
     settings:
       base:
         # Mirrors AppIdentity.iosBundleId with the watch suffix.
-        PRODUCT_BUNDLE_IDENTIFIER: app.migrainetracker.migraineTracker.watchkitapp
+        PRODUCT_BUNDLE_IDENTIFIER: app.aurawell.mobile.watchkitapp
         INFOPLIST_FILE: App/Info.plist
         CODE_SIGN_ENTITLEMENTS: App/RiskWatch.entitlements
         TARGETED_DEVICE_FAMILY: "4"
@@ -51,7 +51,7 @@ targets:
       - sdk: SwiftUI.framework
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: app.migrainetracker.migraineTracker.watchkitapp.complication
+        PRODUCT_BUNDLE_IDENTIFIER: app.aurawell.mobile.watchkitapp.complication
         INFOPLIST_FILE: Complication/Info.plist
         CODE_SIGN_ENTITLEMENTS: Complication/RiskComplication.entitlements
         TARGETED_DEVICE_FAMILY: "4"

@@ -11,7 +11,7 @@ import workmanager_apple
     // Daily weather refresh (phase 11). The identifier must match
     // AppBackgroundTasks.weatherRefresh and BGTaskSchedulerPermittedIdentifiers.
     WorkmanagerPlugin.registerPeriodicTask(
-      withIdentifier: "app.migrainetracker.weatherRefresh",
+      withIdentifier: "app.aurawell.weatherRefresh",
       frequency: NSNumber(value: 24 * 60 * 60)
     )
     // Local notifications (phase 21): show them in the foreground too and

@@ -13,14 +13,14 @@
 	<string>APPLE_TEAM_ID</string>
 	<key>provisioningProfiles</key>
 	<dict>
-		<key>app.migrainetracker.migraineTracker</key>
-		<string>match AppStore app.migrainetracker.migraineTracker</string>
-		<key>app.migrainetracker.migraineTracker.RiskWidget</key>
-		<string>match AppStore app.migrainetracker.migraineTracker.RiskWidget</string>
-		<key>app.migrainetracker.migraineTracker.watchkitapp</key>
-		<string>match AppStore app.migrainetracker.migraineTracker.watchkitapp</string>
-		<key>app.migrainetracker.migraineTracker.watchkitapp.complication</key>
-		<string>match AppStore app.migrainetracker.migraineTracker.watchkitapp.complication</string>
+		<key>app.aurawell.mobile</key>
+		<string>match AppStore app.aurawell.mobile</string>
+		<key>app.aurawell.mobile.RiskWidget</key>
+		<string>match AppStore app.aurawell.mobile.RiskWidget</string>
+		<key>app.aurawell.mobile.watchkitapp</key>
+		<string>match AppStore app.aurawell.mobile.watchkitapp</string>
+		<key>app.aurawell.mobile.watchkitapp.complication</key>
+		<string>match AppStore app.aurawell.mobile.watchkitapp.complication</string>
 	</dict>
 	<key>uploadSymbols</key>
 	<true/>

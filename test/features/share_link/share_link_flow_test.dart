@@ -140,7 +140,7 @@ void main() {
     final sent = server.created.single;
     expect(sent.days, 30);
     expect(sent.document['v'], 1);
-    expect(sent.document['title'], 'Migraine Tracker report');
+    expect(sent.document['title'], 'Aurawell report');
     expect(sent.document.toString(), isNot(contains('private words')));
 
     final url = AppShareLinks.url('AbCdEfGhIjKlMnOpQrStU1').toString();

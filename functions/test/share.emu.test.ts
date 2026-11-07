@@ -8,7 +8,7 @@ import { getFirestore } from "firebase-admin/firestore";
 import { firestoreShareStore } from "../src/share/firestoreStore";
 import { createShare, readShare, revokeShare, sweepExpired } from "../src/share/share";
 
-const app = initializeApp({ projectId: "migraine-tracker-rules-test" }, "share-emu-test");
+const app = initializeApp({ projectId: "aurawell-rules-test" }, "share-emu-test");
 const store = firestoreShareStore(getFirestore(app));
 const DAY = 24 * 60 * 60 * 1000;
 const T0 = Date.UTC(2026, 10, 6, 9);

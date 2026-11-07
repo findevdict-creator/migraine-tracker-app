@@ -13,7 +13,7 @@ let env: RulesTestEnvironment;
 
 beforeAll(async () => {
   env = await initializeTestEnvironment({
-    projectId: "migraine-tracker-rules-test",
+    projectId: "aurawell-rules-test",
     firestore: {
       rules: readFileSync(resolve(__dirname, "../../firestore.rules"), "utf8"),
       host: "127.0.0.1",

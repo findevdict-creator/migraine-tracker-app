@@ -3,7 +3,7 @@
 # configured amount and alert thresholds (phase 39). Values come from
 # AppRelease.monthlyBudgetUsd and budgetAlertShares in app_config.dart.
 #
-#   BILLING_ACCOUNT=XXXXXX-XXXXXX-XXXXXX tool/check_budgets.sh migraine-tracker-staging migraine-tracker-prod
+#   BILLING_ACCOUNT=XXXXXX-XXXXXX-XXXXXX tool/check_budgets.sh aurawell-staging aurawell-prod
 #
 # Needs gcloud signed in with billing.budgets.list on the billing account.
 set -euo pipefail

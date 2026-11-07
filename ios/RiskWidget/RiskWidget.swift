@@ -12,8 +12,8 @@ import WidgetKit
 // - start link: AppHomeWidgets.startAttackUri
 // - refresh: AppThresholds.widgetRefresh (30 minutes)
 
-private let appGroup = "group.app.migrainetracker.migraineTracker"
-private let startAttackURL = URL(string: "migrainetracker://widget/start-attack?homeWidget")!
+private let appGroup = "group.app.aurawell.mobile"
+private let startAttackURL = URL(string: "aurawell://widget/start-attack?homeWidget")!
 private let refreshMinutes = 30
 
 struct RiskEntry: TimelineEntry {
@@ -129,7 +129,7 @@ struct RiskWidget: Widget {
     StaticConfiguration(kind: kind, provider: RiskProvider()) { entry in
       RiskWidgetView(entry: entry)
     }
-    .configurationDisplayName("Migraine Tracker")
+    .configurationDisplayName("Aurawell")
     .description("Today's level, the pressure trend and a start-attack button")
     .supportedFamilies([.systemSmall, .systemMedium])
   }

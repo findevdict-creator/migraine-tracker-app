@@ -10,7 +10,7 @@ import { cellFor } from "../src/weather/cell";
 
 import { fixture } from "./support/openMeteoFixture";
 
-const app = initializeApp({ projectId: "migraine-tracker-rules-test" }, "emu-test");
+const app = initializeApp({ projectId: "aurawell-rules-test" }, "emu-test");
 const db = getFirestore(app);
 
 describe("weather cache on the emulator", () => {

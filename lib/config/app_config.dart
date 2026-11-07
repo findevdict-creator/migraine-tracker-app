@@ -51,10 +51,14 @@ class AppIdentity {
   const AppIdentity._();
 
   /// User-facing product name. Shown in the launcher, the app bar and reports.
-  static const String name = 'Migraine Tracker';
+  static const String name = 'Aurawell';
 
   /// Short name used where space is tight (widgets, watch, notifications).
-  static const String shortName = 'Migraine';
+  static const String shortName = 'Aurawell';
+
+  /// Lowercase wordmark used next to the logo mark (`assets/brand/logo.svg`,
+  /// the Play feature graphic). The brand sets the name in lowercase.
+  static const String wordmark = 'aurawell';
 
   /// Per-flavor suffix appended to [name] so testers can tell builds apart.
   static String displayName(AppFlavor flavor) => switch (flavor) {
@@ -65,11 +69,12 @@ class AppIdentity {
 
   /// Base application id. Flavors append a suffix (see
   /// `android/app/build.gradle.kts` and the iOS schemes, which mirror this).
-  static const String bundleId = 'app.migrainetracker.migraine_tracker';
+  static const String bundleId = 'app.aurawell.mobile';
 
-  /// iOS bundle id. Apple ids cannot contain underscores, so iOS uses
-  /// camel case; mirrored in `ios/Runner.xcodeproj` (`PRODUCT_BUNDLE_IDENTIFIER`).
-  static const String iosBundleId = 'app.migrainetracker.migraineTracker';
+  /// iOS bundle id. Apple ids cannot contain underscores; [bundleId] has none,
+  /// so both platforms share it. Mirrored in `ios/Runner.xcodeproj`
+  /// (`PRODUCT_BUNDLE_IDENTIFIER`).
+  static const String iosBundleId = bundleId;
 
   /// Application id for a flavor. Must match the native build configuration.
   static String bundleIdFor(AppFlavor flavor) => switch (flavor) {
@@ -79,17 +84,17 @@ class AppIdentity {
   };
 
   /// Scheme used by deep links (widgets, watch, notifications).
-  static const String deepLinkScheme = 'migrainetracker';
+  static const String deepLinkScheme = 'aurawell';
 
   /// Support and legal links shown in settings and on the stores.
-  static const String supportEmail = 'support@migrainetracker.app';
-  static const String privacyPolicyUrl = 'https://migrainetracker.app/privacy';
-  static const String termsUrl = 'https://migrainetracker.app/terms';
-  static const String websiteUrl = 'https://migrainetracker.app';
+  static const String supportEmail = 'support@aurawell.app';
+  static const String privacyPolicyUrl = 'https://aurawell.app/privacy';
+  static const String termsUrl = 'https://aurawell.app/terms';
+  static const String websiteUrl = 'https://aurawell.app';
 
   /// Page behind the "talk to your clinician" notes (medication overuse).
   static const String clinicianGuidanceUrl =
-      'https://migrainetracker.app/talk-to-your-clinician';
+      'https://aurawell.app/talk-to-your-clinician';
 
   // The wellness disclaimer is copy, so it lives in the translation files
   // (`wellnessDisclaimer` in lib/core/l10n/arb/app_en.arb).
@@ -169,7 +174,7 @@ class AppEnv {
   );
 
   /// Where clinician share links open (phase 34), for example
-  /// `https://migraine-tracker.web.app`. Empty means the Firebase Hosting
+  /// `https://aurawell.web.app`. Empty means the Firebase Hosting
   /// default for [firebaseProjectId].
   static const String shareBaseUrl = String.fromEnvironment('SHARE_BASE_URL');
 
@@ -684,7 +689,7 @@ class AppBackgroundTasks {
   const AppBackgroundTasks._();
 
   /// Daily weather refresh (workmanager / BGTaskScheduler).
-  static const String weatherRefresh = 'app.migrainetracker.weatherRefresh';
+  static const String weatherRefresh = 'app.aurawell.weatherRefresh';
 
   /// `data.type` of the silent push the wake-up function sends; must match
   /// `config.push.wakeupType` in `functions/src/config.ts`.

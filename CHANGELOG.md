@@ -8,8 +8,12 @@ release time.
 
 ## [1.0.0]
 
-First store release: everything below, built across phases 01 to 39. The
+First store release: everything below, built across phases 01 to 40. The
 date is set when M tags `v1.0.0` after the phase branches are merged.
+
+- Branding: the app is Aurawell (aurawell.app), bundle id
+  `app.aurawell.mobile`, deep link scheme `aurawell`, with a head-profile
+  logo mark and regenerated launcher and store icons (40).
 
 ### Added
 

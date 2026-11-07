@@ -1,4 +1,4 @@
-# Migraine Tracker
+# Aurawell
 
 A cross-platform (Android and iOS) migraine tracker built in Flutter: a
 30-second attack-mode log, an automatic weather and pressure feed, and an

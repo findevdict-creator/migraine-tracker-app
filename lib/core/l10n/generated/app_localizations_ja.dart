@@ -10,7 +10,7 @@ class AppLocalizationsJa extends AppLocalizations {
   AppLocalizationsJa([String locale = 'ja']) : super(locale);
 
   @override
-  String get appTitle => 'Migraine Tracker';
+  String get appTitle => 'Aurawell';
 
   @override
   String get homeEmptyState => 'まだ記録がありません。\nリスクレベルと周囲の環境がここに表示されます。';
