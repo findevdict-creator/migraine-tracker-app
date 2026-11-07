@@ -103,6 +103,12 @@ jobs:
           cache: true
       - run: flutter pub get
       - run: flutter build apk --debug --flavor dev -t lib/main_dev.dart --dart-define-from-file=env/dev.json
+      - name: Debug APK (download from the run's Artifacts to test on a phone)
+        uses: actions/upload-artifact@v4
+        with:
+          name: android-debug-apk
+          path: build/app/outputs/flutter-apk/app-dev-debug.apk
+          retention-days: 14
 
   wear:
     name: Wear OS app
@@ -135,6 +141,12 @@ jobs:
         run: flutter test
       - name: Debug build
         run: flutter build apk --debug --flavor dev
+      - name: Debug APK (download from the run's Artifacts to test on a watch)
+        uses: actions/upload-artifact@v4
+        with:
+          name: wear-debug-apk
+          path: wear/build/app/outputs/flutter-apk/app-dev-debug.apk
+          retention-days: 14
 
   ios:
     name: iOS build (no signing)

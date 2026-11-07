@@ -6,6 +6,7 @@ import 'package:migraine_tracker/app/router.dart';
 import 'package:migraine_tracker/config/app_config.dart';
 import 'package:migraine_tracker/core/l10n/l10n.dart';
 import 'package:migraine_tracker/core/theme/app_colors.dart';
+import 'package:migraine_tracker/features/attack_log/presentation/attack_log_controller.dart';
 import 'package:migraine_tracker/features/attack_log/presentation/start_attack_button.dart';
 import 'package:migraine_tracker/features/barometer/application/barometer_sampler.dart';
 import 'package:migraine_tracker/features/checkin/presentation/checkin_card.dart';
@@ -26,6 +27,9 @@ class HomeScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final config = ref.watch(appConfigProvider);
     final l10n = context.l10n;
+    // The first-run hint goes once anything is logged.
+    final nothingLogged =
+        ref.watch(attacksProvider).whenOrNull(data: (a) => a.isEmpty) ?? false;
     // Foreground refresh on open; returns early while the cache is fresh.
     ref
       ..watch(weatherRefreshProvider)
@@ -81,13 +85,15 @@ class HomeScreen extends ConsumerWidget {
           const CheckinCard(),
           const SizedBox(height: AppThemeTokens.space4),
           const EnvironmentCard(),
-          const SizedBox(height: AppThemeTokens.space5),
-          Text(
-            l10n.homeEmptyState,
-            key: const ValueKey('home-empty'),
-            textAlign: TextAlign.center,
-            style: context.textStyles.bodySmall,
-          ),
+          if (nothingLogged) ...[
+            const SizedBox(height: AppThemeTokens.space5),
+            Text(
+              l10n.homeEmptyState,
+              key: const ValueKey('home-empty'),
+              textAlign: TextAlign.center,
+              style: context.textStyles.bodySmall,
+            ),
+          ],
         ],
       ),
     );

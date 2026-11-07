@@ -1,0 +1,77 @@
+# Play lanes (phase 39). Tracks and rollout steps mirror AppRelease in
+# lib/config/app_config.dart (checked by test/config/release_config_test.dart).
+#
+#   bundle exec fastlane android internal         phone + watch bundles to internal testing
+#   bundle exec fastlane android promote          internal -> production at the first rollout step
+#   bundle exec fastlane android rollout to:0.2   raise production to that rollout step
+#
+# Play only accepts API uploads after the first bundle of each package was
+# uploaded by hand in the Play Console (docs/release/README.md).
+default_platform(:android)
+
+PLAY_TRACK = "internal"
+WEAR_PLAY_TRACK = "wear:internal"
+PRODUCTION_ROLLOUT = [0.05, 0.2, 0.5, 1.0].freeze
+
+PHONE_AAB = "../build/app/outputs/bundle/prodRelease/app-prod-release.aab"
+WEAR_AAB = "../wear/build/app/outputs/bundle/prodRelease/app-prod-release.aab"
+
+platform :android do
+  desc "Upload the signed prod phone bundle, and the Wear OS bundle if built, to internal testing"
+  lane :internal do
+    upload_to_play_store(
+      track: PLAY_TRACK,
+      aab: ENV.fetch("PHONE_AAB", PHONE_AAB),
+      release_status: "completed",
+      skip_upload_metadata: true,
+      skip_upload_changelogs: false,
+      skip_upload_images: true,
+      skip_upload_screenshots: true,
+    )
+    wear = ENV.fetch("WEAR_AAB", WEAR_AAB)
+    if File.exist?(wear)
+      upload_to_play_store(
+        track: WEAR_PLAY_TRACK,
+        aab: wear,
+        release_status: "completed",
+        skip_upload_metadata: true,
+        skip_upload_images: true,
+        skip_upload_screenshots: true,
+      )
+    else
+      UI.important("No Wear OS bundle at #{wear}; phone only.")
+    end
+  end
+
+  desc "Promote the latest internal release to production at the first rollout step"
+  lane :promote do
+    upload_to_play_store(
+      track: PLAY_TRACK,
+      track_promote_to: "production",
+      rollout: PRODUCTION_ROLLOUT.first.to_s,
+      release_status: "inProgress",
+      skip_upload_aab: true,
+      skip_upload_metadata: true,
+      skip_upload_images: true,
+      skip_upload_screenshots: true,
+    )
+  end
+
+  desc "Raise the production rollout to a step in PRODUCTION_ROLLOUT, e.g. to:0.2 (check crash-free users first: docs/release/README.md)"
+  lane :rollout do |options|
+    step = options[:to].to_s.empty? ? nil : options[:to].to_f
+    unless step && PRODUCTION_ROLLOUT.any? { |f| (f - step).abs < 1e-9 }
+      UI.user_error!("Pass to: one of #{PRODUCTION_ROLLOUT.join(', ')}")
+    end
+    upload_to_play_store(
+      track: "production",
+      rollout: step.to_s,
+      release_status: step >= 1.0 ? "completed" : "inProgress",
+      skip_upload_aab: true,
+      skip_upload_metadata: true,
+      skip_upload_images: true,
+      skip_upload_screenshots: true,
+    )
+    UI.success("Production rollout now #{(step * 100).round}%")
+  end
+end

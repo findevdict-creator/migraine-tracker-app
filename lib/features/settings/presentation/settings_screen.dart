@@ -32,7 +32,7 @@ class SettingsScreen extends ConsumerWidget {
       body: ListView(
         padding: const EdgeInsets.symmetric(vertical: AppThemeTokens.space2),
         children: [
-          SectionHeader(title: l10n.settingsSectionDaily),
+          _Header(l10n.settingsSectionDaily),
           ListTile(
             key: const ValueKey('settings-reminder'),
             leading: const Icon(Icons.alarm),
@@ -75,7 +75,7 @@ class SettingsScreen extends ConsumerWidget {
               subtitle: Text(l10n.settingsHealthHint),
               onTap: () => context.push(AppRoutes.health),
             ),
-          SectionHeader(title: l10n.settingsSectionData),
+          _Header(l10n.settingsSectionData),
           ListTile(
             key: const ValueKey('settings-routines'),
             leading: const Icon(Icons.self_improvement_outlined),
@@ -168,7 +168,7 @@ class SettingsScreen extends ConsumerWidget {
             subtitle: Text(l10n.settingsDeleteAllHint),
             onTap: () => _confirmDelete(context, ref),
           ),
-          SectionHeader(title: l10n.settingsSectionAbout),
+          _Header(l10n.settingsSectionAbout),
           ListTile(
             leading: const Icon(Icons.info_outline),
             title: Text(config.displayName),
@@ -283,4 +283,18 @@ class SettingsScreen extends ConsumerWidget {
     ScaffoldMessenger.of(context)
         .showSnackBar(SnackBar(content: Text(l10n.settingsDeletedAll)));
   }
+}
+
+/// A section header lined up with the list tiles' text, which carry their
+/// own side padding while the list itself has none.
+class _Header extends StatelessWidget {
+  const _Header(this.title);
+
+  final String title;
+
+  @override
+  Widget build(BuildContext context) => Padding(
+    padding: const EdgeInsets.symmetric(horizontal: AppThemeTokens.space4),
+    child: SectionHeader(title: title),
+  );
 }

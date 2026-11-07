@@ -58,3 +58,17 @@ ios/Runner/GoogleService-Info-staging.plist
 ios/Runner/GoogleService-Info-prod.plist
 # Coverage
 coverage/
+# Release signing (phase 39): never commit the upload key or its passwords.
+android/key.properties
+*.jks
+*.keystore
+# fastlane outputs and credentials.
+**/fastlane/report.xml
+**/fastlane/README.md
+**/fastlane/test_output/
+**/fastlane/*.json
+*.p8
+*.mobileprovision
+*.ipa
+*.aab
+tool/store_assets/node_modules/

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- App Store export for `flutter build ipa` (phase 39). Signing is
+     manual with the profiles fastlane match installs; the team id is set
+     by the release workflow from APPLE_TEAM_ID. -->
+<plist version="1.0">
+<dict>
+	<key>method</key>
+	<string>app-store-connect</string>
+	<key>signingStyle</key>
+	<string>manual</string>
+	<key>teamID</key>
+	<string>APPLE_TEAM_ID</string>
+	<key>provisioningProfiles</key>
+	<dict>
+		<key>app.migrainetracker.migraineTracker</key>
+		<string>match AppStore app.migrainetracker.migraineTracker</string>
+		<key>app.migrainetracker.migraineTracker.RiskWidget</key>
+		<string>match AppStore app.migrainetracker.migraineTracker.RiskWidget</string>
+		<key>app.migrainetracker.migraineTracker.watchkitapp</key>
+		<string>match AppStore app.migrainetracker.migraineTracker.watchkitapp</string>
+		<key>app.migrainetracker.migraineTracker.watchkitapp.complication</key>
+		<string>match AppStore app.migrainetracker.migraineTracker.watchkitapp.complication</string>
+	</dict>
+	<key>uploadSymbols</key>
+	<true/>
+</dict>
+</plist>

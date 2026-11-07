@@ -1,0 +1,5 @@
+# Mirrors AppIdentity.iosBundleId in lib/config/app_config.dart.
+app_identifier("app.migrainetracker.migraineTracker")
+# The team and the App Store Connect API key come from environment
+# variables (APPLE_TEAM_ID, ASC_KEY_ID, ASC_ISSUER_ID, ASC_KEY_P8).
+team_id(ENV["APPLE_TEAM_ID"]) if ENV["APPLE_TEAM_ID"]

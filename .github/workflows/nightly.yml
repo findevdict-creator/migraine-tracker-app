@@ -51,5 +51,51 @@ jobs:
           else
             echo "no benchmarks yet"
           fi
-  # Firebase Test Lab device runs and the battery check are added in the
-  # release-prep phase once the Firebase projects exist.
+
+  test-lab:
+    name: Firebase Test Lab robo run (staging)
+    runs-on: ubuntu-latest
+    environment: staging
+    # Runs once M adds the Test Lab service account (docs/release/README.md).
+    env:
+      GCP_TEST_LAB_KEY: ${{ secrets.GCP_TEST_LAB_KEY }}
+      ENV_STAGING_JSON: ${{ secrets.ENV_STAGING_JSON }}
+      GOOGLE_SERVICES_STAGING_JSON: ${{ secrets.GOOGLE_SERVICES_STAGING_JSON }}
+    steps:
+      - name: Skip without a Test Lab key
+        id: gate
+        run: echo "run=$([ -n "$GCP_TEST_LAB_KEY" ] && echo yes || echo no)" >> "$GITHUB_OUTPUT"
+      - uses: actions/checkout@v4
+        if: steps.gate.outputs.run == 'yes'
+      - name: Read Flutter version
+        if: steps.gate.outputs.run == 'yes'
+        id: fvm
+        run: echo "version=$(jq -r .flutter .fvmrc)" >> "$GITHUB_OUTPUT"
+      - uses: subosito/flutter-action@v2
+        if: steps.gate.outputs.run == 'yes'
+        with:
+          flutter-version: ${{ steps.fvm.outputs.version }}
+          channel: stable
+          cache: true
+      - name: Staging release APK
+        if: steps.gate.outputs.run == 'yes'
+        run: |
+          printf '%s' "$ENV_STAGING_JSON" > env/staging.json
+          printf '%s' "$GOOGLE_SERVICES_STAGING_JSON" > android/app/src/staging/google-services.json
+          flutter pub get
+          flutter build apk --release --flavor staging -t lib/main_staging.dart --dart-define-from-file=env/staging.json
+      - uses: google-github-actions/auth@v2
+        if: steps.gate.outputs.run == 'yes'
+        with:
+          credentials_json: ${{ secrets.GCP_TEST_LAB_KEY }}
+      - uses: google-github-actions/setup-gcloud@v2
+        if: steps.gate.outputs.run == 'yes'
+      # Add devices with `gcloud firebase test android models list`; a
+      # low-end phone on the API 28 floor is worth adding once chosen.
+      - name: Robo test with performance metrics
+        if: steps.gate.outputs.run == 'yes'
+        run: >
+          gcloud firebase test android run --type robo
+          --app build/app/outputs/flutter-apk/app-staging-release.apk
+          --device model=oriole,version=33
+          --timeout 5m --performance-metrics

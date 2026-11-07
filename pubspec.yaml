@@ -1,7 +1,7 @@
 name: migraine_tracker
 description: "Migraine tracker with an attack-mode log, an automatic weather feed and an explainable daily risk level."
 publish_to: 'none'
-version: 0.1.0+1
+version: 1.0.0+1
 
 environment:
   sdk: ^3.13.7
@@ -52,6 +52,7 @@ dev_dependencies:
   alchemist: ^0.14.1
   build_runner: ^2.17.1
   drift_dev: ^2.35.2
+  flutter_launcher_icons: ^0.14.4
   flutter_lints: ^6.0.0
   flutter_test:
     sdk: flutter
@@ -77,3 +78,16 @@ flutter:
     - assets/routines/
     - assets/fonts/
 
+
+# Launcher icons (phase 39). Paths mirror AppAssets.launcherIcon; the PNGs
+# are rendered from assets/brand/logo_mark.svg by tool/store_assets. Run
+# `dart run flutter_launcher_icons` after re-rendering.
+flutter_launcher_icons:
+  android: "ic_launcher"
+  ios: true
+  remove_alpha_ios: true
+  image_path: "assets/brand/launcher_icon.png"
+  adaptive_icon_background: "#5B5BD6"
+  adaptive_icon_foreground: "assets/brand/launcher_icon_foreground.png"
+  adaptive_icon_foreground_inset: 0
+  min_sdk_android: 28

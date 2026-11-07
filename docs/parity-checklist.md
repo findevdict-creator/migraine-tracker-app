@@ -43,3 +43,17 @@ feature PR adds its row.
 | 36 | After ten attacks the audit page appears from Settings; counts match a hand count; turning sharing on after the 3rd writes one anonymous `audit_counts` document per month with only the six fields | [ ] | [ ] | Staging Firebase with App Check |
 | 37 | Set the phone to each of es, pt, de, fr, hi and ja: home, settings, a notification, the widget and the doctor report PDF are in that language with nothing clipped; the Japanese PDF shows Japanese text, the Hindi PDF prints in English; Settings > Units switches the pressure card, chart, notification text and widget between hPa, inHg and mmHg and °C/°F; a US region phone starts on inHg and °F; a shared link opens in the report's language | [ ] | [ ] | Native-speaker review pending (CONFIGURATION item 16) |
 | 38 | TalkBack and VoiceOver walk through starting, filling in and ending an attack and a check-in; largest text on Home, attack and check-in with nothing cut off; Settings > Reduce motion and the phone setting each stop transitions | [ ] | [ ] | Real devices with screen readers |
+| 39 | Release builds: the Play internal build installs over nothing and over the last staging build without losing the database key; the Wear OS bundle installs from the `wear:internal` track; the TestFlight build installs with the widget and watch app; launcher icon and name correct on both home screens; the privacy report in Xcode lists the manifest's data types | [ ] | [ ] | Needs the store accounts and secrets (docs/release/README.md) |
+
+## Sign-off for 1.0.0
+
+Every row above ticked on both platforms or marked n/a, and the items in
+CONFIGURATION "What M must fill in" done or deliberately deferred (list
+them in Notes).
+
+| Role | Name | Date | Notes |
+| ---- | ---- | ---- | ----- |
+| Android verified by | | | |
+| iOS verified by | | | |
+| Clinician copy review | | | |
+| Release approved by (M) | | | |

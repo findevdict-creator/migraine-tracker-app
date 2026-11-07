@@ -1,6 +1,6 @@
 {
   "name": "migraine-tracker-functions",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "description": "Cloud Functions for Migraine Tracker: weather cache, push wake-up, share links, account purge, audit counts.",
   "main": "lib/index.js",
